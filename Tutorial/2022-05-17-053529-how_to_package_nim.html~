@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 01:02 -->
+<!-- 2023-05-27 Sat 01:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>how to package nim</title>
@@ -192,7 +192,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<link rel="stylesheet" type="text/css" href="./static/org.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 <body>
 <div id="content" class="content">
@@ -201,15 +201,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3e33ec0">1. nimble2nix</a></li>
-<li><a href="#org9ccc41d">2. Using nix</a></li>
-<li><a href="#orgda620ea">3. using flakes</a></li>
+<li><a href="#org0600a2e">1. nimble2nix</a></li>
+<li><a href="#org4725d08">2. Using nix</a></li>
+<li><a href="#org01ed4b8">3. using flakes</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3e33ec0" class="outline-2">
-<h2 id="org3e33ec0"><span class="section-number-2">1.</span> nimble2nix</h2>
+<div id="outline-container-org0600a2e" class="outline-2">
+<h2 id="org0600a2e"><span class="section-number-2">1.</span> nimble2nix</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Painless Nimble deps
@@ -220,8 +220,8 @@ nimble2nix .</code>
 </div>
 </div>
 
-<div id="outline-container-org9ccc41d" class="outline-2">
-<h2 id="org9ccc41d"><span class="section-number-2">2.</span> Using nix</h2>
+<div id="outline-container-org4725d08" class="outline-2">
+<h2 id="org4725d08"><span class="section-number-2">2.</span> Using nix</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 here is an example package i made for counting puffs
@@ -274,8 +274,8 @@ in
 </div>
 </div>
 
-<div id="outline-container-orgda620ea" class="outline-2">
-<h2 id="orgda620ea"><span class="section-number-2">3.</span> using flakes</h2>
+<div id="outline-container-org01ed4b8" class="outline-2">
+<h2 id="org01ed4b8"><span class="section-number-2">3.</span> using flakes</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><a href="2022-05-16-045822-nim_flake_example.html#ID-62bf048c-8b3b-4356-a939-ac7132bfaae2">nim-flake-example</a></li>
@@ -284,7 +284,7 @@ in
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 01:02</p>
+<p class="date">Created: 2023-05-27 Sat 01:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

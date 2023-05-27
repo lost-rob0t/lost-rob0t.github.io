@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 01:02 -->
+<!-- 2023-05-27 Sat 01:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CSE-373-lecture 2</title>
@@ -192,7 +192,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<link rel="stylesheet" type="text/css" href="./static/org.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 <body>
 <div id="content" class="content">
@@ -201,12 +201,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd55c0a2">1. The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></a>
+<li><a href="#org421da6b">1. The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></a>
 <ul>
-<li><a href="#org2b761d1">1.1. Solutions</a>
+<li><a href="#org9e3639a">1.1. Solutions</a>
 <ul>
-<li><a href="#orgffd54b9">1.1.1. Shortest Job first</a></li>
-<li><a href="#org8f16008">1.1.2. Reason why it wont work</a></li>
+<li><a href="#org182e2d9">1.1.1. Shortest Job first</a></li>
+<li><a href="#org57f5f51">1.1.2. Reason why it wont work</a></li>
 </ul>
 </li>
 </ul>
@@ -218,8 +218,8 @@
 Note: this is on hole until i do more data struct stuff which seems to be referenced with the lectures
 Video lecture: <a href="https://www.youtube.com/watch?v=z1mkCe3kVUA&amp;list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&amp;index=2">https://www.youtube.com/watch?v=z1mkCe3kVUA&amp;list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&amp;index=2</a>
 </p>
-<div id="outline-container-orgd55c0a2" class="outline-2">
-<h2 id="orgd55c0a2"><span class="section-number-2">1.</span> The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></h2>
+<div id="outline-container-org421da6b" class="outline-2">
+<h2 id="org421da6b"><span class="section-number-2">1.</span> The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 A movie star wants to select the maximum number of staring roles such that no two jobs needs him at two places.
@@ -230,12 +230,12 @@ there is a time shooting starts and shooting ends
 </p>
 </div>
 
-<div id="outline-container-org2b761d1" class="outline-3">
-<h3 id="org2b761d1"><span class="section-number-3">1.1.</span> Solutions</h3>
+<div id="outline-container-org9e3639a" class="outline-3">
+<h3 id="org9e3639a"><span class="section-number-3">1.1.</span> Solutions</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-orgffd54b9" class="outline-4">
-<h4 id="orgffd54b9"><span class="section-number-4">1.1.1.</span> Shortest Job first</h4>
+<div id="outline-container-org182e2d9" class="outline-4">
+<h4 id="org182e2d9"><span class="section-number-4">1.1.1.</span> Shortest Job first</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 Always do the shortest job first, so you do the least amount of work.
@@ -254,8 +254,8 @@ If you are getting payed a million $ for a shoot might as well do the shortest o
 </div>
 </div>
 
-<div id="outline-container-org8f16008" class="outline-4">
-<h4 id="org8f16008"><span class="section-number-4">1.1.2.</span> Reason why it wont work</h4>
+<div id="outline-container-org57f5f51" class="outline-4">
+<h4 id="org57f5f51"><span class="section-number-4">1.1.2.</span> Reason why it wont work</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 Taking the shortest job could block to longer job that barley intersect and leaves you with less work.
@@ -266,7 +266,7 @@ Taking the shortest job could block to longer job that barley intersect and leav
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 01:02</p>
+<p class="date">Created: 2023-05-27 Sat 01:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

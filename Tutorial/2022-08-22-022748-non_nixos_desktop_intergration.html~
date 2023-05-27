@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 01:02 -->
+<!-- 2023-05-27 Sat 01:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>non nixos desktop intergration</title>
@@ -192,7 +192,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<link rel="stylesheet" type="text/css" href="./static/org.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 <body>
 <div id="content" class="content">
@@ -201,13 +201,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org1ef0de3">1. How to intergrate nix on non nix system</a>
+<li><a href="#org515c065">1. How to intergrate nix on non nix system</a>
 <ul>
-<li><a href="#orgc7f110d">1.1. Method 1 Symlink</a></li>
-<li><a href="#orgefd9f71">1.2. Method 2 Update XDG dirs</a></li>
+<li><a href="#orgedd6abf">1.1. Method 1 Symlink</a></li>
+<li><a href="#orge5c5cb3">1.2. Method 2 Update XDG dirs</a></li>
 </ul>
 </li>
-<li><a href="#orgb99dcf8">2. links</a></li>
+<li><a href="#orgd5112ae">2. links</a></li>
 </ul>
 </div>
 </div>
@@ -215,16 +215,16 @@
 <li><a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a></li>
 </ul>
 
-<div id="outline-container-org1ef0de3" class="outline-2">
-<h2 id="org1ef0de3"><span class="section-number-2">1.</span> How to intergrate nix on non nix system</h2>
+<div id="outline-container-org515c065" class="outline-2">
+<h2 id="org515c065"><span class="section-number-2">1.</span> How to intergrate nix on non nix system</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 I was setting up my Hack the box machine and noticed that nix installed programs are not on the path and can not be launche from the gui.
 I have 2 Solutions
 </p>
 </div>
-<div id="outline-container-orgc7f110d" class="outline-3">
-<h3 id="orgc7f110d"><span class="section-number-3">1.1.</span> Method 1 Symlink</h3>
+<div id="outline-container-orgedd6abf" class="outline-3">
+<h3 id="orgedd6abf"><span class="section-number-3">1.1.</span> Method 1 Symlink</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Here you smlink <code>~/.nix/profile/share/spllications</code> to <code>~/.local/share/applications</code>
@@ -238,14 +238,14 @@ If you use my dotfiles, you can run <code>nix-xdg-link</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-orgefd9f71" class="outline-3">
-<h3 id="orgefd9f71"><span class="section-number-3">1.2.</span> Method 2 Update XDG dirs</h3>
+<div id="outline-container-orge5c5cb3" class="outline-3">
+<h3 id="orge5c5cb3"><span class="section-number-3">1.2.</span> Method 2 Update XDG dirs</h3>
 </div>
 </div>
 
 
-<div id="outline-container-orgb99dcf8" class="outline-2">
-<h2 id="orgb99dcf8"><span class="section-number-2">2.</span> links</h2>
+<div id="outline-container-orgd5112ae" class="outline-2">
+<h2 id="orgd5112ae"><span class="section-number-2">2.</span> links</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="https://discourse.nixos.org/t/desktop-file-integration-in-non-nixos-platforms/9050">https://discourse.nixos.org/t/desktop-file-integration-in-non-nixos-platforms/9050</a></li>
@@ -255,7 +255,7 @@ If you use my dotfiles, you can run <code>nix-xdg-link</code>.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 01:02</p>
+<p class="date">Created: 2023-05-27 Sat 01:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
