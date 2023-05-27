@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 01:09 -->
+<!-- 2023-05-27 Sat 17:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nim</title>
@@ -192,7 +192,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
 </head>
 <body>
 <div id="content" class="content">
@@ -201,18 +201,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3a08635">1. About</a>
+<li><a href="#org9ed832e">1. About</a>
 <ul>
-<li><a href="#org778ef27">1.1. Features</a></li>
+<li><a href="#org703fac8">1.1. Features</a></li>
 </ul>
 </li>
-<li><a href="#org0315377">2. Notes</a></li>
+<li><a href="#org85978a7">2. Notes</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3a08635" class="outline-2">
-<h2 id="org3a08635"><span class="section-number-2">1.</span> About</h2>
+<div id="outline-container-org9ed832e" class="outline-2">
+<h2 id="org9ed832e"><span class="section-number-2">1.</span> About</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Nim is a staticly typed compiled systems language.
@@ -220,8 +220,8 @@ It takes inspiration from python, ada and others.
 </p>
 </div>
 
-<div id="outline-container-org778ef27" class="outline-3">
-<h3 id="org778ef27"><span class="section-number-3">1.1.</span> Features</h3>
+<div id="outline-container-org703fac8" class="outline-3">
+<h3 id="org703fac8"><span class="section-number-3">1.1.</span> Features</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Taken from <a href="https://nim-lang.org/">https://nim-lang.org/</a>
@@ -255,8 +255,8 @@ Taken from <a href="https://nim-lang.org/">https://nim-lang.org/</a>
 
 
 
-<div id="outline-container-org0315377" class="outline-2">
-<h2 id="org0315377"><span class="section-number-2">2.</span> Notes</h2>
+<div id="outline-container-org85978a7" class="outline-2">
+<h2 id="org85978a7"><span class="section-number-2">2.</span> Notes</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="2022-08-26-155254-metaprogramming.html#ID-982f9f57-4b5d-44b7-bc9b-89b7d977a077">Metaprogramming</a></li>
@@ -266,7 +266,7 @@ Taken from <a href="https://nim-lang.org/">https://nim-lang.org/</a>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 01:09</p>
+<p class="date">Created: 2023-05-27 Sat 17:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

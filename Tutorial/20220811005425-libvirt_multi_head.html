@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 01:14 -->
+<!-- 2023-05-27 Sat 17:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>libvirt-multi-head</title>
@@ -201,26 +201,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgea1f399">1. Tutorial</a>
+<li><a href="#org607f500">1. Tutorial</a>
 <ul>
-<li><a href="#org440f7d0">1.1. Steps</a>
+<li><a href="#org55b3f5a">1.1. Steps</a>
 <ul>
-<li><a href="#org9f25722">1.1.1. Install spice-vdagent</a></li>
-<li><a href="#org564f3bd">1.1.2. Edit the guest's configuration</a></li>
-<li><a href="#orgd54d73f">1.1.3. Create a new xrand output mode.</a></li>
-<li><a href="#orgca73a2b">1.1.4. Save the config</a></li>
+<li><a href="#org2e66673">1.1.1. Install spice-vdagent</a></li>
+<li><a href="#org37a9604">1.1.2. Edit the guest's configuration</a></li>
+<li><a href="#orgd18ad82">1.1.3. Create a new xrand output mode.</a></li>
+<li><a href="#org7a6a19c">1.1.4. Save the config</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org48095e0">2. FootNotes</a></li>
+<li><a href="#org4845023">2. FootNotes</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orgea1f399" class="outline-2">
-<h2 id="orgea1f399"><span class="section-number-2">1.</span> Tutorial</h2>
+<div id="outline-container-org607f500" class="outline-2">
+<h2 id="org607f500"><span class="section-number-2">1.</span> Tutorial</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 I Had an issue where spice was not letting me use multi head setup.
@@ -232,37 +232,37 @@ this is somthing i should fix.
 
 
 
-<div id="outline-container-org440f7d0" class="outline-3">
-<h3 id="org440f7d0"><span class="section-number-3">1.1.</span> Steps</h3>
+<div id="outline-container-org55b3f5a" class="outline-3">
+<h3 id="org55b3f5a"><span class="section-number-3">1.1.</span> Steps</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-org9f25722" class="outline-4">
-<h4 id="org9f25722"><span class="section-number-4">1.1.1.</span> Install spice-vdagent</h4>
+<div id="outline-container-org2e66673" class="outline-4">
+<h4 id="org2e66673"><span class="section-number-4">1.1.1.</span> Install spice-vdagent</h4>
 <div class="outline-text-4" id="text-1-1-1">
 </div>
 <ol class="org-ol">
-<li><a id="org95b63d4"></a>Nixos<br />
+<li><a id="org689dfa8"></a>Nixos<br />
 <div class="outline-text-5" id="text-1-1-1-1">
 <p>
 On nixos just include <code>spice-vdagent</code> in your <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a> enviroment packages or your home-manager config.
 </p>
 </div>
 </li>
-<li><a id="org26ce252"></a>Arch<br />
+<li><a id="orga7143c6"></a>Arch<br />
 <div class="outline-text-5" id="text-1-1-1-2">
 <p>
 <code>pacman -S spice-vdagent</code>
 </p>
 </div>
 </li>
-<li><a id="org9604f37"></a>Fedora<br />
+<li><a id="org2b545e8"></a>Fedora<br />
 <div class="outline-text-5" id="text-1-1-1-3">
 <p>
 <code>dnf install spice-vdagent</code>
 </p>
 </div>
 </li>
-<li><a id="orgae18776"></a>Ubuntu And Debian<br />
+<li><a id="org1a9b4d2"></a>Ubuntu And Debian<br />
 <div class="outline-text-5" id="text-1-1-1-4">
 <p>
 <code>apt install spice-vdagent</code>
@@ -273,8 +273,8 @@ On nixos just include <code>spice-vdagent</code> in your <a href="../2022-04-28-
 </div>
 
 
-<div id="outline-container-org564f3bd" class="outline-4">
-<h4 id="org564f3bd"><span class="section-number-4">1.1.2.</span> Edit the guest's configuration</h4>
+<div id="outline-container-org37a9604" class="outline-4">
+<h4 id="org37a9604"><span class="section-number-4">1.1.2.</span> Edit the guest's configuration</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 <code>sudo virsh edit --domain &lt;name of vm&gt;</code>
@@ -310,8 +310,8 @@ to
 </div>
 
 
-<div id="outline-container-orgd54d73f" class="outline-4">
-<h4 id="orgd54d73f"><span class="section-number-4">1.1.3.</span> Create a new xrand output mode.</h4>
+<div id="outline-container-orgd18ad82" class="outline-4">
+<h4 id="orgd18ad82"><span class="section-number-4">1.1.3.</span> Create a new xrand output mode.</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 Inside your guest it is going to show that the new output is disconected.
@@ -321,7 +321,7 @@ you need to create a new output mode
 
 
 
-<div id="orgdd5243b" class="figure">
+<div id="orgb69a257" class="figure">
 <p><img src="Tutorial/2022-08-11_01-57-30_archlinux-xrandr.png" alt="2022-08-11_01-57-30_archlinux-xrandr.png" />
 </p>
 </div>
@@ -333,7 +333,7 @@ Get the mode line for your resolution, I choose 1920x1080.
 <p>
 <code>cvt 1920 1080</code>
 </p>
-<pre class="example" id="org15b362c">
+<pre class="example" id="org5a05351">
 Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
 </pre>
 <p>
@@ -359,15 +359,15 @@ xrandr --output Virtual-2 --mode 1920x1080_60.00
 </div>
 </div>
 
-<div id="outline-container-orgca73a2b" class="outline-4">
-<h4 id="orgca73a2b"><span class="section-number-4">1.1.4.</span> Save the config</h4>
+<div id="outline-container-org7a6a19c" class="outline-4">
+<h4 id="org7a6a19c"><span class="section-number-4">1.1.4.</span> Save the config</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <p>
 If you do not want to constantly add the new screen resolution each reboot, add it to <code>/usr/share/X11/xorg.conf.d</code> or <code>/etc/X11/xorg.conf.d/</code> in FHS based distros.
 in <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a> use the option <code>services.xorg.config</code>.
 </p>
 
-<pre class="example" id="org2c40856">
+<pre class="example" id="org72a3d16">
 section "Monitor"
     Identifier "Virtual-1 "
     Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
@@ -378,8 +378,8 @@ EndSection
 </div>
 </div>
 </div>
-<div id="outline-container-org48095e0" class="outline-2">
-<h2 id="org48095e0"><span class="section-number-2">2.</span> FootNotes</h2>
+<div id="outline-container-org4845023" class="outline-2">
+<h2 id="org4845023"><span class="section-number-2">2.</span> FootNotes</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="https://elmarco.fedorapeople.org/manual.html#_multiple_monitor_support">https://elmarco.fedorapeople.org/manual.html#_multiple_monitor_support</a></li>
@@ -390,7 +390,7 @@ EndSection
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 01:14</p>
+<p class="date">Created: 2023-05-27 Sat 17:47</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

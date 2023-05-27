@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       692714ce-1d2e-4b52-b18e-baae05ea63c0
+:END:
+#+TITLE: Hacking Index
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+#+CREATED: [2023-05-27 Sat 17:46]
+#+LAST_MODIFIED: [2023-05-27 Sat 17:47]
+
+* Hacking Index
+This page is an index of security realted posts
+
++ [[id:e32a3fd4-d13c-4274-be79-69c688f79398][Cookie Bugs]]
++ [[id:e1e99ad8-8982-4d5d-9e37-42d083188d24][Hacking Python Eval]]
++ [[id:65d9cc7b-d426-4ca4-9693-4c530264f830][Hack The Box]]
++ [[id:81d62666-4ce8-4244-b498-739a680f9673][SQL Injection]]

@@ -24,13 +24,18 @@ Key:
 * Books
 ** IDEA starting-forth
 Notes: [[id:73ce874e-3841-49dc-89c6-0fe8225678c4][Learning Forth]]
-* TODO Articles [1/2] :articles:
+* TODO Articles [1/3] :articles:
 + [ ] Multics Emacs: The History, Design and Implementation
   - Link:  https://web.archive.org/web/20000819071104/http%3A//www.multicians.org/mepap.html
 
 + [X] The TTY demystified
   - Link: https://www.linusakesson.net/programming/tty/
   - Notes:[[id:1d99b0b9-bc9e-4578-8e96-8defb97cf49b][the tty demystified]]
++ [-]  Cookie Bugs - Smuggling & Injection
+  - Link: https://blog.ankursundara.com/cookie-bugs/
+  - Notes: [[id:e32a3fd4-d13c-4274-be79-69c688f79398][Cookie Bugs]]
+
+
 *  Research
 ** TODO SCADA [0/4]
 - [ ] Industrial Network Security: Securing Critical Infrastructure Networks for Smart Grid, Scada, and Other Industrial Control Systems
@@ -44,6 +49,10 @@ Notes: [[id:73ce874e-3841-49dc-89c6-0fe8225678c4][Learning Forth]]
 ** TODO WIFI
 - Wifi encryption bypass
   https://youtu.be/3XKvOaVQX-8?t=57
+
+
+
+
 * Videos :videos:
 ** TODO [/]
 SCHEDULED: <2023-03-31 Fri 18:00>

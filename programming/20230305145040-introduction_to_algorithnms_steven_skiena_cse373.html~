@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 01:09 -->
+<!-- 2023-05-27 Sat 17:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Introduction to Algorithms Steven skiena (CSE373)</title>
@@ -192,7 +192,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
 </head>
 <body>
 <div id="content" class="content">
@@ -201,14 +201,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9136f3a">1. What is an algorithm?</a>
+<li><a href="#orgdf7c172">1. What is an algorithm?</a>
 <ul>
-<li><a href="#org44d6d9d">1.1. Correctness</a></li>
-<li><a href="#org3861c60">1.2. Proofs</a></li>
-<li><a href="#org20abd59">1.3. Expressing Algorithms</a>
+<li><a href="#org69abfaf">1.1. Correctness</a></li>
+<li><a href="#orgfba960e">1.2. Proofs</a></li>
+<li><a href="#orgffa14c0">1.3. Expressing Algorithms</a>
 <ul>
-<li><a href="#orge40b5a7">1.3.1. Ways to do this</a></li>
-<li><a href="#orgcd0e0cf">1.3.2. Puesdocode</a></li>
+<li><a href="#org9563d6a">1.3.1. Ways to do this</a></li>
+<li><a href="#org4aabc61">1.3.2. Puesdocode</a></li>
 </ul>
 </li>
 </ul>
@@ -218,8 +218,8 @@
 </div>
 
 
-<div id="outline-container-org9136f3a" class="outline-2">
-<h2 id="org9136f3a"><span class="section-number-2">1.</span> What is an algorithm?</h2>
+<div id="outline-container-orgdf7c172" class="outline-2">
+<h2 id="orgdf7c172"><span class="section-number-2">1.</span> What is an algorithm?</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 And algorithm is the idea/ solution to a problem in computer science.
@@ -231,8 +231,8 @@ We measure efficient with <a href="20230305150253-big_o.html#ID-a6dfee7d-c44e-4c
 </p>
 </div>
 
-<div id="outline-container-org44d6d9d" class="outline-3">
-<h3 id="org44d6d9d"><span class="section-number-3">1.1.</span> Correctness</h3>
+<div id="outline-container-org69abfaf" class="outline-3">
+<h3 id="org69abfaf"><span class="section-number-3">1.1.</span> Correctness</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 We need to prove that an algorithm always returns the wanted output of all "legal" problems.
@@ -245,8 +245,8 @@ The solution must be well defined, what would you mean by "best".
 </div>
 </div>
 
-<div id="outline-container-org3861c60" class="outline-3">
-<h3 id="org3861c60"><span class="section-number-3">1.2.</span> Proofs</h3>
+<div id="outline-container-orgfba960e" class="outline-3">
+<h3 id="orgfba960e"><span class="section-number-3">1.2.</span> Proofs</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Proofs are to why something is correct, algorithms are ideas behind a problem.
@@ -256,8 +256,8 @@ you need to know why its correct if you dont you are probably wrong.
 </div>
 
 
-<div id="outline-container-org20abd59" class="outline-3">
-<h3 id="org20abd59"><span class="section-number-3">1.3.</span> Expressing Algorithms</h3>
+<div id="outline-container-orgffa14c0" class="outline-3">
+<h3 id="orgffa14c0"><span class="section-number-3">1.3.</span> Expressing Algorithms</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 You need to express the sequence of steps that an algorithm takes, you use english peusdocode and real languages to do this
@@ -272,8 +272,8 @@ Levels of descriptiveness
 </ol>
 </div>
 
-<div id="outline-container-orge40b5a7" class="outline-4">
-<h4 id="orge40b5a7"><span class="section-number-4">1.3.1.</span> Ways to do this</h4>
+<div id="outline-container-org9563d6a" class="outline-4">
+<h4 id="org9563d6a"><span class="section-number-4">1.3.1.</span> Ways to do this</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 Explain it in english.
@@ -281,8 +281,8 @@ Use a programming language
 </p>
 </div>
 </div>
-<div id="outline-container-orgcd0e0cf" class="outline-4">
-<h4 id="orgcd0e0cf"><span class="section-number-4">1.3.2.</span> Puesdocode</h4>
+<div id="outline-container-org4aabc61" class="outline-4">
+<h4 id="org4aabc61"><span class="section-number-4">1.3.2.</span> Puesdocode</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <p>
 it is a language between english and a programming
@@ -301,7 +301,7 @@ it is a language between english and a programming
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 01:09</p>
+<p class="date">Created: 2023-05-27 Sat 17:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

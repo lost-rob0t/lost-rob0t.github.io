@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 01:09 -->
+<!-- 2023-05-27 Sat 17:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Evil mode</title>
@@ -192,7 +192,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<link rel="stylesheet" type="text/css" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
 </head>
 <body>
 <div id="content" class="content">
@@ -201,9 +201,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org28fced6">1. Evil Mode</a>
+<li><a href="#org06f5ed9">1. Evil Mode</a>
 <ul>
-<li><a href="#orgd466e77">1.1. Disable evil mode for certain modes</a></li>
+<li><a href="#orgd59555b">1.1. Disable evil mode for certain modes</a></li>
 </ul>
 </li>
 </ul>
@@ -213,8 +213,8 @@
 <li><a href="../20220428224740-emacs.html#ID-95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2">Emacs</a></li>
 </ul>
 
-<div id="outline-container-org28fced6" class="outline-2">
-<h2 id="org28fced6"><span class="section-number-2">1.</span> Evil Mode</h2>
+<div id="outline-container-org06f5ed9" class="outline-2">
+<h2 id="org06f5ed9"><span class="section-number-2">1.</span> Evil Mode</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Emacs evil mode is a package for vimmers who see the power of emacs.
@@ -222,8 +222,8 @@ Emacs evil mode is a package for vimmers who see the power of emacs.
 </div>
 
 
-<div id="outline-container-orgd466e77" class="outline-3">
-<h3 id="orgd466e77"><span class="section-number-3">1.1.</span> Disable evil mode for certain modes</h3>
+<div id="outline-container-orgd59555b" class="outline-3">
+<h3 id="orgd59555b"><span class="section-number-3">1.1.</span> Disable evil mode for certain modes</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Some modes do not require the use of evil-mode and infact are just single key commands.
@@ -250,7 +250,7 @@ Disable evil for elfeed.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 01:09</p>
+<p class="date">Created: 2023-05-27 Sat 17:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
