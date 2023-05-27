@@ -3,6 +3,8 @@
 :ROAM_TAGS:
 :END:
 #+TITLE: Metaprogramming
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-17 12:03:14]
 #+LAST_MODIFIED: [2023-01-21 Sat 03:14]
 + [[id:af6fae74-d03b-4930-8f39-63becb43efd9][Nim]]

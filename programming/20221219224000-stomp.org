@@ -2,6 +2,8 @@
 :ID:       a934f8ea-6586-437f-a354-d307915f3c39
 :END:
 #+TITLE: STOMP
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-19 Mon 22:40]
 #+LAST_MODIFIED: [2022-12-19 Mon 23:01]
 

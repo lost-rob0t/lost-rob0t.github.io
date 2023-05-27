@@ -2,6 +2,8 @@
 :ID:       6969f98a-8d6d-4336-a574-f5809bf86149
 :END:
 #+TITLE: introduction to data structures
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-03-05 Sun 16:31]
 #+LAST_MODIFIED: [2023-03-05 Sun 16:50]
 

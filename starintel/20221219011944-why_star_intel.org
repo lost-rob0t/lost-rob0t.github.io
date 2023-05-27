@@ -2,6 +2,8 @@
 :ID:       e8362c61-ead3-4683-bd7b-935d98617e2c
 :END:
 #+TITLE: Why Star Intel
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-19 Mon 01:19]
 #+LAST_MODIFIED: [2022-12-19 Mon 22:39]
 * Why Star intel? :starintel:

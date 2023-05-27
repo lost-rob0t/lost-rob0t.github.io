@@ -2,6 +2,8 @@
 :ID:       b6578448-2a3a-4183-a8cc-d390661328c5
 :END:
 #+TITLE: nixos fix common-lisp ld path
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-05-02 Tue 18:51]
 #+LAST_MODIFIED: [2023-05-02 Tue 18:57]
 

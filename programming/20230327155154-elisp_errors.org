@@ -2,6 +2,8 @@
 :ID:       f284c2d8-6777-4ff5-94e1-a928628810d4
 :END:
 #+TITLE: elisp errors
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-03-27 Mon 15:51]
 #+LAST_MODIFIED: [2023-03-27 Mon 16:17]
 

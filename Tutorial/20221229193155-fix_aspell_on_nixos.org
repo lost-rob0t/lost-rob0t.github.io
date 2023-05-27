@@ -2,6 +2,8 @@
 :ID:       67aa8d33-7640-44e7-be9a-4ed5de3a070c
 :END:
 #+TITLE: Fix Aspell on nixos
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-29 Thu 19:31]
 #+LAST_MODIFIED: [2022-12-29 Thu 19:41]
 * How to fix aspell on nixos :emacs::nixos:

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:33 -->
+<!-- 2023-05-27 Sat 00:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>how to package nim</title>
@@ -200,15 +200,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd726268">1. nimble2nix</a></li>
-<li><a href="#orgf24bb21">2. Using nix</a></li>
-<li><a href="#org0c0e725">3. using flakes</a></li>
+<li><a href="#org1b5d8dd">1. nimble2nix</a></li>
+<li><a href="#orgcd72c26">2. Using nix</a></li>
+<li><a href="#orgff9d852">3. using flakes</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd726268" class="outline-2">
-<h2 id="orgd726268"><span class="section-number-2">1.</span> nimble2nix</h2>
+<div id="outline-container-org1b5d8dd" class="outline-2">
+<h2 id="org1b5d8dd"><span class="section-number-2">1.</span> nimble2nix</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Painless Nimble deps
@@ -219,8 +219,8 @@ nimble2nix .</code>
 </div>
 </div>
 
-<div id="outline-container-orgf24bb21" class="outline-2">
-<h2 id="orgf24bb21"><span class="section-number-2">2.</span> Using nix</h2>
+<div id="outline-container-orgcd72c26" class="outline-2">
+<h2 id="orgcd72c26"><span class="section-number-2">2.</span> Using nix</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 here is an example package i made for counting puffs
@@ -273,8 +273,8 @@ in
 </div>
 </div>
 
-<div id="outline-container-org0c0e725" class="outline-2">
-<h2 id="org0c0e725"><span class="section-number-2">3.</span> using flakes</h2>
+<div id="outline-container-orgff9d852" class="outline-2">
+<h2 id="orgff9d852"><span class="section-number-2">3.</span> using flakes</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><a href="2022-05-16-045822-nim_flake_example.html#ID-62bf048c-8b3b-4356-a939-ac7132bfaae2">nim-flake-example</a></li>
@@ -283,7 +283,7 @@ in
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:33</p>
+<p class="date">Created: 2023-05-27 Sat 00:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

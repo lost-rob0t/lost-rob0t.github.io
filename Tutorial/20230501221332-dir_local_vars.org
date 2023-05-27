@@ -2,6 +2,8 @@
 :ID:       3ce7e004-02ef-4b6d-9a1c-cff99fbf5c81
 :END:
 #+TITLE: dir-local-vars
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-05-01 Mon 22:13]
 #+LAST_MODIFIED: [2023-05-26 Fri 23:33]
 #+FILETAGS: emacs

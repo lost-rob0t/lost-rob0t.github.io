@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:33 -->
+<!-- 2023-05-27 Sat 00:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nixos-python</title>
@@ -200,16 +200,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9711f75">1. Setting up a python dev enviroment in nix</a>
+<li><a href="#org4ca75c4">1. Setting up a python dev enviroment in nix</a>
 <ul>
-<li><a href="#org438d992">1.1. Impure Dev setup with pipenv</a>
+<li><a href="#org270582c">1.1. Impure Dev setup with pipenv</a>
 <ul>
-<li><a href="#org04475d8">1.1.1. shell.nix</a></li>
+<li><a href="#org85ad8cf">1.1.1. shell.nix</a></li>
 </ul>
 </li>
-<li><a href="#org79678e0">1.2. Pure nix flakes</a>
+<li><a href="#orgf8f89ce">1.2. Pure nix flakes</a>
 <ul>
-<li><a href="#orgc11da28">1.2.1. mach-nix</a></li>
+<li><a href="#org9c4c529">1.2.1. mach-nix</a></li>
 </ul>
 </li>
 </ul>
@@ -217,16 +217,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org9711f75" class="outline-2">
-<h2 id="org9711f75"><span class="section-number-2">1.</span> Setting up a python dev enviroment in nix</h2>
+<div id="outline-container-org4ca75c4" class="outline-2">
+<h2 id="org4ca75c4"><span class="section-number-2">1.</span> Setting up a python dev enviroment in nix</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The python packaging on nim is very lacking and often require you to build/hack around/bend nix to your will
 </p>
 </div>
 
-<div id="outline-container-org438d992" class="outline-3">
-<h3 id="org438d992"><span class="section-number-3">1.1.</span> Impure Dev setup with pipenv</h3>
+<div id="outline-container-org270582c" class="outline-3">
+<h3 id="org270582c"><span class="section-number-3">1.1.</span> Impure Dev setup with pipenv</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 For most of the projects i often use a shell.nix and pipenv
@@ -234,8 +234,8 @@ i will be moving to flakes as they seem more robust for packaging lib dirtrobuti
 </p>
 </div>
 
-<div id="outline-container-org04475d8" class="outline-4">
-<h4 id="org04475d8"><span class="section-number-4">1.1.1.</span> shell.nix</h4>
+<div id="outline-container-org85ad8cf" class="outline-4">
+<h4 id="org85ad8cf"><span class="section-number-4">1.1.1.</span> shell.nix</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 if you prefer to use `shell.nix`
@@ -287,16 +287,16 @@ buildFHSUserEnv {
 </div>
 
 
-<div id="outline-container-org79678e0" class="outline-3">
-<h3 id="org79678e0"><span class="section-number-3">1.2.</span> Pure nix flakes</h3>
+<div id="outline-container-orgf8f89ce" class="outline-3">
+<h3 id="orgf8f89ce"><span class="section-number-3">1.2.</span> Pure nix flakes</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 the nix community have a number of tools for managing python packages
 </p>
 </div>
 
-<div id="outline-container-orgc11da28" class="outline-4">
-<h4 id="orgc11da28"><span class="section-number-4">1.2.1.</span> mach-nix</h4>
+<div id="outline-container-org9c4c529" class="outline-4">
+<h4 id="org9c4c529"><span class="section-number-4">1.2.1.</span> mach-nix</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 Mach-nix makes it easy to create and share reproducible python environments or packages. Existing tools for python package management often suffer from reproducibility and complexity issues, requiring a multitude of tools and additional virtualization layers to work sufficiently. Mach-nix aims to solve these problems by providing a simple way to use nix, a revolutionary build system which is known to achieve great reproducibility and portability besides [many other advantages](<a href="https://nixos.org/features.html">https://nixos.org/features.html</a>).
@@ -329,7 +329,7 @@ nix develop
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:33</p>
+<p class="date">Created: 2023-05-27 Sat 00:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

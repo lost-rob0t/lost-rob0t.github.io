@@ -2,6 +2,8 @@
 :ID:       634d75f8-4fcf-428a-8412-739668673c3c
 :END:
 #+TITLE: redis
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-03-28 Tue 16:09]
 #+LAST_MODIFIED: [2023-03-30 Thu 16:18]
 * Redis :database:db:redis:

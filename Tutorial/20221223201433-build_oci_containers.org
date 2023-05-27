@@ -2,6 +2,8 @@
 :ID:       91982b2c-1802-4fcd-b2a0-5e9fd4ef964b
 :END:
 #+TITLE: Build OCI containers in Nixos
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-23 Fri 20:14]
 #+LAST_MODIFIED: [2022-12-26 Mon 14:39]
 * TODO Build OCI containers in nix :docker:podman:oci:

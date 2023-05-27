@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:33 -->
+<!-- 2023-05-27 Sat 00:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Doom Emacs</title>
@@ -200,11 +200,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org04b7207">1. Doom Emacs</a>
+<li><a href="#orgc7997cb">1. Doom Emacs</a>
 <ul>
-<li><a href="#org6d50ec5">1.1. Help</a>
+<li><a href="#org10c0d16">1.1. Help</a>
 <ul>
-<li><a href="#orgd7f5a6b">1.1.1. Binding keys</a></li>
+<li><a href="#org1971b24">1.1.1. Binding keys</a></li>
 </ul>
 </li>
 </ul>
@@ -212,8 +212,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org04b7207" class="outline-2">
-<h2 id="org04b7207"><span class="section-number-2">1.</span> Doom Emacs</h2>
+<div id="outline-container-orgc7997cb" class="outline-2">
+<h2 id="orgc7997cb"><span class="section-number-2">1.</span> Doom Emacs</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="https://github.com/hlissner/doom-emacs">Home Page</a>.
@@ -225,20 +225,20 @@ doom emacs has a a notable exception from the other configuration frameworks tha
 </p>
 </div>
 
-<div id="outline-container-org6d50ec5" class="outline-3">
-<h3 id="org6d50ec5"><span class="section-number-3">1.1.</span> Help</h3>
+<div id="outline-container-org10c0d16" class="outline-3">
+<h3 id="org10c0d16"><span class="section-number-3">1.1.</span> Help</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><a href="https://discourse.doomemacs.org/">https://discourse.doomemacs.org/</a></li>
 </ul>
 </div>
 
-<div id="outline-container-orgd7f5a6b" class="outline-4">
-<h4 id="orgd7f5a6b"><span class="section-number-4">1.1.1.</span> Binding keys</h4>
+<div id="outline-container-org1971b24" class="outline-4">
+<h4 id="org1971b24"><span class="section-number-4">1.1.1.</span> Binding keys</h4>
 <div class="outline-text-4" id="text-1-1-1">
 </div>
 <ol class="org-ol">
-<li><a id="orgaa26040"></a>Binding to a prefix<br />
+<li><a id="orga35e66b"></a>Binding to a prefix<br />
 <div class="outline-text-5" id="text-1-1-1-1">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">(map! <span style="font-weight: bold;">:localleader</span>
@@ -257,7 +257,7 @@ doom emacs has a a notable exception from the other configuration frameworks tha
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:33</p>
+<p class="date">Created: 2023-05-27 Sat 00:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

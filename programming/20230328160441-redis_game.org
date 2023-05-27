@@ -2,6 +2,8 @@
 :ID:       a1374f3a-f1a7-4d95-8cea-0d74dcd94bdc
 :END:
 #+TITLE: redis game
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-03-28 Tue 16:04]
 #+LAST_MODIFIED: [2023-03-28 Tue 16:07]
 

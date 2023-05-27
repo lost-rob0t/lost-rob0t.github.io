@@ -2,6 +2,8 @@
 :ID:       e1e99ad8-8982-4d5d-9e37-42d083188d24
 :END:
 #+TITLE: Hacking Python Eval
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-04-18 Tue 17:43]
 #+LAST_MODIFIED: [2023-04-18 Tue 17:49]
 

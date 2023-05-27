@@ -2,6 +2,8 @@
 :ID:       aa2d6d49-ec3f-4662-b3fa-be5690652278
 :END:
 #+TITLE: CSE-373-lecture 2
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-03-05 Sun 16:04]
 #+LAST_MODIFIED: [2023-03-05 Sun 16:26]
 Note: this is on hole until i do more data struct stuff which seems to be referenced with the lectures

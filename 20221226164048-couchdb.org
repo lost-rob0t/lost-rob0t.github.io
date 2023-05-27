@@ -2,6 +2,8 @@
 :ID:       e2e083bc-85fa-4b97-a4cd-0ffd86d9821c
 :END:
 #+TITLE: Couchdb
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-26 Mon 16:40]
 #+LAST_MODIFIED: [2023-05-01 Mon 22:10]
 #+filetags: couchdb docker

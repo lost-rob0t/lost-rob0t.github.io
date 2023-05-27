@@ -2,6 +2,8 @@
 :ID:       23362f82-a040-4316-b238-3989ddb0c6f5
 :END:
 #+TITLE: SLinux Trouble Should Denials
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-31 Sat 16:29]
 #+LAST_MODIFIED: [2022-12-31 Sat 16:46]
 #+filetags: linux selinux

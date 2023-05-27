@@ -2,6 +2,8 @@
 :ID:       90940f96-ad0c-4c24-bf8e-9f2b09454fa2
 :END:
 #+TITLE: free code camp college algebra preportions
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-03-26 Sun 18:03]
 #+LAST_MODIFIED: [2023-03-26 Sun 18:46]
 

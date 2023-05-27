@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 00:33 -->
+<!-- 2023-05-27 Sat 01:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NixOs</title>
@@ -192,6 +192,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
+<link rel="stylesheet" type="text/css" href="./static/org.css" />
 </head>
 <body>
 <div id="content" class="content">
@@ -200,14 +201,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9851328">1. NixOS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></a>
+<li><a href="#orgaed3aaa">1. NixOS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></a>
 <ul>
-<li><a href="#org78bf931">1.1. Tips</a>
+<li><a href="#org2eaec29">1.1. Tips</a>
 <ul>
-<li><a href="#org802e2a8">1.1.1. Development in nixos</a></li>
-<li><a href="#org780f674">1.1.2. Installation</a></li>
-<li><a href="#org7590063">1.1.3. Nix on non nixos system</a></li>
-<li><a href="#org68dcc3b">1.1.4. Nixos Channels</a></li>
+<li><a href="#orgb294922">1.1.1. Development in nixos</a></li>
+<li><a href="#orgb97b16f">1.1.2. Installation</a></li>
+<li><a href="#orgdaaf197">1.1.3. Nix on non nixos system</a></li>
+<li><a href="#org3933ee8">1.1.4. Nixos Channels</a></li>
 </ul>
 </li>
 </ul>
@@ -218,8 +219,8 @@
 <ul class="org-ul">
 <li><a href="index.html#ID-c72d4e02-0e32-424c-b4b3-c471adbf4598">Index</a></li>
 </ul>
-<div id="outline-container-org9851328" class="outline-2">
-<h2 id="org9851328"><span class="section-number-2">1.</span> NixOS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></h2>
+<div id="outline-container-orgaed3aaa" class="outline-2">
+<h2 id="orgaed3aaa"><span class="section-number-2">1.</span> NixOS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 From NixOS Wiki
@@ -238,26 +239,26 @@ Since Nix uses <a href="https://en.wikipedia.org/wiki/Executable">binary</a> cac
 Stable NixOS releases are delivered twice a year. NixOS was created by <a href="https://edolstra.github.io/">Eelco Dolstra</a> and <a href="https://en.wikipedia.org/wiki/Armijn_Hemel">Armijn Hemel</a>, and initially released in 2003. It is community developed and maintained under the stewardship of the <a href="https://nixos.org/nixos/foundation.html">NixOS Foundation</a>.
 </p>
 </div>
-<div id="outline-container-org78bf931" class="outline-3">
-<h3 id="org78bf931"><span class="section-number-3">1.1.</span> Tips</h3>
+<div id="outline-container-org2eaec29" class="outline-3">
+<h3 id="org2eaec29"><span class="section-number-3">1.1.</span> Tips</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>Have a config, but its broken? Check your git log and revert if needed.</li>
 </ul>
 </div>
-<div id="outline-container-org802e2a8" class="outline-4">
-<h4 id="org802e2a8"><span class="section-number-4">1.1.1.</span> Development in nixos</h4>
+<div id="outline-container-orgb294922" class="outline-4">
+<h4 id="orgb294922"><span class="section-number-4">1.1.1.</span> Development in nixos</h4>
 <div class="outline-text-4" id="text-1-1-1">
 </div>
 <ol class="org-ol">
-<li><a id="org3064af8"></a>Python<br />
+<li><a id="orgb89553c"></a>Python<br />
 <div class="outline-text-5" id="text-1-1-1-1">
 <ul class="org-ul">
 <li><a href="programming/20220429153134-nixos_python.html#ID-018850fc-57de-4163-870f-cbd906e8516f">nixos-python</a></li>
 </ul>
 </div>
 </li>
-<li><a id="org3358d16"></a>Nim<br />
+<li><a id="orgdbcf603"></a>Nim<br />
 <div class="outline-text-5" id="text-1-1-1-2">
 <ul class="org-ul">
 <li><a href="nixos-nim.html#ID-6dbd98c1-06ee-490f-a94b-308da099a6f2">Nixos Nim</a></li>
@@ -265,7 +266,7 @@ Stable NixOS releases are delivered twice a year. NixOS was created by <a href="
 </ul>
 </div>
 </li>
-<li><a id="org6f6f0a1"></a>packaging<br />
+<li><a id="org245f49b"></a>packaging<br />
 <div class="outline-text-5" id="text-1-1-1-3">
 <ul class="org-ul">
 <li><a href="Tutorial/2022-05-17-051936-nixos_custom_pkgs.html#ID-3866dd8f-fc14-491a-af3a-bbd0c4c5ce98">nixos custom pkgs</a></li>
@@ -275,12 +276,12 @@ Stable NixOS releases are delivered twice a year. NixOS was created by <a href="
 </li>
 </ol>
 </div>
-<div id="outline-container-org780f674" class="outline-4">
-<h4 id="org780f674"><span class="section-number-4">1.1.2.</span> Installation</h4>
+<div id="outline-container-orgb97b16f" class="outline-4">
+<h4 id="orgb97b16f"><span class="section-number-4">1.1.2.</span> Installation</h4>
 <div class="outline-text-4" id="text-1-1-2">
 </div>
 <ol class="org-ol">
-<li><a id="org2863dcb"></a>Raspberry pi<br />
+<li><a id="orgc024db2"></a>Raspberry pi<br />
 <div class="outline-text-5" id="text-1-1-2-1">
 <ul class="org-ul">
 <li><a href="Tutorial/2022-06-01-033435-cross_compile_nixos_to_sdcard_for_rpi3b.html#ID-d7085ecb-5bc7-48cf-b039-4ff204352534">cross compile nixos to sdcard for rpi3b+</a></li>
@@ -289,8 +290,8 @@ Stable NixOS releases are delivered twice a year. NixOS was created by <a href="
 </li>
 </ol>
 </div>
-<div id="outline-container-org7590063" class="outline-4">
-<h4 id="org7590063"><span class="section-number-4">1.1.3.</span> Nix on non nixos system</h4>
+<div id="outline-container-orgdaaf197" class="outline-4">
+<h4 id="orgdaaf197"><span class="section-number-4">1.1.3.</span> Nix on non nixos system</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <ul class="org-ul">
 <li><a href="Tutorial/2022-08-22-022748-non_nixos_desktop_intergration.html#ID-20916295-adc2-4f83-a5dd-c42482478ca0">non nixos desktop intergration</a><a href="Tutorial/2022-08-22-022748-non_nixos_desktop_intergration.html#ID-20916295-adc2-4f83-a5dd-c42482478ca0">non nixos desktop intergration</a></li>
@@ -298,8 +299,8 @@ Stable NixOS releases are delivered twice a year. NixOS was created by <a href="
 </div>
 </div>
 
-<div id="outline-container-org68dcc3b" class="outline-4">
-<h4 id="org68dcc3b"><span class="section-number-4">1.1.4.</span> Nixos Channels</h4>
+<div id="outline-container-org3933ee8" class="outline-4">
+<h4 id="org3933ee8"><span class="section-number-4">1.1.4.</span> Nixos Channels</h4>
 <div class="outline-text-4" id="text-1-1-4">
 <ul class="org-ul">
 <li><a href="20221220021836-nixpkgs_fork_service.html#ID-606957f7-f85c-442a-9a16-abd5b3e00151">NixPkgs enable a service from different channel?</a></li>
@@ -310,7 +311,7 @@ Stable NixOS releases are delivered twice a year. NixOS was created by <a href="
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 00:33</p>
+<p class="date">Created: 2023-05-27 Sat 01:02</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

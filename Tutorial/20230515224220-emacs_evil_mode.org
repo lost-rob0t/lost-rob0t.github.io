@@ -2,6 +2,8 @@
 :ID:       68a61d12-91dd-48af-ae62-11bfe9386c87
 :END:
 #+TITLE: Emacs Evil mode
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-05-15 Mon 22:42]
 #+LAST_MODIFIED: [2023-05-16 Tue 00:13]
 

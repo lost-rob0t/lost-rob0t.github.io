@@ -2,6 +2,8 @@
 :ID:       d1211064-a5af-4979-9a65-ed4913e47211
 :END:
 #+TITLE: The History Of emacs
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-18 Sun 02:50]
 #+LAST_MODIFIED: [2022-12-18 Sun 02:50]
 

@@ -2,6 +2,8 @@
 :ID:       342ef813-97a8-4e6b-ba31-163fe9391929
 :END:
 #+TITLE: libvirt clipboard
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-02-12 Sun 21:04]
 #+LAST_MODIFIED: [2023-02-12 Sun 21:06]
 * How to use the clipboard in libvirt :linux::vm:

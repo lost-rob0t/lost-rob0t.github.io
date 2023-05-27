@@ -2,6 +2,8 @@
 :ID:       aa6aadef-780f-4eec-ad42-4824516dbdfb
 :END:
 #+TITLE: Conky
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-17 Sat 16:32]
 #+LAST_MODIFIED: [2022-12-17 Sat 16:35]
 

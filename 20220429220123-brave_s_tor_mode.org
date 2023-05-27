@@ -3,6 +3,8 @@
 :ROAM_TAGS:
 :END:
 #+title: brave's tor mode
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-17 12:03:14]
 #+LAST_MODIFIED: [2022-12-17 12:03:14]
 A word of advice do not use brave tor mode.

@@ -2,6 +2,8 @@
 :ID:       b2820eca-b8ae-4f50-acd0-28acb4401eb4
 :END:
 #+TITLE: fedi
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-21 Wed 12:40]
 #+LAST_MODIFIED: [2022-12-21 Wed 14:02]
 

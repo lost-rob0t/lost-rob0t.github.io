@@ -2,6 +2,8 @@
 :ID:       633b4d18-e9b5-4e08-bf98-5b36959625fd
 :END:
 #+TITLE: git tricks
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-05-24 Wed 05:33]
 #+LAST_MODIFIED: [2023-05-24 Wed 05:35]
 * Git tricks

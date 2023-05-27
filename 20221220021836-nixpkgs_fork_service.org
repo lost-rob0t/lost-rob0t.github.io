@@ -2,6 +2,8 @@
 :ID:       606957f7-f85c-442a-9a16-abd5b3e00151
 :END:
 #+TITLE: How to enable service from different nix channel
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-20 Tue 02:18]
 #+LAST_MODIFIED: [2022-12-20 Tue 02:22]
 #+FILETAGS: nix-channel nixpkgs

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:33 -->
+<!-- 2023-05-27 Sat 00:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nim</title>
@@ -200,18 +200,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org86771e8">1. About</a>
+<li><a href="#org4115351">1. About</a>
 <ul>
-<li><a href="#org6a29dbb">1.1. Features</a></li>
+<li><a href="#orgd623422">1.1. Features</a></li>
 </ul>
 </li>
-<li><a href="#orgff456bf">2. Notes</a></li>
+<li><a href="#orgec9e9cc">2. Notes</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org86771e8" class="outline-2">
-<h2 id="org86771e8"><span class="section-number-2">1.</span> About</h2>
+<div id="outline-container-org4115351" class="outline-2">
+<h2 id="org4115351"><span class="section-number-2">1.</span> About</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Nim is a staticly typed compiled systems language.
@@ -219,8 +219,8 @@ It takes inspiration from python, ada and others.
 </p>
 </div>
 
-<div id="outline-container-org6a29dbb" class="outline-3">
-<h3 id="org6a29dbb"><span class="section-number-3">1.1.</span> Features</h3>
+<div id="outline-container-orgd623422" class="outline-3">
+<h3 id="orgd623422"><span class="section-number-3">1.1.</span> Features</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Taken from <a href="https://nim-lang.org/">https://nim-lang.org/</a>
@@ -254,8 +254,8 @@ Taken from <a href="https://nim-lang.org/">https://nim-lang.org/</a>
 
 
 
-<div id="outline-container-orgff456bf" class="outline-2">
-<h2 id="orgff456bf"><span class="section-number-2">2.</span> Notes</h2>
+<div id="outline-container-orgec9e9cc" class="outline-2">
+<h2 id="orgec9e9cc"><span class="section-number-2">2.</span> Notes</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="2022-08-26-155254-metaprogramming.html#ID-982f9f57-4b5d-44b7-bc9b-89b7d977a077">Metaprogramming</a></li>
@@ -265,7 +265,7 @@ Taken from <a href="https://nim-lang.org/">https://nim-lang.org/</a>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:33</p>
+<p class="date">Created: 2023-05-27 Sat 00:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

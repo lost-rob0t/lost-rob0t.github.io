@@ -2,6 +2,8 @@
 :ID:       1d99b0b9-bc9e-4578-8e96-8defb97cf49b
 :END:
 #+TITLE: the tty demystified
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-27 Tue 11:41]
 #+LAST_MODIFIED: [2022-12-29 Thu 18:58]
 

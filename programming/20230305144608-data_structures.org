@@ -2,6 +2,8 @@
 :ID:       7b067666-ea63-4804-a784-3e541fbf6808
 :END:
 #+TITLE: Data Structures
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-03-05 Sun 14:46]
 #+LAST_MODIFIED: [2023-03-05 Sun 16:59]
 

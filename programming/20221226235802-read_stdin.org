@@ -2,6 +2,8 @@
 :ID:       1dceb867-26b2-42fa-b916-5992b7ac7afe
 :END:
 #+TITLE: Read stdin
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-26 Mon 23:58]
 #+LAST_MODIFIED: [2022-12-27 Tue 00:01]
 * How to use stdin in nim :nim:

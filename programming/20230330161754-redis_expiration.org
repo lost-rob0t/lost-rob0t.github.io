@@ -2,6 +2,8 @@
 :ID:       d7ec3a25-ea89-4ab5-ac11-dd4fd05f94a9
 :END:
 #+TITLE: redis expiration
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-03-30 Thu 16:17]
 #+LAST_MODIFIED: [2023-03-30 Thu 16:18]
 * Expiration

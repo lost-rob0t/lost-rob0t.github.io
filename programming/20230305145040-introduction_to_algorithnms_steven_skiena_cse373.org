@@ -2,6 +2,8 @@
 :ID:       882aaec2-cd54-4e34-bb55-fbbe20e632cb
 :END:
 #+TITLE: Introduction to Algorithms Steven skiena (CSE373)
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-03-05 Sun 14:50]
 #+LAST_MODIFIED: [2023-03-05 Sun 16:04]
 

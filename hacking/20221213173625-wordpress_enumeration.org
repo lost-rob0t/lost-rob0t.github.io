@@ -3,6 +3,8 @@
 :ROAM_TAGS: recon user enumeration  wordpress hacking
 :END:
 #+title: WordPress Enumeration
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2022-12-17 12:03:14]
 #+LAST_MODIFIED: [2022-12-18 Sun 23:04]
 #+filetags: recon wordpress enumeration

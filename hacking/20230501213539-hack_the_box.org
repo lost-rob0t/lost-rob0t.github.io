@@ -2,6 +2,8 @@
 :ID:       65d9cc7b-d426-4ca4-9693-4c530264f830
 :END:
 #+TITLE: Hack The Box
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-05-01 Mon 21:35]
 #+LAST_MODIFIED: [2023-05-01 Mon 21:36]
 

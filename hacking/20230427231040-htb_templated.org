@@ -2,6 +2,8 @@
 :ID:       02d74abd-44af-4db0-adc2-c2455e438e90
 :END:
 #+TITLE:  HTB Templated
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-04-27 Thu 23:10]
 #+LAST_MODIFIED: [2023-04-27 Thu 23:15]
 

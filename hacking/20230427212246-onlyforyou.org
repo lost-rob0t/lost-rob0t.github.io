@@ -2,6 +2,8 @@
 :ID:       15039615-8359-410b-a6a5-ff05f3e39465
 :END:
 #+TITLE: OnlyForYou
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-04-27 Thu 21:22]
 #+LAST_MODIFIED: [2023-05-26 Fri 21:51]
 

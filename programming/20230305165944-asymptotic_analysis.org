@@ -2,6 +2,8 @@
 :ID:       8534f2b6-39d4-4814-a1f6-b4ec9e379a84
 :END:
 #+TITLE: Asymptotic Analysis
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-03-05 Sun 16:59]
 #+LAST_MODIFIED: [2023-03-05 Sun 17:04]
 

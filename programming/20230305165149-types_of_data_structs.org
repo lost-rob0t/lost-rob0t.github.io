@@ -2,6 +2,8 @@
 :ID:       eaaac702-98eb-4986-80b2-8cef48e4c49d
 :END:
 #+TITLE: Types of data structs
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-03-05 Sun 16:51]
 #+LAST_MODIFIED: [2023-03-05 Sun 16:58]
 

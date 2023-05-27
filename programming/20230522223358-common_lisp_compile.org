@@ -2,6 +2,8 @@
 :ID:       a1695288-6251-42b5-a860-087ad7175652
 :END:
 #+TITLE: common lisp compile
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
 #+CREATED: [2023-05-22 Mon 22:33]
 #+LAST_MODIFIED: [2023-05-26 Fri 23:32]
 * How to Compile a image :lisp:
