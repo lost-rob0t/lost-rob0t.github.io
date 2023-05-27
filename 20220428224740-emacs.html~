@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:32 -->
+<!-- 2023-05-26 Fri 23:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs</title>
@@ -200,41 +200,41 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org789ad97">1. Emacs Page</a></li>
-<li><a href="#org8bff29f">2. Tips and tricks</a>
+<li><a href="#orge269e44">1. Emacs Page</a></li>
+<li><a href="#org0bd17e6">2. Tips and tricks</a>
 <ul>
-<li><a href="#org52b9306">2.1. Org</a>
+<li><a href="#orgb84f659">2.1. Org</a>
 <ul>
-<li><a href="#org87ea363">2.1.1. Load u2l into a org document</a></li>
+<li><a href="#org1843ddf">2.1.1. Load u2l into a org document</a></li>
 </ul>
 </li>
-<li><a href="#org9d7d4d5">2.2. Doom Emacs</a></li>
-<li><a href="#org01ffd1f">2.3. Yasnippet</a></li>
-<li><a href="#orge655c42">2.4. Org</a></li>
+<li><a href="#org9255f5a">2.2. Doom Emacs</a></li>
+<li><a href="#orgf15eb5a">2.3. Yasnippet</a></li>
+<li><a href="#org57ff8df">2.4. Org</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org789ad97" class="outline-2">
-<h2 id="org789ad97"><span class="section-number-2">1.</span> Emacs Page</h2>
+<div id="outline-container-orge269e44" class="outline-2">
+<h2 id="orge269e44"><span class="section-number-2">1.</span> Emacs Page</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This is a hub of emacs things related
 </p>
 </div>
 </div>
-<div id="outline-container-org8bff29f" class="outline-2">
-<h2 id="org8bff29f"><span class="section-number-2">2.</span> Tips and tricks</h2>
+<div id="outline-container-org0bd17e6" class="outline-2">
+<h2 id="org0bd17e6"><span class="section-number-2">2.</span> Tips and tricks</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org52b9306" class="outline-3">
-<h3 id="org52b9306"><span class="section-number-3">2.1.</span> Org</h3>
+<div id="outline-container-orgb84f659" class="outline-3">
+<h3 id="orgb84f659"><span class="section-number-3">2.1.</span> Org</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org87ea363" class="outline-4">
-<h4 id="org87ea363"><span class="section-number-4">2.1.1.</span> Load u2l into a org document</h4>
+<div id="outline-container-org1843ddf" class="outline-4">
+<h4 id="org1843ddf"><span class="section-number-4">2.1.1.</span> Load u2l into a org document</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <p>
 url2org function for importing info from the web
@@ -253,24 +253,24 @@ url2org function for importing info from the web
 </div>
 </div>
 
-<div id="outline-container-org9d7d4d5" class="outline-3">
-<h3 id="org9d7d4d5"><span class="section-number-3">2.2.</span> Doom Emacs</h3>
+<div id="outline-container-org9255f5a" class="outline-3">
+<h3 id="org9255f5a"><span class="section-number-3">2.2.</span> Doom Emacs</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 <a href="2022-04-30-010756-doom_emacs.html#ID-6dd02406-f2d1-4ff2-8a39-2590597c44bf">Doom Emacs</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org01ffd1f" class="outline-3">
-<h3 id="org01ffd1f"><span class="section-number-3">2.3.</span> Yasnippet</h3>
+<div id="outline-container-orgf15eb5a" class="outline-3">
+<h3 id="orgf15eb5a"><span class="section-number-3">2.3.</span> Yasnippet</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li><a href="2022-09-26-184941-yasnippet_multi_choice.html#ID-19dae36d-a4f9-49d1-9bc3-d5734ff95bde">Yasnippet multi choice</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge655c42" class="outline-3">
-<h3 id="orge655c42"><span class="section-number-3">2.4.</span> Org</h3>
+<div id="outline-container-org57ff8df" class="outline-3">
+<h3 id="org57ff8df"><span class="section-number-3">2.4.</span> Org</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li><a href="20221216043133-publish_org_roam.html#ID-0ca70283-a104-46aa-82f0-1d98608209b9">Publish Org Roam</a></li>
@@ -280,7 +280,7 @@ url2org function for importing info from the web
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:32</p>
+<p class="date">Created: 2023-05-26 Fri 23:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

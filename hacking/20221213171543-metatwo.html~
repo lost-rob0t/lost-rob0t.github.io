@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:32 -->
+<!-- 2023-05-26 Fri 23:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MetaTwo</title>
@@ -201,13 +201,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgda0578c">1. MetaTwo</a>
+<li><a href="#org1b20956">1. MetaTwo</a>
 <ul>
-<li><a href="#orgec36ec8">1.1. Nmap Scan</a></li>
-<li><a href="#orgb992b03">1.2. HTTP service</a>
+<li><a href="#orgaf67004">1.1. Nmap Scan</a></li>
+<li><a href="#org8f9a7a4">1.2. HTTP service</a>
 <ul>
-<li><a href="#orgd408104">1.2.1. Wordpress Enumeration</a></li>
-<li><a href="#org5d73bc1">1.2.2. BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></a></li>
+<li><a href="#org0eda52d">1.2.1. Wordpress Enumeration</a></li>
+<li><a href="#org34356a7">1.2.2. BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></a></li>
 </ul>
 </li>
 </ul>
@@ -218,18 +218,18 @@
 <ul class="org-ul">
 <li><a href="../index.html#ID-c72d4e02-0e32-424c-b4b3-c471adbf4598">Index</a></li>
 </ul>
-<div id="outline-container-orgda0578c" class="outline-2">
-<h2 id="orgda0578c"><span class="section-number-2">1.</span> MetaTwo</h2>
+<div id="outline-container-org1b20956" class="outline-2">
+<h2 id="org1b20956"><span class="section-number-2">1.</span> MetaTwo</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 I start out by scanning the host
 </p>
 </div>
 
-<div id="outline-container-orgec36ec8" class="outline-3">
-<h3 id="orgec36ec8"><span class="section-number-3">1.1.</span> Nmap Scan</h3>
+<div id="outline-container-orgaf67004" class="outline-3">
+<h3 id="orgaf67004"><span class="section-number-3">1.1.</span> Nmap Scan</h3>
 <div class="outline-text-3" id="text-1-1">
-<pre class="example" id="orge37434a">
+<pre class="example" id="org6442d60">
 # Nmap 7.92 scan initiated Wed Nov  2 23:56:39 2022 as: nmap -A -oA scans/10.10.11.186 10.10.11.186
 Nmap scan report for 10.10.11.186
 Host is up (0.034s latency).
@@ -274,26 +274,26 @@ from the nmap scan you see there is a hostname <code>metapress.htb</code>. put t
 </div>
 </div>
 
-<div id="outline-container-orgb992b03" class="outline-3">
-<h3 id="orgb992b03"><span class="section-number-3">1.2.</span> HTTP service</h3>
+<div id="outline-container-org8f9a7a4" class="outline-3">
+<h3 id="org8f9a7a4"><span class="section-number-3">1.2.</span> HTTP service</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 On the http service there is a wordpress install.
 </p>
 
 
-<div id="org658d619" class="figure">
+<div id="org8a1b639" class="figure">
 <p><img src="MetaTwo/2022-12-13_18-34-32_screenshot.png" alt="2022-12-13_18-34-32_screenshot.png" />
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd408104" class="outline-4">
-<h4 id="orgd408104"><span class="section-number-4">1.2.1.</span> Wordpress Enumeration</h4>
+<div id="outline-container-org0eda52d" class="outline-4">
+<h4 id="org0eda52d"><span class="section-number-4">1.2.1.</span> Wordpress Enumeration</h4>
 <div class="outline-text-4" id="text-1-2-1">
 </div>
 <ol class="org-ol">
-<li><a id="org361344a"></a>Username enumeration<br />
+<li><a id="orga5b88bb"></a>Username enumeration<br />
 <div class="outline-text-5" id="text-1-2-1-1">
 <p>
 First thing i try is searching by the author tag, i dont see any
@@ -302,13 +302,13 @@ First thing i try is searching by the author tag, i dont see any
 <p>
 Going to
 </p>
-<pre class="example" id="org3f5ce11">
+<pre class="example" id="orgf1e14b7">
 http://metapress.htb/?author=1
 </pre>
 <p>
 Takes me to
 </p>
-<pre class="example" id="org7c48e81">
+<pre class="example" id="org2179215">
 http://metapress.htb/author/admin/
 </pre>
 <p>
@@ -318,7 +318,7 @@ So admin user is named <code>admin</code>.
 <p>
 I want to be sure there is no other users so i check the wp-json api
 </p>
-<pre class="example" id="orgfe14099">
+<pre class="example" id="org9f89b84">
 http://metapress.htb/wp-json/wp/v2/users
 </pre>
 
@@ -359,13 +359,13 @@ Looks like its just admin user
 </div>
 </li>
 
-<li><a id="orge0a9c02"></a>Wpscan<br />
+<li><a id="org9f54279"></a>Wpscan<br />
 <div class="outline-text-5" id="text-1-2-1-2">
 <p>
 So after i find out what users are on the box i start wpscan.
 </p>
 
-<pre class="example" id="orga97efb5">
+<pre class="example" id="orgb890255">
 _______________________________________________________________
          __          _______   _____
          \ \        / /  __ \ / ____|
@@ -444,7 +444,7 @@ Wp scan has found some usfule things like the fact <code>/readme.html</code> is 
 </p>
 </div>
 </li>
-<li><a id="org727b92e"></a>Readme.html<br />
+<li><a id="org1983e4c"></a>Readme.html<br />
 <div class="outline-text-5" id="text-1-2-1-3">
 <p>
 Checking the readme.html should be done whever you see it, it contains helpful info.
@@ -456,7 +456,7 @@ In this case i dont see much here
 </div>
 </li>
 
-<li><a id="orge9362ff"></a>Plugin enumeration<br />
+<li><a id="orge3f68d2"></a>Plugin enumeration<br />
 <div class="outline-text-5" id="text-1-2-1-4">
 <p>
 Now wpscan did a poor job of finding plugins (maybe i should make my own?)
@@ -469,12 +469,12 @@ The best way is to check the html source
 </div>
 
 <ol class="org-ol">
-<li><a id="org39a228f"></a>Checking the Html Source<br />
+<li><a id="org735ba13"></a>Checking the Html Source<br />
 <div class="outline-text-6" id="text-1-2-1-4-1">
 <p>
 Checking the source I find the theme is called <code>twentytwentyone</code> version 1.1
 </p>
-<pre class="example" id="org7f05151">
+<pre class="example" id="org5aa2b95">
 http://metapress.htb/wp-content/themes/twentytwentyone/assets/css/print.css?ver=1.1
 </pre>
 <p>
@@ -528,15 +528,15 @@ I cut down on all the extra stuff, what you can see out of this, is that there i
 </ol>
 </div>
 
-<div id="outline-container-org5d73bc1" class="outline-4">
-<h4 id="org5d73bc1"><span class="section-number-4">1.2.2.</span> BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></h4>
+<div id="outline-container-org34356a7" class="outline-4">
+<h4 id="org34356a7"><span class="section-number-4">1.2.2.</span> BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 Searching bookingpress right away shows that it is vulnerable to a unauthenticated <a href="20221213185522-sql_injection.html#ID-81d62666-4ce8-4244-b498-739a680f9673">SQL Injection</a>.
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org4b2fad7"></a>BookingPress &lt; 1.0.11 - Unauthenticated SQL Injection<br />
+<li><a id="org1581585"></a>BookingPress &lt; 1.0.11 - Unauthenticated SQL Injection<br />
 <div class="outline-text-5" id="text-1-2-2-1">
 <p>
 Description
@@ -548,7 +548,7 @@ The plugin fails to properly sanitize user supplied POST data before it is used 
 </div>
 
 <ol class="org-ol">
-<li><a id="org1d424e8"></a>Proof of Concept<br />
+<li><a id="org33a30d8"></a>Proof of Concept<br />
 <div class="outline-text-6" id="text-1-2-2-1-1">
 <pre class="example">
 - Create a new "category" and associate it with a new "service" via the BookingPress admin menu (/wp-admin/admin.php?page=bookingpress_services)
@@ -572,7 +572,7 @@ Time based payload:  curl -i 'https://example.com/wp-admin/admin-ajax.php' \
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:32</p>
+<p class="date">Created: 2023-05-26 Fri 23:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

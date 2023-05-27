@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:32 -->
+<!-- 2023-05-26 Fri 23:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hacking Python Eval</title>
@@ -200,17 +200,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6801f7c">1. Hacking Python's eval</a>
+<li><a href="#orgf749f37">1. Hacking Python's eval</a>
 <ul>
-<li><a href="#org111f213">1.1. How eval works</a></li>
+<li><a href="#org0b554b0">1.1. How eval works</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org6801f7c" class="outline-2">
-<h2 id="org6801f7c"><span class="section-number-2">1.</span> Hacking Python's eval</h2>
+<div id="outline-container-orgf749f37" class="outline-2">
+<h2 id="orgf749f37"><span class="section-number-2">1.</span> Hacking Python's eval</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Never Ever use eval in production code where it will run user input.
@@ -219,8 +219,8 @@ Users could input a payload and run nasty python code.
 </div>
 
 
-<div id="outline-container-org111f213" class="outline-3">
-<h3 id="org111f213"><span class="section-number-3">1.1.</span> How eval works</h3>
+<div id="outline-container-org0b554b0" class="outline-3">
+<h3 id="org0b554b0"><span class="section-number-3">1.1.</span> How eval works</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Eval can be used to dynamically evaluate python expressions from a string. it can also take bytecode or even compiled code based input.
@@ -237,7 +237,7 @@ Note that the <code>import</code> function can not be used in a eval, instead us
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:32</p>
+<p class="date">Created: 2023-05-26 Fri 23:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

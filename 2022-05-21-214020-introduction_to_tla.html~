@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:32 -->
+<!-- 2023-05-26 Fri 23:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Introduction to TLA+</title>
@@ -200,15 +200,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org44b9785">1. What is TLA+</a>
+<li><a href="#orgcdf8c19">1. What is TLA+</a>
 <ul>
-<li><a href="#org24b9669">1.1. What is a digital system?</a></li>
-<li><a href="#org826f48b">1.2. What does "high level" mean</a></li>
-<li><a href="#org59bd6d8">1.3. What can you check with TLA+</a></li>
-<li><a href="#orgd82a741">1.4. Why model a concurent system as a sequence of steps?</a></li>
-<li><a href="#orgc7f8894">1.5. State Machine</a>
+<li><a href="#orga4f15cd">1.1. What is a digital system?</a></li>
+<li><a href="#org0405aae">1.2. What does "high level" mean</a></li>
+<li><a href="#org83a7f6d">1.3. What can you check with TLA+</a></li>
+<li><a href="#orgbb112ab">1.4. Why model a concurent system as a sequence of steps?</a></li>
+<li><a href="#orgbd88fc9">1.5. State Machine</a>
 <ul>
-<li><a href="#org364ffac">1.5.1. What is a state machine?</a></li>
+<li><a href="#org5b19195">1.5.1. What is a state machine?</a></li>
 </ul>
 </li>
 </ul>
@@ -216,8 +216,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org44b9785" class="outline-2">
-<h2 id="org44b9785"><span class="section-number-2">1.</span> What is TLA+</h2>
+<div id="outline-container-orgcdf8c19" class="outline-2">
+<h2 id="orgcdf8c19"><span class="section-number-2">1.</span> What is TLA+</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 It is a lanaguage for high-level modeling of digital systems.
@@ -234,8 +234,8 @@ you can find design errors and correct them before writing any code.
 </p>
 </div>
 
-<div id="outline-container-org24b9669" class="outline-3">
-<h3 id="org24b9669"><span class="section-number-3">1.1.</span> What is a digital system?</h3>
+<div id="outline-container-orga4f15cd" class="outline-3">
+<h3 id="orga4f15cd"><span class="section-number-3">1.1.</span> What is a digital system?</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 A digital system includes:
@@ -252,8 +252,8 @@ You can abstract its continuouse evolution as a sequence of discrete events
 </p>
 </div>
 </div>
-<div id="outline-container-org826f48b" class="outline-3">
-<h3 id="org826f48b"><span class="section-number-3">1.2.</span> What does "high level" mean</h3>
+<div id="outline-container-org0405aae" class="outline-3">
+<h3 id="org0405aae"><span class="section-number-3">1.2.</span> What does "high level" mean</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 high level means above the code level/implentation level
@@ -262,8 +262,8 @@ high level means above the code level/implentation level
 </div>
 
 
-<div id="outline-container-org59bd6d8" class="outline-3">
-<h3 id="org59bd6d8"><span class="section-number-3">1.3.</span> What can you check with TLA+</h3>
+<div id="outline-container-org83a7f6d" class="outline-3">
+<h3 id="org83a7f6d"><span class="section-number-3">1.3.</span> What can you check with TLA+</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 you use TLA+ to ensure the system you build "works right".
@@ -281,8 +281,8 @@ the system satified property if every single execution does.
 </div>
 
 
-<div id="outline-container-orgd82a741" class="outline-3">
-<h3 id="orgd82a741"><span class="section-number-3">1.4.</span> Why model a concurent system as a sequence of steps?</h3>
+<div id="outline-container-orgbb112ab" class="outline-3">
+<h3 id="orgbb112ab"><span class="section-number-3">1.4.</span> Why model a concurent system as a sequence of steps?</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 it might be strange to describe a concurent system as one.
@@ -295,8 +295,8 @@ you can simulate one with a sequential program, but why not do it? its simple.
 </div>
 
 
-<div id="outline-container-orgc7f8894" class="outline-3">
-<h3 id="orgc7f8894"><span class="section-number-3">1.5.</span> State Machine</h3>
+<div id="outline-container-orgbd88fc9" class="outline-3">
+<h3 id="orgbd88fc9"><span class="section-number-3">1.5.</span> State Machine</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 A execution is a sequence of states.
@@ -316,8 +316,8 @@ We want to speicify all possible behaviors of a system.
 </div>
 
 
-<div id="outline-container-org364ffac" class="outline-4">
-<h4 id="org364ffac"><span class="section-number-4">1.5.1.</span> What is a state machine?</h4>
+<div id="outline-container-org5b19195" class="outline-4">
+<h4 id="org5b19195"><span class="section-number-4">1.5.1.</span> What is a state machine?</h4>
 <div class="outline-text-4" id="text-1-5-1">
 <p>
 A state machine is descibed as:
@@ -350,7 +350,7 @@ so basicly a state machine is described by:
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:32</p>
+<p class="date">Created: 2023-05-26 Fri 23:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

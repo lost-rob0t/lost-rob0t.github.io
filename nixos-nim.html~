@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:32 -->
+<!-- 2023-05-26 Fri 23:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nixos Nim</title>
@@ -200,12 +200,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9fcaa16">1. Nim on NixOs</a>
+<li><a href="#orgc7c4340">1. Nim on NixOs</a>
 <ul>
-<li><a href="#orga55f27b">1.1. Tips and tricks</a>
+<li><a href="#org0d12683">1.1. Tips and tricks</a>
 <ul>
-<li><a href="#org5d498a7">1.1.1. Packaging</a></li>
-<li><a href="#org2b4d434">1.1.2. Setting up a nim enviroment with nix flake</a></li>
+<li><a href="#orgce645cf">1.1.1. Packaging</a></li>
+<li><a href="#org9df50c6">1.1.2. Setting up a nim enviroment with nix flake</a></li>
 </ul>
 </li>
 </ul>
@@ -213,24 +213,24 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org9fcaa16" class="outline-2">
-<h2 id="org9fcaa16"><span class="section-number-2">1.</span> Nim on <a href="2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a></h2>
+<div id="outline-container-orgc7c4340" class="outline-2">
+<h2 id="orgc7c4340"><span class="section-number-2">1.</span> Nim on <a href="2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a></h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orga55f27b" class="outline-3">
-<h3 id="orga55f27b"><span class="section-number-3">1.1.</span> Tips and tricks</h3>
+<div id="outline-container-org0d12683" class="outline-3">
+<h3 id="org0d12683"><span class="section-number-3">1.1.</span> Tips and tricks</h3>
 <div class="outline-text-3" id="text-1-1">
 </div>
-<div id="outline-container-org5d498a7" class="outline-4">
-<h4 id="org5d498a7"><span class="section-number-4">1.1.1.</span> Packaging</h4>
+<div id="outline-container-orgce645cf" class="outline-4">
+<h4 id="orgce645cf"><span class="section-number-4">1.1.1.</span> Packaging</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li><a href="Tutorial/2022-05-17-053529-how_to_package_nim.html#ID-69dc4e90-c532-4f12-807f-89f77036e8d1">how to package nim</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2b4d434" class="outline-4">
-<h4 id="org2b4d434"><span class="section-number-4">1.1.2.</span> Setting up a nim enviroment with nix flake</h4>
+<div id="outline-container-org9df50c6" class="outline-4">
+<h4 id="org9df50c6"><span class="section-number-4">1.1.2.</span> Setting up a nim enviroment with nix flake</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li><a href="Tutorial/2022-05-16-045822-nim_flake_example.html#ID-62bf048c-8b3b-4356-a939-ac7132bfaae2">nim-flake-example</a></li>
@@ -241,7 +241,7 @@
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:32</p>
+<p class="date">Created: 2023-05-26 Fri 23:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

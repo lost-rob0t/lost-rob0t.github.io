@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:33 -->
+<!-- 2023-05-27 Sat 00:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>practical cl simple db</title>
@@ -200,18 +200,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2af815f">1. About</a></li>
-<li><a href="#orgde88386">2. Task</a>
+<li><a href="#org289e65b">1. About</a></li>
+<li><a href="#org5e6b823">2. Task</a>
 <ul>
-<li><a href="#org591aabb">2.1. Create a Cd</a></li>
-<li><a href="#orgc713801">2.2. Creating a global varible</a></li>
-<li><a href="#org1be3627">2.3. Pushing data to a list</a></li>
-<li><a href="#orgedd46b1">2.4. Homiconicity</a></li>
-<li><a href="#orgd7e9bb4">2.5. output formatiing</a></li>
-<li><a href="#org8b81502">2.6. Getting user input</a></li>
-<li><a href="#org25af785">2.7. Loops</a></li>
-<li><a href="#org62e495f">2.8. Query The database</a></li>
-<li><a href="#org2f44990">2.9. Macros</a></li>
+<li><a href="#org9467c76">2.1. Create a Cd</a></li>
+<li><a href="#org3f1eb3c">2.2. Creating a global varible</a></li>
+<li><a href="#org518a783">2.3. Pushing data to a list</a></li>
+<li><a href="#orgc461bd1">2.4. Homiconicity</a></li>
+<li><a href="#org7d23762">2.5. output formatiing</a></li>
+<li><a href="#org2c93808">2.6. Getting user input</a></li>
+<li><a href="#org72c364e">2.7. Loops</a></li>
+<li><a href="#org40692b9">2.8. Query The database</a></li>
+<li><a href="#org5e44359">2.9. Macros</a></li>
 </ul>
 </li>
 </ul>
@@ -222,8 +222,8 @@
 In this im going to build a simple cd database. This is from the Book <a href="20220606214142-practical_common_lisp.html#ID-88d459b3-70ba-42c4-9062-6625fc1035f7">Practical Common Lisp.</a>
 </p>
 
-<div id="outline-container-org2af815f" class="outline-2">
-<h2 id="org2af815f"><span class="section-number-2">1.</span> About</h2>
+<div id="outline-container-org289e65b" class="outline-2">
+<h2 id="org289e65b"><span class="section-number-2">1.</span> About</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 We will track of cds that need to be rip, storing title artist, rating and if its been ripped.
@@ -236,12 +236,12 @@ It will be implemented in a <a href="programming/20220606214755-property_list.ht
 </div>
 
 
-<div id="outline-container-orgde88386" class="outline-2">
-<h2 id="orgde88386"><span class="section-number-2">2.</span> Task</h2>
+<div id="outline-container-org5e6b823" class="outline-2">
+<h2 id="org5e6b823"><span class="section-number-2">2.</span> Task</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org591aabb" class="outline-3">
-<h3 id="org591aabb"><span class="section-number-3">2.1.</span> Create a Cd</h3>
+<div id="outline-container-org9467c76" class="outline-3">
+<h3 id="org9467c76"><span class="section-number-3">2.1.</span> Create a Cd</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Create a function that creates a <a href="programming/20220606214755-property_list.html#ID-433dae2b-c05f-445b-b2a6-75e046796b5f">Property list</a>
@@ -263,8 +263,8 @@ Make a cd
 </div>
 </div>
 
-<div id="outline-container-orgc713801" class="outline-3">
-<h3 id="orgc713801"><span class="section-number-3">2.2.</span> Creating a global varible</h3>
+<div id="outline-container-org3f1eb3c" class="outline-3">
+<h3 id="org3f1eb3c"><span class="section-number-3">2.2.</span> Creating a global varible</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Create a Global Variable. when you suround it with * that is a convention for a global variable
@@ -277,8 +277,8 @@ A single record is not enough for a database.
 </div>
 </div>
 
-<div id="outline-container-org1be3627" class="outline-3">
-<h3 id="org1be3627"><span class="section-number-3">2.3.</span> Pushing data to a list</h3>
+<div id="outline-container-org518a783" class="outline-3">
+<h3 id="org518a783"><span class="section-number-3">2.3.</span> Pushing data to a list</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Abstract on the <a href="programming/20220606221221-push_macro.html#ID-e2c2d083-0a4e-4f8a-b7d7-219625b02040">PUSH macro</a>.
@@ -300,8 +300,8 @@ Add a record
 </div>
 </div>
 </div>
-<div id="outline-container-orgedd46b1" class="outline-3">
-<h3 id="orgedd46b1"><span class="section-number-3">2.4.</span> Homiconicity</h3>
+<div id="outline-container-orgc461bd1" class="outline-3">
+<h3 id="orgc461bd1"><span class="section-number-3">2.4.</span> Homiconicity</h3>
 <div class="outline-text-3" id="text-2-4">
 <p>
 Show the contents of the database
@@ -316,8 +316,8 @@ Showing the contents of the database inthis manner is not easy on the eyes
 </p>
 </div>
 </div>
-<div id="outline-container-orgd7e9bb4" class="outline-3">
-<h3 id="orgd7e9bb4"><span class="section-number-3">2.5.</span> output formatiing</h3>
+<div id="outline-container-org7d23762" class="outline-3">
+<h3 id="org7d23762"><span class="section-number-3">2.5.</span> output formatiing</h3>
 <div class="outline-text-3" id="text-2-5">
 <div class="org-src-container">
 <pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">dump-db</span> ()
@@ -341,8 +341,8 @@ Dump the db
 </div>
 
 
-<div id="outline-container-org8b81502" class="outline-3">
-<h3 id="org8b81502"><span class="section-number-3">2.6.</span> Getting user input</h3>
+<div id="outline-container-org2c93808" class="outline-3">
+<h3 id="org2c93808"><span class="section-number-3">2.6.</span> Getting user input</h3>
 <div class="outline-text-3" id="text-2-6">
 <p>
 Lets make a prompt
@@ -376,8 +376,8 @@ Lets make inserting data into the database easier
 </div>
 
 
-<div id="outline-container-org25af785" class="outline-3">
-<h3 id="org25af785"><span class="section-number-3">2.7.</span> Loops</h3>
+<div id="outline-container-org72c364e" class="outline-3">
+<h3 id="org72c364e"><span class="section-number-3">2.7.</span> Loops</h3>
 <div class="outline-text-3" id="text-2-7">
 <p>
 Now lets add them in a loop
@@ -430,8 +430,8 @@ And the function to load it
 </div>
 </div>
 
-<div id="outline-container-org62e495f" class="outline-3">
-<h3 id="org62e495f"><span class="section-number-3">2.8.</span> Query The database</h3>
+<div id="outline-container-org40692b9" class="outline-3">
+<h3 id="org40692b9"><span class="section-number-3">2.8.</span> Query The database</h3>
 <div class="outline-text-3" id="text-2-8">
 <p>
 Function <code>REMOVE-IF-NOT</code> returns lists only matching the predicate.
@@ -473,8 +473,8 @@ There are many different ways one might want to query, instead lets make a funct
 </div>
 </div>
 
-<div id="outline-container-org2f44990" class="outline-3">
-<h3 id="org2f44990"><span class="section-number-3">2.9.</span> Macros</h3>
+<div id="outline-container-org5e44359" class="outline-3">
+<h3 id="org5e44359"><span class="section-number-3">2.9.</span> Macros</h3>
 <div class="outline-text-3" id="text-2-9">
 <p>
 A lisp macro is a code generator that is ran for you automatically by the compiller when a call to a macro is made. When the call is a macro it will not evaluate the arguments, passing them to the macro which will return a new lisp form.
@@ -484,7 +484,7 @@ A lisp macro is a code generator that is ran for you automatically by the compil
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:33</p>
+<p class="date">Created: 2023-05-27 Sat 00:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

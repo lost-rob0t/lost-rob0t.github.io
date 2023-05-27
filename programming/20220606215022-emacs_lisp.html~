@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:32 -->
+<!-- 2023-05-26 Fri 23:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Lisp</title>
@@ -200,21 +200,21 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgcc07f9e">1. Emacs Lisp</a>
+<li><a href="#orgaa7f9ad">1. Emacs Lisp</a>
 <ul>
-<li><a href="#org3bd529a">1.1. Values</a></li>
-<li><a href="#orgc61bb08">1.2. Eval/Form</a></li>
-<li><a href="#orge38c77f">1.3. Symbols</a></li>
-<li><a href="#org251df7d">1.4. Prefix v infix</a></li>
-<li><a href="#org48f16aa">1.5. Error Handling</a></li>
+<li><a href="#orgbaf076a">1.1. Values</a></li>
+<li><a href="#orgde1ac6b">1.2. Eval/Form</a></li>
+<li><a href="#org6595ae8">1.3. Symbols</a></li>
+<li><a href="#org14ef438">1.4. Prefix v infix</a></li>
+<li><a href="#org58d11b8">1.5. Error Handling</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgcc07f9e" class="outline-2">
-<h2 id="orgcc07f9e"><span class="section-number-2">1.</span> Emacs Lisp</h2>
+<div id="outline-container-orgaa7f9ad" class="outline-2">
+<h2 id="orgaa7f9ad"><span class="section-number-2">1.</span> Emacs Lisp</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Emacs lisp a lisp dialect for confguring Emacs.
@@ -222,8 +222,8 @@ Much of emacs is written in elisp, with some of it in C.
 </p>
 </div>
 
-<div id="outline-container-org3bd529a" class="outline-3">
-<h3 id="org3bd529a"><span class="section-number-3">1.1.</span> Values</h3>
+<div id="outline-container-orgbaf076a" class="outline-3">
+<h3 id="orgbaf076a"><span class="section-number-3">1.1.</span> Values</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Any value or object has a type. it may not always be readable
@@ -256,8 +256,8 @@ There are also types that are specific to emacs lisp.
 </div>
 
 
-<div id="outline-container-orgc61bb08" class="outline-3">
-<h3 id="orgc61bb08"><span class="section-number-3">1.2.</span> Eval/Form</h3>
+<div id="outline-container-orgde1ac6b" class="outline-3">
+<h3 id="orgde1ac6b"><span class="section-number-3">1.2.</span> Eval/Form</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 A form is any value that you can evaluate.
@@ -279,8 +279,8 @@ Code Examples
 </div>
 </div>
 
-<div id="outline-container-orge38c77f" class="outline-3">
-<h3 id="orge38c77f"><span class="section-number-3">1.3.</span> Symbols</h3>
+<div id="outline-container-org6595ae8" class="outline-3">
+<h3 id="org6595ae8"><span class="section-number-3">1.3.</span> Symbols</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 A symbol is a object, but does not self eval
@@ -290,8 +290,8 @@ When a symbol is evaluated the value is returned with the binding.
 </div>
 </div>
 
-<div id="outline-container-org251df7d" class="outline-3">
-<h3 id="org251df7d"><span class="section-number-3">1.4.</span> Prefix v infix</h3>
+<div id="outline-container-org14ef438" class="outline-3">
+<h3 id="org14ef438"><span class="section-number-3">1.4.</span> Prefix v infix</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Lisp uses prefix notation.
@@ -300,8 +300,8 @@ Any expesion that does a function eval, the first element is a function.
 </div>
 </div>
 
-<div id="outline-container-org48f16aa" class="outline-3">
-<h3 id="org48f16aa"><span class="section-number-3">1.5.</span> Error Handling</h3>
+<div id="outline-container-org58d11b8" class="outline-3">
+<h3 id="org58d11b8"><span class="section-number-3">1.5.</span> Error Handling</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li><a href="20230327155154-elisp_errors.html#ID-f284c2d8-6777-4ff5-94e1-a928628810d4">elisp errors</a></li>
@@ -311,7 +311,7 @@ Any expesion that does a function eval, the first element is a function.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:32</p>
+<p class="date">Created: 2023-05-26 Fri 23:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

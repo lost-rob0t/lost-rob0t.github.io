@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-26 Fri 23:32 -->
+<!-- 2023-05-26 Fri 23:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Yasnippet multi choice</title>
@@ -200,14 +200,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga3e8386">1. How to do multiple choice in yasnippet</a></li>
-<li><a href="#orgb773799">2. References</a></li>
+<li><a href="#orgbad27f0">1. How to do multiple choice in yasnippet</a></li>
+<li><a href="#orgf90ec13">2. References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga3e8386" class="outline-2">
-<h2 id="orga3e8386"><span class="section-number-2">1.</span> How to do multiple choice in yasnippet</h2>
+<div id="outline-container-orgbad27f0" class="outline-2">
+<h2 id="orgbad27f0"><span class="section-number-2">1.</span> How to do multiple choice in yasnippet</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Example from the blog
@@ -225,8 +225,8 @@ $0
 </div>
 </div>
 
-<div id="outline-container-orgb773799" class="outline-2">
-<h2 id="orgb773799"><span class="section-number-2">2.</span> References</h2>
+<div id="outline-container-orgf90ec13" class="outline-2">
+<h2 id="orgf90ec13"><span class="section-number-2">2.</span> References</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <a href="https://pragmaticemacs.wordpress.com/2017/06/25/multiple-choices-in-yasnippets/">https://pragmaticemacs.wordpress.com/2017/06/25/multiple-choices-in-yasnippets/</a>
@@ -235,7 +235,7 @@ $0
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-26 Fri 23:32</p>
+<p class="date">Created: 2023-05-26 Fri 23:33</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -3,8 +3,8 @@
 :END:
 #+title: Index
 #+CREATED: [2022-12-17 12:03:14]
-#+LAST_MODIFIED: [2023-05-26 Fri 23:01]
-#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/setup.org
+#+LAST_MODIFIED: [2023-05-27 Sat 00:32]
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
 * Welcome
 Welcome to my brain dump that i like to call a wiki of sorts.
 
