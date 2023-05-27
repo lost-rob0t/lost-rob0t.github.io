@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       6969f98a-8d6d-4336-a574-f5809bf86149
+:END:
+#+TITLE: introduction to data structures
+#+CREATED: [2023-03-05 Sun 16:31]
+#+LAST_MODIFIED: [2023-03-05 Sun 16:50]
+
+* When data becomes information
+If data is arrange in a systematic way then it gets a structure and becomes meaningful.
+
+
+
+* Data types v Abstract data types
+** Data type
+A data type defines a certain domain of values and it defines what operations can be done ith it.
+Example in nim you can add and subtract ints, basicly primitive types
+
+User types are types that you me or user of a language would define.
+
+** Abstract Data Types (ADT)
+These are like user defined types which define what operations can be preformed on them.
+The functions body are defined and ho it is done!
+
+In short they are a black box
+
+*** A stack ADT
+A Stack consists of elements of the same type in a sequential order
+Some example functions
+
++ push insert a element
++ pop delete a element
++ isEmpty checks if its empty
++ isFull checks if its full
++ initialize creating it with no elements

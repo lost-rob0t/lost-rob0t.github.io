@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       f2268937-46c0-4af9-8f5c-50a815c3de36
+:END:
+#+TITLE: Freecode camp College Algebra Notes
+#+CREATED: [2023-03-26 Sun 17:47]
+#+LAST_MODIFIED: [2023-03-26 Sun 18:02]
+
+* Introduction :math:
+This course is different from most courses, all the code is done in python.
+
+personally i will be using org mode, instead of goolag collab
+
+
+
+* Proportions
++

@@ -1,0 +1,163 @@
+:PROPERTIES:
+:ID:       91982b2c-1802-4fcd-b2a0-5e9fd4ef964b
+:END:
+#+TITLE: Build OCI containers in Nixos
+#+CREATED: [2022-12-23 Fri 20:14]
+#+LAST_MODIFIED: [2022-12-26 Mon 14:39]
+* TODO Build OCI containers in nix :docker:podman:oci:
+finish this!
+https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-dockerTools
+https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/docker/examples.nix
+
+
+OCI containers are a poorly documented aspect of nixos (as with most of it), in this page i will show you how to build and run OCI (docker) containers in nixos.
+
+Most of this document is lifted from [[https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/docker/examples.nix][this]] helpful nix source.
+
+
+** Main workflow
+
+Since nix changes how everything works, this includes how you packages and use OCI containers
+I will assume docker in this entry, becuase I had issues with podman.
+
+1. Create your docker-name.nix (or default.nix)
+2. after you are done build it
+3. load the derivation result into docker
+4. Run the docker container
+
+You can load and build that the same as such:
+#+begin_src shell
+docker load < $(nix-build default.nix)
+#+end_src
+
+*** Examples
+
+Here is a very basic oci image
+
+#+begin_src nix
+buildImage {
+    name = "bash";
+    tag = "latest";
+    copyToRoot = pkgs.buildEnv {
+      name = "image-root";
+      paths = [ pkgs.bashInteractive ];
+      pathsToLink = [ "/bin" ];
+    }
+}
+#+end_src
+
+**** Service
+Redis service example
+#+begin_src nix
+redis = buildImage {
+    name = "redis";
+    tag = "latest";
+
+    # for example's sake, we can layer redis on top of bash or debian
+    fromImage = bash;
+    # fromImage = debian;
+
+    copyToRoot = pkgs.buildEnv {
+      name = "image-root";
+      paths = [ pkgs.redis ];
+      pathsToLink = [ "/bin" ];
+    };
+
+    runAsRoot = ''
+      mkdir -p /data
+    '';
+
+    config = {
+      Cmd = [ "/bin/redis-server" ];
+      WorkingDir = "/data";
+      Volumes = {
+        "/data" = {};
+      };
+    };
+  };
+#+end_src
+
+Nginx
+
+#+begin_src nix
+  nginx = let
+    nginxPort = "80";
+    nginxConf = pkgs.writeText "nginx.conf" ''
+      user nobody nobody;
+      daemon off;
+      error_log /dev/stdout info;
+      pid /dev/null;
+      events {}
+      http {
+        access_log /dev/stdout;
+        server {
+          listen ${nginxPort};
+          index index.html;
+          location / {
+            root ${nginxWebRoot};
+          }
+        }
+      }
+    '';
+    nginxWebRoot = pkgs.writeTextDir "index.html" ''
+      <html><body><h1>Hello from NGINX</h1></body></html>
+    '';
+  in
+  buildLayeredImage {
+    name = "nginx-container";
+    tag = "latest";
+    contents = [
+      fakeNss
+      pkgs.nginx
+    ];
+
+    extraCommands = ''
+      mkdir -p tmp/nginx_client_body
+      # nginx still tries to read this directory even if error_log
+      # directive is specifying another file :/
+      mkdir -p var/log/nginx
+    '';
+
+    config = {
+      Cmd = [ "nginx" "-c" nginxConf ];
+      ExposedPorts = {
+        "${nginxPort}/tcp" = {};
+      };
+    };
+  };
+
+#+end_src
+
+**** Pulling Images
+Example of pulling a Docker Images
+
+#+begin_src nix
+nixFromDockerHub = pullImage {
+    imageName = "nixos/nix";
+    imageDigest = "sha256:85299d86263a3059cf19f419f9d286cc9f06d3c13146a8ebbb21b3437f598357";
+    sha256 = "19fw0n3wmddahzr20mhdqv6jkjn1kanh6n2mrr08ai53dr8ph5n7";
+    finalImageTag = "2.2.1";
+    finalImageName = "nix";
+};
+#+end_src
+
+**** Add to image
+Add Some packages to an existing image.
+#+begin_src nix
+onTopOfPulledImage = buildImage {
+    name = "onTopOfPulledImage";
+    tag = "latest";
+    fromImage = nixFromDockerHub;
+    copyToRoot = pkgs.buildEnv {
+      name = "image-root";
+      pathsToLink = [ "/bin" ];
+      paths = [ pkgs.hello ];
+    };
+  };
+#+end_src
+
+
+
+*** Star intel Example
+Heres a real example of couchdb that runs [[id:78157cd5-9681-4a64-b5c7-0f2b415cd446][star intel]].
+**** TODO Add my image stuff when i get it working!

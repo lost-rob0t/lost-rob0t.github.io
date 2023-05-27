@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       eaaac702-98eb-4986-80b2-8cef48e4c49d
+:END:
+#+TITLE: Types of data structs
+#+CREATED: [2023-03-05 Sun 16:51]
+#+LAST_MODIFIED: [2023-03-05 Sun 16:58]
+
+* Linear Data Structures
+A Linear data struct is one that is arranged sequentially in memory
+They also have only one predeccesor and one successor
+Examples:
++ Stack
++ Array
++ Queue
++ Linked list
+* None Linear Data Structures
+A non linear data struct is one that is not arrange in a sequential order.
+Examples:
++ Tree
++ Graph
+* Static Data Structs
+memory is allocated at compile time
+Max size is always fixed
+
+Examples:
++ Array
+
+
+* Dynamic data structs
+
+memory is allocated at run time, it is flexible
+
+Example:
++ Linked list

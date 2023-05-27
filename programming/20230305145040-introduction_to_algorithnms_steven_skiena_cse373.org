@@ -1,0 +1,45 @@
+:PROPERTIES:
+:ID:       882aaec2-cd54-4e34-bb55-fbbe20e632cb
+:END:
+#+TITLE: Introduction to Algorithms Steven skiena (CSE373)
+#+CREATED: [2023-03-05 Sun 14:50]
+#+LAST_MODIFIED: [2023-03-05 Sun 16:04]
+
+
+* What is an algorithm?
+And algorithm is the idea/ solution to a problem in computer science.
+
+We strive to create correct awnser on every single input.
+We measure efficient with [[id:a6dfee7d-c44e-4cbf-93c2-3461b91158f5][big o]] notation.
+
+** Correctness
+We need to prove that an algorithm always returns the wanted output of all "legal" problems.
+Algorithms must be specified to allow for a "provable" algorithm to exist, you find the quickest tour and not the best one.
+
+The solution must be well defined, what would you mean by "best".
+
+** Proofs
+Proofs are to why something is correct, algorithms are ideas behind a problem.
+you need to know why its correct if you dont you are probably wrong.
+
+
+** Expressing Algorithms
+You need to express the sequence of steps that an algorithm takes, you use english peusdocode and real languages to do this
+The best way to explain the algorithm is to use english
+Levels of descriptiveness
+
+1. english with pictures
+2. Pseudo code
+3. Actually programming language
+
+*** Ways to do this
+Explain it in english.
+Use a programming language
+*** Puesdocode
+it is a language between english and a programming
+
+
+
+
+
++ Next Notes: [[id:aa2d6d49-ec3f-4662-b3fa-be5690652278][CSE-373-lecture 2]]

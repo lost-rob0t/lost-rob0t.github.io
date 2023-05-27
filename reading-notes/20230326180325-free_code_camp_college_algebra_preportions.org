@@ -1,0 +1,92 @@
+:PROPERTIES:
+:ID:       90940f96-ad0c-4c24-bf8e-9f2b09454fa2
+:END:
+#+TITLE: free code camp college algebra preportions
+#+CREATED: [2023-03-26 Sun 18:03]
+#+LAST_MODIFIED: [2023-03-26 Sun 18:46]
+
+
+* Proportions :notes:math:
+Proportions are like saying 2 multiplications are equal
+5/10 = 2/4
+2 * 10 = 4 * 5
+To solve for x you multiply what diagonal you can, then divide by the other number.
+3/6 = x/4
+
+3 x 4 = 12
+12 % 6 = 2
+x = 2
+
+Proportions are mostly used to convert units
+
+How many miles in 20 kilometers?
+1mi/1.6km = /20km
+20 x 1 = 20
+20 / 1.6
+The answer is 12 1/2 miles
+* Code
+Setup a proportion
+#+BEGIN_SRC python :session one :results output replace
+n1 = 1
+d1 = 2
+n2 = 0
+d2 = 16
+if n2 == 0:
+    answer = d2 * n1 / d1
+    print("n2 = ", answer)
+if d2 == 0:
+    answer = n2 * d1 / n1
+    print("d2 = ", anwser)
+#+END_SRC
+
+#+RESULTS:
+: n2 =  8.0
+
+We Put 0 for the number we do not know and we use 2 if statements.
+
+
+* Extra problems
+
+** Mixed Numbers
+Mixed numbers can easily be represented in python, since fractions is the same as a division.
+Python Knows the order of operations.
+Example is 1 2/3 + 3 4/5 - 7
+
+#+BEGIN_SRC python :session one :results output replace
+print(1 + 2/3 + 3 + 4/5 - 7)
+#+END_SRC
+
+#+RESULTS:
+: -1.533333333333334
+
+** Representing floating points as a fraction
+What if we have this floating point and we want a fraction?
+
+#+BEGIN_SRC python :session one :results output replace
+x = 0.6666666
+#+END_SRC
+
+#+RESULTS:
+
+Multiply by 10
+#+BEGIN_SRC python :session one :results output replace
+x10 = x * 10
+print(x10)
+#+END_SRC
+
+#+RESULTS:
+: 6.666666
+
+Lets suptract the 1x from the 10x
+
+#+BEGIN_SRC python :session one :results output replace
+x9 = x10 - x
+print(x9)
+#+END_SRC
+
+#+RESULTS:
+: 5.9999994
+
+Anything that repeats for one digit is a factor of 9
+
+If you get repeating 9 that would be 9/9 so 1.

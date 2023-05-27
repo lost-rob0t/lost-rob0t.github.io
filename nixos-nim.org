@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       6dbd98c1-06ee-490f-a94b-308da099a6f2
+:ROAM_TAGS:
+:END:
+#+TITLE: Nixos Nim
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+* Nim on [[id:d0dc2504-21ff-4843-994d-e8abf1991ea0][NixOs]]
+** Tips and tricks
+*** Packaging
++ [[id:69dc4e90-c532-4f12-807f-89f77036e8d1][how to package nim]]
+*** Setting up a nim enviroment with nix flake
++ [[id:62bf048c-8b3b-4356-a939-ac7132bfaae2][nim-flake-example]]

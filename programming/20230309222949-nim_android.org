@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       8a01ff13-6724-4634-b901-074187c32a85
+:END:
+#+TITLE: nim android
+#+CREATED: [2023-03-09 Thu 22:29]
+#+LAST_MODIFIED: [2023-03-09 Thu 22:33]
+
+
+* Nim on android :nim:
+There are a number of libs to help develop nim programs on android
++ https://github.com/yglukhov/jnim
+  Native language integration with Java VM has never been easier!
+
++ https://github.com/yglukhov/nimx
+  Cross platform ui

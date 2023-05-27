@@ -1,0 +1,67 @@
+:PROPERTIES:
+:ID:       8819b564-caa6-4101-99ca-ab936c650714
+:ROAM_TAGS: SCADA
+:END:
+#+title: SCADA
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-18 Sun 23:09]
+#+author: NSASPY
+#+filetags: scada
+
++ [[id:c72d4e02-0e32-424c-b4b3-c471adbf4598][Index]]
+* TODO SCADA :SCADA:
+
+#+begin_quote
+There once was a city that lost its might
+After a SCADA hack in one single night
+The power went out
+And all we could shout
+Is "How could this happen, oh what a sight!" - Anon
+#+end_quote
+
+Supervisory control and data acquisition is a control system for high level supervision of machines and processes.
+It is used with Programable Logic controllers which control the processes/machines.
+
+** Control Operations
+
+#+DOWNLOADED: screenshot @ 2022-12-09 00:56:45
+[[file:SCADA/2022-12-09_00-56-45_screenshot.png]]
+
+
+*** Level 0
+Field Level devices.
+examples:
+ + Temperature sensors
+ + Control valves
+ + Flow sensors
+
+*** Level 1
+Level 1 contains input/output devices, and related processors
+This is where you will find Programmable logic controllers and remote terminal units.
+
+*** Level 2
+Cotains readsing and reports. Data is formated so that a operator using a Human Machine interface can make operating decisions to adjust or overide RTU or PLC controls.
+Data is Fed into a historian, which is often just a normal DBMS. The historian is used for analytics.
+
+*** Level 3
+Deals with production control level. it doesnt control the process but instead manages taget goals and monitoring.
+*** Level 4
+Production scheduling
+
+** Generations of SCADA
+Scada has evolvedd over the years as tech improved
+*** First Generation Monolithic
+Early Scada was done by larg minicomputuers. Networks didnt exists at the the time. At this point they was indpendent systems with no networking. Communication protocols was proprietary. Some was developed as turn key operations and ran on the PDP-11
+
+*** Secend Generation Distributed
+SCADA info and commands was distributed across multiple sites and was connected through a lan. Information was sent in real time. Each station was responsible for a task, which was more light weight at the time. Networking was not standardized. since they was proprietary few people knew if they newtork was secure.
+
+*** Third Generation Networked
+Like a Distributed network many systems can be reduced and networked through communications protocols. The network can be spread acrosse more than one LAN called a [[id:272b8475-d721-4782-9f7b-ba914c1a6597][Process Control network]].
+
+*** Forth Generation Web based
+This is where we are, the crux of problems
+With the advent of the internet let many SCADA systems to implement Web based Human machine interfaces and control panles
+
+*** Future: Cloud based
+Some are now using cloud based tech but the extent beyond just for analytics is not known as this needs more research.

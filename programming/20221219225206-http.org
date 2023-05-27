@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       55fa6669-d1f4-4956-abf0-a0c3c2aac23b
+:END:
+#+TITLE: HTTP
+#+CREATED: [2022-12-19 Mon 22:52]
+#+LAST_MODIFIED: [2022-12-19 Mon 22:52]
+* TODO Hypertext transfer protocol :HTTP::protocol:

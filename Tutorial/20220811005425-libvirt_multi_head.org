@@ -1,0 +1,99 @@
+:PROPERTIES:
+:ID:       96fa09b5-aaf3-402b-aacc-2820856ee3e8
+:ROAM_TAGS:
+:END:
+#+title: libvirt-multi-head
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+
+
+* Tutorial
+I Had an issue where spice was not letting me use multi head setup.
+Having two monitors and i find that when playing in my hackthebox vm its annoying to only have one monitor to reasearch and pwn,
+this is somthing i should fix.
+
+
+
+
+** Steps
+*** Install spice-vdagent
+**** Nixos
+On nixos just include ~spice-vdagent~ in your [[id:d0dc2504-21ff-4843-994d-e8abf1991ea0][NixOs]] enviroment packages or your home-manager config.
+**** Arch
+~pacman -S spice-vdagent~
+**** Fedora
+~dnf install spice-vdagent~
+**** Ubuntu And Debian
+~apt install spice-vdagent~
+
+
+*** Edit the guest's configuration
+
+~sudo virsh edit --domain <name of vm>~
+
+Find the line where it mentions "video"
+*NOTE*: i use the video driver qxl, should work with virtio
+Change ~heads='1'~ to how ever many monitors you need
+#+begin_src xml
+<video>
+  <model type="qxl" ram="65536" vram="65536" vgamem="16384" heads="1" primary='yes'/>
+  <alias name="video0"/>
+  <address type="pci" domain="0x0000" bus="0x10" slot="0x01" function="0x0"/>
+</video>
+#+end_src
+
+to
+
+#+begin_src xml
+<video>
+  <model type="qxl" ram="65536" vram="65536" vgamem="16384" heads="2" primary='yes'/>
+  <alias name="video0"/>
+  <address type="pci" domain="0x0000" bus="0x10" slot="0x01" function="0x0"/>
+</video>
+#+end_src
+
+
+*** Create a new xrand output mode.
+Inside your guest it is going to show that the new output is disconected.
+you need to create a new output mode
+
+
+
+#+DOWNLOADED: ~/Pictures/archlinux-xrandr.png @ 2022-08-11 01:57:30
+[[file:Tutorial/2022-08-11_01-57-30_archlinux-xrandr.png]]
+
+Get the mode line for your resolution, I choose 1920x1080.
+
+~cvt 1920 1080~
+#+begin_example
+Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+#+end_example
+Copy everything after where it says "modeline" and use that to create a new mode
+
+Create the mode
+#+begin_src shell
+xrandr --addmode "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+#+end_src
+
+Set the outputs to use the new mode
+#+begin_src shell
+xrandr --output Virtual-1 --mode 1920x1080_60.00
+xrandr --output Virtual-2 --mode 1920x1080_60.00
+#+end_src
+
+*** Save the config
+If you do not want to constantly add the new screen resolution each reboot, add it to ~/usr/share/X11/xorg.conf.d~ or ~/etc/X11/xorg.conf.d/~ in FHS based distros.
+in [[id:d0dc2504-21ff-4843-994d-e8abf1991ea0][NixOs]] use the option ~services.xorg.config~.
+
+#+begin_example
+section "Monitor"
+    Identifier "Virtual-1 "
+    Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+    Option "PreferredMode" "1920x1080_60.00"
+EndSection
+#+end_example
+* FootNotes
+
++ https://elmarco.fedorapeople.org/manual.html#_multiple_monitor_support
++ https://access.redhat.com/discussions/1363063
++ https://stafwag.github.io/blog/blog/2018/04/22/high-screen-resolution-on-a-kvm-virtual-machine-with-qxl/

@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-05-26 Fri 23:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WordPress Enumeration</title>
+<meta name="author" content="nsaspy" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">WordPress Enumeration</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga7d9ea6">1. WordPress Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="wordpress">wordpress</span>&#xa0;<span class=""></span>&#xa0;<span class="enumeration">enumeration</span></span></a>
+<ul>
+<li><a href="#org784f368">1.1. User name Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></a>
+<ul>
+<li><a href="#orgb74fa48">1.1.1. Author Archives</a></li>
+<li><a href="#org58039bb">1.1.2. Json API</a></li>
+<li><a href="#orgb44f6a8">1.1.3. Login Form enumeration</a></li>
+</ul>
+</li>
+<li><a href="#org96e7f02">1.2. Enumerating the WordPress Version&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></a>
+<ul>
+<li><a href="#org609b5dc">1.2.1. Meta Tag</a></li>
+<li><a href="#orgf411c3d">1.2.2. readme.html</a></li>
+</ul>
+</li>
+<li><a href="#orgf71b639">1.3. Plugin enumeration</a></li>
+<li><a href="#org794af96">1.4. Theme enumeration</a></li>
+<li><a href="#org233f4fa">1.5. Directory Indexing</a></li>
+<li><a href="#orgfba8d5f">1.6. Tools</a>
+<ul>
+<li><a href="#org0193692">1.6.1. WPScan</a></li>
+<li><a href="#org1709519">1.6.2. Nmap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga7d9ea6" class="outline-2">
+<h2 id="orga7d9ea6"><span class="section-number-2">1.</span> WordPress Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="wordpress">wordpress</span>&#xa0;<span class=""></span>&#xa0;<span class="enumeration">enumeration</span></span></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+There are several things to enumerate on a WordPress install
+</p>
+</div>
+
+<div id="outline-container-org784f368" class="outline-3">
+<h3 id="org784f368"><span class="section-number-3">1.1.</span> User name Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+User name enumeration is important for later tasks such as brute forcing or search in for breached data
+</p>
+</div>
+<div id="outline-container-orgb74fa48" class="outline-4">
+<h4 id="orgb74fa48"><span class="section-number-4">1.1.1.</span> Author Archives</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Many WordPress installs let you enumerate user names thought the author archives, it is like an <a href="../20221213180008-idor.html#ID-43925686-f7a7-4022-94f4-edc352c44e04">IDOR</a>.
+</p>
+
+<p>
+Example:
+</p>
+<pre class="example" id="org1e5c0dc">
+http://example.com/?author=1
+</pre>
+<p>
+Will take you to
+</p>
+<pre class="example" id="orge03c6ae">
+http://example.com/author/admin
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org58039bb" class="outline-4">
+<h4 id="org58039bb"><span class="section-number-4">1.1.2.</span> Json API</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+There is a json endpoint, it was restricted in version 4.7.1.
+Real example from hackthebox
+</p>
+<pre class="example" id="org85f9cf0">
+http://metapress.htb/wp-json/wp/v2/users
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-json">[
+  {
+    "id": 1,
+    "name": "admin",
+    "url": "http://metapress.htb",
+    "description": "",
+    "link": "http://metapress.htb/author/admin/",
+    "slug": "admin",
+    "avatar_urls": {
+      "24": "http://2.gravatar.com/avatar/816499be5007457d126357a63115cd9c?s=24&amp;d=mm&amp;r=g",
+      "48": "http://2.gravatar.com/avatar/816499be5007457d126357a63115cd9c?s=48&amp;d=mm&amp;r=g",
+      "96": "http://2.gravatar.com/avatar/816499be5007457d126357a63115cd9c?s=96&amp;d=mm&amp;r=g"
+    },
+    "meta": [],
+    "_links": {
+      "self": [
+	{
+	  "href": "http://metapress.htb/wp-json/wp/v2/users/1"
+	}
+      ],
+      "collection": [
+	{
+	  "href": "http://metapress.htb/wp-json/wp/v2/users"
+	}
+      ]
+    }
+  }
+]
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb44f6a8" class="outline-4">
+<h4 id="orgb44f6a8"><span class="section-number-4">1.1.3.</span> Login Form enumeration</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+This is a brain-dead but simple way of enumerating a user
+The http response ill differ on invalid user accounts, when a http response matches invalid password shows that a user name is valid, after that you can move onto brute forcing
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org96e7f02" class="outline-3">
+<h3 id="org96e7f02"><span class="section-number-3">1.2.</span> Enumerating the WordPress Version&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org609b5dc" class="outline-4">
+<h4 id="org609b5dc"><span class="section-number-4">1.2.1.</span> Meta Tag</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Inspect the HTML source for a meta tag
+</p>
+<div class="org-src-container">
+<pre class="src src-HTML">&lt;meta name="generator" content="WordPress 3.5.2" /&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgf411c3d" class="outline-4">
+<h4 id="orgf411c3d"><span class="section-number-4">1.2.2.</span> readme.html</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+if the meta tag is not present check for a file <code>/readme.html</code> at the root.
+Newer version of WordPress have disabled this
+</p>
+
+<p>
+Sometimes the version is append as a param on links to JavaScript and CSS. this might not always be the case!
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf71b639" class="outline-3">
+<h3 id="orgf71b639"><span class="section-number-3">1.3.</span> Plugin enumeration</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+It is important to find all the plugins on an installed page even if the plugin is disabled.
+</p>
+
+<p>
+Passive methods use regular http methods to enumerate plugins
+Active methods use scripts to do hundreds of requests or thousands of possibly invalid requests.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org794af96" class="outline-3">
+<h3 id="org794af96"><span class="section-number-3">1.4.</span> Theme enumeration</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+WordPress themes can contain vulnerabilities that might lead the site to be compromised. Themes are php code with html and css. the more complex the them the more components it will have thus more chances for an exploit.
+The theme detection is like the detection of plugins. The theme path is often visible in the html source. CSS file will also often reveal the path.
+</p>
+
+<p>
+With path you have the theme name, and you can load the readme.txt.
+</p>
+
+<p>
+Example:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">curl http://examplewp.com/wp-content/themes/Avada/readme.txt
+</pre>
+</div>
+
+
+<div id="org03136e1" class="figure">
+<p><img src="WordPress_Enumeration/2022-12-13_18-21-21_screenshot.png" alt="2022-12-13_18-21-21_screenshot.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org233f4fa" class="outline-3">
+<h3 id="org233f4fa"><span class="section-number-3">1.5.</span> Directory Indexing</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Directory indexing is when a web-sever list the contents of a directory on a web-server path. The information show can give the attacker good info on whats installed and what he can abuse.
+Checking for indexing is just you going to a folder and seeing if you get a dir listing.
+Dirs to check:
+</p>
+<pre class="example" id="orga442179">
+/wp-content/
+/wp-content/plugins/
+/wp-content/themes/
+/uploads/
+/images/
+</pre>
+</div>
+</div>
+
+
+<div id="outline-container-orgfba8d5f" class="outline-3">
+<h3 id="orgfba8d5f"><span class="section-number-3">1.6.</span> Tools</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-org0193692" class="outline-4">
+<h4 id="org0193692"><span class="section-number-4">1.6.1.</span> WPScan</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<p>
+WPScan is a common WordPress security tool that ties these methods, allow you to quickly enumerate a WordPress install. it has a commercial license that restricts the use for personal testing.
+</p>
+
+<p>
+Link: <a href="https://github.com/wpscanteam/wpscan">https://github.com/wpscanteam/wpscan</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org1709519" class="outline-4">
+<h4 id="org1709519"><span class="section-number-4">1.6.2.</span> Nmap</h4>
+<div class="outline-text-4" id="text-1-6-2">
+<p>
+Nmap comes with NSE scripts that allow the scanner to do more
+scripts helpful for WordPress
+</p>
+<pre class="example" id="orga45382d">
+http-WordPress-brute.nse
+http-wordpress-enum.nse
+http-wordpress-users.nse
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: nsaspy</p>
+<p class="date">Created: 2023-05-26 Fri 23:32</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

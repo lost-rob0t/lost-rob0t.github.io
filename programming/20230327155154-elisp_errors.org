@@ -1,0 +1,48 @@
+:PROPERTIES:
+:ID:       f284c2d8-6777-4ff5-94e1-a928628810d4
+:END:
+#+TITLE: elisp errors
+#+CREATED: [2023-03-27 Mon 15:51]
+#+LAST_MODIFIED: [2023-03-27 Mon 16:17]
+
+
+* Errors in elisp :elisp::errors:
+Error handling in any language is often messy, no diffrent with elisp.
+
+Errors in emacs lisp are called ~signals~.
+** Raising errors
+You can "raise" or "signal" with the ~signal~ and ~error~ functions.
+
+From the ~describe-function~ command.
+#+begin_src emacs-lisp
+(signal 'wrong-type-argument '(numberp "string"))
+#+end_src
+
+You pass a error symbol and associated dated.
+
+
+** Handling errors
+
+You can handle errors with ~unwind-protect~ and ~condition-case~.
+
+*** unwind-protect
+unwind-protect is like the finally clause from other languages.
+or the ~defer~ statement in [[id:af6fae74-d03b-4930-8f39-63becb43efd9][Nim]].
+#+begin_src emacs-lisp
+(unwind-protect
+    (error "spooky error")
+  (insert "finally"))
+#+end_src
+
+*** condition-case
+~condition-case~ is the try-catch from other languages.
+
+#+begin_src emacs-lisp
+(unwind-protect
+    (let (retval)
+      (condition-case ex
+          (setq retval (error "Hello"))
+        ('error (message (format "Caught exception: [%s]" ex))))
+        retval)
+  (message "Cleaning up..."))
+#+end_src

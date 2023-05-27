@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-05-26 Fri 23:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Why Star Intel</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Why Star Intel</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org506cc1c">1. Why Star intel?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="starintel">starintel</span></span></a>
+<ul>
+<li><a href="#org7b11457">1.1. Nots for me (REMOVE before publish!)</a>
+<ul>
+<li><a href="#orgd080c54">1.1.1. Object Type</a></li>
+</ul>
+</li>
+<li><a href="#org4954409">1.2. Introduction</a></li>
+<li><a href="#org4422354">1.3. <span class="todo TODO">TODO</span> Objectives of this document</a></li>
+<li><a href="#org8b64c51">1.4. <span class="todo TODO">TODO</span> History of Star intel</a>
+<ul>
+<li><a href="#orgc89fd58">1.4.1. Brief overview of the project before it (UNGI)</a></li>
+<li><a href="#org1e62932">1.4.2. History Of UNGI</a></li>
+</ul>
+</li>
+<li><a href="#orgde98eb9">1.5. <span class="todo TODO">TODO</span> The Theory Behind the Project</a></li>
+<li><a href="#org4004bc0">1.6. <span class="todo TODO">TODO</span> Implementation Details</a></li>
+<li><a href="#orgcaeac1c">1.7. <span class="todo TODO">TODO</span> Plug and play artecture</a></li>
+<li><a href="#orgcbe3c74">1.8. <span class="todo TODO">TODO</span> Use cases Real world needs</a></li>
+<li><a href="#org0d239be">1.9. <span class="todo TODO">TODO</span> Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org506cc1c" class="outline-2">
+<h2 id="org506cc1c"><span class="section-number-2">1.</span> Why Star intel?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="starintel">starintel</span></span></h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org7b11457" class="outline-3">
+<h3 id="org7b11457"><span class="section-number-3">1.1.</span> Nots for me (REMOVE before publish!)</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+outline for objects
+</p>
+</div>
+
+<div id="outline-container-orgd080c54" class="outline-4">
+<h4 id="orgd080c54"><span class="section-number-4">1.1.1.</span> Object Type</h4>
+<div class="outline-text-4" id="text-1-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org87f1278"></a>Definition and purpose of the object type<br /></li>
+<li><a id="org9e79e6d"></a>Key characteristics or features of the object type<br /></li>
+<li><a id="org3ea31aa"></a>Examples of how the object type is used in the project<br /></li>
+<li><a id="org81fb5ca"></a>Any special considerations or limitations related to the object type<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org4954409" class="outline-3">
+<h3 id="org4954409"><span class="section-number-3">1.2.</span> Introduction</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Star Intel (short for "Star Intelligence") is a framework for collecting, storing, and acting on data in near real time. At the core of this framework is a document specification that provides a uniform interface for tools and components to flow.
+</p>
+
+<p>
+Star Intel is intended to be extensible and cohesive, with a focus on automation. Data is collected by bots and scrapers, which get their configuration from the database. The configuration format is specified in the document specification and will be expanded on later. The core project is not tied to the bots, and the bots are not tied to the project. This "plug and play" design allows for many different tools and components to be easily fit together into a single system.
+</p>
+
+<p>
+The project is still in the early stages of development, but progress has been made in the past year. The purpose of this document is to provide an overview, including the goals, reasons for creating it, and technical details. I will also discuss the potential applications of the project as well as future directions.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org4422354" class="outline-3">
+<h3 id="org4422354"><span class="section-number-3">1.3.</span> <span class="todo TODO">TODO</span> Objectives of this document</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+This document seeks to explain, expose and help educatue you on my project.
+Im going to list each Section and a very small summery about it.
+</p>
+
+<p>
+The following Sections are:
+</p>
+
+<ul class="org-ul">
+<li>A history of the project and what came before it</li>
+<li>The problems of that project</li>
+<li>The theory behind Star Intel</li>
+<li>How OSINT/data mining works with current methods</li>
+<li>Limitations and why data needs to be uniformly accessed</li>
+<li>Introduction to the plug-and-play architecture</li>
+<li>Why I chose CouchDB as the main choice for the database</li>
+<li>Process for porting the document specification to other languages</li>
+<li>Technical Details</li>
+<li>Use cases and potential applications.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8b64c51" class="outline-3">
+<h3 id="org8b64c51"><span class="section-number-3">1.4.</span> <span class="todo TODO">TODO</span> History of Star intel</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-orgc89fd58" class="outline-4">
+<h4 id="orgc89fd58"><span class="section-number-4">1.4.1.</span> Brief overview of the project before it (UNGI)</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>Development of UNGI</li>
+<li>Description of the original project and its purpose</li>
+
+<li>Development of UNGI</li>
+
+<li>Technical details of the project, including the tools and technologies used</li>
+
+<li>Challenges and limitations faced during the development of UNGI</li>
+
+<li>Evolution of UNGI into Star Intel</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1e62932" class="outline-4">
+<h4 id="org1e62932"><span class="section-number-4">1.4.2.</span> History Of UNGI</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+Ungi Was a set of scripts, bots and at the center Elasticsearch
+UNGI was built out of a need to gain
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgde98eb9" class="outline-3">
+<h3 id="orgde98eb9"><span class="section-number-3">1.5.</span> <span class="todo TODO">TODO</span> The Theory Behind the Project</h3>
+<div class="outline-text-3" id="text-1-5">
+<ul class="org-ul">
+<li>Why it is important to define the format of a JSON document</li>
+<li>Current methods for collecting data at scale in OSINT</li>
+<li>Limitations of these methods and the need for a new approach</li>
+<li>Introduction to the plug-and-play architecture</li>
+<li>Explanation of the choice to use CouchDB</li>
+<li>Process for porting the document specification to other languages</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4004bc0" class="outline-3">
+<h3 id="org4004bc0"><span class="section-number-3">1.6.</span> <span class="todo TODO">TODO</span> Implementation Details</h3>
+<div class="outline-text-3" id="text-1-6">
+<ul class="org-ul">
+<li>Overview of the technical design</li>
+<li>Description of the database structure and schema</li>
+<li>Explanation of the data ingestion and processing pipeline</li>
+<li>Description of the APIs and other interfaces available to users</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcaeac1c" class="outline-3">
+<h3 id="orgcaeac1c"><span class="section-number-3">1.7.</span> <span class="todo TODO">TODO</span> Plug and play artecture</h3>
+</div>
+<div id="outline-container-orgcbe3c74" class="outline-3">
+<h3 id="orgcbe3c74"><span class="section-number-3">1.8.</span> <span class="todo TODO">TODO</span> Use cases Real world needs</h3>
+</div>
+<div id="outline-container-org0d239be" class="outline-3">
+<h3 id="org0d239be"><span class="section-number-3">1.9.</span> <span class="todo TODO">TODO</span> Conclusion</h3>
+<div class="outline-text-3" id="text-1-9">
+<ul class="org-ul">
+<li>Summary of the main points covered in the documentation</li>
+<li>Discussion of the potential applications and benefits of the project</li>
+<li>Future work and directions for development</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2023-05-26 Fri 23:33</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

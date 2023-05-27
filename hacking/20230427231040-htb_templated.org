@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       02d74abd-44af-4db0-adc2-c2455e438e90
+:END:
+#+TITLE:  HTB Templated
+#+CREATED: [2023-04-27 Thu 23:10]
+#+LAST_MODIFIED: [2023-04-27 Thu 23:15]
+
+* Templated :htb::templates:
++ Difficulty: very easy
+This is a very simple challengd, the name gives the trick up.
+
+When you first connect to it you will see that it says Powered by flask and jinja.
+
+Jinga is the templating engine referenced by the name of the challenge.
+
+Try going to any random url you will see the output is reflected on the 404 page, which means the url is a input.
+
+Templates in jinja can run code too {{ 1 + 1 }} would return 2
+
+So by that logic
+
+
+#+begin_src
+http://134.209.18.1:31826/{{config.__class__.__init__.__globals__['os'].popen('cat flag.txt').read()}}
+#+end_src
+
+Would spawn cat and return the flag.

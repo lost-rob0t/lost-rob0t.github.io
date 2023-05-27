@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       6dd02406-f2d1-4ff2-8a39-2590597c44bf
+:ROAM_TAGS:
+:END:
+#+TITLE: Doom Emacs
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+* Doom Emacs
+[[https://github.com/hlissner/doom-emacs][Home Page]].
+Doom emacs is a [[id:95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2][emacs]] configuration framework that is fast yet stays out of the way.
+
+doom emacs has a a notable exception from the other configuration frameworks that it uses evil-mode out of the box.
+
+** Help
+- https://discourse.doomemacs.org/
+
+*** Binding keys
+**** Binding to a prefix
+#+begin_src emacs-lisp
+(map! :localleader
+      :after org
+      :map org-mode-map
+       :prefix ("a" . "attachments")
+        :desc "paste image" "p" #'org-download-clipboard
+        :desc "insert image from url" "i" #'org-download-yank)
+#+end_src

@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       342ef813-97a8-4e6b-ba31-163fe9391929
+:END:
+#+TITLE: libvirt clipboard
+#+CREATED: [2023-02-12 Sun 21:04]
+#+LAST_MODIFIED: [2023-02-12 Sun 21:06]
+* How to use the clipboard in libvirt :linux::vm:
+Make sure spice-vdagent is installed
+Enable the service
+#+begin_src shell
+systemctl enable spice-vdagentd.service`
+#+end_src
+
+Add a new channel to the host
+
+My issue it was on the wrong channel number
+#+begin_src xml
+channel type="spicevmc"
+target type="virtio"
+name="com.redhat.spice.0"
+alias name="channel0"
+address type="virtio-serial" controller="0" bus="0" port="2"
+#+end_src

@@ -1,0 +1,70 @@
+:PROPERTIES:
+:ID:       1dceb867-26b2-42fa-b916-5992b7ac7afe
+:END:
+#+TITLE: Read stdin
+#+CREATED: [2022-12-26 Mon 23:58]
+#+LAST_MODIFIED: [2022-12-27 Tue 00:01]
+* How to use stdin in nim :nim:
+you can use the ~isatty~ proc from the terminal module
+
+#+begin_src nim
+proc isatty(f: File): bool {.raises: [], tags: [].}
+#+end_src
+
+Will return true if the file is a terminal device
+
+you can also check the file id (35 for terminal) but is unreliable
+
+Example from [[https://scripter.co/nim-check-if-stdin-stdout-are-associated-with-terminal-or-pipe/][here]].
+#+begin_src nim
+# Figuring out if input is coming from a pipe and if output is going to a pipe.
+import std/[terminal, strutils]
+
+if isatty(stdin):
+  # ./stdin_stdout foo
+  # ./stdin_stdout foo | cat
+  echo "--> Input from terminal"
+else:
+  # echo bar | ./stdin_stdout
+  # echo bar | ./stdin_stdout | cat
+  echo "--> Input from a PIPE/FILE: `" & readAll(stdin).strip() & "'"
+
+if isatty(stdout):
+  # ./stdin_stdout foo
+  # echo bar | ./stdin_stdout foo
+  echo "    Output to terminal -->"
+else:
+  # ./stdin_stdout | cat
+  # echo bar | ./stdin_stdout | cat
+  echo "    Output to a PIPE -->"
+#+end_src
+
+In my code i use it in jdump
+
+#+begin_src nim
+
+proc main(mode: string = "file", input: seq[string]) =
+  if isatty(stdin):
+    for file in input:
+      let o = open(file, fmRead)
+      for line in o.lines:
+        var t = ""
+        try:
+          echo format(line.parseJson, 2, t)
+        except JsonParsingError:
+          discard
+          when defined(debug):
+            echo line
+      o.close
+  else:
+    for line in stdin.lines:
+      var t = ""
+      try:
+        echo format(line.parseJson, 2, t)
+      except JsonParsingError:
+        discard
+        when defined(debug):
+          echo line
+#+end_src
+
+Yeah the amount of nesting here lol.

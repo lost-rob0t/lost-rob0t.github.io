@@ -1,0 +1,72 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/unseen/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+
+
+* DONE PROG NIX FLAKES, PART 1: AN INTRODUCTION AND TUTORIAL
+:PROPERTIES:
+:ARCHIVE_TIME: 2022-05-26 Thu 15:58
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Reading inbox/Articles
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: articles
+:END:
+Notes: [[file:references/2022-05-14-213358-nix_flakes_tutorial.org][Nix Flakes Tutorial]]
+Url: https://www.tweag.io/blog/2020-05-25-flakes/
+
+* KILL How to Hack an Engineer
+:PROPERTIES:
+:ARCHIVE_TIME: 2022-05-26 Thu 15:59
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Reading inbox/Articles
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: KILL
+:ARCHIVE_ITAGS: articles
+:END:
+url: https://www.nemil.com/musings/hack-an-engineer.html
+comment: not what i thought it was
+
+* DONE https://sizeof.cat/links/
+:PROPERTIES:
+:ARCHIVE_TIME: 2022-12-18 Sun 21:43
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Reading inbox/Articles
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: articles
+:END:
+this guy is a goat btw
+
+* DONE Understanding Deradicalization: Methods, Tools and Programs for Countering Violent Extremism :book:
+:PROPERTIES:
+:ARCHIVE_TIME: 2022-12-18 Sun 21:43
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Reading inbox/Articles
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: articles
+:END:
+
+
+* DONE TLA+ video course [2/10]
+:PROPERTIES:
+:ARCHIVE_TIME: 2022-12-18 Sun 21:43
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Reading inbox/Videos
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: videos
+:END:
++ [X] Introduction to TLA+
+ swear   - Notes:
++ [X] State Machines in TLA+
++ [ ] Resources and Tools
++ [ ] Die Hard
++ [ ] Transaction Commit
++ [ ] Two-Phase Commit
++ [ ] Paxos Commit
++ [ ] Implementation
++ [ ] The Alternating Bit Protocol
++ [ ] Implementation with Refinement

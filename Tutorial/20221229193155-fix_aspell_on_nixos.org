@@ -1,0 +1,78 @@
+:PROPERTIES:
+:ID:       67aa8d33-7640-44e7-be9a-4ed5de3a070c
+:END:
+#+TITLE: Fix Aspell on nixos
+#+CREATED: [2022-12-29 Thu 19:31]
+#+LAST_MODIFIED: [2022-12-29 Thu 19:41]
+* How to fix aspell on nixos :emacs::nixos:
+I was trying to use aspell for spell checking on nixos with emacs and i could not get it to find the path to the apsell.
+
+** Steps to fix it
+These steps should fix it.
+***  Install it via nix-env
+Install via ~nix-env~.
+#+begin_src shell
+nix-env -iA nixos.aspell
+nix-env -iA nixos.aspellDicts.en
+#+end_src
+
+Create the config that points to the dicts
+The config file is ~~/.aspell.conf~ Inside it put this
+#+begin_example
+data-dir $HOME/.nix-profile/lib/aspell
+#+end_example
+
+*** home-manager
+#+begin_src nix
+# ~/.config/nixpkgs/home.nix
+{ config, pkgs, ... }:
+{
+  # ..
+  home.packages = with pkgs; [
+    # ..
+    aspell
+    aspellDicts.en
+  ];
+
+  home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
+  # ..
+}
+#+end_src
+
+
+*** Fix not being able to save a personal word
+create a pws and setq it
+#+begin_src shell
+mkdir -p ~/.emacs.d/.local/etc/ispell && touch ~/.emacs.d/.local/etc/ispell/.pws
+#+end_src
+Be sure that the file is in aspells personal word dictionary format!
+basically just include this at the top of the pws file.
+#+begin_example
+personal_ws-1.1 en 1 utf-8
+#+end_example
+
+*** Emacs setup
+The following is from my emacs config
+Make sure its using aspell
+#+begin_src emacs-lisp
+(setq ispell-program-name "aspell")
+#+end_src
+Set dictionary
+#+begin_src emacs-lisp
+(setq ispell-dictionary "en")
+#+end_src
+
+Set personal dictionary
+#+begin_src emacs-lisp
+ (setq ispell-personal-dictionary "~/.aspell.en_us.pws")
+#+end_src
+
+Spell fu setup
+
+#+begin_src emacs-lisp
+(add-hook 'spell-fu-mode-hook
+  (lambda ()
+    (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary "en"))
+    (spell-fu-dictionary-add
+      (spell-fu-get-personal-dictionary "en-personal" "~/.aspell.en_us.pws"))))
+#+end_src

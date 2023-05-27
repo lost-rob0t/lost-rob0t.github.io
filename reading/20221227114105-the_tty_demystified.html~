@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-05-26 Fri 23:32 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>the tty demystified</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">the tty demystified</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org26a04c6">1. The TTY demystified Notes</a>
+<ul>
+<li><a href="#org872a23d">1.1. The tty</a>
+<ul>
+<li><a href="#org4eae7a5">1.1.1. Line editing</a></li>
+<li><a href="#orgf341250">1.1.2. Sessions</a></li>
+<li><a href="#org59c31f2">1.1.3. Jobs and sessions</a></li>
+<li><a href="#orgca71db7">1.1.4. Signals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org26a04c6" class="outline-2">
+<h2 id="org26a04c6"><span class="section-number-2">1.</span> The TTY demystified Notes</h2>
+<div class="outline-text-2" id="text-1">
+<blockquote>
+<p>
+In 1869, the stock ticker was invented. It was an electro-mechanical machine consisting of a typewriter, a long pair of wires and a ticker tape printer, and its purpose was to distribute stock prices over long distances in realtime
+</p>
+</blockquote>
+
+
+<div id="org15dae14" class="figure">
+<p><img src="The_TTY_demystified_Notes/2022-12-27_11-45-00_screenshot.png" alt="2022-12-27_11-45-00_screenshot.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-org872a23d" class="outline-3">
+<h3 id="org872a23d"><span class="section-number-3">1.1.</span> The tty</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org4eae7a5" class="outline-4">
+<h4 id="org4eae7a5"><span class="section-number-4">1.1.1.</span> Line editing</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+People make mistakes so backspaces are a neccisty. These features are often implemented in a program running in raw mode (curses or readline) but unix programs should be small, so these features can be exposed to the program via a line discipline. Some basic editing commands are
+</p>
+
+<ul class="org-ul">
+<li>Backspace</li>
+
+<li>Erase word</li>
+
+<li>clear line</li>
+
+<li>Reprint</li>
+</ul>
+
+<p>
+Line discipline has utilities for line feeds and carriage returns.
+</p>
+
+<p>
+The kernel provides different line disciplines and only one of them are running at a time.
+The default line discipline is N<sub>TTY</sub> which is defined in `drivers/char/n<sub>tty.c</sub>`
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgf341250" class="outline-4">
+<h4 id="orgf341250"><span class="section-number-4">1.1.2.</span> Sessions</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+Users often need to run multiple programs at the same time. User input should only go to the foreground program and not background programs.
+</p>
+
+<p>
+A process is "alive" and can preform actions, a tty is not "alive". A tty is a passive object. it has data fields and methods but it only does something when a process or the kernel calls a method. Same goes for the line discipline.
+</p>
+
+
+
+<p>
+A UART driver, line discipline and TTY driver is called a tty device.
+</p>
+</div>
+
+
+
+<ol class="org-ol">
+<li><a id="org25556da"></a>How the linux console and others work<br />
+<div class="outline-text-5" id="text-1-1-2-1">
+<p>
+There is no UART instead a video terminal is used. A video terminal is a complex state machine that consists of a framebuffer and charecter attributes.
+</p>
+
+<p>
+the console is rigid and gets more abstract as you move into userland.
+</p>
+
+
+
+<p>
+To move the terminal to userland the pseudo terminal was invented.  Linux process can be these states+ R Running or runnable (on queue)
+</p>
+
+<ul class="org-ul">
+<li>D Uninterruptible sleep</li>
+
+<li>S Interruptible sleep</li>
+
+<li>T Stopped, either by a job control signal or because of debugger+ Zombie process, terminated but not yet reaped by its parent.</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org59c31f2" class="outline-4">
+<h4 id="org59c31f2"><span class="section-number-4">1.1.3.</span> Jobs and sessions</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+Job control is a way to control backround jobs. A job is the same as a process group
+you can invck job control with ^Z.
+there are internal shell commands to maniplate jobs within a session.
+The shell commands are
+</p>
+<ul class="org-ul">
+<li>jobs List jobs</li>
+<li>fg bring job to foreground</li>
+<li>bg move job to backround</li>
+</ul>
+
+<p>
+The TTY driver keeps track of the foreground but only passivly. The sessionleader must update this information.
+The session leader also keeps track of the size of the connected terminal but must be updated by the terminal emulator or the user.
+</p>
+</div>
+</div>
+<div id="outline-container-orgca71db7" class="outline-4">
+<h4 id="orgca71db7"><span class="section-number-4">1.1.4.</span> Signals</h4>
+<div class="outline-text-4" id="text-1-1-4">
+<p>
+A signal is a mechinism that lets the kernal communicate asynchronously.
+Most of the time you will use them to kill or stop a process.
+You can see the list of signals with
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="font-weight: bold;">kill</span> -l
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">1) SIGHUP</td>
+<td class="org-left">2) SIGINT</td>
+<td class="org-left">3) SIGQUIT</td>
+<td class="org-left">4) SIGILL</td>
+<td class="org-left">5) SIGTRAP</td>
+</tr>
+
+<tr>
+<td class="org-left">6) SIGABRT</td>
+<td class="org-left">7) SIGBUS</td>
+<td class="org-left">8) SIGFPE</td>
+<td class="org-left">9) SIGKILL</td>
+<td class="org-left">10) SIGUSR1</td>
+</tr>
+
+<tr>
+<td class="org-left">11) SIGSEGV</td>
+<td class="org-left">12) SIGUSR2</td>
+<td class="org-left">13) SIGPIPE</td>
+<td class="org-left">14) SIGALRM</td>
+<td class="org-left">15) SIGTERM</td>
+</tr>
+
+<tr>
+<td class="org-left">16) SIGSTKFLT</td>
+<td class="org-left">17) SIGCHLD</td>
+<td class="org-left">18) SIGCONT</td>
+<td class="org-left">19) SIGSTOP</td>
+<td class="org-left">20) SIGTSTP</td>
+</tr>
+
+<tr>
+<td class="org-left">21) SIGTTIN</td>
+<td class="org-left">22) SIGTTOU</td>
+<td class="org-left">23) SIGURG</td>
+<td class="org-left">24) SIGXCPU</td>
+<td class="org-left">25) SIGXFSZ</td>
+</tr>
+
+<tr>
+<td class="org-left">26) SIGVTALRM</td>
+<td class="org-left">27) SIGPROF</td>
+<td class="org-left">28) SIGWINCH</td>
+<td class="org-left">29) SIGIO</td>
+<td class="org-left">30) SIGPWR</td>
+</tr>
+
+<tr>
+<td class="org-left">31) SIGSYS</td>
+<td class="org-left">34) SIGRTMIN</td>
+<td class="org-left">35) SIGRTMIN+1</td>
+<td class="org-left">36) SIGRTMIN+2</td>
+<td class="org-left">37) SIGRTMIN+3</td>
+</tr>
+
+<tr>
+<td class="org-left">38) SIGRTMIN+4</td>
+<td class="org-left">39) SIGRTMIN+5</td>
+<td class="org-left">40) SIGRTMIN+6</td>
+<td class="org-left">41) SIGRTMIN+7</td>
+<td class="org-left">42) SIGRTMIN+8</td>
+</tr>
+
+<tr>
+<td class="org-left">43) SIGRTMIN+9</td>
+<td class="org-left">44) SIGRTMIN+10</td>
+<td class="org-left">45) SIGRTMIN+11</td>
+<td class="org-left">46) SIGRTMIN+12</td>
+<td class="org-left">47) SIGRTMIN+13</td>
+</tr>
+
+<tr>
+<td class="org-left">48) SIGRTMIN+14</td>
+<td class="org-left">49) SIGRTMIN+15</td>
+<td class="org-left">50) SIGRTMAX-14</td>
+<td class="org-left">51) SIGRTMAX-13</td>
+<td class="org-left">52) SIGRTMAX-12</td>
+</tr>
+
+<tr>
+<td class="org-left">53) SIGRTMAX-11</td>
+<td class="org-left">54) SIGRTMAX-10</td>
+<td class="org-left">55) SIGRTMAX-9</td>
+<td class="org-left">56) SIGRTMAX-8</td>
+<td class="org-left">57) SIGRTMAX-7</td>
+</tr>
+
+<tr>
+<td class="org-left">58) SIGRTMAX-6</td>
+<td class="org-left">59) SIGRTMAX-5</td>
+<td class="org-left">60) SIGRTMAX-4</td>
+<td class="org-left">61) SIGRTMAX-3</td>
+<td class="org-left">62) SIGRTMAX-2</td>
+</tr>
+
+<tr>
+<td class="org-left">63) SIGRTMAX-1</td>
+<td class="org-left">64) SIGRTMAX</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<ol class="org-ol">
+<li><a id="org312dc9d"></a>Signals explained<br />
+<div class="outline-text-5" id="text-1-1-4-1">
+<p>
+This is lifted from the article
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org60be0c0"></a>SIGHUP<br />
+<div class="outline-text-6" id="text-1-1-4-1-1">
+<ul class="org-ul">
+<li>Default action: <b>Terminate</b></li>
+<li>Possible actions: Terminate, Ignore, Function call</li>
+</ul>
+
+<p>
+SIGHUP is sent by the UART driver to the entire session when a hangup condition has been detected. Normally, this will kill all the processes. Some programs, such as nohup(1) and screen(1), detach from their session (and TTY), so that their child processes won't notice a hangup.
+</p>
+</div>
+</li>
+
+<li><a id="orgeb7460c"></a>SIGINT<br />
+<div class="outline-text-6" id="text-1-1-4-1-2">
+<ul class="org-ul">
+<li>Default action: <b>Terminate</b></li>
+<li>Possible actions: Terminate, Ignore, Function call</li>
+</ul>
+
+<p>
+SIGINT is sent by the TTY driver to the current foreground job when the <i>interactive attention</i> character (typically ^C, which has ASCII code 3) appears in the input stream, unless this behaviour has been turned off. Anybody with access permissions to the TTY device can change the interactive attention character and toggle this feature; additionally, the session manager keeps track of the TTY configuration of each job, and updates the TTY whenever there is a job switch.
+</p>
+</div>
+</li>
+
+<li><a id="orgd5db7ea"></a>SIGQUIT<br />
+<div class="outline-text-6" id="text-1-1-4-1-3">
+<ul class="org-ul">
+<li>Default action: <b>Core dump</b></li>
+<li>Possible actions: Core dump, Ignore, Function call</li>
+</ul>
+
+<p>
+SIGQUIT works just like SIGINT, but the quit character is typically ^\\ and the default action is different.
+</p>
+</div>
+</li>
+
+<li><a id="orga2a7707"></a>SIGPIPE<br />
+<div class="outline-text-6" id="text-1-1-4-1-4">
+<ul class="org-ul">
+<li>Default action: <b>Terminate</b></li>
+<li>Possible actions: Terminate, Ignore, Function call</li>
+</ul>
+
+<p>
+The kernel sends SIGPIPE to any process which tries to write to a pipe with no readers. This is useful, because otherwise jobs like yes | head would never terminate.
+</p>
+</div>
+</li>
+
+<li><a id="org3202667"></a>SIGCHLD<br />
+<div class="outline-text-6" id="text-1-1-4-1-5">
+<ul class="org-ul">
+<li>Default action: <b>Ignore</b></li>
+<li>Possible actions: Ignore, Function call</li>
+</ul>
+
+<p>
+When a process dies or changes state (stop/continue), the kernel sends a SIGCHLD to its parent process. The SIGCHLD signal carries additional information, namely the process id, the user id, the exit status (or termination signal) of the terminated process and some execution time statistics. The session leader (shell) keeps track of its jobs using this signal.
+</p>
+</div>
+</li>
+
+<li><a id="org6a016b6"></a>SIGSTOP<br />
+<div class="outline-text-6" id="text-1-1-4-1-6">
+<ul class="org-ul">
+<li>Default action: <b>Suspend</b></li>
+<li>Possible actions: Suspend</li>
+</ul>
+
+<p>
+This signal will unconditionally suspend the recipient, i.e. its signal action can't be reconfigured. Please note, however, that SIGSTOP isn't sent by the kernel during job control. Instead, ^Z typically triggers a SIGTSTP, which can be intercepted by the application. The application may then e.g. move the cursor to the bottom of the screen or otherwise put the terminal in a known state, and subsequently put itself to sleep using SIGSTOP.
+</p>
+</div>
+</li>
+
+<li><a id="orgc5c23c5"></a>SIGCONT<br />
+<div class="outline-text-6" id="text-1-1-4-1-7">
+<ul class="org-ul">
+<li>Default action: <b>Wake up</b></li>
+<li>Possible actions: Wake up, Wake up + Function call</li>
+</ul>
+
+<p>
+SIGCONT will un-suspend a stopped process. It is sent explicitly by the shell when the user invokes the fg command. Since SIGSTOP can't be intercepted by an application, an unexpected SIGCONT signal might indicate that the process was suspended some time ago, and then un-suspended.
+</p>
+</div>
+</li>
+
+<li><a id="org4340488"></a>SIGTSTP<br />
+<div class="outline-text-6" id="text-1-1-4-1-8">
+<ul class="org-ul">
+<li>Default action: <b>Suspend</b></li>
+<li>Possible actions: Suspend, Ignore, Function call</li>
+</ul>
+
+<p>
+SIGTSTP works just like SIGINT and SIGQUIT, but the magic character is typically ^Z and the default action is to suspend the process.
+</p>
+</div>
+</li>
+
+<li><a id="orgb6a706a"></a>SIGTTIN<br />
+<div class="outline-text-6" id="text-1-1-4-1-9">
+<ul class="org-ul">
+<li>Default action: <b>Suspend</b></li>
+<li>Possible actions: Suspend, Ignore, Function call</li>
+</ul>
+
+<p>
+If a process within a background job tries to read from a TTY device, the TTY sends a SIGTTIN signal to the entire job. This will normally suspend the job.
+</p>
+</div>
+</li>
+
+<li><a id="org601a49c"></a>SIGTTOU<br />
+<div class="outline-text-6" id="text-1-1-4-1-10">
+<ul class="org-ul">
+<li>Default action: <b>Suspend</b></li>
+<li>Possible actions: Suspend, Ignore, Function call</li>
+</ul>
+
+<p>
+If a process within a background job tries to write to a TTY device, the TTY sends a SIGTTOU signal to the entire job. This will normally suspend the job. It is possible to turn off this feature on a per-TTY basis.
+</p>
+</div>
+</li>
+
+<li><a id="orgc8db3c9"></a>SIGWINCH<br />
+<div class="outline-text-6" id="text-1-1-4-1-11">
+<ul class="org-ul">
+<li>Default action: <b>Ignore</b></li>
+<li>Possible actions: Ignore, Function call</li>
+</ul>
+
+<p>
+As mentioned, the TTY device keeps track of the terminal size, but this information needs to be updated manually. Whenever that happens, the TTY device sends SIGWINCH to the foreground job. Well-behaving interactive applications, such as editors, react upon this, fetch the new terminal size from the TTY device and redraw themselves accordingly.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2023-05-26 Fri 23:32</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

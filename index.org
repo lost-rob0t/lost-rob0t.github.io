@@ -1,0 +1,52 @@
+:PROPERTIES:
+:ID:       c72d4e02-0e32-424c-b4b3-c471adbf4598
+:END:
+#+title: Index
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2023-05-26 Fri 23:01]
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/setup.org
+* Welcome
+Welcome to my brain dump that i like to call a wiki of sorts.
+
+You can download the entire archive and view in Emacs or viewer of choice.
+The site is in many formats.
+Just change the file extension in the url bar to see it in a different format.
+Formats:
++ txt
++ md
++ Org
++ html
+
+I would like to note that it is not entirely structured, because it is a collection of notes, I impose some structure but its really a second brain here.
+My Spelling is bad and i did not have a spell checker when i started taking notes, so please bear with me.
+* Links
++ [[id:d0dc2504-21ff-4843-994d-e8abf1991ea0][NixOs]]
++ [[id:6189e985-e87d-42df-aa38-ba6429a2bf8a][Reading inbox]]
++ [[id:de8bc39b-c63d-432f-9ff8-c157287c26db][Linux]]
++ [[id:95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2][emacs]]
++ [[id:40a6baca-2913-450a-b516-7a16b9d51b2c][Links]]
+* Programming
++ [[id:ecc6c666-530f-4173-9f21-4038677b32ac][Programming Languages]]
++ [[id:af6fae74-d03b-4930-8f39-63becb43efd9][Nim]]
++ [[id:a934f8ea-6586-437f-a354-d307915f3c39][STOMP]]
+
+* Industrial Control systems
++ [[id:8819b564-caa6-4101-99ca-ab936c650714][SCADA]]
++ [[id:24d7094b-d249-477e-8e8c-6e8a8231856e][List of PLC's]]
++ [[id:1131ab7e-abe2-4c6a-8414-44b524bdf49b][Modbus]]
++ [[id:27a4cf94-829a-4182-9dc8-3dd99da55fe9][Programmable Logic Controllers]]
+
+* Cyber Security
++ [[id:1ab40c79-e0b4-4556-b2e0-0eab12ae3a62][Shodan api keys]]
++ [[id:b6fa327b-ed94-4a61-aa70-6a59a441f760][Bump in the wire]]
++ [[id:65d9cc7b-d426-4ca4-9693-4c530264f830][Hack The Box]]
+
+** Methods
+***   Wordpress
++ [[id:854f2842-8d5b-4006-8848-6800aab5ab5e][WordPress Enumeration]]
+
+* My Tooling
+** TODO Star Intelligence
++ gitVirgin
++ star formatter
++ [[id:78157cd5-9681-4a64-b5c7-0f2b415cd446][Star Intel]]

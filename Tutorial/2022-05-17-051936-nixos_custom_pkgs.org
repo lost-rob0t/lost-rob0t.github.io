@@ -1,0 +1,108 @@
+:PROPERTIES:
+:ID:       3866dd8f-fc14-491a-af3a-bbd0c4c5ce98
+:ROAM_TAGS:
+:END:
+#+TITLE: nixos custom pkgs
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2023-05-13 Sat 21:09]
+* How to use custom packages
+i have built a some packages myself and i cant find a way to use my overlay.
+Instead i maintain a nix-channel and point it my gitrepo with a archive url
+
+#+begin_src shell
+sudo nix-channel --add https://github.com/lost-rob0t/nixos-overlays/archive/d183b152436003690cf0e4e6ea15018e6ac38230.tar.gz personal
+sudo nix-channel --update
+#+end_src
+After you add the channel at the top of your configuration.nix
+add the following
+#+begin_src nix
+let otherPkgs = import <other-channel> {}
+in
+#+end_src
+
+* Tips
+** Installing from a local repo
+This is mostly used for development of packages but can be used to install ad-hoc fixes quickly
+
+#+begin_src shell
+mkdir -p ~/git/ && cd ~/git/
+git clone --depth=1 https://github.com/nixos/nixpkgs
+export NIXPKGS=~/git/nixpkgs
+ls $NIXPKGS
+#+end_src
+
+Build an expression
+#+begin_src shell
+nix-build $NIXPKG -A firefox
+#+end_src
+** error: derivation name missing
+Version was not included.
+
+This will fail
+#+begin_src nix
+{ lib, stdenv, nimPackages, fetchurl }:
+
+stdenv.mkDerivation rec {
+  nimsuggest = nimPackages.buildNimPackage rec {
+    name = "nimsuggest";
+    rev = "f780247b651f28d6e3f1ae8d0067316a8086027e";
+
+    nimBinOnly = true;
+
+    src = fetchurl {
+      url = "https://github.com/nim-lang/${name}/archive/${rev}.tar.gz";
+      sha256 = "sha256-hAqlBGiOQk9QVbtDhNHpk5Z7EtyeW02hRlYMxbvb++Q=";
+    };
+  };
+  pname = "nimsuggest";
+  buildInputs = [ nimsuggest ];
+  meta = with lib; {
+    description = "Tool for providing auto completion data for Nim source code.";
+    homepage = "https://github.com/nim-lang/nimsuggest/";
+    license = licenses.mit;
+    maintainers = [ "nsaspy" ];
+    };
+  }
+
+#+end_src
+
+Always have the version!
+#+begin_src nix
+{ lib, stdenv, nimPackages, fetchurl }:
+
+stdenv.mkDerivation rec {
+  nimsuggest = nimPackages.buildNimPackage rec {
+    name = "nimsuggest";
+    rev = "f780247b651f28d6e3f1ae8d0067316a8086027e";
+
+    nimBinOnly = true;
+
+    src = fetchurl {
+      url = "https://github.com/nim-lang/${name}/archive/${rev}.tar.gz";
+      sha256 = "sha256-OmIuOkHP9Uvrm0NLpPAlrhuP4WPEeXSxzAzDn2AuvQ0=";
+    };
+  };
+  pname = "nimsuggest";
+  buildInputs = [ nimsuggest ];
+
+  version = "0.1.0";
+  meta = with lib; {
+    description = "Tool for providing auto completion data for Nim source code.";
+    homepage = "https://github.com/nim-lang/nimsuggest/";
+    license = licenses.mit;
+    maintainers = [ "nsaspy" ];
+    };
+  }
+#+end_src
+
+** error: syntax error, unexpected ID, expecting ':' or '@'
+This was painful you simply forgot to include a ~:~
+Wrong
+#+begin_src nix
+{ buildNimPackage, jsony, fetchzip }
+#+end_src
+
+Correct:
+#+begin_src nix
+{ buildNimPackage, jsony, fetchzip }:
+#+end_src

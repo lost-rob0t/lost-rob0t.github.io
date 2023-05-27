@@ -1,0 +1,79 @@
+:PROPERTIES:
+:ID:       e8362c61-ead3-4683-bd7b-935d98617e2c
+:END:
+#+TITLE: Why Star Intel
+#+CREATED: [2022-12-19 Mon 01:19]
+#+LAST_MODIFIED: [2022-12-19 Mon 22:39]
+* Why Star intel? :starintel:
+
+** Nots for me (REMOVE before publish!)
+outline for objects
+
+*** Object Type
+**** Definition and purpose of the object type
+**** Key characteristics or features of the object type
+**** Examples of how the object type is used in the project
+**** Any special considerations or limitations related to the object type
+
+
+** Introduction
+
+Star Intel (short for "Star Intelligence") is a framework for collecting, storing, and acting on data in near real time. At the core of this framework is a document specification that provides a uniform interface for tools and components to flow.
+
+Star Intel is intended to be extensible and cohesive, with a focus on automation. Data is collected by bots and scrapers, which get their configuration from the database. The configuration format is specified in the document specification and will be expanded on later. The core project is not tied to the bots, and the bots are not tied to the project. This "plug and play" design allows for many different tools and components to be easily fit together into a single system.
+
+The project is still in the early stages of development, but progress has been made in the past year. The purpose of this document is to provide an overview, including the goals, reasons for creating it, and technical details. I will also discuss the potential applications of the project as well as future directions.
+
+
+** TODO Objectives of this document
+
+This document seeks to explain, expose and help educatue you on my project.
+Im going to list each Section and a very small summery about it.
+
+The following Sections are:
+
++ A history of the project and what came before it
++ The problems of that project
++ The theory behind Star Intel
++ How OSINT/data mining works with current methods
++ Limitations and why data needs to be uniformly accessed
++ Introduction to the plug-and-play architecture
++ Why I chose CouchDB as the main choice for the database
++ Process for porting the document specification to other languages
++ Technical Details
++ Use cases and potential applications.
+** TODO History of Star intel
+*** Brief overview of the project before it (UNGI)
++ Development of UNGI
++ Description of the original project and its purpose
+
++ Development of UNGI
+
++ Technical details of the project, including the tools and technologies used
+
++ Challenges and limitations faced during the development of UNGI
+
++ Evolution of UNGI into Star Intel
+
+*** History Of UNGI
+Ungi Was a set of scripts, bots and at the center Elasticsearch
+UNGI was built out of a need to gain
+** TODO The Theory Behind the Project
+  - Why it is important to define the format of a JSON document
+  - Current methods for collecting data at scale in OSINT
+  - Limitations of these methods and the need for a new approach
+  - Introduction to the plug-and-play architecture
+  - Explanation of the choice to use CouchDB
+  - Process for porting the document specification to other languages
+
+** TODO Implementation Details
+  - Overview of the technical design
+  - Description of the database structure and schema
+  - Explanation of the data ingestion and processing pipeline
+  - Description of the APIs and other interfaces available to users
+** TODO Plug and play artecture
+** TODO Use cases Real world needs
+** TODO Conclusion
+  - Summary of the main points covered in the documentation
+  - Discussion of the potential applications and benefits of the project
+  - Future work and directions for development

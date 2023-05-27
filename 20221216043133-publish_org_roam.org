@@ -1,0 +1,105 @@
+:PROPERTIES:
+:ID:       0ca70283-a104-46aa-82f0-1d98608209b9
+:ROAM_TAGS: script emacs roam org
+:END:
+#+title: Publish Org Roam
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2023-05-26 Fri 23:24]
+#+author: 
+* How To Publish org roam notes :org:roam:emacs:
+
+By Defualt org roam notes do not work with ~org-publish~ becuase it doesnt know how to resolve the id links.
+
+** My Script :script:
+This script is cobbled from a number of online sources but works
+
+#+begin_src emacs-lisp
+;;; publish.el --- Description -*- lexical-binding: t; -*-
+;;
+;; Copyright (C) 2022
+;;
+;; Created: December 16, 2022
+;; Modified: December 16, 2022
+;; Version: 0.1.1
+;; Keywords: abbrev lisp multimedia news tools org web html zine
+;; Package-Requires: ((emacs "24.4"))
+;;
+;; This file is not part of GNU Emacs.
+;;
+;;; Commentary:
+;;; Publish org-roam notes to html.
+;;; It copys all the files in the org-roam dir so images and other things are rendered in the html as in the org.
+;;; All the org files are present in the html
+;;
+;;  Description
+;;
+;;; Code:
+
+(require 'package)
+(setq package-user-dir (expand-file-name "./.packages"))
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("elpa" . "https://elpa.gnu.org/packages/")))
+
+;; Initialize the package system
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+(package-install 'htmlize)
+(package-install 'org-roam)
+(require 'htmlize) ;; For Code blocks
+(require 'org)
+(require 'ox-publish)
+(require 'find-lisp)
+(require 'org-roam-export) ;; Fixes for org roam to work with ox-publish
+(defvar project-dir "./roam"
+  "The Path to the Notes")
+
+(message project-dir)
+;; Following is default for Doom emacs
+
+(setq org-roam-directory project-dir)
+
+(setq org-id-extra-files
+      (find-lisp-find-files project-dir "\.org$"))
+
+(setq org-roam-db-location "~/.emacs.d/.local/cache/org-roam.db")
+(org-roam-update-org-id-locations)
+(setq org-publish-project-alist
+      `(("TheNightWatch"
+         :recursive t
+         :base-directory "./roam"
+         :publishing-directory "./public"
+         :base-extension "org"
+         :toc nil
+         :makeindex t
+         :publishing-function org-html-publish-to-html)
+        ("TheNightWatchImages"
+         :recurse t
+         :base-directory "./roam"
+         :base-extension "png\\|jpg"
+         :publishing-directory "./public"
+         :publishing-function org-publish-attachment)))
+;; For Some reason org will not copy over the images that in their own dir, better to just copy the whole roam dir to the public, also lets people have the source org file!
+
+(org-publish-all t)
+(message "Build Complete.")
+(message "Copying roam to public dir...")
+(copy-directory project-dir "./public" t t t)
+(message "Finished!")
+
+(provide 'publish)
+;;; publish.el ends here
+
+#+end_src
+
+You need to include ~org-roam-export~ so it can resolve the link.
+
+You can run this script with
+#+begin_src shell
+emacs -Q --script publish.el
+#+end_src
+
+** See also
+
++ https://gitlab.com/ngm/commonplace/-/blob/master/publish.el#L98
++ https://orgmode.org/manual/Simple-example.html

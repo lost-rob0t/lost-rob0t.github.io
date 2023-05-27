@@ -1,0 +1,236 @@
+:PROPERTIES:
+:ID:       848de0a7-bd07-42cd-94ca-4f7119335989
+:ROAM_TAGS:
+:END:
+#+title: practical cl simple db
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2023-05-02 Tue 19:49]
+[[id:2bf517d2-698a-44cf-bb5a-5273da53f717][Lisp]]
+In this im going to build a simple cd database. This is from the Book [[id:88d459b3-70ba-42c4-9062-6625fc1035f7][Practical Common Lisp.]]
+
+* About
+We will track of cds that need to be rip, storing title artist, rating and if its been ripped.
+
+It will be implemented in a [[id:433dae2b-c05f-445b-b2a6-75e046796b5f][Property list]].
+
+
+* Task
+** Create a Cd
+Create a function that creates a [[id:433dae2b-c05f-445b-b2a6-75e046796b5f][Property list]]
+#+begin_src lisp :session example
+(defun make-cd (title artist rating ripped)
+  "Makes a cd to be inserted into a database"
+  (list :title title :artist artist :rating rating :ripped ripped))
+#+end_src
+
+#+RESULTS:
+: MAKE-CD
+
+Make a cd
+#+begin_src lisp :session example
+(make-cd "Deep Jungle Walk" "Astrix" 10 T)
+#+end_src
+
+#+RESULTS:
+| :TITLE | Deep Jungle Walk | :ARTIST | Astrix | :RATING | 10 | :RIPPED | T |
+
+** Creating a global varible
+Create a Global Variable. when you suround it with * that is a convention for a global variable
+A single record is not enough for a database.
+#+begin_src lisp :session example
+(defvar *db* nil)
+#+end_src
+
+#+RESULTS:
+: *DB*
+
+** Pushing data to a list
+Abstract on the [[id:e2c2d083-0a4e-4f8a-b7d7-219625b02040][PUSH macro]].
+#+begin_src lisp :session example
+(defun add-record (cd)
+  "Inserts a record into *db*"
+    (push cd *db*))
+#+end_src
+
+#+RESULTS:
+: ADD-RECORD
+
+Add a record
+#+begin_src lisp :session example
+(add-record (make-cd "Deep Jungle Walk" "Astrix" 8 T))
+(add-record (make-cd "Universal Mantra" "WaveForm" 10 T))
+#+end_src
+
+#+RESULTS:
+| :TITLE | Universal Mantra | :ARTIST | WaveForm | :RATING | 10 | :RIPPED | T |
+| :TITLE | Deep Jungle Walk | :ARTIST | Astrix   | :RATING |  8 | :RIPPED | T |
+** Homiconicity
+Show the contents of the database
+#+begin_src lisp :session example
+*db*
+#+end_src
+
+#+RESULTS:
+| :TITLE | Universal Mantra | :ARTIST | WaveForm | :RATING | 10 | :RIPPED | T |
+| :TITLE | Deep Jungle Walk | :ARTIST | Astrix   | :RATING |  8 | :RIPPED | T |
+
+Showing the contents of the database inthis manner is not easy on the eyes
+** output formatiing
+#+begin_src lisp :session example
+(defun dump-db ()
+  "Dump the database in a pretty format"
+  (dolist (cd *db*)
+     (format t "~{~a:~10t~a~%~}~%" cd)))
+
+
+#+end_src
+
+#+RESULTS:
+: DUMP-DB
+
+Dump the db
+
+#+begin_src lisp :session example :results output
+(dump-db)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+TITLE:    Universal Mantra
+ARTIST:   WaveForm
+RATING:   10
+RIPPED:   T
+
+TITLE:    Deep Jungle Walk
+ARTIST:   Astrix
+RATING:   8
+RIPPED:   T
+
+#+end_example
+
+
+** Getting user input
+Lets make a prompt
+#+begin_src lisp :session example
+(defun prompt-read (prompt)
+  (format *query-io* "~a: " prompt)
+  (force-output *query-io*)
+  (read-line *query-io*))
+#+end_src
+
+#+RESULTS:
+: PROMPT-READ
+
+
+Lets make inserting data into the database easier
+
+#+begin_src lisp :session example
+(defun prompt-for-cd ()
+  "Insert a cd interactively"
+  (add-record (make-cd
+               (prompt-read "Title")
+               (prompt-read "Artist")
+               (parse-integer (prompt-read "rating 0-10"))
+               (y-or-n-p "Ripped <y/n>: "))))
+
+
+#+end_src
+
+#+RESULTS:
+: PROMPT-FOR-CD
+
+
+** Loops
+Now lets add them in a loop
+
+#+begin_src lisp :session example
+(defun add-cds ()
+  "add cds in a loop interactively"
+  (loop (prompt-for-cd)
+   (if (not (y-or-n-p "Another?: ")) (return))))
+#+end_src
+
+#+RESULTS:
+: ADD-CDS
+
+The user should not have to re enter data.
+Save and load the database
+
+#+begin_src lisp :session example
+(defun save-db (filename)
+  (with-open-file (out filename
+                       :direction :output
+                       :if-exists :supersede)
+    (with-standard-io-syntax
+      (print *db* out))))
+#+end_src
+
+#+RESULTS:
+: SAVE-DB
+
+#+begin_src lisp :session example
+(save-db "/tmp/test.db")
+#+end_src
+
+#+RESULTS:
+| :TITLE | Universal Mantra | :ARTIST | WaveForm | :RATING | 10 | :RIPPED | T |
+| :TITLE | Deep Jungle Walk | :ARTIST | Astrix   | :RATING |  8 | :RIPPED | T |
+
+And the function to load it
+
+#+begin_src lisp :session example
+(defun load-db (filename)
+  (with-open-file (in filename)
+    (with-standard-io-syntax
+      (setf *db* (read in)))))
+#+end_src
+
+#+RESULTS:
+: LOAD-DB
+
+#+begin_src lisp :session example
+(load-db "/tmp/test.db")
+#+end_src
+
+#+RESULTS:
+| :TITLE | Universal Mantra | :ARTIST | WaveForm | :RATING | 10 | :RIPPED | T |
+| :TITLE | Deep Jungle Walk | :ARTIST | Astrix   | :RATING |  8 | :RIPPED | T |
+
+** Query The database
+
+Function ~REMOVE-IF-NOT~ returns lists only matching the predicate.
+
+It doesn't remove, only gives a new copy.
+
+#+begin_src lisp
+(remove-if-not #'evenp '(1 2 3 4))
+#+end_src
+
+#+RESULTS:
+| 2 | 4 |
+
+~EVENP~ is a function returns true if a number is even.
+
+Lets create a function to select by artist.
+#+begin_src lisp :session example
+(defun select-by-artist (artist)
+  (remove-if-not
+   #'(lambda (cd) (equal (getf cd :artist) artist)) *db*))
+
+#+end_src
+
+#+RESULTS:
+: SELECT-BY-ARTIST
+
+There are many different ways one might want to query, instead lets make a function take an anon function
+
+#+begin_src lisp :session example
+(defun select (selector-fn)
+  (remove-if-not selector-fn *db*))
+#+end_src
+
+#+RESULTS:
+: SELECT
+
+** Macros
+A lisp macro is a code generator that is ran for you automatically by the compiller when a call to a macro is made. When the call is a macro it will not evaluate the arguments, passing them to the macro which will return a new lisp form.

@@ -1,0 +1,48 @@
+:PROPERTIES:
+:ID:       62bf048c-8b3b-4356-a939-ac7132bfaae2
+:ROAM_TAGS:
+:END:
+#+TITLE: nim-flake-example
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+[[id:d0dc2504-21ff-4843-994d-e8abf1991ea0][NixOs]]
+
+* How to setup a nim project with flakes
+
+flake.nix
+#+begin_src nix
+
+{
+  description = "A very basic flake";
+
+  inputs.flake-utils.url = "github:numtide/flake-utils";
+
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system}; in
+      rec {
+        packages = flake-utils.lib.flattenTree
+          {
+            template-nix-nim = pkgs.nimPackages.buildNimPackage {
+              name = "template_nix_nim";
+              src = ./.;
+            };
+          };
+        defaultPackage = packages.template-nix-nim;
+        apps.template-nix-nim = flake-utils.lib.mkApp { drv = packages.template-nix-nim; };
+        defaultApp = apps.template-nix-nim;
+        devShell = pkgs.callPackage ./shell.nix { };
+      }
+    );
+}
+#+end_src
+
+shell.nix
+#+begin_src nix
+{ pkgs ? import <nixpkgs> { } }: pkgs.mkShell {
+  buildInputs = with pkgs; [ nim-unwrapped nimble-unwrapped ];
+}
+#+end_src
+
+Source: https://github.com/AumyF/template-nix-nim

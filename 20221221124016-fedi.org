@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       b2820eca-b8ae-4f50-acd0-28acb4401eb4
+:END:
+#+TITLE: fedi
+#+CREATED: [2022-12-21 Wed 12:40]
+#+LAST_MODIFIED: [2022-12-21 Wed 14:02]
+
+
+* TODO Fedi a Fediverse api wraper for nim
+As of now just mastodon api is supported (contact me if you need more).
+I wrote the lib in need of a nim based wrapper so i can scrape shitlib instances on the fediverse
+
+
+** Usage
+The endpoints are defined using the ~{.multisync.}~ pragma, which creates async and sync versions of the function.
+
+*** Create a new client
+Heres how to create new client
+#+begin_src nim :import fedi
+import fedi
+import json, os
+# Create a Client without an account
+let client("https://mstdn.party")
+# create a client with a token
+#+end_src
