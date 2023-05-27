@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 01:02 -->
+<!-- 2023-05-27 Sat 01:09 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nixos-python</title>
@@ -192,7 +192,7 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<link rel="stylesheet" type="text/css" href="./static/org.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 <body>
 <div id="content" class="content">
@@ -201,16 +201,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga133fbc">1. Setting up a python dev enviroment in nix</a>
+<li><a href="#org8b0331b">1. Setting up a python dev enviroment in nix</a>
 <ul>
-<li><a href="#orgc1d314b">1.1. Impure Dev setup with pipenv</a>
+<li><a href="#org7ceb16f">1.1. Impure Dev setup with pipenv</a>
 <ul>
-<li><a href="#orgafb5937">1.1.1. shell.nix</a></li>
+<li><a href="#org08b920b">1.1.1. shell.nix</a></li>
 </ul>
 </li>
-<li><a href="#org1d47bc0">1.2. Pure nix flakes</a>
+<li><a href="#org4443360">1.2. Pure nix flakes</a>
 <ul>
-<li><a href="#orgea15f05">1.2.1. mach-nix</a></li>
+<li><a href="#orgddb45e3">1.2.1. mach-nix</a></li>
 </ul>
 </li>
 </ul>
@@ -218,16 +218,16 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orga133fbc" class="outline-2">
-<h2 id="orga133fbc"><span class="section-number-2">1.</span> Setting up a python dev enviroment in nix</h2>
+<div id="outline-container-org8b0331b" class="outline-2">
+<h2 id="org8b0331b"><span class="section-number-2">1.</span> Setting up a python dev enviroment in nix</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The python packaging on nim is very lacking and often require you to build/hack around/bend nix to your will
 </p>
 </div>
 
-<div id="outline-container-orgc1d314b" class="outline-3">
-<h3 id="orgc1d314b"><span class="section-number-3">1.1.</span> Impure Dev setup with pipenv</h3>
+<div id="outline-container-org7ceb16f" class="outline-3">
+<h3 id="org7ceb16f"><span class="section-number-3">1.1.</span> Impure Dev setup with pipenv</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 For most of the projects i often use a shell.nix and pipenv
@@ -235,8 +235,8 @@ i will be moving to flakes as they seem more robust for packaging lib dirtrobuti
 </p>
 </div>
 
-<div id="outline-container-orgafb5937" class="outline-4">
-<h4 id="orgafb5937"><span class="section-number-4">1.1.1.</span> shell.nix</h4>
+<div id="outline-container-org08b920b" class="outline-4">
+<h4 id="org08b920b"><span class="section-number-4">1.1.1.</span> shell.nix</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 if you prefer to use `shell.nix`
@@ -288,16 +288,16 @@ buildFHSUserEnv {
 </div>
 
 
-<div id="outline-container-org1d47bc0" class="outline-3">
-<h3 id="org1d47bc0"><span class="section-number-3">1.2.</span> Pure nix flakes</h3>
+<div id="outline-container-org4443360" class="outline-3">
+<h3 id="org4443360"><span class="section-number-3">1.2.</span> Pure nix flakes</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 the nix community have a number of tools for managing python packages
 </p>
 </div>
 
-<div id="outline-container-orgea15f05" class="outline-4">
-<h4 id="orgea15f05"><span class="section-number-4">1.2.1.</span> mach-nix</h4>
+<div id="outline-container-orgddb45e3" class="outline-4">
+<h4 id="orgddb45e3"><span class="section-number-4">1.2.1.</span> mach-nix</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 Mach-nix makes it easy to create and share reproducible python environments or packages. Existing tools for python package management often suffer from reproducibility and complexity issues, requiring a multitude of tools and additional virtualization layers to work sufficiently. Mach-nix aims to solve these problems by providing a simple way to use nix, a revolutionary build system which is known to achieve great reproducibility and portability besides [many other advantages](<a href="https://nixos.org/features.html">https://nixos.org/features.html</a>).
@@ -330,7 +330,7 @@ nix develop
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 01:02</p>
+<p class="date">Created: 2023-05-27 Sat 01:09</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

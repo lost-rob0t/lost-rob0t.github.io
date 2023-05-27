@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 00:52 -->
+<!-- 2023-05-27 Sat 01:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Publish Org Roam</title>
@@ -201,29 +201,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb766295">1. How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></a>
+<li><a href="#orgcf87b05">1. How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></a>
 <ul>
-<li><a href="#org3ea2364">1.1. My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></a></li>
-<li><a href="#orgc58c1ab">1.2. See also</a></li>
+<li><a href="#org3817ae6">1.1. My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></a></li>
+<li><a href="#org09ad9c6">1.2. See also</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<p>
-:ID:       0ca70283-a104-46aa-82f0-1d98608209b9
-:ROAM<sub>TAGS</sub>: script emacs roam org
-</p>
-<div id="outline-container-orgb766295" class="outline-2">
-<h2 id="orgb766295"><span class="section-number-2">1.</span> How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></h2>
+<div id="outline-container-orgcf87b05" class="outline-2">
+<h2 id="orgcf87b05"><span class="section-number-2">1.</span> How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 By Defualt org roam notes do not work with <code>org-publish</code> becuase it doesnt know how to resolve the id links.
 </p>
 </div>
 
-<div id="outline-container-org3ea2364" class="outline-3">
-<h3 id="org3ea2364"><span class="section-number-3">1.1.</span> My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></h3>
+<div id="outline-container-org3817ae6" class="outline-3">
+<h3 id="org3817ae6"><span class="section-number-3">1.1.</span> My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 This script is cobbled from a number of online sources but works
@@ -323,8 +319,8 @@ You can run this script with
 </div>
 </div>
 
-<div id="outline-container-orgc58c1ab" class="outline-3">
-<h3 id="orgc58c1ab"><span class="section-number-3">1.2.</span> See also</h3>
+<div id="outline-container-org09ad9c6" class="outline-3">
+<h3 id="org09ad9c6"><span class="section-number-3">1.2.</span> See also</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li><a href="https://gitlab.com/ngm/commonplace/-/blob/master/publish.el#L98">https://gitlab.com/ngm/commonplace/-/blob/master/publish.el#L98</a></li>
@@ -335,7 +331,7 @@ You can run this script with
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 00:52</p>
+<p class="date">Created: 2023-05-27 Sat 01:02</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

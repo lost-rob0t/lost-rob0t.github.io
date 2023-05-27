@@ -1,4 +1,4 @@
 :PROPERTIES:
 :ROAM_TAGS:
 :END:
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="./static/org.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/main.css" />
