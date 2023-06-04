@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 17:45 -->
+<!-- 2023-06-02 Fri 11:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>XSS</title>
@@ -200,16 +200,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3e3eabb">1. <span class="todo TODO">TODO</span> XSS</a></li>
+<li><a href="#orge3fc88c">1. <span class="todo TODO">TODO</span> XSS</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3e3eabb" class="outline-2">
-<h2 id="org3e3eabb"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> XSS</h2>
+<div id="outline-container-orge3fc88c" class="outline-2">
+<h2 id="orge3fc88c"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> XSS</h2>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 17:45</p>
+<p class="date">Created: 2023-06-02 Fri 11:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

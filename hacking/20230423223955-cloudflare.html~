@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 17:45 -->
+<!-- 2023-06-02 Fri 11:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>cloudflare</title>
@@ -201,11 +201,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3f05c4b">1. Cloudflare</a>
+<li><a href="#orgd8163ec">1. Cloudflare</a>
 <ul>
-<li><a href="#org7668d47">1.1. Bypasses</a>
+<li><a href="#orga96beb7">1.1. Bypasses</a>
 <ul>
-<li><a href="#org95cc713">1.1.1. <span class="todo TODO">TODO</span> Put list here https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></li>
+<li><a href="#orgc3eb7c2">1.1.1. <span class="todo TODO">TODO</span> Put list here https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></li>
 </ul>
 </li>
 </ul>
@@ -213,8 +213,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org3f05c4b" class="outline-2">
-<h2 id="org3f05c4b"><span class="section-number-2">1.</span> Cloudflare</h2>
+<div id="outline-container-orgd8163ec" class="outline-2">
+<h2 id="orgd8163ec"><span class="section-number-2">1.</span> Cloudflare</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Cloudflare is a reverse proxy sites used to protect websites from ddos and bots.
@@ -222,22 +222,22 @@ Cloudflare is a reverse proxy sites used to protect websites from ddos and bots.
 </div>
 
 
-<div id="outline-container-org7668d47" class="outline-3">
-<h3 id="org7668d47"><span class="section-number-3">1.1.</span> Bypasses</h3>
+<div id="outline-container-orga96beb7" class="outline-3">
+<h3 id="orga96beb7"><span class="section-number-3">1.1.</span> Bypasses</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 There are a number of ways to get around it depending on what your goal is.
 </p>
 </div>
 
-<div id="outline-container-org95cc713" class="outline-4">
-<h4 id="org95cc713"><span class="section-number-4">1.1.1.</span> <span class="todo TODO">TODO</span> Put list here <a href="https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers">https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></h4>
+<div id="outline-container-orgc3eb7c2" class="outline-4">
+<h4 id="orgc3eb7c2"><span class="section-number-4">1.1.1.</span> <span class="todo TODO">TODO</span> Put list here <a href="https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers">https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 17:45</p>
+<p class="date">Created: 2023-06-02 Fri 11:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

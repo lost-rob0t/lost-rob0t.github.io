@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 17:45 -->
+<!-- 2023-06-02 Fri 11:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Asymptotic Analysis</title>
@@ -201,14 +201,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2f3c3e7">1. Efficiency</a></li>
-<li><a href="#orgc69c402">2. How do you measure the time?</a></li>
+<li><a href="#org92cd672">1. Efficiency</a></li>
+<li><a href="#org35cdf9d">2. How do you measure the time?</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2f3c3e7" class="outline-2">
-<h2 id="org2f3c3e7"><span class="section-number-2">1.</span> Efficiency</h2>
+<div id="outline-container-org92cd672" class="outline-2">
+<h2 id="org92cd672"><span class="section-number-2">1.</span> Efficiency</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Efficiency is always measured in terms of time and space
@@ -222,8 +222,8 @@ And ideal data struct is the one that takes the least time and least space.
 
 
 
-<div id="outline-container-orgc69c402" class="outline-2">
-<h2 id="orgc69c402"><span class="section-number-2">2.</span> How do you measure the time?</h2>
+<div id="outline-container-org35cdf9d" class="outline-2">
+<h2 id="org35cdf9d"><span class="section-number-2">2.</span> How do you measure the time?</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 you use <a href="20230305150253-big_o.html#ID-a6dfee7d-c44e-4cbf-93c2-3461b91158f5">big o</a>
@@ -232,7 +232,7 @@ you use <a href="20230305150253-big_o.html#ID-a6dfee7d-c44e-4cbf-93c2-3461b91158
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 17:45</p>
+<p class="date">Created: 2023-06-02 Fri 11:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

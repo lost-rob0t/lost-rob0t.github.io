@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 17:45 -->
+<!-- 2023-06-02 Fri 11:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Linux</title>
@@ -201,10 +201,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3ea40a8">1. Linux</a></li>
-<li><a href="#orgde1c89b">2. Tips</a>
+<li><a href="#orgb545cc9">1. Linux</a></li>
+<li><a href="#org785e90b">2. Tips</a>
 <ul>
-<li><a href="#orgd3feadb">2.1. Libvirt</a></li>
+<li><a href="#orgde6e6f0">2.1. Libvirt</a></li>
 </ul>
 </li>
 </ul>
@@ -213,8 +213,8 @@
 
 
 
-<div id="outline-container-org3ea40a8" class="outline-2">
-<h2 id="org3ea40a8"><span class="section-number-2">1.</span> Linux</h2>
+<div id="outline-container-orgb545cc9" class="outline-2">
+<h2 id="orgb545cc9"><span class="section-number-2">1.</span> Linux</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Linux is a class of free and often opensource operating systems. It runs the linux kernal where it gets its name from.
@@ -228,15 +228,15 @@ This page links to things related to linux.
 
 
 
-<div id="outline-container-orgde1c89b" class="outline-2">
-<h2 id="orgde1c89b"><span class="section-number-2">2.</span> Tips</h2>
+<div id="outline-container-org785e90b" class="outline-2">
+<h2 id="org785e90b"><span class="section-number-2">2.</span> Tips</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="Tutorial/20230524053313-git_tricks.html#ID-633b4d18-e9b5-4e08-bf98-5b36959625fd">git tricks</a></li>
 </ul>
 </div>
-<div id="outline-container-orgd3feadb" class="outline-3">
-<h3 id="orgd3feadb"><span class="section-number-3">2.1.</span> Libvirt</h3>
+<div id="outline-container-orgde6e6f0" class="outline-3">
+<h3 id="orgde6e6f0"><span class="section-number-3">2.1.</span> Libvirt</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li><a href="Tutorial/20220811005425-libvirt_multi_head.html#ID-96fa09b5-aaf3-402b-aacc-2820856ee3e8">libvirt-multi-head</a>
@@ -248,7 +248,7 @@ Run Libvirt on more than one screen</li>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 17:45</p>
+<p class="date">Created: 2023-06-02 Fri 11:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

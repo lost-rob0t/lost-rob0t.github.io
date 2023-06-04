@@ -5,7 +5,7 @@
 #+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
 
 #+CREATED: [2023-05-02 Tue 18:51]
-#+LAST_MODIFIED: [2023-05-02 Tue 18:57]
+#+LAST_MODIFIED: [2023-05-31 Wed 17:15]
 
 * Fixing Common Lisp LD_LIBRARY_PATH
 
@@ -29,6 +29,7 @@ Example ~flake.nix~[fn:1] :
           pkg-config
           roswell
           sbcl
+          openssl # NOTE Not sure if you need to include this
           # normally stuff goes in here
         ];
         shellHook = ''

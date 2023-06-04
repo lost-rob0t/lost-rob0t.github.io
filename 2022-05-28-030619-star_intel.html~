@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 17:45 -->
+<!-- 2023-06-02 Fri 11:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>star intel</title>
@@ -201,23 +201,23 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb336500">1. StarIntel</a></li>
-<li><a href="#org0f958af">2. <span class="todo TODO">TODO</span> Guides and Tutorials :starintel: <code>[0/5]</code></a>
+<li><a href="#orgd5bc069">1. StarIntel</a></li>
+<li><a href="#org218e2ba">2. <span class="todo TODO">TODO</span> Guides and Tutorials :starintel: <code>[0/5]</code></a>
 <ul>
-<li><a href="#orgc79f03b">2.1. IDEA How to create your first document and upload</a></li>
-<li><a href="#orgd488df9">2.2. IDEA Parsing a simple CSV file</a></li>
-<li><a href="#orgc5a265a">2.3. IDEA Setup a Starintel server</a></li>
-<li><a href="#orgababe50">2.4. IDEA Project: Scrape a website and store results</a></li>
-<li><a href="#org1ba7214">2.5. IDEA Basic SkipTrace guide</a></li>
+<li><a href="#orgf2e1f37">2.1. IDEA How to create your first document and upload</a></li>
+<li><a href="#orgca09115">2.2. IDEA Parsing a simple CSV file</a></li>
+<li><a href="#orgce21054">2.3. IDEA Setup a Starintel server</a></li>
+<li><a href="#org683191f">2.4. IDEA Project: Scrape a website and store results</a></li>
+<li><a href="#orge162508">2.5. IDEA Basic SkipTrace guide</a></li>
 </ul>
 </li>
-<li><a href="#org79d6a92">3. <span class="todo TODO">TODO</span> Guide on how to setup the enviroment</a></li>
-<li><a href="#orge57c485">4. Links to Stuff that made this possible</a></li>
+<li><a href="#org86ee342">3. <span class="todo TODO">TODO</span> Guide on how to setup the enviroment</a></li>
+<li><a href="#org5984f9c">4. Links to Stuff that made this possible</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb336500" class="outline-2">
-<h2 id="orgb336500"><span class="section-number-2">1.</span> StarIntel</h2>
+<div id="outline-container-orgd5bc069" class="outline-2">
+<h2 id="orgd5bc069"><span class="section-number-2">1.</span> StarIntel</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Star intel is a framework for mapping and collecting personable identifiable information and making it searchable.
@@ -225,33 +225,33 @@ Star intel is a framework for mapping and collecting personable identifiable inf
 </div>
 </div>
 
-<div id="outline-container-org0f958af" class="outline-2">
-<h2 id="org0f958af"><span class="section-number-2">2.</span> <span class="todo TODO">TODO</span> Guides and Tutorials :starintel: <code>[0/5]</code></h2>
+<div id="outline-container-org218e2ba" class="outline-2">
+<h2 id="org218e2ba"><span class="section-number-2">2.</span> <span class="todo TODO">TODO</span> Guides and Tutorials :starintel: <code>[0/5]</code></h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgc79f03b" class="outline-3">
-<h3 id="orgc79f03b"><span class="section-number-3">2.1.</span> IDEA How to create your first document and upload</h3>
+<div id="outline-container-orgf2e1f37" class="outline-3">
+<h3 id="orgf2e1f37"><span class="section-number-3">2.1.</span> IDEA How to create your first document and upload</h3>
 </div>
-<div id="outline-container-orgd488df9" class="outline-3">
-<h3 id="orgd488df9"><span class="section-number-3">2.2.</span> IDEA Parsing a simple CSV file</h3>
+<div id="outline-container-orgca09115" class="outline-3">
+<h3 id="orgca09115"><span class="section-number-3">2.2.</span> IDEA Parsing a simple CSV file</h3>
 </div>
-<div id="outline-container-orgc5a265a" class="outline-3">
-<h3 id="orgc5a265a"><span class="section-number-3">2.3.</span> IDEA Setup a Starintel server</h3>
+<div id="outline-container-orgce21054" class="outline-3">
+<h3 id="orgce21054"><span class="section-number-3">2.3.</span> IDEA Setup a Starintel server</h3>
 </div>
-<div id="outline-container-orgababe50" class="outline-3">
-<h3 id="orgababe50"><span class="section-number-3">2.4.</span> IDEA Project: Scrape a website and store results</h3>
+<div id="outline-container-org683191f" class="outline-3">
+<h3 id="org683191f"><span class="section-number-3">2.4.</span> IDEA Project: Scrape a website and store results</h3>
 </div>
-<div id="outline-container-org1ba7214" class="outline-3">
-<h3 id="org1ba7214"><span class="section-number-3">2.5.</span> IDEA Basic SkipTrace guide</h3>
+<div id="outline-container-orge162508" class="outline-3">
+<h3 id="orge162508"><span class="section-number-3">2.5.</span> IDEA Basic SkipTrace guide</h3>
 </div>
-</div>
-
-<div id="outline-container-org79d6a92" class="outline-2">
-<h2 id="org79d6a92"><span class="section-number-2">3.</span> <span class="todo TODO">TODO</span> Guide on how to setup the enviroment</h2>
 </div>
 
-<div id="outline-container-orge57c485" class="outline-2">
-<h2 id="orge57c485"><span class="section-number-2">4.</span> Links to Stuff that made this possible</h2>
+<div id="outline-container-org86ee342" class="outline-2">
+<h2 id="org86ee342"><span class="section-number-2">3.</span> <span class="todo TODO">TODO</span> Guide on how to setup the enviroment</h2>
+</div>
+
+<div id="outline-container-org5984f9c" class="outline-2">
+<h2 id="org5984f9c"><span class="section-number-2">4.</span> Links to Stuff that made this possible</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="https://couchdb.apache.org/">CouchDb</a></li>
@@ -266,7 +266,7 @@ Star intel is a framework for mapping and collecting personable identifiable inf
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 17:45</p>
+<p class="date">Created: 2023-06-02 Fri 11:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

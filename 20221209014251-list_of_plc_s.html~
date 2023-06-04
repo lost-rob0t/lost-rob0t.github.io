@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-05-27 Sat 17:45 -->
+<!-- 2023-06-02 Fri 11:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>List of PLC's</title>
@@ -201,23 +201,23 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org11fe0c7">1. List of PLC's</a>
+<li><a href="#org7dbdb24">1. List of PLC's</a>
 <ul>
-<li><a href="#orgcc2fa32">1.1. <span class="todo TODO">TODO</span> Red Lion Controls</a></li>
+<li><a href="#orge040918">1.1. <span class="todo TODO">TODO</span> Red Lion Controls</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org11fe0c7" class="outline-2">
-<h2 id="org11fe0c7"><span class="section-number-2">1.</span> List of PLC's</h2>
+<div id="outline-container-org7dbdb24" class="outline-2">
+<h2 id="org7dbdb24"><span class="section-number-2">1.</span> List of PLC's</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This document is to link to other documents and possibly map out commononly used tech in order to find vulns and list info.
 </p>
 </div>
-<div id="outline-container-orgcc2fa32" class="outline-3">
-<h3 id="orgcc2fa32"><span class="section-number-3">1.1.</span> <span class="todo TODO">TODO</span> Red Lion Controls</h3>
+<div id="outline-container-orge040918" class="outline-3">
+<h3 id="orge040918"><span class="section-number-3">1.1.</span> <span class="todo TODO">TODO</span> Red Lion Controls</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 They are vuln to LFI on login page (maybe needs testing)
@@ -228,7 +228,7 @@ They are vuln to LFI on login page (maybe needs testing)
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-05-27 Sat 17:45</p>
+<p class="date">Created: 2023-06-02 Fri 11:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
