@@ -26,7 +26,8 @@ url2org function for importing info from the web
 
 #+RESULTS:
 : url2org
-
+*** Org Babel isnt tangling the file.
+Make sure you C-c C-c the header args
 ** Doom Emacs
 [[id:6dd02406-f2d1-4ff2-8a39-2590597c44bf][Doom Emacs]]
 ** Yasnippet

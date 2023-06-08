@@ -1,0 +1,59 @@
+:PROPERTIES:
+:ID:       35f921f6-6d41-4ead-96bb-0e497a57eeb7
+:END:
+#+TITLE: Graphs
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+#+CREATED: [2023-05-30 Tue 02:09]
+#+LAST_MODIFIED: [2023-05-30 Tue 18:48]
+
+* Graph theory
++ Video: https://www.youtube.com/watch?v=tWVWeAqZ0WU
+In these notes i will use lisp/nim.
+** Graph Basics
+
+A grapgh is nodes and edges
+A Node would be a "dot" on a graph and a edge is a connection between them.
+A vertex is also known as a edge.
+
+Graphs can be used for all kinds of things from social network analsis
+
+*** Directed graph
+An directed graph is a grapgh that has the edges have "directions", where you can only move in the edge direction.
+
+
+*** Undirected graph
+A undirected graph is where edges has no direction btween nodes
+
+
+*** Neighbor nodes
+Neighbor nodes are any node that is accessible by an edge
+
+A => B
+^
+|
+C
+In this example C's neighbor is a and A neighbor is B
+but C isnt A's neighbor.
+
+
+*** Adjacency List
+An adjancy list is a hashmap of notes as keys and list of nodes as the values.
+
+In common lisp I need to use a ~vector~ since they have faster access time.
+
+
+
+*** Algorithms
+
++ Depth First search visits all Adjacent nodes until it reaches a leaf then it starts backtracking. it is used to tell you if you can get to a node. Goes Deep.
+  + Uses a stack
+  + Complexity: O(n)
++ Breadth first search goes to all its imedient neighbors first. BFS goes "wide"
+  + Uses a queue
+  + Complexity: O(n^2)
+
+
+*** Cycles
+A Cycle is a closed path in a graph that starts and ends at the same node.
+**** Acyclic
+Means there are no "cycles"

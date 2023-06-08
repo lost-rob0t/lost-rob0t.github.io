@@ -1,0 +1,54 @@
+:PROPERTIES:
+:ID:       579deb77-610c-455b-b76f-2a04f626c3eb
+:END:
+#+TITLE: Depth First Search 
+#+CREATED: [2023-05-30 Tue 02:48]
+#+LAST_MODIFIED: [2023-05-30 Tue 03:53]
+* Depth First Search :algorithim:
+
+1. Push the starting node to the stack and pop it?
+2. Push the nodes neighbors to the stack
+3. Choose one and pop it
+
+
+Basic Stack in lisp
+#+begin_src lisp :results output replace
+(setq stack (make-array 10 :element-type 'integer))
+(push 2 stack)
+(push 1 stack)
+(push 3 stack)
+(print (pop stack))
+(print (pop stack))
+(print (pop stack))
+(print (pop stack))
+#+end_src
+
+#+RESULTS:
+:
+: 3
+: 1
+: 2
+
+
+#+begin_src lisp :tangle dfs.lisp
+(ql:quickload :alexandria)
+(ql:quickload :serapeum)
+
+
+(setq graph (serapeum:dict "a" '("b" "c") "b" '("d") "c" '("e") "d" '("f") "e" nil "f" nil))
+
+(defun depth-first (graph source)
+  (let ((stack (make-array 10 :element-type 'string)))
+    (push source stack)
+    (loop while stack
+          for current = (pop stack)
+          do (loop for neighbor in (gethash current graph)
+                   do (push neighbor stack))
+
+          do (format t "Current: ~a~%" current))))
+
+(depth-first graph "d")
+#+end_src
+
+#+RESULTS:
+: #<HASH-TABLE :TEST EQUAL :COUNT 6 {1005F51713}>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-02 Fri 11:45 -->
+<!-- 2023-06-04 Sun 09:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nix Flakes Tutorial</title>
@@ -201,31 +201,31 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org32cbbb0">1. Part One.</a>
+<li><a href="#org9919503">1. Part One.</a>
 <ul>
-<li><a href="#orgad4f7aa">1.1. Problems with nix</a></li>
-<li><a href="#orga91b439">1.2. What is a flake?</a></li>
-<li><a href="#org7e1370f">1.3. Flake example</a></li>
+<li><a href="#org9b3732f">1.1. Problems with nix</a></li>
+<li><a href="#orgcdf619a">1.2. What is a flake?</a></li>
+<li><a href="#orgbf73f5b">1.3. Flake example</a></li>
 </ul>
 </li>
-<li><a href="#org2394593">2. Part Two.</a>
+<li><a href="#orgd239bc5">2. Part Two.</a>
 <ul>
-<li><a href="#orgefb56a3">2.1. Nix eval is slow</a></li>
-<li><a href="#orgff235c6">2.2. Caching nix-env</a></li>
-<li><a href="#org6b92070">2.3. Flakes wich caching</a></li>
+<li><a href="#orgccf9f32">2.1. Nix eval is slow</a></li>
+<li><a href="#org35da233">2.2. Caching nix-env</a></li>
+<li><a href="#orgb6cba6b">2.3. Flakes wich caching</a></li>
 </ul>
 </li>
-<li><a href="#orgdd1ffb7">3. IDEA Part Three</a></li>
+<li><a href="#orgd7c8da1">3. IDEA Part Three</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org32cbbb0" class="outline-2">
-<h2 id="org32cbbb0"><span class="section-number-2">1.</span> Part One.</h2>
+<div id="outline-container-org9919503" class="outline-2">
+<h2 id="org9919503"><span class="section-number-2">1.</span> Part One.</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgad4f7aa" class="outline-3">
-<h3 id="orgad4f7aa"><span class="section-number-3">1.1.</span> Problems with nix</h3>
+<div id="outline-container-org9b3732f" class="outline-3">
+<h3 id="org9b3732f"><span class="section-number-3">1.1.</span> Problems with nix</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Nix files can acess any file in the filesystem, or anything in the $NIX<sub>PATH</sub>
@@ -242,8 +242,8 @@ Nix based project are also not easy to share with users.
 </div>
 </div>
 
-<div id="outline-container-orga91b439" class="outline-3">
-<h3 id="orga91b439"><span class="section-number-3">1.2.</span> What is a flake?</h3>
+<div id="outline-container-orgcdf619a" class="outline-3">
+<h3 id="orgcdf619a"><span class="section-number-3">1.2.</span> What is a flake?</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 a flake is a source tree that has a flake.nix.
@@ -256,8 +256,8 @@ Flakes can depend on other flakes with a flake.lock to ensure reproducible eval.
 </div>
 
 
-<div id="outline-container-org7e1370f" class="outline-3">
-<h3 id="org7e1370f"><span class="section-number-3">1.3.</span> Flake example</h3>
+<div id="outline-container-orgbf73f5b" class="outline-3">
+<h3 id="orgbf73f5b"><span class="section-number-3">1.3.</span> Flake example</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Here is a simple unix package named <b>dwarffs</b>. Its repo is <a href="https://github.com/edolstra/dwarffs">Here</a>.
@@ -277,7 +277,7 @@ Installing a flake like above will only grab the latest version.
 <p>
 <b><b><b>NOTE</b></b></b>: in the aricle the output for the command was so. this shows why you should pin a commit hash!!
 </p>
-<pre class="example" id="orgf73c6bb">
+<pre class="example" id="org7cf59ff">
 dwarffs 0.1.20200406.cd7955a
 </pre>
 
@@ -309,12 +309,12 @@ Flake outputs can be shown with
 </div>
 </div>
 
-<div id="outline-container-org2394593" class="outline-2">
-<h2 id="org2394593"><span class="section-number-2">2.</span> Part Two.</h2>
+<div id="outline-container-orgd239bc5" class="outline-2">
+<h2 id="orgd239bc5"><span class="section-number-2">2.</span> Part Two.</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgefb56a3" class="outline-3">
-<h3 id="orgefb56a3"><span class="section-number-3">2.1.</span> Nix eval is slow</h3>
+<div id="outline-container-orgccf9f32" class="outline-3">
+<h3 id="orgccf9f32"><span class="section-number-3">2.1.</span> Nix eval is slow</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Nix is a interpeted functional language.
@@ -336,8 +336,8 @@ This is ok for one off use but using it for scripts is slow becuase of the delay
 </div>
 </div>
 
-<div id="outline-container-orgff235c6" class="outline-3">
-<h3 id="orgff235c6"><span class="section-number-3">2.2.</span> Caching nix-env</h3>
+<div id="outline-container-org35da233" class="outline-3">
+<h3 id="org35da233"><span class="section-number-3">2.2.</span> Caching nix-env</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 there is a replacement for nix-env -qa for and its called nix-search.
@@ -345,8 +345,8 @@ there is a replacement for nix-env -qa for and its called nix-search.
 </div>
 </div>
 
-<div id="outline-container-org6b92070" class="outline-3">
-<h3 id="org6b92070"><span class="section-number-3">2.3.</span> Flakes wich caching</h3>
+<div id="outline-container-orgb6cba6b" class="outline-3">
+<h3 id="orgb6cba6b"><span class="section-number-3">2.3.</span> Flakes wich caching</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 Flake evaluations are fully hermetic. It disslows access to files, envrioment varibles.
@@ -380,12 +380,12 @@ sqlite db name comes from the contents of the top level flake.
 </div>
 </div>
 
-<div id="outline-container-orgdd1ffb7" class="outline-2">
-<h2 id="orgdd1ffb7"><span class="section-number-2">3.</span> IDEA Part Three</h2>
+<div id="outline-container-orgd7c8da1" class="outline-2">
+<h2 id="orgd7c8da1"><span class="section-number-2">3.</span> IDEA Part Three</h2>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-02 Fri 11:45</p>
+<p class="date">Created: 2023-06-04 Sun 09:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

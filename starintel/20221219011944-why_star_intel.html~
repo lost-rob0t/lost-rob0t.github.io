@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-02 Fri 11:45 -->
+<!-- 2023-06-04 Sun 09:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Why Star Intel</title>
@@ -201,59 +201,59 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5213ac3">1. Why Star intel?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="starintel">starintel</span></span></a>
+<li><a href="#org8df9ad6">1. Why Star intel?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="starintel">starintel</span></span></a>
 <ul>
-<li><a href="#orgc31c7ba">1.1. Nots for me (REMOVE before publish!)</a>
+<li><a href="#org4889273">1.1. Nots for me (REMOVE before publish!)</a>
 <ul>
-<li><a href="#org58aa187">1.1.1. Object Type</a></li>
+<li><a href="#org54e7e9e">1.1.1. Object Type</a></li>
 </ul>
 </li>
-<li><a href="#orga0d5fbc">1.2. Introduction</a></li>
-<li><a href="#org5b24d77">1.3. <span class="todo TODO">TODO</span> Objectives of this document</a></li>
-<li><a href="#org35aa67c">1.4. <span class="todo TODO">TODO</span> History of Star intel</a>
+<li><a href="#orgec418fd">1.2. Introduction</a></li>
+<li><a href="#org2d363e1">1.3. <span class="todo TODO">TODO</span> Objectives of this document</a></li>
+<li><a href="#org18e6d50">1.4. <span class="todo TODO">TODO</span> History of Star intel</a>
 <ul>
-<li><a href="#org2b4c3b3">1.4.1. Brief overview of the project before it (UNGI)</a></li>
-<li><a href="#org45b18e6">1.4.2. History Of UNGI</a></li>
+<li><a href="#org420ce60">1.4.1. Brief overview of the project before it (UNGI)</a></li>
+<li><a href="#org2d9d1af">1.4.2. History Of UNGI</a></li>
 </ul>
 </li>
-<li><a href="#orgc61e507">1.5. <span class="todo TODO">TODO</span> The Theory Behind the Project</a></li>
-<li><a href="#orgde2e69f">1.6. <span class="todo TODO">TODO</span> Implementation Details</a></li>
-<li><a href="#orgf16b336">1.7. <span class="todo TODO">TODO</span> Plug and play artecture</a></li>
-<li><a href="#orgf43676a">1.8. <span class="todo TODO">TODO</span> Use cases Real world needs</a></li>
-<li><a href="#orgcb9ca1c">1.9. <span class="todo TODO">TODO</span> Conclusion</a></li>
+<li><a href="#orgf83570e">1.5. <span class="todo TODO">TODO</span> The Theory Behind the Project</a></li>
+<li><a href="#org063d3f0">1.6. <span class="todo TODO">TODO</span> Implementation Details</a></li>
+<li><a href="#orgb85dc4b">1.7. <span class="todo TODO">TODO</span> Plug and play artecture</a></li>
+<li><a href="#org6041e7c">1.8. <span class="todo TODO">TODO</span> Use cases Real world needs</a></li>
+<li><a href="#orgccd6db8">1.9. <span class="todo TODO">TODO</span> Conclusion</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5213ac3" class="outline-2">
-<h2 id="org5213ac3"><span class="section-number-2">1.</span> Why Star intel?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="starintel">starintel</span></span></h2>
+<div id="outline-container-org8df9ad6" class="outline-2">
+<h2 id="org8df9ad6"><span class="section-number-2">1.</span> Why Star intel?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="starintel">starintel</span></span></h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orgc31c7ba" class="outline-3">
-<h3 id="orgc31c7ba"><span class="section-number-3">1.1.</span> Nots for me (REMOVE before publish!)</h3>
+<div id="outline-container-org4889273" class="outline-3">
+<h3 id="org4889273"><span class="section-number-3">1.1.</span> Nots for me (REMOVE before publish!)</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 outline for objects
 </p>
 </div>
 
-<div id="outline-container-org58aa187" class="outline-4">
-<h4 id="org58aa187"><span class="section-number-4">1.1.1.</span> Object Type</h4>
+<div id="outline-container-org54e7e9e" class="outline-4">
+<h4 id="org54e7e9e"><span class="section-number-4">1.1.1.</span> Object Type</h4>
 <div class="outline-text-4" id="text-1-1-1">
 </div>
 <ol class="org-ol">
-<li><a id="orgf3ca6fc"></a>Definition and purpose of the object type<br /></li>
-<li><a id="orgd97b337"></a>Key characteristics or features of the object type<br /></li>
-<li><a id="orgdee210f"></a>Examples of how the object type is used in the project<br /></li>
-<li><a id="orga66d4da"></a>Any special considerations or limitations related to the object type<br /></li>
+<li><a id="org5c42753"></a>Definition and purpose of the object type<br /></li>
+<li><a id="org53f4c25"></a>Key characteristics or features of the object type<br /></li>
+<li><a id="org3c21b8a"></a>Examples of how the object type is used in the project<br /></li>
+<li><a id="orgac2f931"></a>Any special considerations or limitations related to the object type<br /></li>
 </ol>
 </div>
 </div>
 
 
-<div id="outline-container-orga0d5fbc" class="outline-3">
-<h3 id="orga0d5fbc"><span class="section-number-3">1.2.</span> Introduction</h3>
+<div id="outline-container-orgec418fd" class="outline-3">
+<h3 id="orgec418fd"><span class="section-number-3">1.2.</span> Introduction</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Star Intel (short for "Star Intelligence") is a framework for collecting, storing, and acting on data in near real time. At the core of this framework is a document specification that provides a uniform interface for tools and components to flow.
@@ -270,8 +270,8 @@ The project is still in the early stages of development, but progress has been m
 </div>
 
 
-<div id="outline-container-org5b24d77" class="outline-3">
-<h3 id="org5b24d77"><span class="section-number-3">1.3.</span> <span class="todo TODO">TODO</span> Objectives of this document</h3>
+<div id="outline-container-org2d363e1" class="outline-3">
+<h3 id="org2d363e1"><span class="section-number-3">1.3.</span> <span class="todo TODO">TODO</span> Objectives of this document</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 This document seeks to explain, expose and help educatue you on my project.
@@ -296,12 +296,12 @@ The following Sections are:
 </ul>
 </div>
 </div>
-<div id="outline-container-org35aa67c" class="outline-3">
-<h3 id="org35aa67c"><span class="section-number-3">1.4.</span> <span class="todo TODO">TODO</span> History of Star intel</h3>
+<div id="outline-container-org18e6d50" class="outline-3">
+<h3 id="org18e6d50"><span class="section-number-3">1.4.</span> <span class="todo TODO">TODO</span> History of Star intel</h3>
 <div class="outline-text-3" id="text-1-4">
 </div>
-<div id="outline-container-org2b4c3b3" class="outline-4">
-<h4 id="org2b4c3b3"><span class="section-number-4">1.4.1.</span> Brief overview of the project before it (UNGI)</h4>
+<div id="outline-container-org420ce60" class="outline-4">
+<h4 id="org420ce60"><span class="section-number-4">1.4.1.</span> Brief overview of the project before it (UNGI)</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <ul class="org-ul">
 <li>Development of UNGI</li>
@@ -318,8 +318,8 @@ The following Sections are:
 </div>
 </div>
 
-<div id="outline-container-org45b18e6" class="outline-4">
-<h4 id="org45b18e6"><span class="section-number-4">1.4.2.</span> History Of UNGI</h4>
+<div id="outline-container-org2d9d1af" class="outline-4">
+<h4 id="org2d9d1af"><span class="section-number-4">1.4.2.</span> History Of UNGI</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <p>
 Ungi Was a set of scripts, bots and at the center Elasticsearch
@@ -328,8 +328,8 @@ UNGI was built out of a need to gain
 </div>
 </div>
 </div>
-<div id="outline-container-orgc61e507" class="outline-3">
-<h3 id="orgc61e507"><span class="section-number-3">1.5.</span> <span class="todo TODO">TODO</span> The Theory Behind the Project</h3>
+<div id="outline-container-orgf83570e" class="outline-3">
+<h3 id="orgf83570e"><span class="section-number-3">1.5.</span> <span class="todo TODO">TODO</span> The Theory Behind the Project</h3>
 <div class="outline-text-3" id="text-1-5">
 <ul class="org-ul">
 <li>Why it is important to define the format of a JSON document</li>
@@ -342,8 +342,8 @@ UNGI was built out of a need to gain
 </div>
 </div>
 
-<div id="outline-container-orgde2e69f" class="outline-3">
-<h3 id="orgde2e69f"><span class="section-number-3">1.6.</span> <span class="todo TODO">TODO</span> Implementation Details</h3>
+<div id="outline-container-org063d3f0" class="outline-3">
+<h3 id="org063d3f0"><span class="section-number-3">1.6.</span> <span class="todo TODO">TODO</span> Implementation Details</h3>
 <div class="outline-text-3" id="text-1-6">
 <ul class="org-ul">
 <li>Overview of the technical design</li>
@@ -353,14 +353,14 @@ UNGI was built out of a need to gain
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf16b336" class="outline-3">
-<h3 id="orgf16b336"><span class="section-number-3">1.7.</span> <span class="todo TODO">TODO</span> Plug and play artecture</h3>
+<div id="outline-container-orgb85dc4b" class="outline-3">
+<h3 id="orgb85dc4b"><span class="section-number-3">1.7.</span> <span class="todo TODO">TODO</span> Plug and play artecture</h3>
 </div>
-<div id="outline-container-orgf43676a" class="outline-3">
-<h3 id="orgf43676a"><span class="section-number-3">1.8.</span> <span class="todo TODO">TODO</span> Use cases Real world needs</h3>
+<div id="outline-container-org6041e7c" class="outline-3">
+<h3 id="org6041e7c"><span class="section-number-3">1.8.</span> <span class="todo TODO">TODO</span> Use cases Real world needs</h3>
 </div>
-<div id="outline-container-orgcb9ca1c" class="outline-3">
-<h3 id="orgcb9ca1c"><span class="section-number-3">1.9.</span> <span class="todo TODO">TODO</span> Conclusion</h3>
+<div id="outline-container-orgccd6db8" class="outline-3">
+<h3 id="orgccd6db8"><span class="section-number-3">1.9.</span> <span class="todo TODO">TODO</span> Conclusion</h3>
 <div class="outline-text-3" id="text-1-9">
 <ul class="org-ul">
 <li>Summary of the main points covered in the documentation</li>
@@ -372,7 +372,7 @@ UNGI was built out of a need to gain
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-02 Fri 11:45</p>
+<p class="date">Created: 2023-06-04 Sun 09:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

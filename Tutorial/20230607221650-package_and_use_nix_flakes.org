@@ -1,0 +1,185 @@
+:PROPERTIES:
+:ID:       828e3d5c-f971-4344-9576-79e11005fba6
+:END:
+#+TITLE: Package and use Nix flakes
+#+CREATED: [2023-06-07 Wed 22:16]
+#+LAST_MODIFIED: [2023-06-07 Wed 22:44]
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+* How to Package and use a Nix Flake :nixos:
+
+Today I had ran into a issue with war thunder where the mouse would not be stuck inside the screen, after looking around I found [[https://github.com/gholken/Mousetrap][MouseTrap]]. Its a c++ tool that will keep it in the window.
+The only issue I am on [[id:d0dc2504-21ff-4843-994d-e8abf1991ea0][Nixos]], which requires me to include it in my configuration so i can reproduce it later on.
+So I will package mouse trap and add it to my home-manager config.
+
+
+** Writing the nix flake
+
+I will assume you are already aware of how to package [[id:3866dd8f-fc14-491a-af3a-bbd0c4c5ce98][nixos custom pkgs,]] but TLDR they are like normal nix derivations with locks, inputs and outputs.
+
+Download the mousetrap source code.
+
+#+begin_src shell
+git clone https://github.com/gholken/Mousetrap
+cd MouseTrap
+#+end_src
+
+Now with your editor of choice lets start by adding the flake.
+
+
+Start with the base nix flake.
+#+begin_src nix
+{
+  inputs = {
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
+  };
+  outputs = { nixpkgs, flake-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = import nixpkgs {
+        inherit system;
+      };
+
+    in rec {
+
+    }
+  );
+}
+#+end_src
+
+
+Lets name the package and begin creating the derivation
+
+#+begin_src nix
+mousetrap = (with pkgs; stdenv.mkDerivation {
+  pname = "mousetrap";
+  version = "1.0.0";
+      )
+#+end_src
+
+
+Now we need to add the source where nix will download the package from.
+
+#+begin_src nix
+src = fetchgit {
+  url = "https://github.com/gholken/Mousetrap";
+  rev = "9299933ea0cbaf39b36c6bfd3498474541884211";
+  sha256 = lib.fakeSha256;
+};
+#+end_src
+
+This tells nix we will want to download the source code by a git clone.
+
+rev is can be a git tag, or a commit. There are more option in the nixos manual.[fn:1]
+sha256 is will be the resulting hash from fetch git, since you do not have that yet you can use libfakeSha256 to cause an error, which you will then replace it with the one in the error.
+
+Now lets specify the deps for this derivation. MouseTrap requires libx11 and libxfixes
+it also need libnotify, so I add that to buildInputs.[fn:2]
+
+#+begin_src nix
+nativeBuildInputs = [
+  pkg-config
+  xorg.libX11
+  xorg.libXfixes
+];
+buildInputs = [
+  libnotify
+];
+#+end_src
+
+Now that I have the deps defined we will now "build" it
+nix has different phases of the derivation and its worthwhile to become aware of them.[fn:3]
+in this case we will just be running make -j. There is a environment variable for your core count in ~$NIX_BUILD_CORES~.
+Here is the build and install
+#+begin_src nix
+buildPhase = "make -j $NIX_BUILD_CORES";
+installPhase = ''
+        mkdir --parents "$out/bin"
+        cp ./mousetrap "$out/bin"
+'';
+#+end_src
+Now there are a number of special variables that nix creates, but i will not list them here.
+
+The final flake.nix looks like this
+#+begin_src nix
+{
+  inputs = {
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
+  };
+  outputs = { nixpkgs, flake-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = import nixpkgs {
+        inherit system;
+      };
+      mousetrap = (with pkgs; stdenv.mkDerivation {
+          pname = "mousetrap";
+          version = "1.0.0";
+          src = fetchgit {
+            url = "https://github.com/gholken/Mousetrap";
+            rev = "9299933ea0cbaf39b36c6bfd3498474541884211";
+            sha256 = "sha256-NWD3q/f9RvXneeFTEt3IBCM9iQD+qY3gq91yL974uq4=";
+          };
+          nativeBuildInputs = [
+            pkg-config
+            xorg.libX11
+            xorg.libXfixes
+          ];
+          buildInputs = [
+            libnotify
+          ];
+          buildPhase = "make -j $NIX_BUILD_CORES";
+          installPhase = ''
+          mkdir --parents "$out/bin"
+
+          cp ./mousetrap "$out/bin"
+          '';
+        }
+      );
+    in rec {
+      defaultApp = flake-utils.lib.mkApp {
+        drv = defaultPackage;
+      };
+      defaultPackage = mousetrap;
+      devShell = pkgs.mkShell {
+        buildInputs = [
+          mousetrap
+          pkgs.libnotify
+        ];
+      };
+    }
+  );
+}
+#+end_src
+
+** Using the nix flake.
+
+In order to use your nix flake, you need to make sure it is added to your flake inputs
+
+Here you can get the package we made from here.
+#+begin_src nix
+mousetrap.url = "github:lost-rob0t/Mousetrap";
+#+end_src
+Then inside your normal nix config you include the inputs attribute
+#+begin_src nix
+{ config, lib, pkgs, inputs, ... }:
+#+end_src
+
+Then to use it just include it.
+#+begin_src nix
+inputs.mousetrap.defaultPackage.x86_64-linux
+#+end_src
+* Footnotes
+
+[fn:3] https://scrive.github.io/nix-workshop/04-derivations/06-build-phases.html
+[fn:2] I forget the difference between the types of build inputs.
+
+[fn:1] https://nixos.org/manual/nixpkgs/stable/#fetchgit

@@ -1,0 +1,43 @@
+:PROPERTIES:
+:ID:       aa0f69eb-2c3c-4226-a38c-f4f5c49bbc37
+:END:
+#+TITLE: Rest Api's in common lisp
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2023-06-01 Thu 21:53]
+#+LAST_MODIFIED: [2023-06-01 Thu 22:26]
+
+
+* Rest API in common lisp
+
+In common lisp there are many library's to complete a task, some are old but still work just fine.
+A good fast library to use is [[https://github.com/fukamachi/dexador][dexador]]. It is much faster then [[https://github.com/edicl/drakma][drakama]]. As for json i recommend [[https://github.com/madnificent/jsown][jsown]].
+
+~dexador~ also takes uris as arguments, so I recommend using [[https://github.com/fukamachi/quri][quri]].
+
+
+*NOTE*: It is imperative you set the content type in your headers, by default dexador will use ~application/x-www-form-urlencoded~[fn:1]!
+#+begin_src lisp
+(ql:quickload '(:dexador :cl-json))
+(dex:post "https://httpbin.org/post"
+          :headers '((:content-type . "application/json"))
+          :content <json-data>)
+#+end_src
+** Get
+
+#+begin_src lisp
+(dex:get "http://lisp.org")
+#+end_src
+
+#+RESULTS:
+: <html>
+: <head><title>308 Permanent Redirect</title></head>
+: <body>
+: <center><h1>308 Permanent Redirect</h1></center>
+: <hr><center>nginx</center>
+: </body>
+: </html>
+
+* Footnotes
+
+[fn:1] https://archive.ph/UPxN4

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-04 Sun 09:45 -->
+<!-- 2023-06-07 Wed 22:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>elisp errors</title>
@@ -201,13 +201,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8f547c6">1. Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></a>
+<li><a href="#orgd835f93">1. Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></a>
 <ul>
-<li><a href="#org9ecb447">1.1. Raising errors</a></li>
-<li><a href="#org30dacf2">1.2. Handling errors</a>
+<li><a href="#org1a0b016">1.1. Raising errors</a></li>
+<li><a href="#orgf4aef2c">1.2. Handling errors</a>
 <ul>
-<li><a href="#org8e05b18">1.2.1. unwind-protect</a></li>
-<li><a href="#orgf2aab17">1.2.2. condition-case</a></li>
+<li><a href="#org9aab656">1.2.1. unwind-protect</a></li>
+<li><a href="#org7df44a5">1.2.2. condition-case</a></li>
 </ul>
 </li>
 </ul>
@@ -217,8 +217,8 @@
 </div>
 
 
-<div id="outline-container-org8f547c6" class="outline-2">
-<h2 id="org8f547c6"><span class="section-number-2">1.</span> Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></h2>
+<div id="outline-container-orgd835f93" class="outline-2">
+<h2 id="orgd835f93"><span class="section-number-2">1.</span> Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Error handling in any language is often messy, no diffrent with elisp.
@@ -228,8 +228,8 @@ Error handling in any language is often messy, no diffrent with elisp.
 Errors in emacs lisp are called <code>signals</code>.
 </p>
 </div>
-<div id="outline-container-org9ecb447" class="outline-3">
-<h3 id="org9ecb447"><span class="section-number-3">1.1.</span> Raising errors</h3>
+<div id="outline-container-org1a0b016" class="outline-3">
+<h3 id="org1a0b016"><span class="section-number-3">1.1.</span> Raising errors</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 You can "raise" or "signal" with the <code>signal</code> and <code>error</code> functions.
@@ -250,16 +250,16 @@ You pass a error symbol and associated dated.
 </div>
 
 
-<div id="outline-container-org30dacf2" class="outline-3">
-<h3 id="org30dacf2"><span class="section-number-3">1.2.</span> Handling errors</h3>
+<div id="outline-container-orgf4aef2c" class="outline-3">
+<h3 id="orgf4aef2c"><span class="section-number-3">1.2.</span> Handling errors</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 You can handle errors with <code>unwind-protect</code> and <code>condition-case</code>.
 </p>
 </div>
 
-<div id="outline-container-org8e05b18" class="outline-4">
-<h4 id="org8e05b18"><span class="section-number-4">1.2.1.</span> unwind-protect</h4>
+<div id="outline-container-org9aab656" class="outline-4">
+<h4 id="org9aab656"><span class="section-number-4">1.2.1.</span> unwind-protect</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 unwind-protect is like the finally clause from other languages.
@@ -274,8 +274,8 @@ or the <code>defer</code> statement in <a href="20220606215451-nim.html#ID-af6fa
 </div>
 </div>
 
-<div id="outline-container-orgf2aab17" class="outline-4">
-<h4 id="orgf2aab17"><span class="section-number-4">1.2.2.</span> condition-case</h4>
+<div id="outline-container-org7df44a5" class="outline-4">
+<h4 id="org7df44a5"><span class="section-number-4">1.2.2.</span> condition-case</h4>
 <div class="outline-text-4" id="text-1-2-2">
 <p>
 <code>condition-case</code> is the try-catch from other languages.
@@ -297,7 +297,7 @@ or the <code>defer</code> statement in <a href="20220606215451-nim.html#ID-af6fa
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-04 Sun 09:45</p>
+<p class="date">Created: 2023-06-07 Wed 22:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
