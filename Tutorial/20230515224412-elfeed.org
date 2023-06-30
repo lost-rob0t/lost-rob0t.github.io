@@ -1,9 +1,0 @@
-:PROPERTIES:
-:ID:       1561f948-9a4d-4936-a58f-90a6b87ddb06
-:END:
-#+TITLE: Elfeed
-#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
-
-#+CREATED: [2023-05-15 Mon 22:44]
-#+LAST_MODIFIED: [2023-05-15 Mon 22:44]
-* TODO Elfeed

@@ -1,9 +1,0 @@
-:PROPERTIES:
-:ID:       40545110-6180-4f4e-9520-b18b02c78d6e
-:ROAM_TAGS:
-:END:
-#+title: Remote terminal unit
-#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
-
-#+CREATED: [2022-12-17 12:03:14]
-#+LAST_MODIFIED: [2022-12-17 12:03:14]

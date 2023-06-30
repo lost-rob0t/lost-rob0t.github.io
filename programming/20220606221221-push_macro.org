@@ -1,9 +1,0 @@
-:PROPERTIES:
-:ID:       e2c2d083-0a4e-4f8a-b7d7-219625b02040
-:ROAM_TAGS:
-:END:
-#+title: PUSH macro
-#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
-
-#+CREATED: [2022-12-17 12:03:14]
-#+LAST_MODIFIED: [2022-12-17 12:03:14]

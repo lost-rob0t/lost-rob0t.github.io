@@ -1,9 +1,0 @@
-:PROPERTIES:
-:ID:       4923a1de-ea6d-417c-8b87-ddbac53381ee
-:ROAM_TAGS:
-:END:
-#+title: nixos-headless
-#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
-
-#+CREATED: [2022-12-17 12:03:14]
-#+LAST_MODIFIED: [2022-12-17 12:03:14]
