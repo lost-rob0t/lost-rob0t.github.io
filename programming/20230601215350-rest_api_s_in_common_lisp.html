@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:15 -->
+<!-- 2023-06-30 Fri 01:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rest Api's in common lisp</title>
@@ -201,10 +201,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org950e9d6">1. Rest API in common lisp</a>
+<li><a href="#orge877b03">Rest API in common lisp</a>
 <ul>
-<li><a href="#orgcb85a5d">1.1. Get</a></li>
-<li><a href="#orgee1ff5f">1.2. post</a></li>
+<li><a href="#org24be6f7">Get</a></li>
+<li><a href="#orgef64549">post</a></li>
 </ul>
 </li>
 </ul>
@@ -212,9 +212,9 @@
 </div>
 
 
-<div id="outline-container-org950e9d6" class="outline-2">
-<h2 id="org950e9d6"><span class="section-number-2">1.</span> Rest API in common lisp</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orge877b03" class="outline-2">
+<h2 id="orge877b03">Rest API in common lisp</h2>
+<div class="outline-text-2" id="text-orge877b03">
 <p>
 In common lisp there are many library's to complete a task, some are old but still work just fine.
 A good fast library to use is <a href="https://github.com/fukamachi/dexador">dexador</a>. It is much faster then <a href="https://github.com/edicl/drakma">drakama</a>. As for json i recommend <a href="https://github.com/madnificent/jsown">jsown</a>.
@@ -241,9 +241,9 @@ Internally it uses connection pooling and reuses connections.
 </pre>
 </div>
 </div>
-<div id="outline-container-orgcb85a5d" class="outline-3">
-<h3 id="orgcb85a5d"><span class="section-number-3">1.1.</span> Get</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org24be6f7" class="outline-3">
+<h3 id="org24be6f7">Get</h3>
+<div class="outline-text-3" id="text-org24be6f7">
 <div class="org-src-container">
 <pre class="src src-lisp">(dex:get <span style="font-style: italic;">"http://lisp.org"</span>)
 </pre>
@@ -251,9 +251,9 @@ Internally it uses connection pooling and reuses connections.
 </div>
 </div>
 
-<div id="outline-container-orgee1ff5f" class="outline-3">
-<h3 id="orgee1ff5f"><span class="section-number-3">1.2.</span> post</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orgef64549" class="outline-3">
+<h3 id="orgef64549">post</h3>
+<div class="outline-text-3" id="text-orgef64549">
 <p>
 To send formdata in a post use a association list.
 </p>
@@ -330,8 +330,7 @@ NIL
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:15</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 01:02</p>
 </div>
 </body>
 </html>

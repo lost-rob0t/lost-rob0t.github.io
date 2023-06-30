@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Publish Org Roam</title>
@@ -201,26 +201,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org70ba055">1. How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></a>
+<li><a href="#org6655b90">How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></a>
 <ul>
-<li><a href="#org165bb0c">1.1. My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></a></li>
-<li><a href="#org92099fe">1.2. See also</a></li>
+<li><a href="#orge50292b">My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></a></li>
+<li><a href="#orgafd60f6">See also</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org70ba055" class="outline-2">
-<h2 id="org70ba055"><span class="section-number-2">1.</span> How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org6655b90" class="outline-2">
+<h2 id="org6655b90">How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></h2>
+<div class="outline-text-2" id="text-org6655b90">
 <p>
 By Defualt org roam notes do not work with <code>org-publish</code> becuase it doesnt know how to resolve the id links.
 </p>
 </div>
 
-<div id="outline-container-org165bb0c" class="outline-3">
-<h3 id="org165bb0c"><span class="section-number-3">1.1.</span> My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orge50292b" class="outline-3">
+<h3 id="orge50292b">My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></h3>
+<div class="outline-text-3" id="text-orge50292b">
 <p>
 This script is cobbled from a number of online sources but works
 </p>
@@ -319,9 +319,9 @@ You can run this script with
 </div>
 </div>
 
-<div id="outline-container-org92099fe" class="outline-3">
-<h3 id="org92099fe"><span class="section-number-3">1.2.</span> See also</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orgafd60f6" class="outline-3">
+<h3 id="orgafd60f6">See also</h3>
+<div class="outline-text-3" id="text-orgafd60f6">
 <ul class="org-ul">
 <li><a href="https://gitlab.com/ngm/commonplace/-/blob/master/publish.el#L98">https://gitlab.com/ngm/commonplace/-/blob/master/publish.el#L98</a></li>
 <li><a href="https://orgmode.org/manual/Simple-example.html">https://orgmode.org/manual/Simple-example.html</a></li>
@@ -331,8 +331,7 @@ You can run this script with
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

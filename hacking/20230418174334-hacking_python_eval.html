@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:16 -->
+<!-- 2023-06-30 Fri 01:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hacking Python Eval</title>
@@ -201,18 +201,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgab9c00b">1. Hacking Python's eval</a>
+<li><a href="#org56fbcd1">Hacking Python's eval</a>
 <ul>
-<li><a href="#orgd63100a">1.1. How eval works</a></li>
+<li><a href="#orgc818c6d">How eval works</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgab9c00b" class="outline-2">
-<h2 id="orgab9c00b"><span class="section-number-2">1.</span> Hacking Python's eval</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org56fbcd1" class="outline-2">
+<h2 id="org56fbcd1">Hacking Python's eval</h2>
+<div class="outline-text-2" id="text-org56fbcd1">
 <p>
 Never Ever use eval in production code where it will run user input.
 Users could input a payload and run nasty python code.
@@ -220,9 +220,9 @@ Users could input a payload and run nasty python code.
 </div>
 
 
-<div id="outline-container-orgd63100a" class="outline-3">
-<h3 id="orgd63100a"><span class="section-number-3">1.1.</span> How eval works</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgc818c6d" class="outline-3">
+<h3 id="orgc818c6d">How eval works</h3>
+<div class="outline-text-3" id="text-orgc818c6d">
 <p>
 Eval can be used to dynamically evaluate python expressions from a string. it can also take bytecode or even compiled code based input.
 When you pass a string it compiles to bytecode then compiles it as a python expression.
@@ -238,8 +238,7 @@ Note that the <code>import</code> function can not be used in a eval, instead us
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:16</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 01:02</p>
 </div>
 </body>
 </html>

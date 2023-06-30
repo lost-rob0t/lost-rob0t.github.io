@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>fedi</title>
@@ -201,11 +201,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3c94f68">1. <span class="todo TODO">TODO</span> Fedi a Fediverse api wraper for nim</a>
+<li><a href="#org46086c7"><span class="todo TODO">TODO</span> Fedi a Fediverse api wraper for nim</a>
 <ul>
-<li><a href="#org7c8deb7">1.1. Usage</a>
+<li><a href="#orga72490f">Usage</a>
 <ul>
-<li><a href="#orgcd6e71b">1.1.1. Create a new client</a></li>
+<li><a href="#org2463235">Create a new client</a></li>
 </ul>
 </li>
 </ul>
@@ -215,9 +215,9 @@
 </div>
 
 
-<div id="outline-container-org3c94f68" class="outline-2">
-<h2 id="org3c94f68"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> Fedi a Fediverse api wraper for nim</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org46086c7" class="outline-2">
+<h2 id="org46086c7"><span class="todo TODO">TODO</span> Fedi a Fediverse api wraper for nim</h2>
+<div class="outline-text-2" id="text-org46086c7">
 <p>
 As of now just mastodon api is supported (contact me if you need more).
 I wrote the lib in need of a nim based wrapper so i can scrape shitlib instances on the fediverse
@@ -225,17 +225,17 @@ I wrote the lib in need of a nim based wrapper so i can scrape shitlib instances
 </div>
 
 
-<div id="outline-container-org7c8deb7" class="outline-3">
-<h3 id="org7c8deb7"><span class="section-number-3">1.1.</span> Usage</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orga72490f" class="outline-3">
+<h3 id="orga72490f">Usage</h3>
+<div class="outline-text-3" id="text-orga72490f">
 <p>
 The endpoints are defined using the <code>{.multisync.}</code> pragma, which creates async and sync versions of the function.
 </p>
 </div>
 
-<div id="outline-container-orgcd6e71b" class="outline-4">
-<h4 id="orgcd6e71b"><span class="section-number-4">1.1.1.</span> Create a new client</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-org2463235" class="outline-4">
+<h4 id="org2463235">Create a new client</h4>
+<div class="outline-text-4" id="text-org2463235">
 <p>
 Heres how to create new client
 </p>
@@ -253,8 +253,7 @@ let client("https://mstdn.party")
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

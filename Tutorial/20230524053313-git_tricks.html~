@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>git tricks</title>
@@ -201,26 +201,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5156be1">1. Git tricks</a>
+<li><a href="#org38f8034">Git tricks</a>
 <ul>
-<li><a href="#org5759658">1.1. Pulling Down only a few files from a large repo</a></li>
+<li><a href="#orgd6b0070">Pulling Down only a few files from a large repo</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org5156be1" class="outline-2">
-<h2 id="org5156be1"><span class="section-number-2">1.</span> Git tricks</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org38f8034" class="outline-2">
+<h2 id="org38f8034">Git tricks</h2>
+<div class="outline-text-2" id="text-org38f8034">
 <p>
 This is a list of git tricks that you may or maynot need one day
 </p>
 </div>
 
 
-<div id="outline-container-org5759658" class="outline-3">
-<h3 id="org5759658"><span class="section-number-3">1.1.</span> Pulling Down only a few files from a large repo</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgd6b0070" class="outline-3">
+<h3 id="orgd6b0070">Pulling Down only a few files from a large repo</h3>
+<div class="outline-text-3" id="text-orgd6b0070">
 <p>
 Smetimes on github you can find very large repos holding packaging data for stuff like pypi.
 </p>
@@ -245,8 +245,7 @@ Check the files and stuff we want.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

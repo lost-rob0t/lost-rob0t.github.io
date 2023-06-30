@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>cloudflare</title>
@@ -201,11 +201,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf2d70f7">1. Cloudflare</a>
+<li><a href="#org45e3154">Cloudflare</a>
 <ul>
-<li><a href="#orgfa0cf93">1.1. Bypasses</a>
+<li><a href="#orgacbcb87">Bypasses</a>
 <ul>
-<li><a href="#org68f7cc0">1.1.1. <span class="todo TODO">TODO</span> Put list here https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></li>
+<li><a href="#orgbc93a43"><span class="todo TODO">TODO</span> Put list here https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></li>
 </ul>
 </li>
 </ul>
@@ -213,32 +213,31 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf2d70f7" class="outline-2">
-<h2 id="orgf2d70f7"><span class="section-number-2">1.</span> Cloudflare</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org45e3154" class="outline-2">
+<h2 id="org45e3154">Cloudflare</h2>
+<div class="outline-text-2" id="text-org45e3154">
 <p>
 Cloudflare is a reverse proxy sites used to protect websites from ddos and bots.
 </p>
 </div>
 
 
-<div id="outline-container-orgfa0cf93" class="outline-3">
-<h3 id="orgfa0cf93"><span class="section-number-3">1.1.</span> Bypasses</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgacbcb87" class="outline-3">
+<h3 id="orgacbcb87">Bypasses</h3>
+<div class="outline-text-3" id="text-orgacbcb87">
 <p>
 There are a number of ways to get around it depending on what your goal is.
 </p>
 </div>
 
-<div id="outline-container-org68f7cc0" class="outline-4">
-<h4 id="org68f7cc0"><span class="section-number-4">1.1.1.</span> <span class="todo TODO">TODO</span> Put list here <a href="https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers">https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></h4>
+<div id="outline-container-orgbc93a43" class="outline-4">
+<h4 id="orgbc93a43"><span class="todo TODO">TODO</span> Put list here <a href="https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers">https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

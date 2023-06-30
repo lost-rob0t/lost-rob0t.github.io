@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Freecode camp College Algebra Notes</title>
@@ -201,15 +201,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3c9c7f1">1. Introduction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="math">math</span></span></a></li>
-<li><a href="#orgfda7c10">2. Proportions</a></li>
+<li><a href="#org7fd66df">Introduction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="math">math</span></span></a></li>
+<li><a href="#org043d0c9">Proportions</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3c9c7f1" class="outline-2">
-<h2 id="org3c9c7f1"><span class="section-number-2">1.</span> Introduction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="math">math</span></span></h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org7fd66df" class="outline-2">
+<h2 id="org7fd66df">Introduction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="math">math</span></span></h2>
+<div class="outline-text-2" id="text-org7fd66df">
 <p>
 This course is different from most courses, all the code is done in python.
 </p>
@@ -222,9 +222,9 @@ personally i will be using org mode, instead of goolag collab
 
 
 
-<div id="outline-container-orgfda7c10" class="outline-2">
-<h2 id="orgfda7c10"><span class="section-number-2">2.</span> Proportions</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org043d0c9" class="outline-2">
+<h2 id="org043d0c9">Proportions</h2>
+<div class="outline-text-2" id="text-org043d0c9">
 <ul class="org-ul">
 <li></li>
 </ul>
@@ -232,8 +232,7 @@ personally i will be using org mode, instead of goolag collab
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

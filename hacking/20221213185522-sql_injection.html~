@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SQL Injection</title>
@@ -201,26 +201,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb982392">1. SQL Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="injection">injection</span>&#xa0;<span class="sqli">sqli</span>&#xa0;<span class=""></span>&#xa0;<span class="cybersec">cybersec</span>&#xa0;<span class=""></span>&#xa0;<span class="sql">sql</span></span></a>
+<li><a href="#orgb158372">SQL Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="injection">injection</span>&#xa0;<span class="sqli">sqli</span>&#xa0;<span class=""></span>&#xa0;<span class="cybersec">cybersec</span>&#xa0;<span class=""></span>&#xa0;<span class="sql">sql</span></span></a>
 <ul>
-<li><a href="#org38a0faf">1.1. Blind SQL Injection</a>
+<li><a href="#orgd4d7e78">Blind SQL Injection</a>
 <ul>
-<li><a href="#org5553f37">1.1.1. Examples</a></li>
+<li><a href="#orga925c01">Examples</a></li>
 </ul>
 </li>
-<li><a href="#orged79850">1.2. IDEA give examples</a></li>
-<li><a href="#org7f7b80e">1.3. <span class="todo TODO">TODO</span> Show WAF bypasses</a></li>
-<li><a href="#orgb6ce14d">1.4. Tools</a></li>
-<li><a href="#org546c128">1.5. Links to check out</a></li>
+<li><a href="#org3e621e7">IDEA give examples</a></li>
+<li><a href="#org3c17323"><span class="todo TODO">TODO</span> Show WAF bypasses</a></li>
+<li><a href="#org80c7d49">Tools</a></li>
+<li><a href="#org97cfe88">Links to check out</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb982392" class="outline-2">
-<h2 id="orgb982392"><span class="section-number-2">1.</span> SQL Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="injection">injection</span>&#xa0;<span class="sqli">sqli</span>&#xa0;<span class=""></span>&#xa0;<span class="cybersec">cybersec</span>&#xa0;<span class=""></span>&#xa0;<span class="sql">sql</span></span></h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgb158372" class="outline-2">
+<h2 id="orgb158372">SQL Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="injection">injection</span>&#xa0;<span class="sqli">sqli</span>&#xa0;<span class=""></span>&#xa0;<span class="cybersec">cybersec</span>&#xa0;<span class=""></span>&#xa0;<span class="sql">sql</span></span></h2>
+<div class="outline-text-2" id="text-orgb158372">
 <p>
 SQL injection is a type of attack in which an attacker inserts malicious SQL code into an application's input in order to gain unauthorized access to sensitive data in the database or to manipulate data. This can allow the attacker to read sensitive data, modify or delete data, execute administrative tasks on the database, and even issue commands to the operating system. SQL injection attacks are commonly used against PHP and ASP applications, but are less common in J2EE and ASP.NET applications due to the nature of their programmatic interfaces. The severity of an SQL injection attack is high, as it can have significant consequences ranging from data disclosure and tampering to system destruction. Defense measures, such as using low privilege connections to the database and implementing input validation, can help reduce the risk of successful SQL injection attacks.
 </p>
@@ -248,9 +248,9 @@ There are a few forms of injection
 </ol>
 </div>
 
-<div id="outline-container-org38a0faf" class="outline-3">
-<h3 id="org38a0faf"><span class="section-number-3">1.1.</span> Blind SQL Injection</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgd4d7e78" class="outline-3">
+<h3 id="orgd4d7e78">Blind SQL Injection</h3>
+<div class="outline-text-3" id="text-orgd4d7e78">
 <p>
 Blind Sqli is when you ask the datavase true or false quetions and determin the awnser based on the
 application's response. This attack is used when the application shows generic errors but still is vulnruable to injection.
@@ -263,21 +263,21 @@ They are much harder and longer to do by hand
 The best analogy to it is playing 20 questions with the database
 </p>
 </div>
-<div id="outline-container-org5553f37" class="outline-4">
-<h4 id="org5553f37"><span class="section-number-4">1.1.1.</span> Examples</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-orga925c01" class="outline-4">
+<h4 id="orga925c01">Examples</h4>
+<div class="outline-text-4" id="text-orga925c01">
 <p>
 There are a few ways to verify blind sql injections
 </p>
 </div>
 
-<ol class="org-ol">
-<li><a id="orgead46d6"></a>Content Based<br />
-<div class="outline-text-5" id="text-1-1-1-1">
+<ul class="org-ul">
+<li><a id="orgc573cae"></a>Content Based<br />
+<div class="outline-text-5" id="text-orgc573cae">
 <p>
 Using a page with shows a article with a given id, you may preform a couple of tests.
 </p>
-<pre class="example" id="org9bee0d6">
+<pre class="example" id="org5cfc3cd">
 http://newspaper.com/items.php?id=2
 </pre>
 
@@ -297,7 +297,7 @@ Some examples of things that always return true
 <li>AND 1=1</li>
 <li>OR 1=1</li>
 </ul>
-<pre class="example" id="orgd0d1408">
+<pre class="example" id="org5c00b51">
 http://newspaper.com/items.php?id=2 and 1=1
 </pre>
 <p>
@@ -307,8 +307,8 @@ There isnt much stopping ither then privilages setup and difrent sql syntaxt.
 </div>
 </li>
 
-<li><a id="orgff1ce92"></a>Time Based<br />
-<div class="outline-text-5" id="text-1-1-1-2">
+<li><a id="org1cb488f"></a>Time Based<br />
+<div class="outline-text-5" id="text-org1cb488f">
 <p>
 This Method relies on the datbase pausing for a set amount of time then returning results.
 </p>
@@ -319,20 +319,20 @@ If the first letter of the db name is B, wait 10 seconds, ect.
 You should see if SQlmap is able to detect the injection, but it is senstive to time.
 </p>
 </div>
-<ol class="org-ol">
-<li><a id="org1b54c9b"></a>MicroSoft SQL server<br />
-<div class="outline-text-6" id="text-1-1-1-2-1">
-<pre class="example" id="orgae349ef">
+<ul class="org-ul">
+<li><a id="org6ba871e"></a>MicroSoft SQL server<br />
+<div class="outline-text-6" id="text-org6ba871e">
+<pre class="example" id="org7656c24">
 http://www.site.com/vulnerable.php?id=1' waitfor delay '00:00:10'--
 </pre>
 </div>
 </li>
-<li><a id="org9ac26cc"></a>MySQL<br />
-<div class="outline-text-6" id="text-1-1-1-2-2">
+<li><a id="org9923ac9"></a>MySQL<br />
+<div class="outline-text-6" id="text-org9923ac9">
 <p>
 Here us an example, this depends on the preformance of the server.
 </p>
-<pre class="example" id="org0c543d8">
+<pre class="example" id="org28558fe">
 BENCHMARK(5000000,ENCODE('MSG','by 5 seconds'))
 
 </pre>
@@ -340,38 +340,38 @@ BENCHMARK(5000000,ENCODE('MSG','by 5 seconds'))
 <p>
 Another example
 </p>
-<pre class="example" id="org0127ba5">
+<pre class="example" id="orgac269df">
 1 UNION SELECT IF(SUBSTRING(user_password,1,1) = CHAR(50),BENCHMARK(5000000,ENCODE('MSG','by 5 seconds')),null) FROM users WHERE user_id = 1;
 </pre>
 </div>
 </li>
-</ol>
+</ul>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 
 
-<div id="outline-container-orged79850" class="outline-3">
-<h3 id="orged79850"><span class="section-number-3">1.2.</span> IDEA give examples</h3>
+<div id="outline-container-org3e621e7" class="outline-3">
+<h3 id="org3e621e7">IDEA give examples</h3>
 </div>
 
-<div id="outline-container-org7f7b80e" class="outline-3">
-<h3 id="org7f7b80e"><span class="section-number-3">1.3.</span> <span class="todo TODO">TODO</span> Show WAF bypasses</h3>
+<div id="outline-container-org3c17323" class="outline-3">
+<h3 id="org3c17323"><span class="todo TODO">TODO</span> Show WAF bypasses</h3>
 </div>
 
-<div id="outline-container-orgb6ce14d" class="outline-3">
-<h3 id="orgb6ce14d"><span class="section-number-3">1.4.</span> Tools</h3>
-<div class="outline-text-3" id="text-1-4">
+<div id="outline-container-org80c7d49" class="outline-3">
+<h3 id="org80c7d49">Tools</h3>
+<div class="outline-text-3" id="text-org80c7d49">
 <ul class="org-ul">
 <li><a href="https://sqlmap.org">SqlMap</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org546c128" class="outline-3">
-<h3 id="org546c128"><span class="section-number-3">1.5.</span> Links to check out</h3>
-<div class="outline-text-3" id="text-1-5">
+<div id="outline-container-org97cfe88" class="outline-3">
+<h3 id="org97cfe88">Links to check out</h3>
+<div class="outline-text-3" id="text-org97cfe88">
 <ul class="org-ul">
 <li><a href="https://www.blackhat.com/presentations/bh-usa-04/bh-us-04-hotchkies/bh-us-04-hotchkies.pdf">https://www.blackhat.com/presentations/bh-usa-04/bh-us-04-hotchkies/bh-us-04-hotchkies.pdf</a></li>
 <li><a href="https://owasp.org/www-community/attacks/Blind_SQL_Injection">https://owasp.org/www-community/attacks/Blind_SQL_Injection</a></li>
@@ -383,8 +383,7 @@ Another example
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

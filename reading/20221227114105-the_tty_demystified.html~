@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>the tty demystified</title>
@@ -201,14 +201,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3e22b2a">1. The TTY demystified Notes</a>
+<li><a href="#orga7d0435">The TTY demystified Notes</a>
 <ul>
-<li><a href="#org4a7faf8">1.1. The tty</a>
+<li><a href="#orgafe63e9">The tty</a>
 <ul>
-<li><a href="#orgca91676">1.1.1. Line editing</a></li>
-<li><a href="#orge4b76fd">1.1.2. Sessions</a></li>
-<li><a href="#orgb74536b">1.1.3. Jobs and sessions</a></li>
-<li><a href="#org6bb3d1a">1.1.4. Signals</a></li>
+<li><a href="#org61519cd">Line editing</a></li>
+<li><a href="#org58abb9b">Sessions</a></li>
+<li><a href="#orgd51dbcc">Jobs and sessions</a></li>
+<li><a href="#org3551e26">Signals</a></li>
 </ul>
 </li>
 </ul>
@@ -217,9 +217,9 @@
 </div>
 </div>
 
-<div id="outline-container-org3e22b2a" class="outline-2">
-<h2 id="org3e22b2a"><span class="section-number-2">1.</span> The TTY demystified Notes</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orga7d0435" class="outline-2">
+<h2 id="orga7d0435">The TTY demystified Notes</h2>
+<div class="outline-text-2" id="text-orga7d0435">
 <blockquote>
 <p>
 In 1869, the stock ticker was invented. It was an electro-mechanical machine consisting of a typewriter, a long pair of wires and a ticker tape printer, and its purpose was to distribute stock prices over long distances in realtime
@@ -227,18 +227,18 @@ In 1869, the stock ticker was invented. It was an electro-mechanical machine con
 </blockquote>
 
 
-<div id="org61f0390" class="figure">
+<div id="orgd9af818" class="figure">
 <p><img src="The_TTY_demystified_Notes/2022-12-27_11-45-00_screenshot.png" alt="2022-12-27_11-45-00_screenshot.png" />
 </p>
 </div>
 </div>
-<div id="outline-container-org4a7faf8" class="outline-3">
-<h3 id="org4a7faf8"><span class="section-number-3">1.1.</span> The tty</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgafe63e9" class="outline-3">
+<h3 id="orgafe63e9">The tty</h3>
+<div class="outline-text-3" id="text-orgafe63e9">
 </div>
-<div id="outline-container-orgca91676" class="outline-4">
-<h4 id="orgca91676"><span class="section-number-4">1.1.1.</span> Line editing</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-org61519cd" class="outline-4">
+<h4 id="org61519cd">Line editing</h4>
+<div class="outline-text-4" id="text-org61519cd">
 <p>
 People make mistakes so backspaces are a neccisty. These features are often implemented in a program running in raw mode (curses or readline) but unix programs should be small, so these features can be exposed to the program via a line discipline. Some basic editing commands are
 </p>
@@ -265,9 +265,9 @@ The default line discipline is N<sub>TTY</sub> which is defined in `drivers/char
 </div>
 
 
-<div id="outline-container-orge4b76fd" class="outline-4">
-<h4 id="orge4b76fd"><span class="section-number-4">1.1.2.</span> Sessions</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-org58abb9b" class="outline-4">
+<h4 id="org58abb9b">Sessions</h4>
+<div class="outline-text-4" id="text-org58abb9b">
 <p>
 Users often need to run multiple programs at the same time. User input should only go to the foreground program and not background programs.
 </p>
@@ -285,9 +285,9 @@ A UART driver, line discipline and TTY driver is called a tty device.
 
 
 
-<ol class="org-ol">
-<li><a id="orgfe778a0"></a>How the linux console and others work<br />
-<div class="outline-text-5" id="text-1-1-2-1">
+<ul class="org-ul">
+<li><a id="orgc91ac58"></a>How the linux console and others work<br />
+<div class="outline-text-5" id="text-orgc91ac58">
 <p>
 There is no UART instead a video terminal is used. A video terminal is a complex state machine that consists of a framebuffer and charecter attributes.
 </p>
@@ -311,12 +311,12 @@ To move the terminal to userland the pseudo terminal was invented.  Linux proces
 </ul>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 
-<div id="outline-container-orgb74536b" class="outline-4">
-<h4 id="orgb74536b"><span class="section-number-4">1.1.3.</span> Jobs and sessions</h4>
-<div class="outline-text-4" id="text-1-1-3">
+<div id="outline-container-orgd51dbcc" class="outline-4">
+<h4 id="orgd51dbcc">Jobs and sessions</h4>
+<div class="outline-text-4" id="text-orgd51dbcc">
 <p>
 Job control is a way to control backround jobs. A job is the same as a process group
 you can invck job control with ^Z.
@@ -335,9 +335,9 @@ The session leader also keeps track of the size of the connected terminal but mu
 </p>
 </div>
 </div>
-<div id="outline-container-org6bb3d1a" class="outline-4">
-<h4 id="org6bb3d1a"><span class="section-number-4">1.1.4.</span> Signals</h4>
-<div class="outline-text-4" id="text-1-1-4">
+<div id="outline-container-org3551e26" class="outline-4">
+<h4 id="org3551e26">Signals</h4>
+<div class="outline-text-4" id="text-org3551e26">
 <p>
 A signal is a mechinism that lets the kernal communicate asynchronously.
 Most of the time you will use them to kill or stop a process.
@@ -470,17 +470,17 @@ You can see the list of signals with
 </table>
 </div>
 
-<ol class="org-ol">
-<li><a id="org9a71f86"></a>Signals explained<br />
-<div class="outline-text-5" id="text-1-1-4-1">
+<ul class="org-ul">
+<li><a id="org1ef049e"></a>Signals explained<br />
+<div class="outline-text-5" id="text-org1ef049e">
 <p>
 This is lifted from the article
 </p>
 </div>
 
-<ol class="org-ol">
-<li><a id="org2db4efe"></a>SIGHUP<br />
-<div class="outline-text-6" id="text-1-1-4-1-1">
+<ul class="org-ul">
+<li><a id="orgfba0f1d"></a>SIGHUP<br />
+<div class="outline-text-6" id="text-orgfba0f1d">
 <ul class="org-ul">
 <li>Default action: <b>Terminate</b></li>
 <li>Possible actions: Terminate, Ignore, Function call</li>
@@ -492,8 +492,8 @@ SIGHUP is sent by the UART driver to the entire session when a hangup condition 
 </div>
 </li>
 
-<li><a id="org191b892"></a>SIGINT<br />
-<div class="outline-text-6" id="text-1-1-4-1-2">
+<li><a id="orge120a60"></a>SIGINT<br />
+<div class="outline-text-6" id="text-orge120a60">
 <ul class="org-ul">
 <li>Default action: <b>Terminate</b></li>
 <li>Possible actions: Terminate, Ignore, Function call</li>
@@ -505,8 +505,8 @@ SIGINT is sent by the TTY driver to the current foreground job when the <i>inter
 </div>
 </li>
 
-<li><a id="org5617615"></a>SIGQUIT<br />
-<div class="outline-text-6" id="text-1-1-4-1-3">
+<li><a id="orgd515eb6"></a>SIGQUIT<br />
+<div class="outline-text-6" id="text-orgd515eb6">
 <ul class="org-ul">
 <li>Default action: <b>Core dump</b></li>
 <li>Possible actions: Core dump, Ignore, Function call</li>
@@ -518,8 +518,8 @@ SIGQUIT works just like SIGINT, but the quit character is typically ^\\ and the 
 </div>
 </li>
 
-<li><a id="orgec63b4a"></a>SIGPIPE<br />
-<div class="outline-text-6" id="text-1-1-4-1-4">
+<li><a id="orge21adbb"></a>SIGPIPE<br />
+<div class="outline-text-6" id="text-orge21adbb">
 <ul class="org-ul">
 <li>Default action: <b>Terminate</b></li>
 <li>Possible actions: Terminate, Ignore, Function call</li>
@@ -531,8 +531,8 @@ The kernel sends SIGPIPE to any process which tries to write to a pipe with no r
 </div>
 </li>
 
-<li><a id="orga4028d8"></a>SIGCHLD<br />
-<div class="outline-text-6" id="text-1-1-4-1-5">
+<li><a id="org6ff750b"></a>SIGCHLD<br />
+<div class="outline-text-6" id="text-org6ff750b">
 <ul class="org-ul">
 <li>Default action: <b>Ignore</b></li>
 <li>Possible actions: Ignore, Function call</li>
@@ -544,8 +544,8 @@ When a process dies or changes state (stop/continue), the kernel sends a SIGCHLD
 </div>
 </li>
 
-<li><a id="org56bbb46"></a>SIGSTOP<br />
-<div class="outline-text-6" id="text-1-1-4-1-6">
+<li><a id="org5687fe0"></a>SIGSTOP<br />
+<div class="outline-text-6" id="text-org5687fe0">
 <ul class="org-ul">
 <li>Default action: <b>Suspend</b></li>
 <li>Possible actions: Suspend</li>
@@ -557,8 +557,8 @@ This signal will unconditionally suspend the recipient, i.e. its signal action c
 </div>
 </li>
 
-<li><a id="org6efafe5"></a>SIGCONT<br />
-<div class="outline-text-6" id="text-1-1-4-1-7">
+<li><a id="orgc0e638b"></a>SIGCONT<br />
+<div class="outline-text-6" id="text-orgc0e638b">
 <ul class="org-ul">
 <li>Default action: <b>Wake up</b></li>
 <li>Possible actions: Wake up, Wake up + Function call</li>
@@ -570,8 +570,8 @@ SIGCONT will un-suspend a stopped process. It is sent explicitly by the shell wh
 </div>
 </li>
 
-<li><a id="orgcd5eb1e"></a>SIGTSTP<br />
-<div class="outline-text-6" id="text-1-1-4-1-8">
+<li><a id="orge504c2e"></a>SIGTSTP<br />
+<div class="outline-text-6" id="text-orge504c2e">
 <ul class="org-ul">
 <li>Default action: <b>Suspend</b></li>
 <li>Possible actions: Suspend, Ignore, Function call</li>
@@ -583,8 +583,8 @@ SIGTSTP works just like SIGINT and SIGQUIT, but the magic character is typically
 </div>
 </li>
 
-<li><a id="org88929c6"></a>SIGTTIN<br />
-<div class="outline-text-6" id="text-1-1-4-1-9">
+<li><a id="orge27f9d3"></a>SIGTTIN<br />
+<div class="outline-text-6" id="text-orge27f9d3">
 <ul class="org-ul">
 <li>Default action: <b>Suspend</b></li>
 <li>Possible actions: Suspend, Ignore, Function call</li>
@@ -596,8 +596,8 @@ If a process within a background job tries to read from a TTY device, the TTY se
 </div>
 </li>
 
-<li><a id="orgaddfcc4"></a>SIGTTOU<br />
-<div class="outline-text-6" id="text-1-1-4-1-10">
+<li><a id="org8c78b92"></a>SIGTTOU<br />
+<div class="outline-text-6" id="text-org8c78b92">
 <ul class="org-ul">
 <li>Default action: <b>Suspend</b></li>
 <li>Possible actions: Suspend, Ignore, Function call</li>
@@ -609,8 +609,8 @@ If a process within a background job tries to write to a TTY device, the TTY sen
 </div>
 </li>
 
-<li><a id="org24f6b09"></a>SIGWINCH<br />
-<div class="outline-text-6" id="text-1-1-4-1-11">
+<li><a id="org6fcfda5"></a>SIGWINCH<br />
+<div class="outline-text-6" id="text-org6fcfda5">
 <ul class="org-ul">
 <li>Default action: <b>Ignore</b></li>
 <li>Possible actions: Ignore, Function call</li>
@@ -621,16 +621,15 @@ As mentioned, the TTY device keeps track of the terminal size, but this informat
 </p>
 </div>
 </li>
-</ol>
+</ul>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

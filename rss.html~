@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Night Watch</title>
+<title>The Lost Wiki</title>
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -192,50 +192,43 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">The Night Watch</h1>
+<h1 class="title">The Lost Wiki</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#ID-13637cf0-0cc3-4cad-a7d0-e54b8cd96fa5">1. The Night Watch</a></li>
-<li><a href="#ID-2df71799-a3a0-4fa9-bb74-2dcd9aae27c9">2. Index</a>
+<li><a href="#ID-dff7eb9b-7558-435c-9fe4-435107a1f1c3">Sitemap for project lostWiki</a></li>
+<li><a href="#ID-9d50fd90-d001-4f95-a788-13fbf0215fb5">Couchdb</a>
 <ul>
-<li><a href="#ID-45b7ec2e-9b14-45ee-a19d-d7750f549ccf">2.1. Hack The Box</a></li>
-<li><a href="#ID-7cc1e73e-1665-45ab-9ee6-1b0613391146">2.2. Methods</a>
+<li>
 <ul>
-<li><a href="#ID-12c4bcb7-9fc8-4c68-8a5f-11492a9112cf">2.2.1. Wordpress</a></li>
+<li><a href="#ID-c114e131-b344-4a58-b1a0-4212157781e2">Setup</a></li>
 </ul>
 </li>
-<li><a href="#ID-46010e49-3739-43b0-af9a-3971988d17aa">2.3. <span class="todo TODO">TODO</span> Star Intelligence</a></li>
 </ul>
 </li>
-<li><a href="#ID-8ebeb77e-c41d-473e-99ab-e4b88ab7f1ba">3. Links</a>
-<ul>
-<li><a href="#ID-98f89570-8fde-4d02-bd73-045b41a1af7a">3.1. Based</a></li>
-<li><a href="#ID-a0940f45-db88-428a-8f38-acebbb8d65d5">3.2. Emacs Related</a></li>
-<li><a href="#ID-20908fd6-8775-4320-bbb5-553a85fdd85d">3.3. I2P</a></li>
-</ul>
-</li>
-<li><a href="#ID-3c2c561d-90ef-4912-9ad6-98fc4bfb96d4">4. Reading inbox</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-ID-13637cf0-0cc3-4cad-a7d0-e54b8cd96fa5" class="outline-2">
-<h2 id="ID-13637cf0-0cc3-4cad-a7d0-e54b8cd96fa5"><span class="section-number-2">1.</span> <a href="sitemap.html">The Night Watch</a></h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-ID-dff7eb9b-7558-435c-9fe4-435107a1f1c3" class="outline-2">
+<h2 id="ID-dff7eb9b-7558-435c-9fe4-435107a1f1c3"><a href="sitemap.html">Sitemap for project lostWiki</a></h2>
+<div class="outline-text-2" id="text-org0682328">
 <p>
 <a href="2022-06-05-192559-common_lisp_a_gentile_introduction_notes.html">Common LISP a gentile introduction notes</a>
 <a href="20221217163227-conky.html">Conky</a>
 <a href="20221226164048-couchdb.html">Couchdb</a>
 <a href="20221210025435-cyclic_redundancy_check.html">Cyclic redundancy check</a>
 <a href="2022-04-30-010756-doom_emacs.html">Doom Emacs</a>
+<a href="20230527174605-hacking_index.html">Hacking Index</a>
 <a href="20221220021836-nixpkgs_fork_service.html">How to enable service from different nix channel</a>
 <a href="20221213180008-idor.html">IDOR</a>
 <a href="index.html">Index</a>
+<a href="theindex.html">Index</a>
 <a href="2022-05-21-214020-introduction_to_tla.html">Introduction to TLA+</a>
 <a href="2022-05-22-161823-klaus_schwab.html">Klaus Schwab</a>
 <a href="20220526160407-learning_forth.html">Learning Forth</a>
@@ -254,13 +247,12 @@
 <a href="20221208234405-scada.html">SCADA</a>
 <a href="20221209030114-shodan_api_keys.html">Shodan api keys</a>
 <a href="20221218025025-the_history_of_emacs.html">The History Of emacs</a>
-<a href="rss.html">The Night Watch</a>
+<a href="rss.html">The Lost Wiki</a>
 <a href="2022-09-26-184941-yasnippet_multi_choice.html">Yasnippet multi choice</a>
 <a href="2022-05-22-161224-yuval_noah_harari.html">Yuval Noah Harari</a>
 <a href="20220429220123-brave_s_tor_mode.html">brave's tor mode</a>
 <a href="20220428224740-emacs.html">emacs</a>
 <a href="20221221124016-fedi.html">fedi</a>
-<a href="2022-05-22-160255-globalists.html">globalists</a>
 <a href="org-setup.html">org-setup</a>
 <a href="20220606214409-practical_cl_simple_db.html">practical cl simple db</a>
 <a href="20221210020640-programmable_logic_controllers.html">programmable logic controllers</a>
@@ -269,48 +261,46 @@
 <a href="2022-08-14-155027-test1.html">test1</a>
 Tutorial
 <a href="Tutorial/20221223201433-build_oci_containers.html">Build OCI containers in Nixos</a>
+<a href="Tutorial/20230515224412-elfeed.html">Elfeed</a>
+<a href="Tutorial/20230515224220-emacs_evil_mode.html">Emacs Evil mode</a>
 <a href="Tutorial/20221229193155-fix_aspell_on_nixos.html">Fix Aspell on nixos</a>
+<a href="Tutorial/20230607221650-package_and_use_nix_flakes.html">Package and use Nix flakes</a>
+<a href="Tutorial/20221231162928-slinux_trouble_should_denials.html">SLinux Trouble Should Denials</a>
 <a href="Tutorial/2022-06-01-033435-cross_compile_nixos_to_sdcard_for_rpi3b.html">cross compile nixos to sdcard for rpi3b+</a>
+<a href="Tutorial/20230501221332-dir_local_vars.html">dir-local-vars</a>
+<a href="Tutorial/20230501222047-direnv.html">direnv</a>
 <a href="Tutorial/2022-09-01-114545-emacs_open_sqlite_dired.html">emacs open sqlite dired</a>
+<a href="Tutorial/20230524053313-git_tricks.html">git tricks</a>
 <a href="Tutorial/2022-05-17-053529-how_to_package_nim.html">how to package nim</a>
+<a href="Tutorial/20230212210450-libvirt_clipboard.html">libvirt clipboard</a>
 <a href="Tutorial/20220811005425-libvirt_multi_head.html">libvirt-multi-head</a>
 <a href="Tutorial/2022-05-16-045822-nim_flake_example.html">nim-flake-example</a>
 <a href="Tutorial/2022-05-17-051936-nixos_custom_pkgs.html">nixos custom pkgs</a>
+<a href="Tutorial/20230502185107-nixos_fix_common_lisp_ld_path.html">nixos fix common-lisp ld path</a>
 <a href="Tutorial/20220514203832-nixos_headless.html">nixos-headless</a>
 <a href="Tutorial/2022-08-22-022748-non_nixos_desktop_intergration.html">non nixos desktop intergration</a>
-daily
-<a href="daily/2022-04-28.html">2022-04-28</a>
-<a href="daily/2022-04-29.html">2022-04-29</a>
-<a href="daily/2022-04-30.html">2022-04-30</a>
-<a href="daily/2022-05-18.html">2022-05-18</a>
-<a href="daily/2022-05-19.html">2022-05-19</a>
-<a href="daily/2022-05-28.html">2022-05-28 (Saturday)</a>
-<a href="daily/2022-06-06.html">2022-06-06 (Monday)</a>
-<a href="daily/2022-10-28.html">2022-10-28</a>
-<a href="daily/2022-10-31.html">2022-10-31</a>
-<a href="daily/2022-11-05.html">2022-11-05</a>
-<a href="daily/2022-11-29.html">2022-11-29</a>
-<a href="daily/2022-12-01.html">2022-12-01</a>
-<a href="daily/2022-12-05.html">2022-12-05</a>
-<a href="daily/2022-12-09.html">2022-12-09</a>
-<a href="daily/2022-12-16.html">2022-12-16</a>
-<a href="daily/2022-12-17.html">2022-12-17</a>
-<a href="daily/2022-12-18.html">2022-12-18</a>
-<a href="daily/2022-12-19.html">2022-12-19</a>
-<a href="daily/2022-12-21.html">2022-12-21</a>
-<a href="daily/2022-12-26.html">2022-12-26</a>
-<a href="daily/2022-12-28.html">2022-12-28</a>
-<a href="daily/2022-12-29.html">2022-12-29</a>
-<a href="daily/2022-12-30.html">2022-12-30</a>
 hacking
 <a href="hacking/20221210012904-bump_in_the_wire.html">Bump in the wire</a>
+<a href="hacking/20230527172700-cookie_bugs.html">Cookie Bugs</a>
+<a href="hacking/20230427231040-htb_templated.html">HTB Templated</a>
+<a href="hacking/20230501213539-hack_the_box.html">Hack The Box</a>
+<a href="hacking/20230418174334-hacking_python_eval.html">Hacking Python Eval</a>
 <a href="hacking/20221213171543-metatwo.html">MetaTwo</a>
+<a href="hacking/20230427212246-onlyforyou.html">OnlyForYou</a>
 <a href="hacking/20221213185522-sql_injection.html">SQL Injection</a>
 <a href="hacking/20221213173625-wordpress_enumeration.html">WordPress Enumeration</a>
+<a href="hacking/20230527173712-xss.html">XSS</a>
+<a href="hacking/20230423223955-cloudflare.html">cloudflare</a>
 programming
+<a href="programming/20230305165944-asymptotic_analysis.html">Asymptotic Analysis</a>
+<a href="programming/20230305160421-cse_373_lecture_2.html">CSE-373-lecture 2</a>
 <a href="programming/20220606215038-common_lisp.html">Common Lisp</a>
+<a href="programming/20230305144608-data_structures.html">Data Structures</a>
+<a href="programming/20230530024832-depth_first_search.html">Depth First Search</a>
 <a href="programming/20220606215022-emacs_lisp.html">Emacs Lisp</a>
+<a href="programming/20230530020901-graphs.html">Graphs</a>
 <a href="programming/20221219225206-http.html">HTTP</a>
+<a href="programming/20230305145040-introduction_to_algorithnms_steven_skiena_cse373.html">Introduction to Algorithms Steven skiena (CSE373)</a>
 <a href="programming/20220606214902-lisp.html">Lisp</a>
 <a href="programming/2022-08-26-155254-metaprogramming.html">Metaprogramming</a>
 <a href="programming/20221210020053-modbus.html">Modbus</a>
@@ -320,162 +310,86 @@ programming
 <a href="programming/20220606214755-property_list.html">Property list</a>
 <a href="programming/20220606215501-python.html">Python</a>
 <a href="programming/20221226235802-read_stdin.html">Read stdin</a>
+<a href="programming/20230601215350-rest_api_s_in_common_lisp.html">Rest Api's in common lisp</a>
 <a href="programming/20221219224000-stomp.html">STOMP</a>
 <a href="programming/20221219225308-tcp.html">TCP</a>
+<a href="programming/20230305165149-types_of_data_structs.html">Types of data structs</a>
+<a href="programming/20230305150253-big_o.html">big o</a>
+<a href="programming/20230522223358-common_lisp_compile.html">common lisp compile</a>
+<a href="programming/20230327155154-elisp_errors.html">elisp errors</a>
+<a href="programming/20230305163152-introduction_to_datastructures.html">introduction to data structures</a>
+<a href="programming/20230601220331-json.html">json</a>
+<a href="programming/20230601215947-jsown.html">jsown</a>
+<a href="programming/20230309222949-nim_android.html">nim android</a>
 <a href="programming/20220429153134-nixos_python.html">nixos-python</a>
+<a href="programming/20230328160940-redis.html">redis</a>
+<a href="programming/20230330161754-redis_expiration.html">redis expiration</a>
+<a href="programming/20230328160441-redis_game.html">redis game</a>
+reading-notes
+<a href="reading-notes/20230326174749-freecode_camp_college_algebra_notes.html">Freecode camp College Algebra Notes</a>
+<a href="reading-notes/20230326180325-free_code_camp_college_algebra_preportions.html">free code camp college algebra preportions</a>
 reading
 <a href="reading/2022-05-14-213358-nix_flakes_tutorial.html">Nix Flakes Tutorial</a>
 <a href="reading/2022-08-14-200711-beautiful_racket.html">beautiful-racket</a>
 <a href="reading/2022-05-17-232032-links.html">links</a>
 <a href="reading/20221227114105-the_tty_demystified.html">the tty demystified</a>
 starintel
+<a href="starintel/20230603181317-quasar.html">Quasar</a>
 <a href="starintel/20221219011944-why_star_intel.html">Why Star Intel</a>
-sunshine
-<a href="sunshine/20221221141338-christopher_ramras.html">Christopher Ramras</a>
-<a href="sunshine/20221221165801-miri_cypers.html">Miri Cypers</a>
-<a href="sunshine/index.html">Shunshine Index</a>
-<a href="sunshine/20220906163531-todd_soper.html">Todd Soper</a>
-<a href="sunshine/2022-04-29-193425-mike_stein.html">mike-stein</a>
-<a href="sunshine/2022-04-29-180254-nina_janikowicz.html">nina-janikowicz</a>
 </p>
 </div>
 </div>
-<div id="outline-container-ID-2df71799-a3a0-4fa9-bb74-2dcd9aae27c9" class="outline-2">
-<h2 id="ID-2df71799-a3a0-4fa9-bb74-2dcd9aae27c9"><span class="section-number-2">2.</span> <a href="index.html">Index</a></h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-ID-9d50fd90-d001-4f95-a788-13fbf0215fb5" class="outline-2">
+<h2 id="ID-9d50fd90-d001-4f95-a788-13fbf0215fb5"><a href="20221226164048-couchdb.html">Couchdb</a></h2>
+<div class="outline-text-2" id="text-org1c7e08b">
 <p>
-:ID:       c72d4e02-0e32-424c-b4b3-c471adbf4598
+:ID:       e2e083bc-85fa-4b97-a4cd-0ffd86d9821c
 </p>
 <p>
-Welcome
-Welcome to my brain dump that i like to call a wiki of sorts.
+Couchdb :couchdb:
+Couchdb is a Nosql database that offers replication and a simple to use rest api. it is written in erlang.
 </p>
 
 <p>
-You can download the entire archive and view in Emacs or viewer of choice.
-The site is in many formats.
-Just change the file extension in the url bar to see it in a different format.
-Formats:
-txt
-md
-Org
-pdf (i need to add pdflatex to my system config)
-html
+I use couchdb for my project <a href="2022-05-28-030619-star_intel.html#ID-78157cd5-9681-4a64-b5c7-0f2b415cd446">star intel</a>
+</p>
+</div>
+<div id="outline-container-ID-c114e131-b344-4a58-b1a0-4212157781e2" class="outline-4">
+<h4 id="ID-c114e131-b344-4a58-b1a0-4212157781e2">Setup</h4>
+<div class="outline-text-4" id="text-org5be28cf">
+</div>
+<ul class="org-ul">
+<li><a id="ID-a57448a1-5ac2-4852-94f5-d44cc1c5952c"></a>Docker&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span></span><br />
+<div class="outline-text-5" id="text-org8510680">
+<p>
+There is a community made docker container and one made by ibm that bundles FTS.
 </p>
 
 <p>
-Archives:
-ZIP: <a href="./roam.zip">roam.zip</a>
-tar.gz: <a href="./roam.tar.gz">./roam.tar.gz</a>
-I would like to note that it is not entirely structured, because it is a collection of notes, I impose some structure but its really a second brain here.
-My Spelling is bad and i did not have a spell checker when i started taking notes, so please bear with me.
-Links
-<a href="2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a>
-<a href="20220429214821-reading_inbox.html#ID-6189e985-e87d-42df-aa38-ba6429a2bf8a">Reading inbox</a>
-<a href="2022-08-11-005206-linux.html#ID-de8bc39b-c63d-432f-9ff8-c157287c26db">Linux</a>
-<a href="20220428224740-emacs.html#ID-95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2">emacs</a>
-<a href="20221215060923-links.html#ID-40a6baca-2913-450a-b516-7a16b9d51b2c">Links</a>
-Programming
-<a href="programming/20220606215245-programming_languages.html#ID-ecc6c666-530f-4173-9f21-4038677b32ac">Programming Languages</a>
-<a href="programming/20220606215451-nim.html#ID-af6fae74-d03b-4930-8f39-63becb43efd9">Nim</a>
-<a href="programming/20221219224000-stomp.html#ID-a934f8ea-6586-437f-a354-d307915f3c39">STOMP</a>
-Industrial Control systems
-<a href="20221208234405-scada.html#ID-8819b564-caa6-4101-99ca-ab936c650714">SCADA</a>
-<a href="20221209014251-list_of_plc_s.html#ID-24d7094b-d249-477e-8e8c-6e8a8231856e">List of PLC's</a>
-<a href="programming/20221210020053-modbus.html#ID-1131ab7e-abe2-4c6a-8414-44b524bdf49b">Modbus</a>
-<a href="20221210020640-programmable_logic_controllers.html#ID-27a4cf94-829a-4182-9dc8-3dd99da55fe9">Programmable Logic Controllers</a>
-Cyber Security
-<a href="20221209030114-shodan_api_keys.html#ID-1ab40c79-e0b4-4556-b2e0-0eab12ae3a62">Shodan api keys</a>
-<a href="hacking/20221210012904-bump_in_the_wire.html#ID-b6fa327b-ed94-4a61-aa70-6a59a441f760">Bump in the wire</a>
+Documentation is <a href="https://hub.docker.com/_/couchdb">here</a>.
 </p>
-</div>
-<div id="outline-container-ID-45b7ec2e-9b14-45ee-a19d-d7750f549ccf" class="outline-3">
-<h3 id="ID-45b7ec2e-9b14-45ee-a19d-d7750f549ccf"><span class="section-number-3">2.1.</span> Hack The Box</h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
-<a href="hacking/20221213171543-metatwo.html#ID-aee06532-d97e-4bfa-8d35-6e5f30e5f957">MetaTwo</a>
-</p>
-</div>
-</div>
-<div id="outline-container-ID-7cc1e73e-1665-45ab-9ee6-1b0613391146" class="outline-3">
-<h3 id="ID-7cc1e73e-1665-45ab-9ee6-1b0613391146"><span class="section-number-3">2.2.</span> Methods</h3>
-<div class="outline-text-3" id="text-2-2">
-</div>
-<div id="outline-container-ID-12c4bcb7-9fc8-4c68-8a5f-11492a9112cf" class="outline-4">
-<h4 id="ID-12c4bcb7-9fc8-4c68-8a5f-11492a9112cf"><span class="section-number-4">2.2.1.</span> Wordpress</h4>
-<div class="outline-text-4" id="text-2-2-1">
-<p>
-<a href="hacking/20221213173625-wordpress_enumeration.html#ID-854f2842-8d5b-4006-8848-6800aab5ab5e">WordPress Enumeration</a>
-My Tooling
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-ID-46010e49-3739-43b0-af9a-3971988d17aa" class="outline-3">
-<h3 id="ID-46010e49-3739-43b0-af9a-3971988d17aa"><span class="section-number-3">2.3.</span> <span class="todo TODO">TODO</span> Star Intelligence</h3>
-<div class="outline-text-3" id="text-2-3">
-<p>
-gitVirgin
-star formatter
-<a href="2022-05-28-030619-star_intel.html#ID-78157cd5-9681-4a64-b5c7-0f2b415cd446">Star Intel</a>
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-ID-8ebeb77e-c41d-473e-99ab-e4b88ab7f1ba" class="outline-2">
-<h2 id="ID-8ebeb77e-c41d-473e-99ab-e4b88ab7f1ba"><span class="section-number-2">3.</span> <a href="20221215060923-links.html">Links</a></h2>
-<div class="outline-text-2" id="text-3">
-<p>
-:ID:       40a6baca-2913-450a-b516-7a16b9d51b2c
-:ROAM<sub>TAGS</sub>:
-</p>
-<p>
-Link Page
-List of stuff i found on the web thats cool
-</p>
-</div>
 
-<div id="outline-container-ID-98f89570-8fde-4d02-bd73-045b41a1af7a" class="outline-3">
-<h3 id="ID-98f89570-8fde-4d02-bd73-045b41a1af7a"><span class="section-number-3">3.1.</span> Based</h3>
-<div class="outline-text-3" id="text-3-1">
 <p>
-<a href="https://www.joshwhotv.com/v/.7C_8LA">https://www.joshwhotv.com/v/.7C_8LA</a>
+I run couchdb like this
 </p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Make a directory to store the database</span>
+mkdir $<span style="font-weight: bold; font-style: italic;">PWD</span>/db
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Fix permissions for the database since ibm runs it as uid 1001 and gid 1001</span>
+chown 1001:1001 $<span style="font-weight: bold; font-style: italic;">PWD</span>/db
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Run the database</span>
+docker run -d  -e <span style="font-weight: bold; font-style: italic;">COUCHDB_USER</span>=admin -e <span style="font-weight: bold; font-style: italic;">COUCHDB_PASSWORD</span>=password  -v $<span style="font-weight: bold; font-style: italic;">PWD</span>/db:/opt/couchdb/data  -p 0.0.0.0:5984:5984 ibmcom/couchdb3
+</pre>
 </div>
 </div>
-<div id="outline-container-ID-a0940f45-db88-428a-8f38-acebbb8d65d5" class="outline-3">
-<h3 id="ID-a0940f45-db88-428a-8f38-acebbb8d65d5"><span class="section-number-3">3.2.</span> Emacs Related</h3>
-<div class="outline-text-3" id="text-3-2">
-<p>
-<a href="https://www.jwz.org/doc/emacs-timeline.html">The history of emacs</a>
-</p>
-</div>
-</div>
-<div id="outline-container-ID-20908fd6-8775-4320-bbb5-553a85fdd85d" class="outline-3">
-<h3 id="ID-20908fd6-8775-4320-bbb5-553a85fdd85d"><span class="section-number-3">3.3.</span> I2P</h3>
-<div class="outline-text-3" id="text-3-3">
-<p>
-Inproxies?
-i2p.rocks
-muc.i2p.rocks
-<a href="https://i2p-inproxy.mk16.de/">https://i2p-inproxy.mk16.de/</a>
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-ID-3c2c561d-90ef-4912-9ad6-98fc4bfb96d4" class="outline-2">
-<h2 id="ID-3c2c561d-90ef-4912-9ad6-98fc4bfb96d4"><span class="section-number-2">4.</span> <a href="20220429214821-reading_inbox.html">Reading inbox</a></h2>
-<div class="outline-text-2" id="text-4">
-<p>
-:ID:       6189e985-e87d-42df-aa38-ba6429a2bf8a
-:ROAM<sub>TAGS</sub>: racket compsci videos book articles
-</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

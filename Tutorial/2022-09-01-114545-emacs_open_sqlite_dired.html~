@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs open sqlite dired</title>
@@ -201,11 +201,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf2a35fd">1. How to open sqlite files with dir</a>
+<li><a href="#org2dc8717">How to open sqlite files with dir</a>
 <ul>
-<li><a href="#orgdb95969">1.1. Methods</a>
+<li><a href="#org5de46cd">Methods</a>
 <ul>
-<li><a href="#orgfee5ff2">1.1.1. Sqlite dired</a></li>
+<li><a href="#org18e6a35">Sqlite dired</a></li>
 </ul>
 </li>
 </ul>
@@ -217,9 +217,9 @@
 <li></li>
 </ul>
 
-<div id="outline-container-orgf2a35fd" class="outline-2">
-<h2 id="orgf2a35fd"><span class="section-number-2">1.</span> How to open sqlite files with dir</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org2dc8717" class="outline-2">
+<h2 id="org2dc8717">How to open sqlite files with dir</h2>
+<div class="outline-text-2" id="text-org2dc8717">
 <p>
 So i locked myself out of my gitea again, phone got wiped by mistake with a opsec tool called wasted, whiped itself while it wass in my hand!
 </p>
@@ -227,13 +227,13 @@ So i locked myself out of my gitea again, phone got wiped by mistake with a opse
 
 
 
-<div id="outline-container-orgdb95969" class="outline-3">
-<h3 id="orgdb95969"><span class="section-number-3">1.1.</span> Methods</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org5de46cd" class="outline-3">
+<h3 id="org5de46cd">Methods</h3>
+<div class="outline-text-3" id="text-org5de46cd">
 </div>
-<div id="outline-container-orgfee5ff2" class="outline-4">
-<h4 id="orgfee5ff2"><span class="section-number-4">1.1.1.</span> Sqlite dired</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-org18e6a35" class="outline-4">
+<h4 id="org18e6a35">Sqlite dired</h4>
+<div class="outline-text-4" id="text-org18e6a35">
 <p>
 In <a href="https://www.reddit.com/r/emacs/comments/rlwipm/comment/hpjo30x">this</a> post a reddit user was kind enough to share a snippet to do just this
 </p>
@@ -260,8 +260,7 @@ In <a href="https://www.reddit.com/r/emacs/comments/rlwipm/comment/hpjo30x">this
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

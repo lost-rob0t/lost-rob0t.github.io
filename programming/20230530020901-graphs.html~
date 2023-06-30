@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Graphs</title>
@@ -201,16 +201,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4e37929">1. Graph theory</a>
+<li><a href="#org287a16f">Graph theory</a>
 <ul>
-<li><a href="#org4ced285">1.1. Graph Basics</a>
+<li><a href="#org585edbf">Graph Basics</a>
 <ul>
-<li><a href="#org90193be">1.1.1. Directed graph</a></li>
-<li><a href="#org709d296">1.1.2. Undirected graph</a></li>
-<li><a href="#org566d90d">1.1.3. Neighbor nodes</a></li>
-<li><a href="#orgd94f9c5">1.1.4. Adjacency List</a></li>
-<li><a href="#org763a8d9">1.1.5. Algorithms</a></li>
-<li><a href="#org939caa3">1.1.6. Cycles</a></li>
+<li><a href="#orgb63d1c2">Directed graph</a></li>
+<li><a href="#org6758972">Undirected graph</a></li>
+<li><a href="#orgcc3c825">Neighbor nodes</a></li>
+<li><a href="#org7bdd620">Adjacency List</a></li>
+<li><a href="#org3d93d91">Algorithms</a></li>
+<li><a href="#org4b0f017">Cycles</a></li>
 </ul>
 </li>
 </ul>
@@ -219,9 +219,9 @@
 </div>
 </div>
 
-<div id="outline-container-org4e37929" class="outline-2">
-<h2 id="org4e37929"><span class="section-number-2">1.</span> Graph theory</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org287a16f" class="outline-2">
+<h2 id="org287a16f">Graph theory</h2>
+<div class="outline-text-2" id="text-org287a16f">
 <ul class="org-ul">
 <li>Video: <a href="https://www.youtube.com/watch?v=tWVWeAqZ0WU">https://www.youtube.com/watch?v=tWVWeAqZ0WU</a></li>
 </ul>
@@ -229,9 +229,9 @@
 In these notes i will use lisp/nim.
 </p>
 </div>
-<div id="outline-container-org4ced285" class="outline-3">
-<h3 id="org4ced285"><span class="section-number-3">1.1.</span> Graph Basics</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org585edbf" class="outline-3">
+<h3 id="org585edbf">Graph Basics</h3>
+<div class="outline-text-3" id="text-org585edbf">
 <p>
 A grapgh is nodes and edges
 A Node would be a "dot" on a graph and a edge is a connection between them.
@@ -243,9 +243,9 @@ Graphs can be used for all kinds of things from social network analsis
 </p>
 </div>
 
-<div id="outline-container-org90193be" class="outline-4">
-<h4 id="org90193be"><span class="section-number-4">1.1.1.</span> Directed graph</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-orgb63d1c2" class="outline-4">
+<h4 id="orgb63d1c2">Directed graph</h4>
+<div class="outline-text-4" id="text-orgb63d1c2">
 <p>
 An directed graph is a grapgh that has the edges have "directions", where you can only move in the edge direction.
 </p>
@@ -253,9 +253,9 @@ An directed graph is a grapgh that has the edges have "directions", where you ca
 </div>
 
 
-<div id="outline-container-org709d296" class="outline-4">
-<h4 id="org709d296"><span class="section-number-4">1.1.2.</span> Undirected graph</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-org6758972" class="outline-4">
+<h4 id="org6758972">Undirected graph</h4>
+<div class="outline-text-4" id="text-org6758972">
 <p>
 A undirected graph is where edges has no direction btween nodes
 </p>
@@ -263,9 +263,9 @@ A undirected graph is where edges has no direction btween nodes
 </div>
 
 
-<div id="outline-container-org566d90d" class="outline-4">
-<h4 id="org566d90d"><span class="section-number-4">1.1.3.</span> Neighbor nodes</h4>
-<div class="outline-text-4" id="text-1-1-3">
+<div id="outline-container-orgcc3c825" class="outline-4">
+<h4 id="orgcc3c825">Neighbor nodes</h4>
+<div class="outline-text-4" id="text-orgcc3c825">
 <p>
 Neighbor nodes are any node that is accessible by an edge
 </p>
@@ -291,9 +291,9 @@ but C isnt A's neighbor.
 </div>
 
 
-<div id="outline-container-orgd94f9c5" class="outline-4">
-<h4 id="orgd94f9c5"><span class="section-number-4">1.1.4.</span> Adjacency List</h4>
-<div class="outline-text-4" id="text-1-1-4">
+<div id="outline-container-org7bdd620" class="outline-4">
+<h4 id="org7bdd620">Adjacency List</h4>
+<div class="outline-text-4" id="text-org7bdd620">
 <p>
 An adjancy list is a hashmap of notes as keys and list of nodes as the values.
 </p>
@@ -306,9 +306,9 @@ In common lisp I need to use a <code>vector</code> since they have faster access
 
 
 
-<div id="outline-container-org763a8d9" class="outline-4">
-<h4 id="org763a8d9"><span class="section-number-4">1.1.5.</span> Algorithms</h4>
-<div class="outline-text-4" id="text-1-1-5">
+<div id="outline-container-org3d93d91" class="outline-4">
+<h4 id="org3d93d91">Algorithms</h4>
+<div class="outline-text-4" id="text-org3d93d91">
 <ul class="org-ul">
 <li>Depth First search visits all Adjacent nodes until it reaches a leaf then it starts backtracking. it is used to tell you if you can get to a node. Goes Deep.
 <ul class="org-ul">
@@ -325,29 +325,28 @@ In common lisp I need to use a <code>vector</code> since they have faster access
 </div>
 
 
-<div id="outline-container-org939caa3" class="outline-4">
-<h4 id="org939caa3"><span class="section-number-4">1.1.6.</span> Cycles</h4>
-<div class="outline-text-4" id="text-1-1-6">
+<div id="outline-container-org4b0f017" class="outline-4">
+<h4 id="org4b0f017">Cycles</h4>
+<div class="outline-text-4" id="text-org4b0f017">
 <p>
 A Cycle is a closed path in a graph that starts and ends at the same node.
 </p>
 </div>
-<ol class="org-ol">
-<li><a id="org210e387"></a>Acyclic<br />
-<div class="outline-text-5" id="text-1-1-6-1">
+<ul class="org-ul">
+<li><a id="org56e2971"></a>Acyclic<br />
+<div class="outline-text-5" id="text-org56e2971">
 <p>
 Means there are no "cycles"
 </p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

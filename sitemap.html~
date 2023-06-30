@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Night Watch</title>
+<title>Sitemap for project lostWiki</title>
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -195,16 +195,18 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">The Night Watch</h1>
+<h1 class="title">Sitemap for project lostWiki</h1>
 <ul class="org-ul">
 <li><a href="2022-06-05-192559-common_lisp_a_gentile_introduction_notes.html">Common LISP a gentile introduction notes</a></li>
 <li><a href="20221217163227-conky.html">Conky</a></li>
 <li><a href="20221226164048-couchdb.html">Couchdb</a></li>
 <li><a href="20221210025435-cyclic_redundancy_check.html">Cyclic redundancy check</a></li>
 <li><a href="2022-04-30-010756-doom_emacs.html">Doom Emacs</a></li>
+<li><a href="20230527174605-hacking_index.html">Hacking Index</a></li>
 <li><a href="20221220021836-nixpkgs_fork_service.html">How to enable service from different nix channel</a></li>
 <li><a href="20221213180008-idor.html">IDOR</a></li>
 <li><a href="index.html">Index</a></li>
+<li><a href="theindex.html">Index</a></li>
 <li><a href="2022-05-21-214020-introduction_to_tla.html">Introduction to TLA+</a></li>
 <li><a href="2022-05-22-161823-klaus_schwab.html">Klaus Schwab</a></li>
 <li><a href="20220526160407-learning_forth.html">Learning Forth</a></li>
@@ -223,70 +225,66 @@
 <li><a href="20221208234405-scada.html">SCADA</a></li>
 <li><a href="20221209030114-shodan_api_keys.html">Shodan api keys</a></li>
 <li><a href="20221218025025-the_history_of_emacs.html">The History Of emacs</a></li>
-<li><a href="rss.html">The Night Watch</a></li>
+<li><a href="rss.html">The Lost Wiki</a></li>
 <li><a href="2022-09-26-184941-yasnippet_multi_choice.html">Yasnippet multi choice</a></li>
 <li><a href="2022-05-22-161224-yuval_noah_harari.html">Yuval Noah Harari</a></li>
 <li><a href="20220429220123-brave_s_tor_mode.html">brave's tor mode</a></li>
 <li><a href="20220428224740-emacs.html">emacs</a></li>
 <li><a href="20221221124016-fedi.html">fedi</a></li>
-<li><a href="2022-05-22-160255-globalists.html">globalists</a></li>
 <li><a href="org-setup.html">org-setup</a></li>
 <li><a href="20220606214409-practical_cl_simple_db.html">practical cl simple db</a></li>
 <li><a href="20221210020640-programmable_logic_controllers.html">programmable logic controllers</a></li>
 <li><a href="2022-05-28-030619-star_intel.html">star intel</a></li>
 <li><a href="2022-08-14-154355-test.html">test</a></li>
 <li><a href="2022-08-14-155027-test1.html">test1</a></li>
+<li><a href="20230630005411-testing_the_rss.html">testing the rss</a></li>
 <li>Tutorial
 <ul class="org-ul">
 <li><a href="Tutorial/20221223201433-build_oci_containers.html">Build OCI containers in Nixos</a></li>
+<li><a href="Tutorial/20230515224412-elfeed.html">Elfeed</a></li>
+<li><a href="Tutorial/20230515224220-emacs_evil_mode.html">Emacs Evil mode</a></li>
 <li><a href="Tutorial/20221229193155-fix_aspell_on_nixos.html">Fix Aspell on nixos</a></li>
+<li><a href="Tutorial/20230607221650-package_and_use_nix_flakes.html">Package and use Nix flakes</a></li>
+<li><a href="Tutorial/20221231162928-slinux_trouble_should_denials.html">SLinux Trouble Should Denials</a></li>
 <li><a href="Tutorial/2022-06-01-033435-cross_compile_nixos_to_sdcard_for_rpi3b.html">cross compile nixos to sdcard for rpi3b+</a></li>
+<li><a href="Tutorial/20230501221332-dir_local_vars.html">dir-local-vars</a></li>
+<li><a href="Tutorial/20230501222047-direnv.html">direnv</a></li>
 <li><a href="Tutorial/2022-09-01-114545-emacs_open_sqlite_dired.html">emacs open sqlite dired</a></li>
+<li><a href="Tutorial/20230524053313-git_tricks.html">git tricks</a></li>
 <li><a href="Tutorial/2022-05-17-053529-how_to_package_nim.html">how to package nim</a></li>
+<li><a href="Tutorial/20230212210450-libvirt_clipboard.html">libvirt clipboard</a></li>
 <li><a href="Tutorial/20220811005425-libvirt_multi_head.html">libvirt-multi-head</a></li>
 <li><a href="Tutorial/2022-05-16-045822-nim_flake_example.html">nim-flake-example</a></li>
 <li><a href="Tutorial/2022-05-17-051936-nixos_custom_pkgs.html">nixos custom pkgs</a></li>
+<li><a href="Tutorial/20230502185107-nixos_fix_common_lisp_ld_path.html">nixos fix common-lisp ld path</a></li>
 <li><a href="Tutorial/20220514203832-nixos_headless.html">nixos-headless</a></li>
 <li><a href="Tutorial/2022-08-22-022748-non_nixos_desktop_intergration.html">non nixos desktop intergration</a></li>
-</ul></li>
-<li>daily
-<ul class="org-ul">
-<li><a href="daily/2022-04-28.html">2022-04-28</a></li>
-<li><a href="daily/2022-04-29.html">2022-04-29</a></li>
-<li><a href="daily/2022-04-30.html">2022-04-30</a></li>
-<li><a href="daily/2022-05-18.html">2022-05-18</a></li>
-<li><a href="daily/2022-05-19.html">2022-05-19</a></li>
-<li><a href="daily/2022-05-28.html">2022-05-28 (Saturday)</a></li>
-<li><a href="daily/2022-06-06.html">2022-06-06 (Monday)</a></li>
-<li><a href="daily/2022-10-28.html">2022-10-28</a></li>
-<li><a href="daily/2022-10-31.html">2022-10-31</a></li>
-<li><a href="daily/2022-11-05.html">2022-11-05</a></li>
-<li><a href="daily/2022-11-29.html">2022-11-29</a></li>
-<li><a href="daily/2022-12-01.html">2022-12-01</a></li>
-<li><a href="daily/2022-12-05.html">2022-12-05</a></li>
-<li><a href="daily/2022-12-09.html">2022-12-09</a></li>
-<li><a href="daily/2022-12-16.html">2022-12-16</a></li>
-<li><a href="daily/2022-12-17.html">2022-12-17</a></li>
-<li><a href="daily/2022-12-18.html">2022-12-18</a></li>
-<li><a href="daily/2022-12-19.html">2022-12-19</a></li>
-<li><a href="daily/2022-12-21.html">2022-12-21</a></li>
-<li><a href="daily/2022-12-26.html">2022-12-26</a></li>
-<li><a href="daily/2022-12-28.html">2022-12-28</a></li>
-<li><a href="daily/2022-12-29.html">2022-12-29</a></li>
-<li><a href="daily/2022-12-30.html">2022-12-30</a></li>
 </ul></li>
 <li>hacking
 <ul class="org-ul">
 <li><a href="hacking/20221210012904-bump_in_the_wire.html">Bump in the wire</a></li>
+<li><a href="hacking/20230527172700-cookie_bugs.html">Cookie Bugs</a></li>
+<li><a href="hacking/20230427231040-htb_templated.html">HTB Templated</a></li>
+<li><a href="hacking/20230501213539-hack_the_box.html">Hack The Box</a></li>
+<li><a href="hacking/20230418174334-hacking_python_eval.html">Hacking Python Eval</a></li>
 <li><a href="hacking/20221213171543-metatwo.html">MetaTwo</a></li>
+<li><a href="hacking/20230427212246-onlyforyou.html">OnlyForYou</a></li>
 <li><a href="hacking/20221213185522-sql_injection.html">SQL Injection</a></li>
 <li><a href="hacking/20221213173625-wordpress_enumeration.html">WordPress Enumeration</a></li>
+<li><a href="hacking/20230527173712-xss.html">XSS</a></li>
+<li><a href="hacking/20230423223955-cloudflare.html">cloudflare</a></li>
 </ul></li>
 <li>programming
 <ul class="org-ul">
+<li><a href="programming/20230305165944-asymptotic_analysis.html">Asymptotic Analysis</a></li>
+<li><a href="programming/20230305160421-cse_373_lecture_2.html">CSE-373-lecture 2</a></li>
 <li><a href="programming/20220606215038-common_lisp.html">Common Lisp</a></li>
+<li><a href="programming/20230305144608-data_structures.html">Data Structures</a></li>
+<li><a href="programming/20230530024832-depth_first_search.html">Depth First Search</a></li>
 <li><a href="programming/20220606215022-emacs_lisp.html">Emacs Lisp</a></li>
+<li><a href="programming/20230530020901-graphs.html">Graphs</a></li>
 <li><a href="programming/20221219225206-http.html">HTTP</a></li>
+<li><a href="programming/20230305145040-introduction_to_algorithnms_steven_skiena_cse373.html">Introduction to Algorithms Steven skiena (CSE373)</a></li>
 <li><a href="programming/20220606214902-lisp.html">Lisp</a></li>
 <li><a href="programming/2022-08-26-155254-metaprogramming.html">Metaprogramming</a></li>
 <li><a href="programming/20221210020053-modbus.html">Modbus</a></li>
@@ -296,9 +294,26 @@
 <li><a href="programming/20220606214755-property_list.html">Property list</a></li>
 <li><a href="programming/20220606215501-python.html">Python</a></li>
 <li><a href="programming/20221226235802-read_stdin.html">Read stdin</a></li>
+<li><a href="programming/20230601215350-rest_api_s_in_common_lisp.html">Rest Api's in common lisp</a></li>
 <li><a href="programming/20221219224000-stomp.html">STOMP</a></li>
 <li><a href="programming/20221219225308-tcp.html">TCP</a></li>
+<li><a href="programming/20230305165149-types_of_data_structs.html">Types of data structs</a></li>
+<li><a href="programming/20230305150253-big_o.html">big o</a></li>
+<li><a href="programming/20230522223358-common_lisp_compile.html">common lisp compile</a></li>
+<li><a href="programming/20230327155154-elisp_errors.html">elisp errors</a></li>
+<li><a href="programming/20230305163152-introduction_to_datastructures.html">introduction to data structures</a></li>
+<li><a href="programming/20230601220331-json.html">json</a></li>
+<li><a href="programming/20230601215947-jsown.html">jsown</a></li>
+<li><a href="programming/20230309222949-nim_android.html">nim android</a></li>
 <li><a href="programming/20220429153134-nixos_python.html">nixos-python</a></li>
+<li><a href="programming/20230328160940-redis.html">redis</a></li>
+<li><a href="programming/20230330161754-redis_expiration.html">redis expiration</a></li>
+<li><a href="programming/20230328160441-redis_game.html">redis game</a></li>
+</ul></li>
+<li>reading-notes
+<ul class="org-ul">
+<li><a href="reading-notes/20230326174749-freecode_camp_college_algebra_notes.html">Freecode camp College Algebra Notes</a></li>
+<li><a href="reading-notes/20230326180325-free_code_camp_college_algebra_preportions.html">free code camp college algebra preportions</a></li>
 </ul></li>
 <li>reading
 <ul class="org-ul">
@@ -309,22 +324,13 @@
 </ul></li>
 <li>starintel
 <ul class="org-ul">
+<li><a href="starintel/20230603181317-quasar.html">Quasar</a></li>
 <li><a href="starintel/20221219011944-why_star_intel.html">Why Star Intel</a></li>
-</ul></li>
-<li>sunshine
-<ul class="org-ul">
-<li><a href="sunshine/20221221141338-christopher_ramras.html">Christopher Ramras</a></li>
-<li><a href="sunshine/20221221165801-miri_cypers.html">Miri Cypers</a></li>
-<li><a href="sunshine/index.html">Shunshine Index</a></li>
-<li><a href="sunshine/20220906163531-todd_soper.html">Todd Soper</a></li>
-<li><a href="sunshine/2022-04-29-193425-mike_stein.html">mike-stein</a></li>
-<li><a href="sunshine/2022-04-29-180254-nina_janikowicz.html">nina-janikowicz</a></li>
 </ul></li>
 </ul>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

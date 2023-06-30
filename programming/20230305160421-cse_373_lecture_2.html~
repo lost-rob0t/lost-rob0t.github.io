@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CSE-373-lecture 2</title>
@@ -201,12 +201,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org33c9dc2">1. The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></a>
+<li><a href="#org6b6f838">The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></a>
 <ul>
-<li><a href="#org0785122">1.1. Solutions</a>
+<li><a href="#org33d1089">Solutions</a>
 <ul>
-<li><a href="#org12018db">1.1.1. Shortest Job first</a></li>
-<li><a href="#org817b375">1.1.2. Reason why it wont work</a></li>
+<li><a href="#org4d8fc41">Shortest Job first</a></li>
+<li><a href="#org2de0cd2">Reason why it wont work</a></li>
 </ul>
 </li>
 </ul>
@@ -218,9 +218,9 @@
 Note: this is on hole until i do more data struct stuff which seems to be referenced with the lectures
 Video lecture: <a href="https://www.youtube.com/watch?v=z1mkCe3kVUA&amp;list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&amp;index=2">https://www.youtube.com/watch?v=z1mkCe3kVUA&amp;list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&amp;index=2</a>
 </p>
-<div id="outline-container-org33c9dc2" class="outline-2">
-<h2 id="org33c9dc2"><span class="section-number-2">1.</span> The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org6b6f838" class="outline-2">
+<h2 id="org6b6f838">The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></h2>
+<div class="outline-text-2" id="text-org6b6f838">
 <p>
 A movie star wants to select the maximum number of staring roles such that no two jobs needs him at two places.
 </p>
@@ -230,13 +230,13 @@ there is a time shooting starts and shooting ends
 </p>
 </div>
 
-<div id="outline-container-org0785122" class="outline-3">
-<h3 id="org0785122"><span class="section-number-3">1.1.</span> Solutions</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org33d1089" class="outline-3">
+<h3 id="org33d1089">Solutions</h3>
+<div class="outline-text-3" id="text-org33d1089">
 </div>
-<div id="outline-container-org12018db" class="outline-4">
-<h4 id="org12018db"><span class="section-number-4">1.1.1.</span> Shortest Job first</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-org4d8fc41" class="outline-4">
+<h4 id="org4d8fc41">Shortest Job first</h4>
+<div class="outline-text-4" id="text-org4d8fc41">
 <p>
 Always do the shortest job first, so you do the least amount of work.
 </p>
@@ -254,9 +254,9 @@ If you are getting payed a million $ for a shoot might as well do the shortest o
 </div>
 </div>
 
-<div id="outline-container-org817b375" class="outline-4">
-<h4 id="org817b375"><span class="section-number-4">1.1.2.</span> Reason why it wont work</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-org2de0cd2" class="outline-4">
+<h4 id="org2de0cd2">Reason why it wont work</h4>
+<div class="outline-text-4" id="text-org2de0cd2">
 <p>
 Taking the shortest job could block to longer job that barley intersect and leaves you with less work.
 </p>
@@ -266,8 +266,7 @@ Taking the shortest job could block to longer job that barley intersect and leav
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>links</title>
@@ -201,16 +201,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org98b4fb7">1. Tech related</a></li>
-<li><a href="#orgddf346f">2. Videos</a></li>
-<li><a href="#org3e4e82b">3. FireArms</a></li>
+<li><a href="#org7478545">Tech related</a></li>
+<li><a href="#org0d8bdfc">Videos</a></li>
+<li><a href="#orgcf3373c">FireArms</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org98b4fb7" class="outline-2">
-<h2 id="org98b4fb7"><span class="section-number-2">1.</span> Tech related</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org7478545" class="outline-2">
+<h2 id="org7478545">Tech related</h2>
+<div class="outline-text-2" id="text-org7478545">
 <ul class="org-ul">
 <li><a href="https://sizeof.cat/links/">https://sizeof.cat/links/</a>
 <ul class="org-ul">
@@ -220,18 +220,18 @@
 </div>
 </div>
 
-<div id="outline-container-orgddf346f" class="outline-2">
-<h2 id="orgddf346f"><span class="section-number-2">2.</span> Videos</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org0d8bdfc" class="outline-2">
+<h2 id="org0d8bdfc">Videos</h2>
+<div class="outline-text-2" id="text-org0d8bdfc">
 <ul class="org-ul">
 <li><a href="https://wikivisually.com/wiki/Nilsimsa_Hash">https://wikivisually.com/wiki/Nilsimsa_Hash</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3e4e82b" class="outline-2">
-<h2 id="org3e4e82b"><span class="section-number-2">3.</span> FireArms</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-orgcf3373c" class="outline-2">
+<h2 id="orgcf3373c">FireArms</h2>
+<div class="outline-text-2" id="text-orgcf3373c">
 <ul class="org-ul">
 <li><a href="https://www.atlasarms.org/">https://www.atlasarms.org/</a></li>
 </ul>
@@ -239,8 +239,7 @@
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Process Control network</title>
@@ -201,17 +201,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org948ee8b">1. <span class="todo TODO">TODO</span> Process control network&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ICS">ICS</span>&#xa0;<span class=""></span>&#xa0;<span class="SCADA">SCADA</span></span></a></li>
+<li><a href="#org6cb4f06"><span class="todo TODO">TODO</span> Process control network&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ICS">ICS</span>&#xa0;<span class=""></span>&#xa0;<span class="SCADA">SCADA</span></span></a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org948ee8b" class="outline-2">
-<h2 id="org948ee8b"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> Process control network&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ICS">ICS</span>&#xa0;<span class=""></span>&#xa0;<span class="SCADA">SCADA</span></span></h2>
+<div id="outline-container-org6cb4f06" class="outline-2">
+<h2 id="org6cb4f06"><span class="todo TODO">TODO</span> Process control network&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ICS">ICS</span>&#xa0;<span class=""></span>&#xa0;<span class="SCADA">SCADA</span></span></h2>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs</title>
@@ -201,43 +201,43 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org530f92d">1. Emacs Page</a></li>
-<li><a href="#orgb8b31e8">2. Tips and tricks</a>
+<li><a href="#org5773422">Emacs Page</a></li>
+<li><a href="#org1769f82">Tips and tricks</a>
 <ul>
-<li><a href="#orgbe6f3ce">2.1. Org</a>
+<li><a href="#orgb0e5ffd">Org</a>
 <ul>
-<li><a href="#orgf627186">2.1.1. Load u2l into a org document</a></li>
-<li><a href="#orgcc4213b">2.1.2. Org Babel isnt tangling the file.</a></li>
+<li><a href="#org78ed59b">Load u2l into a org document</a></li>
+<li><a href="#orgecbd8be">Org Babel isnt tangling the file.</a></li>
 </ul>
 </li>
-<li><a href="#org6a7dd88">2.2. Doom Emacs</a></li>
-<li><a href="#org8af0ce0">2.3. Yasnippet</a></li>
-<li><a href="#orgfdf81e3">2.4. Org</a></li>
+<li><a href="#orgd21f26c">Doom Emacs</a></li>
+<li><a href="#org4812eec">Yasnippet</a></li>
+<li><a href="#orgdd9e62e">Org</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org530f92d" class="outline-2">
-<h2 id="org530f92d"><span class="section-number-2">1.</span> Emacs Page</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org5773422" class="outline-2">
+<h2 id="org5773422">Emacs Page</h2>
+<div class="outline-text-2" id="text-org5773422">
 <p>
 This is a hub of emacs things related
 </p>
 </div>
 </div>
-<div id="outline-container-orgb8b31e8" class="outline-2">
-<h2 id="orgb8b31e8"><span class="section-number-2">2.</span> Tips and tricks</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org1769f82" class="outline-2">
+<h2 id="org1769f82">Tips and tricks</h2>
+<div class="outline-text-2" id="text-org1769f82">
 </div>
-<div id="outline-container-orgbe6f3ce" class="outline-3">
-<h3 id="orgbe6f3ce"><span class="section-number-3">2.1.</span> Org</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-orgb0e5ffd" class="outline-3">
+<h3 id="orgb0e5ffd">Org</h3>
+<div class="outline-text-3" id="text-orgb0e5ffd">
 </div>
-<div id="outline-container-orgf627186" class="outline-4">
-<h4 id="orgf627186"><span class="section-number-4">2.1.1.</span> Load u2l into a org document</h4>
-<div class="outline-text-4" id="text-2-1-1">
+<div id="outline-container-org78ed59b" class="outline-4">
+<h4 id="org78ed59b">Load u2l into a org document</h4>
+<div class="outline-text-4" id="text-org78ed59b">
 <p>
 url2org function for importing info from the web
 <a href="https://www.reddit.com/r/emacs/comments/i2ep98/comment/g06s9vg/?utm_source=share&amp;utm_medium=web2x&amp;context=3">source</a>.
@@ -253,34 +253,34 @@ url2org function for importing info from the web
 </div>
 </div>
 </div>
-<div id="outline-container-orgcc4213b" class="outline-4">
-<h4 id="orgcc4213b"><span class="section-number-4">2.1.2.</span> Org Babel isnt tangling the file.</h4>
-<div class="outline-text-4" id="text-2-1-2">
+<div id="outline-container-orgecbd8be" class="outline-4">
+<h4 id="orgecbd8be">Org Babel isnt tangling the file.</h4>
+<div class="outline-text-4" id="text-orgecbd8be">
 <p>
 Make sure you C-c C-c the header args
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-org6a7dd88" class="outline-3">
-<h3 id="org6a7dd88"><span class="section-number-3">2.2.</span> Doom Emacs</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-orgd21f26c" class="outline-3">
+<h3 id="orgd21f26c">Doom Emacs</h3>
+<div class="outline-text-3" id="text-orgd21f26c">
 <p>
 <a href="2022-04-30-010756-doom_emacs.html#ID-6dd02406-f2d1-4ff2-8a39-2590597c44bf">Doom Emacs</a>
 </p>
 </div>
 </div>
-<div id="outline-container-org8af0ce0" class="outline-3">
-<h3 id="org8af0ce0"><span class="section-number-3">2.3.</span> Yasnippet</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-org4812eec" class="outline-3">
+<h3 id="org4812eec">Yasnippet</h3>
+<div class="outline-text-3" id="text-org4812eec">
 <ul class="org-ul">
 <li><a href="2022-09-26-184941-yasnippet_multi_choice.html#ID-19dae36d-a4f9-49d1-9bc3-d5734ff95bde">Yasnippet multi choice</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfdf81e3" class="outline-3">
-<h3 id="orgfdf81e3"><span class="section-number-3">2.4.</span> Org</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-orgdd9e62e" class="outline-3">
+<h3 id="orgdd9e62e">Org</h3>
+<div class="outline-text-3" id="text-orgdd9e62e">
 <ul class="org-ul">
 <li><a href="20221216043133-publish_org_roam.html#ID-0ca70283-a104-46aa-82f0-1d98608209b9">Publish Org Roam</a></li>
 </ul>
@@ -289,8 +289,7 @@ Make sure you C-c C-c the header args
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

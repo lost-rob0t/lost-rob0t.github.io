@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>libvirt clipboard</title>
@@ -201,13 +201,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org73d3c1c">1. How to use the clipboard in libvirt&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linux">linux</span>&#xa0;<span class=""></span>&#xa0;<span class="vm">vm</span></span></a></li>
+<li><a href="#orgd468a9e">How to use the clipboard in libvirt&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linux">linux</span>&#xa0;<span class=""></span>&#xa0;<span class="vm">vm</span></span></a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org73d3c1c" class="outline-2">
-<h2 id="org73d3c1c"><span class="section-number-2">1.</span> How to use the clipboard in libvirt&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linux">linux</span>&#xa0;<span class=""></span>&#xa0;<span class="vm">vm</span></span></h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgd468a9e" class="outline-2">
+<h2 id="orgd468a9e">How to use the clipboard in libvirt&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linux">linux</span>&#xa0;<span class=""></span>&#xa0;<span class="vm">vm</span></span></h2>
+<div class="outline-text-2" id="text-orgd468a9e">
 <p>
 Make sure spice-vdagent is installed
 Enable the service
@@ -236,8 +236,7 @@ address type="virtio-serial" controller="0" bus="0" port="2"
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

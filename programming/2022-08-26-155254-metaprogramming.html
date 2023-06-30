@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:15 -->
+<!-- 2023-06-30 Fri 01:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Metaprogramming</title>
@@ -201,13 +201,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4b36746">1. Metaprogramming in nim</a>
+<li><a href="#org4279e36">Metaprogramming in nim</a>
 <ul>
-<li><a href="#orgd1ba149">1.1. Generics</a>
+<li><a href="#orgc4ebf4f">Generics</a>
 <ul>
-<li><a href="#org93eed68">1.1.1. Generic Procedures</a></li>
-<li><a href="#org22bee12">1.1.2. Constraining Generics</a></li>
-<li><a href="#org4452c29">1.1.3. Templates</a></li>
+<li><a href="#org7bc35aa">Generic Procedures</a></li>
+<li><a href="#org8856665">Constraining Generics</a></li>
+<li><a href="#orgbedd6e6">Templates</a></li>
 </ul>
 </li>
 </ul>
@@ -220,16 +220,16 @@
 </ul>
 
 
-<div id="outline-container-org4b36746" class="outline-2">
-<h2 id="org4b36746"><span class="section-number-2">1.</span> Metaprogramming in nim</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org4279e36" class="outline-2">
+<h2 id="org4279e36">Metaprogramming in nim</h2>
+<div class="outline-text-2" id="text-org4279e36">
 <p>
 Some notes From Nim in Action
 </p>
 </div>
-<div id="outline-container-orgd1ba149" class="outline-3">
-<h3 id="orgd1ba149"><span class="section-number-3">1.1.</span> Generics</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgc4ebf4f" class="outline-3">
+<h3 id="orgc4ebf4f">Generics</h3>
+<div class="outline-text-3" id="text-orgc4ebf4f">
 <p>
 Generics allow you to write programs in a style which you do not know the types until the algorithm is called.
 It helps you with code duplication.
@@ -242,9 +242,9 @@ Some languages may refer to them as <code>parametric polymorphism</code> also kn
 </div>
 
 
-<div id="outline-container-org93eed68" class="outline-4">
-<h4 id="org93eed68"><span class="section-number-4">1.1.1.</span> Generic Procedures</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-org7bc35aa" class="outline-4">
+<h4 id="org7bc35aa">Generic Procedures</h4>
+<div class="outline-text-4" id="text-org7bc35aa">
 <p>
 An example generic procedure from the book
 </p>
@@ -272,9 +272,9 @@ The compiler may not be able to infer generic types. You can explicitly set them
 </div>
 
 
-<div id="outline-container-org22bee12" class="outline-4">
-<h4 id="org22bee12"><span class="section-number-4">1.1.2.</span> Constraining Generics</h4>
-<div class="outline-text-4" id="text-1-1-2">
+<div id="outline-container-org8856665" class="outline-4">
+<h4 id="org8856665">Constraining Generics</h4>
+<div class="outline-text-4" id="text-org8856665">
 <p>
 Constraining generics makes it easier to convey to you and others the meaning of the generic.
 </p>
@@ -293,9 +293,9 @@ This will result in an error
 </p>
 </div>
 
-<ol class="org-ol">
-<li><a id="org4f751f7"></a>type classes/concepts<br />
-<div class="outline-text-5" id="text-1-1-2-1">
+<ul class="org-ul">
+<li><a id="orgffdc9b9"></a>type classes/concepts<br />
+<div class="outline-text-5" id="text-orgffdc9b9">
 <p>
 Concepts is also known as a user defined type classs in other languages, are a construct to create requirements that a matched type must satisfy.
 </p>
@@ -315,13 +315,13 @@ In the example the type is matched when a &lt; returns a bool.
 </p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 
 
-<div id="outline-container-org4452c29" class="outline-4">
-<h4 id="org4452c29"><span class="section-number-4">1.1.3.</span> Templates</h4>
-<div class="outline-text-4" id="text-1-1-3">
+<div id="outline-container-orgbedd6e6" class="outline-4">
+<h4 id="orgbedd6e6">Templates</h4>
+<div class="outline-text-4" id="text-orgbedd6e6">
 <p>
 Nim's <code>templates</code> are procedures that produce code. The easily allows you to deal with boilerplate code.
 They allow you to inject varibles into the calling scope.
@@ -344,9 +344,9 @@ An example would be to look at <a href="../2022-05-28-030619-star_intel.html#ID-
 </p>
 </div>
 
-<ol class="org-ol">
-<li><a id="org25d61d6"></a>Code blocks<br />
-<div class="outline-text-5" id="text-1-1-3-1">
+<ul class="org-ul">
+<li><a id="org24ebc62"></a>Code blocks<br />
+<div class="outline-text-5" id="text-org24ebc62">
 <p>
 A code block is a set of statments. passing multiple statements into a procedure into a procecure needs anonmouse functions.
 Templates have a sepcial syntax to support more than one statement.
@@ -384,13 +384,13 @@ while true:
 NOTE: when a code block is passed, the last parameter always contains it
 </p>
 </div>
-<ol class="org-ol">
-<li><a id="org5078c4b"></a>IDEA read on nim's do syntax<br /></li>
-</ol>
+<ul class="org-ul">
+<li><a id="orge8b4045"></a>IDEA read on nim's do syntax<br /></li>
+</ul>
 </li>
 
-<li><a id="orgf8ec586"></a>Untype Versus Typed<br />
-<div class="outline-text-5" id="text-1-1-3-2">
+<li><a id="orgd3382ec"></a>Untype Versus Typed<br />
+<div class="outline-text-5" id="text-orgd3382ec">
 <ul class="org-ul">
 <li>Untyped: Allows Indentifers that has yet to be delclared.</li>
 <li>Typed: allows a indentifier that has a type and by concrete type like <code>float, int and string</code></li>
@@ -398,8 +398,8 @@ NOTE: when a code block is passed, the last parameter always contains it
 </div>
 </li>
 
-<li><a id="org1e4d508"></a>Template hygiene<br />
-<div class="outline-text-5" id="text-1-1-3-3">
+<li><a id="orgbc8cee9"></a>Template hygiene<br />
+<div class="outline-text-5" id="text-orgbc8cee9">
 <p>
 Templates can define vairbles that can be accessible after the template.
 you might not want that and this is called <code>template hygiene</code>.
@@ -424,14 +424,13 @@ Trying to acess a var without that results in error.
 </p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:15</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 01:02</p>
 </div>
 </body>
 </html>

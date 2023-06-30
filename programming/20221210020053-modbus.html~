@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Modbus</title>
@@ -202,28 +202,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge6c933d">1. Modbus&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ics">ics</span>&#xa0;<span class="protocol">protocol</span></span></a>
+<li><a href="#orgefa983a">Modbus&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ics">ics</span>&#xa0;<span class="protocol">protocol</span></span></a>
 <ul>
-<li><a href="#orgefcd526">1.1. Limits</a></li>
-<li><a href="#org5ce776a">1.2. Memory area</a></li>
-<li><a href="#orgbdd8a5b">1.3. Modbus RTU Frame Format</a></li>
+<li><a href="#orgba62b7d">Limits</a></li>
+<li><a href="#org8329da4">Memory area</a></li>
+<li><a href="#orgd0b4b22">Modbus RTU Frame Format</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge6c933d" class="outline-2">
-<h2 id="orge6c933d"><span class="section-number-2">1.</span> Modbus&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ics">ics</span>&#xa0;<span class="protocol">protocol</span></span></h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgefa983a" class="outline-2">
+<h2 id="orgefa983a">Modbus&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ics">ics</span>&#xa0;<span class="protocol">protocol</span></span></h2>
+<div class="outline-text-2" id="text-orgefa983a">
 <p>
 Modbus is a data communication protocol by Modicon in the 1970s. It is designed for use with <a href="../20221210020640-programmable_logic_controllers.html#ID-27a4cf94-829a-4182-9dc8-3dd99da55fe9">programmable logic controllers</a>.
 Modbus is the most commonly used standard for connecting industrial devices.
 modbus uses Serical lines, ethernet or others as a transport. it is often used to connect a  system supervisory computer with a <a href="../20221210021703-remote_terminal_unit.html#ID-40545110-6180-4f4e-9520-b18b02c78d6e">Remote terminal unit</a>.
 </p>
 </div>
-<div id="outline-container-orgefcd526" class="outline-3">
-<h3 id="orgefcd526"><span class="section-number-3">1.1.</span> Limits</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-orgba62b7d" class="outline-3">
+<h3 id="orgba62b7d">Limits</h3>
+<div class="outline-text-3" id="text-orgba62b7d">
 <ul class="org-ul">
 <li>Limited supported data types</li>
 <li>No descriptions of data objects</li>
@@ -235,9 +235,9 @@ modbus uses Serical lines, ethernet or others as a transport. it is often used t
 </div>
 
 
-<div id="outline-container-org5ce776a" class="outline-3">
-<h3 id="org5ce776a"><span class="section-number-3">1.2.</span> Memory area</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-org8329da4" class="outline-3">
+<h3 id="org8329da4">Memory area</h3>
+<div class="outline-text-3" id="text-org8329da4">
 <p>
 This table shows the layout of a typical modbus object
 </p>
@@ -294,9 +294,9 @@ This table shows the layout of a typical modbus object
 </div>
 </div>
 
-<div id="outline-container-orgbdd8a5b" class="outline-3">
-<h3 id="orgbdd8a5b"><span class="section-number-3">1.3.</span> Modbus RTU Frame Format</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-orgd0b4b22" class="outline-3">
+<h3 id="orgd0b4b22">Modbus RTU Frame Format</h3>
+<div class="outline-text-3" id="text-orgd0b4b22">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -358,8 +358,7 @@ This table shows the layout of a typical modbus object
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: NSASPY</p>
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

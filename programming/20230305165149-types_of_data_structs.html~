@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Types of data structs</title>
@@ -201,17 +201,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga744f18">1. Linear Data Structures</a></li>
-<li><a href="#org5376b06">2. None Linear Data Structures</a></li>
-<li><a href="#org4c24b01">3. Static Data Structs</a></li>
-<li><a href="#org6b6f41e">4. Dynamic data structs</a></li>
+<li><a href="#org2f950f1">Linear Data Structures</a></li>
+<li><a href="#org50c7cc1">None Linear Data Structures</a></li>
+<li><a href="#org1eb8c97">Static Data Structs</a></li>
+<li><a href="#orgb0f82d6">Dynamic data structs</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga744f18" class="outline-2">
-<h2 id="orga744f18"><span class="section-number-2">1.</span> Linear Data Structures</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org2f950f1" class="outline-2">
+<h2 id="org2f950f1">Linear Data Structures</h2>
+<div class="outline-text-2" id="text-org2f950f1">
 <p>
 A Linear data struct is one that is arranged sequentially in memory
 They also have only one predeccesor and one successor
@@ -225,9 +225,9 @@ Examples:
 </ul>
 </div>
 </div>
-<div id="outline-container-org5376b06" class="outline-2">
-<h2 id="org5376b06"><span class="section-number-2">2.</span> None Linear Data Structures</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org50c7cc1" class="outline-2">
+<h2 id="org50c7cc1">None Linear Data Structures</h2>
+<div class="outline-text-2" id="text-org50c7cc1">
 <p>
 A non linear data struct is one that is not arrange in a sequential order.
 Examples:
@@ -238,9 +238,9 @@ Examples:
 </ul>
 </div>
 </div>
-<div id="outline-container-org4c24b01" class="outline-2">
-<h2 id="org4c24b01"><span class="section-number-2">3.</span> Static Data Structs</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org1eb8c97" class="outline-2">
+<h2 id="org1eb8c97">Static Data Structs</h2>
+<div class="outline-text-2" id="text-org1eb8c97">
 <p>
 memory is allocated at compile time
 Max size is always fixed
@@ -256,9 +256,9 @@ Examples:
 </div>
 
 
-<div id="outline-container-org6b6f41e" class="outline-2">
-<h2 id="org6b6f41e"><span class="section-number-2">4.</span> Dynamic data structs</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgb0f82d6" class="outline-2">
+<h2 id="orgb0f82d6">Dynamic data structs</h2>
+<div class="outline-text-2" id="text-orgb0f82d6">
 <p>
 memory is allocated at run time, it is flexible
 </p>
@@ -273,8 +273,7 @@ Example:
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

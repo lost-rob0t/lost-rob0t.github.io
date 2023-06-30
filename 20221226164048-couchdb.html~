@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Couchdb</title>
@@ -201,11 +201,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgbf6ec4e">1. Couchdb&#xa0;&#xa0;&#xa0;<span class="tag"><span class="couchdb">couchdb</span></span></a>
+<li><a href="#org66f673e">Couchdb&#xa0;&#xa0;&#xa0;<span class="tag"><span class="couchdb">couchdb</span></span></a>
 <ul>
 <li>
 <ul>
-<li><a href="#org905cda3">1.0.1. Setup</a></li>
+<li><a href="#org1157029">Setup</a></li>
 </ul>
 </li>
 </ul>
@@ -213,9 +213,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbf6ec4e" class="outline-2">
-<h2 id="orgbf6ec4e"><span class="section-number-2">1.</span> Couchdb&#xa0;&#xa0;&#xa0;<span class="tag"><span class="couchdb">couchdb</span></span></h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org66f673e" class="outline-2">
+<h2 id="org66f673e">Couchdb&#xa0;&#xa0;&#xa0;<span class="tag"><span class="couchdb">couchdb</span></span></h2>
+<div class="outline-text-2" id="text-org66f673e">
 <p>
 Couchdb is a Nosql database that offers replication and a simple to use rest api. it is written in erlang.
 </p>
@@ -224,13 +224,13 @@ Couchdb is a Nosql database that offers replication and a simple to use rest api
 I use couchdb for my project <a href="2022-05-28-030619-star_intel.html#ID-78157cd5-9681-4a64-b5c7-0f2b415cd446">star intel</a>
 </p>
 </div>
-<div id="outline-container-org905cda3" class="outline-4">
-<h4 id="org905cda3"><span class="section-number-4">1.0.1.</span> Setup</h4>
-<div class="outline-text-4" id="text-1-0-1">
+<div id="outline-container-org1157029" class="outline-4">
+<h4 id="org1157029">Setup</h4>
+<div class="outline-text-4" id="text-org1157029">
 </div>
-<ol class="org-ol">
-<li><a id="orgf6b1955"></a>Docker&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span></span><br />
-<div class="outline-text-5" id="text-1-0-1-1">
+<ul class="org-ul">
+<li><a id="org9006e3c"></a>Docker&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span></span><br />
+<div class="outline-text-5" id="text-org9006e3c">
 <p>
 There is a community made docker container and one made by ibm that bundles FTS.
 </p>
@@ -260,13 +260,12 @@ Setup the atabse, change the password and it is ready to use.
 </p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

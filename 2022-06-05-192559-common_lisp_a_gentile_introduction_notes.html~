@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Common LISP a gentile introduction notes</title>
@@ -201,11 +201,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org1b9af87">1. Chaper Notes</a>
+<li><a href="#orgb6cdcad">Chaper Notes</a>
 <ul>
-<li><a href="#orgb516695">1.1. Chapter 1</a>
+<li><a href="#org13b879b">Chapter 1</a>
 <ul>
-<li><a href="#org89cf657">1.1.1. 1.3 Three kinds of numbers</a></li>
+<li><a href="#org58c908b">1.3 Three kinds of numbers</a></li>
 </ul>
 </li>
 </ul>
@@ -213,25 +213,25 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org1b9af87" class="outline-2">
-<h2 id="org1b9af87"><span class="section-number-2">1.</span> Chaper Notes</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orgb6cdcad" class="outline-2">
+<h2 id="orgb6cdcad">Chaper Notes</h2>
+<div class="outline-text-2" id="text-orgb6cdcad">
 </div>
-<div id="outline-container-orgb516695" class="outline-3">
-<h3 id="orgb516695"><span class="section-number-3">1.1.</span> Chapter 1</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org13b879b" class="outline-3">
+<h3 id="org13b879b">Chapter 1</h3>
+<div class="outline-text-3" id="text-org13b879b">
 </div>
-<div id="outline-container-org89cf657" class="outline-4">
-<h4 id="org89cf657"><span class="section-number-4">1.1.1.</span> 1.3 Three kinds of numbers</h4>
-<div class="outline-text-4" id="text-1-1-1">
+<div id="outline-container-org58c908b" class="outline-4">
+<h4 id="org58c908b">1.3 Three kinds of numbers</h4>
+<div class="outline-text-4" id="text-org58c908b">
 <p>
 In common lisp there are are many types of numbers, but there a few to point out
 </p>
 </div>
 
-<ol class="org-ol">
-<li><a id="org9c240c0"></a>Ratios<br />
-<div class="outline-text-5" id="text-1-1-1-1">
+<ul class="org-ul">
+<li><a id="org5937bbc"></a>Ratios<br />
+<div class="outline-text-5" id="text-org5937bbc">
 <p>
 Ratios are numbers written as a fraction, unlike in deciicmal
 </p>
@@ -242,14 +242,13 @@ Ratios are numbers written as a fraction, unlike in deciicmal
 </div>
 </div>
 </li>
-</ol>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

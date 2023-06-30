@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:15 -->
+<!-- 2023-06-30 Fri 02:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Publish Org Roam</title>
@@ -201,106 +201,369 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge0f1b82">1. How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></a>
+<li><a href="#orgb2b776d">How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></a>
 <ul>
-<li><a href="#orgc53e7eb">1.1. My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></a></li>
-<li><a href="#orgddc729e">1.2. See also</a></li>
+<li><a href="#ID-2b069384-79d9-4ed3-bc6e-b766edf526cb">Publish Script</a></li>
+<li><a href="#ID-29ebc275-12d1-432c-befb-950f7be12184">My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></a></li>
+<li><a href="#ID-7bd75ceb-f243-40b3-9ecc-3b163a58ec97">See also</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge0f1b82" class="outline-2">
-<h2 id="orge0f1b82"><span class="section-number-2">1.</span> How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></h2>
-<div class="outline-text-2" id="text-1">
+
+
+<div id="outline-container-orgb2b776d" class="outline-2">
+<h2 id="orgb2b776d">How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></h2>
+<div class="outline-text-2" id="text-orgb2b776d">
 <p>
 By Defualt org roam notes do not work with <code>org-publish</code> becuase it doesnt know how to resolve the id links.
 </p>
 </div>
 
-<div id="outline-container-orgc53e7eb" class="outline-3">
-<h3 id="orgc53e7eb"><span class="section-number-3">1.1.</span> My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></h3>
-<div class="outline-text-3" id="text-1-1">
+
+
+<div id="outline-container-ID-2b069384-79d9-4ed3-bc6e-b766edf526cb" class="outline-3">
+<h3 id="ID-2b069384-79d9-4ed3-bc6e-b766edf526cb">Publish Script</h3>
+<div class="outline-text-3" id="text-orgd9daf83">
+<p>
+Preamble header
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #546A90;">;;; </span><span style="color: #546A90;">publish.el --- Description -*- lexical-binding: t; -*-</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Copyright (C) 2022</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Created: December 16, 2022</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Modified: December 16, 2022</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Version: 0.1.1</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Keywords: abbrev lisp multimedia news tools org web html zine</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Package-Requires: ((emacs "24.4"))</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">This file is not part of GNU Emacs.</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;;; </span><span style="color: #546A90;">Commentary:</span>
+<span style="color: #546A90;">;;; </span><span style="color: #546A90;">Publish org-roam notes to html.</span>
+<span style="color: #546A90;">;;; </span><span style="color: #546A90;">It copys all the files in the org-roam dir so images and other things are rendered in the html as in the org.</span>
+<span style="color: #546A90;">;;; </span><span style="color: #546A90;">All the org files are present in the html</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;;  </span><span style="color: #546A90;">Description</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;;; </span><span style="color: #546A90;">Code:</span>
+
+</pre>
+</div>
+
+<p>
+A simple macro to run code when not in <a href="noninteractive">noninteractive</a>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">defmacro</span> <span style="color: #42c6ff;">with-batch</span> <span style="color: #ff2afc;">(</span><span style="color: #ffd400;">&amp;rest</span> body<span style="color: #ff2afc;">)</span>
+  <span style="color: #A875FF;">"Execute BODY only if Emacs is running in batch mode."</span>
+  <span style="color: #ff2afc;">`</span><span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">when</span> <span style="color: #df85ff;">noninteractive</span>
+     ,@body<span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+
+</pre>
+</div>
+
+<p>
+Package setup for when it is ran as <code>--script</code>.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">with-batch</span>
+ <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">progn</span>
+   <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">package</span><span style="color: #a7da1e;">)</span>
+   <span style="color: #a7da1e;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">package-user-dir</span> <span style="color: #df85ff;">(</span><span style="color: #df85ff; font-weight: bold;">expand-file-name</span> <span style="color: #7984D1;">"./.packages"</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span>
+   <span style="color: #a7da1e;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">package-archives</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff;">(</span><span style="color: #1ea8fc;">(</span><span style="color: #7984D1;">"melpa"</span> . <span style="color: #7984D1;">"https://melpa.org/packages/"</span><span style="color: #1ea8fc;">)</span>
+                            <span style="color: #1ea8fc;">(</span><span style="color: #7984D1;">"elpa"</span> . <span style="color: #7984D1;">"https://elpa.gnu.org/packages/"</span><span style="color: #1ea8fc;">)</span>
+                            <span style="color: #1ea8fc;">(</span><span style="color: #7984D1;">"nongnu"</span> . <span style="color: #7984D1;">"https://elpa.nongnu.org/nongnu/"</span><span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span>
+   <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">package-initialize</span><span style="color: #a7da1e;">)</span>
+   <span style="color: #a7da1e;">(</span><span style="color: #ff2afc; font-weight: bold;">unless</span> <span style="color: #df85ff;">package-archive-contents</span>
+     <span style="color: #df85ff;">(</span><span style="color: #df85ff; font-weight: bold;">package-refresh-contents</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span>
+   <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">package-install</span> <span style="color: #ff2afc;">'</span><span style="color: #ffd400;">htmlize</span><span style="color: #a7da1e;">)</span>
+   <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">package-install</span> <span style="color: #ff2afc;">'</span><span style="color: #ffd400;">org-roam</span><span style="color: #a7da1e;">)</span>
+   <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">package-install</span> <span style="color: #ff2afc;">'</span><span style="color: #ffd400;">org-contrib</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">htmlize</span><span style="color: #1ea8fc;">)</span> <span style="color: #546A90;">;; </span><span style="color: #546A90;">For Code blocks</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">find-lisp</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">org</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">load-file</span> <span style="color: #7984D1;">"~/.dotfiles/lisp/org-helpers/ox-rss.el"</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">ox-publish</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">org-roam-export</span><span style="color: #1ea8fc;">)</span> <span style="color: #546A90;">;; </span><span style="color: #546A90;">Fixes for org roam to work with ox-publish</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">ox-rss</span><span style="color: #1ea8fc;">)</span>
+
+
+
+</pre>
+</div>
+
+<p>
+Set the path to the project directory. We set it to  <a href="org-roam-directory">org-roam-directory</a>.
+If it is noninteractive, I make sure to set org-roam-directory.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">defvar</span> <span style="color: #df85ff;">project-dir</span> <span style="color: #7984D1;">"~/Documents/Notes/org/roam"</span>
+  <span style="color: #A875FF;">"The Path to the Notes"</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">defvar</span> <span style="color: #df85ff;">project-output-dir</span> <span style="color: #7984D1;">"~/Documents/Notes/org/public"</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">not</span> <span style="color: #df85ff;">noninteractive</span><span style="color: #ff2afc;">)</span>
+    <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">project-dir</span> <span style="color: #df85ff;">org-roam-directory</span><span style="color: #ff2afc;">)</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">org-roam-directory</span> <span style="color: #df85ff;">project-dir</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+</pre>
+</div>
+
+<p>
+Exclude Spicy Files. My daily is my personal journal which you dont need to read anyways.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">defvar</span> <span style="color: #df85ff;">banned-files</span> <span style="color: #7984D1;">"sunshine/</span><span style="color: #ff2afc; font-weight: bold;">\\</span><span style="color: #ff2afc; font-weight: bold;">|</span><span style="color: #7984D1;">daily/"</span><span style="color: #1ea8fc;">)</span>
+</pre>
+</div>
+
+<p>
+Force org to rebuild the cache.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">defun</span> <span style="color: #42c6ff;">jnf/force-org-rebuild-cache</span> <span style="color: #ff2afc;">(</span><span style="color: #ff2afc;">)</span>
+  <span style="color: #A875FF;">"Rebuild the `</span><span style="color: #df85ff; font-weight: bold;">org-mode</span><span style="color: #A875FF;">' and `</span><span style="color: #df85ff; font-weight: bold;">org-roam</span><span style="color: #A875FF;">' cache."</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">interactive</span><span style="color: #ff2afc;">)</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">org-id-update-id-locations</span><span style="color: #ff2afc;">)</span>
+  <span style="color: #546A90;">;; </span><span style="color: #546A90;">Note: you may need `</span><span style="color: #df85ff; font-weight: bold;">org-roam-db-clear-all</span><span style="color: #546A90;">'</span>
+  <span style="color: #546A90;">;; </span><span style="color: #546A90;">followed by `</span><span style="color: #df85ff; font-weight: bold;">org-roam-db-sync</span><span style="color: #546A90;">'</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">org-roam-db-sync</span><span style="color: #ff2afc;">)</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">org-roam-update-org-id-locations</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+</pre>
+</div>
+
+<p>
+Rss functions to create a rss feed. I need to hack on it or use an external method/script.<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">defun</span> <span style="color: #42c6ff;">rw/format-rss-feed-entry</span> <span style="color: #ff2afc;">(</span>entry style project<span style="color: #ff2afc;">)</span>
+  <span style="color: #A875FF;">"Format ENTRY for the RSS feed.</span>
+<span style="color: #A875FF;">ENTRY is a file name.  STYLE is either '</span><span style="color: #df85ff; font-weight: bold;">list</span><span style="color: #A875FF;">' or '</span><span style="color: #df85ff; font-weight: bold;">tree</span><span style="color: #A875FF;">'.</span>
+<span style="color: #A875FF;">PROJECT is the current project."</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">cond</span> <span style="color: #a7da1e;">(</span><span style="color: #df85ff;">(</span><span style="color: #df85ff; font-weight: bold;">not</span> <span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">directory-name-p</span> entry<span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span>
+         <span style="color: #df85ff;">(</span><span style="color: #ff2afc; font-weight: bold;">let*</span> <span style="color: #1ea8fc;">(</span><span style="color: #ff2afc;">(</span>file <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">org-publish--expand-file-name</span> entry project<span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span>
+                <span style="color: #ff2afc;">(</span>title <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">org-publish-find-title</span> entry project<span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span>
+                <span style="color: #ff2afc;">(</span>date <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">format-time-string</span> <span style="color: #7984D1;">"%Y-%m-%d"</span> <span style="color: #df85ff;">(</span><span style="color: #df85ff; font-weight: bold;">org-publish-find-date</span> entry project<span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span>
+                <span style="color: #ff2afc;">(</span>link <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">concat</span> <span style="color: #df85ff;">(</span><span style="color: #df85ff; font-weight: bold;">file-name-sans-extension</span> entry<span style="color: #df85ff;">)</span> <span style="color: #7984D1;">".html"</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+           <span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">with-temp-buffer</span>
+             <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">insert</span> <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">format</span> <span style="color: #7984D1;">"* [[file:%s][%s]]\n"</span> file title<span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span>
+             <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">org-set-property</span> <span style="color: #7984D1;">"RSS_PERMALINK"</span> link<span style="color: #ff2afc;">)</span>
+             <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">org-set-property</span> <span style="color: #7984D1;">"PUBDATE"</span> date<span style="color: #ff2afc;">)</span>
+             <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">insert-file-contents</span> file<span style="color: #ff2afc;">)</span>
+             <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">buffer-string</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span>
+        <span style="color: #a7da1e;">(</span><span style="color: #df85ff;">(</span><span style="color: #df85ff; font-weight: bold;">eq</span> style <span style="color: #ff2afc;">'</span><span style="color: #ffd400;">tree</span><span style="color: #df85ff;">)</span>
+         <span style="color: #546A90;">;; </span><span style="color: #546A90;">Return only last subdir.</span>
+         <span style="color: #df85ff;">(</span><span style="color: #df85ff; font-weight: bold;">file-name-nondirectory</span> <span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">directory-file-name</span> entry<span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span>
+        <span style="color: #a7da1e;">(</span>t entry<span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">defun</span> <span style="color: #42c6ff;">rw/format-rss-feed</span> <span style="color: #ff2afc;">(</span>title list<span style="color: #ff2afc;">)</span>
+  <span style="color: #A875FF;">"Generate RSS feed, as a string.</span>
+<span style="color: #A875FF;">TITLE is the title of the RSS feed.  LIST is an internal</span>
+<span style="color: #A875FF;">representation for the files to include, as returned by</span>
+<span style="color: #A875FF;">`</span><span style="color: #df85ff; font-weight: bold;">org-list-to-lisp</span><span style="color: #A875FF;">'.  PROJECT is the current project."</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">concat</span> <span style="color: #7984D1;">"#+TITLE: "</span> title <span style="color: #7984D1;">"\n\n"</span>
+          <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">org-list-to-subtree</span> list <span style="color: #ffd400; font-weight: bold;">1</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff;">(</span><span style="color: #1ea8fc;">:icount</span> <span style="color: #7984D1;">""</span> <span style="color: #1ea8fc;">:istart</span> <span style="color: #7984D1;">""</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">defun</span> <span style="color: #42c6ff;">rw/org-rss-publish-to-rss</span> <span style="color: #ff2afc;">(</span>plist filename pub-dir<span style="color: #ff2afc;">)</span>
+  <span style="color: #A875FF;">"Publish RSS with PLIST, only when FILENAME is '</span><span style="color: #df85ff; font-weight: bold;">rss.org</span><span style="color: #A875FF;">'.</span>
+<span style="color: #A875FF;">PUB-DIR is when the output will be placed."</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">equal</span> <span style="color: #7984D1;">"rss.org"</span> <span style="color: #df85ff;">(</span><span style="color: #df85ff; font-weight: bold;">file-name-nondirectory</span> filename<span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span>
+      <span style="color: #a7da1e;">(</span><span style="color: #42c6ff;">org-rss-publish-to-rss</span> plist filename pub-dir<span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+
+
+
+</pre>
+</div>
+
+
+<p>
+Remove the html-validation.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">org-html-validation-link</span> nil<span style="color: #1ea8fc;">)</span>
+</pre>
+</div>
+
+<p>
+Make Sure we are using timestamps.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">org-publish-use-timestamps-flag</span> t<span style="color: #1ea8fc;">)</span>
+</pre>
+</div>
+
+<p>
+Ensure org-id-files are set.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">org-id-extra-files</span>
+      <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">find-lisp-find-files</span> <span style="color: #df85ff;">project-dir</span> <span style="color: #7984D1;">"</span><span style="color: #ffd400;">\</span><span style="color: #7984D1;">.org$"</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+</pre>
+</div>
+
+<p>
+Ensure the database is set in non-interactive mode.
+Also I update the org-id&rsquo;s for org roam.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">with-batch</span>
+ <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">org-roam-db-location</span> <span style="color: #7984D1;">"~/.emacs.d/.local/cache/org-roam.db"</span><span style="color: #ff2afc;">)</span>
+ <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">org-roam-update-org-id-locations</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+</pre>
+</div>
+
+
+<p>
+Finally Lets get to the <a href="help:org-publish-project-alist">org-publish-project-alist</a>.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">org-publish-project-alist</span>
+      <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">list</span> <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">list</span> <span style="color: #7984D1;">"lostWiki"</span>
+                  <span style="color: #1ea8fc;">:recursive</span> t
+                  <span style="color: #1ea8fc;">:base-directory</span> <span style="color: #df85ff;">project-dir</span>
+                  <span style="color: #1ea8fc;">:publishing-directory</span> <span style="color: #df85ff;">project-output-dir</span>
+                  <span style="color: #1ea8fc;">:base-extension</span> <span style="color: #7984D1;">"org"</span>
+                  <span style="color: #1ea8fc;">:toc</span> nil
+                  <span style="color: #1ea8fc;">:exclude</span> <span style="color: #df85ff;">(</span><span style="color: #df85ff; font-weight: bold;">regexp-opt</span> <span style="color: #ff2afc;">'</span><span style="color: #1ea8fc;">(</span><span style="color: #7984D1;">"sunshine"</span> <span style="color: #7984D1;">"daily"</span> <span style="color: #7984D1;">"globalist"</span><span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span>
+                  <span style="color: #1ea8fc;">:auto-sitemap</span> t
+                  <span style="color: #1ea8fc;">:base-extension</span> <span style="color: #7984D1;">"org"</span>
+                  <span style="color: #1ea8fc;">:section-numbers</span> nil
+                  <span style="color: #1ea8fc;">:publishing-function</span> <span style="color: #ff2afc;">#'</span><span style="color: #ffd400;">org-html-publish-to-html</span><span style="color: #a7da1e;">)</span>
+
+
+            <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">list</span> <span style="color: #7984D1;">"lostWikiImages"</span>
+              <span style="color: #1ea8fc;">:recurse</span> t
+              <span style="color: #1ea8fc;">:base-directory</span> <span style="color: #df85ff;">project-dir</span>
+              <span style="color: #1ea8fc;">:base-extension</span> <span style="color: #7984D1;">"png</span><span style="color: #ff2afc; font-weight: bold;">\\</span><span style="color: #ff2afc; font-weight: bold;">|</span><span style="color: #7984D1;">jpg"</span>
+              <span style="color: #1ea8fc;">:publishing-directory</span> <span style="color: #df85ff;">project-output-dir</span>
+              <span style="color: #1ea8fc;">:publishing-function</span> <span style="color: #ff2afc;">#'</span><span style="color: #ffd400;">org-publish-attachment</span><span style="color: #a7da1e;">)</span>
+            <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">list</span> <span style="color: #7984D1;">"lost-css"</span>
+              <span style="color: #1ea8fc;">:base-directory</span> <span style="color: #df85ff;">project-dir</span>
+              <span style="color: #1ea8fc;">:base-extension</span> <span style="color: #7984D1;">"css"</span>
+              <span style="color: #1ea8fc;">:publishing-directory</span> <span style="color: #df85ff;">project-output-dir</span>
+              <span style="color: #1ea8fc;">:publishing-function</span> <span style="color: #ff2afc;">#'</span><span style="color: #ffd400;">org-publish-attachment</span><span style="color: #a7da1e;">)</span>
+            <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">list</span> <span style="color: #7984D1;">"lost-rss"</span>
+
+                  <span style="color: #1ea8fc;">:base-directory</span> <span style="color: #df85ff;">project-dir</span>
+                  <span style="color: #1ea8fc;">:base-extension</span> <span style="color: #7984D1;">"org"</span>
+                  <span style="color: #1ea8fc;">:recursive</span> nil
+                  <span style="color: #1ea8fc;">:exclude</span> <span style="color: #df85ff;">(</span><span style="color: #df85ff; font-weight: bold;">regexp-opt</span> <span style="color: #ff2afc;">'</span><span style="color: #1ea8fc;">(</span><span style="color: #7984D1;">"rss.org"</span> <span style="color: #7984D1;">"index.org"</span> <span style="color: #7984D1;">"404.org"</span> <span style="color: #7984D1;">"sunshine"</span> <span style="color: #7984D1;">"daily"</span><span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span>
+                  <span style="color: #1ea8fc;">:publishing-function</span> <span style="color: #ff2afc;">#'</span><span style="color: #ffd400;">rw/org-rss-publish-to-rss</span>
+                  <span style="color: #1ea8fc;">:publishing-directory</span> <span style="color: #df85ff;">project-output-dir</span>
+                  <span style="color: #1ea8fc;">:rss-extension</span> <span style="color: #7984D1;">"xml"</span>
+                  <span style="color: #1ea8fc;">:html-link-home</span> <span style="color: #7984D1;">"/index.html"</span>
+                  <span style="color: #546A90;">;; </span><span style="color: #546A90;">:html-link-use-abs-url t</span>
+                  <span style="color: #1ea8fc;">:html-link-org-files-as-html</span> t
+                  <span style="color: #1ea8fc;">:auto-sitemap</span> t
+                  <span style="color: #1ea8fc;">:sitemap-filename</span> <span style="color: #7984D1;">"rss.org"</span>
+                  <span style="color: #1ea8fc;">:sitemap-title</span> <span style="color: #7984D1;">"The Lost Wiki"</span>
+                  <span style="color: #1ea8fc;">:sitemap-style</span> <span style="color: #ff2afc;">'</span><span style="color: #ffd400;">list</span>
+
+                  <span style="color: #1ea8fc;">:sitemap-sort-files</span> <span style="color: #ff2afc;">'</span><span style="color: #ffd400;">anti-chronologically</span>
+                  <span style="color: #1ea8fc;">:sitemap-function</span> <span style="color: #ff2afc;">#'</span><span style="color: #ffd400;">rw/format-rss-feed</span>
+                  <span style="color: #1ea8fc;">:sitemap-format-entry</span> <span style="color: #ff2afc;">#'</span><span style="color: #ffd400;">rw/format-rss-feed-entry</span>
+                  <span style="color: #1ea8fc;">:auto-sitemap</span> t
+                  <span style="color: #1ea8fc;">:sitemap-filename</span> <span style="color: #7984D1;">"rss.org"</span>
+                  <span style="color: #1ea8fc;">:author</span> <span style="color: #7984D1;">"lost robot"</span>
+                  <span style="color: #1ea8fc;">:email</span> <span style="color: #7984D1;">""</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">with-batch</span>
+ <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">message</span> <span style="color: #7984D1;">"Exporting: %s"</span> <span style="color: #df85ff;">project-dir</span><span style="color: #ff2afc;">)</span>
+ <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">org-publish-all</span> t<span style="color: #ff2afc;">)</span>
+ <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">message</span> <span style="color: #7984D1;">"Export Complete."</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-ID-29ebc275-12d1-432c-befb-950f7be12184" class="outline-3">
+<h3 id="ID-29ebc275-12d1-432c-befb-950f7be12184">My Script&#xa0;&#xa0;&#xa0;<span class="tag"><span class="script">script</span></span></h3>
+<div class="outline-text-3" id="text-org3e57d8a">
 <p>
 This script is cobbled from a number of online sources but works
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">publish.el --- Description -*- lexical-binding: t; -*-</span>
-<span style="font-weight: bold; font-style: italic;">;;</span>
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Copyright (C) 2022</span>
-<span style="font-weight: bold; font-style: italic;">;;</span>
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Created: December 16, 2022</span>
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Modified: December 16, 2022</span>
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Version: 0.1.1</span>
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Keywords: abbrev lisp multimedia news tools org web html zine</span>
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Package-Requires: ((emacs "24.4"))</span>
-<span style="font-weight: bold; font-style: italic;">;;</span>
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">This file is not part of GNU Emacs.</span>
-<span style="font-weight: bold; font-style: italic;">;;</span>
-<span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">Commentary:</span>
-<span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">Publish org-roam notes to html.</span>
-<span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">It copys all the files in the org-roam dir so images and other things are rendered in the html as in the org.</span>
-<span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">All the org files are present in the html</span>
-<span style="font-weight: bold; font-style: italic;">;;</span>
-<span style="font-weight: bold; font-style: italic;">;;  </span><span style="font-weight: bold; font-style: italic;">Description</span>
-<span style="font-weight: bold; font-style: italic;">;;</span>
-<span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">Code:</span>
+<pre class="src src-emacs-lisp"><span style="color: #546A90;">;;; </span><span style="color: #546A90;">publish.el --- Description -*- lexical-binding: t; -*-</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Copyright (C) 2022</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Created: December 16, 2022</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Modified: December 16, 2022</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Version: 0.1.1</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Keywords: abbrev lisp multimedia news tools org web html zine</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Package-Requires: ((emacs "24.4"))</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">This file is not part of GNU Emacs.</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;;; </span><span style="color: #546A90;">Commentary:</span>
+<span style="color: #546A90;">;;; </span><span style="color: #546A90;">Publish org-roam notes to html.</span>
+<span style="color: #546A90;">;;; </span><span style="color: #546A90;">It copys all the files in the org-roam dir so images and other things are rendered in the html as in the org.</span>
+<span style="color: #546A90;">;;; </span><span style="color: #546A90;">All the org files are present in the html</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;;  </span><span style="color: #546A90;">Description</span>
+<span style="color: #546A90;">;;</span>
+<span style="color: #546A90;">;;; </span><span style="color: #546A90;">Code:</span>
 
-(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">package</span>)
-(<span style="font-weight: bold;">setq</span> package-user-dir (expand-file-name <span style="font-style: italic;">"./.packages"</span>))
-(<span style="font-weight: bold;">setq</span> package-archives '((<span style="font-style: italic;">"melpa"</span> . <span style="font-style: italic;">"https://melpa.org/packages/"</span>)
-                         (<span style="font-style: italic;">"elpa"</span> . <span style="font-style: italic;">"https://elpa.gnu.org/packages/"</span>)))
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">package</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">package-user-dir</span> <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">expand-file-name</span> <span style="color: #7984D1;">"./.packages"</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">package-archives</span> <span style="color: #ff2afc;">'</span><span style="color: #ff2afc;">(</span><span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"melpa"</span> . <span style="color: #7984D1;">"https://melpa.org/packages/"</span><span style="color: #a7da1e;">)</span>
+                         <span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"elpa"</span> . <span style="color: #7984D1;">"https://elpa.gnu.org/packages/"</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
 
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Initialize the package system</span>
-(package-initialize)
-(<span style="font-weight: bold;">unless</span> package-archive-contents
-  (package-refresh-contents))
-(package-install 'htmlize)
-(package-install 'org-roam)
-(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">htmlize</span>) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">For Code blocks</span>
-(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org</span>)
-(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">ox-publish</span>)
-(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">find-lisp</span>)
-(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">org-roam-export</span>) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Fixes for org roam to work with ox-publish</span>
-(<span style="font-weight: bold;">defvar</span> <span style="font-weight: bold; font-style: italic;">project-dir</span> <span style="font-style: italic;">"./roam"</span>
-  <span style="font-style: italic;">"The Path to the Notes"</span>)
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Initialize the package system</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">package-initialize</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">unless</span> <span style="color: #df85ff;">package-archive-contents</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">package-refresh-contents</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">package-install</span> <span style="color: #ff2afc;">'</span><span style="color: #ffd400;">htmlize</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">package-install</span> <span style="color: #ff2afc;">'</span><span style="color: #ffd400;">org-roam</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">htmlize</span><span style="color: #1ea8fc;">)</span> <span style="color: #546A90;">;; </span><span style="color: #546A90;">For Code blocks</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">org</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">ox-publish</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">find-lisp</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">org-roam-export</span><span style="color: #1ea8fc;">)</span> <span style="color: #546A90;">;; </span><span style="color: #546A90;">Fixes for org roam to work with ox-publish</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">defvar</span> <span style="color: #df85ff;">project-dir</span> <span style="color: #7984D1;">"./roam"</span>
+  <span style="color: #A875FF;">"The Path to the Notes"</span><span style="color: #1ea8fc;">)</span>
 
-(message project-dir)
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Following is default for Doom emacs</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">message</span> <span style="color: #df85ff;">project-dir</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">Following is default for Doom emacs</span>
 
-(<span style="font-weight: bold;">setq</span> org-roam-directory project-dir)
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">org-roam-directory</span> <span style="color: #df85ff;">project-dir</span><span style="color: #1ea8fc;">)</span>
 
-(<span style="font-weight: bold;">setq</span> org-id-extra-files
-      (find-lisp-find-files project-dir <span style="font-style: italic;">"</span><span style="font-weight: bold; font-style: italic;">\</span><span style="font-style: italic;">.org$"</span>))
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">org-id-extra-files</span>
+      <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">find-lisp-find-files</span> <span style="color: #df85ff;">project-dir</span> <span style="color: #7984D1;">"</span><span style="color: #ffd400;">\</span><span style="color: #7984D1;">.org$"</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
 
-(<span style="font-weight: bold;">setq</span> org-roam-db-location <span style="font-style: italic;">"~/.emacs.d/.local/cache/org-roam.db"</span>)
-(org-roam-update-org-id-locations)
-(<span style="font-weight: bold;">setq</span> org-publish-project-alist
-      `((<span style="font-style: italic;">"TheNightWatch"</span>
-         <span style="font-weight: bold;">:recursive</span> t
-         <span style="font-weight: bold;">:base-directory</span> <span style="font-style: italic;">"./roam"</span>
-         <span style="font-weight: bold;">:publishing-directory</span> <span style="font-style: italic;">"./public"</span>
-         <span style="font-weight: bold;">:base-extension</span> <span style="font-style: italic;">"org"</span>
-         <span style="font-weight: bold;">:toc</span> nil
-         <span style="font-weight: bold;">:makeindex</span> t
-         <span style="font-weight: bold;">:publishing-function</span> org-html-publish-to-html)
-        (<span style="font-style: italic;">"TheNightWatchImages"</span>
-         <span style="font-weight: bold;">:recurse</span> t
-         <span style="font-weight: bold;">:base-directory</span> <span style="font-style: italic;">"./roam"</span>
-         <span style="font-weight: bold;">:base-extension</span> <span style="font-style: italic;">"png</span><span style="font-weight: bold; font-style: italic;">\\</span><span style="font-weight: bold; font-style: italic;">|</span><span style="font-style: italic;">jpg"</span>
-         <span style="font-weight: bold;">:publishing-directory</span> <span style="font-style: italic;">"./public"</span>
-         <span style="font-weight: bold;">:publishing-function</span> org-publish-attachment)))
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">For Some reason org will not copy over the images that in their own dir, better to just copy the whole roam dir to the public, also lets people have the source org file!</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">org-roam-db-location</span> <span style="color: #7984D1;">"~/.emacs.d/.local/cache/org-roam.db"</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">org-roam-update-org-id-locations</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">org-publish-project-alist</span>
+      <span style="color: #ff2afc;">`</span><span style="color: #ff2afc;">(</span><span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"TheNightWatch"</span>
+         <span style="color: #1ea8fc;">:recursive</span> t
+         <span style="color: #1ea8fc;">:base-directory</span> <span style="color: #7984D1;">"./roam"</span>
+         <span style="color: #1ea8fc;">:publishing-directory</span> <span style="color: #7984D1;">"./public"</span>
+         <span style="color: #1ea8fc;">:base-extension</span> <span style="color: #7984D1;">"org"</span>
+         <span style="color: #1ea8fc;">:toc</span> nil
+         <span style="color: #1ea8fc;">:makeindex</span> t
+         <span style="color: #1ea8fc;">:publishing-function</span> org-html-publish-to-html<span style="color: #a7da1e;">)</span>
+        <span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"TheNightWatchImages"</span>
+         <span style="color: #1ea8fc;">:recurse</span> t
+         <span style="color: #1ea8fc;">:base-directory</span> <span style="color: #7984D1;">"./roam"</span>
+         <span style="color: #1ea8fc;">:base-extension</span> <span style="color: #7984D1;">"png</span><span style="color: #ff2afc; font-weight: bold;">\\</span><span style="color: #ff2afc; font-weight: bold;">|</span><span style="color: #7984D1;">jpg"</span>
+         <span style="color: #1ea8fc;">:publishing-directory</span> <span style="color: #7984D1;">"./public"</span>
+         <span style="color: #1ea8fc;">:publishing-function</span> org-publish-attachment<span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #546A90;">;; </span><span style="color: #546A90;">For Some reason org will not copy over the images that in their own dir, better to just copy the whole roam dir to the public, also lets people have the source org file!</span>
 
-(org-publish-all t)
-(message <span style="font-style: italic;">"Build Complete."</span>)
-(message <span style="font-style: italic;">"Copying roam to public dir..."</span>)
-(copy-directory project-dir <span style="font-style: italic;">"./public"</span> t t t)
-(message <span style="font-style: italic;">"Finished!"</span>)
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">org-publish-all</span> t<span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">message</span> <span style="color: #7984D1;">"Build Complete."</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">message</span> <span style="color: #7984D1;">"Copying roam to public dir..."</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">copy-directory</span> <span style="color: #df85ff;">project-dir</span> <span style="color: #7984D1;">"./public"</span> t t t<span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">message</span> <span style="color: #7984D1;">"Finished!"</span><span style="color: #1ea8fc;">)</span>
 
-(<span style="font-weight: bold;">provide</span> '<span style="font-weight: bold; text-decoration: underline;">publish</span>)
-<span style="font-weight: bold; font-style: italic;">;;; </span><span style="font-weight: bold; font-style: italic;">publish.el ends here</span>
+<span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">provide</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">publish</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #546A90;">;;; </span><span style="color: #546A90;">publish.el ends here</span>
 
 </pre>
 </div>
@@ -319,9 +582,13 @@ You can run this script with
 </div>
 </div>
 
-<div id="outline-container-orgddc729e" class="outline-3">
-<h3 id="orgddc729e"><span class="section-number-3">1.2.</span> See also</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-ID-7bd75ceb-f243-40b3-9ecc-3b163a58ec97" class="outline-3">
+<h3 id="ID-7bd75ceb-f243-40b3-9ecc-3b163a58ec97">See also</h3>
+<div class="outline-text-3" id="text-org27a4ad2">
+<p>
+:ID:       adad1bf9-611f-4b21-ac69-1a7b1473d05e
+</p>
+
 <ul class="org-ul">
 <li><a href="https://gitlab.com/ngm/commonplace/-/blob/master/publish.el#L98">https://gitlab.com/ngm/commonplace/-/blob/master/publish.el#L98</a></li>
 <li><a href="https://orgmode.org/manual/Simple-example.html">https://orgmode.org/manual/Simple-example.html</a></li>
@@ -329,10 +596,23 @@ You can run this script with
 </div>
 </div>
 </div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://takeonrules.com/2022/01/11/resolving-an-unable-to-resolve-link-error-for-org-mode-in-emacs/">https://takeonrules.com/2022/01/11/resolving-an-unable-to-resolve-link-error-for-org-mode-in-emacs/</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://gitlab.com/to1ne/blog/blob/master/elisp/publish.el#L170-204">https://gitlab.com/to1ne/blog/blob/master/elisp/publish.el#L170-204</a>
+</p></div></div>
+
+
 </div>
+</div></div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:15</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 02:13</p>
 </div>
 </body>
 </html>

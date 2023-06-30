@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>free code camp college algebra preportions</title>
@@ -201,12 +201,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf820437">1. Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></a></li>
-<li><a href="#orgc752a6c">2. Code</a></li>
-<li><a href="#orgaeda23f">3. Extra problems</a>
+<li><a href="#orga205971">Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></a></li>
+<li><a href="#org1ed03d8">Code</a></li>
+<li><a href="#org9799376">Extra problems</a>
 <ul>
-<li><a href="#org5d0ab76">3.1. Mixed Numbers</a></li>
-<li><a href="#orged9c374">3.2. Representing floating points as a fraction</a></li>
+<li><a href="#orge2a3059">Mixed Numbers</a></li>
+<li><a href="#org08511fa">Representing floating points as a fraction</a></li>
 </ul>
 </li>
 </ul>
@@ -214,9 +214,9 @@
 </div>
 
 
-<div id="outline-container-orgf820437" class="outline-2">
-<h2 id="orgf820437"><span class="section-number-2">1.</span> Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orga205971" class="outline-2">
+<h2 id="orga205971">Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></h2>
+<div class="outline-text-2" id="text-orga205971">
 <p>
 Proportions are like saying 2 multiplications are equal
 5/10 = 2/4
@@ -244,9 +244,9 @@ The answer is 12 1/2 miles
 </p>
 </div>
 </div>
-<div id="outline-container-orgc752a6c" class="outline-2">
-<h2 id="orgc752a6c"><span class="section-number-2">2.</span> Code</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org1ed03d8" class="outline-2">
+<h2 id="org1ed03d8">Code</h2>
+<div class="outline-text-2" id="text-org1ed03d8">
 <p>
 Setup a proportion
 </p>
@@ -271,13 +271,13 @@ We Put 0 for the number we do not know and we use 2 if statements.
 </div>
 
 
-<div id="outline-container-orgaeda23f" class="outline-2">
-<h2 id="orgaeda23f"><span class="section-number-2">3.</span> Extra problems</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org9799376" class="outline-2">
+<h2 id="org9799376">Extra problems</h2>
+<div class="outline-text-2" id="text-org9799376">
 </div>
-<div id="outline-container-org5d0ab76" class="outline-3">
-<h3 id="org5d0ab76"><span class="section-number-3">3.1.</span> Mixed Numbers</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-orge2a3059" class="outline-3">
+<h3 id="orge2a3059">Mixed Numbers</h3>
+<div class="outline-text-3" id="text-orge2a3059">
 <p>
 Mixed numbers can easily be represented in python, since fractions is the same as a division.
 Python Knows the order of operations.
@@ -291,9 +291,9 @@ Example is 1 2/3 + 3 4/5 - 7
 </div>
 </div>
 
-<div id="outline-container-orged9c374" class="outline-3">
-<h3 id="orged9c374"><span class="section-number-3">3.2.</span> Representing floating points as a fraction</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-org08511fa" class="outline-3">
+<h3 id="org08511fa">Representing floating points as a fraction</h3>
+<div class="outline-text-3" id="text-org08511fa">
 <p>
 What if we have this floating point and we want a fraction?
 </p>
@@ -334,8 +334,7 @@ If you get repeating 9 that would be 9/9 so 1.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

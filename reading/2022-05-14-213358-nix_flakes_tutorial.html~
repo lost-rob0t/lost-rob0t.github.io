@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nix Flakes Tutorial</title>
@@ -201,32 +201,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org84b9dfa">1. Part One.</a>
+<li><a href="#orga34bcce">Part One.</a>
 <ul>
-<li><a href="#orgf18413d">1.1. Problems with nix</a></li>
-<li><a href="#org0a027f9">1.2. What is a flake?</a></li>
-<li><a href="#orge2e4e0a">1.3. Flake example</a></li>
+<li><a href="#org577489b">Problems with nix</a></li>
+<li><a href="#orgf624874">What is a flake?</a></li>
+<li><a href="#org64a432a">Flake example</a></li>
 </ul>
 </li>
-<li><a href="#org67aea54">2. Part Two.</a>
+<li><a href="#orgaf68d76">Part Two.</a>
 <ul>
-<li><a href="#org0627b35">2.1. Nix eval is slow</a></li>
-<li><a href="#org4d7264c">2.2. Caching nix-env</a></li>
-<li><a href="#org8e5f34c">2.3. Flakes wich caching</a></li>
+<li><a href="#orgd619c6c">Nix eval is slow</a></li>
+<li><a href="#orgd71ac52">Caching nix-env</a></li>
+<li><a href="#orgeaee5f7">Flakes wich caching</a></li>
 </ul>
 </li>
-<li><a href="#org2ea9ad5">3. IDEA Part Three</a></li>
+<li><a href="#org5a6f7be">IDEA Part Three</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org84b9dfa" class="outline-2">
-<h2 id="org84b9dfa"><span class="section-number-2">1.</span> Part One.</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-orga34bcce" class="outline-2">
+<h2 id="orga34bcce">Part One.</h2>
+<div class="outline-text-2" id="text-orga34bcce">
 </div>
-<div id="outline-container-orgf18413d" class="outline-3">
-<h3 id="orgf18413d"><span class="section-number-3">1.1.</span> Problems with nix</h3>
-<div class="outline-text-3" id="text-1-1">
+<div id="outline-container-org577489b" class="outline-3">
+<h3 id="org577489b">Problems with nix</h3>
+<div class="outline-text-3" id="text-org577489b">
 <p>
 Nix files can acess any file in the filesystem, or anything in the $NIX<sub>PATH</sub>
 like ~/.config/nixpks/config.nix
@@ -242,9 +242,9 @@ Nix based project are also not easy to share with users.
 </div>
 </div>
 
-<div id="outline-container-org0a027f9" class="outline-3">
-<h3 id="org0a027f9"><span class="section-number-3">1.2.</span> What is a flake?</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orgf624874" class="outline-3">
+<h3 id="orgf624874">What is a flake?</h3>
+<div class="outline-text-3" id="text-orgf624874">
 <p>
 a flake is a source tree that has a flake.nix.
 </p>
@@ -256,9 +256,9 @@ Flakes can depend on other flakes with a flake.lock to ensure reproducible eval.
 </div>
 
 
-<div id="outline-container-orge2e4e0a" class="outline-3">
-<h3 id="orge2e4e0a"><span class="section-number-3">1.3.</span> Flake example</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-org64a432a" class="outline-3">
+<h3 id="org64a432a">Flake example</h3>
+<div class="outline-text-3" id="text-org64a432a">
 <p>
 Here is a simple unix package named <b>dwarffs</b>. Its repo is <a href="https://github.com/edolstra/dwarffs">Here</a>.
 It contains a flake.nix file so it is a flake.
@@ -277,7 +277,7 @@ Installing a flake like above will only grab the latest version.
 <p>
 <b><b><b>NOTE</b></b></b>: in the aricle the output for the command was so. this shows why you should pin a commit hash!!
 </p>
-<pre class="example" id="org15d24ed">
+<pre class="example" id="orgdd99876">
 dwarffs 0.1.20200406.cd7955a
 </pre>
 
@@ -309,13 +309,13 @@ Flake outputs can be shown with
 </div>
 </div>
 
-<div id="outline-container-org67aea54" class="outline-2">
-<h2 id="org67aea54"><span class="section-number-2">2.</span> Part Two.</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-orgaf68d76" class="outline-2">
+<h2 id="orgaf68d76">Part Two.</h2>
+<div class="outline-text-2" id="text-orgaf68d76">
 </div>
-<div id="outline-container-org0627b35" class="outline-3">
-<h3 id="org0627b35"><span class="section-number-3">2.1.</span> Nix eval is slow</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-orgd619c6c" class="outline-3">
+<h3 id="orgd619c6c">Nix eval is slow</h3>
+<div class="outline-text-3" id="text-orgd619c6c">
 <p>
 Nix is a interpeted functional language.
 In order for it to get information about the packages it needs to evaluate 1000s of nix evaluations.
@@ -336,18 +336,18 @@ This is ok for one off use but using it for scripts is slow becuase of the delay
 </div>
 </div>
 
-<div id="outline-container-org4d7264c" class="outline-3">
-<h3 id="org4d7264c"><span class="section-number-3">2.2.</span> Caching nix-env</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-orgd71ac52" class="outline-3">
+<h3 id="orgd71ac52">Caching nix-env</h3>
+<div class="outline-text-3" id="text-orgd71ac52">
 <p>
 there is a replacement for nix-env -qa for and its called nix-search.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8e5f34c" class="outline-3">
-<h3 id="org8e5f34c"><span class="section-number-3">2.3.</span> Flakes wich caching</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-orgeaee5f7" class="outline-3">
+<h3 id="orgeaee5f7">Flakes wich caching</h3>
+<div class="outline-text-3" id="text-orgeaee5f7">
 <p>
 Flake evaluations are fully hermetic. It disslows access to files, envrioment varibles.
 </p>
@@ -380,13 +380,12 @@ sqlite db name comes from the contents of the top level flake.
 </div>
 </div>
 
-<div id="outline-container-org2ea9ad5" class="outline-2">
-<h2 id="org2ea9ad5"><span class="section-number-2">3.</span> IDEA Part Three</h2>
+<div id="outline-container-org5a6f7be" class="outline-2">
+<h2 id="org5a6f7be">IDEA Part Three</h2>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>

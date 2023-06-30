@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 23:13 -->
+<!-- 2023-06-30 Fri 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>introduction to data structures</title>
@@ -201,13 +201,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org474f245">1. When data becomes information</a></li>
-<li><a href="#org44d91c8">2. Data types v Abstract data types</a>
+<li><a href="#org99302b0">When data becomes information</a></li>
+<li><a href="#org0bd1fa0">Data types v Abstract data types</a>
 <ul>
-<li><a href="#org16cb97a">2.1. Data type</a></li>
-<li><a href="#orgaaedb40">2.2. Abstract Data Types (ADT)</a>
+<li><a href="#orge4b801a">Data type</a></li>
+<li><a href="#org865dd80">Abstract Data Types (ADT)</a>
 <ul>
-<li><a href="#org128ac96">2.2.1. A stack ADT</a></li>
+<li><a href="#org522888f">A stack ADT</a></li>
 </ul>
 </li>
 </ul>
@@ -216,9 +216,9 @@
 </div>
 </div>
 
-<div id="outline-container-org474f245" class="outline-2">
-<h2 id="org474f245"><span class="section-number-2">1.</span> When data becomes information</h2>
-<div class="outline-text-2" id="text-1">
+<div id="outline-container-org99302b0" class="outline-2">
+<h2 id="org99302b0">When data becomes information</h2>
+<div class="outline-text-2" id="text-org99302b0">
 <p>
 If data is arrange in a systematic way then it gets a structure and becomes meaningful.
 </p>
@@ -227,13 +227,13 @@ If data is arrange in a systematic way then it gets a structure and becomes mean
 
 
 
-<div id="outline-container-org44d91c8" class="outline-2">
-<h2 id="org44d91c8"><span class="section-number-2">2.</span> Data types v Abstract data types</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org0bd1fa0" class="outline-2">
+<h2 id="org0bd1fa0">Data types v Abstract data types</h2>
+<div class="outline-text-2" id="text-org0bd1fa0">
 </div>
-<div id="outline-container-org16cb97a" class="outline-3">
-<h3 id="org16cb97a"><span class="section-number-3">2.1.</span> Data type</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-orge4b801a" class="outline-3">
+<h3 id="orge4b801a">Data type</h3>
+<div class="outline-text-3" id="text-orge4b801a">
 <p>
 A data type defines a certain domain of values and it defines what operations can be done ith it.
 Example in nim you can add and subtract ints, basicly primitive types
@@ -245,9 +245,9 @@ User types are types that you me or user of a language would define.
 </div>
 </div>
 
-<div id="outline-container-orgaaedb40" class="outline-3">
-<h3 id="orgaaedb40"><span class="section-number-3">2.2.</span> Abstract Data Types (ADT)</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-org865dd80" class="outline-3">
+<h3 id="org865dd80">Abstract Data Types (ADT)</h3>
+<div class="outline-text-3" id="text-org865dd80">
 <p>
 These are like user defined types which define what operations can be preformed on them.
 The functions body are defined and ho it is done!
@@ -258,9 +258,9 @@ In short they are a black box
 </p>
 </div>
 
-<div id="outline-container-org128ac96" class="outline-4">
-<h4 id="org128ac96"><span class="section-number-4">2.2.1.</span> A stack ADT</h4>
-<div class="outline-text-4" id="text-2-2-1">
+<div id="outline-container-org522888f" class="outline-4">
+<h4 id="org522888f">A stack ADT</h4>
+<div class="outline-text-4" id="text-org522888f">
 <p>
 A Stack consists of elements of the same type in a sequential order
 Some example functions
@@ -279,8 +279,7 @@ Some example functions
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 23:13</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="date">Created: 2023-06-30 Fri 00:54</p>
 </div>
 </body>
 </html>
