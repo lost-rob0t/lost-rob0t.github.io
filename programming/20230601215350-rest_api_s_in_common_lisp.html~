@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-07 Wed 22:45 -->
+<!-- 2023-06-29 Thu 22:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rest Api's in common lisp</title>
@@ -201,9 +201,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf2b4c38">1. Rest API in common lisp</a>
+<li><a href="#org7272ef1">1. Rest API in common lisp</a>
 <ul>
-<li><a href="#org4532a5e">1.1. Get</a></li>
+<li><a href="#org6b850b2">1.1. Get</a></li>
+<li><a href="#org98b1fd9">1.2. post</a></li>
 </ul>
 </li>
 </ul>
@@ -211,8 +212,8 @@
 </div>
 
 
-<div id="outline-container-orgf2b4c38" class="outline-2">
-<h2 id="orgf2b4c38"><span class="section-number-2">1.</span> Rest API in common lisp</h2>
+<div id="outline-container-org7272ef1" class="outline-2">
+<h2 id="org7272ef1"><span class="section-number-2">1.</span> Rest API in common lisp</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 In common lisp there are many library's to complete a task, some are old but still work just fine.
@@ -227,6 +228,11 @@ A good fast library to use is <a href="https://github.com/fukamachi/dexador">dex
 <p>
 <b>NOTE</b>: It is imperative you set the content type in your headers, by default dexador will use <code>application/x-www-form-urlencoded</code><sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>!
 </p>
+
+<p>
+Internally it uses connection pooling and reuses connections.
+</p>
+
 <div class="org-src-container">
 <pre class="src src-lisp">(ql:quickload '(<span style="font-weight: bold;">:dexador</span> <span style="font-weight: bold;">:cl-json</span>))
 (dex:post <span style="font-style: italic;">"https://httpbin.org/post"</span>
@@ -235,13 +241,80 @@ A good fast library to use is <a href="https://github.com/fukamachi/dexador">dex
 </pre>
 </div>
 </div>
-<div id="outline-container-org4532a5e" class="outline-3">
-<h3 id="org4532a5e"><span class="section-number-3">1.1.</span> Get</h3>
+<div id="outline-container-org6b850b2" class="outline-3">
+<h3 id="org6b850b2"><span class="section-number-3">1.1.</span> Get</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-lisp">(dex:get <span style="font-style: italic;">"http://lisp.org"</span>)
 </pre>
 </div>
+</div>
+</div>
+
+<div id="outline-container-org98b1fd9" class="outline-3">
+<h3 id="org98b1fd9"><span class="section-number-3">1.2.</span> post</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+To send formdata in a post use a association list.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(dex:post <span style="font-style: italic;">"https://httpbin.org/anything/post"</span>  <span style="font-weight: bold;">:content</span> '((<span style="font-style: italic;">"hello"</span> . <span style="font-style: italic;">"world"</span>)))
+</pre>
+</div>
+<p>
+"{
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {
+    "hello": "world"
+  },
+  "headers": {
+    "Accept": "<b>/</b>",
+    "Content-Length": "11",
+    "Content-Type": "application/x-www-form-url&#x2026;[sly-elided string of length 499]"
+200
+#&lt;HASH-TABLE :TEST EQUAL :COUNT 7 {1003F9A5A3}&gt;
+#&lt;QURI.URI.<a href="URI-HTTPS">URI-HTTPS</a> <a href="https://httpbin.org/anything/post">https://httpbin.org/anything/post</a>&gt;
+NIL
+</p>
+
+<p>
+To use json you need to set the appropriate headers.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(setq *headers*  '((<span style="font-style: italic;">"accept"</span> . <span style="font-style: italic;">"application/json"</span>)
+                   (<span style="font-style: italic;">"Content-Type"</span> . <span style="font-style: italic;">"application/json"</span>)))
+</pre>
+</div>
+<p>
+(("accept" . "application/json") ("Content-Type" . "application/json"))
+</p>
+
+<p>
+Then you can pass the headers and json like so
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(ql:quickload <span style="font-weight: bold;">:jsown</span>)
+(dex:post <span style="font-style: italic;">"https://httpbin.org/anything/post"</span> <span style="font-weight: bold;">:headers</span> *headers*  <span style="font-weight: bold;">:content</span> (jsown:to-json (jsown:new-js (<span style="font-style: italic;">"key"</span> <span style="font-style: italic;">"value"</span>))))
+</pre>
+</div>
+<p>
+"{
+  "args": {},
+  "data": "{\"key\":\"value\"}",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Accept": "application/json",
+    "Content-Length": "15",
+    "Content-Type": "application/json",&#x2026;[sly-elided string of length 510]"
+200
+#&lt;HASH-TABLE :TEST EQUAL :COUNT 7 {1004198BC3}&gt;
+#&lt;QURI.URI.<a href="URI-HTTPS">URI-HTTPS</a> <a href="https://httpbin.org/anything/post">https://httpbin.org/anything/post</a>&gt;
+NIL
+</p>
 </div>
 </div>
 </div>
@@ -257,7 +330,7 @@ A good fast library to use is <a href="https://github.com/fukamachi/dexador">dex
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-07 Wed 22:45</p>
+<p class="date">Created: 2023-06-29 Thu 22:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

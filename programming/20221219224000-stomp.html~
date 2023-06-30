@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-07 Wed 22:45 -->
+<!-- 2023-06-29 Thu 22:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>STOMP</title>
@@ -201,12 +201,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org08de0dd">1. Simple Text Oriented Messeging protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="stomp">stomp</span></span></a>
+<li><a href="#org4f5867b">1. Simple Text Oriented Messeging protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="stomp">stomp</span></span></a>
 <ul>
-<li><a href="#orgcc112e9">1.1. Overview</a></li>
-<li><a href="#org8303d35">1.2. Commands</a>
+<li><a href="#org96978f0">1.1. Overview</a></li>
+<li><a href="#org470c250">1.2. Commands</a>
 <ul>
-<li><a href="#org2d2c688">1.2.1. CONNECT</a></li>
+<li><a href="#org231e41a">1.2.1. CONNECT</a></li>
 </ul>
 </li>
 </ul>
@@ -215,8 +215,8 @@
 </div>
 </div>
 
-<div id="outline-container-org08de0dd" class="outline-2">
-<h2 id="org08de0dd"><span class="section-number-2">1.</span> Simple Text Oriented Messeging protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="stomp">stomp</span></span></h2>
+<div id="outline-container-org4f5867b" class="outline-2">
+<h2 id="org4f5867b"><span class="section-number-2">1.</span> Simple Text Oriented Messeging protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="stomp">stomp</span></span></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 STOMP is a simple text based protocol for working with <a href="../20221219225036-message_oriented_middleware.html#ID-8a9b8114-4064-48ed-8057-5f6a7c512ea1">Message oriented middleware</a>.
@@ -226,8 +226,8 @@ Stomp is an alterntive to other messaging protocoles that cover a small subset o
 </div>
 
 
-<div id="outline-container-orgcc112e9" class="outline-3">
-<h3 id="orgcc112e9"><span class="section-number-3">1.1.</span> Overview</h3>
+<div id="outline-container-org96978f0" class="outline-3">
+<h3 id="org96978f0"><span class="section-number-3">1.1.</span> Overview</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 It is a frame based protocol. Frames are moddeled on <a href="20221219225206-http.html#ID-55fa6669-d1f4-4956-abf0-a0c3c2aac23b">HTTP</a>.
@@ -236,8 +236,8 @@ A frame is a command, a set of optional headers and an optional body. By defualt
 </div>
 </div>
 
-<div id="outline-container-org8303d35" class="outline-3">
-<h3 id="org8303d35"><span class="section-number-3">1.2.</span> Commands</h3>
+<div id="outline-container-org470c250" class="outline-3">
+<h3 id="org470c250"><span class="section-number-3">1.2.</span> Commands</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Here is the list of commands as of v1.2
@@ -256,14 +256,14 @@ Here is the list of commands as of v1.2
 </ul>
 </div>
 
-<div id="outline-container-org2d2c688" class="outline-4">
-<h4 id="org2d2c688"><span class="section-number-4">1.2.1.</span> CONNECT</h4>
+<div id="outline-container-org231e41a" class="outline-4">
+<h4 id="org231e41a"><span class="section-number-4">1.2.1.</span> CONNECT</h4>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-07 Wed 22:45</p>
+<p class="date">Created: 2023-06-29 Thu 22:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

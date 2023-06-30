@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-07 Wed 22:45 -->
+<!-- 2023-06-29 Thu 22:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Depth First Search</title>
@@ -200,12 +200,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgabc362d">1. Depth First Search&#xa0;&#xa0;&#xa0;<span class="tag"><span class="algorithim">algorithim</span></span></a></li>
+<li><a href="#orgbd8a4f7">1. Depth First Search&#xa0;&#xa0;&#xa0;<span class="tag"><span class="algorithim">algorithim</span></span></a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgabc362d" class="outline-2">
-<h2 id="orgabc362d"><span class="section-number-2">1.</span> Depth First Search&#xa0;&#xa0;&#xa0;<span class="tag"><span class="algorithim">algorithim</span></span></h2>
+<div id="outline-container-orgbd8a4f7" class="outline-2">
+<h2 id="orgbd8a4f7"><span class="section-number-2">1.</span> Depth First Search&#xa0;&#xa0;&#xa0;<span class="tag"><span class="algorithim">algorithim</span></span></h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>Push the starting node to the stack and pop it?</li>
@@ -254,7 +254,7 @@ Basic Stack in lisp
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-07 Wed 22:45</p>
+<p class="date">Created: 2023-06-29 Thu 22:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

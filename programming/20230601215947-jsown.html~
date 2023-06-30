@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-07 Wed 22:45 -->
+<!-- 2023-06-29 Thu 22:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>jsown</title>
@@ -200,16 +200,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgadbaa0b">1. JSOWN</a>
+<li><a href="#org2a8c5a2">1. JSOWN</a>
 <ul>
-<li><a href="#orgce56f9f">1.1. Creating, parsing and reading.</a></li>
+<li><a href="#orgd0b86fc">1.1. Creating, parsing and reading.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgadbaa0b" class="outline-2">
-<h2 id="orgadbaa0b"><span class="section-number-2">1.</span> JSOWN</h2>
+<div id="outline-container-org2a8c5a2" class="outline-2">
+<h2 id="org2a8c5a2"><span class="section-number-2">1.</span> JSOWN</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 This is my preferred <a href="20230601220331-json.html#ID-60758dc6-c4eb-4b34-9b56-fff31f17ef1d">json</a> library.
@@ -235,8 +235,8 @@ Without any extra arguments, the parse function will return all keywords. In ord
 </div>
 </div>
 
-<div id="outline-container-orgce56f9f" class="outline-3">
-<h3 id="orgce56f9f"><span class="section-number-3">1.1.</span> Creating, parsing and reading.</h3>
+<div id="outline-container-orgd0b86fc" class="outline-3">
+<h3 id="orgd0b86fc"><span class="section-number-3">1.1.</span> Creating, parsing and reading.</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 You can make a new json object with <code>new-js</code> and <code>extend-js</code>.
@@ -284,7 +284,7 @@ The <code>to-json</code> json is a clos method so you can override that and add 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-07 Wed 22:45</p>
+<p class="date">Created: 2023-06-29 Thu 22:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

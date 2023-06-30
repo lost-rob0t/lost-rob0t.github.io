@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 22:31 -->
+<!-- 2023-06-29 Thu 22:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Build OCI containers in Nixos</title>
@@ -201,12 +201,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb248955">1. <span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></a>
+<li><a href="#org79dd788">1. <span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></a>
 <ul>
-<li><a href="#orgf692d13">1.1. Main workflow</a>
+<li><a href="#org38ca5d7">1.1. Main workflow</a>
 <ul>
-<li><a href="#org8aa045c">1.1.1. Examples</a></li>
-<li><a href="#org2cffd8f">1.1.2. Star intel Example</a></li>
+<li><a href="#org427f4d6">1.1.1. Examples</a></li>
+<li><a href="#orge5bb5f2">1.1.2. Star intel Example</a></li>
 </ul>
 </li>
 </ul>
@@ -214,8 +214,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb248955" class="outline-2">
-<h2 id="orgb248955"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></h2>
+<div id="outline-container-org79dd788" class="outline-2">
+<h2 id="org79dd788"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 finish this!
@@ -234,8 +234,8 @@ Most of this document is lifted from <a href="https://github.com/NixOS/nixpkgs/b
 </div>
 
 
-<div id="outline-container-orgf692d13" class="outline-3">
-<h3 id="orgf692d13"><span class="section-number-3">1.1.</span> Main workflow</h3>
+<div id="outline-container-org38ca5d7" class="outline-3">
+<h3 id="org38ca5d7"><span class="section-number-3">1.1.</span> Main workflow</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Since nix changes how everything works, this includes how you packages and use OCI containers
@@ -258,8 +258,8 @@ You can load and build that the same as such:
 </div>
 </div>
 
-<div id="outline-container-org8aa045c" class="outline-4">
-<h4 id="org8aa045c"><span class="section-number-4">1.1.1.</span> Examples</h4>
+<div id="outline-container-org427f4d6" class="outline-4">
+<h4 id="org427f4d6"><span class="section-number-4">1.1.1.</span> Examples</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 Here is a very basic oci image
@@ -280,7 +280,7 @@ Here is a very basic oci image
 </div>
 
 <ol class="org-ol">
-<li><a id="orge4707bc"></a>Service<br />
+<li><a id="orgb4bc34f"></a>Service<br />
 <div class="outline-text-5" id="text-1-1-1-1">
 <p>
 Redis service example
@@ -371,7 +371,7 @@ buildLayeredImage {
 </div>
 </li>
 
-<li><a id="org15fa8f4"></a>Pulling Images<br />
+<li><a id="orge0752b9"></a>Pulling Images<br />
 <div class="outline-text-5" id="text-1-1-1-2">
 <p>
 Example of pulling a Docker Images
@@ -390,7 +390,7 @@ Example of pulling a Docker Images
 </div>
 </li>
 
-<li><a id="org30003b3"></a>Add to image<br />
+<li><a id="orgb4036ce"></a>Add to image<br />
 <div class="outline-text-5" id="text-1-1-1-3">
 <p>
 Add Some packages to an existing image.
@@ -415,22 +415,22 @@ Add Some packages to an existing image.
 
 
 
-<div id="outline-container-org2cffd8f" class="outline-4">
-<h4 id="org2cffd8f"><span class="section-number-4">1.1.2.</span> Star intel Example</h4>
+<div id="outline-container-orge5bb5f2" class="outline-4">
+<h4 id="orge5bb5f2"><span class="section-number-4">1.1.2.</span> Star intel Example</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 Heres a real example of couchdb that runs <a href="../2022-05-28-030619-star_intel.html#ID-78157cd5-9681-4a64-b5c7-0f2b415cd446">star intel</a>.
 </p>
 </div>
 <ol class="org-ol">
-<li><a id="org693b83f"></a><span class="todo TODO">TODO</span> Add my image stuff when i get it working!<br /></li>
+<li><a id="org3ec5f11"></a><span class="todo TODO">TODO</span> Add my image stuff when i get it working!<br /></li>
 </ol>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 22:31</p>
+<p class="date">Created: 2023-06-29 Thu 22:47</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

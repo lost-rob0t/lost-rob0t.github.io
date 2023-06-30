@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 22:31 -->
+<!-- 2023-06-29 Thu 22:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Package and use Nix flakes</title>
@@ -201,18 +201,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org95b9854">1. How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></a>
+<li><a href="#org1d80ba2">1. How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></a>
 <ul>
-<li><a href="#orge77a65b">1.1. Writing the nix flake</a></li>
-<li><a href="#orgff0c5b6">1.2. Using the nix flake.</a></li>
+<li><a href="#orgbe44bbc">1.1. Writing the nix flake</a></li>
+<li><a href="#orgff164e0">1.2. Using the nix flake.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org95b9854" class="outline-2">
-<h2 id="org95b9854"><span class="section-number-2">1.</span> How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></h2>
+<div id="outline-container-org1d80ba2" class="outline-2">
+<h2 id="org1d80ba2"><span class="section-number-2">1.</span> How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Today I had ran into a issue with war thunder where the mouse would not be stuck inside the screen, after looking around I found <a href="https://github.com/gholken/Mousetrap">MouseTrap</a>. Its a c++ tool that will keep it in the window.
@@ -222,8 +222,8 @@ So I will package mouse trap and add it to my home-manager config.
 </div>
 
 
-<div id="outline-container-orge77a65b" class="outline-3">
-<h3 id="orge77a65b"><span class="section-number-3">1.1.</span> Writing the nix flake</h3>
+<div id="outline-container-orgbe44bbc" class="outline-3">
+<h3 id="orgbe44bbc"><span class="section-number-3">1.1.</span> Writing the nix flake</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 I will assume you are already aware of how to package <a href="2022-05-17-051936-nixos_custom_pkgs.html#ID-3866dd8f-fc14-491a-af3a-bbd0c4c5ce98">nixos custom pkgs,</a> but TLDR they are like normal nix derivations with locks, inputs and outputs.
@@ -403,8 +403,8 @@ The final flake.nix looks like this
 </div>
 </div>
 
-<div id="outline-container-orgff0c5b6" class="outline-3">
-<h3 id="orgff0c5b6"><span class="section-number-3">1.2.</span> Using the nix flake.</h3>
+<div id="outline-container-orgff164e0" class="outline-3">
+<h3 id="orgff164e0"><span class="section-number-3">1.2.</span> Using the nix flake.</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 In order to use your nix flake, you need to make sure it is added to your flake inputs
@@ -455,7 +455,7 @@ I forget the difference between the types of build inputs.
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 22:31</p>
+<p class="date">Created: 2023-06-29 Thu 22:47</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
