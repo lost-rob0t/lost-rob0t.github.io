@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-04 Sun 09:45 -->
+<!-- 2023-06-07 Wed 22:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rest Api's in common lisp</title>
@@ -201,9 +201,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc768019">1. Rest API in common lisp</a>
+<li><a href="#orgf2b4c38">1. Rest API in common lisp</a>
 <ul>
-<li><a href="#org05f383a">1.1. Get</a></li>
+<li><a href="#org4532a5e">1.1. Get</a></li>
 </ul>
 </li>
 </ul>
@@ -211,8 +211,8 @@
 </div>
 
 
-<div id="outline-container-orgc768019" class="outline-2">
-<h2 id="orgc768019"><span class="section-number-2">1.</span> Rest API in common lisp</h2>
+<div id="outline-container-orgf2b4c38" class="outline-2">
+<h2 id="orgf2b4c38"><span class="section-number-2">1.</span> Rest API in common lisp</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 In common lisp there are many library's to complete a task, some are old but still work just fine.
@@ -235,8 +235,8 @@ A good fast library to use is <a href="https://github.com/fukamachi/dexador">dex
 </pre>
 </div>
 </div>
-<div id="outline-container-org05f383a" class="outline-3">
-<h3 id="org05f383a"><span class="section-number-3">1.1.</span> Get</h3>
+<div id="outline-container-org4532a5e" class="outline-3">
+<h3 id="org4532a5e"><span class="section-number-3">1.1.</span> Get</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-lisp">(dex:get <span style="font-style: italic;">"http://lisp.org"</span>)
@@ -257,7 +257,7 @@ A good fast library to use is <a href="https://github.com/fukamachi/dexador">dex
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-04 Sun 09:45</p>
+<p class="date">Created: 2023-06-07 Wed 22:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

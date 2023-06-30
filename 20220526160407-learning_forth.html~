@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-04 Sun 09:45 -->
+<!-- 2023-06-07 Wed 22:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Learning Forth</title>
@@ -201,10 +201,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgac8c99c">1. Chapter 1</a>
+<li><a href="#orgc060570">1. Chapter 1</a>
 <ul>
-<li><a href="#orgbd637f5">1.1. Fourth is interactive</a></li>
-<li><a href="#org6788b51">1.2. The Dictionary</a></li>
+<li><a href="#orgd7cc959">1.1. Fourth is interactive</a></li>
+<li><a href="#orga48ad48">1.2. The Dictionary</a></li>
 </ul>
 </li>
 </ul>
@@ -213,8 +213,8 @@
 <p>
 <a href="20220429214821-reading_inbox.html#ID-6189e985-e87d-42df-aa38-ba6429a2bf8a">Reading inbox</a>
 </p>
-<div id="outline-container-orgac8c99c" class="outline-2">
-<h2 id="orgac8c99c"><span class="section-number-2">1.</span> Chapter 1</h2>
+<div id="outline-container-orgc060570" class="outline-2">
+<h2 id="orgc060570"><span class="section-number-2">1.</span> Chapter 1</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Good organization is:
@@ -233,8 +233,8 @@ The Colon is the start of a new definition.
 words are seperated by whitespace
 </p>
 </div>
-<div id="outline-container-orgbd637f5" class="outline-3">
-<h3 id="orgbd637f5"><span class="section-number-3">1.1.</span> Fourth is interactive</h3>
+<div id="outline-container-orgd7cc959" class="outline-3">
+<h3 id="orgd7cc959"><span class="section-number-3">1.1.</span> Fourth is interactive</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 you can use it just like a repl and type the name of the word adn it will execute.
@@ -276,8 +276,8 @@ This returns a *. 42 is the char code for *
 </div>
 
 
-<div id="outline-container-org6788b51" class="outline-3">
-<h3 id="org6788b51"><span class="section-number-3">1.2.</span> The Dictionary</h3>
+<div id="outline-container-orga48ad48" class="outline-3">
+<h3 id="orga48ad48"><span class="section-number-3">1.2.</span> The Dictionary</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Words are stored into forth's "dictionary". it may start with some but you can add to it.
@@ -292,7 +292,7 @@ test
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-04 Sun 09:45</p>
+<p class="date">Created: 2023-06-07 Wed 22:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

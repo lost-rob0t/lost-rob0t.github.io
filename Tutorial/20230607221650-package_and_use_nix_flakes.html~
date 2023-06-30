@@ -6,7 +6,7 @@
 <!-- 2023-06-07 Wed 22:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>fedi</title>
+<title>Package and use Nix flakes</title>
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -196,62 +196,264 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">fedi</h1>
+<h1 class="title">Package and use Nix flakes</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org59aee8f">1. <span class="todo TODO">TODO</span> Fedi a Fediverse api wraper for nim</a>
+<li><a href="#orgde39158">1. How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></a>
 <ul>
-<li><a href="#org6cdc85a">1.1. Usage</a>
-<ul>
-<li><a href="#orge51dc02">1.1.1. Create a new client</a></li>
-</ul>
-</li>
+<li><a href="#orga8ab400">1.1. Writing the nix flake</a></li>
+<li><a href="#org52f5a21">1.2. Using the nix flake.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-
-<div id="outline-container-org59aee8f" class="outline-2">
-<h2 id="org59aee8f"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> Fedi a Fediverse api wraper for nim</h2>
+<div id="outline-container-orgde39158" class="outline-2">
+<h2 id="orgde39158"><span class="section-number-2">1.</span> How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></h2>
 <div class="outline-text-2" id="text-1">
 <p>
-As of now just mastodon api is supported (contact me if you need more).
-I wrote the lib in need of a nim based wrapper so i can scrape shitlib instances on the fediverse
+Today I had ran into a issue with war thunder where the mouse would not be stuck inside the screen, after looking around I found <a href="https://github.com/gholken/Mousetrap">MouseTrap</a>. Its a c++ tool that will keep it in the window.
+The only issue I am on <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">Nixos</a>, which requires me to include it in my configuration so i can reproduce it later on.
+So I will package mouse trap and add it to my home-manager config.
 </p>
 </div>
 
 
-<div id="outline-container-org6cdc85a" class="outline-3">
-<h3 id="org6cdc85a"><span class="section-number-3">1.1.</span> Usage</h3>
+<div id="outline-container-orga8ab400" class="outline-3">
+<h3 id="orga8ab400"><span class="section-number-3">1.1.</span> Writing the nix flake</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-The endpoints are defined using the <code>{.multisync.}</code> pragma, which creates async and sync versions of the function.
+I will assume you are already aware of how to package <a href="2022-05-17-051936-nixos_custom_pkgs.html#ID-3866dd8f-fc14-491a-af3a-bbd0c4c5ce98">nixos custom pkgs,</a> but TLDR they are like normal nix derivations with locks, inputs and outputs.
 </p>
+
+<p>
+Download the mousetrap source code.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">git clone https://github.com/gholken/Mousetrap
+<span style="font-weight: bold;">cd</span> MouseTrap
+</pre>
 </div>
 
-<div id="outline-container-orge51dc02" class="outline-4">
-<h4 id="orge51dc02"><span class="section-number-4">1.1.1.</span> Create a new client</h4>
-<div class="outline-text-4" id="text-1-1-1">
 <p>
-Heres how to create new client
+Now with your editor of choice lets start by adding the flake.
+</p>
+
+
+<p>
+Start with the base nix flake.
 </p>
 <div class="org-src-container">
-<pre class="src src-nim">import fedi
-import json, os
-# Create a Client without an account
-let client("https://mstdn.party")
-# create a client with a token
+<pre class="src src-nix">{
+  inputs = {
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
+  };
+  outputs = { nixpkgs, flake-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = import nixpkgs {
+	inherit system;
+      };
+
+    in rec {
+
+    }
+  );
+}
+</pre>
+</div>
+
+
+<p>
+Lets name the package and begin creating the derivation
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nix">mousetrap = (with pkgs; stdenv.mkDerivation {
+  pname = "mousetrap";
+  version = "1.0.0";
+      )
+</pre>
+</div>
+
+
+<p>
+Now we need to add the source where nix will download the package from.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nix">src = fetchgit {
+  url = "https://github.com/gholken/Mousetrap";
+  rev = "9299933ea0cbaf39b36c6bfd3498474541884211";
+  sha256 = lib.fakeSha256;
+};
+</pre>
+</div>
+
+<p>
+This tells nix we will want to download the source code by a git clone.
+</p>
+
+<p>
+rev is can be a git tag, or a commit. There are more option in the nixos manual.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
+sha256 is will be the resulting hash from fetch git, since you do not have that yet you can use libfakeSha256 to cause an error, which you will then replace it with the one in the error.
+</p>
+
+<p>
+Now lets specify the deps for this derivation. MouseTrap requires libx11 and libxfixes
+it also need libnotify, so I add that to buildInputs.<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nix">nativeBuildInputs = [
+  pkg-config
+  xorg.libX11
+  xorg.libXfixes
+];
+buildInputs = [
+  libnotify
+];
+</pre>
+</div>
+
+<p>
+Now that I have the deps defined we will now "build" it
+nix has different phases of the derivation and its worthwhile to become aware of them.<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>
+in this case we will just be running make -j. There is a environment variable for your core count in <code>$NIX_BUILD_CORES</code>.
+Here is the build and install
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">buildPhase = "make -j $NIX_BUILD_CORES";
+installPhase = ''
+	mkdir --parents "$out/bin"
+	cp ./mousetrap "$out/bin"
+'';
+</pre>
+</div>
+<p>
+Now there are a number of special variables that nix creates, but i will not list them here.
+</p>
+
+<p>
+The final flake.nix looks like this
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">{
+  inputs = {
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+    };
+  };
+  outputs = { nixpkgs, flake-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = import nixpkgs {
+	inherit system;
+      };
+      mousetrap = (with pkgs; stdenv.mkDerivation {
+	  pname = "mousetrap";
+	  version = "1.0.0";
+	  src = fetchgit {
+	    url = "https://github.com/gholken/Mousetrap";
+	    rev = "9299933ea0cbaf39b36c6bfd3498474541884211";
+	    sha256 = "sha256-NWD3q/f9RvXneeFTEt3IBCM9iQD+qY3gq91yL974uq4=";
+	  };
+	  nativeBuildInputs = [
+	    pkg-config
+	    xorg.libX11
+	    xorg.libXfixes
+	  ];
+	  buildInputs = [
+	    libnotify
+	  ];
+	  buildPhase = "make -j $NIX_BUILD_CORES";
+	  installPhase = ''
+	  mkdir --parents "$out/bin"
+
+	  cp ./mousetrap "$out/bin"
+	  '';
+	}
+      );
+    in rec {
+      defaultApp = flake-utils.lib.mkApp {
+	drv = defaultPackage;
+      };
+      defaultPackage = mousetrap;
+      devShell = pkgs.mkShell {
+	buildInputs = [
+	  mousetrap
+	  pkgs.libnotify
+	];
+      };
+    }
+  );
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org52f5a21" class="outline-3">
+<h3 id="org52f5a21"><span class="section-number-3">1.2.</span> Using the nix flake.</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+In order to use your nix flake, you need to make sure it is added to your flake inputs
+</p>
+
+<p>
+Here you can get the package we made from here.
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">mousetrap.url = "github:lost-rob0t/Mousetrap";
+</pre>
+</div>
+<p>
+Then inside your normal nix config you include the inputs attribute
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">{ config, lib, pkgs, inputs, ... }:
+</pre>
+</div>
+
+<p>
+Then to use it just include it.
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">inputs.mousetrap.defaultPackage.x86_64-linux
 </pre>
 </div>
 </div>
 </div>
 </div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://nixos.org/manual/nixpkgs/stable/#fetchgit">https://nixos.org/manual/nixpkgs/stable/#fetchgit</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+I forget the difference between the types of build inputs.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://scrive.github.io/nix-workshop/04-derivations/06-build-phases.html">https://scrive.github.io/nix-workshop/04-derivations/06-build-phases.html</a>
+</p></div></div>
+
+
 </div>
-</div>
+</div></div>
 <div id="postamble" class="status">
 <p class="date">Created: 2023-06-07 Wed 22:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>

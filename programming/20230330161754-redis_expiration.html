@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-07 Wed 22:45 -->
+<!-- 2023-06-29 Thu 22:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>redis expiration</title>
@@ -201,29 +201,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc5f3683">1. Expiration</a>
+<li><a href="#org6ca0eb1">1. Expiration</a>
 <ul>
-<li><a href="#org401af6e">1.1. EXPIRE</a></li>
-<li><a href="#orgc4df07f">1.2. PEXPIRE</a></li>
-<li><a href="#orgb1ea8f9">1.3. TTL</a></li>
-<li><a href="#org779c964">1.4. PTTL</a></li>
-<li><a href="#orga8fe431">1.5. PERSIST</a></li>
-<li><a href="#org75ebca5">1.6. SETEX</a></li>
+<li><a href="#orgf869f23">1.1. EXPIRE</a></li>
+<li><a href="#org2cfcf3f">1.2. PEXPIRE</a></li>
+<li><a href="#org8675ce3">1.3. TTL</a></li>
+<li><a href="#org9f35c79">1.4. PTTL</a></li>
+<li><a href="#org12c7017">1.5. PERSIST</a></li>
+<li><a href="#orge18a681">1.6. SETEX</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc5f3683" class="outline-2">
-<h2 id="orgc5f3683"><span class="section-number-2">1.</span> Expiration</h2>
+<div id="outline-container-org6ca0eb1" class="outline-2">
+<h2 id="org6ca0eb1"><span class="section-number-2">1.</span> Expiration</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 In redis you can have keys expire.
 This is useful for caching and for data that is irrelevant.
 </p>
 </div>
-<div id="outline-container-org401af6e" class="outline-3">
-<h3 id="org401af6e"><span class="section-number-3">1.1.</span> EXPIRE</h3>
+<div id="outline-container-orgf869f23" class="outline-3">
+<h3 id="orgf869f23"><span class="section-number-3">1.1.</span> EXPIRE</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Set a timeout on a key, after which the key will be automatically deleted
@@ -242,8 +242,8 @@ This sets the key "mykey" with value "Hello" and a timeout of 10 seconds. After 
 </p>
 </div>
 </div>
-<div id="outline-container-orgc4df07f" class="outline-3">
-<h3 id="orgc4df07f"><span class="section-number-3">1.2.</span> PEXPIRE</h3>
+<div id="outline-container-org2cfcf3f" class="outline-3">
+<h3 id="org2cfcf3f"><span class="section-number-3">1.2.</span> PEXPIRE</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Similar to EXPIRE, but accepts the timeout in milliseconds instead of seconds.
@@ -251,8 +251,8 @@ Similar to EXPIRE, but accepts the timeout in milliseconds instead of seconds.
 </div>
 </div>
 
-<div id="outline-container-orgb1ea8f9" class="outline-3">
-<h3 id="orgb1ea8f9"><span class="section-number-3">1.3.</span> TTL</h3>
+<div id="outline-container-org8675ce3" class="outline-3">
+<h3 id="org8675ce3"><span class="section-number-3">1.3.</span> TTL</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 Check the remaining time to live of a key
@@ -273,8 +273,8 @@ This sets the key "mykey" with value "Hello" and a timeout of 10 seconds. The TT
 </p>
 </div>
 </div>
-<div id="outline-container-org779c964" class="outline-3">
-<h3 id="org779c964"><span class="section-number-3">1.4.</span> PTTL</h3>
+<div id="outline-container-org9f35c79" class="outline-3">
+<h3 id="org9f35c79"><span class="section-number-3">1.4.</span> PTTL</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Like TTL, but returns the remaining time to live in milliseconds.
@@ -282,8 +282,8 @@ Like TTL, but returns the remaining time to live in milliseconds.
 </div>
 </div>
 
-<div id="outline-container-orga8fe431" class="outline-3">
-<h3 id="orga8fe431"><span class="section-number-3">1.5.</span> PERSIST</h3>
+<div id="outline-container-org12c7017" class="outline-3">
+<h3 id="org12c7017"><span class="section-number-3">1.5.</span> PERSIST</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 Remove the timeout on a key, making it persist indefinitely
@@ -305,8 +305,8 @@ This sets the key "mykey" with value "Hello" and a timeout of 10 seconds. The PE
 </p>
 </div>
 </div>
-<div id="outline-container-org75ebca5" class="outline-3">
-<h3 id="org75ebca5"><span class="section-number-3">1.6.</span> SETEX</h3>
+<div id="outline-container-orge18a681" class="outline-3">
+<h3 id="orge18a681"><span class="section-number-3">1.6.</span> SETEX</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 Set a key with a timeout in one command
@@ -328,7 +328,7 @@ This sets the key "mykey" with value "Hello" and a timeout of 10 seconds in one 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-07 Wed 22:45</p>
+<p class="date">Created: 2023-06-29 Thu 22:31</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

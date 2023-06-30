@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-04 Sun 09:45 -->
+<!-- 2023-06-07 Wed 22:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Index</title>
@@ -201,29 +201,29 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org063254d">1. Welcome</a></li>
-<li><a href="#org2b12f63">2. Links</a></li>
-<li><a href="#org0a97248">3. Programming</a></li>
-<li><a href="#org643d6e1">4. Industrial Control systems</a></li>
-<li><a href="#orge0a676e">5. Cyber Security</a>
+<li><a href="#org0c31352">1. Welcome</a></li>
+<li><a href="#orgd0fdc72">2. Links</a></li>
+<li><a href="#org6707dd6">3. Programming</a></li>
+<li><a href="#orgc914093">4. Industrial Control systems</a></li>
+<li><a href="#org5b1c14d">5. Cyber Security</a>
 <ul>
-<li><a href="#org9c7f80f">5.1. Methods</a>
+<li><a href="#org43c3409">5.1. Methods</a>
 <ul>
-<li><a href="#org43674c6">5.1.1. Wordpress</a></li>
+<li><a href="#orgb19f438">5.1.1. Wordpress</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org117d744">6. My Tooling</a>
+<li><a href="#orge1643c7">6. My Tooling</a>
 <ul>
-<li><a href="#orgf53add7">6.1. <span class="todo TODO">TODO</span> Star Intelligence</a></li>
+<li><a href="#org41eae4c">6.1. <span class="todo TODO">TODO</span> Star Intelligence</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org063254d" class="outline-2">
-<h2 id="org063254d"><span class="section-number-2">1.</span> Welcome</h2>
+<div id="outline-container-org0c31352" class="outline-2">
+<h2 id="org0c31352"><span class="section-number-2">1.</span> Welcome</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Welcome to my brain dump that i like to call a wiki of sorts.
@@ -248,8 +248,8 @@ My Spelling is bad and i did not have a spell checker when i started taking note
 </p>
 </div>
 </div>
-<div id="outline-container-org2b12f63" class="outline-2">
-<h2 id="org2b12f63"><span class="section-number-2">2.</span> Links</h2>
+<div id="outline-container-orgd0fdc72" class="outline-2">
+<h2 id="orgd0fdc72"><span class="section-number-2">2.</span> Links</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><a href="2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a></li>
@@ -260,8 +260,8 @@ My Spelling is bad and i did not have a spell checker when i started taking note
 </ul>
 </div>
 </div>
-<div id="outline-container-org0a97248" class="outline-2">
-<h2 id="org0a97248"><span class="section-number-2">3.</span> Programming</h2>
+<div id="outline-container-org6707dd6" class="outline-2">
+<h2 id="org6707dd6"><span class="section-number-2">3.</span> Programming</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><a href="programming/20220606215245-programming_languages.html#ID-ecc6c666-530f-4173-9f21-4038677b32ac">Programming Languages</a></li>
@@ -271,8 +271,8 @@ My Spelling is bad and i did not have a spell checker when i started taking note
 </div>
 </div>
 
-<div id="outline-container-org643d6e1" class="outline-2">
-<h2 id="org643d6e1"><span class="section-number-2">4.</span> Industrial Control systems</h2>
+<div id="outline-container-orgc914093" class="outline-2">
+<h2 id="orgc914093"><span class="section-number-2">4.</span> Industrial Control systems</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><a href="20221208234405-scada.html#ID-8819b564-caa6-4101-99ca-ab936c650714">SCADA</a></li>
@@ -283,8 +283,8 @@ My Spelling is bad and i did not have a spell checker when i started taking note
 </div>
 </div>
 
-<div id="outline-container-orge0a676e" class="outline-2">
-<h2 id="orge0a676e"><span class="section-number-2">5.</span> Cyber Security</h2>
+<div id="outline-container-org5b1c14d" class="outline-2">
+<h2 id="org5b1c14d"><span class="section-number-2">5.</span> Cyber Security</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><a href="20221209030114-shodan_api_keys.html#ID-1ab40c79-e0b4-4556-b2e0-0eab12ae3a62">Shodan api keys</a></li>
@@ -293,12 +293,12 @@ My Spelling is bad and i did not have a spell checker when i started taking note
 </ul>
 </div>
 
-<div id="outline-container-org9c7f80f" class="outline-3">
-<h3 id="org9c7f80f"><span class="section-number-3">5.1.</span> Methods</h3>
+<div id="outline-container-org43c3409" class="outline-3">
+<h3 id="org43c3409"><span class="section-number-3">5.1.</span> Methods</h3>
 <div class="outline-text-3" id="text-5-1">
 </div>
-<div id="outline-container-org43674c6" class="outline-4">
-<h4 id="org43674c6"><span class="section-number-4">5.1.1.</span> Wordpress</h4>
+<div id="outline-container-orgb19f438" class="outline-4">
+<h4 id="orgb19f438"><span class="section-number-4">5.1.1.</span> Wordpress</h4>
 <div class="outline-text-4" id="text-5-1-1">
 <ul class="org-ul">
 <li><a href="hacking/20221213173625-wordpress_enumeration.html#ID-854f2842-8d5b-4006-8848-6800aab5ab5e">WordPress Enumeration</a></li>
@@ -308,12 +308,12 @@ My Spelling is bad and i did not have a spell checker when i started taking note
 </div>
 </div>
 
-<div id="outline-container-org117d744" class="outline-2">
-<h2 id="org117d744"><span class="section-number-2">6.</span> My Tooling</h2>
+<div id="outline-container-orge1643c7" class="outline-2">
+<h2 id="orge1643c7"><span class="section-number-2">6.</span> My Tooling</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-orgf53add7" class="outline-3">
-<h3 id="orgf53add7"><span class="section-number-3">6.1.</span> <span class="todo TODO">TODO</span> Star Intelligence</h3>
+<div id="outline-container-org41eae4c" class="outline-3">
+<h3 id="org41eae4c"><span class="section-number-3">6.1.</span> <span class="todo TODO">TODO</span> Star Intelligence</h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li>gitVirgin</li>
@@ -325,7 +325,7 @@ My Spelling is bad and i did not have a spell checker when i started taking note
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-04 Sun 09:45</p>
+<p class="date">Created: 2023-06-07 Wed 22:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

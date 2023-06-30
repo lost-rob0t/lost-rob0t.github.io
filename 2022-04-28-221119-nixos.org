@@ -30,6 +30,8 @@ Stable NixOS releases are delivered twice a year. NixOS was created by [[https:/
 **** packaging
 - [[id:3866dd8f-fc14-491a-af3a-bbd0c4c5ce98][nixos custom pkgs]]
 - https://ryantm.github.io/nixpkgs/
+**** flakes
++ [[id:828e3d5c-f971-4344-9576-79e11005fba6][Package and use Nix flakes]]
 *** Installation
 **** Raspberry pi
 - [[id:d7085ecb-5bc7-48cf-b039-4ff204352534][cross compile nixos to sdcard for rpi3b+]]
