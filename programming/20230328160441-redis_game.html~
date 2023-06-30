@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 22:45 -->
+<!-- 2023-06-29 Thu 23:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>redis game</title>
@@ -201,9 +201,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb34275f">1. Lets build a game in Redis</a>
+<li><a href="#org9d2a291">1. Lets build a game in Redis</a>
 <ul>
-<li><a href="#org2467885">1.1. Getting started</a></li>
+<li><a href="#orga736a47">1.1. Getting started</a></li>
 </ul>
 </li>
 </ul>
@@ -211,16 +211,16 @@
 </div>
 
 
-<div id="outline-container-orgb34275f" class="outline-2">
-<h2 id="orgb34275f"><span class="section-number-2">1.</span> Lets build a game in Redis</h2>
+<div id="outline-container-org9d2a291" class="outline-2">
+<h2 id="org9d2a291"><span class="section-number-2">1.</span> Lets build a game in Redis</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 I will be using <a href="20220606215451-nim.html#ID-af6fae74-d03b-4930-8f39-63becb43efd9">Nim</a> to build this, following <a href="https://www.youtube.com/watch?v=vhZVZg0mTME&amp;list=PLTgRMOcmRb3Mt3iBO2eosx5vXHeaM92TG">this</a> to learn redis.
 </p>
 </div>
 
-<div id="outline-container-org2467885" class="outline-3">
-<h3 id="org2467885"><span class="section-number-3">1.1.</span> Getting started</h3>
+<div id="outline-container-orga736a47" class="outline-3">
+<h3 id="orga736a47"><span class="section-number-3">1.1.</span> Getting started</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 <b>NOTE</b> I assume you already have it installed.
@@ -234,7 +234,7 @@ Installing it on <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 22:45</p>
+<p class="date">Created: 2023-06-29 Thu 23:13</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

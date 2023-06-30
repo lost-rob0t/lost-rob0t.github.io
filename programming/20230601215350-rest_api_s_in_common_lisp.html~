@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 22:45 -->
+<!-- 2023-06-29 Thu 23:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rest Api's in common lisp</title>
@@ -201,10 +201,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7272ef1">1. Rest API in common lisp</a>
+<li><a href="#org5f831ff">1. Rest API in common lisp</a>
 <ul>
-<li><a href="#org6b850b2">1.1. Get</a></li>
-<li><a href="#org98b1fd9">1.2. post</a></li>
+<li><a href="#org7652aca">1.1. Get</a></li>
+<li><a href="#orga9f28b6">1.2. post</a></li>
 </ul>
 </li>
 </ul>
@@ -212,8 +212,8 @@
 </div>
 
 
-<div id="outline-container-org7272ef1" class="outline-2">
-<h2 id="org7272ef1"><span class="section-number-2">1.</span> Rest API in common lisp</h2>
+<div id="outline-container-org5f831ff" class="outline-2">
+<h2 id="org5f831ff"><span class="section-number-2">1.</span> Rest API in common lisp</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 In common lisp there are many library's to complete a task, some are old but still work just fine.
@@ -241,8 +241,8 @@ Internally it uses connection pooling and reuses connections.
 </pre>
 </div>
 </div>
-<div id="outline-container-org6b850b2" class="outline-3">
-<h3 id="org6b850b2"><span class="section-number-3">1.1.</span> Get</h3>
+<div id="outline-container-org7652aca" class="outline-3">
+<h3 id="org7652aca"><span class="section-number-3">1.1.</span> Get</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-lisp">(dex:get <span style="font-style: italic;">"http://lisp.org"</span>)
@@ -251,8 +251,8 @@ Internally it uses connection pooling and reuses connections.
 </div>
 </div>
 
-<div id="outline-container-org98b1fd9" class="outline-3">
-<h3 id="org98b1fd9"><span class="section-number-3">1.2.</span> post</h3>
+<div id="outline-container-orga9f28b6" class="outline-3">
+<h3 id="orga9f28b6"><span class="section-number-3">1.2.</span> post</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 To send formdata in a post use a association list.
@@ -330,7 +330,7 @@ NIL
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 22:45</p>
+<p class="date">Created: 2023-06-29 Thu 23:13</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

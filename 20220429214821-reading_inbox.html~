@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 22:45 -->
+<!-- 2023-06-29 Thu 23:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Reading inbox</title>
@@ -201,30 +201,30 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7f7e1e7">1. Reading inbox</a></li>
-<li><a href="#orgc7f34c8">2. Books</a>
+<li><a href="#org7c58729">1. Reading inbox</a></li>
+<li><a href="#org2673017">2. Books</a>
 <ul>
-<li><a href="#org3e43150">2.1. IDEA starting-forth</a></li>
+<li><a href="#orgee1aa38">2.1. IDEA starting-forth</a></li>
 </ul>
 </li>
-<li><a href="#orga47cb42">3. <span class="todo TODO">TODO</span> Articles <code>[1/3]</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="articles">articles</span></span></a></li>
-<li><a href="#org08eaa24">4. Research</a>
+<li><a href="#orga97e186">3. <span class="todo TODO">TODO</span> Articles <code>[1/3]</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="articles">articles</span></span></a></li>
+<li><a href="#orgeec1a7e">4. Research</a>
 <ul>
-<li><a href="#org91d565a">4.1. <span class="todo TODO">TODO</span> SCADA <code>[0/4]</code></a></li>
-<li><a href="#org01f6121">4.2. <span class="todo TODO">TODO</span> WIFI</a></li>
+<li><a href="#orga6e7e15">4.1. <span class="todo TODO">TODO</span> SCADA <code>[0/4]</code></a></li>
+<li><a href="#orge7febf8">4.2. <span class="todo TODO">TODO</span> WIFI</a></li>
 </ul>
 </li>
-<li><a href="#orge74ecff">5. Videos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="videos">videos</span></span></a>
+<li><a href="#orgf5ddfd7">5. Videos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="videos">videos</span></span></a>
 <ul>
-<li><a href="#orgc50a6a4">5.1. <span class="todo TODO">TODO</span> <code>[/]</code></a></li>
-<li><a href="#org851557c">5.2. IDEA <code>[/]</code></a></li>
+<li><a href="#orgfb33022">5.1. <span class="todo TODO">TODO</span> <code>[/]</code></a></li>
+<li><a href="#orgd2369c3">5.2. IDEA <code>[/]</code></a></li>
 </ul>
 </li>
-<li><a href="#org63c512b">6. <span class="todo TODO">TODO</span> Computer Science <code>[0/3]</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span></span></a>
+<li><a href="#orga196b67">6. <span class="todo TODO">TODO</span> Computer Science <code>[0/3]</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span></span></a>
 <ul>
-<li><a href="#org1aa507d">6.1. IDEA Langs <code>[0/1]</code></a></li>
-<li><a href="#org28de761">6.2. IDEA Compsci books <code>[0/3]</code></a></li>
-<li><a href="#org028b59c">6.3. IDEA self study <code>[/]</code></a></li>
+<li><a href="#org5b8ad3c">6.1. IDEA Langs <code>[0/1]</code></a></li>
+<li><a href="#org6801873">6.2. IDEA Compsci books <code>[0/3]</code></a></li>
+<li><a href="#org38a452c">6.3. IDEA self study <code>[/]</code></a></li>
 </ul>
 </li>
 </ul>
@@ -233,8 +233,8 @@
 
 
 
-<div id="outline-container-org7f7e1e7" class="outline-2">
-<h2 id="org7f7e1e7"><span class="section-number-2">1.</span> Reading inbox</h2>
+<div id="outline-container-org7c58729" class="outline-2">
+<h2 id="org7c58729"><span class="section-number-2">1.</span> Reading inbox</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 A index of videos, books and other things that got my attention.
@@ -254,12 +254,12 @@ Key:
 </div>
 </div>
 
-<div id="outline-container-orgc7f34c8" class="outline-2">
-<h2 id="orgc7f34c8"><span class="section-number-2">2.</span> Books</h2>
+<div id="outline-container-org2673017" class="outline-2">
+<h2 id="org2673017"><span class="section-number-2">2.</span> Books</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org3e43150" class="outline-3">
-<h3 id="org3e43150"><span class="section-number-3">2.1.</span> IDEA starting-forth</h3>
+<div id="outline-container-orgee1aa38" class="outline-3">
+<h3 id="orgee1aa38"><span class="section-number-3">2.1.</span> IDEA starting-forth</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Notes: <a href="20220526160407-learning_forth.html#ID-73ce874e-3841-49dc-89c6-0fe8225678c4">Learning Forth</a>
@@ -267,8 +267,8 @@ Notes: <a href="20220526160407-learning_forth.html#ID-73ce874e-3841-49dc-89c6-0f
 </div>
 </div>
 </div>
-<div id="outline-container-orga47cb42" class="outline-2">
-<h2 id="orga47cb42"><span class="section-number-2">3.</span> <span class="todo TODO">TODO</span> Articles <code>[1/3]</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="articles">articles</span></span></h2>
+<div id="outline-container-orga97e186" class="outline-2">
+<h2 id="orga97e186"><span class="section-number-2">3.</span> <span class="todo TODO">TODO</span> Articles <code>[1/3]</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="articles">articles</span></span></h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> Multics Emacs: The History, Design and Implementation
@@ -291,12 +291,12 @@ Notes: <a href="20220526160407-learning_forth.html#ID-73ce874e-3841-49dc-89c6-0f
 </div>
 
 
-<div id="outline-container-org08eaa24" class="outline-2">
-<h2 id="org08eaa24"><span class="section-number-2">4.</span> Research</h2>
+<div id="outline-container-orgeec1a7e" class="outline-2">
+<h2 id="orgeec1a7e"><span class="section-number-2">4.</span> Research</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org91d565a" class="outline-3">
-<h3 id="org91d565a"><span class="section-number-3">4.1.</span> <span class="todo TODO">TODO</span> SCADA <code>[0/4]</code></h3>
+<div id="outline-container-orga6e7e15" class="outline-3">
+<h3 id="orga6e7e15"><span class="section-number-3">4.1.</span> <span class="todo TODO">TODO</span> SCADA <code>[0/4]</code></h3>
 <div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> Industrial Network Security: Securing Critical Infrastructure Networks for Smart Grid, Scada, and Other Industrial Control Systems
@@ -316,8 +316,8 @@ Notes: <a href="20220526160407-learning_forth.html#ID-73ce874e-3841-49dc-89c6-0f
 </ul>
 </div>
 </div>
-<div id="outline-container-org01f6121" class="outline-3">
-<h3 id="org01f6121"><span class="section-number-3">4.2.</span> <span class="todo TODO">TODO</span> WIFI</h3>
+<div id="outline-container-orge7febf8" class="outline-3">
+<h3 id="orge7febf8"><span class="section-number-3">4.2.</span> <span class="todo TODO">TODO</span> WIFI</h3>
 <div class="outline-text-3" id="text-4-2">
 <ul class="org-ul">
 <li>Wifi encryption bypass
@@ -330,12 +330,12 @@ Notes: <a href="20220526160407-learning_forth.html#ID-73ce874e-3841-49dc-89c6-0f
 
 
 
-<div id="outline-container-orge74ecff" class="outline-2">
-<h2 id="orge74ecff"><span class="section-number-2">5.</span> Videos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="videos">videos</span></span></h2>
+<div id="outline-container-orgf5ddfd7" class="outline-2">
+<h2 id="orgf5ddfd7"><span class="section-number-2">5.</span> Videos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="videos">videos</span></span></h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgc50a6a4" class="outline-3">
-<h3 id="orgc50a6a4"><span class="section-number-3">5.1.</span> <span class="todo TODO">TODO</span> <code>[/]</code></h3>
+<div id="outline-container-orgfb33022" class="outline-3">
+<h3 id="orgfb33022"><span class="section-number-3">5.1.</span> <span class="todo TODO">TODO</span> <code>[/]</code></h3>
 <div class="outline-text-3" id="text-5-1">
 <ul class="org-ul">
 <li class="trans"><code>[-]</code> College Algebra – Full Course with Python Code
@@ -347,8 +347,8 @@ Notes: <a href="20220526160407-learning_forth.html#ID-73ce874e-3841-49dc-89c6-0f
 </div>
 </div>
 
-<div id="outline-container-org851557c" class="outline-3">
-<h3 id="org851557c"><span class="section-number-3">5.2.</span> IDEA <code>[/]</code></h3>
+<div id="outline-container-orgd2369c3" class="outline-3">
+<h3 id="orgd2369c3"><span class="section-number-3">5.2.</span> IDEA <code>[/]</code></h3>
 <div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> groundupdb</li>
@@ -362,12 +362,12 @@ Notes: <a href="20220526160407-learning_forth.html#ID-73ce874e-3841-49dc-89c6-0f
 </div>
 </div>
 
-<div id="outline-container-org63c512b" class="outline-2">
-<h2 id="org63c512b"><span class="section-number-2">6.</span> <span class="todo TODO">TODO</span> Computer Science <code>[0/3]</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span></span></h2>
+<div id="outline-container-orga196b67" class="outline-2">
+<h2 id="orga196b67"><span class="section-number-2">6.</span> <span class="todo TODO">TODO</span> Computer Science <code>[0/3]</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span></span></h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="outline-container-org1aa507d" class="outline-3">
-<h3 id="org1aa507d"><span class="section-number-3">6.1.</span> IDEA Langs <code>[0/1]</code></h3>
+<div id="outline-container-org5b8ad3c" class="outline-3">
+<h3 id="org5b8ad3c"><span class="section-number-3">6.1.</span> IDEA Langs <code>[0/1]</code></h3>
 <div class="outline-text-3" id="text-6-1">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> Beautiful Racket
@@ -378,8 +378,8 @@ Notes: <a href="20220526160407-learning_forth.html#ID-73ce874e-3841-49dc-89c6-0f
 </ul>
 </div>
 </div>
-<div id="outline-container-org28de761" class="outline-3">
-<h3 id="org28de761"><span class="section-number-3">6.2.</span> IDEA Compsci books <code>[0/3]</code></h3>
+<div id="outline-container-org6801873" class="outline-3">
+<h3 id="org6801873"><span class="section-number-3">6.2.</span> IDEA Compsci books <code>[0/3]</code></h3>
 <div class="outline-text-3" id="text-6-2">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> Structure and Interpretation of Computer Programs</li>
@@ -394,8 +394,8 @@ Notes: <a href="20220526160407-learning_forth.html#ID-73ce874e-3841-49dc-89c6-0f
 </ul>
 </div>
 </div>
-<div id="outline-container-org028b59c" class="outline-3">
-<h3 id="org028b59c"><span class="section-number-3">6.3.</span> IDEA self study <code>[/]</code></h3>
+<div id="outline-container-org38a452c" class="outline-3">
+<h3 id="org38a452c"><span class="section-number-3">6.3.</span> IDEA self study <code>[/]</code></h3>
 <div class="outline-text-3" id="text-6-3">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> Introduction to Algorithms
@@ -413,7 +413,7 @@ Notes: <a href="20220526160407-learning_forth.html#ID-73ce874e-3841-49dc-89c6-0f
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 22:45</p>
+<p class="date">Created: 2023-06-29 Thu 23:13</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

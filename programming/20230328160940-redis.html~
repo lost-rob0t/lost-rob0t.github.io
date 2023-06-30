@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 22:45 -->
+<!-- 2023-06-29 Thu 23:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>redis</title>
@@ -201,33 +201,33 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf94c971">1. Redis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="database">database</span>&#xa0;<span class="db">db</span>&#xa0;<span class="redis">redis</span></span></a>
+<li><a href="#org09582e8">1. Redis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="database">database</span>&#xa0;<span class="db">db</span>&#xa0;<span class="redis">redis</span></span></a>
 <ul>
-<li><a href="#org7304fad">1.1. Topics</a></li>
-<li><a href="#orgeafd1cc">1.2. Storage and Retrieval</a></li>
-<li><a href="#org5cad5f9">1.3. Data Types</a>
+<li><a href="#org74d7505">1.1. Topics</a></li>
+<li><a href="#org11ce0d9">1.2. Storage and Retrieval</a></li>
+<li><a href="#org4a61536">1.3. Data Types</a>
 <ul>
-<li><a href="#org3b9bc60">1.3.1. String</a></li>
-<li><a href="#org3f079f3">1.3.2. Hashes</a></li>
+<li><a href="#org7c05219">1.3.1. String</a></li>
+<li><a href="#org7ac10f9">1.3.2. Hashes</a></li>
 </ul>
 </li>
-<li><a href="#orge521ad4">1.4. Commands</a>
+<li><a href="#org7654421">1.4. Commands</a>
 <ul>
-<li><a href="#org1ec6f8d">1.4.1. SET</a></li>
-<li><a href="#org43536c1">1.4.2. GET</a></li>
-<li><a href="#org66fb3a1">1.4.3. Del</a></li>
-<li><a href="#org981f19a">1.4.4. GETSET</a></li>
-<li><a href="#org09262a5">1.4.5. SETNX</a></li>
+<li><a href="#org13aa6f2">1.4.1. SET</a></li>
+<li><a href="#orge8fd33a">1.4.2. GET</a></li>
+<li><a href="#orgbacf6d8">1.4.3. Del</a></li>
+<li><a href="#org373e5b8">1.4.4. GETSET</a></li>
+<li><a href="#org84d8bd8">1.4.5. SETNX</a></li>
 </ul>
 </li>
-<li><a href="#org6cf037f">1.5. Atomic Commands</a></li>
+<li><a href="#orgb4d06d0">1.5. Atomic Commands</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf94c971" class="outline-2">
-<h2 id="orgf94c971"><span class="section-number-2">1.</span> Redis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="database">database</span>&#xa0;<span class="db">db</span>&#xa0;<span class="redis">redis</span></span></h2>
+<div id="outline-container-org09582e8" class="outline-2">
+<h2 id="org09582e8"><span class="section-number-2">1.</span> Redis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="database">database</span>&#xa0;<span class="db">db</span>&#xa0;<span class="redis">redis</span></span></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Redis is a in memeory key-value dataabase. Since it is a nosql database it can do a number of things.
@@ -243,8 +243,8 @@ Redis stands for remote dictionary server.
 </p>
 </div>
 
-<div id="outline-container-org7304fad" class="outline-3">
-<h3 id="org7304fad"><span class="section-number-3">1.1.</span> Topics</h3>
+<div id="outline-container-org74d7505" class="outline-3">
+<h3 id="org74d7505"><span class="section-number-3">1.1.</span> Topics</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><a href="20230330161754-redis_expiration.html#ID-d7ec3a25-ea89-4ab5-ac11-dd4fd05f94a9">redis expiration</a></li>
@@ -252,8 +252,8 @@ Redis stands for remote dictionary server.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeafd1cc" class="outline-3">
-<h3 id="orgeafd1cc"><span class="section-number-3">1.2.</span> Storage and Retrieval</h3>
+<div id="outline-container-org11ce0d9" class="outline-3">
+<h3 id="org11ce0d9"><span class="section-number-3">1.2.</span> Storage and Retrieval</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Like other key value databases.
@@ -269,20 +269,20 @@ Single commands are atomic.
 </div>
 
 
-<div id="outline-container-org5cad5f9" class="outline-3">
-<h3 id="org5cad5f9"><span class="section-number-3">1.3.</span> Data Types</h3>
+<div id="outline-container-org4a61536" class="outline-3">
+<h3 id="org4a61536"><span class="section-number-3">1.3.</span> Data Types</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-org3b9bc60" class="outline-4">
-<h4 id="org3b9bc60"><span class="section-number-4">1.3.1.</span> String</h4>
+<div id="outline-container-org7c05219" class="outline-4">
+<h4 id="org7c05219"><span class="section-number-4">1.3.1.</span> String</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
 Normal sequence of bytes. They are binary safe, so they are not null terminated.
 </p>
 </div>
 </div>
-<div id="outline-container-org3f079f3" class="outline-4">
-<h4 id="org3f079f3"><span class="section-number-4">1.3.2.</span> Hashes</h4>
+<div id="outline-container-org7ac10f9" class="outline-4">
+<h4 id="org7ac10f9"><span class="section-number-4">1.3.2.</span> Hashes</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <p>
 Represents a collection of key val pairs
@@ -296,16 +296,16 @@ The command prefixes start with H
 </div>
 
 
-<div id="outline-container-orge521ad4" class="outline-3">
-<h3 id="orge521ad4"><span class="section-number-3">1.4.</span> Commands</h3>
+<div id="outline-container-org7654421" class="outline-3">
+<h3 id="org7654421"><span class="section-number-3">1.4.</span> Commands</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 I will not list all the commands here, just the most used ones
 </p>
 </div>
 
-<div id="outline-container-org1ec6f8d" class="outline-4">
-<h4 id="org1ec6f8d"><span class="section-number-4">1.4.1.</span> SET</h4>
+<div id="outline-container-org13aa6f2" class="outline-4">
+<h4 id="org13aa6f2"><span class="section-number-4">1.4.1.</span> SET</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <p>
 Set is used to set a key to a value
@@ -317,8 +317,8 @@ Set is used to set a key to a value
 </div>
 </div>
 </div>
-<div id="outline-container-org43536c1" class="outline-4">
-<h4 id="org43536c1"><span class="section-number-4">1.4.2.</span> GET</h4>
+<div id="outline-container-orge8fd33a" class="outline-4">
+<h4 id="orge8fd33a"><span class="section-number-4">1.4.2.</span> GET</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <p>
 Get is used to get a key's value
@@ -329,8 +329,8 @@ Get is used to get a key's value
 </div>
 </div>
 </div>
-<div id="outline-container-org66fb3a1" class="outline-4">
-<h4 id="org66fb3a1"><span class="section-number-4">1.4.3.</span> Del</h4>
+<div id="outline-container-orgbacf6d8" class="outline-4">
+<h4 id="orgbacf6d8"><span class="section-number-4">1.4.3.</span> Del</h4>
 <div class="outline-text-4" id="text-1-4-3">
 <p>
 Del removes a key
@@ -342,8 +342,8 @@ Del removes a key
 </div>
 </div>
 
-<div id="outline-container-org981f19a" class="outline-4">
-<h4 id="org981f19a"><span class="section-number-4">1.4.4.</span> GETSET</h4>
+<div id="outline-container-org373e5b8" class="outline-4">
+<h4 id="org373e5b8"><span class="section-number-4">1.4.4.</span> GETSET</h4>
 <div class="outline-text-4" id="text-1-4-4">
 <p>
 Get a key's value and set a new one
@@ -361,8 +361,8 @@ If you ran it one more time you would get foo1
 </p>
 </div>
 </div>
-<div id="outline-container-org09262a5" class="outline-4">
-<h4 id="org09262a5"><span class="section-number-4">1.4.5.</span> SETNX</h4>
+<div id="outline-container-org84d8bd8" class="outline-4">
+<h4 id="org84d8bd8"><span class="section-number-4">1.4.5.</span> SETNX</h4>
 <div class="outline-text-4" id="text-1-4-5">
 <p>
 Set a key if its non existent (is this a lock?)
@@ -400,8 +400,8 @@ See since name exists it failed to set the key
 </div>
 
 
-<div id="outline-container-org6cf037f" class="outline-3">
-<h3 id="org6cf037f"><span class="section-number-3">1.5.</span> Atomic Commands</h3>
+<div id="outline-container-orgb4d06d0" class="outline-3">
+<h3 id="orgb4d06d0"><span class="section-number-3">1.5.</span> Atomic Commands</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 A atomic command is one that can take multiple keys and values and do it in a all or fail manner
@@ -420,7 +420,7 @@ so <code>mset</code> would be <code>set</code>.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 22:45</p>
+<p class="date">Created: 2023-06-29 Thu 23:13</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

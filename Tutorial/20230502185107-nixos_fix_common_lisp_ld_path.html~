@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-06-29 Thu 22:45 -->
+<!-- 2023-06-29 Thu 23:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nixos fix common-lisp ld path</title>
@@ -201,14 +201,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org03ca7d4">1. Fixing Common Lisp LD<sub>LIBRARY</sub><sub>PATH</sub></a></li>
-<li><a href="#orgd2d6cc8">2. FootNotes</a></li>
+<li><a href="#org7b26949">1. Fixing Common Lisp LD<sub>LIBRARY</sub><sub>PATH</sub></a></li>
+<li><a href="#orgea0316f">2. FootNotes</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org03ca7d4" class="outline-2">
-<h2 id="org03ca7d4"><span class="section-number-2">1.</span> Fixing Common Lisp LD<sub>LIBRARY</sub><sub>PATH</sub></h2>
+<div id="outline-container-org7b26949" class="outline-2">
+<h2 id="org7b26949"><span class="section-number-2">1.</span> Fixing Common Lisp LD<sub>LIBRARY</sub><sub>PATH</sub></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 If CL FFI can't see your library, such as OpenSSL, try building the path in the <code>shellHook</code>.
@@ -249,8 +249,8 @@ More info: <a href="https://archive.is/XvKqX">https://archive.is/XvKqX</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgd2d6cc8" class="outline-2">
-<h2 id="orgd2d6cc8"><span class="section-number-2">2.</span> FootNotes</h2>
+<div id="outline-container-orgea0316f" class="outline-2">
+<h2 id="orgea0316f"><span class="section-number-2">2.</span> FootNotes</h2>
 <div class="outline-text-2" id="text-2">
 </div>
 </div>
@@ -266,7 +266,7 @@ More info: <a href="https://archive.is/XvKqX">https://archive.is/XvKqX</a>
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="date">Created: 2023-06-29 Thu 22:45</p>
+<p class="date">Created: 2023-06-29 Thu 23:13</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
