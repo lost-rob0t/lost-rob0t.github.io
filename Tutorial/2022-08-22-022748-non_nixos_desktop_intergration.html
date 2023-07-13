@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>non nixos desktop intergration</title>
@@ -28,13 +28,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgce4578a">How to intergrate nix on non nix system</a>
+<li><a href="#org57a7898">How to intergrate nix on non nix system</a>
 <ul>
-<li><a href="#org76c8b53">Method 1 Symlink</a></li>
-<li><a href="#org4a76954">Method 2 Update XDG dirs</a></li>
+<li><a href="#org0e6fea1">Method 1 Symlink</a></li>
+<li><a href="#orgf12b47f">Method 2 Update XDG dirs</a></li>
 </ul>
 </li>
-<li><a href="#orge4801e0">links</a></li>
+<li><a href="#org265ce9e">links</a></li>
 </ul>
 </div>
 </div>
@@ -42,17 +42,17 @@
 <li><a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a></li>
 </ul>
 
-<div id="outline-container-orgce4578a" class="outline-2">
-<h2 id="orgce4578a">How to intergrate nix on non nix system</h2>
-<div class="outline-text-2" id="text-orgce4578a">
+<div id="outline-container-org57a7898" class="outline-2">
+<h2 id="org57a7898">How to intergrate nix on non nix system</h2>
+<div class="outline-text-2" id="text-org57a7898">
 <p>
 I was setting up my Hack the box machine and noticed that nix installed programs are not on the path and can not be launche from the gui.
 I have 2 Solutions
 </p>
 </div>
-<div id="outline-container-org76c8b53" class="outline-3">
-<h3 id="org76c8b53">Method 1 Symlink</h3>
-<div class="outline-text-3" id="text-org76c8b53">
+<div id="outline-container-org0e6fea1" class="outline-3">
+<h3 id="org0e6fea1">Method 1 Symlink</h3>
+<div class="outline-text-3" id="text-org0e6fea1">
 <p>
 Here you smlink <code>~/.nix/profile/share/spllications</code> to <code>~/.local/share/applications</code>
 </p>
@@ -65,15 +65,15 @@ If you use my dotfiles, you can run <code>nix-xdg-link</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-org4a76954" class="outline-3">
-<h3 id="org4a76954">Method 2 Update XDG dirs</h3>
+<div id="outline-container-orgf12b47f" class="outline-3">
+<h3 id="orgf12b47f">Method 2 Update XDG dirs</h3>
 </div>
 </div>
 
 
-<div id="outline-container-orge4801e0" class="outline-2">
-<h2 id="orge4801e0">links</h2>
-<div class="outline-text-2" id="text-orge4801e0">
+<div id="outline-container-org265ce9e" class="outline-2">
+<h2 id="org265ce9e">links</h2>
+<div class="outline-text-2" id="text-org265ce9e">
 <ul class="org-ul">
 <li><a href="https://discourse.nixos.org/t/desktop-file-integration-in-non-nixos-platforms/9050">https://discourse.nixos.org/t/desktop-file-integration-in-non-nixos-platforms/9050</a></li>
 <li><a href="https://wiki.archlinux.org/title/XDG_user_directories">https://wiki.archlinux.org/title/XDG_user_directories</a></li>

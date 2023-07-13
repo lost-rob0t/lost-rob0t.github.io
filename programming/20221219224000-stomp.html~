@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>STOMP</title>
@@ -28,12 +28,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org01b7b48">Simple Text Oriented Messeging protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="stomp">stomp</span></span></a>
+<li><a href="#orgd695e40">Simple Text Oriented Messeging protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="stomp">stomp</span></span></a>
 <ul>
-<li><a href="#org72d6b9d">Overview</a></li>
-<li><a href="#org728ab8a">Commands</a>
+<li><a href="#orgc35b556">Overview</a></li>
+<li><a href="#orgb816c20">Commands</a>
 <ul>
-<li><a href="#org8bae556">CONNECT</a></li>
+<li><a href="#orgd01f809">CONNECT</a></li>
 </ul>
 </li>
 </ul>
@@ -42,9 +42,9 @@
 </div>
 </div>
 
-<div id="outline-container-org01b7b48" class="outline-2">
-<h2 id="org01b7b48">Simple Text Oriented Messeging protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="stomp">stomp</span></span></h2>
-<div class="outline-text-2" id="text-org01b7b48">
+<div id="outline-container-orgd695e40" class="outline-2">
+<h2 id="orgd695e40">Simple Text Oriented Messeging protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="stomp">stomp</span></span></h2>
+<div class="outline-text-2" id="text-orgd695e40">
 <p>
 STOMP is a simple text based protocol for working with <a href="../20221219225036-message_oriented_middleware.html#ID-8a9b8114-4064-48ed-8057-5f6a7c512ea1">Message oriented middleware</a>.
 It is very simular to the Well Known <a href="20221219225206-http.html#ID-55fa6669-d1f4-4956-abf0-a0c3c2aac23b">HTTP</a>, it works over <a href="20221219225308-tcp.html#ID-a75d2660-481e-4c42-98bf-358b08f8c030">TCP</a>.
@@ -53,9 +53,9 @@ Stomp is an alterntive to other messaging protocoles that cover a small subset o
 </div>
 
 
-<div id="outline-container-org72d6b9d" class="outline-3">
-<h3 id="org72d6b9d">Overview</h3>
-<div class="outline-text-3" id="text-org72d6b9d">
+<div id="outline-container-orgc35b556" class="outline-3">
+<h3 id="orgc35b556">Overview</h3>
+<div class="outline-text-3" id="text-orgc35b556">
 <p>
 It is a frame based protocol. Frames are moddeled on <a href="20221219225206-http.html#ID-55fa6669-d1f4-4956-abf0-a0c3c2aac23b">HTTP</a>.
 A frame is a command, a set of optional headers and an optional body. By defualt it is textbased but also can transmit binary messages.
@@ -63,9 +63,9 @@ A frame is a command, a set of optional headers and an optional body. By defualt
 </div>
 </div>
 
-<div id="outline-container-org728ab8a" class="outline-3">
-<h3 id="org728ab8a">Commands</h3>
-<div class="outline-text-3" id="text-org728ab8a">
+<div id="outline-container-orgb816c20" class="outline-3">
+<h3 id="orgb816c20">Commands</h3>
+<div class="outline-text-3" id="text-orgb816c20">
 <p>
 Here is the list of commands as of v1.2
 </p>
@@ -83,8 +83,8 @@ Here is the list of commands as of v1.2
 </ul>
 </div>
 
-<div id="outline-container-org8bae556" class="outline-4">
-<h4 id="org8bae556">CONNECT</h4>
+<div id="outline-container-orgd01f809" class="outline-4">
+<h4 id="orgd01f809">CONNECT</h4>
 </div>
 </div>
 </div>

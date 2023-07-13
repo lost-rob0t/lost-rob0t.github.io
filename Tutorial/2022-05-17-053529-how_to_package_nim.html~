@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>how to package nim</title>
@@ -28,16 +28,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9711691">nimble2nix</a></li>
-<li><a href="#orgcb5a80a">Using nix</a></li>
-<li><a href="#orgd98ee20">using flakes</a></li>
+<li><a href="#org35214e6">nimble2nix</a></li>
+<li><a href="#org307b212">Using nix</a></li>
+<li><a href="#org3c26aa0">using flakes</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9711691" class="outline-2">
-<h2 id="org9711691">nimble2nix</h2>
-<div class="outline-text-2" id="text-org9711691">
+<div id="outline-container-org35214e6" class="outline-2">
+<h2 id="org35214e6">nimble2nix</h2>
+<div class="outline-text-2" id="text-org35214e6">
 <p>
 Painless Nimble deps
 <a href="https://github.com/bandithedoge/nimble2nix">https://github.com/bandithedoge/nimble2nix</a>
@@ -47,9 +47,9 @@ nimble2nix .</code>
 </div>
 </div>
 
-<div id="outline-container-orgcb5a80a" class="outline-2">
-<h2 id="orgcb5a80a">Using nix</h2>
-<div class="outline-text-2" id="text-orgcb5a80a">
+<div id="outline-container-org307b212" class="outline-2">
+<h2 id="org307b212">Using nix</h2>
+<div class="outline-text-2" id="text-org307b212">
 <p>
 here is an example package i made for counting puffs
 pkgs/puffer/defualt.nix
@@ -101,9 +101,9 @@ in
 </div>
 </div>
 
-<div id="outline-container-orgd98ee20" class="outline-2">
-<h2 id="orgd98ee20">using flakes</h2>
-<div class="outline-text-2" id="text-orgd98ee20">
+<div id="outline-container-org3c26aa0" class="outline-2">
+<h2 id="org3c26aa0">using flakes</h2>
+<div class="outline-text-2" id="text-org3c26aa0">
 <ul class="org-ul">
 <li><a href="2022-05-16-045822-nim_flake_example.html#ID-62bf048c-8b3b-4356-a939-ac7132bfaae2">nim-flake-example</a></li>
 </ul>

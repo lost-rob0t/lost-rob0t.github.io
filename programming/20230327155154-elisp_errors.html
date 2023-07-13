@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>elisp errors</title>
@@ -28,13 +28,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgaad4c7c">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></a>
+<li><a href="#orgbc0321d">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></a>
 <ul>
-<li><a href="#orgd2faa7d">Raising errors</a></li>
-<li><a href="#orga865f57">Handling errors</a>
+<li><a href="#orgdd11afb">Raising errors</a></li>
+<li><a href="#org7d8e773">Handling errors</a>
 <ul>
-<li><a href="#orgbfd8ef2">unwind-protect</a></li>
-<li><a href="#orgae414c6">condition-case</a></li>
+<li><a href="#orgfbe6095">unwind-protect</a></li>
+<li><a href="#orgb7bf302">condition-case</a></li>
 </ul>
 </li>
 </ul>
@@ -44,9 +44,9 @@
 </div>
 
 
-<div id="outline-container-orgaad4c7c" class="outline-2">
-<h2 id="orgaad4c7c">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></h2>
-<div class="outline-text-2" id="text-orgaad4c7c">
+<div id="outline-container-orgbc0321d" class="outline-2">
+<h2 id="orgbc0321d">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></h2>
+<div class="outline-text-2" id="text-orgbc0321d">
 <p>
 Error handling in any language is often messy, no diffrent with elisp.
 </p>
@@ -55,9 +55,9 @@ Error handling in any language is often messy, no diffrent with elisp.
 Errors in emacs lisp are called <code>signals</code>.
 </p>
 </div>
-<div id="outline-container-orgd2faa7d" class="outline-3">
-<h3 id="orgd2faa7d">Raising errors</h3>
-<div class="outline-text-3" id="text-orgd2faa7d">
+<div id="outline-container-orgdd11afb" class="outline-3">
+<h3 id="orgdd11afb">Raising errors</h3>
+<div class="outline-text-3" id="text-orgdd11afb">
 <p>
 You can "raise" or "signal" with the <code>signal</code> and <code>error</code> functions.
 </p>
@@ -77,17 +77,17 @@ You pass a error symbol and associated dated.
 </div>
 
 
-<div id="outline-container-orga865f57" class="outline-3">
-<h3 id="orga865f57">Handling errors</h3>
-<div class="outline-text-3" id="text-orga865f57">
+<div id="outline-container-org7d8e773" class="outline-3">
+<h3 id="org7d8e773">Handling errors</h3>
+<div class="outline-text-3" id="text-org7d8e773">
 <p>
 You can handle errors with <code>unwind-protect</code> and <code>condition-case</code>.
 </p>
 </div>
 
-<div id="outline-container-orgbfd8ef2" class="outline-4">
-<h4 id="orgbfd8ef2">unwind-protect</h4>
-<div class="outline-text-4" id="text-orgbfd8ef2">
+<div id="outline-container-orgfbe6095" class="outline-4">
+<h4 id="orgfbe6095">unwind-protect</h4>
+<div class="outline-text-4" id="text-orgfbe6095">
 <p>
 unwind-protect is like the finally clause from other languages.
 or the <code>defer</code> statement in <a href="20220606215451-nim.html#ID-af6fae74-d03b-4930-8f39-63becb43efd9">Nim</a>.
@@ -101,9 +101,9 @@ or the <code>defer</code> statement in <a href="20220606215451-nim.html#ID-af6fa
 </div>
 </div>
 
-<div id="outline-container-orgae414c6" class="outline-4">
-<h4 id="orgae414c6">condition-case</h4>
-<div class="outline-text-4" id="text-orgae414c6">
+<div id="outline-container-orgb7bf302" class="outline-4">
+<h4 id="orgb7bf302">condition-case</h4>
+<div class="outline-text-4" id="text-orgb7bf302">
 <p>
 <code>condition-case</code> is the try-catch from other languages.
 </p>

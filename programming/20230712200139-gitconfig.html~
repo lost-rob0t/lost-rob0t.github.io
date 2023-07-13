@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>gitconfig</title>
@@ -28,13 +28,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2796dda">Git Config</a>
+<li><a href="#org6983d96">Git Config</a>
 <ul>
-<li><a href="#orgaa55c74">Common Settings</a>
+<li><a href="#orgf7c6f40">Common Settings</a>
 <ul>
-<li><a href="#org823704f">User</a></li>
-<li><a href="#org5911fc3">Gui</a></li>
-<li><a href="#org2072ac4">init</a></li>
+<li><a href="#org207b340">User</a></li>
+<li><a href="#org2e78f16">Gui</a></li>
+<li><a href="#orgb817a50">init</a></li>
 </ul>
 </li>
 </ul>
@@ -43,9 +43,9 @@
 </div>
 </div>
 
-<div id="outline-container-org2796dda" class="outline-2">
-<h2 id="org2796dda">Git Config</h2>
-<div class="outline-text-2" id="text-org2796dda">
+<div id="outline-container-org6983d96" class="outline-2">
+<h2 id="org6983d96">Git Config</h2>
+<div class="outline-text-2" id="text-org6983d96">
 <p>
 You can set the settings for a git repo with the <code>git config</code> command.
 </p>
@@ -58,13 +58,13 @@ These settings are written to a file <code>.gitconfig</code> if <code>git config
 You can list settings with <code>git config --list</code>.
 </p>
 </div>
-<div id="outline-container-orgaa55c74" class="outline-3">
-<h3 id="orgaa55c74">Common Settings</h3>
-<div class="outline-text-3" id="text-orgaa55c74">
+<div id="outline-container-orgf7c6f40" class="outline-3">
+<h3 id="orgf7c6f40">Common Settings</h3>
+<div class="outline-text-3" id="text-orgf7c6f40">
 </div>
-<div id="outline-container-org823704f" class="outline-4">
-<h4 id="org823704f">User</h4>
-<div class="outline-text-4" id="text-org823704f">
+<div id="outline-container-org207b340" class="outline-4">
+<h4 id="org207b340">User</h4>
+<div class="outline-text-4" id="text-org207b340">
 <div class="org-src-container">
 <pre class="src src-conf">[<span style="font-weight: bold; text-decoration: underline;">user</span>]
   <span style="font-weight: bold; font-style: italic;">email</span> = example@email.com
@@ -73,9 +73,9 @@ You can list settings with <code>git config --list</code>.
 </div>
 </div>
 </div>
-<div id="outline-container-org5911fc3" class="outline-4">
-<h4 id="org5911fc3">Gui</h4>
-<div class="outline-text-4" id="text-org5911fc3">
+<div id="outline-container-org2e78f16" class="outline-4">
+<h4 id="org2e78f16">Gui</h4>
+<div class="outline-text-4" id="text-org2e78f16">
 <p>
 Heres how you can set the editor to <a href="../20220428224740-emacs.html#ID-95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2">emacs</a>
 </p>
@@ -86,9 +86,9 @@ Heres how you can set the editor to <a href="../20220428224740-emacs.html#ID-95b
 </div>
 </div>
 </div>
-<div id="outline-container-org2072ac4" class="outline-4">
-<h4 id="org2072ac4">init</h4>
-<div class="outline-text-4" id="text-org2072ac4">
+<div id="outline-container-orgb817a50" class="outline-4">
+<h4 id="orgb817a50">init</h4>
+<div class="outline-text-4" id="text-orgb817a50">
 <p>
 If you need to set the default branch heres how you can do so.
 </p>

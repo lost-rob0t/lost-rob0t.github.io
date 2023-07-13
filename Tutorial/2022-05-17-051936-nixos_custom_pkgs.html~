@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nixos custom pkgs</title>
@@ -28,20 +28,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org672e74e">How to use custom packages</a></li>
-<li><a href="#org02bc1a9">Tips</a>
+<li><a href="#orgd6e26c3">How to use custom packages</a></li>
+<li><a href="#org183958c">Tips</a>
 <ul>
-<li><a href="#org7e50701">Installing from a local repo</a></li>
-<li><a href="#org51492df">error: derivation name missing</a></li>
-<li><a href="#orgcae4325">error: syntax error, unexpected ID, expecting ':' or '@'</a></li>
+<li><a href="#orgf8a1890">Installing from a local repo</a></li>
+<li><a href="#org59c117d">error: derivation name missing</a></li>
+<li><a href="#org92d49a0">error: syntax error, unexpected ID, expecting ':' or '@'</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org672e74e" class="outline-2">
-<h2 id="org672e74e">How to use custom packages</h2>
-<div class="outline-text-2" id="text-org672e74e">
+<div id="outline-container-orgd6e26c3" class="outline-2">
+<h2 id="orgd6e26c3">How to use custom packages</h2>
+<div class="outline-text-2" id="text-orgd6e26c3">
 <p>
 i have built a some packages myself and i cant find a way to use my overlay.
 Instead i maintain a nix-channel and point it my gitrepo with a archive url
@@ -64,13 +64,13 @@ in
 </div>
 </div>
 
-<div id="outline-container-org02bc1a9" class="outline-2">
-<h2 id="org02bc1a9">Tips</h2>
-<div class="outline-text-2" id="text-org02bc1a9">
+<div id="outline-container-org183958c" class="outline-2">
+<h2 id="org183958c">Tips</h2>
+<div class="outline-text-2" id="text-org183958c">
 </div>
-<div id="outline-container-org7e50701" class="outline-3">
-<h3 id="org7e50701">Installing from a local repo</h3>
-<div class="outline-text-3" id="text-org7e50701">
+<div id="outline-container-orgf8a1890" class="outline-3">
+<h3 id="orgf8a1890">Installing from a local repo</h3>
+<div class="outline-text-3" id="text-orgf8a1890">
 <p>
 This is mostly used for development of packages but can be used to install ad-hoc fixes quickly
 </p>
@@ -92,9 +92,9 @@ Build an expression
 </div>
 </div>
 </div>
-<div id="outline-container-org51492df" class="outline-3">
-<h3 id="org51492df">error: derivation name missing</h3>
-<div class="outline-text-3" id="text-org51492df">
+<div id="outline-container-org59c117d" class="outline-3">
+<h3 id="org59c117d">error: derivation name missing</h3>
+<div class="outline-text-3" id="text-org59c117d">
 <p>
 Version was not included.
 </p>
@@ -164,9 +164,9 @@ stdenv.mkDerivation rec {
 </div>
 </div>
 
-<div id="outline-container-orgcae4325" class="outline-3">
-<h3 id="orgcae4325">error: syntax error, unexpected ID, expecting ':' or '@'</h3>
-<div class="outline-text-3" id="text-orgcae4325">
+<div id="outline-container-org92d49a0" class="outline-3">
+<h3 id="org92d49a0">error: syntax error, unexpected ID, expecting ':' or '@'</h3>
+<div class="outline-text-3" id="text-org92d49a0">
 <p>
 This was painful you simply forgot to include a <code>:</code>
 Wrong

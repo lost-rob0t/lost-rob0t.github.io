@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nim</title>
@@ -28,28 +28,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org343006b">About</a>
+<li><a href="#org8c6e750">About</a>
 <ul>
-<li><a href="#org2a966db">Features</a></li>
+<li><a href="#org1224b7e">Features</a></li>
 </ul>
 </li>
-<li><a href="#org2841bee">Notes</a></li>
+<li><a href="#org339b34b">Notes</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org343006b" class="outline-2">
-<h2 id="org343006b">About</h2>
-<div class="outline-text-2" id="text-org343006b">
+<div id="outline-container-org8c6e750" class="outline-2">
+<h2 id="org8c6e750">About</h2>
+<div class="outline-text-2" id="text-org8c6e750">
 <p>
 Nim is a staticly typed compiled systems language.
 It takes inspiration from python, ada and others.
 </p>
 </div>
 
-<div id="outline-container-org2a966db" class="outline-3">
-<h3 id="org2a966db">Features</h3>
-<div class="outline-text-3" id="text-org2a966db">
+<div id="outline-container-org1224b7e" class="outline-3">
+<h3 id="org1224b7e">Features</h3>
+<div class="outline-text-3" id="text-org1224b7e">
 <p>
 Taken from <a href="https://nim-lang.org/">https://nim-lang.org/</a>
 </p>
@@ -82,9 +82,9 @@ Taken from <a href="https://nim-lang.org/">https://nim-lang.org/</a>
 
 
 
-<div id="outline-container-org2841bee" class="outline-2">
-<h2 id="org2841bee">Notes</h2>
-<div class="outline-text-2" id="text-org2841bee">
+<div id="outline-container-org339b34b" class="outline-2">
+<h2 id="org339b34b">Notes</h2>
+<div class="outline-text-2" id="text-org339b34b">
 <ul class="org-ul">
 <li><a href="2022-08-26-155254-metaprogramming.html#ID-982f9f57-4b5d-44b7-bc9b-89b7d977a077">Metaprogramming</a></li>
 <li><a href="20230309222949-nim_android.html#ID-8a01ff13-6724-4634-b901-074187c32a85">nim android</a></li>

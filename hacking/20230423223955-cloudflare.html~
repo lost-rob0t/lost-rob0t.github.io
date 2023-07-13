@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>cloudflare</title>
@@ -28,11 +28,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf2dc58a">Cloudflare</a>
+<li><a href="#org87f2650">Cloudflare</a>
 <ul>
-<li><a href="#org8876827">Bypasses</a>
+<li><a href="#org5dd92a1">Bypasses</a>
 <ul>
-<li><a href="#org1a8bc5f"><span class="todo TODO">TODO</span> Put list here https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></li>
+<li><a href="#org42bfb1b"><span class="todo TODO">TODO</span> Put list here https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></li>
 </ul>
 </li>
 </ul>
@@ -40,25 +40,25 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf2dc58a" class="outline-2">
-<h2 id="orgf2dc58a">Cloudflare</h2>
-<div class="outline-text-2" id="text-orgf2dc58a">
+<div id="outline-container-org87f2650" class="outline-2">
+<h2 id="org87f2650">Cloudflare</h2>
+<div class="outline-text-2" id="text-org87f2650">
 <p>
 Cloudflare is a reverse proxy sites used to protect websites from ddos and bots.
 </p>
 </div>
 
 
-<div id="outline-container-org8876827" class="outline-3">
-<h3 id="org8876827">Bypasses</h3>
-<div class="outline-text-3" id="text-org8876827">
+<div id="outline-container-org5dd92a1" class="outline-3">
+<h3 id="org5dd92a1">Bypasses</h3>
+<div class="outline-text-3" id="text-org5dd92a1">
 <p>
 There are a number of ways to get around it depending on what your goal is.
 </p>
 </div>
 
-<div id="outline-container-org1a8bc5f" class="outline-4">
-<h4 id="org1a8bc5f"><span class="todo TODO">TODO</span> Put list here <a href="https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers">https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></h4>
+<div id="outline-container-org42bfb1b" class="outline-4">
+<h4 id="org42bfb1b"><span class="todo TODO">TODO</span> Put list here <a href="https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers">https://scrapeops.io/web-scraping-playbook/how-to-bypass-cloudflare/#scrape-with-fortified-headless-browsers</a></h4>
 </div>
 </div>
 </div>

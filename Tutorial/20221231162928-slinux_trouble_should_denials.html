@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SLinux Trouble Shoot Denials</title>
@@ -28,17 +28,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2a488dd">How to trouble shoot SELInux denials&#xa0;&#xa0;&#xa0;<span class="tag"><span class="selinux">selinux</span>&#xa0;<span class=""></span>&#xa0;<span class="linux">linux</span></span></a>
+<li><a href="#orge241dca">How to trouble shoot SELInux denials&#xa0;&#xa0;&#xa0;<span class="tag"><span class="selinux">selinux</span>&#xa0;<span class=""></span>&#xa0;<span class="linux">linux</span></span></a>
 <ul>
-<li><a href="#org66139b2"><code>ausearch</code> command</a>
+<li><a href="#orgb87bf34"><code>ausearch</code> command</a>
 <ul>
-<li><a href="#org2847150">Find recent events</a></li>
-<li><a href="#org19507c4">Options</a></li>
+<li><a href="#org890c21f">Find recent events</a></li>
+<li><a href="#orgd132766">Options</a></li>
 </ul>
 </li>
-<li><a href="#orgc134283"><code>audit2why</code></a>
+<li><a href="#org2f597e1"><code>audit2why</code></a>
 <ul>
-<li><a href="#org331225c">Search for sshd issues and find out why</a></li>
+<li><a href="#org9bbeb99">Search for sshd issues and find out why</a></li>
 </ul>
 </li>
 </ul>
@@ -46,26 +46,26 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org2a488dd" class="outline-2">
-<h2 id="org2a488dd">How to trouble shoot SELInux denials&#xa0;&#xa0;&#xa0;<span class="tag"><span class="selinux">selinux</span>&#xa0;<span class=""></span>&#xa0;<span class="linux">linux</span></span></h2>
-<div class="outline-text-2" id="text-org2a488dd">
+<div id="outline-container-orge241dca" class="outline-2">
+<h2 id="orge241dca">How to trouble shoot SELInux denials&#xa0;&#xa0;&#xa0;<span class="tag"><span class="selinux">selinux</span>&#xa0;<span class=""></span>&#xa0;<span class="linux">linux</span></span></h2>
+<div class="outline-text-2" id="text-orge241dca">
 <p>
 A lot of people's problems with selinux is it will block something they are trying to do.
 So then they just disable it. That is fine for a personal machine but what if it is a server and you want it to work?
 </p>
 </div>
 
-<div id="outline-container-org66139b2" class="outline-3">
-<h3 id="org66139b2"><code>ausearch</code> command</h3>
-<div class="outline-text-3" id="text-org66139b2">
+<div id="outline-container-orgb87bf34" class="outline-3">
+<h3 id="orgb87bf34"><code>ausearch</code> command</h3>
+<div class="outline-text-3" id="text-orgb87bf34">
 <p>
 <code>ausearch</code> can query the <code>auditd</code> logs based on search criteria.
 </p>
 </div>
 
-<div id="outline-container-org2847150" class="outline-4">
-<h4 id="org2847150">Find recent events</h4>
-<div class="outline-text-4" id="text-org2847150">
+<div id="outline-container-org890c21f" class="outline-4">
+<h4 id="org890c21f">Find recent events</h4>
+<div class="outline-text-4" id="text-org890c21f">
 <p>
 Recent will grab the last ten minutes
 </p>
@@ -86,14 +86,14 @@ Find issues from today looking for sshd
 
 
 
-<div id="outline-container-org19507c4" class="outline-4">
-<h4 id="org19507c4">Options</h4>
-<div class="outline-text-4" id="text-org19507c4">
+<div id="outline-container-orgd132766" class="outline-4">
+<h4 id="orgd132766">Options</h4>
+<div class="outline-text-4" id="text-orgd132766">
 <p>
 Most used options from the man-page
 You can fine the online man-page <a href="https://man7.org/linux/man-pages/man8/ausearch.8.html">here</a>.
 </p>
-<pre class="example" id="org09e1e25">
+<pre class="example" id="org5c72f4a">
 -a, --event audit-event-id
        Search for an event based on the given event ID. Messages
        always start with something like
@@ -179,17 +179,17 @@ You can fine the online man-page <a href="https://man7.org/linux/man-pages/man8/
 </div>
 </div>
 
-<div id="outline-container-orgc134283" class="outline-3">
-<h3 id="orgc134283"><code>audit2why</code></h3>
-<div class="outline-text-3" id="text-orgc134283">
+<div id="outline-container-org2f597e1" class="outline-3">
+<h3 id="org2f597e1"><code>audit2why</code></h3>
+<div class="outline-text-3" id="text-org2f597e1">
 <p>
 <code>audit2why</code> will translate audit messages into a description of why it was denied.
 </p>
 </div>
 
-<div id="outline-container-org331225c" class="outline-4">
-<h4 id="org331225c">Search for sshd issues and find out why</h4>
-<div class="outline-text-4" id="text-org331225c">
+<div id="outline-container-org9bbeb99" class="outline-4">
+<h4 id="org9bbeb99">Search for sshd issues and find out why</h4>
+<div class="outline-text-4" id="text-org9bbeb99">
 <p>
 This command will search for issues starting today for sshd with grep then pipe it into <code>audit2why</code> and possibly get an explanation.
 </p>

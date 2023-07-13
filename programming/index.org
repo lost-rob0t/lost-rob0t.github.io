@@ -1,4 +1,4 @@
-#+TITLE: The Lost Wiki
+#+TITLE: The Lost Wiki - Programming
 
 - [[file:20230712200139-gitconfig.org][gitconfig]]
 - [[file:20230601215350-rest_api_s_in_common_lisp.org][Rest Api's in common lisp]]

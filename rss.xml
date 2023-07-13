@@ -9,18 +9,18 @@
      xmlns:georss="http://www.georss.org/georss"
      xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:media="http://search.yahoo.com/mrss/"><channel>
-  <title>The Lost Wiki</title>
+  <title>The Lost Wiki Rss</title>
   <atom:link href="/index.html/rss.xml" rel="self" type="application/rss+xml" />
   <link>/index.html</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 12 Jul 2023 21:08:27 -0400</pubDate>
-  <lastBuildDate>Wed, 12 Jul 2023 21:08:27 -0400</lastBuildDate>
+  <pubDate>Wed, 12 Jul 2023 22:17:16 -0400</pubDate>
+  <lastBuildDate>Wed, 12 Jul 2023 22:17:16 -0400</lastBuildDate>
   <generator>Emacs 28.2 Org-mode 9.5.5</generator>
   <webMaster> (lost robot)</webMaster>
   <image>
     <url>https://orgmode.org/img/org-mode-unicorn-logo.png</url>
-    <title>The Lost Wiki</title>
+    <title>The Lost Wiki Rss</title>
     <link>/index.html</link>
   </image>
 
@@ -33,10 +33,10 @@
     <pubDate>Wed, 12 Jul 2023 00:00:00 -0400</pubDate>
 
     <description><![CDATA[<p>
-    <a href="rss.html">The Lost Wiki</a>
+    <a href="rss.html">The Lost Wiki Rss</a>
+    <a href="programming/index.html">The Lost Wiki - Programming</a>
+    <a href="Tutorial/index.html">The Lost Wiki - Tutorials</a>
     <a href="sitemap.html">Sitemap for project lostWiki</a>
-    <a href="programming/index.html">The Lost Wiki</a>
-    <a href="Tutorial/index.html">The Lost Wiki</a>
     <a href="programming/20230712200139-gitconfig.html">gitconfig</a>
     <a href="20220428224740-emacs.html">emacs</a>
     <a href="Tutorial/20230712195935-multiple_git_identity.html">multiple git identity</a>
@@ -230,16 +230,16 @@
   </p>
   </div>
   </div>
-  <div id="outline-container-ID-b8a6a62c-0050-4cfb-97d4-d29802bad6b4" class="outline-3">
-  <h3 id="ID-b8a6a62c-0050-4cfb-97d4-d29802bad6b4"><span class="section-number-3">2.4.</span> Org</h3>
+  <div id="outline-container-ID-d5f8679a-2db8-4d84-8553-873663d0b8e6" class="outline-3">
+  <h3 id="ID-d5f8679a-2db8-4d84-8553-873663d0b8e6"><span class="section-number-3">2.4.</span> Org</h3>
   <div class="outline-text-3" id="text-2-4">
   <p>
   <a href="20221216043133-publish_org_roam.html#ID-2b069384-79d9-4ed3-bc6e-b766edf526cb">Publish Script</a>
   </p>
   </div>
   </div>
-  <div id="outline-container-ID-b9b6b254-b6a0-4584-8e69-f1de1fc5efd9" class="outline-3">
-  <h3 id="ID-b9b6b254-b6a0-4584-8e69-f1de1fc5efd9"><span class="section-number-3">2.5.</span> Git</h3>
+  <div id="outline-container-ID-695d404f-2dfc-46ef-8bcf-80fc27e6c047" class="outline-3">
+  <h3 id="ID-695d404f-2dfc-46ef-8bcf-80fc27e6c047"><span class="section-number-3">2.5.</span> Git</h3>
   <div class="outline-text-3" id="text-2-5">
   <p>
   <a href="programming/20230712200139-gitconfig.html#ID-dc00a2c6-6aa9-4c90-ba6d-6982067d2169">gitconfig</a>

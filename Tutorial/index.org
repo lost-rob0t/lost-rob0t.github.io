@@ -1,4 +1,4 @@
-#+TITLE: The Lost Wiki
+#+TITLE: The Lost Wiki - Tutorials
 
 - [[file:20230712195935-multiple_git_identity.org][multiple git identity]]
 - [[file:20221229193155-fix_aspell_on_nixos.org][Fix Aspell on nixos]]

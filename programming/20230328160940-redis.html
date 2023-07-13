@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>redis</title>
@@ -28,34 +28,34 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org965c870">Redis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="database">database</span>&#xa0;<span class="db">db</span>&#xa0;<span class="redis">redis</span></span></a>
+<li><a href="#org30ce612">Redis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="database">database</span>&#xa0;<span class="db">db</span>&#xa0;<span class="redis">redis</span></span></a>
 <ul>
-<li><a href="#org26eb3ac">Topics</a></li>
-<li><a href="#org4ffe2f5">Storage and Retrieval</a></li>
-<li><a href="#org5aec4c4">Data Types</a>
+<li><a href="#org08cd9b4">Topics</a></li>
+<li><a href="#org8b50cf6">Storage and Retrieval</a></li>
+<li><a href="#org7d4870b">Data Types</a>
 <ul>
-<li><a href="#org5a74f7b">String</a></li>
-<li><a href="#orgd58c05b">Hashes</a></li>
+<li><a href="#org19159d2">String</a></li>
+<li><a href="#orga4ee0ce">Hashes</a></li>
 </ul>
 </li>
-<li><a href="#org1959a72">Commands</a>
+<li><a href="#orgcbf9ca3">Commands</a>
 <ul>
-<li><a href="#org0ca29b9">SET</a></li>
-<li><a href="#org7045a35">GET</a></li>
-<li><a href="#org088673d">Del</a></li>
-<li><a href="#org78dc9b6">GETSET</a></li>
-<li><a href="#orga9da887">SETNX</a></li>
+<li><a href="#org8593396">SET</a></li>
+<li><a href="#orgd9a4a17">GET</a></li>
+<li><a href="#orgdb2d592">Del</a></li>
+<li><a href="#org1f93112">GETSET</a></li>
+<li><a href="#org4d49438">SETNX</a></li>
 </ul>
 </li>
-<li><a href="#orgcc2893c">Atomic Commands</a></li>
+<li><a href="#org35df6e9">Atomic Commands</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org965c870" class="outline-2">
-<h2 id="org965c870">Redis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="database">database</span>&#xa0;<span class="db">db</span>&#xa0;<span class="redis">redis</span></span></h2>
-<div class="outline-text-2" id="text-org965c870">
+<div id="outline-container-org30ce612" class="outline-2">
+<h2 id="org30ce612">Redis&#xa0;&#xa0;&#xa0;<span class="tag"><span class="database">database</span>&#xa0;<span class="db">db</span>&#xa0;<span class="redis">redis</span></span></h2>
+<div class="outline-text-2" id="text-org30ce612">
 <p>
 Redis is a in memeory key-value dataabase. Since it is a nosql database it can do a number of things.
 </p>
@@ -70,18 +70,18 @@ Redis stands for remote dictionary server.
 </p>
 </div>
 
-<div id="outline-container-org26eb3ac" class="outline-3">
-<h3 id="org26eb3ac">Topics</h3>
-<div class="outline-text-3" id="text-org26eb3ac">
+<div id="outline-container-org08cd9b4" class="outline-3">
+<h3 id="org08cd9b4">Topics</h3>
+<div class="outline-text-3" id="text-org08cd9b4">
 <ul class="org-ul">
 <li><a href="20230330161754-redis_expiration.html#ID-d7ec3a25-ea89-4ab5-ac11-dd4fd05f94a9">redis expiration</a></li>
 <li></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4ffe2f5" class="outline-3">
-<h3 id="org4ffe2f5">Storage and Retrieval</h3>
-<div class="outline-text-3" id="text-org4ffe2f5">
+<div id="outline-container-org8b50cf6" class="outline-3">
+<h3 id="org8b50cf6">Storage and Retrieval</h3>
+<div class="outline-text-3" id="text-org8b50cf6">
 <p>
 Like other key value databases.
 All keys are strings.
@@ -96,21 +96,21 @@ Single commands are atomic.
 </div>
 
 
-<div id="outline-container-org5aec4c4" class="outline-3">
-<h3 id="org5aec4c4">Data Types</h3>
-<div class="outline-text-3" id="text-org5aec4c4">
+<div id="outline-container-org7d4870b" class="outline-3">
+<h3 id="org7d4870b">Data Types</h3>
+<div class="outline-text-3" id="text-org7d4870b">
 </div>
-<div id="outline-container-org5a74f7b" class="outline-4">
-<h4 id="org5a74f7b">String</h4>
-<div class="outline-text-4" id="text-org5a74f7b">
+<div id="outline-container-org19159d2" class="outline-4">
+<h4 id="org19159d2">String</h4>
+<div class="outline-text-4" id="text-org19159d2">
 <p>
 Normal sequence of bytes. They are binary safe, so they are not null terminated.
 </p>
 </div>
 </div>
-<div id="outline-container-orgd58c05b" class="outline-4">
-<h4 id="orgd58c05b">Hashes</h4>
-<div class="outline-text-4" id="text-orgd58c05b">
+<div id="outline-container-orga4ee0ce" class="outline-4">
+<h4 id="orga4ee0ce">Hashes</h4>
+<div class="outline-text-4" id="text-orga4ee0ce">
 <p>
 Represents a collection of key val pairs
 </p>
@@ -123,17 +123,17 @@ The command prefixes start with H
 </div>
 
 
-<div id="outline-container-org1959a72" class="outline-3">
-<h3 id="org1959a72">Commands</h3>
-<div class="outline-text-3" id="text-org1959a72">
+<div id="outline-container-orgcbf9ca3" class="outline-3">
+<h3 id="orgcbf9ca3">Commands</h3>
+<div class="outline-text-3" id="text-orgcbf9ca3">
 <p>
 I will not list all the commands here, just the most used ones
 </p>
 </div>
 
-<div id="outline-container-org0ca29b9" class="outline-4">
-<h4 id="org0ca29b9">SET</h4>
-<div class="outline-text-4" id="text-org0ca29b9">
+<div id="outline-container-org8593396" class="outline-4">
+<h4 id="org8593396">SET</h4>
+<div class="outline-text-4" id="text-org8593396">
 <p>
 Set is used to set a key to a value
 </p>
@@ -144,9 +144,9 @@ Set is used to set a key to a value
 </div>
 </div>
 </div>
-<div id="outline-container-org7045a35" class="outline-4">
-<h4 id="org7045a35">GET</h4>
-<div class="outline-text-4" id="text-org7045a35">
+<div id="outline-container-orgd9a4a17" class="outline-4">
+<h4 id="orgd9a4a17">GET</h4>
+<div class="outline-text-4" id="text-orgd9a4a17">
 <p>
 Get is used to get a key's value
 </p>
@@ -156,9 +156,9 @@ Get is used to get a key's value
 </div>
 </div>
 </div>
-<div id="outline-container-org088673d" class="outline-4">
-<h4 id="org088673d">Del</h4>
-<div class="outline-text-4" id="text-org088673d">
+<div id="outline-container-orgdb2d592" class="outline-4">
+<h4 id="orgdb2d592">Del</h4>
+<div class="outline-text-4" id="text-orgdb2d592">
 <p>
 Del removes a key
 </p>
@@ -169,9 +169,9 @@ Del removes a key
 </div>
 </div>
 
-<div id="outline-container-org78dc9b6" class="outline-4">
-<h4 id="org78dc9b6">GETSET</h4>
-<div class="outline-text-4" id="text-org78dc9b6">
+<div id="outline-container-org1f93112" class="outline-4">
+<h4 id="org1f93112">GETSET</h4>
+<div class="outline-text-4" id="text-org1f93112">
 <p>
 Get a key's value and set a new one
 </p>
@@ -188,9 +188,9 @@ If you ran it one more time you would get foo1
 </p>
 </div>
 </div>
-<div id="outline-container-orga9da887" class="outline-4">
-<h4 id="orga9da887">SETNX</h4>
-<div class="outline-text-4" id="text-orga9da887">
+<div id="outline-container-org4d49438" class="outline-4">
+<h4 id="org4d49438">SETNX</h4>
+<div class="outline-text-4" id="text-org4d49438">
 <p>
 Set a key if its non existent (is this a lock?)
 </p>
@@ -227,9 +227,9 @@ See since name exists it failed to set the key
 </div>
 
 
-<div id="outline-container-orgcc2893c" class="outline-3">
-<h3 id="orgcc2893c">Atomic Commands</h3>
-<div class="outline-text-3" id="text-orgcc2893c">
+<div id="outline-container-org35df6e9" class="outline-3">
+<h3 id="org35df6e9">Atomic Commands</h3>
+<div class="outline-text-3" id="text-org35df6e9">
 <p>
 A atomic command is one that can take multiple keys and values and do it in a all or fail manner
 </p>

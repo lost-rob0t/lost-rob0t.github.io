@@ -1,9 +1,9 @@
 #+TITLE: Sitemap for project lostWiki
 
-- [[file:rss.org][The Lost Wiki]]
+- [[file:rss.org][The Lost Wiki Rss]]
+- [[file:programming/index.org][The Lost Wiki - Programming]]
+- [[file:Tutorial/index.org][The Lost Wiki - Tutorials]]
 - [[file:sitemap.org][Sitemap for project lostWiki]]
-- [[file:programming/index.org][The Lost Wiki]]
-- [[file:Tutorial/index.org][The Lost Wiki]]
 - [[file:programming/20230712200139-gitconfig.org][gitconfig]]
 - [[file:20220428224740-emacs.org][emacs]]
 - [[file:Tutorial/20230712195935-multiple_git_identity.org][multiple git identity]]

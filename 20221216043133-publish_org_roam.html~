@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:06 -->
+<!-- 2023-07-12 Wed 21:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Publish Org Roam</title>
@@ -28,10 +28,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org663dfb9">How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></a>
+<li><a href="#orgb3495ad">How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></a>
 <ul>
 <li><a href="#ID-2b069384-79d9-4ed3-bc6e-b766edf526cb">Publish Script</a></li>
-<li><a href="#orgaf9e93b">See also</a></li>
+<li><a href="#org2753a62">See also</a></li>
 </ul>
 </li>
 </ul>
@@ -43,9 +43,9 @@
 
 
 
-<div id="outline-container-org663dfb9" class="outline-2">
-<h2 id="org663dfb9">How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></h2>
-<div class="outline-text-2" id="text-org663dfb9">
+<div id="outline-container-orgb3495ad" class="outline-2">
+<h2 id="orgb3495ad">How To Publish org roam notes&#xa0;&#xa0;&#xa0;<span class="tag"><span class="org">org</span>&#xa0;<span class="roam">roam</span>&#xa0;<span class="emacs">emacs</span></span></h2>
+<div class="outline-text-2" id="text-orgb3495ad">
 <p>
 By Defualt org roam notes do not work with <code>org-publish</code> becuase it doesnt know how to resolve the id links.
 </p>
@@ -55,7 +55,7 @@ By Defualt org roam notes do not work with <code>org-publish</code> becuase it d
 
 <div id="outline-container-ID-2b069384-79d9-4ed3-bc6e-b766edf526cb" class="outline-3">
 <h3 id="ID-2b069384-79d9-4ed3-bc6e-b766edf526cb">Publish Script</h3>
-<div class="outline-text-3" id="text-org1fb2665">
+<div class="outline-text-3" id="text-org4fef3ea">
 <p>
 Preamble header
 A simple macro to run code when not in <a href="noninteractive">noninteractive</a>.
@@ -303,9 +303,9 @@ Export
 </div>
 </div>
 
-<div id="outline-container-orgaf9e93b" class="outline-3">
-<h3 id="orgaf9e93b">See also</h3>
-<div class="outline-text-3" id="text-orgaf9e93b">
+<div id="outline-container-org2753a62" class="outline-3">
+<h3 id="org2753a62">See also</h3>
+<div class="outline-text-3" id="text-org2753a62">
 <ul class="org-ul">
 <li><a href="https://gitlab.com/ngm/commonplace/-/blob/master/publish.el#L98">https://gitlab.com/ngm/commonplace/-/blob/master/publish.el#L98</a></li>
 <li><a href="https://orgmode.org/manual/Simple-example.html">https://orgmode.org/manual/Simple-example.html</a></li>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nixos-python</title>
@@ -28,16 +28,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org5bfad62">Setting up a python dev enviroment in nix</a>
+<li><a href="#orgf093032">Setting up a python dev enviroment in nix</a>
 <ul>
-<li><a href="#org6bd04cb">Impure Dev setup with pipenv</a>
+<li><a href="#org9069845">Impure Dev setup with pipenv</a>
 <ul>
-<li><a href="#org012271c">shell.nix</a></li>
+<li><a href="#org06af2e8">shell.nix</a></li>
 </ul>
 </li>
-<li><a href="#org584ec87">Pure nix flakes</a>
+<li><a href="#org25c4149">Pure nix flakes</a>
 <ul>
-<li><a href="#org2386189">mach-nix</a></li>
+<li><a href="#orge9ac277">mach-nix</a></li>
 </ul>
 </li>
 </ul>
@@ -45,26 +45,26 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org5bfad62" class="outline-2">
-<h2 id="org5bfad62">Setting up a python dev enviroment in nix</h2>
-<div class="outline-text-2" id="text-org5bfad62">
+<div id="outline-container-orgf093032" class="outline-2">
+<h2 id="orgf093032">Setting up a python dev enviroment in nix</h2>
+<div class="outline-text-2" id="text-orgf093032">
 <p>
 The python packaging on nim is very lacking and often require you to build/hack around/bend nix to your will
 </p>
 </div>
 
-<div id="outline-container-org6bd04cb" class="outline-3">
-<h3 id="org6bd04cb">Impure Dev setup with pipenv</h3>
-<div class="outline-text-3" id="text-org6bd04cb">
+<div id="outline-container-org9069845" class="outline-3">
+<h3 id="org9069845">Impure Dev setup with pipenv</h3>
+<div class="outline-text-3" id="text-org9069845">
 <p>
 For most of the projects i often use a shell.nix and pipenv
 i will be moving to flakes as they seem more robust for packaging lib dirtrobutions
 </p>
 </div>
 
-<div id="outline-container-org012271c" class="outline-4">
-<h4 id="org012271c">shell.nix</h4>
-<div class="outline-text-4" id="text-org012271c">
+<div id="outline-container-org06af2e8" class="outline-4">
+<h4 id="org06af2e8">shell.nix</h4>
+<div class="outline-text-4" id="text-org06af2e8">
 <p>
 if you prefer to use `shell.nix`
 then copy paste this into your shell.nix
@@ -115,17 +115,17 @@ buildFHSUserEnv {
 </div>
 
 
-<div id="outline-container-org584ec87" class="outline-3">
-<h3 id="org584ec87">Pure nix flakes</h3>
-<div class="outline-text-3" id="text-org584ec87">
+<div id="outline-container-org25c4149" class="outline-3">
+<h3 id="org25c4149">Pure nix flakes</h3>
+<div class="outline-text-3" id="text-org25c4149">
 <p>
 the nix community have a number of tools for managing python packages
 </p>
 </div>
 
-<div id="outline-container-org2386189" class="outline-4">
-<h4 id="org2386189">mach-nix</h4>
-<div class="outline-text-4" id="text-org2386189">
+<div id="outline-container-orge9ac277" class="outline-4">
+<h4 id="orge9ac277">mach-nix</h4>
+<div class="outline-text-4" id="text-orge9ac277">
 <p>
 Mach-nix makes it easy to create and share reproducible python environments or packages. Existing tools for python package management often suffer from reproducibility and complexity issues, requiring a multitude of tools and additional virtualization layers to work sufficiently. Mach-nix aims to solve these problems by providing a simple way to use nix, a revolutionary build system which is known to achieve great reproducibility and portability besides [many other advantages](<a href="https://nixos.org/features.html">https://nixos.org/features.html</a>).
 </p>

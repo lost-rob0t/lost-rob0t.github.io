@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Bump in the wire</title>
@@ -28,17 +28,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8a3ef38">Bump In the wire&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cybersec">cybersec</span></span></a>
+<li><a href="#org24fa41f">Bump In the wire&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cybersec">cybersec</span></span></a>
 <ul>
-<li><a href="#org1f14964"><span class="todo TODO">TODO</span> Examples of BITW devices</a></li>
+<li><a href="#org455a717"><span class="todo TODO">TODO</span> Examples of BITW devices</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8a3ef38" class="outline-2">
-<h2 id="org8a3ef38">Bump In the wire&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cybersec">cybersec</span></span></h2>
-<div class="outline-text-2" id="text-org8a3ef38">
+<div id="outline-container-org24fa41f" class="outline-2">
+<h2 id="org24fa41f">Bump In the wire&#xa0;&#xa0;&#xa0;<span class="tag"><span class="cybersec">cybersec</span></span></h2>
+<div class="outline-text-2" id="text-org24fa41f">
 <p>
 Bump in the wire (BITW) is a device that can be inserted into a existing system and improve the security of said network.
 </p>
@@ -48,8 +48,8 @@ They Might be called a security gateway, they might implment a tunneling protoco
 </p>
 </div>
 
-<div id="outline-container-org1f14964" class="outline-3">
-<h3 id="org1f14964"><span class="todo TODO">TODO</span> Examples of BITW devices</h3>
+<div id="outline-container-org455a717" class="outline-3">
+<h3 id="org455a717"><span class="todo TODO">TODO</span> Examples of BITW devices</h3>
 </div>
 </div>
 </div>

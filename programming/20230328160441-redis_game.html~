@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>redis game</title>
@@ -28,9 +28,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7388dbe">Lets build a game in Redis</a>
+<li><a href="#org65cb14d">Lets build a game in Redis</a>
 <ul>
-<li><a href="#org55bd4b3">Getting started</a></li>
+<li><a href="#org2e27fc3">Getting started</a></li>
 </ul>
 </li>
 </ul>
@@ -38,17 +38,17 @@
 </div>
 
 
-<div id="outline-container-org7388dbe" class="outline-2">
-<h2 id="org7388dbe">Lets build a game in Redis</h2>
-<div class="outline-text-2" id="text-org7388dbe">
+<div id="outline-container-org65cb14d" class="outline-2">
+<h2 id="org65cb14d">Lets build a game in Redis</h2>
+<div class="outline-text-2" id="text-org65cb14d">
 <p>
 I will be using <a href="20220606215451-nim.html#ID-af6fae74-d03b-4930-8f39-63becb43efd9">Nim</a> to build this, following <a href="https://www.youtube.com/watch?v=vhZVZg0mTME&amp;list=PLTgRMOcmRb3Mt3iBO2eosx5vXHeaM92TG">this</a> to learn redis.
 </p>
 </div>
 
-<div id="outline-container-org55bd4b3" class="outline-3">
-<h3 id="org55bd4b3">Getting started</h3>
-<div class="outline-text-3" id="text-org55bd4b3">
+<div id="outline-container-org2e27fc3" class="outline-3">
+<h3 id="org2e27fc3">Getting started</h3>
+<div class="outline-text-3" id="text-org2e27fc3">
 <p>
 <b>NOTE</b> I assume you already have it installed.
 </p>

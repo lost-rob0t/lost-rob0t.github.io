@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:07 -->
+<!-- 2023-07-12 Wed 21:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>free code camp college algebra preportions</title>
@@ -28,12 +28,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0c8853f">Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></a></li>
-<li><a href="#org7c6edb5">Code</a></li>
-<li><a href="#org347ee75">Extra problems</a>
+<li><a href="#org27cfe31">Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></a></li>
+<li><a href="#orgbfa6a5c">Code</a></li>
+<li><a href="#org5d36a47">Extra problems</a>
 <ul>
-<li><a href="#orgd1e511a">Mixed Numbers</a></li>
-<li><a href="#org0932b08">Representing floating points as a fraction</a></li>
+<li><a href="#org26082e8">Mixed Numbers</a></li>
+<li><a href="#org4d1fbd9">Representing floating points as a fraction</a></li>
 </ul>
 </li>
 </ul>
@@ -41,9 +41,9 @@
 </div>
 
 
-<div id="outline-container-org0c8853f" class="outline-2">
-<h2 id="org0c8853f">Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></h2>
-<div class="outline-text-2" id="text-org0c8853f">
+<div id="outline-container-org27cfe31" class="outline-2">
+<h2 id="org27cfe31">Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></h2>
+<div class="outline-text-2" id="text-org27cfe31">
 <p>
 Proportions are like saying 2 multiplications are equal
 5/10 = 2/4
@@ -71,9 +71,9 @@ The answer is 12 1/2 miles
 </p>
 </div>
 </div>
-<div id="outline-container-org7c6edb5" class="outline-2">
-<h2 id="org7c6edb5">Code</h2>
-<div class="outline-text-2" id="text-org7c6edb5">
+<div id="outline-container-orgbfa6a5c" class="outline-2">
+<h2 id="orgbfa6a5c">Code</h2>
+<div class="outline-text-2" id="text-orgbfa6a5c">
 <p>
 Setup a proportion
 </p>
@@ -98,13 +98,13 @@ We Put 0 for the number we do not know and we use 2 if statements.
 </div>
 
 
-<div id="outline-container-org347ee75" class="outline-2">
-<h2 id="org347ee75">Extra problems</h2>
-<div class="outline-text-2" id="text-org347ee75">
+<div id="outline-container-org5d36a47" class="outline-2">
+<h2 id="org5d36a47">Extra problems</h2>
+<div class="outline-text-2" id="text-org5d36a47">
 </div>
-<div id="outline-container-orgd1e511a" class="outline-3">
-<h3 id="orgd1e511a">Mixed Numbers</h3>
-<div class="outline-text-3" id="text-orgd1e511a">
+<div id="outline-container-org26082e8" class="outline-3">
+<h3 id="org26082e8">Mixed Numbers</h3>
+<div class="outline-text-3" id="text-org26082e8">
 <p>
 Mixed numbers can easily be represented in python, since fractions is the same as a division.
 Python Knows the order of operations.
@@ -118,9 +118,9 @@ Example is 1 2/3 + 3 4/5 - 7
 </div>
 </div>
 
-<div id="outline-container-org0932b08" class="outline-3">
-<h3 id="org0932b08">Representing floating points as a fraction</h3>
-<div class="outline-text-3" id="text-org0932b08">
+<div id="outline-container-org4d1fbd9" class="outline-3">
+<h3 id="org4d1fbd9">Representing floating points as a fraction</h3>
+<div class="outline-text-3" id="text-org4d1fbd9">
 <p>
 What if we have this floating point and we want a fraction?
 </p>

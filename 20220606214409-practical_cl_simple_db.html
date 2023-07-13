@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>practical cl simple db</title>
@@ -52,7 +52,7 @@ In this im going to build a simple cd database. This is from the Book <a href="2
 
 <div id="outline-container-ID-dca28cde-aa24-4512-9afd-a9336b752d12" class="outline-2">
 <h2 id="ID-dca28cde-aa24-4512-9afd-a9336b752d12">About</h2>
-<div class="outline-text-2" id="text-orgb3c969f">
+<div class="outline-text-2" id="text-org9b3e9fb">
 <p>
 We will track of cds that need to be rip, storing title artist, rating and if its been ripped.
 </p>
@@ -66,11 +66,11 @@ It will be implemented in a <a href="programming/20220606214755-property_list.ht
 
 <div id="outline-container-ID-3f56490d-3772-414a-9365-2c5c9d95f036" class="outline-2">
 <h2 id="ID-3f56490d-3772-414a-9365-2c5c9d95f036">Task</h2>
-<div class="outline-text-2" id="text-org598a41d">
+<div class="outline-text-2" id="text-org949ac6d">
 </div>
 <div id="outline-container-ID-e9a346f9-cf06-4d67-ad6f-66adb62db813" class="outline-3">
 <h3 id="ID-e9a346f9-cf06-4d67-ad6f-66adb62db813">Create a Cd</h3>
-<div class="outline-text-3" id="text-orgb9fdfbf">
+<div class="outline-text-3" id="text-org48907be">
 <p>
 Create a function that creates a <a href="programming/20220606214755-property_list.html#ID-433dae2b-c05f-445b-b2a6-75e046796b5f">Property list</a>
 </p>
@@ -93,7 +93,7 @@ Make a cd
 
 <div id="outline-container-ID-6f187f5e-7860-4239-a805-737c77a61a04" class="outline-3">
 <h3 id="ID-6f187f5e-7860-4239-a805-737c77a61a04">Creating a global varible</h3>
-<div class="outline-text-3" id="text-org8961102">
+<div class="outline-text-3" id="text-orgcdafe84">
 <p>
 Create a Global Variable. when you suround it with * that is a convention for a global variable
 A single record is not enough for a database.
@@ -107,7 +107,7 @@ A single record is not enough for a database.
 
 <div id="outline-container-ID-9c955508-c1ba-41fc-b3ad-43f3b4d8e3a7" class="outline-3">
 <h3 id="ID-9c955508-c1ba-41fc-b3ad-43f3b4d8e3a7">Pushing data to a list</h3>
-<div class="outline-text-3" id="text-org444d704">
+<div class="outline-text-3" id="text-org66f9edd">
 <p>
 Abstract on the <a href="programming/20220606221221-push_macro.html#ID-e2c2d083-0a4e-4f8a-b7d7-219625b02040">PUSH macro</a>.
 </p>
@@ -130,7 +130,7 @@ Add a record
 </div>
 <div id="outline-container-ID-d29b8848-153b-4d6d-aca8-9d1250692e04" class="outline-3">
 <h3 id="ID-d29b8848-153b-4d6d-aca8-9d1250692e04">Homiconicity</h3>
-<div class="outline-text-3" id="text-org09640d9">
+<div class="outline-text-3" id="text-org256800b">
 <p>
 Show the contents of the database
 </p>
@@ -146,7 +146,7 @@ Showing the contents of the database inthis manner is not easy on the eyes
 </div>
 <div id="outline-container-ID-e2fc3f6f-2c2d-42a6-8f43-1351264215f2" class="outline-3">
 <h3 id="ID-e2fc3f6f-2c2d-42a6-8f43-1351264215f2">output formatiing</h3>
-<div class="outline-text-3" id="text-orgd96f284">
+<div class="outline-text-3" id="text-org9cfd8ae">
 <div class="org-src-container">
 <pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">dump-db</span> ()
   <span style="font-style: italic;">"Dump the database in a pretty format"</span>
@@ -171,7 +171,7 @@ Dump the db
 
 <div id="outline-container-ID-37e69a40-2a98-4fe9-bf0c-b77496cf6cd2" class="outline-3">
 <h3 id="ID-37e69a40-2a98-4fe9-bf0c-b77496cf6cd2">Getting user input</h3>
-<div class="outline-text-3" id="text-org0b7b815">
+<div class="outline-text-3" id="text-org351542f">
 <p>
 Lets make a prompt
 </p>
@@ -206,7 +206,7 @@ Lets make inserting data into the database easier
 
 <div id="outline-container-ID-a35aaee6-cd11-42c2-aeb0-dbc82cc24e6b" class="outline-3">
 <h3 id="ID-a35aaee6-cd11-42c2-aeb0-dbc82cc24e6b">Loops</h3>
-<div class="outline-text-3" id="text-org68e592d">
+<div class="outline-text-3" id="text-org717f27a">
 <p>
 Now lets add them in a loop
 </p>
@@ -260,7 +260,7 @@ And the function to load it
 
 <div id="outline-container-ID-021babe0-baa9-4cdb-b300-55476d4b0f44" class="outline-3">
 <h3 id="ID-021babe0-baa9-4cdb-b300-55476d4b0f44">Query The database</h3>
-<div class="outline-text-3" id="text-orgd3d9dde">
+<div class="outline-text-3" id="text-org32316e6">
 <p>
 Function <code>REMOVE-IF-NOT</code> returns lists only matching the predicate.
 </p>
@@ -303,7 +303,7 @@ There are many different ways one might want to query, instead lets make a funct
 
 <div id="outline-container-ID-dbbafb33-d35a-40fa-aa76-61570cb0a798" class="outline-3">
 <h3 id="ID-dbbafb33-d35a-40fa-aa76-61570cb0a798">Macros</h3>
-<div class="outline-text-3" id="text-org96e450c">
+<div class="outline-text-3" id="text-org66a0bff">
 <p>
 A lisp macro is a code generator that is ran for you automatically by the compiller when a call to a macro is made. When the call is a macro it will not evaluate the arguments, passing them to the macro which will return a new lisp form.
 </p>

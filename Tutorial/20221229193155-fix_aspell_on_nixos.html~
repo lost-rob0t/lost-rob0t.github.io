@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:08 -->
+<!-- 2023-07-12 Wed 22:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fix Aspell on nixos</title>
@@ -28,14 +28,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org931a55a">How to fix aspell on nixos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class=""></span>&#xa0;<span class="nixos">nixos</span></span></a>
+<li><a href="#org4afc751">How to fix aspell on nixos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class=""></span>&#xa0;<span class="nixos">nixos</span></span></a>
 <ul>
-<li><a href="#orgf7eb257">Steps to fix it</a>
+<li><a href="#orga161956">Steps to fix it</a>
 <ul>
-<li><a href="#orgcbf0b66">systemwide</a></li>
-<li><a href="#org7cf6374">home-manager</a></li>
-<li><a href="#org4adbb50">Fix not being able to save a personal word</a></li>
-<li><a href="#orgc186835">Emacs setup</a></li>
+<li><a href="#org33e8274">systemwide</a></li>
+<li><a href="#org41e8ba0">home-manager</a></li>
+<li><a href="#orgd8c7db2">Fix not being able to save a personal word</a></li>
+<li><a href="#org4b4c294">Emacs setup</a></li>
 </ul>
 </li>
 </ul>
@@ -43,24 +43,24 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org931a55a" class="outline-2">
-<h2 id="org931a55a">How to fix aspell on nixos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class=""></span>&#xa0;<span class="nixos">nixos</span></span></h2>
-<div class="outline-text-2" id="text-org931a55a">
+<div id="outline-container-org4afc751" class="outline-2">
+<h2 id="org4afc751">How to fix aspell on nixos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class=""></span>&#xa0;<span class="nixos">nixos</span></span></h2>
+<div class="outline-text-2" id="text-org4afc751">
 <p>
 I was trying to use aspell for spell checking on nixos with emacs and i could not get it to find the path to the apsell.
 </p>
 </div>
 
-<div id="outline-container-orgf7eb257" class="outline-3">
-<h3 id="orgf7eb257">Steps to fix it</h3>
-<div class="outline-text-3" id="text-orgf7eb257">
+<div id="outline-container-orga161956" class="outline-3">
+<h3 id="orga161956">Steps to fix it</h3>
+<div class="outline-text-3" id="text-orga161956">
 <p>
 These steps should fix it.
 </p>
 </div>
-<div id="outline-container-orgcbf0b66" class="outline-4">
-<h4 id="orgcbf0b66">systemwide</h4>
-<div class="outline-text-4" id="text-orgcbf0b66">
+<div id="outline-container-org33e8274" class="outline-4">
+<h4 id="org33e8274">systemwide</h4>
+<div class="outline-text-4" id="text-org33e8274">
 <p>
 include in your system packages.
 </p>
@@ -73,9 +73,9 @@ include in your system packages.
 </div>
 </div>
 </div>
-<div id="outline-container-org7cf6374" class="outline-4">
-<h4 id="org7cf6374">home-manager</h4>
-<div class="outline-text-4" id="text-org7cf6374">
+<div id="outline-container-org41e8ba0" class="outline-4">
+<h4 id="org41e8ba0">home-manager</h4>
+<div class="outline-text-4" id="text-org41e8ba0">
 <div class="org-src-container">
 <pre class="src src-nix"># ~/.config/nixpkgs/home.nix
 { config, pkgs, ... }:
@@ -96,9 +96,9 @@ include in your system packages.
 </div>
 
 
-<div id="outline-container-org4adbb50" class="outline-4">
-<h4 id="org4adbb50">Fix not being able to save a personal word</h4>
-<div class="outline-text-4" id="text-org4adbb50">
+<div id="outline-container-orgd8c7db2" class="outline-4">
+<h4 id="orgd8c7db2">Fix not being able to save a personal word</h4>
+<div class="outline-text-4" id="text-orgd8c7db2">
 <p>
 create a pws and setq it
 </p>
@@ -110,15 +110,15 @@ create a pws and setq it
 Be sure that the file is in aspells personal word dictionary format!
 basically just include this at the top of the pws file.
 </p>
-<pre class="example" id="orgb8cf7a1">
+<pre class="example" id="org38d462f">
 personal_ws-1.1 en 1 utf-8
 </pre>
 </div>
 </div>
 
-<div id="outline-container-orgc186835" class="outline-4">
-<h4 id="orgc186835">Emacs setup</h4>
-<div class="outline-text-4" id="text-orgc186835">
+<div id="outline-container-org4b4c294" class="outline-4">
+<h4 id="org4b4c294">Emacs setup</h4>
+<div class="outline-text-4" id="text-org4b4c294">
 <p>
 The following is from my emacs config
 Make sure its using aspell
