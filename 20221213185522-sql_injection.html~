@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 20:27 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SQL Injection</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">SQL Injection</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org0c82fc5">SQL Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="injection">injection</span>&#xa0;<span class="sqli">sqli</span>&#xa0;<span class=""></span>&#xa0;<span class="cybersec">cybersec</span>&#xa0;<span class=""></span>&#xa0;<span class="sql">sql</span></span></a>
+<ul>
+<li><a href="#org5aae5d5">Blind SQL Injection</a>
+<ul>
+<li><a href="#org46886ab">Examples</a></li>
+</ul>
+</li>
+<li><a href="#orga9197e3">IDEA give examples</a></li>
+<li><a href="#org695277e"><span class="todo TODO">TODO</span> Show WAF bypasses</a></li>
+<li><a href="#orgba027ea">Tools</a></li>
+<li><a href="#org7be42dc">Links to check out</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0c82fc5" class="outline-2">
+<h2 id="org0c82fc5">SQL Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="injection">injection</span>&#xa0;<span class="sqli">sqli</span>&#xa0;<span class=""></span>&#xa0;<span class="cybersec">cybersec</span>&#xa0;<span class=""></span>&#xa0;<span class="sql">sql</span></span></h2>
+<div class="outline-text-2" id="text-org0c82fc5">
+<p>
+SQL injection is a type of attack in which an attacker inserts malicious SQL code into an application's input in order to gain unauthorized access to sensitive data in the database or to manipulate data. This can allow the attacker to read sensitive data, modify or delete data, execute administrative tasks on the database, and even issue commands to the operating system. SQL injection attacks are commonly used against PHP and ASP applications, but are less common in J2EE and ASP.NET applications due to the nature of their programmatic interfaces. The severity of an SQL injection attack is high, as it can have significant consequences ranging from data disclosure and tampering to system destruction. Defense measures, such as using low privilege connections to the database and implementing input validation, can help reduce the risk of successful SQL injection attacks.
+</p>
+
+<p>
+It can happen when:
+</p>
+<ol class="org-ol">
+<li>untrusted data enters the program</li>
+<li><p>
+The data is used to create an sql query.
+</p>
+
+<p>
+There are a few forms of injection
+</p>
+
+<ul class="org-ul">
+<li>Reshaping a query</li>
+
+<li>Error Based</li>
+
+<li>Blind Injection</li>
+</ul></li>
+</ol>
+</div>
+
+<div id="outline-container-org5aae5d5" class="outline-3">
+<h3 id="org5aae5d5">Blind SQL Injection</h3>
+<div class="outline-text-3" id="text-org5aae5d5">
+<p>
+Blind Sqli is when you ask the datavase true or false quetions and determin the awnser based on the
+application's response. This attack is used when the application shows generic errors but still is vulnruable to injection.
+It is almost identical, but here you ask true or false questions.
+They are also as common as other forms. They give a false sense of security.
+They are much harder and longer to do by hand
+</p>
+
+<p>
+The best analogy to it is playing 20 questions with the database
+</p>
+</div>
+<div id="outline-container-org46886ab" class="outline-4">
+<h4 id="org46886ab">Examples</h4>
+<div class="outline-text-4" id="text-org46886ab">
+<p>
+There are a few ways to verify blind sql injections
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org4bbc34a"></a>Content Based<br />
+<div class="outline-text-5" id="text-org4bbc34a">
+<p>
+Using a page with shows a article with a given id, you may preform a couple of tests.
+</p>
+<pre class="example" id="org47f8800">
+http://newspaper.com/items.php?id=2
+</pre>
+
+<p>
+The server may send a query that looks like
+</p>
+<div class="org-src-container">
+<pre class="src src-sql"><span style="font-weight: bold;">SELECT</span> title, description, body <span style="font-weight: bold;">FROM</span> items <span style="font-weight: bold;">WHERE</span> ID = 2
+</pre>
+</div>
+
+<p>
+You may try and inject something that will return true.
+Some examples of things that always return true
+</p>
+<ul class="org-ul">
+<li>AND 1=1</li>
+<li>OR 1=1</li>
+</ul>
+<pre class="example" id="org0500070">
+http://newspaper.com/items.php?id=2 and 1=1
+</pre>
+<p>
+If the content that returns true if difrent from false, you are able to to continue.
+There isnt much stopping ither then privilages setup and difrent sql syntaxt.
+</p>
+</div>
+</li>
+
+<li><a id="org30bb5ad"></a>Time Based<br />
+<div class="outline-text-5" id="text-org30bb5ad">
+<p>
+This Method relies on the datbase pausing for a set amount of time then returning results.
+</p>
+
+<p>
+If the first letter of the db name is A, wait 10 seconds
+If the first letter of the db name is B, wait 10 seconds, ect.
+You should see if SQlmap is able to detect the injection, but it is senstive to time.
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org343ee48"></a>MicroSoft SQL server<br />
+<div class="outline-text-6" id="text-org343ee48">
+<pre class="example" id="org9801f2f">
+http://www.site.com/vulnerable.php?id=1' waitfor delay '00:00:10'--
+</pre>
+</div>
+</li>
+<li><a id="org1d6a181"></a>MySQL<br />
+<div class="outline-text-6" id="text-org1d6a181">
+<p>
+Here us an example, this depends on the preformance of the server.
+</p>
+<pre class="example" id="orgfd73838">
+BENCHMARK(5000000,ENCODE('MSG','by 5 seconds'))
+
+</pre>
+
+<p>
+Another example
+</p>
+<pre class="example" id="org5cec361">
+1 UNION SELECT IF(SUBSTRING(user_password,1,1) = CHAR(50),BENCHMARK(5000000,ENCODE('MSG','by 5 seconds')),null) FROM users WHERE user_id = 1;
+</pre>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orga9197e3" class="outline-3">
+<h3 id="orga9197e3">IDEA give examples</h3>
+</div>
+
+<div id="outline-container-org695277e" class="outline-3">
+<h3 id="org695277e"><span class="todo TODO">TODO</span> Show WAF bypasses</h3>
+</div>
+
+<div id="outline-container-orgba027ea" class="outline-3">
+<h3 id="orgba027ea">Tools</h3>
+<div class="outline-text-3" id="text-orgba027ea">
+<ul class="org-ul">
+<li><a href="https://sqlmap.org">SqlMap</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7be42dc" class="outline-3">
+<h3 id="org7be42dc">Links to check out</h3>
+<div class="outline-text-3" id="text-org7be42dc">
+<ul class="org-ul">
+<li><a href="https://www.blackhat.com/presentations/bh-usa-04/bh-us-04-hotchkies/bh-us-04-hotchkies.pdf">https://www.blackhat.com/presentations/bh-usa-04/bh-us-04-hotchkies/bh-us-04-hotchkies.pdf</a></li>
+<li><a href="https://owasp.org/www-community/attacks/Blind_SQL_Injection">https://owasp.org/www-community/attacks/Blind_SQL_Injection</a></li>
+<li><a href="https://owasp.org/www-community/attacks/SQL_Injection">https://owasp.org/www-community/attacks/SQL_Injection</a></li>
+<li><a href="https://owasp.org/www-community/attacks/SQL_Injection_Bypassing_WAF">https://owasp.org/www-community/attacks/SQL_Injection_Bypassing_WAF</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

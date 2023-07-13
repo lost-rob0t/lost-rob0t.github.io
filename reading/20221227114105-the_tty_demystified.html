@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>the tty demystified</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">the tty demystified</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga6f4b05">The TTY demystified Notes</a>
+<ul>
+<li><a href="#org1c87c23">The tty</a>
+<ul>
+<li><a href="#org9cb8219">Line editing</a></li>
+<li><a href="#org39734cc">Sessions</a></li>
+<li><a href="#orge26e7c4">Jobs and sessions</a></li>
+<li><a href="#org249bad8">Signals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga6f4b05" class="outline-2">
+<h2 id="orga6f4b05">The TTY demystified Notes</h2>
+<div class="outline-text-2" id="text-orga6f4b05">
+<blockquote>
+<p>
+In 1869, the stock ticker was invented. It was an electro-mechanical machine consisting of a typewriter, a long pair of wires and a ticker tape printer, and its purpose was to distribute stock prices over long distances in realtime
+</p>
+</blockquote>
+
+
+<div id="orgc395cb9" class="figure">
+<p><img src="The_TTY_demystified_Notes/2022-12-27_11-45-00_screenshot.png" alt="2022-12-27_11-45-00_screenshot.png" />
+</p>
+</div>
+</div>
+<div id="outline-container-org1c87c23" class="outline-3">
+<h3 id="org1c87c23">The tty</h3>
+<div class="outline-text-3" id="text-org1c87c23">
+</div>
+<div id="outline-container-org9cb8219" class="outline-4">
+<h4 id="org9cb8219">Line editing</h4>
+<div class="outline-text-4" id="text-org9cb8219">
+<p>
+People make mistakes so backspaces are a neccisty. These features are often implemented in a program running in raw mode (curses or readline) but unix programs should be small, so these features can be exposed to the program via a line discipline. Some basic editing commands are
+</p>
+
+<ul class="org-ul">
+<li>Backspace</li>
+
+<li>Erase word</li>
+
+<li>clear line</li>
+
+<li>Reprint</li>
+</ul>
+
+<p>
+Line discipline has utilities for line feeds and carriage returns.
+</p>
+
+<p>
+The kernel provides different line disciplines and only one of them are running at a time.
+The default line discipline is N<sub>TTY</sub> which is defined in `drivers/char/n<sub>tty.c</sub>`
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org39734cc" class="outline-4">
+<h4 id="org39734cc">Sessions</h4>
+<div class="outline-text-4" id="text-org39734cc">
+<p>
+Users often need to run multiple programs at the same time. User input should only go to the foreground program and not background programs.
+</p>
+
+<p>
+A process is "alive" and can preform actions, a tty is not "alive". A tty is a passive object. it has data fields and methods but it only does something when a process or the kernel calls a method. Same goes for the line discipline.
+</p>
+
+
+
+<p>
+A UART driver, line discipline and TTY driver is called a tty device.
+</p>
+</div>
+
+
+
+<ul class="org-ul">
+<li><a id="orga8316cf"></a>How the linux console and others work<br />
+<div class="outline-text-5" id="text-orga8316cf">
+<p>
+There is no UART instead a video terminal is used. A video terminal is a complex state machine that consists of a framebuffer and charecter attributes.
+</p>
+
+<p>
+the console is rigid and gets more abstract as you move into userland.
+</p>
+
+
+
+<p>
+To move the terminal to userland the pseudo terminal was invented.  Linux process can be these states+ R Running or runnable (on queue)
+</p>
+
+<ul class="org-ul">
+<li>D Uninterruptible sleep</li>
+
+<li>S Interruptible sleep</li>
+
+<li>T Stopped, either by a job control signal or because of debugger+ Zombie process, terminated but not yet reaped by its parent.</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-orge26e7c4" class="outline-4">
+<h4 id="orge26e7c4">Jobs and sessions</h4>
+<div class="outline-text-4" id="text-orge26e7c4">
+<p>
+Job control is a way to control backround jobs. A job is the same as a process group
+you can invck job control with ^Z.
+there are internal shell commands to maniplate jobs within a session.
+The shell commands are
+</p>
+<ul class="org-ul">
+<li>jobs List jobs</li>
+<li>fg bring job to foreground</li>
+<li>bg move job to backround</li>
+</ul>
+
+<p>
+The TTY driver keeps track of the foreground but only passivly. The sessionleader must update this information.
+The session leader also keeps track of the size of the connected terminal but must be updated by the terminal emulator or the user.
+</p>
+</div>
+</div>
+<div id="outline-container-org249bad8" class="outline-4">
+<h4 id="org249bad8">Signals</h4>
+<div class="outline-text-4" id="text-org249bad8">
+<p>
+A signal is a mechinism that lets the kernal communicate asynchronously.
+Most of the time you will use them to kill or stop a process.
+You can see the list of signals with
+</p>
+<div class="org-src-container">
+<pre class="src src-shell"><span style="font-weight: bold;">kill</span> -l
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">1) SIGHUP</td>
+<td class="org-left">2) SIGINT</td>
+<td class="org-left">3) SIGQUIT</td>
+<td class="org-left">4) SIGILL</td>
+<td class="org-left">5) SIGTRAP</td>
+</tr>
+
+<tr>
+<td class="org-left">6) SIGABRT</td>
+<td class="org-left">7) SIGBUS</td>
+<td class="org-left">8) SIGFPE</td>
+<td class="org-left">9) SIGKILL</td>
+<td class="org-left">10) SIGUSR1</td>
+</tr>
+
+<tr>
+<td class="org-left">11) SIGSEGV</td>
+<td class="org-left">12) SIGUSR2</td>
+<td class="org-left">13) SIGPIPE</td>
+<td class="org-left">14) SIGALRM</td>
+<td class="org-left">15) SIGTERM</td>
+</tr>
+
+<tr>
+<td class="org-left">16) SIGSTKFLT</td>
+<td class="org-left">17) SIGCHLD</td>
+<td class="org-left">18) SIGCONT</td>
+<td class="org-left">19) SIGSTOP</td>
+<td class="org-left">20) SIGTSTP</td>
+</tr>
+
+<tr>
+<td class="org-left">21) SIGTTIN</td>
+<td class="org-left">22) SIGTTOU</td>
+<td class="org-left">23) SIGURG</td>
+<td class="org-left">24) SIGXCPU</td>
+<td class="org-left">25) SIGXFSZ</td>
+</tr>
+
+<tr>
+<td class="org-left">26) SIGVTALRM</td>
+<td class="org-left">27) SIGPROF</td>
+<td class="org-left">28) SIGWINCH</td>
+<td class="org-left">29) SIGIO</td>
+<td class="org-left">30) SIGPWR</td>
+</tr>
+
+<tr>
+<td class="org-left">31) SIGSYS</td>
+<td class="org-left">34) SIGRTMIN</td>
+<td class="org-left">35) SIGRTMIN+1</td>
+<td class="org-left">36) SIGRTMIN+2</td>
+<td class="org-left">37) SIGRTMIN+3</td>
+</tr>
+
+<tr>
+<td class="org-left">38) SIGRTMIN+4</td>
+<td class="org-left">39) SIGRTMIN+5</td>
+<td class="org-left">40) SIGRTMIN+6</td>
+<td class="org-left">41) SIGRTMIN+7</td>
+<td class="org-left">42) SIGRTMIN+8</td>
+</tr>
+
+<tr>
+<td class="org-left">43) SIGRTMIN+9</td>
+<td class="org-left">44) SIGRTMIN+10</td>
+<td class="org-left">45) SIGRTMIN+11</td>
+<td class="org-left">46) SIGRTMIN+12</td>
+<td class="org-left">47) SIGRTMIN+13</td>
+</tr>
+
+<tr>
+<td class="org-left">48) SIGRTMIN+14</td>
+<td class="org-left">49) SIGRTMIN+15</td>
+<td class="org-left">50) SIGRTMAX-14</td>
+<td class="org-left">51) SIGRTMAX-13</td>
+<td class="org-left">52) SIGRTMAX-12</td>
+</tr>
+
+<tr>
+<td class="org-left">53) SIGRTMAX-11</td>
+<td class="org-left">54) SIGRTMAX-10</td>
+<td class="org-left">55) SIGRTMAX-9</td>
+<td class="org-left">56) SIGRTMAX-8</td>
+<td class="org-left">57) SIGRTMAX-7</td>
+</tr>
+
+<tr>
+<td class="org-left">58) SIGRTMAX-6</td>
+<td class="org-left">59) SIGRTMAX-5</td>
+<td class="org-left">60) SIGRTMAX-4</td>
+<td class="org-left">61) SIGRTMAX-3</td>
+<td class="org-left">62) SIGRTMAX-2</td>
+</tr>
+
+<tr>
+<td class="org-left">63) SIGRTMAX-1</td>
+<td class="org-left">64) SIGRTMAX</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<ul class="org-ul">
+<li><a id="orgb34316b"></a>Signals explained<br />
+<div class="outline-text-5" id="text-orgb34316b">
+<p>
+This is lifted from the article
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="orgcaa2c1d"></a>SIGHUP<br />
+<div class="outline-text-6" id="text-orgcaa2c1d">
+<ul class="org-ul">
+<li>Default action: <b>Terminate</b></li>
+<li>Possible actions: Terminate, Ignore, Function call</li>
+</ul>
+
+<p>
+SIGHUP is sent by the UART driver to the entire session when a hangup condition has been detected. Normally, this will kill all the processes. Some programs, such as nohup(1) and screen(1), detach from their session (and TTY), so that their child processes won't notice a hangup.
+</p>
+</div>
+</li>
+
+<li><a id="org3b9d43b"></a>SIGINT<br />
+<div class="outline-text-6" id="text-org3b9d43b">
+<ul class="org-ul">
+<li>Default action: <b>Terminate</b></li>
+<li>Possible actions: Terminate, Ignore, Function call</li>
+</ul>
+
+<p>
+SIGINT is sent by the TTY driver to the current foreground job when the <i>interactive attention</i> character (typically ^C, which has ASCII code 3) appears in the input stream, unless this behaviour has been turned off. Anybody with access permissions to the TTY device can change the interactive attention character and toggle this feature; additionally, the session manager keeps track of the TTY configuration of each job, and updates the TTY whenever there is a job switch.
+</p>
+</div>
+</li>
+
+<li><a id="org40674f4"></a>SIGQUIT<br />
+<div class="outline-text-6" id="text-org40674f4">
+<ul class="org-ul">
+<li>Default action: <b>Core dump</b></li>
+<li>Possible actions: Core dump, Ignore, Function call</li>
+</ul>
+
+<p>
+SIGQUIT works just like SIGINT, but the quit character is typically ^\\ and the default action is different.
+</p>
+</div>
+</li>
+
+<li><a id="org1f0ea0e"></a>SIGPIPE<br />
+<div class="outline-text-6" id="text-org1f0ea0e">
+<ul class="org-ul">
+<li>Default action: <b>Terminate</b></li>
+<li>Possible actions: Terminate, Ignore, Function call</li>
+</ul>
+
+<p>
+The kernel sends SIGPIPE to any process which tries to write to a pipe with no readers. This is useful, because otherwise jobs like yes | head would never terminate.
+</p>
+</div>
+</li>
+
+<li><a id="orgcca0480"></a>SIGCHLD<br />
+<div class="outline-text-6" id="text-orgcca0480">
+<ul class="org-ul">
+<li>Default action: <b>Ignore</b></li>
+<li>Possible actions: Ignore, Function call</li>
+</ul>
+
+<p>
+When a process dies or changes state (stop/continue), the kernel sends a SIGCHLD to its parent process. The SIGCHLD signal carries additional information, namely the process id, the user id, the exit status (or termination signal) of the terminated process and some execution time statistics. The session leader (shell) keeps track of its jobs using this signal.
+</p>
+</div>
+</li>
+
+<li><a id="orgae24266"></a>SIGSTOP<br />
+<div class="outline-text-6" id="text-orgae24266">
+<ul class="org-ul">
+<li>Default action: <b>Suspend</b></li>
+<li>Possible actions: Suspend</li>
+</ul>
+
+<p>
+This signal will unconditionally suspend the recipient, i.e. its signal action can't be reconfigured. Please note, however, that SIGSTOP isn't sent by the kernel during job control. Instead, ^Z typically triggers a SIGTSTP, which can be intercepted by the application. The application may then e.g. move the cursor to the bottom of the screen or otherwise put the terminal in a known state, and subsequently put itself to sleep using SIGSTOP.
+</p>
+</div>
+</li>
+
+<li><a id="org8142034"></a>SIGCONT<br />
+<div class="outline-text-6" id="text-org8142034">
+<ul class="org-ul">
+<li>Default action: <b>Wake up</b></li>
+<li>Possible actions: Wake up, Wake up + Function call</li>
+</ul>
+
+<p>
+SIGCONT will un-suspend a stopped process. It is sent explicitly by the shell when the user invokes the fg command. Since SIGSTOP can't be intercepted by an application, an unexpected SIGCONT signal might indicate that the process was suspended some time ago, and then un-suspended.
+</p>
+</div>
+</li>
+
+<li><a id="orga416412"></a>SIGTSTP<br />
+<div class="outline-text-6" id="text-orga416412">
+<ul class="org-ul">
+<li>Default action: <b>Suspend</b></li>
+<li>Possible actions: Suspend, Ignore, Function call</li>
+</ul>
+
+<p>
+SIGTSTP works just like SIGINT and SIGQUIT, but the magic character is typically ^Z and the default action is to suspend the process.
+</p>
+</div>
+</li>
+
+<li><a id="orgff8c209"></a>SIGTTIN<br />
+<div class="outline-text-6" id="text-orgff8c209">
+<ul class="org-ul">
+<li>Default action: <b>Suspend</b></li>
+<li>Possible actions: Suspend, Ignore, Function call</li>
+</ul>
+
+<p>
+If a process within a background job tries to read from a TTY device, the TTY sends a SIGTTIN signal to the entire job. This will normally suspend the job.
+</p>
+</div>
+</li>
+
+<li><a id="org2fc275d"></a>SIGTTOU<br />
+<div class="outline-text-6" id="text-org2fc275d">
+<ul class="org-ul">
+<li>Default action: <b>Suspend</b></li>
+<li>Possible actions: Suspend, Ignore, Function call</li>
+</ul>
+
+<p>
+If a process within a background job tries to write to a TTY device, the TTY sends a SIGTTOU signal to the entire job. This will normally suspend the job. It is possible to turn off this feature on a per-TTY basis.
+</p>
+</div>
+</li>
+
+<li><a id="org1f100e1"></a>SIGWINCH<br />
+<div class="outline-text-6" id="text-org1f100e1">
+<ul class="org-ul">
+<li>Default action: <b>Ignore</b></li>
+<li>Possible actions: Ignore, Function call</li>
+</ul>
+
+<p>
+As mentioned, the TTY device keeps track of the terminal size, but this information needs to be updated manually. Whenever that happens, the TTY device sends SIGWINCH to the foreground job. Well-behaving interactive applications, such as editors, react upon this, fetch the new terminal size from the TTY device and redraw themselves accordingly.
+</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

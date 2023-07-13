@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Index</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Index</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org861029d">Welcome</a></li>
+<li><a href="#org09657ef">Links</a></li>
+<li><a href="#org59e01f4">Programming</a></li>
+<li><a href="#orgf73ce15">Industrial Control systems</a></li>
+<li><a href="#org8293b8b">Cyber Security</a>
+<ul>
+<li><a href="#orgd0a31d4">Methods</a>
+<ul>
+<li><a href="#orgc782d69">Wordpress</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd8e48a0">My Tooling</a>
+<ul>
+<li><a href="#org1bc8ae1"><span class="todo TODO">TODO</span> Star Intelligence</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org861029d" class="outline-2">
+<h2 id="org861029d">Welcome</h2>
+<div class="outline-text-2" id="text-org861029d">
+<p>
+Welcome to my brain dump that i like to call a wiki of sorts.
+</p>
+
+<p>
+You can download the entire archive and view in Emacs or viewer of choice.
+The site is in many formats.
+Just change the file extension in the url bar to see it in a different format.
+Formats:
+</p>
+<ul class="org-ul">
+<li>txt</li>
+<li>md</li>
+<li>Org</li>
+<li>html</li>
+</ul>
+
+<p>
+I would like to note that it is not entirely structured, because it is a collection of notes, I impose some structure but its really a second brain here.
+My Spelling is bad and i did not have a spell checker when i started taking notes, so please bear with me.
+</p>
+</div>
+</div>
+<div id="outline-container-org09657ef" class="outline-2">
+<h2 id="org09657ef">Links</h2>
+<div class="outline-text-2" id="text-org09657ef">
+<ul class="org-ul">
+<li><a href="2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a></li>
+<li><a href="20220429214821-reading_inbox.html#ID-6189e985-e87d-42df-aa38-ba6429a2bf8a">Reading inbox</a></li>
+<li><a href="2022-08-11-005206-linux.html#ID-de8bc39b-c63d-432f-9ff8-c157287c26db">Linux</a></li>
+<li><a href="20220428224740-emacs.html#ID-95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2">emacs</a></li>
+<li><a href="20221215060923-links.html#ID-40a6baca-2913-450a-b516-7a16b9d51b2c">Links</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org59e01f4" class="outline-2">
+<h2 id="org59e01f4">Programming</h2>
+<div class="outline-text-2" id="text-org59e01f4">
+<ul class="org-ul">
+<li><a href="programming/20220606215245-programming_languages.html#ID-ecc6c666-530f-4173-9f21-4038677b32ac">Programming Languages</a></li>
+<li><a href="programming/20220606215451-nim.html#ID-af6fae74-d03b-4930-8f39-63becb43efd9">Nim</a></li>
+<li><a href="programming/20221219224000-stomp.html#ID-a934f8ea-6586-437f-a354-d307915f3c39">STOMP</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf73ce15" class="outline-2">
+<h2 id="orgf73ce15">Industrial Control systems</h2>
+<div class="outline-text-2" id="text-orgf73ce15">
+<ul class="org-ul">
+<li><a href="20221208234405-scada.html#ID-8819b564-caa6-4101-99ca-ab936c650714">SCADA</a></li>
+<li><a href="programming/20221210020053-modbus.html#ID-1131ab7e-abe2-4c6a-8414-44b524bdf49b">Modbus</a></li>
+<li><a href="20221210020640-programmable_logic_controllers.html#ID-27a4cf94-829a-4182-9dc8-3dd99da55fe9">Programmable Logic Controllers</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8293b8b" class="outline-2">
+<h2 id="org8293b8b">Cyber Security</h2>
+<div class="outline-text-2" id="text-org8293b8b">
+<ul class="org-ul">
+<li><a href="20221209030114-shodan_api_keys.html#ID-1ab40c79-e0b4-4556-b2e0-0eab12ae3a62">Shodan api keys</a></li>
+<li><a href="hacking/20221210012904-bump_in_the_wire.html#ID-b6fa327b-ed94-4a61-aa70-6a59a441f760">Bump in the wire</a></li>
+<li><a href="hacking/20230501213539-hack_the_box.html#ID-65d9cc7b-d426-4ca4-9693-4c530264f830">Hack The Box</a></li>
+</ul>
+</div>
+
+<div id="outline-container-orgd0a31d4" class="outline-3">
+<h3 id="orgd0a31d4">Methods</h3>
+<div class="outline-text-3" id="text-orgd0a31d4">
+</div>
+<div id="outline-container-orgc782d69" class="outline-4">
+<h4 id="orgc782d69">Wordpress</h4>
+<div class="outline-text-4" id="text-orgc782d69">
+<ul class="org-ul">
+<li><a href="hacking/20221213173625-wordpress_enumeration.html#ID-854f2842-8d5b-4006-8848-6800aab5ab5e">WordPress Enumeration</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd8e48a0" class="outline-2">
+<h2 id="orgd8e48a0">My Tooling</h2>
+<div class="outline-text-2" id="text-orgd8e48a0">
+</div>
+<div id="outline-container-org1bc8ae1" class="outline-3">
+<h3 id="org1bc8ae1"><span class="todo TODO">TODO</span> Star Intelligence</h3>
+<div class="outline-text-3" id="text-org1bc8ae1">
+<ul class="org-ul">
+<li>gitVirgin</li>
+<li>star formatter</li>
+<li><a href="2022-05-28-030619-star_intel.html#ID-78157cd5-9681-4a64-b5c7-0f2b415cd446">Star Intel</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

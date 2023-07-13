@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       12da399d-8159-4911-93ae-0ddee6536f48
+:END:
+#+TITLE: list of plc's
+#+CREATED: [2023-06-30 Fri 04:14]
+#+LAST_MODIFIED: [2023-06-30 Fri 04:14]
+* List of PLC's
+This document is to link to other documents and possibly map out commononly used tech in order to find vulns and list info.
+** TODO Red Lion Controls
+They are vuln to LFI on login page (maybe needs testing)
+https://www.alliedelec.com/product/red-lion-controls/cr30000400000310/71096079/?gclsrc=ds&gclsrc=ds

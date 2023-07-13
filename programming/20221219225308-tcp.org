@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       a75d2660-481e-4c42-98bf-358b08f8c030
+:END:
+#+TITLE: TCP
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-19 Mon 22:53]
+#+LAST_MODIFIED: [2022-12-19 Mon 22:53]
+* TODO Transfer Control protocol :tcp::protocol:

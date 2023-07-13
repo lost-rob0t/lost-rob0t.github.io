@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Common Lisp</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Common Lisp</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org299f93c">What is common lisp?</a>
+<ul>
+<li><a href="#org55ee1cb">Tips</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org299f93c" class="outline-2">
+<h2 id="org299f93c">What is common lisp?</h2>
+<div class="outline-text-2" id="text-org299f93c">
+<p>
+Common Lisp is the modern, multi-paradigm, high-performance, compiled, ANSI-standardized, most prominent (along with Scheme) descendant of the long-running family of <a href="20220606214902-lisp.html#ID-2bf517d2-698a-44cf-bb5a-5273da53f717">Lisp</a> <a href="20220606215245-programming_languages.html#ID-ecc6c666-530f-4173-9f21-4038677b32ac">Programming Languages</a>.
+</p>
+
+<p>
+Common Lisp is known for being extremely flexible, having excellent support for object oriented programming, and fast prototyping capabilities. It also sports an extremely powerful macro system that allows you to tailor the language to your application, and a flexible run-time environment that allows modification and debugging of running applications (excellent for server-side development and long-running critical software). It is a multi-paradigm programming language that allows you to choose the approach and paradigm according to your application domain.
+</p>
+</div>
+
+
+
+
+<div id="outline-container-org55ee1cb" class="outline-3">
+<h3 id="org55ee1cb">Tips</h3>
+<div class="outline-text-3" id="text-org55ee1cb">
+<ul class="org-ul">
+<li><a href="20230522223358-common_lisp_compile.html#ID-a1695288-6251-42b5-a860-087ad7175652">common lisp compile</a></li>
+<li><a href="../Tutorial/20230502185107-nixos_fix_common_lisp_ld_path.html#ID-b6578448-2a3a-4183-a8cc-d390661328c5">nixos fix common-lisp ld path</a></li>
+<li><a href="20230601215350-rest_api_s_in_common_lisp.html#ID-aa0f69eb-2c3c-4226-a38c-f4f5c49bbc37">Rest Api's in common lisp</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

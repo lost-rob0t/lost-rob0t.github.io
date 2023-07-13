@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Lost Wiki</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">The Lost Wiki</h1>
+<ul class="org-ul">
+<li><a href="20230527172700-cookie_bugs.html">Cookie Bugs</a></li>
+<li><a href="20230710045754-cross_site_request_forgery.html">Cross Site request forgery</a></li>
+<li><a href="20230630041404-list_of_plc_s.html">list of plc's</a></li>
+<li><a href="20230501213539-hack_the_box.html">Hack The Box</a></li>
+<li><a href="20230527173712-xss.html">XSS</a></li>
+<li><a href="20230427231040-htb_templated.html">HTB Templated</a></li>
+<li><a href="20230427212246-onlyforyou.html">OnlyForYou</a></li>
+<li><a href="20230423223955-cloudflare.html">cloudflare</a></li>
+<li><a href="20230418174334-hacking_python_eval.html">Hacking Python Eval</a></li>
+<li><a href="20221213185522-sql_injection.html">SQL Injection</a></li>
+<li><a href="20221213173625-wordpress_enumeration.html">WordPress Enumeration</a></li>
+<li><a href="20221213171543-metatwo.html">MetaTwo</a></li>
+<li><a href="20221210012904-bump_in_the_wire.html">Bump in the wire</a></li>
+</ul>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

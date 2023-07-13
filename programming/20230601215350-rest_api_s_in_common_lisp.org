@@ -1,0 +1,101 @@
+:PROPERTIES:
+:ID:       aa0f69eb-2c3c-4226-a38c-f4f5c49bbc37
+:END:
+#+TITLE: Rest Api's in common lisp
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2023-06-01 Thu 21:53]
+#+LAST_MODIFIED: [2023-06-29 Thu 22:28]
+
+
+* Rest API in common lisp
+
+In common lisp there are many library's to complete a task, some are old but still work just fine.
+A good fast library to use is [[https://github.com/fukamachi/dexador][dexador]]. It is much faster then [[https://github.com/edicl/drakma][drakama]]. As for json i recommend [[https://github.com/madnificent/jsown][jsown]].
+
+~dexador~ also takes uris as arguments, so I recommend using [[https://github.com/fukamachi/quri][quri]].
+
+
+*NOTE*: It is imperative you set the content type in your headers, by default dexador will use ~application/x-www-form-urlencoded~[fn:1]!
+
+Internally it uses connection pooling and reuses connections.
+
+#+begin_src lisp
+(ql:quickload '(:dexador :cl-json))
+(dex:post "https://httpbin.org/post"
+          :headers '((:content-type . "application/json"))
+          :content <json-data>)
+#+end_src
+** Get
+
+#+begin_src lisp
+(dex:get "http://lisp.org")
+#+end_src
+
+#+RESULTS:
+: <html>
+: <head><title>308 Permanent Redirect</title></head>
+: <body>
+: <center><h1>308 Permanent Redirect</h1></center>
+: <hr><center>nginx</center>
+: </body>
+: </html>
+
+** post
+To send formdata in a post use a association list.
+#+begin_src lisp :results raw replace
+(dex:post "https://httpbin.org/anything/post"  :content '(("hello" . "world")))
+#+end_src
+
+#+RESULTS:
+"{
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {
+    "hello": "world"
+  },
+  "headers": {
+    "Accept": "*/*",
+    "Content-Length": "11",
+    "Content-Type": "application/x-www-form-url...[sly-elided string of length 499]"
+200
+#<HASH-TABLE :TEST EQUAL :COUNT 7 {1003F9A5A3}>
+#<QURI.URI.HTTP:URI-HTTPS https://httpbin.org/anything/post>
+NIL
+
+To use json you need to set the appropriate headers.
+#+begin_src lisp :results raw replace
+(setq *headers*  '(("accept" . "application/json")
+                   ("Content-Type" . "application/json")))
+#+end_src
+
+#+RESULTS:
+(("accept" . "application/json") ("Content-Type" . "application/json"))
+
+Then you can pass the headers and json like so
+
+#+begin_src lisp :results raw replace
+(ql:quickload :jsown)
+(dex:post "https://httpbin.org/anything/post" :headers *headers*  :content (jsown:to-json (jsown:new-js ("key" "value"))))
+#+end_src
+
+#+RESULTS:
+"{
+  "args": {},
+  "data": "{\"key\":\"value\"}",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Accept": "application/json",
+    "Content-Length": "15",
+    "Content-Type": "application/json",...[sly-elided string of length 510]"
+200
+#<HASH-TABLE :TEST EQUAL :COUNT 7 {1004198BC3}>
+#<QURI.URI.HTTP:URI-HTTPS https://httpbin.org/anything/post>
+NIL
+
+
+* Footnotes
+
+[fn:1] https://archive.ph/UPxN4

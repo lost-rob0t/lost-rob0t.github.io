@@ -1,0 +1,32 @@
+:PROPERTIES:
+:ID:       dc00a2c6-6aa9-4c90-ba6d-6982067d2169
+:END:
+#+TITLE: gitconfig
+#+CREATED: [2023-07-12 Wed 20:01]
+#+LAST_MODIFIED: [2023-07-12 Wed 20:17]
+
+* Git Config
+You can set the settings for a git repo with the ~git config~ command.
+
+These settings are written to a file ~.gitconfig~ if ~git config --local~ is used.
+
+You can list settings with ~git config --list~.
+** Common Settings
+*** User
+#+begin_src conf
+[user]
+  email = example@email.com
+  name = John Doe
+#+end_src
+*** Gui
+Heres how you can set the editor to [[id:95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2][emacs]]
+#+begin_src conf
+[gui]
+  editor = emacs
+#+end_src
+*** init
+If you need to set the default branch heres how you can do so.
+#+begin_src conf
+[init]
+  defaultBranch = dev
+#+end_src

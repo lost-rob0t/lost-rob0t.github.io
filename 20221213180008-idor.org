@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       43925686-f7a7-4022-94f4-edc352c44e04
+:ROAM_TAGS:
+:END:
+#+title: IDOR
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+* TODO IDOR
+:PROPERTIES:
+:ID:       c319ada9-cfd0-4dda-bf25-5c5aff2b1f5c
+:PUBDATE:  <2023-06-30 Fri 01:04>
+:END:

@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       19dae36d-a4f9-49d1-9bc3-d5734ff95bde
+:ROAM_TAGS:
+:END:
+#+TITLE: Yasnippet multi choice
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+
+* How to do multiple choice in yasnippet
+:PROPERTIES:
+:ID:       8abb8916-289a-44a1-9a4d-1ec3ebe0d8ab
+:PUBDATE:  <2023-06-30 Fri 01:03>
+:END:
+
+Example from the blog
+#+begin_src yasnippet
+# -*- mode: snippet -*-
+# name: test
+# key: test
+# --
+Importance: ${1:$$(yas-choose-value '("high" "average" "below average"))}
+Difficulty: ${2:$$(yas-choose-value '("easy" "hard"))}
+$0
+#+end_src
+
+* References
+:PROPERTIES:
+:ID:       ffa04a13-3a87-4052-bcfd-3d2dfcce496c
+:PUBDATE:  <2023-06-30 Fri 01:03>
+:END:
+https://pragmaticemacs.wordpress.com/2017/06/25/multiple-choices-in-yasnippets/

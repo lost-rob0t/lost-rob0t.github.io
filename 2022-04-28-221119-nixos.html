@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NixOs</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">NixOs</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#ID-edb3d215-a945-4581-9b1e-4ff14ba1fda3">NixOS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></a>
+<ul>
+<li><a href="#ID-67c24a95-3dbf-435a-941d-9f01eaf4d269">Tips</a>
+<ul>
+<li><a href="#ID-ae4f4529-62a3-4a05-8c83-c42ea44f9515">Development in nixos</a></li>
+<li><a href="#ID-4853bbeb-0135-41c8-9595-729bdff6190f">Installation</a></li>
+<li><a href="#ID-e9476412-357b-4917-bb8d-e8c51a15bb65">Nix on non nixos system</a></li>
+<li><a href="#ID-9fa27955-743f-4233-97e3-2f57abdccdf9">Nixos Channels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<ul class="org-ul">
+<li><a href="index.html#ID-c72d4e02-0e32-424c-b4b3-c471adbf4598">Index</a></li>
+</ul>
+<div id="outline-container-ID-edb3d215-a945-4581-9b1e-4ff14ba1fda3" class="outline-2">
+<h2 id="ID-edb3d215-a945-4581-9b1e-4ff14ba1fda3">NixOS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></h2>
+<div class="outline-text-2" id="text-org7e3021b">
+<p>
+From NixOS Wiki
+</p>
+
+
+<p>
+<a href="https://nixos.org/">NixOS</a> is a Linux distribution based on the <a href="https://nixos.wiki/wiki/Nix">Nix</a> package manager and build system. It supports <a href="https://reproducible-builds.org/">reproducible</a> and <a href="https://en.wikipedia.org/wiki/Declarative_programming">declarative</a> system-wide <a href="https://en.wikipedia.org/wiki/Configuration_management">configuration management</a> as well as <a href="https://en.wikipedia.org/wiki/Atomicity_(database_systems)">atomic</a> upgrades and rollbacks, although it can additionally support <a href="https://en.wikipedia.org/wiki/Imperative_programming">imperative</a> package and user management. In NixOS, all components of the distribution — including the <a href="https://en.wikipedia.org/wiki/Linux_kernel">kernel</a>, installed <a href="https://en.wikipedia.org/wiki/Package_manager">packages</a> and system configuration files — are built by <a href="https://nixos.wiki/wiki/Nix">Nix</a> from <a href="https://en.wikipedia.org/wiki/Pure_function">pure functions</a> called <a href="https://nixos.wiki/wiki/Nix_Expression_Language">Nix expressions</a>.
+</p>
+
+<p>
+Since Nix uses <a href="https://en.wikipedia.org/wiki/Executable">binary</a> caching, this provides a unique compromise between the binary-oriented approach used by distributions such as Debian and the <a href="https://en.wikipedia.org/wiki/Source_code">source</a>&#x00ad;oriented approach used by distributions such as Gentoo. Binaries can be used for standard components, and custom-built packages and modules can be used automatically when a pre-built binary is not available.
+</p>
+
+<p>
+Stable NixOS releases are delivered twice a year. NixOS was created by <a href="https://edolstra.github.io/">Eelco Dolstra</a> and <a href="https://en.wikipedia.org/wiki/Armijn_Hemel">Armijn Hemel</a>, and initially released in 2003. It is community developed and maintained under the stewardship of the <a href="https://nixos.org/nixos/foundation.html">NixOS Foundation</a>.
+</p>
+</div>
+<div id="outline-container-ID-67c24a95-3dbf-435a-941d-9f01eaf4d269" class="outline-3">
+<h3 id="ID-67c24a95-3dbf-435a-941d-9f01eaf4d269">Tips</h3>
+<div class="outline-text-3" id="text-org4ce9b3d">
+<ul class="org-ul">
+<li>Have a config, but its broken? Check your git log and revert if needed.</li>
+</ul>
+</div>
+<div id="outline-container-ID-ae4f4529-62a3-4a05-8c83-c42ea44f9515" class="outline-4">
+<h4 id="ID-ae4f4529-62a3-4a05-8c83-c42ea44f9515">Development in nixos</h4>
+<div class="outline-text-4" id="text-org1689693">
+</div>
+<ul class="org-ul">
+<li><a id="ID-73dd8458-b9ed-44de-8995-70e974e304b9"></a>Python<br />
+<div class="outline-text-5" id="text-orgadb25d9">
+<ul class="org-ul">
+<li><a href="programming/20220429153134-nixos_python.html#ID-018850fc-57de-4163-870f-cbd906e8516f">nixos-python</a></li>
+</ul>
+</div>
+</li>
+<li><a id="ID-695e646a-25c0-43d8-b60f-f465dcb5a026"></a>Nim<br />
+<div class="outline-text-5" id="text-orgcdd0292">
+<ul class="org-ul">
+<li><a href="nixos-nim.html#ID-6dbd98c1-06ee-490f-a94b-308da099a6f2">Nixos Nim</a></li>
+<li><a href="Tutorial/2022-05-17-053529-how_to_package_nim.html#ID-69dc4e90-c532-4f12-807f-89f77036e8d1">how to package nim</a></li>
+</ul>
+</div>
+</li>
+<li><a id="ID-f041ed17-fc7c-4322-b6ae-4ce524e2ef85"></a>packaging<br />
+<div class="outline-text-5" id="text-orgfd63107">
+<ul class="org-ul">
+<li><a href="Tutorial/2022-05-17-051936-nixos_custom_pkgs.html#ID-3866dd8f-fc14-491a-af3a-bbd0c4c5ce98">nixos custom pkgs</a></li>
+<li><a href="https://ryantm.github.io/nixpkgs/">https://ryantm.github.io/nixpkgs/</a></li>
+</ul>
+</div>
+</li>
+<li><a id="ID-233aed75-f243-4c58-98ff-8acd97ca771f"></a>flakes<br />
+<div class="outline-text-5" id="text-org9dbfff5">
+<ul class="org-ul">
+<li><a href="Tutorial/20230607221650-package_and_use_nix_flakes.html#ID-828e3d5c-f971-4344-9576-79e11005fba6">Package and use Nix flakes</a></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-ID-4853bbeb-0135-41c8-9595-729bdff6190f" class="outline-4">
+<h4 id="ID-4853bbeb-0135-41c8-9595-729bdff6190f">Installation</h4>
+<div class="outline-text-4" id="text-orga7c8839">
+</div>
+<ul class="org-ul">
+<li><a id="ID-fa180464-a544-4bd9-8d2c-51e3f331739d"></a>Raspberry pi<br />
+<div class="outline-text-5" id="text-orgcb0259e">
+<ul class="org-ul">
+<li><a href="Tutorial/2022-06-01-033435-cross_compile_nixos_to_sdcard_for_rpi3b.html#ID-d7085ecb-5bc7-48cf-b039-4ff204352534">cross compile nixos to sdcard for rpi3b+</a></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-ID-e9476412-357b-4917-bb8d-e8c51a15bb65" class="outline-4">
+<h4 id="ID-e9476412-357b-4917-bb8d-e8c51a15bb65">Nix on non nixos system</h4>
+<div class="outline-text-4" id="text-org1473815">
+<ul class="org-ul">
+<li><a href="Tutorial/2022-08-22-022748-non_nixos_desktop_intergration.html#ID-20916295-adc2-4f83-a5dd-c42482478ca0">non nixos desktop intergration</a><a href="Tutorial/2022-08-22-022748-non_nixos_desktop_intergration.html#ID-20916295-adc2-4f83-a5dd-c42482478ca0">non nixos desktop intergration</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-ID-9fa27955-743f-4233-97e3-2f57abdccdf9" class="outline-4">
+<h4 id="ID-9fa27955-743f-4233-97e3-2f57abdccdf9">Nixos Channels</h4>
+<div class="outline-text-4" id="text-orgdefbbce">
+<ul class="org-ul">
+<li><a href="20221220021836-nixpkgs_fork_service.html#ID-606957f7-f85c-442a-9a16-abd5b3e00151">NixPkgs enable a service from different channel?</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

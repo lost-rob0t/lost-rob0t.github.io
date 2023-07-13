@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>practical cl simple db</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">practical cl simple db</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#ID-dca28cde-aa24-4512-9afd-a9336b752d12">About</a></li>
+<li><a href="#ID-3f56490d-3772-414a-9365-2c5c9d95f036">Task</a>
+<ul>
+<li><a href="#ID-e9a346f9-cf06-4d67-ad6f-66adb62db813">Create a Cd</a></li>
+<li><a href="#ID-6f187f5e-7860-4239-a805-737c77a61a04">Creating a global varible</a></li>
+<li><a href="#ID-9c955508-c1ba-41fc-b3ad-43f3b4d8e3a7">Pushing data to a list</a></li>
+<li><a href="#ID-d29b8848-153b-4d6d-aca8-9d1250692e04">Homiconicity</a></li>
+<li><a href="#ID-e2fc3f6f-2c2d-42a6-8f43-1351264215f2">output formatiing</a></li>
+<li><a href="#ID-37e69a40-2a98-4fe9-bf0c-b77496cf6cd2">Getting user input</a></li>
+<li><a href="#ID-a35aaee6-cd11-42c2-aeb0-dbc82cc24e6b">Loops</a></li>
+<li><a href="#ID-021babe0-baa9-4cdb-b300-55476d4b0f44">Query The database</a></li>
+<li><a href="#ID-dbbafb33-d35a-40fa-aa76-61570cb0a798">Macros</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<a href="programming/20220606214902-lisp.html#ID-2bf517d2-698a-44cf-bb5a-5273da53f717">Lisp</a>
+In this im going to build a simple cd database. This is from the Book <a href="20220606214142-practical_common_lisp.html#ID-88d459b3-70ba-42c4-9062-6625fc1035f7">Practical Common Lisp.</a>
+</p>
+
+<div id="outline-container-ID-dca28cde-aa24-4512-9afd-a9336b752d12" class="outline-2">
+<h2 id="ID-dca28cde-aa24-4512-9afd-a9336b752d12">About</h2>
+<div class="outline-text-2" id="text-org3349fc5">
+<p>
+We will track of cds that need to be rip, storing title artist, rating and if its been ripped.
+</p>
+
+<p>
+It will be implemented in a <a href="programming/20220606214755-property_list.html#ID-433dae2b-c05f-445b-b2a6-75e046796b5f">Property list</a>.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-ID-3f56490d-3772-414a-9365-2c5c9d95f036" class="outline-2">
+<h2 id="ID-3f56490d-3772-414a-9365-2c5c9d95f036">Task</h2>
+<div class="outline-text-2" id="text-orga5dfba7">
+</div>
+<div id="outline-container-ID-e9a346f9-cf06-4d67-ad6f-66adb62db813" class="outline-3">
+<h3 id="ID-e9a346f9-cf06-4d67-ad6f-66adb62db813">Create a Cd</h3>
+<div class="outline-text-3" id="text-org6ac5b7a">
+<p>
+Create a function that creates a <a href="programming/20220606214755-property_list.html#ID-433dae2b-c05f-445b-b2a6-75e046796b5f">Property list</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">make-cd</span> (title artist rating ripped)
+  <span style="font-style: italic;">"Makes a cd to be inserted into a database"</span>
+  (list <span style="font-weight: bold;">:title</span> title <span style="font-weight: bold;">:artist</span> artist <span style="font-weight: bold;">:rating</span> rating <span style="font-weight: bold;">:ripped</span> ripped))
+</pre>
+</div>
+
+<p>
+Make a cd
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(make-cd <span style="font-style: italic;">"Deep Jungle Walk"</span> <span style="font-style: italic;">"Astrix"</span> 10 T)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-ID-6f187f5e-7860-4239-a805-737c77a61a04" class="outline-3">
+<h3 id="ID-6f187f5e-7860-4239-a805-737c77a61a04">Creating a global varible</h3>
+<div class="outline-text-3" id="text-org0fe7ac3">
+<p>
+Create a Global Variable. when you suround it with * that is a convention for a global variable
+A single record is not enough for a database.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="font-weight: bold;">defvar</span> <span style="font-weight: bold; font-style: italic;">*db*</span> nil)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-ID-9c955508-c1ba-41fc-b3ad-43f3b4d8e3a7" class="outline-3">
+<h3 id="ID-9c955508-c1ba-41fc-b3ad-43f3b4d8e3a7">Pushing data to a list</h3>
+<div class="outline-text-3" id="text-org4f48a5b">
+<p>
+Abstract on the <a href="programming/20220606221221-push_macro.html#ID-e2c2d083-0a4e-4f8a-b7d7-219625b02040">PUSH macro</a>.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">add-record</span> (cd)
+  <span style="font-style: italic;">"Inserts a record into *db*"</span>
+    (push cd *db*))
+</pre>
+</div>
+
+<p>
+Add a record
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(add-record (make-cd <span style="font-style: italic;">"Deep Jungle Walk"</span> <span style="font-style: italic;">"Astrix"</span> 8 T))
+(add-record (make-cd <span style="font-style: italic;">"Universal Mantra"</span> <span style="font-style: italic;">"WaveForm"</span> 10 T))
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-ID-d29b8848-153b-4d6d-aca8-9d1250692e04" class="outline-3">
+<h3 id="ID-d29b8848-153b-4d6d-aca8-9d1250692e04">Homiconicity</h3>
+<div class="outline-text-3" id="text-orge64a587">
+<p>
+Show the contents of the database
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">*db*
+</pre>
+</div>
+
+<p>
+Showing the contents of the database inthis manner is not easy on the eyes
+</p>
+</div>
+</div>
+<div id="outline-container-ID-e2fc3f6f-2c2d-42a6-8f43-1351264215f2" class="outline-3">
+<h3 id="ID-e2fc3f6f-2c2d-42a6-8f43-1351264215f2">output formatiing</h3>
+<div class="outline-text-3" id="text-orgc7b1506">
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">dump-db</span> ()
+  <span style="font-style: italic;">"Dump the database in a pretty format"</span>
+  (<span style="font-weight: bold;">dolist</span> (cd *db*)
+     (format t <span style="font-style: italic;">"~{~a:~10t~a~%~}~%"</span> cd)))
+
+
+</pre>
+</div>
+
+<p>
+Dump the db
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(dump-db)
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-ID-37e69a40-2a98-4fe9-bf0c-b77496cf6cd2" class="outline-3">
+<h3 id="ID-37e69a40-2a98-4fe9-bf0c-b77496cf6cd2">Getting user input</h3>
+<div class="outline-text-3" id="text-orgc544c5c">
+<p>
+Lets make a prompt
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">prompt-read</span> (prompt)
+  (format *query-io* <span style="font-style: italic;">"~a: "</span> prompt)
+  (force-output *query-io*)
+  (read-line *query-io*))
+</pre>
+</div>
+
+
+<p>
+Lets make inserting data into the database easier
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">prompt-for-cd</span> ()
+  <span style="font-style: italic;">"Insert a cd interactively"</span>
+  (add-record (make-cd
+               (prompt-read <span style="font-style: italic;">"Title"</span>)
+               (prompt-read <span style="font-style: italic;">"Artist"</span>)
+               (parse-integer (prompt-read <span style="font-style: italic;">"rating 0-10"</span>))
+               (y-or-n-p <span style="font-style: italic;">"Ripped &lt;y/n&gt;: "</span>))))
+
+
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-ID-a35aaee6-cd11-42c2-aeb0-dbc82cc24e6b" class="outline-3">
+<h3 id="ID-a35aaee6-cd11-42c2-aeb0-dbc82cc24e6b">Loops</h3>
+<div class="outline-text-3" id="text-org18dc48e">
+<p>
+Now lets add them in a loop
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">add-cds</span> ()
+  <span style="font-style: italic;">"add cds in a loop interactively"</span>
+  (<span style="font-weight: bold;">loop</span> (prompt-for-cd)
+   (<span style="font-weight: bold;">if</span> (not (y-or-n-p <span style="font-style: italic;">"Another?: "</span>)) (<span style="font-weight: bold;">return</span>))))
+</pre>
+</div>
+
+<p>
+The user should not have to re enter data.
+Save and load the database
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">save-db</span> (filename)
+  (<span style="font-weight: bold;">with-open-file</span> (out filename
+                       <span style="font-weight: bold;">:direction</span> <span style="font-weight: bold;">:output</span>
+                       <span style="font-weight: bold;">:if-exists</span> <span style="font-weight: bold;">:supersede</span>)
+    (<span style="font-weight: bold;">with-standard-io-syntax</span>
+      (print *db* out))))
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(save-db <span style="font-style: italic;">"/tmp/test.db"</span>)
+</pre>
+</div>
+
+<p>
+And the function to load it
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">load-db</span> (filename)
+  (<span style="font-weight: bold;">with-open-file</span> (in filename)
+    (<span style="font-weight: bold;">with-standard-io-syntax</span>
+      (setf *db* (read in)))))
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(load-db <span style="font-style: italic;">"/tmp/test.db"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-ID-021babe0-baa9-4cdb-b300-55476d4b0f44" class="outline-3">
+<h3 id="ID-021babe0-baa9-4cdb-b300-55476d4b0f44">Query The database</h3>
+<div class="outline-text-3" id="text-orgf12b849">
+<p>
+Function <code>REMOVE-IF-NOT</code> returns lists only matching the predicate.
+</p>
+
+<p>
+It doesn't remove, only gives a new copy.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(remove-if-not #'evenp '(1 2 3 4))
+</pre>
+</div>
+
+<p>
+<code>EVENP</code> is a function returns true if a number is even.
+</p>
+
+<p>
+Lets create a function to select by artist.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">select-by-artist</span> (artist)
+  (remove-if-not
+   #'(<span style="font-weight: bold;">lambda</span> (cd) (equal (getf cd <span style="font-weight: bold;">:artist</span>) artist)) *db*))
+
+</pre>
+</div>
+
+<p>
+There are many different ways one might want to query, instead lets make a function take an anon function
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">select</span> (selector-fn)
+  (remove-if-not selector-fn *db*))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-ID-dbbafb33-d35a-40fa-aa76-61570cb0a798" class="outline-3">
+<h3 id="ID-dbbafb33-d35a-40fa-aa76-61570cb0a798">Macros</h3>
+<div class="outline-text-3" id="text-org125d1e1">
+<p>
+A lisp macro is a code generator that is ran for you automatically by the compiller when a call to a macro is made. When the call is a macro it will not evaluate the arguments, passing them to the macro which will return a new lisp form.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

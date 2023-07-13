@@ -1,0 +1,38 @@
+:PROPERTIES:
+:ID:       40a6baca-2913-450a-b516-7a16b9d51b2c
+:ROAM_TAGS:
+:END:
+#+title: Links
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2023-05-26 Fri 23:07]
+
+* Link Page
+:PROPERTIES:
+:ID:       3f31e066-f900-4300-88c9-931bd51d942d
+:PUBDATE:  <2023-06-30 Fri 01:04>
+:END:
+List of stuff i found on the web that  is cool
+
+** Emacs Related
+:PROPERTIES:
+:ID:       fbfe442e-6d0b-4dd1-9580-69301e7559d9
+:END:
++ [[https://www.jwz.org/doc/emacs-timeline.html][The history of emacs]]
+** I2P
+:PROPERTIES:
+:ID:       e9f5d030-c026-4581-9846-c08320264ff0
+:END:
+Inproxies?
++ i2p.rocks
++ muc.i2p.rocks
++ https://i2p-inproxy.mk16.de/
++ Dev stuff: https://theoverlay.ghost.io/guides-for-developers/
+
+
+** Security
+:PROPERTIES:
+:ID:       b2a9fdce-6b8c-4ecb-9de3-8eef9fe45fe6
+:END:
++ https://tinyxss.terjanq.me/

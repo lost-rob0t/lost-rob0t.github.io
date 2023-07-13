@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emacs Evil mode</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Emacs Evil mode</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7356814">Evil Mode</a>
+<ul>
+<li><a href="#org1f40277">Disable evil mode for certain modes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<ul class="org-ul">
+<li><a href="../20220428224740-emacs.html#ID-95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2">Emacs</a></li>
+</ul>
+
+<div id="outline-container-org7356814" class="outline-2">
+<h2 id="org7356814">Evil Mode</h2>
+<div class="outline-text-2" id="text-org7356814">
+<p>
+Emacs evil mode is a package for vimmers who see the power of emacs.
+</p>
+</div>
+
+
+<div id="outline-container-org1f40277" class="outline-3">
+<h3 id="org1f40277">Disable evil mode for certain modes</h3>
+<div class="outline-text-3" id="text-org1f40277">
+<p>
+Some modes do not require the use of evil-mode and infact are just single key commands.
+</p>
+
+<p>
+<a href="20230515224412-elfeed.html#ID-1561f948-9a4d-4936-a58f-90a6b87ddb06">Elfeed</a> is such a package that doesnt mesh with evil.
+</p>
+
+<p>
+Use the <code>evil-set-inital-state</code> function to set a state or use <code>turn-off-evil-mode</code>
+</p>
+
+<p>
+Disable evil for elfeed.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(add-hook 'elfeed-search-mode-hook 'turn-off-evil-mode)
+(add-hook 'elfeed-show-mode-hook 'turn-off-evil-mode)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

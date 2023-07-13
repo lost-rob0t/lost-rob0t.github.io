@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SLinux Trouble Shoot Denials</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">SLinux Trouble Shoot Denials</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org95de3b2">How to trouble shoot SELInux denials&#xa0;&#xa0;&#xa0;<span class="tag"><span class="selinux">selinux</span>&#xa0;<span class=""></span>&#xa0;<span class="linux">linux</span></span></a>
+<ul>
+<li><a href="#orgfb81d75"><code>ausearch</code> command</a>
+<ul>
+<li><a href="#org5193fcc">Find recent events</a></li>
+<li><a href="#org29f4dbd">Options</a></li>
+</ul>
+</li>
+<li><a href="#orgab309fe"><code>audit2why</code></a>
+<ul>
+<li><a href="#orgf35cd75">Search for sshd issues and find out why</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org95de3b2" class="outline-2">
+<h2 id="org95de3b2">How to trouble shoot SELInux denials&#xa0;&#xa0;&#xa0;<span class="tag"><span class="selinux">selinux</span>&#xa0;<span class=""></span>&#xa0;<span class="linux">linux</span></span></h2>
+<div class="outline-text-2" id="text-org95de3b2">
+<p>
+A lot of people's problems with selinux is it will block something they are trying to do.
+So then they just disable it. That is fine for a personal machine but what if it is a server and you want it to work?
+</p>
+</div>
+
+<div id="outline-container-orgfb81d75" class="outline-3">
+<h3 id="orgfb81d75"><code>ausearch</code> command</h3>
+<div class="outline-text-3" id="text-orgfb81d75">
+<p>
+<code>ausearch</code> can query the <code>auditd</code> logs based on search criteria.
+</p>
+</div>
+
+<div id="outline-container-org5193fcc" class="outline-4">
+<h4 id="org5193fcc">Find recent events</h4>
+<div class="outline-text-4" id="text-org5193fcc">
+<p>
+Recent will grab the last ten minutes
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">ausearch -m avc --start recent
+</pre>
+</div>
+
+<p>
+Find issues from today looking for sshd
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">ausearch -m avc --start today | grep sshd
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org29f4dbd" class="outline-4">
+<h4 id="org29f4dbd">Options</h4>
+<div class="outline-text-4" id="text-org29f4dbd">
+<p>
+Most used options from the man-page
+You can fine the online man-page <a href="https://man7.org/linux/man-pages/man8/ausearch.8.html">here</a>.
+</p>
+<pre class="example" id="orgbc9be99">
+-a, --event audit-event-id
+       Search for an event based on the given event ID. Messages
+       always start with something like
+       msg=audit(1116360555.329:2401771). The event ID is the
+       number after the ':'. All audit events that are recorded
+       from one application's syscall have the same audit event
+       ID. A second syscall made by the same application will
+       have a different event ID. This way they are unique.
+
+ --format option
+       Events that match the search criteria are formatted using
+       this option. The supported formats are: raw, default,
+       interpret, csv, and text. The raw option is described
+       under the --raw command line option. The default option is
+       what you get when no formatting options are passed. It
+       includes one line as a visual separator which indicates
+       the time stamp and then the records of the event follow.
+       The interpret option is explained under the -i command
+       line option. The csv option outputs the results of the
+       search as a normalized event in comma separated value
+       (CSV) format suitable for import into analytical programs.
+       The text option turns the event into an English sentence
+       that is easier to understand than other options, but it
+       comes at the expense of loss of detail. In most cases this
+       is perfectly fine since the original event still retains
+       all the original information.
+
+ -m, --message message-type | comma-sep-message-type-list
+       Search for an event matching the given message type.
+       (Message types are also known as record types.) You may
+       also enter a comma separated list of message types or
+       multiple individual message types each with its own -m
+       option. There is an ALL message type that doesn't exist in
+       the actual logs. It allows you to get all messages in the
+       system. The list of valid messages types is long. The
+       program will display the list whenever no message type is
+       passed with this parameter. The message type can be either
+       text or numeric. If you enter a list, there can be only
+       commas and no spaces separating the list.
+
+ -ts, --start [start-date] [start-time]
+       Search for events with time stamps equal to or after the
+       given start time. The format of start time depends on your
+       locale. You can check the format of your locale by running
+       date '+%x'.  If the date is omitted, today is assumed. If
+       the time is omitted, midnight is assumed. Use 24 hour
+       clock time rather than AM or PM to specify time. An
+       example date using the en_US.utf8 locale is 09/03/2009. An
+       example of time is 18:00:00. The date format accepted is
+       influenced by the LC_TIME environmental variable.
+
+       You may also use the word: now, recent, boot, today,
+       yesterday, this-week, week-ago, this-month, this-year, or
+       checkpoint. Boot means the time of day to the second when
+       the system last booted. Today means starting at 1 second
+       after midnight. Recent is 10 minutes ago. Yesterday is 1
+       second after midnight the previous day. This-week means
+       starting 1 second after midnight on day 0 of the week
+       determined by your locale (see localtime). Week-ago means
+       starting 1 second after midnight exactly 7 days ago.
+       This-month means 1 second after midnight on day 1 of the
+       month. This-year means the 1 second after midnight on the
+       first day of the first month.
+
+       checkpoint means ausearch will use the timestamp found
+       within a valid checkpoint file ignoring the recorded
+       inode, device, serial, node and event type also found
+       within a checkpoint file. Essentially, this is the
+       recovery action should an invocation of ausearch with a
+       checkpoint option fail with an exit status of 10, 11 or
+       12. It could be used in a shell script something like:
+
+            ausearch --checkpoint /etc/audit/auditd_checkpoint.txt -i
+            _au_status=$?
+            if test ${_au_status} eq 10 -o ${_au_status} eq 11 -o ${_au_status} eq 12
+            then
+              ausearch --checkpoint /etc/audit/auditd_checkpoint.txt --start checkpoint -i
+            fi
+
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgab309fe" class="outline-3">
+<h3 id="orgab309fe"><code>audit2why</code></h3>
+<div class="outline-text-3" id="text-orgab309fe">
+<p>
+<code>audit2why</code> will translate audit messages into a description of why it was denied.
+</p>
+</div>
+
+<div id="outline-container-orgf35cd75" class="outline-4">
+<h4 id="orgf35cd75">Search for sshd issues and find out why</h4>
+<div class="outline-text-4" id="text-orgf35cd75">
+<p>
+This command will search for issues starting today for sshd with grep then pipe it into <code>audit2why</code> and possibly get an explanation.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">ausearch -m avc --start today | grep sshd | audit2why
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

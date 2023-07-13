@@ -1,0 +1,87 @@
+:PROPERTIES:
+:ID:       6189e985-e87d-42df-aa38-ba6429a2bf8a
+:ROAM_TAGS: racket compsci videos book articles
+:END:
+#+title: Reading inbox
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2023-05-26 Fri 21:31]
+
+
+
+* Reading inbox
+A index of videos, books and other things that got my attention.
+Not all might be read or watched.
+
+Key:
++ TODO, YES means im going to read it
++ IDEA means i might do it may remove
++ KILL, NO means im not going to read it
++ [X] means complete
++ [-] Means in progress
+
+* Books
+** IDEA starting-forth
+Notes: [[id:73ce874e-3841-49dc-89c6-0fe8225678c4][Learning Forth]]
+* TODO Articles [1/3] :articles:
++ [ ] Multics Emacs: The History, Design and Implementation
+  - Link:  https://web.archive.org/web/20000819071104/http%3A//www.multicians.org/mepap.html
+
++ [X] The TTY demystified
+  - Link: https://www.linusakesson.net/programming/tty/
+  - Notes:[[id:1d99b0b9-bc9e-4578-8e96-8defb97cf49b][the tty demystified]]
++ [-]  Cookie Bugs - Smuggling & Injection
+  - Link: https://blog.ankursundara.com/cookie-bugs/
+  - Notes: [[id:e32a3fd4-d13c-4274-be79-69c688f79398][Cookie Bugs]]
+
+
+*  Research
+** TODO SCADA [0/4]
+- [ ] Industrial Network Security: Securing Critical Infrastructure Networks for Smart Grid, Scada, and Other Industrial Control Systems
+  - Link: http://libgen.rs/book/index.php?md5=F6E187A77BAEEB0BF6DA38B8F24EE4D4
+- [ ]  Cybersecurity for SCADA Systems
+  - Link: http://libgen.rs/book/index.php?md5=12F2F3813DB28CAF6F445875004913B1
+
+- [ ] Hacking Exposed Industrial Control Systems: ICS and SCADA Security Secrets & Solutions
+  - Link: http://libgen.rs/book/index.php?md5=D8F8291A8E4BEA6A5809C38F5D76C66B
+- [ ] https://github.com/ITI/ICS-Security-Tools/blob/master/tools/simulation/README.md
+** TODO WIFI
+- Wifi encryption bypass
+  https://youtu.be/3XKvOaVQX-8?t=57
+
+
+
+
+* Videos :videos:
+** TODO [/]
+SCHEDULED: <2023-03-31 Fri 18:00>
++ [-] College Algebra – Full Course with Python Code
+  - Link https://www.youtube.com/watch?v=i7vOAcUo5iA
+  - Notes: [[id:f2268937-46c0-4af9-8f5c-50a815c3de36][Freecode camp College Algebra Notes]]
+
+** IDEA [/]
++ [ ] groundupdb
++ you learn to build your own database from the ground up
++ Link: https://www.youtube.com/watch?v=Xk5W9cHdz40&list=PLWoOSZbmib_cr7zRfAkPkoa9m2uYsYDug
+
++ [ ] [[https://www.youtube.com/watch?v=-IoYSMtrBSI&t=16s][Comprehensive List of OSINT Tools v3]]
++ [ ] [[https://www.youtube.com/watch?v=s9B3LsSnesU][Aaron Haymore - Red Team Tooling with Nim-Lang]]
+
+* TODO Computer Science [0/3] :compsci:
+** IDEA Langs [0/1]
++ [ ] Beautiful Racket
+  - URL:  https://beautifulracket.com/introduction.html
+  - Notes: [[id:1bf34c96-2e1f-423d-b9b2-c84fb3b04c74][beautiful-racket]]
+** IDEA Compsci books [0/3]
++ [ ] Structure and Interpretation of Computer Programs
++ [ ] Practical Common lisp
+  - Notes: [[id:88d459b3-70ba-42c4-9062-6625fc1035f7][Practical Common Lisp]]
++ [ ] Common LISP A Gentle Introduction to Symbolic Computation
+  - Notes: [[id:072bf814-0086-4fdf-9922-9a6abdcefdb9][Common LISP a gentile introduction notes]]
+** IDEA self study [/]
++ [ ] Introduction to Algorithms
+  - Link: https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011
++ [ ] Analysis of Algorithms Lectures
+  - Link: https://www3.cs.stonybrook.edu/~skiena/373/videos/
+  - Notes: [[id:882aaec2-cd54-4e34-bb55-fbbe20e632cb][Introduction to Algorithnms Steven skiena (CSE373)]]

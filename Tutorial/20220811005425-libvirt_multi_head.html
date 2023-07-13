@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>libvirt-multi-head</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">libvirt-multi-head</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge472e26">Tutorial</a>
+<ul>
+<li><a href="#org39df354">Steps</a>
+<ul>
+<li><a href="#org0dad184">Install spice-vdagent</a></li>
+<li><a href="#org23d994c">Edit the guest's configuration</a></li>
+<li><a href="#orgc71c301">Create a new xrand output mode.</a></li>
+<li><a href="#org473557e">Save the config</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2e7f25a">FootNotes</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orge472e26" class="outline-2">
+<h2 id="orge472e26">Tutorial</h2>
+<div class="outline-text-2" id="text-orge472e26">
+<p>
+I Had an issue where spice was not letting me use multi head setup.
+Having two monitors and i find that when playing in my hackthebox vm its annoying to only have one monitor to reasearch and pwn,
+this is somthing i should fix.
+</p>
+</div>
+
+
+
+
+<div id="outline-container-org39df354" class="outline-3">
+<h3 id="org39df354">Steps</h3>
+<div class="outline-text-3" id="text-org39df354">
+</div>
+<div id="outline-container-org0dad184" class="outline-4">
+<h4 id="org0dad184">Install spice-vdagent</h4>
+<div class="outline-text-4" id="text-org0dad184">
+</div>
+<ul class="org-ul">
+<li><a id="orgfeededa"></a>Nixos<br />
+<div class="outline-text-5" id="text-orgfeededa">
+<p>
+On nixos just include <code>spice-vdagent</code> in your <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a> enviroment packages or your home-manager config.
+</p>
+</div>
+</li>
+<li><a id="org53b759d"></a>Arch<br />
+<div class="outline-text-5" id="text-org53b759d">
+<p>
+<code>pacman -S spice-vdagent</code>
+</p>
+</div>
+</li>
+<li><a id="orgd948366"></a>Fedora<br />
+<div class="outline-text-5" id="text-orgd948366">
+<p>
+<code>dnf install spice-vdagent</code>
+</p>
+</div>
+</li>
+<li><a id="org4ab4d5e"></a>Ubuntu And Debian<br />
+<div class="outline-text-5" id="text-org4ab4d5e">
+<p>
+<code>apt install spice-vdagent</code>
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org23d994c" class="outline-4">
+<h4 id="org23d994c">Edit the guest's configuration</h4>
+<div class="outline-text-4" id="text-org23d994c">
+<p>
+<code>sudo virsh edit --domain &lt;name of vm&gt;</code>
+</p>
+
+<p>
+Find the line where it mentions "video"
+<b>NOTE</b>: i use the video driver qxl, should work with virtio
+Change <code>heads='1'</code> to how ever many monitors you need
+</p>
+<div class="org-src-container">
+<pre class="src src-xml">&lt;<span style="font-weight: bold;">video</span>&gt;
+  &lt;<span style="font-weight: bold;">model</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"qxl"</span> <span style="font-weight: bold; font-style: italic;">ram</span>=<span style="font-style: italic;">"65536"</span> <span style="font-weight: bold; font-style: italic;">vram</span>=<span style="font-style: italic;">"65536"</span> <span style="font-weight: bold; font-style: italic;">vgamem</span>=<span style="font-style: italic;">"16384"</span> <span style="font-weight: bold; font-style: italic;">heads</span>=<span style="font-style: italic;">"1"</span> <span style="font-weight: bold; font-style: italic;">primary</span>=<span style="font-style: italic;">'yes'</span>/&gt;
+  &lt;<span style="font-weight: bold;">alias</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"video0"</span>/&gt;
+  &lt;<span style="font-weight: bold;">address</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"pci"</span> <span style="font-weight: bold; font-style: italic;">domain</span>=<span style="font-style: italic;">"0x0000"</span> <span style="font-weight: bold; font-style: italic;">bus</span>=<span style="font-style: italic;">"0x10"</span> <span style="font-weight: bold; font-style: italic;">slot</span>=<span style="font-style: italic;">"0x01"</span> <span style="font-weight: bold; font-style: italic;">function</span>=<span style="font-style: italic;">"0x0"</span>/&gt;
+&lt;/<span style="font-weight: bold;">video</span>&gt;
+</pre>
+</div>
+
+<p>
+to
+</p>
+
+<div class="org-src-container">
+<pre class="src src-xml">&lt;<span style="font-weight: bold;">video</span>&gt;
+  &lt;<span style="font-weight: bold;">model</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"qxl"</span> <span style="font-weight: bold; font-style: italic;">ram</span>=<span style="font-style: italic;">"65536"</span> <span style="font-weight: bold; font-style: italic;">vram</span>=<span style="font-style: italic;">"65536"</span> <span style="font-weight: bold; font-style: italic;">vgamem</span>=<span style="font-style: italic;">"16384"</span> <span style="font-weight: bold; font-style: italic;">heads</span>=<span style="font-style: italic;">"2"</span> <span style="font-weight: bold; font-style: italic;">primary</span>=<span style="font-style: italic;">'yes'</span>/&gt;
+  &lt;<span style="font-weight: bold;">alias</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"video0"</span>/&gt;
+  &lt;<span style="font-weight: bold;">address</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"pci"</span> <span style="font-weight: bold; font-style: italic;">domain</span>=<span style="font-style: italic;">"0x0000"</span> <span style="font-weight: bold; font-style: italic;">bus</span>=<span style="font-style: italic;">"0x10"</span> <span style="font-weight: bold; font-style: italic;">slot</span>=<span style="font-style: italic;">"0x01"</span> <span style="font-weight: bold; font-style: italic;">function</span>=<span style="font-style: italic;">"0x0"</span>/&gt;
+&lt;/<span style="font-weight: bold;">video</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgc71c301" class="outline-4">
+<h4 id="orgc71c301">Create a new xrand output mode.</h4>
+<div class="outline-text-4" id="text-orgc71c301">
+<p>
+Inside your guest it is going to show that the new output is disconected.
+you need to create a new output mode
+</p>
+
+
+
+
+<div id="orgad127c8" class="figure">
+<p><img src="Tutorial/2022-08-11_01-57-30_archlinux-xrandr.png" alt="2022-08-11_01-57-30_archlinux-xrandr.png" />
+</p>
+</div>
+
+<p>
+Get the mode line for your resolution, I choose 1920x1080.
+</p>
+
+<p>
+<code>cvt 1920 1080</code>
+</p>
+<pre class="example" id="orgfd8c504">
+Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+</pre>
+<p>
+Copy everything after where it says "modeline" and use that to create a new mode
+</p>
+
+<p>
+Create the mode
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">xrandr --addmode <span style="font-style: italic;">"1920x1080_60.00"</span>  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+</pre>
+</div>
+
+<p>
+Set the outputs to use the new mode
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">xrandr --output Virtual-1 --mode 1920x1080_60.00
+xrandr --output Virtual-2 --mode 1920x1080_60.00
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org473557e" class="outline-4">
+<h4 id="org473557e">Save the config</h4>
+<div class="outline-text-4" id="text-org473557e">
+<p>
+If you do not want to constantly add the new screen resolution each reboot, add it to <code>/usr/share/X11/xorg.conf.d</code> or <code>/etc/X11/xorg.conf.d/</code> in FHS based distros.
+in <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a> use the option <code>services.xorg.config</code>.
+</p>
+
+<pre class="example" id="orgab25626">
+section "Monitor"
+    Identifier "Virtual-1 "
+    Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
+    Option "PreferredMode" "1920x1080_60.00"
+EndSection
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org2e7f25a" class="outline-2">
+<h2 id="org2e7f25a">FootNotes</h2>
+<div class="outline-text-2" id="text-org2e7f25a">
+<ul class="org-ul">
+<li><a href="https://elmarco.fedorapeople.org/manual.html#_multiple_monitor_support">https://elmarco.fedorapeople.org/manual.html#_multiple_monitor_support</a></li>
+<li><a href="https://access.redhat.com/discussions/1363063">https://access.redhat.com/discussions/1363063</a></li>
+<li><a href="https://stafwag.github.io/blog/blog/2018/04/22/high-screen-resolution-on-a-kvm-virtual-machine-with-qxl/">https://stafwag.github.io/blog/blog/2018/04/22/high-screen-resolution-on-a-kvm-virtual-machine-with-qxl/</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

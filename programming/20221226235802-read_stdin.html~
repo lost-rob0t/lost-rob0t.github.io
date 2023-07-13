@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Read stdin</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Read stdin</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org3d22c75">How to use stdin in nim&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nim">nim</span></span></a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org3d22c75" class="outline-2">
+<h2 id="org3d22c75">How to use stdin in nim&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nim">nim</span></span></h2>
+<div class="outline-text-2" id="text-org3d22c75">
+<p>
+you can use the <code>isatty</code> proc from the terminal module
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nim">proc isatty(f: File): bool {.raises: [], tags: [].}
+</pre>
+</div>
+
+<p>
+Will return true if the file is a terminal device
+</p>
+
+<p>
+you can also check the file id (35 for terminal) but is unreliable
+</p>
+
+<p>
+Example from <a href="https://scripter.co/nim-check-if-stdin-stdout-are-associated-with-terminal-or-pipe/">here</a>.
+</p>
+<div class="org-src-container">
+<pre class="src src-nim"># Figuring out if input is coming from a pipe and if output is going to a pipe.
+import std/[terminal, strutils]
+
+if isatty(stdin):
+  # ./stdin_stdout foo
+  # ./stdin_stdout foo | cat
+  echo "--&gt; Input from terminal"
+else:
+  # echo bar | ./stdin_stdout
+  # echo bar | ./stdin_stdout | cat
+  echo "--&gt; Input from a PIPE/FILE: `" &amp; readAll(stdin).strip() &amp; "'"
+
+if isatty(stdout):
+  # ./stdin_stdout foo
+  # echo bar | ./stdin_stdout foo
+  echo "    Output to terminal --&gt;"
+else:
+  # ./stdin_stdout | cat
+  # echo bar | ./stdin_stdout | cat
+  echo "    Output to a PIPE --&gt;"
+</pre>
+</div>
+
+<p>
+In my code i use it in jdump
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nim">
+proc main(mode: string = "file", input: seq[string]) =
+  if isatty(stdin):
+    for file in input:
+      let o = open(file, fmRead)
+      for line in o.lines:
+	var t = ""
+	try:
+	  echo format(line.parseJson, 2, t)
+	except JsonParsingError:
+	  discard
+	  when defined(debug):
+	    echo line
+      o.close
+  else:
+    for line in stdin.lines:
+      var t = ""
+      try:
+	echo format(line.parseJson, 2, t)
+      except JsonParsingError:
+	discard
+	when defined(debug):
+	  echo line
+</pre>
+</div>
+
+<p>
+Yeah the amount of nesting here lol.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

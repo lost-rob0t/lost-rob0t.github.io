@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID:       a934f8ea-6586-437f-a354-d307915f3c39
+:END:
+#+TITLE: STOMP
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-19 Mon 22:40]
+#+LAST_MODIFIED: [2022-12-19 Mon 23:01]
+
+* Simple Text Oriented Messeging protocol :stomp:
+STOMP is a simple text based protocol for working with [[id:8a9b8114-4064-48ed-8057-5f6a7c512ea1][Message oriented middleware]].
+It is very simular to the Well Known [[id:55fa6669-d1f4-4956-abf0-a0c3c2aac23b][HTTP]], it works over [[id:a75d2660-481e-4c42-98bf-358b08f8c030][TCP]].
+Stomp is an alterntive to other messaging protocoles that cover a small subset of messaging operations rather then providing a comprehisive messaging api.
+
+
+** Overview
+It is a frame based protocol. Frames are moddeled on [[id:55fa6669-d1f4-4956-abf0-a0c3c2aac23b][HTTP]].
+A frame is a command, a set of optional headers and an optional body. By defualt it is textbased but also can transmit binary messages.
+
+** Commands
+Here is the list of commands as of v1.2
++ CONNECT
++ SEND
++ SUBSCRIBE
++ UNSUBSCRIBE
++ BEGIN
++ COMMIT
++ ABORT
++ ACK
++ NACK
++ DISCONNECT
+
+*** CONNECT

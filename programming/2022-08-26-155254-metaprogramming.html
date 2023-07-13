@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Metaprogramming</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Metaprogramming</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org29ab676">Metaprogramming in nim</a>
+<ul>
+<li><a href="#org0e963bd">Generics</a>
+<ul>
+<li><a href="#org41113d2">Generic Procedures</a></li>
+<li><a href="#org6a81bad">Constraining Generics</a></li>
+<li><a href="#org54250ee">Templates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<ul class="org-ul">
+<li><a href="20220606215451-nim.html#ID-af6fae74-d03b-4930-8f39-63becb43efd9">Nim</a></li>
+</ul>
+
+
+<div id="outline-container-org29ab676" class="outline-2">
+<h2 id="org29ab676">Metaprogramming in nim</h2>
+<div class="outline-text-2" id="text-org29ab676">
+<p>
+Some notes From Nim in Action
+</p>
+</div>
+<div id="outline-container-org0e963bd" class="outline-3">
+<h3 id="org0e963bd">Generics</h3>
+<div class="outline-text-3" id="text-org0e963bd">
+<p>
+Generics allow you to write programs in a style which you do not know the types until the algorithm is called.
+It helps you with code duplication.
+You can define as many generic types as you want!
+</p>
+
+<p>
+Some languages may refer to them as <code>parametric polymorphism</code> also known as <code>templates</code>
+</p>
+</div>
+
+
+<div id="outline-container-org41113d2" class="outline-4">
+<h4 id="org41113d2">Generic Procedures</h4>
+<div class="outline-text-4" id="text-org41113d2">
+<p>
+An example generic procedure from the book
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nim">proc myMax[T](a, b: T): T =
+  if a &lt; b:
+    return b
+  else:
+    return a
+doAssert myMax(5, 10) == 10
+doAssert myMax(31.3, 1.23124) == 31.3
+</pre>
+</div>
+
+<p>
+The compiler may not be able to infer generic types. You can explicitly set them with square brackets
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nim">doAssert myMax[float](5, 10.5) == 10.5
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org6a81bad" class="outline-4">
+<h4 id="org6a81bad">Constraining Generics</h4>
+<div class="outline-text-4" id="text-org6a81bad">
+<p>
+Constraining generics makes it easier to convey to you and others the meaning of the generic.
+</p>
+
+<p>
+An example would be to call myMax with two strings
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nim">echo myMax("Hello", "World!")
+</pre>
+</div>
+
+<p>
+This will result in an error
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="org2d10c28"></a>type classes/concepts<br />
+<div class="outline-text-5" id="text-org2d10c28">
+<p>
+Concepts is also known as a user defined type classs in other languages, are a construct to create requirements that a matched type must satisfy.
+</p>
+
+<p>
+Example
+</p>
+<div class="org-src-container">
+<pre class="src src-nim">type
+  Comparable = concept a
+    (a &lt; a) is bool
+</pre>
+</div>
+<p>
+Concepts are created with the <code>concept</code> keyword, after that is the type identifiers.
+In the example the type is matched when a &lt; returns a bool.
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+
+<div id="outline-container-org54250ee" class="outline-4">
+<h4 id="org54250ee">Templates</h4>
+<div class="outline-text-4" id="text-org54250ee">
+<p>
+Nim's <code>templates</code> are procedures that produce code. The easily allows you to deal with boilerplate code.
+They allow you to inject varibles into the calling scope.
+To call a template you just call it like a procedure.
+</p>
+
+<p>
+Example from the book
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nim">template `!=` (a, b: untyped) =
+  not (a == b)
+</pre>
+</div>
+
+<p>
+you can define <code>!=</code> but you would need to define one fo each type or use generarics
+An example would be to look at <a href="../2022-05-28-030619-star_intel.html#ID-78157cd5-9681-4a64-b5c7-0f2b415cd446">star intel</a> how i used to use function overloading and now i use templates.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a id="orga2d7c88"></a>Code blocks<br />
+<div class="outline-text-5" id="text-orga2d7c88">
+<p>
+A code block is a set of statments. passing multiple statements into a procedure into a procecure needs anonmouse functions.
+Templates have a sepcial syntax to support more than one statement.
+</p>
+
+<p>
+Example from book
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nim">import os
+template repeat(statements: untyped) =
+  while true:
+    statements
+
+repeat:
+  echo("Hello Templates!")
+  sleep(1000)
+</pre>
+</div>
+
+<p>
+the statments is replaces with whatever code block is passed. when passed it looks like this
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nim">import os
+while true:
+  echo("Hello Templates!")
+  sleep(1000)
+</pre>
+</div>
+
+<p>
+NOTE: when a code block is passed, the last parameter always contains it
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="orgb9332a6"></a>IDEA read on nim's do syntax<br /></li>
+</ul>
+</li>
+
+<li><a id="orgfda3df9"></a>Untype Versus Typed<br />
+<div class="outline-text-5" id="text-orgfda3df9">
+<ul class="org-ul">
+<li>Untyped: Allows Indentifers that has yet to be delclared.</li>
+<li>Typed: allows a indentifier that has a type and by concrete type like <code>float, int and string</code></li>
+</ul>
+</div>
+</li>
+
+<li><a id="org52f6a73"></a>Template hygiene<br />
+<div class="outline-text-5" id="text-org52f6a73">
+<p>
+Templates can define vairbles that can be accessible after the template.
+you might not want that and this is called <code>template hygiene</code>.
+</p>
+
+<p>
+Example from book
+</p>
+
+<div class="org-src-container">
+<pre class="src src-nim">template declareVar(varName: untyped, value: typed) =
+  var varName = value
+declareVar(foo, 42)
+echo(foo)
+</pre>
+</div>
+
+<p>
+Calling the template declares a new var becuase the the var is <code>injected</code> into the calling scope.
+Normaly vars are not injected into the scope, unless marked with the <code>{.inject.}</code> pragma.
+Trying to acess a var without that results in error.
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

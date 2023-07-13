@@ -1,0 +1,40 @@
+:PROPERTIES:
+:ID:       1131ab7e-abe2-4c6a-8414-44b524bdf49b
+:ROAM_TAGS: protocol ics
+:END:
+#+title: Modbus
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+#+author: NSASPY
+* Modbus :ics:protocol:
+Modbus is a data communication protocol by Modicon in the 1970s. It is designed for use with [[id:27a4cf94-829a-4182-9dc8-3dd99da55fe9][programmable logic controllers]].
+Modbus is the most commonly used standard for connecting industrial devices.
+modbus uses Serical lines, ethernet or others as a transport. it is often used to connect a  system supervisory computer with a [[id:40545110-6180-4f4e-9520-b18b02c78d6e][Remote terminal unit]].
+** Limits
++ Limited supported data types
++ No descriptions of data objects
++ It is a Master Slave model
++ Limited to 247 devices on one link, except for Ethernet TCP/IP
++ No protections against malicious commands or sniffing
+
+
+** Memory area
+This table shows the layout of a typical modbus object
+| Name              | Function               | Size (bits) | Range         |
+|-------------------+------------------------+-------------+---------------|
+| Coils             | Discrete Outputs (R+W) |           1 | 00001 – 09999 |
+| Inputs            | Discrete inputs (R)    |           1 | 10001 – 19999 |
+| Input Registers   | Analog Inputs (R)      |          16 | 30001 – 39999 |
+| Holding Registers | Analog outputs (R+W)   |          16 | 40001 – 49999 |
+
+** Modbus RTU Frame Format
+| Name     | Length (Bits) | Function                                                                     |
+|----------+---------------+------------------------------------------------------------------------------|
+| Start    | 3.5 x 8       | s.5 char times (28 bits) of silence (mark condition)                         |
+| Address  | 8             | Station address                                                              |
+| Function | 8             | Function code (IE read coils)                                                |
+| Data     | n x 8         | Data + length will be filled depending on message type                       |
+| CRC      | 16            | [[id:2dacee3a-6036-4871-b1c6-462e4785c223][Cyclic redundancy check]]                                                      |
+| END      | 3.5 x 8       | At least 3.5 char times (28 bits) of silence (mark condition) bewteen frames |

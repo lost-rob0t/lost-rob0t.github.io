@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SCADA</title>
+<meta name="author" content="NSASPY" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">SCADA</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#ID-c9820d4a-127c-44f6-ad6c-8941d1cd7273"><span class="todo TODO">TODO</span> SCADA&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SCADA">SCADA</span></span></a>
+<ul>
+<li><a href="#ID-b9009461-2248-4da0-b240-fac5acbb805b">Control Operations</a>
+<ul>
+<li><a href="#ID-9def9397-71e8-4848-803c-3abc7d050e30">Level 0</a></li>
+<li><a href="#ID-e0ede1b9-aa09-4286-9c36-cac3825439ad">Level 1</a></li>
+<li><a href="#ID-82eb21d0-cf92-4943-aa92-7ad82080201d">Level 2</a></li>
+<li><a href="#ID-c1495c55-ed03-4cd3-8d22-c3eb1122327c">Level 3</a></li>
+<li><a href="#ID-d588b9b2-84f0-44ee-82e5-ec0d0a3e7ef0">Level 4</a></li>
+</ul>
+</li>
+<li><a href="#ID-9eae8c47-54eb-4bae-a3f0-b69ed60100c5">Generations of SCADA</a>
+<ul>
+<li><a href="#ID-d524bb59-b65f-4d3c-89f9-fe5081ee2a22">First Generation Monolithic</a></li>
+<li><a href="#ID-88cfc48b-b7a5-42c8-998b-de78e3e3eb5a">Secend Generation Distributed</a></li>
+<li><a href="#ID-c7ef8e62-64e0-478b-83c8-203cd882f2a9">Third Generation Networked</a></li>
+<li><a href="#ID-ce0945d3-451d-44f0-b15f-67313525e087">Forth Generation Web based</a></li>
+<li><a href="#ID-054d0536-bfad-488f-94d4-e97223201d41">Future: Cloud based</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<ul class="org-ul">
+<li><a href="index.html#ID-c72d4e02-0e32-424c-b4b3-c471adbf4598">Index</a></li>
+</ul>
+<div id="outline-container-ID-c9820d4a-127c-44f6-ad6c-8941d1cd7273" class="outline-2">
+<h2 id="ID-c9820d4a-127c-44f6-ad6c-8941d1cd7273"><span class="todo TODO">TODO</span> SCADA&#xa0;&#xa0;&#xa0;<span class="tag"><span class="SCADA">SCADA</span></span></h2>
+<div class="outline-text-2" id="text-org75d8f0d">
+<blockquote>
+<p>
+There once was a city that lost its might
+After a SCADA hack in one single night
+The power went out
+And all we could shout
+Is "How could this happen, oh what a sight!" - Anon
+</p>
+</blockquote>
+
+<p>
+Supervisory control and data acquisition is a control system for high level supervision of machines and processes.
+It is used with Programable Logic controllers which control the processes/machines.
+</p>
+</div>
+
+<div id="outline-container-ID-b9009461-2248-4da0-b240-fac5acbb805b" class="outline-3">
+<h3 id="ID-b9009461-2248-4da0-b240-fac5acbb805b">Control Operations</h3>
+<div class="outline-text-3" id="text-org1ed96db">
+
+<div id="org499b61e" class="figure">
+<p><img src="SCADA/2022-12-09_00-56-45_screenshot.png" alt="2022-12-09_00-56-45_screenshot.png" />
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-ID-9def9397-71e8-4848-803c-3abc7d050e30" class="outline-4">
+<h4 id="ID-9def9397-71e8-4848-803c-3abc7d050e30">Level 0</h4>
+<div class="outline-text-4" id="text-orga51d86f">
+<p>
+Field Level devices.
+examples:
+</p>
+<ul class="org-ul">
+<li>Temperature sensors</li>
+<li>Control valves</li>
+<li>Flow sensors</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-ID-e0ede1b9-aa09-4286-9c36-cac3825439ad" class="outline-4">
+<h4 id="ID-e0ede1b9-aa09-4286-9c36-cac3825439ad">Level 1</h4>
+<div class="outline-text-4" id="text-org2a0a66f">
+<p>
+Level 1 contains input/output devices, and related processors
+This is where you will find Programmable logic controllers and remote terminal units.
+</p>
+</div>
+</div>
+
+<div id="outline-container-ID-82eb21d0-cf92-4943-aa92-7ad82080201d" class="outline-4">
+<h4 id="ID-82eb21d0-cf92-4943-aa92-7ad82080201d">Level 2</h4>
+<div class="outline-text-4" id="text-org5b9b940">
+<p>
+Cotains readsing and reports. Data is formated so that a operator using a Human Machine interface can make operating decisions to adjust or overide RTU or PLC controls.
+Data is Fed into a historian, which is often just a normal DBMS. The historian is used for analytics.
+</p>
+</div>
+</div>
+
+<div id="outline-container-ID-c1495c55-ed03-4cd3-8d22-c3eb1122327c" class="outline-4">
+<h4 id="ID-c1495c55-ed03-4cd3-8d22-c3eb1122327c">Level 3</h4>
+<div class="outline-text-4" id="text-orgdce59d8">
+<p>
+Deals with production control level. it doesnt control the process but instead manages taget goals and monitoring.
+</p>
+</div>
+</div>
+<div id="outline-container-ID-d588b9b2-84f0-44ee-82e5-ec0d0a3e7ef0" class="outline-4">
+<h4 id="ID-d588b9b2-84f0-44ee-82e5-ec0d0a3e7ef0">Level 4</h4>
+<div class="outline-text-4" id="text-orge44bdd4">
+<p>
+Production scheduling
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-ID-9eae8c47-54eb-4bae-a3f0-b69ed60100c5" class="outline-3">
+<h3 id="ID-9eae8c47-54eb-4bae-a3f0-b69ed60100c5">Generations of SCADA</h3>
+<div class="outline-text-3" id="text-org8f15c98">
+<p>
+Scada has evolvedd over the years as tech improved
+</p>
+</div>
+<div id="outline-container-ID-d524bb59-b65f-4d3c-89f9-fe5081ee2a22" class="outline-4">
+<h4 id="ID-d524bb59-b65f-4d3c-89f9-fe5081ee2a22">First Generation Monolithic</h4>
+<div class="outline-text-4" id="text-org3328225">
+<p>
+Early Scada was done by larg minicomputuers. Networks didnt exists at the the time. At this point they was indpendent systems with no networking. Communication protocols was proprietary. Some was developed as turn key operations and ran on the PDP-11
+</p>
+</div>
+</div>
+
+<div id="outline-container-ID-88cfc48b-b7a5-42c8-998b-de78e3e3eb5a" class="outline-4">
+<h4 id="ID-88cfc48b-b7a5-42c8-998b-de78e3e3eb5a">Secend Generation Distributed</h4>
+<div class="outline-text-4" id="text-org99dd677">
+<p>
+SCADA info and commands was distributed across multiple sites and was connected through a lan. Information was sent in real time. Each station was responsible for a task, which was more light weight at the time. Networking was not standardized. since they was proprietary few people knew if they newtork was secure.
+</p>
+</div>
+</div>
+
+<div id="outline-container-ID-c7ef8e62-64e0-478b-83c8-203cd882f2a9" class="outline-4">
+<h4 id="ID-c7ef8e62-64e0-478b-83c8-203cd882f2a9">Third Generation Networked</h4>
+<div class="outline-text-4" id="text-orgd0a5584">
+<p>
+Like a Distributed network many systems can be reduced and networked through communications protocols. The network can be spread acrosse more than one LAN called a <a href="20221209011747-process_control_network.html#ID-272b8475-d721-4782-9f7b-ba914c1a6597">Process Control network</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-ID-ce0945d3-451d-44f0-b15f-67313525e087" class="outline-4">
+<h4 id="ID-ce0945d3-451d-44f0-b15f-67313525e087">Forth Generation Web based</h4>
+<div class="outline-text-4" id="text-orgb4bfadf">
+<p>
+This is where we are, the crux of problems
+With the advent of the internet let many SCADA systems to implement Web based Human machine interfaces and control panles
+</p>
+</div>
+</div>
+
+<div id="outline-container-ID-054d0536-bfad-488f-94d4-e97223201d41" class="outline-4">
+<h4 id="ID-054d0536-bfad-488f-94d4-e97223201d41">Future: Cloud based</h4>
+<div class="outline-text-4" id="text-org365f0f5">
+<p>
+Some are now using cloud based tech but the extent beyond just for analytics is not known as this needs more research.
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: NSASPY (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

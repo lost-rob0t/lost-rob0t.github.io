@@ -1,0 +1,66 @@
+:PROPERTIES:
+:ID:       69dc4e90-c532-4f12-807f-89f77036e8d1
+:ROAM_TAGS:
+:END:
+#+TITLE: how to package nim
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+
+* nimble2nix
+Painless Nimble deps
+https://github.com/bandithedoge/nimble2nix
+~nix-env -iA nixpkgs.fetchgit --arg url "https://github.com/bandithedoge/nimble2nix"
+nimble2nix .~
+
+* Using nix
+
+here is an example package i made for counting puffs
+pkgs/puffer/defualt.nix
+#+begin_src nix
+{ lib, stdenv, nimPackages, fetchurl }:
+
+let
+  cligen = nimPackages.buildNimPackage rec {
+    name = "cligen";
+    version = "1.5.23";
+    src = fetchurl {
+    url = "https://github.com/c-blake/cligen/archive/refs/tags/v${version}.tar.gz";
+    sha256 = "sha256-Qg3+yrvsItEEhSfDVY9t+5CHj1fSJTpYokWPQObgH0g=";
+
+  };
+
+
+  };
+puffer = nimPackages.buildNimPackage rec {
+  name = "puffer";
+  rev = "d0c7d6a9a9e48e31eb24807f8a24118bc19c031c";
+
+  nimBinOnly = true;
+
+  src = fetchurl {
+    url = "https://github.com/lost-rob0t/puffer.nim/archive/${rev}.tar.gz";
+    sha256 = "sha256-hAqlBGiOQk9QVbtDhNHpk5Z7EtyeW02hRlYMxbvb++Q=";
+  };
+  buildInputs = with nimPackages; [
+    cligen
+  ];
+};
+
+in
+  stdenv.mkDerivation rec {
+    pname = "puffer";
+    buildInputs = [ puffer ];
+    meta = with lib; {
+    description = "count puffs";
+    homepage = "https://github.com/lost-rob0t/puffer.ni,";
+    license = licenses.mit;
+    maintainers = [ "nsaspy" ];
+    };
+  }
+
+#+end_src
+
+* using flakes
+- [[id:62bf048c-8b3b-4356-a939-ac7132bfaae2][nim-flake-example]]

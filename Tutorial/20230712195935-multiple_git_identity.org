@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       4acb5116-444e-4a77-94e3-9a289e375c19
+:END:
+#+TITLE: multiple git identity
+#+CREATED: [2023-07-12 Wed 19:59]
+#+LAST_MODIFIED: [2023-07-12 Wed 20:01]
+* Multiple Git Identities
+Here is how to setup multiple git identities.
+Set up multiple top level directories where your projects will live, then edit your git config. I need This to separate my personal projects from my employer or work related stuff.
+
+Here is my example for My Personal Projects
+#+begin_src conf
+[includeIf "gitdir:~/Documents/Projects/"]
+    path = ~/Documents/Projects/.gitconfig
+#+end_src
+
+And Here is an example for a work related one
+#+begin_src conf
+[includeIf "gitdir:~/Documents/work/Projects/"]
+    path = ~/Documents/work/Projects/.gitconfig
+#+end_src
+
+And inside your .gitconfig you can set the relevent identities needed, it is a normal [[id:dc00a2c6-6aa9-4c90-ba6d-6982067d2169][gitconfig]]  so any setting can be applied here.
+#+begin_src conf
+[user]
+  name = "Real name"
+  email = "work.email@employer.com"
+#+end_src

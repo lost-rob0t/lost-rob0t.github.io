@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       1ab40c79-e0b4-4556-b2e0-0eab12ae3a62
+:ROAM_TAGS:
+:END:
+#+title: Shodan api keys
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+*   List of shodan api keys
+:PROPERTIES:
+:ID:       6cf869e1-c066-40aa-b8c3-26e17e2ef023
+:PUBDATE:  <2023-06-30 Fri 01:02>
+:END:
++ 7TeyFZ8oyLulHwYUOcSPzZ5w3cLYib61
++ pHHlgpFt8Ka3Stb5UlTxcaEwciOeF2QM
++

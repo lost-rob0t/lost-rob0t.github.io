@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Learning Forth</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Learning Forth</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#ID-f3324a1b-ba42-48ee-8d6e-28c8ca41af2f">Chapter 1</a>
+<ul>
+<li><a href="#ID-89e1331c-cfde-43f6-8ec2-d4ab7c950e7e">Fourth is interactive</a></li>
+<li><a href="#ID-a1c0a3ce-0050-4d2c-ba40-4841f10bda27">The Dictionary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+<a href="20220429214821-reading_inbox.html#ID-6189e985-e87d-42df-aa38-ba6429a2bf8a">Reading inbox</a>
+</p>
+<div id="outline-container-ID-f3324a1b-ba42-48ee-8d6e-28c8ca41af2f" class="outline-2">
+<h2 id="ID-f3324a1b-ba42-48ee-8d6e-28c8ca41af2f">Chapter 1</h2>
+<div class="outline-text-2" id="text-org00f191f">
+<p>
+Good organization is:
+</p>
+<ul class="org-ul">
+<li>1. define tasks and give it a name</li>
+<li>2. Group related tasks and give the group a name, ect</li>
+</ul>
+
+<p>
+Forth allows you to structure your code in this manner and does not get in the way.
+</p>
+
+<p>
+The Colon is the start of a new definition.
+words are seperated by whitespace
+</p>
+</div>
+<div id="outline-container-ID-89e1331c-cfde-43f6-8ec2-d4ab7c950e7e" class="outline-3">
+<h3 id="ID-89e1331c-cfde-43f6-8ec2-d4ab7c950e7e">Fourth is interactive</h3>
+<div class="outline-text-3" id="text-org98916f0">
+<p>
+you can use it just like a repl and type the name of the word adn it will execute.
+</p>
+
+<p>
+if you have gforth installed, open a repl by entering "gforth"
+</p>
+
+<p>
+Press return and it will return with 'ok'
+</p>
+
+<p>
+Enter this
+</p>
+<div class="org-src-container">
+<pre class="src src-forth">15 SPACES
+</pre>
+</div>
+
+<p>
+When you pressed the enter key forth returned you with 15 spaces
+</p>
+
+
+<p>
+Now lets emit a *
+</p>
+
+<div class="org-src-container">
+<pre class="src src-forth">42 EMIT
+</pre>
+</div>
+<p>
+This returns a *. 42 is the char code for *
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-ID-a1c0a3ce-0050-4d2c-ba40-4841f10bda27" class="outline-3">
+<h3 id="ID-a1c0a3ce-0050-4d2c-ba40-4841f10bda27">The Dictionary</h3>
+<div class="outline-text-3" id="text-org789755d">
+<p>
+Words are stored into forth's "dictionary". it may start with some but you can add to it.
+When you define a new word forth compiles the entry and writes it into the dictionary
+</p>
+
+<p>
+test
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

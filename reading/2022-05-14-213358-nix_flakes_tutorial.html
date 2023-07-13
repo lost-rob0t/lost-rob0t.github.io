@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nix Flakes Tutorial</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Nix Flakes Tutorial</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org00f5c38">Part One.</a>
+<ul>
+<li><a href="#org5b0d364">Problems with nix</a></li>
+<li><a href="#org03e09b1">What is a flake?</a></li>
+<li><a href="#org30d709d">Flake example</a></li>
+</ul>
+</li>
+<li><a href="#org4cebce1">Part Two.</a>
+<ul>
+<li><a href="#orge6e5248">Nix eval is slow</a></li>
+<li><a href="#org2fe3754">Caching nix-env</a></li>
+<li><a href="#org30fa89c">Flakes wich caching</a></li>
+</ul>
+</li>
+<li><a href="#orga5a0c73">IDEA Part Three</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org00f5c38" class="outline-2">
+<h2 id="org00f5c38">Part One.</h2>
+<div class="outline-text-2" id="text-org00f5c38">
+</div>
+<div id="outline-container-org5b0d364" class="outline-3">
+<h3 id="org5b0d364">Problems with nix</h3>
+<div class="outline-text-3" id="text-org5b0d364">
+<p>
+Nix files can acess any file in the filesystem, or anything in the $NIX<sub>PATH</sub>
+like ~/.config/nixpks/config.nix
+</p>
+
+<p>
+This is not a good solution becuase it is less reproducible
+</p>
+
+<p>
+Nix based project are also not easy to share with users.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org03e09b1" class="outline-3">
+<h3 id="org03e09b1">What is a flake?</h3>
+<div class="outline-text-3" id="text-org03e09b1">
+<p>
+a flake is a source tree that has a flake.nix.
+</p>
+
+<p>
+Flakes can depend on other flakes with a flake.lock to ensure reproducible eval.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org30d709d" class="outline-3">
+<h3 id="org30d709d">Flake example</h3>
+<div class="outline-text-3" id="text-org30d709d">
+<p>
+Here is a simple unix package named <b>dwarffs</b>. Its repo is <a href="https://github.com/edolstra/dwarffs">Here</a>.
+It contains a flake.nix file so it is a flake.
+you can install this flake like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">nix shell github:edolstra/dwarffs --command dwarffs --version
+</pre>
+</div>
+
+<p>
+Installing a flake like above will only grab the latest version.
+</p>
+
+<p>
+<b><b><b>NOTE</b></b></b>: in the aricle the output for the command was so. this shows why you should pin a commit hash!!
+</p>
+<pre class="example" id="org4fa2d97">
+dwarffs 0.1.20200406.cd7955a
+</pre>
+
+<p>
+<b><b>*NOTE</b></b>: the mentioned commit no longer exists
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">nix shell github:edolstra/dwarffs/cd7955af31698c571c30b7a0f78e59fd624d0229  --command dwarffs --version
+</pre>
+</div>
+
+<p>
+Metadata from flaks can be retrived like this.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">nix flake metadata github:edolstra/dwarffs
+</pre>
+</div>
+
+<p>
+Flake outputs can be shown with
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">nix flake show github:edolstra/dwarffs
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4cebce1" class="outline-2">
+<h2 id="org4cebce1">Part Two.</h2>
+<div class="outline-text-2" id="text-org4cebce1">
+</div>
+<div id="outline-container-orge6e5248" class="outline-3">
+<h3 id="orge6e5248">Nix eval is slow</h3>
+<div class="outline-text-3" id="text-orge6e5248">
+<p>
+Nix is a interpeted functional language.
+In order for it to get information about the packages it needs to evaluate 1000s of nix evaluations.
+</p>
+
+<p>
+Example of nix-emv -qa
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold;">time</span> nix-env -qa
+</pre>
+</div>
+
+<p>
+This is ok for one off use but using it for scripts is slow becuase of the delay.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2fe3754" class="outline-3">
+<h3 id="org2fe3754">Caching nix-env</h3>
+<div class="outline-text-3" id="text-org2fe3754">
+<p>
+there is a replacement for nix-env -qa for and its called nix-search.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org30fa89c" class="outline-3">
+<h3 id="org30fa89c">Flakes wich caching</h3>
+<div class="outline-text-3" id="text-org30fa89c">
+<p>
+Flake evaluations are fully hermetic. It disslows access to files, envrioment varibles.
+</p>
+
+<p>
+Nix flakes cache is a sqlite database that stores the output attributes of flakes.
+</p>
+
+<p>
+The first run fills it but any run after is much faster
+</p>
+
+<p>
+The cache looks like this
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sqlite3 ~/.cache/nix/eval-cache-v2/0eb2bf36c7deffb8ac2442c6115e21de072901b894ee4b8e4c17a86f89e05350.sqlite .dump
+</pre>
+</div>
+
+<p>
+the cache stores the attributes that nix shell had to eval.
+</p>
+
+<p>
+sqlite db name comes from the contents of the top level flake.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga5a0c73" class="outline-2">
+<h2 id="orga5a0c73">IDEA Part Three</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

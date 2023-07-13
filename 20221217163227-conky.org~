@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       aa6aadef-780f-4eec-ad42-4824516dbdfb
+:END:
+#+TITLE: Conky
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 Sat 16:32]
+#+LAST_MODIFIED: [2022-12-17 Sat 16:35]
+
+* Conky
+Conky is a free, lightweight system monitoring tool for the X Window System. It is designed to be customizable, and can display a wide range of system information and statistics on your desktop. Some of the things that Conky can display include:
+
+CPU usage and temperature
+Memory usage and swap space
+Disk usage and I/O activity
+Network traffic and connection details
+Battery status
+System uptime and load averages
+Calendar and clock
+System messages and log files
+Conky can display this information using a variety of visual elements, including text, graphics, and progress bars. It is written in the C programming language and uses the X Window System's Xlib library, so it can be run on any Unix-like operating system.
+
+You can customize Conky to display only the information that you want to see and to adjust the appearance of the display to suit your preferences. You can also create scripts or use libraries such as org-ql to extract and display specific types of information from external sources, such as org files.

@@ -1,0 +1,47 @@
+:PROPERTIES:
+:ID:       b6578448-2a3a-4183-a8cc-d390661328c5
+:END:
+#+TITLE: nixos fix common-lisp ld path
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2023-05-02 Tue 18:51]
+#+LAST_MODIFIED: [2023-05-31 Wed 17:15]
+
+* Fixing Common Lisp LD_LIBRARY_PATH
+
+If CL FFI can't see your library, such as OpenSSL, try building the path in the ~shellHook~.
+Example ~flake.nix~[fn:1] :
+#+begin_src nix
+{
+  description = "Flake ";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs";
+  };
+
+  outputs = { self, nixpkgs }:
+  let
+    pkgs = nixpkgs.legacyPackages.x86_64-linux;
+  in {
+    devShell.x86_64-linux =
+      pkgs.mkShell {
+        buildInputs = with pkgs; [
+          pkg-config
+          roswell
+          sbcl
+          openssl # NOTE Not sure if you need to include this
+          # normally stuff goes in here
+        ];
+        shellHook = ''
+              export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath([pkgs.openssl])}
+            '';
+      };
+  };
+}
+#+end_src
+
+More info: https://archive.is/XvKqX
+* FootNotes
+
+
+[fn:1] https://archive.is/Dor9q

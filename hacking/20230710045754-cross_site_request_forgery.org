@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       4312a6c1-a0e8-42b3-8f63-16de99ec3f39
+:END:
+#+TITLE: Cross Site request forgery
+#+CREATED: [2023-07-10 Mon 04:57]
+#+LAST_MODIFIED: [2023-07-10 Mon 04:58]
+* TODO CSRF (Cross-Site Request Forgery)

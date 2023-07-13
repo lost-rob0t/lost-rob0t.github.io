@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ROAM_TAGS:
+:END:
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/static/org.css" />
+#+HTML_HTML5_FANCY: <div class="navbar" style="background-color: #f2f2f2; padding: 10px;"><a href="#" style="color: #333; text-decoration: none; margin-right: 10px;">Home</a><a href="#" style="color: #333; text-decoration: none; margin-right: 10px;">About</a><a href="#" style="color: #333; text-decoration: none;">Contact</a></div>

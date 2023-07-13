@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>nixos custom pkgs</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">nixos custom pkgs</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org672e74e">How to use custom packages</a></li>
+<li><a href="#org02bc1a9">Tips</a>
+<ul>
+<li><a href="#org7e50701">Installing from a local repo</a></li>
+<li><a href="#org51492df">error: derivation name missing</a></li>
+<li><a href="#orgcae4325">error: syntax error, unexpected ID, expecting ':' or '@'</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org672e74e" class="outline-2">
+<h2 id="org672e74e">How to use custom packages</h2>
+<div class="outline-text-2" id="text-org672e74e">
+<p>
+i have built a some packages myself and i cant find a way to use my overlay.
+Instead i maintain a nix-channel and point it my gitrepo with a archive url
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sudo nix-channel --add https://github.com/lost-rob0t/nixos-overlays/archive/d183b152436003690cf0e4e6ea15018e6ac38230.tar.gz personal
+sudo nix-channel --update
+</pre>
+</div>
+<p>
+After you add the channel at the top of your configuration.nix
+add the following
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">let otherPkgs = import &lt;other-channel&gt; {}
+in
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org02bc1a9" class="outline-2">
+<h2 id="org02bc1a9">Tips</h2>
+<div class="outline-text-2" id="text-org02bc1a9">
+</div>
+<div id="outline-container-org7e50701" class="outline-3">
+<h3 id="org7e50701">Installing from a local repo</h3>
+<div class="outline-text-3" id="text-org7e50701">
+<p>
+This is mostly used for development of packages but can be used to install ad-hoc fixes quickly
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">mkdir -p ~/git/ &amp;&amp; <span style="font-weight: bold;">cd</span> ~/git/
+git clone --depth=1 https://github.com/nixos/nixpkgs
+<span style="font-weight: bold;">export</span> <span style="font-weight: bold; font-style: italic;">NIXPKGS</span>=~/git/nixpkgs
+ls $<span style="font-weight: bold; font-style: italic;">NIXPKGS</span>
+</pre>
+</div>
+
+<p>
+Build an expression
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">nix-build $<span style="font-weight: bold; font-style: italic;">NIXPKG</span> -A firefox
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org51492df" class="outline-3">
+<h3 id="org51492df">error: derivation name missing</h3>
+<div class="outline-text-3" id="text-org51492df">
+<p>
+Version was not included.
+</p>
+
+<p>
+This will fail
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">{ lib, stdenv, nimPackages, fetchurl }:
+
+stdenv.mkDerivation rec {
+  nimsuggest = nimPackages.buildNimPackage rec {
+    name = "nimsuggest";
+    rev = "f780247b651f28d6e3f1ae8d0067316a8086027e";
+
+    nimBinOnly = true;
+
+    src = fetchurl {
+      url = "https://github.com/nim-lang/${name}/archive/${rev}.tar.gz";
+      sha256 = "sha256-hAqlBGiOQk9QVbtDhNHpk5Z7EtyeW02hRlYMxbvb++Q=";
+    };
+  };
+  pname = "nimsuggest";
+  buildInputs = [ nimsuggest ];
+  meta = with lib; {
+    description = "Tool for providing auto completion data for Nim source code.";
+    homepage = "https://github.com/nim-lang/nimsuggest/";
+    license = licenses.mit;
+    maintainers = [ "nsaspy" ];
+    };
+  }
+
+</pre>
+</div>
+
+<p>
+Always have the version!
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">{ lib, stdenv, nimPackages, fetchurl }:
+
+stdenv.mkDerivation rec {
+  nimsuggest = nimPackages.buildNimPackage rec {
+    name = "nimsuggest";
+    rev = "f780247b651f28d6e3f1ae8d0067316a8086027e";
+
+    nimBinOnly = true;
+
+    src = fetchurl {
+      url = "https://github.com/nim-lang/${name}/archive/${rev}.tar.gz";
+      sha256 = "sha256-OmIuOkHP9Uvrm0NLpPAlrhuP4WPEeXSxzAzDn2AuvQ0=";
+    };
+  };
+  pname = "nimsuggest";
+  buildInputs = [ nimsuggest ];
+
+  version = "0.1.0";
+  meta = with lib; {
+    description = "Tool for providing auto completion data for Nim source code.";
+    homepage = "https://github.com/nim-lang/nimsuggest/";
+    license = licenses.mit;
+    maintainers = [ "nsaspy" ];
+    };
+  }
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcae4325" class="outline-3">
+<h3 id="orgcae4325">error: syntax error, unexpected ID, expecting ':' or '@'</h3>
+<div class="outline-text-3" id="text-orgcae4325">
+<p>
+This was painful you simply forgot to include a <code>:</code>
+Wrong
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">{ buildNimPackage, jsony, fetchzip }
+</pre>
+</div>
+
+<p>
+Correct:
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">{ buildNimPackage, jsony, fetchzip }:
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

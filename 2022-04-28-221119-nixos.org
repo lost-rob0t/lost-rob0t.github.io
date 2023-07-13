@@ -1,0 +1,76 @@
+:PROPERTIES:
+:ID:       d0dc2504-21ff-4843-994d-e8abf1991ea0
+:ROAM_TAGS:
+:END:
+#+TITLE: NixOs
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+filetags: nixos
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2023-05-02 Tue 17:05]
++ [[id:c72d4e02-0e32-424c-b4b3-c471adbf4598][Index]]
+* NixOS :nixos:
+:PROPERTIES:
+:ID:       edb3d215-a945-4581-9b1e-4ff14ba1fda3
+:PUBDATE:  <2023-06-30 Fri 01:03>
+:END:
+
+From NixOS Wiki
+
+
+[[https://nixos.org/][NixOS]] is a Linux distribution based on the [[https://nixos.wiki/wiki/Nix][Nix]] package manager and build system. It supports [[https://reproducible-builds.org/][reproducible]] and [[https://en.wikipedia.org/wiki/Declarative_programming][declarative]] system-wide [[https://en.wikipedia.org/wiki/Configuration_management][configuration management]] as well as [[https://en.wikipedia.org/wiki/Atomicity_(database_systems)][atomic]] upgrades and rollbacks, although it can additionally support [[https://en.wikipedia.org/wiki/Imperative_programming][imperative]] package and user management. In NixOS, all components of the distribution — including the [[https://en.wikipedia.org/wiki/Linux_kernel][kernel]], installed [[https://en.wikipedia.org/wiki/Package_manager][packages]] and system configuration files — are built by [[https://nixos.wiki/wiki/Nix][Nix]] from [[https://en.wikipedia.org/wiki/Pure_function][pure functions]] called [[https://nixos.wiki/wiki/Nix_Expression_Language][Nix expressions]].
+
+Since Nix uses [[https://en.wikipedia.org/wiki/Executable][binary]] caching, this provides a unique compromise between the binary-oriented approach used by distributions such as Debian and the [[https://en.wikipedia.org/wiki/Source_code][source]]\-oriented approach used by distributions such as Gentoo. Binaries can be used for standard components, and custom-built packages and modules can be used automatically when a pre-built binary is not available.
+
+Stable NixOS releases are delivered twice a year. NixOS was created by [[https://edolstra.github.io/][Eelco Dolstra]] and [[https://en.wikipedia.org/wiki/Armijn_Hemel][Armijn Hemel]], and initially released in 2003. It is community developed and maintained under the stewardship of the [[https://nixos.org/nixos/foundation.html][NixOS Foundation]].
+** Tips
+:PROPERTIES:
+:ID:       67c24a95-3dbf-435a-941d-9f01eaf4d269
+:END:
++ Have a config, but its broken? Check your git log and revert if needed.
+*** Development in nixos
+:PROPERTIES:
+:ID:       ae4f4529-62a3-4a05-8c83-c42ea44f9515
+:END:
+**** Python
+:PROPERTIES:
+:ID:       73dd8458-b9ed-44de-8995-70e974e304b9
+:END:
+- [[id:018850fc-57de-4163-870f-cbd906e8516f][nixos-python]]
+**** Nim
+:PROPERTIES:
+:ID:       695e646a-25c0-43d8-b60f-f465dcb5a026
+:END:
+- [[id:6dbd98c1-06ee-490f-a94b-308da099a6f2][Nixos Nim]]
+- [[id:69dc4e90-c532-4f12-807f-89f77036e8d1][how to package nim]]
+**** packaging
+:PROPERTIES:
+:ID:       f041ed17-fc7c-4322-b6ae-4ce524e2ef85
+:END:
+- [[id:3866dd8f-fc14-491a-af3a-bbd0c4c5ce98][nixos custom pkgs]]
+- https://ryantm.github.io/nixpkgs/
+**** flakes
+:PROPERTIES:
+:ID:       233aed75-f243-4c58-98ff-8acd97ca771f
+:END:
++ [[id:828e3d5c-f971-4344-9576-79e11005fba6][Package and use Nix flakes]]
+*** Installation
+:PROPERTIES:
+:ID:       4853bbeb-0135-41c8-9595-729bdff6190f
+:END:
+**** Raspberry pi
+:PROPERTIES:
+:ID:       fa180464-a544-4bd9-8d2c-51e3f331739d
+:END:
+- [[id:d7085ecb-5bc7-48cf-b039-4ff204352534][cross compile nixos to sdcard for rpi3b+]]
+*** Nix on non nixos system
+:PROPERTIES:
+:ID:       e9476412-357b-4917-bb8d-e8c51a15bb65
+:END:
++ [[id:20916295-adc2-4f83-a5dd-c42482478ca0][non nixos desktop intergration]][[id:20916295-adc2-4f83-a5dd-c42482478ca0][non nixos desktop intergration]]
+
+*** Nixos Channels
+:PROPERTIES:
+:ID:       9fa27955-743f-4233-97e3-2f57abdccdf9
+:END:
++ [[id:606957f7-f85c-442a-9a16-abd5b3e00151][NixPkgs enable a service from different channel?]]

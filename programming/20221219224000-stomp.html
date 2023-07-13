@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>STOMP</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">STOMP</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge5e694d">Simple Text Oriented Messeging protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="stomp">stomp</span></span></a>
+<ul>
+<li><a href="#org882626a">Overview</a></li>
+<li><a href="#org17633ab">Commands</a>
+<ul>
+<li><a href="#org8dcc7ae">CONNECT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge5e694d" class="outline-2">
+<h2 id="orge5e694d">Simple Text Oriented Messeging protocol&#xa0;&#xa0;&#xa0;<span class="tag"><span class="stomp">stomp</span></span></h2>
+<div class="outline-text-2" id="text-orge5e694d">
+<p>
+STOMP is a simple text based protocol for working with <a href="../20221219225036-message_oriented_middleware.html#ID-8a9b8114-4064-48ed-8057-5f6a7c512ea1">Message oriented middleware</a>.
+It is very simular to the Well Known <a href="20221219225206-http.html#ID-55fa6669-d1f4-4956-abf0-a0c3c2aac23b">HTTP</a>, it works over <a href="20221219225308-tcp.html#ID-a75d2660-481e-4c42-98bf-358b08f8c030">TCP</a>.
+Stomp is an alterntive to other messaging protocoles that cover a small subset of messaging operations rather then providing a comprehisive messaging api.
+</p>
+</div>
+
+
+<div id="outline-container-org882626a" class="outline-3">
+<h3 id="org882626a">Overview</h3>
+<div class="outline-text-3" id="text-org882626a">
+<p>
+It is a frame based protocol. Frames are moddeled on <a href="20221219225206-http.html#ID-55fa6669-d1f4-4956-abf0-a0c3c2aac23b">HTTP</a>.
+A frame is a command, a set of optional headers and an optional body. By defualt it is textbased but also can transmit binary messages.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org17633ab" class="outline-3">
+<h3 id="org17633ab">Commands</h3>
+<div class="outline-text-3" id="text-org17633ab">
+<p>
+Here is the list of commands as of v1.2
+</p>
+<ul class="org-ul">
+<li>CONNECT</li>
+<li>SEND</li>
+<li>SUBSCRIBE</li>
+<li>UNSUBSCRIBE</li>
+<li>BEGIN</li>
+<li>COMMIT</li>
+<li>ABORT</li>
+<li>ACK</li>
+<li>NACK</li>
+<li>DISCONNECT</li>
+</ul>
+</div>
+
+<div id="outline-container-org8dcc7ae" class="outline-4">
+<h4 id="org8dcc7ae">CONNECT</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

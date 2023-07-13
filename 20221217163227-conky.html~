@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Conky</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Conky</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#ID-49d05894-7ab2-480b-8778-dd8c7b6aad66">Conky</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-ID-49d05894-7ab2-480b-8778-dd8c7b6aad66" class="outline-2">
+<h2 id="ID-49d05894-7ab2-480b-8778-dd8c7b6aad66">Conky</h2>
+<div class="outline-text-2" id="text-orgbef4c44">
+<p>
+Conky is a free, lightweight system monitoring tool for the X Window System. It is designed to be customizable, and can display a wide range of system information and statistics on your desktop. Some of the things that Conky can display include:
+</p>
+
+<p>
+CPU usage and temperature
+Memory usage and swap space
+Disk usage and I/O activity
+Network traffic and connection details
+Battery status
+System uptime and load averages
+Calendar and clock
+System messages and log files
+Conky can display this information using a variety of visual elements, including text, graphics, and progress bars. It is written in the C programming language and uses the X Window System's Xlib library, so it can be run on any Unix-like operating system.
+</p>
+
+<p>
+You can customize Conky to display only the information that you want to see and to adjust the appearance of the display to suit your preferences. You can also create scripts or use libraries such as org-ql to extract and display specific types of information from external sources, such as org files.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

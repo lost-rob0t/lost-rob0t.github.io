@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>git tricks</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">git tricks</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org7cba426">Git tricks</a>
+<ul>
+<li><a href="#org20e3283">Pulling Down only a few files from a large repo</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7cba426" class="outline-2">
+<h2 id="org7cba426">Git tricks</h2>
+<div class="outline-text-2" id="text-org7cba426">
+<p>
+This is a list of git tricks that you may or maynot need one day
+</p>
+</div>
+
+
+<div id="outline-container-org20e3283" class="outline-3">
+<h3 id="org20e3283">Pulling Down only a few files from a large repo</h3>
+<div class="outline-text-3" id="text-org20e3283">
+<p>
+Smetimes on github you can find very large repos holding packaging data for stuff like pypi.
+</p>
+
+<p>
+Clone the repo, do not checkout files
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git clone --depth 1 --no-checkout --filter=blob:none &lt;repo&gt;
+</pre>
+</div>
+
+<p>
+Check the files and stuff we want.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">git checkout master -- file1 file2
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

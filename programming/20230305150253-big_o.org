@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       a6dfee7d-c44e-4cbf-93c2-3461b91158f5
+:END:
+#+TITLE: big o
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2023-03-05 Sun 15:02]
+#+LAST_MODIFIED: [2023-03-05 Sun 15:02]

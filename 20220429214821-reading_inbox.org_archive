@@ -1,0 +1,162 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/unseen/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+
+
+* DONE PROG NIX FLAKES, PART 1: AN INTRODUCTION AND TUTORIAL
+:PROPERTIES:
+:ARCHIVE_TIME: 2022-05-26 Thu 15:58
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Reading inbox/Articles
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: articles
+:END:
+Notes: [[file:references/2022-05-14-213358-nix_flakes_tutorial.org][Nix Flakes Tutorial]]
+Url: https://www.tweag.io/blog/2020-05-25-flakes/
+
+* KILL How to Hack an Engineer
+:PROPERTIES:
+:ARCHIVE_TIME: 2022-05-26 Thu 15:59
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Reading inbox/Articles
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: KILL
+:ARCHIVE_ITAGS: articles
+:END:
+url: https://www.nemil.com/musings/hack-an-engineer.html
+comment: not what i thought it was
+
+* DONE https://sizeof.cat/links/
+:PROPERTIES:
+:ARCHIVE_TIME: 2022-12-18 Sun 21:43
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Reading inbox/Articles
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: articles
+:END:
+this guy is a goat btw
+
+* DONE Understanding Deradicalization: Methods, Tools and Programs for Countering Violent Extremism :book:
+:PROPERTIES:
+:ARCHIVE_TIME: 2022-12-18 Sun 21:43
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Reading inbox/Articles
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: articles
+:END:
+
+
+* DONE TLA+ video course [2/10]
+:PROPERTIES:
+:ARCHIVE_TIME: 2022-12-18 Sun 21:43
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Reading inbox/Videos
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: DONE
+:ARCHIVE_ITAGS: videos
+:END:
++ [X] Introduction to TLA+
+ swear   - Notes:
++ [X] State Machines in TLA+
++ [ ] Resources and Tools
++ [ ] Die Hard
++ [ ] Transaction Commit
++ [ ] Two-Phase Commit
++ [ ] Paxos Commit
++ [ ] Implementation
++ [ ] The Alternating Bit Protocol
++ [ ] Implementation with Refinement
+
+* TODO Articles [2/3] :articles:
+:PROPERTIES:
+:ID:       198b3b5f-fb8a-4df0-9d8b-3d19a43d8604
+:PUBDATE:  <2023-06-30 Fri 01:03>
+:ARCHIVE_TIME: 2023-07-10 Mon 04:49
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: TODO
+:END:
++ [ ] Multics Emacs: The History, Design and Implementation
+  - Link:  https://web.archive.org/web/20000819071104/http%3A//www.multicians.org/mepap.html
+
++ [X] The TTY demystified
+  - Link: https://www.linusakesson.net/programming/tty/
+  - Notes:[[id:1d99b0b9-bc9e-4578-8e96-8defb97cf49b][the tty demystified]]
++ [X]  Cookie Bugs - Smuggling & Injection
+  - Link: https://blog.ankursundara.com/cookie-bugs/
+  - Notes: [[id:e32a3fd4-d13c-4274-be79-69c688f79398][Cookie Bugs]]
+
+
+
+* TODO Articles [2/3] :articles:
+:PROPERTIES:
+:ID:       198b3b5f-fb8a-4df0-9d8b-3d19a43d8604
+:PUBDATE:  <2023-06-30 Fri 01:03>
+:ARCHIVE_TIME: 2023-07-10 Mon 04:49
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: TODO
+:END:
++ [ ] Multics Emacs: The History, Design and Implementation
+  - Link:  https://web.archive.org/web/20000819071104/http%3A//www.multicians.org/mepap.html
+
++ [X] The TTY demystified
+  - Link: https://www.linusakesson.net/programming/tty/
+  - Notes:[[id:1d99b0b9-bc9e-4578-8e96-8defb97cf49b][the tty demystified]]
++ [X]  Cookie Bugs - Smuggling & Injection
+  - Link: https://blog.ankursundara.com/cookie-bugs/
+  - Notes: [[id:e32a3fd4-d13c-4274-be79-69c688f79398][Cookie Bugs]]
+
+
+
+* TODO Articles [2/3] :articles:
+:PROPERTIES:
+:ID:       198b3b5f-fb8a-4df0-9d8b-3d19a43d8604
+:PUBDATE:  <2023-06-30 Fri 01:03>
+:ARCHIVE_TIME: 2023-07-10 Mon 04:50
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: TODO
+:END:
++ [ ] Multics Emacs: The History, Design and Implementation
+  - Link:  https://web.archive.org/web/20000819071104/http%3A//www.multicians.org/mepap.html
+
++ [X] The TTY demystified
+  - Link: https://www.linusakesson.net/programming/tty/
+  - Notes:[[id:1d99b0b9-bc9e-4578-8e96-8defb97cf49b][the tty demystified]]
++ [X]  Cookie Bugs - Smuggling & Injection
+  - Link: https://blog.ankursundara.com/cookie-bugs/
+  - Notes: [[id:e32a3fd4-d13c-4274-be79-69c688f79398][Cookie Bugs]]
+
+
+
+* IDEA starting-forth
+:PROPERTIES:
+:ID:       517ff8fe-d07f-4183-9832-ac57902617f4
+:ARCHIVE_TIME: 2023-07-10 Mon 04:50
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Books
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: IDEA
+:END:
+Notes: [[id:73ce874e-3841-49dc-89c6-0fe8225678c4][Learning Forth]]
+
+* TODO [/]
+SCHEDULED: <2023-03-31 Fri 18:00>
+:PROPERTIES:
+:ID:       efc546ca-21df-48a6-a5dd-b82978517ed5
+:ARCHIVE_TIME: 2023-07-10 Mon 04:51
+:ARCHIVE_FILE: ~/Documents/Notes/org/roam/20220429214821-reading_inbox.org
+:ARCHIVE_OLPATH: Videos
+:ARCHIVE_CATEGORY: 20220429214821-reading_inbox
+:ARCHIVE_TODO: TODO
+:ARCHIVE_ITAGS: videos
+:END:
++ [-] College Algebra – Full Course with Python Code
+  - Link https://www.youtube.com/watch?v=i7vOAcUo5iA
+  - Notes: [[id:f2268937-46c0-4af9-8f5c-50a815c3de36][Freecode camp College Algebra Notes]]
+

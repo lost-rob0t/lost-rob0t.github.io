@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rest Api's in common lisp</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Rest Api's in common lisp</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org2d76bc6">Rest API in common lisp</a>
+<ul>
+<li><a href="#org23231c1">Get</a></li>
+<li><a href="#org934c2dc">post</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org2d76bc6" class="outline-2">
+<h2 id="org2d76bc6">Rest API in common lisp</h2>
+<div class="outline-text-2" id="text-org2d76bc6">
+<p>
+In common lisp there are many library's to complete a task, some are old but still work just fine.
+A good fast library to use is <a href="https://github.com/fukamachi/dexador">dexador</a>. It is much faster then <a href="https://github.com/edicl/drakma">drakama</a>. As for json i recommend <a href="https://github.com/madnificent/jsown">jsown</a>.
+</p>
+
+<p>
+<code>dexador</code> also takes uris as arguments, so I recommend using <a href="https://github.com/fukamachi/quri">quri</a>.
+</p>
+
+
+<p>
+<b>NOTE</b>: It is imperative you set the content type in your headers, by default dexador will use <code>application/x-www-form-urlencoded</code><sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>!
+</p>
+
+<p>
+Internally it uses connection pooling and reuses connections.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(ql:quickload '(<span style="font-weight: bold;">:dexador</span> <span style="font-weight: bold;">:cl-json</span>))
+(dex:post <span style="font-style: italic;">"https://httpbin.org/post"</span>
+          <span style="font-weight: bold;">:headers</span> '((<span style="font-weight: bold;">:content-type</span> . <span style="font-style: italic;">"application/json"</span>))
+          <span style="font-weight: bold;">:content</span> &lt;json-data&gt;)
+</pre>
+</div>
+</div>
+<div id="outline-container-org23231c1" class="outline-3">
+<h3 id="org23231c1">Get</h3>
+<div class="outline-text-3" id="text-org23231c1">
+<div class="org-src-container">
+<pre class="src src-lisp">(dex:get <span style="font-style: italic;">"http://lisp.org"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org934c2dc" class="outline-3">
+<h3 id="org934c2dc">post</h3>
+<div class="outline-text-3" id="text-org934c2dc">
+<p>
+To send formdata in a post use a association list.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(dex:post <span style="font-style: italic;">"https://httpbin.org/anything/post"</span>  <span style="font-weight: bold;">:content</span> '((<span style="font-style: italic;">"hello"</span> . <span style="font-style: italic;">"world"</span>)))
+</pre>
+</div>
+<p>
+"{
+  "args": {},
+  "data": "",
+  "files": {},
+  "form": {
+    "hello": "world"
+  },
+  "headers": {
+    "Accept": "<b>/</b>",
+    "Content-Length": "11",
+    "Content-Type": "application/x-www-form-url&#x2026;[sly-elided string of length 499]"
+200
+#&lt;HASH-TABLE :TEST EQUAL :COUNT 7 {1003F9A5A3}&gt;
+#&lt;QURI.URI.<a href="URI-HTTPS">URI-HTTPS</a> <a href="https://httpbin.org/anything/post">https://httpbin.org/anything/post</a>&gt;
+NIL
+</p>
+
+<p>
+To use json you need to set the appropriate headers.
+</p>
+<div class="org-src-container">
+<pre class="src src-lisp">(setq *headers*  '((<span style="font-style: italic;">"accept"</span> . <span style="font-style: italic;">"application/json"</span>)
+                   (<span style="font-style: italic;">"Content-Type"</span> . <span style="font-style: italic;">"application/json"</span>)))
+</pre>
+</div>
+<p>
+(("accept" . "application/json") ("Content-Type" . "application/json"))
+</p>
+
+<p>
+Then you can pass the headers and json like so
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(ql:quickload <span style="font-weight: bold;">:jsown</span>)
+(dex:post <span style="font-style: italic;">"https://httpbin.org/anything/post"</span> <span style="font-weight: bold;">:headers</span> *headers*  <span style="font-weight: bold;">:content</span> (jsown:to-json (jsown:new-js (<span style="font-style: italic;">"key"</span> <span style="font-style: italic;">"value"</span>))))
+</pre>
+</div>
+<p>
+"{
+  "args": {},
+  "data": "{\"key\":\"value\"}",
+  "files": {},
+  "form": {},
+  "headers": {
+    "Accept": "application/json",
+    "Content-Length": "15",
+    "Content-Type": "application/json",&#x2026;[sly-elided string of length 510]"
+200
+#&lt;HASH-TABLE :TEST EQUAL :COUNT 7 {1004198BC3}&gt;
+#&lt;QURI.URI.<a href="URI-HTTPS">URI-HTTPS</a> <a href="https://httpbin.org/anything/post">https://httpbin.org/anything/post</a>&gt;
+NIL
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://archive.ph/UPxN4">https://archive.ph/UPxN4</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

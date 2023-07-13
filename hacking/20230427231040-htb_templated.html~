@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HTB Templated</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">HTB Templated</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgd099669">Templated&#xa0;&#xa0;&#xa0;<span class="tag"><span class="htb">htb</span>&#xa0;<span class=""></span>&#xa0;<span class="templates">templates</span></span></a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd099669" class="outline-2">
+<h2 id="orgd099669">Templated&#xa0;&#xa0;&#xa0;<span class="tag"><span class="htb">htb</span>&#xa0;<span class=""></span>&#xa0;<span class="templates">templates</span></span></h2>
+<div class="outline-text-2" id="text-orgd099669">
+<ul class="org-ul">
+<li>Difficulty: very easy</li>
+</ul>
+<p>
+This is a very simple challengd, the name gives the trick up.
+</p>
+
+<p>
+When you first connect to it you will see that it says Powered by flask and jinja.
+</p>
+
+<p>
+Jinga is the templating engine referenced by the name of the challenge.
+</p>
+
+<p>
+Try going to any random url you will see the output is reflected on the 404 page, which means the url is a input.
+</p>
+
+<p>
+Templates in jinja can run code too {{ 1 + 1 }} would return 2
+</p>
+
+<p>
+So by that logic
+</p>
+
+
+<pre class="example">
+http://134.209.18.1:31826/{{config.__class__.__init__.__globals__['os'].popen('cat flag.txt').read()}}
+</pre>
+
+<p>
+Would spawn cat and return the flag.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

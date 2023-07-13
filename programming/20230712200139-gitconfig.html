@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>gitconfig</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">gitconfig</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org96fbdee">Git Config</a>
+<ul>
+<li><a href="#orgec3ba5a">Common Settings</a>
+<ul>
+<li><a href="#orged20207">User</a></li>
+<li><a href="#org8f4433e">Gui</a></li>
+<li><a href="#org30b1d04">init</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org96fbdee" class="outline-2">
+<h2 id="org96fbdee">Git Config</h2>
+<div class="outline-text-2" id="text-org96fbdee">
+<p>
+You can set the settings for a git repo with the <code>git config</code> command.
+</p>
+
+<p>
+These settings are written to a file <code>.gitconfig</code> if <code>git config --local</code> is used.
+</p>
+
+<p>
+You can list settings with <code>git config --list</code>.
+</p>
+</div>
+<div id="outline-container-orgec3ba5a" class="outline-3">
+<h3 id="orgec3ba5a">Common Settings</h3>
+<div class="outline-text-3" id="text-orgec3ba5a">
+</div>
+<div id="outline-container-orged20207" class="outline-4">
+<h4 id="orged20207">User</h4>
+<div class="outline-text-4" id="text-orged20207">
+<div class="org-src-container">
+<pre class="src src-conf">[<span style="font-weight: bold; text-decoration: underline;">user</span>]
+  <span style="font-weight: bold; font-style: italic;">email</span> = example@email.com
+  <span style="font-weight: bold; font-style: italic;">name</span> = John Doe
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org8f4433e" class="outline-4">
+<h4 id="org8f4433e">Gui</h4>
+<div class="outline-text-4" id="text-org8f4433e">
+<p>
+Heres how you can set the editor to <a href="../20220428224740-emacs.html#ID-95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2">emacs</a>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">[<span style="font-weight: bold; text-decoration: underline;">gui</span>]
+  <span style="font-weight: bold; font-style: italic;">editor</span> = emacs
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org30b1d04" class="outline-4">
+<h4 id="org30b1d04">init</h4>
+<div class="outline-text-4" id="text-org30b1d04">
+<p>
+If you need to set the default branch heres how you can do so.
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">[<span style="font-weight: bold; text-decoration: underline;">init</span>]
+  <span style="font-weight: bold; font-style: italic;">defaultBranch</span> = dev
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

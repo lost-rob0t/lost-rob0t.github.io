@@ -1,0 +1,61 @@
+:PROPERTIES:
+:ID:       95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2
+:ROAM_TAGS:
+:END:
+#+title: emacs
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+
+* Emacs Page
+:PROPERTIES:
+:ID:       9050272f-38e4-4b31-85b8-a21435dab0b3
+:PUBDATE:  <2023-06-30 Fri 01:03>
+:END:
+This is a hub of emacs things related
+* Tips and tricks
+:PROPERTIES:
+:ID:       4abdd69d-6e5c-4fff-bdc0-e00d4aba1e25
+:PUBDATE:  <2023-06-30 Fri 01:03>
+:END:
+** Org
+:PROPERTIES:
+:ID:       2c071938-0b22-4d20-9655-91a97b274ec2
+:END:
+*** Load u2l into a org document
+:PROPERTIES:
+:ID:       9120e950-9fbb-4b02-ac8a-dc2e581ae5c3
+:END:
+url2org function for importing info from the web
+[[https://www.reddit.com/r/emacs/comments/i2ep98/comment/g06s9vg/?utm_source=share&utm_medium=web2x&context=3][source]].
+#+begin_src emacs-lisp
+(defun url2org (begin end)
+  "Download a webpage from selected url and convert to org."
+  (interactive "r")
+  (shell-command-on-region begin end
+    (concat "pandoc --from=html --to=org " (buffer-substring begin end))
+   nil t))
+#+end_src
+
+#+RESULTS:
+: url2org
+*** Org Babel isnt tangling the file.
+:PROPERTIES:
+:ID:       ae6c8445-6c50-4e85-9a5c-9ed36a410499
+:END:
+Make sure you C-c C-c the header args
+** Doom Emacs
+:PROPERTIES:
+:ID:       3a054402-2dea-46b0-85d4-e89b6c244319
+:END:
+[[id:6dd02406-f2d1-4ff2-8a39-2590597c44bf][Doom Emacs]]
+** Yasnippet
+:PROPERTIES:
+:ID:       2ed3f731-747d-4707-9674-b5e5ec75a0ed
+:END:
++ [[id:19dae36d-a4f9-49d1-9bc3-d5734ff95bde][Yasnippet multi choice]]
+** Org
++ [[id:2b069384-79d9-4ed3-bc6e-b766edf526cb][Publish Script]]
+** Git
++ [[id:dc00a2c6-6aa9-4c90-ba6d-6982067d2169][gitconfig]]

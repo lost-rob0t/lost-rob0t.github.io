@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>fedi</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">fedi</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#ID-76d0f9c3-75a8-43d6-a3b0-a204e539a1a6"><span class="todo TODO">TODO</span> Fedi a Fediverse api wraper for nim</a>
+<ul>
+<li><a href="#ID-573017c6-82d1-4130-a77f-e4a08f42a47e">Usage</a>
+<ul>
+<li><a href="#ID-46cc5323-b2d4-401d-a3be-a417313623a8">Create a new client</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-ID-76d0f9c3-75a8-43d6-a3b0-a204e539a1a6" class="outline-2">
+<h2 id="ID-76d0f9c3-75a8-43d6-a3b0-a204e539a1a6"><span class="todo TODO">TODO</span> Fedi a Fediverse api wraper for nim</h2>
+<div class="outline-text-2" id="text-org3a44d18">
+<p>
+As of now just mastodon api is supported (contact me if you need more).
+I wrote the lib in need of a nim based wrapper so i can scrape shitlib instances on the fediverse
+</p>
+</div>
+
+
+<div id="outline-container-ID-573017c6-82d1-4130-a77f-e4a08f42a47e" class="outline-3">
+<h3 id="ID-573017c6-82d1-4130-a77f-e4a08f42a47e">Usage</h3>
+<div class="outline-text-3" id="text-orgd35a1c2">
+<p>
+The endpoints are defined using the <code>{.multisync.}</code> pragma, which creates async and sync versions of the function.
+</p>
+</div>
+
+<div id="outline-container-ID-46cc5323-b2d4-401d-a3be-a417313623a8" class="outline-4">
+<h4 id="ID-46cc5323-b2d4-401d-a3be-a417313623a8">Create a new client</h4>
+<div class="outline-text-4" id="text-org24ab51a">
+<p>
+Heres how to create new client
+</p>
+<div class="org-src-container">
+<pre class="src src-nim">import fedi
+import json, os
+# Create a Client without an account
+let client("https://mstdn.party")
+# create a client with a token
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>dir-local-vars</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">dir-local-vars</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#ID-520db492-efd0-48a1-abb6-fc712e5efb41">directory-local variables</a></li>
+</ul>
+</div>
+</div>
+<ul class="org-ul">
+<li><a href="../20220428224740-emacs.html#ID-95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2">emacs</a></li>
+</ul>
+<div id="outline-container-ID-520db492-efd0-48a1-abb6-fc712e5efb41" class="outline-2">
+<h2 id="ID-520db492-efd0-48a1-abb6-fc712e5efb41">directory-local variables</h2>
+<div class="outline-text-2" id="text-orgaedce40">
+<p>
+In emacs there is the concept of directory local variables. They get activated when you enter the directory.
+They are useful for large projects.
+</p>
+
+<p>
+Simply put a  file named <code>.dir-locals.el</code>, or <code>.dir-locals-1.el</code> if the former is already taken.
+</p>
+
+<p>
+<a href="add-dir-local-variable">M-x add-dir-local-variable</a>  can also be used to create one.
+They will be loaded when emacs enters the directory or any subdirectory containing that file.
+</p>
+
+<p>
+<a href="20230501222047-direnv.html#ID-e41bc583-ebfb-40f4-83db-d3355aa5408b">direnv</a> is the shell based version of this, and you can use it in emacs too <a href="https://github.com/purcell/envrc">https://github.com/purcell/envrc</a>.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

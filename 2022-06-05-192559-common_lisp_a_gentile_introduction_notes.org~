@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       072bf814-0086-4fdf-9922-9a6abdcefdb9
+:ROAM_TAGS:
+:END:
+#+TITLE: Common LISP a gentile introduction notes
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+* Chaper Notes
+** Chapter 1
+*** 1.3 Three kinds of numbers
+In common lisp there are are many types of numbers, but there a few to point out
+
+**** Ratios
+Ratios are numbers written as a fraction, unlike in deciicmal
+
+#+begin_src lisp
+(4)
+#+end_src

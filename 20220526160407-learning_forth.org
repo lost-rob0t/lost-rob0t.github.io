@@ -1,0 +1,57 @@
+:PROPERTIES:
+:ID:       73ce874e-3841-49dc-89c6-0fe8225678c4
+:ROAM_TAGS:
+:END:
+#+title: Learning Forth
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+[[id:6189e985-e87d-42df-aa38-ba6429a2bf8a][Reading inbox]]
+* Chapter 1
+:PROPERTIES:
+:ID:       f3324a1b-ba42-48ee-8d6e-28c8ca41af2f
+:PUBDATE:  <2023-06-30 Fri 01:04>
+:END:
+Good organization is:
++ 1. define tasks and give it a name
++ 2. Group related tasks and give the group a name, ect
+
+Forth allows you to structure your code in this manner and does not get in the way.
+
+The Colon is the start of a new definition.
+words are seperated by whitespace
+** Fourth is interactive
+:PROPERTIES:
+:ID:       89e1331c-cfde-43f6-8ec2-d4ab7c950e7e
+:END:
+you can use it just like a repl and type the name of the word adn it will execute.
+
+if you have gforth installed, open a repl by entering "gforth"
+
+Press return and it will return with 'ok'
+
+Enter this
+#+begin_src  forth
+15 SPACES
+#+end_src
+
+When you pressed the enter key forth returned you with 15 spaces
+
+
+Now lets emit a *
+
+#+begin_src forth
+42 EMIT
+#+end_src
+This returns a *. 42 is the char code for *
+
+
+** The Dictionary
+:PROPERTIES:
+:ID:       a1c0a3ce-0050-4d2c-ba40-4841f10bda27
+:END:
+Words are stored into forth's "dictionary". it may start with some but you can add to it.
+When you define a new word forth compiles the entry and writes it into the dictionary
+
+test

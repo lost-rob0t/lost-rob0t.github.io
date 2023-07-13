@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       6dbd98c1-06ee-490f-a94b-308da099a6f2
+:ROAM_TAGS:
+:END:
+#+TITLE: Nixos Nim
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+* Nim on [[id:d0dc2504-21ff-4843-994d-e8abf1991ea0][NixOs]]
+:PROPERTIES:
+:ID:       dbbf30f3-398a-46c6-8b13-aca9e408a1a5
+:PUBDATE:  <2023-06-30 Fri 01:03>
+:END:
+** Tips and tricks
+:PROPERTIES:
+:ID:       e39f8f4d-17c7-4281-aa16-ed32cbed458e
+:END:
+*** Packaging
+:PROPERTIES:
+:ID:       b593709a-ea84-4987-821e-827b56db190e
+:END:
++ [[id:69dc4e90-c532-4f12-807f-89f77036e8d1][how to package nim]]
+*** Setting up a nim enviroment with nix flake
+:PROPERTIES:
+:ID:       9dc25307-ead0-4119-8301-ae5d1e895430
+:END:
++ [[id:62bf048c-8b3b-4356-a939-ac7132bfaae2][nim-flake-example]]

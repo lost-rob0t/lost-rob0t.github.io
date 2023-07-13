@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Couchdb</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Couchdb</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#ID-83ad97c6-0176-4370-bda7-ebb4a1cc64bb">Couchdb&#xa0;&#xa0;&#xa0;<span class="tag"><span class="couchdb">couchdb</span></span></a>
+<ul>
+<li>
+<ul>
+<li><a href="#ID-1d8d35c7-e2b3-4c44-864b-6a0f88274c34">Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-ID-83ad97c6-0176-4370-bda7-ebb4a1cc64bb" class="outline-2">
+<h2 id="ID-83ad97c6-0176-4370-bda7-ebb4a1cc64bb">Couchdb&#xa0;&#xa0;&#xa0;<span class="tag"><span class="couchdb">couchdb</span></span></h2>
+<div class="outline-text-2" id="text-org5bfc6f7">
+<p>
+Couchdb is a Nosql database that offers replication and a simple to use rest api. it is written in erlang.
+</p>
+
+<p>
+I use couchdb for my project <a href="2022-05-28-030619-star_intel.html#ID-78157cd5-9681-4a64-b5c7-0f2b415cd446">star intel</a>
+</p>
+</div>
+<div id="outline-container-ID-1d8d35c7-e2b3-4c44-864b-6a0f88274c34" class="outline-4">
+<h4 id="ID-1d8d35c7-e2b3-4c44-864b-6a0f88274c34">Setup</h4>
+<div class="outline-text-4" id="text-org477c89b">
+</div>
+<ul class="org-ul">
+<li><a id="ID-e6653e2b-e78e-4eb6-b5ef-679cd0ac589f"></a>Docker&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span></span><br />
+<div class="outline-text-5" id="text-org841aa59">
+<p>
+There is a community made docker container and one made by ibm that bundles FTS.
+</p>
+
+<p>
+Documentation is <a href="https://hub.docker.com/_/couchdb">here</a>.
+</p>
+
+<p>
+I run couchdb like this
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Make a directory to store the database</span>
+mkdir $<span style="font-weight: bold; font-style: italic;">PWD</span>/db
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Fix permissions for the database since ibm runs it as uid 1001 and gid 1001</span>
+chown 1001:1001 $<span style="font-weight: bold; font-style: italic;">PWD</span>/db
+<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">Run the database</span>
+docker run -d  -e <span style="font-weight: bold; font-style: italic;">COUCHDB_USER</span>=admin -e <span style="font-weight: bold; font-style: italic;">COUCHDB_PASSWORD</span>=password  -v $<span style="font-weight: bold; font-style: italic;">PWD</span>/db:/opt/couchdb/data  -p 0.0.0.0:5984:5984 ibmcom/couchdb3
+</pre>
+</div>
+
+
+<p>
+After you run it navigate to <a href="http://127.0.0.1/_utils">http://127.0.0.1/_utils</a> and login
+Setup the atabse, change the password and it is ready to use.
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

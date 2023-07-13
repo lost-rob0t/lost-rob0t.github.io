@@ -1,0 +1,27 @@
+:PROPERTIES:
+:ID:       20916295-adc2-4f83-a5dd-c42482478ca0
+:ROAM_TAGS:
+:END:
+#+TITLE: non nixos desktop intergration
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
++ [[id:d0dc2504-21ff-4843-994d-e8abf1991ea0][NixOs]]
+
+* How to intergrate nix on non nix system
+
+I was setting up my Hack the box machine and noticed that nix installed programs are not on the path and can not be launche from the gui.
+I have 2 Solutions
+** Method 1 Symlink
+Here you smlink ~~/.nix/profile/share/spllications~ to ~~/.local/share/applications~
+#+begin_src shell
+ln -s ~/.nix-profile/share/applications/ ~/.local/share/applications/nix
+#+end_src
+If you use my dotfiles, you can run ~nix-xdg-link~.
+** Method 2 Update XDG dirs
+
+
+* links
++ https://discourse.nixos.org/t/desktop-file-integration-in-non-nixos-platforms/9050
++ https://wiki.archlinux.org/title/XDG_user_directories

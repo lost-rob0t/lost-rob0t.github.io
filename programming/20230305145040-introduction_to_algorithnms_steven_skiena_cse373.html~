@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Introduction to Algorithms Steven skiena (CSE373)</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Introduction to Algorithms Steven skiena (CSE373)</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org500bc7a">What is an algorithm?</a>
+<ul>
+<li><a href="#org554eee1">Correctness</a></li>
+<li><a href="#org72b407d">Proofs</a></li>
+<li><a href="#orgc5a5a73">Expressing Algorithms</a>
+<ul>
+<li><a href="#orgbb5e1aa">Ways to do this</a></li>
+<li><a href="#org4b70211">Puesdocode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org500bc7a" class="outline-2">
+<h2 id="org500bc7a">What is an algorithm?</h2>
+<div class="outline-text-2" id="text-org500bc7a">
+<p>
+And algorithm is the idea/ solution to a problem in computer science.
+</p>
+
+<p>
+We strive to create correct awnser on every single input.
+We measure efficient with <a href="20230305150253-big_o.html#ID-a6dfee7d-c44e-4cbf-93c2-3461b91158f5">big o</a> notation.
+</p>
+</div>
+
+<div id="outline-container-org554eee1" class="outline-3">
+<h3 id="org554eee1">Correctness</h3>
+<div class="outline-text-3" id="text-org554eee1">
+<p>
+We need to prove that an algorithm always returns the wanted output of all "legal" problems.
+Algorithms must be specified to allow for a "provable" algorithm to exist, you find the quickest tour and not the best one.
+</p>
+
+<p>
+The solution must be well defined, what would you mean by "best".
+</p>
+</div>
+</div>
+
+<div id="outline-container-org72b407d" class="outline-3">
+<h3 id="org72b407d">Proofs</h3>
+<div class="outline-text-3" id="text-org72b407d">
+<p>
+Proofs are to why something is correct, algorithms are ideas behind a problem.
+you need to know why its correct if you dont you are probably wrong.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgc5a5a73" class="outline-3">
+<h3 id="orgc5a5a73">Expressing Algorithms</h3>
+<div class="outline-text-3" id="text-orgc5a5a73">
+<p>
+You need to express the sequence of steps that an algorithm takes, you use english peusdocode and real languages to do this
+The best way to explain the algorithm is to use english
+Levels of descriptiveness
+</p>
+
+<ol class="org-ol">
+<li>english with pictures</li>
+<li>Pseudo code</li>
+<li>Actually programming language</li>
+</ol>
+</div>
+
+<div id="outline-container-orgbb5e1aa" class="outline-4">
+<h4 id="orgbb5e1aa">Ways to do this</h4>
+<div class="outline-text-4" id="text-orgbb5e1aa">
+<p>
+Explain it in english.
+Use a programming language
+</p>
+</div>
+</div>
+<div id="outline-container-org4b70211" class="outline-4">
+<h4 id="org4b70211">Puesdocode</h4>
+<div class="outline-text-4" id="text-org4b70211">
+<p>
+it is a language between english and a programming
+</p>
+
+
+
+
+
+<ul class="org-ul">
+<li>Next Notes: <a href="20230305160421-cse_373_lecture_2.html#ID-aa2d6d49-ec3f-4662-b3fa-be5690652278">CSE-373-lecture 2</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

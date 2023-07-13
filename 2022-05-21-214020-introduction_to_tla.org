@@ -1,0 +1,94 @@
+:PROPERTIES:
+:ID:       ff71f707-a206-4c09-87e3-99c4056cbbae
+:ROAM_TAGS:
+:END:
+#+TITLE: Introduction to TLA+
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+* What is TLA+
+:PROPERTIES:
+:ID:       995c4ebf-1328-449f-a566-c37094d82c8e
+:PUBDATE:  <2023-06-30 Fri 01:03>
+:END:
+It is a lanaguage for high-level modeling of digital systems.
+It can check these models.
+
+It is used to model critical parts of digital systems while abstracting away from the code that implements the system.
+It was designed to model concurent and distrubted systems.
+
+you can find design errors and correct them before writing any code.
+
+** What is a digital system?
+:PROPERTIES:
+:ID:       0f9e8a40-e26c-4fdb-93ba-11faa6d812f1
+:END:
+
+A digital system includes:
+
++ Algorithms
++ Programs
++ Computer systsems
+
+You can abstract its continuouse evolution as a sequence of discrete events
+** What does "high level" mean
+:PROPERTIES:
+:ID:       6fcc4a3f-53fc-4e5c-adff-834afc219b89
+:END:
+high level means above the code level/implentation level
+
+
+** What can you check with TLA+
+:PROPERTIES:
+:ID:       769ecbfe-4984-448f-bf8c-7b4d37adc1a4
+:END:
+
+you use TLA+ to ensure the system you build "works right".
+working right means that you sastify certain properties.
+
+The properties TLA+ can check are conditions on individual executions, not a percentage of executions.
+
+the system satified property if every single execution does.
+
+
+** Why model a concurent system as a sequence of steps?
+:PROPERTIES:
+:ID:       c3009a20-3b5f-4e29-b550-3578bb4e4b25
+:END:
+
+it might be strange to describe a concurent system as one.
+
+you can simulate one with a sequential program, but why not do it? its simple.
+
+
+** State Machine
+:PROPERTIES:
+:ID:       42e23a1e-fa0e-424a-9353-55b7ec93edaa
+:END:
+A execution is a sequence of states.
+
+a execution is represented as a behavior
+
+A behavior is a sequence of states.
+
+We want to speicify all possible behaviors of a system.
+
+
+*** What is a state machine?
+:PROPERTIES:
+:ID:       dc37fe7c-0fa8-40d7-b87d-105f4de7a1e5
+:END:
+A state machine is descibed as:
+- All Possible intial states
+- What states can follow any given state
+
+if there is no pssible next state, it halts.
+
+A state is the signment of values to variables
+
+so basicly a state machine is described by:
+
+- What the variables are.
+- Possible initial value of varibles are
+- A relation between their values and their current state and their values in the next state.

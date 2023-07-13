@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       433dae2b-c05f-445b-b2a6-75e046796b5f
+:ROAM_TAGS:
+:END:
+#+title: Property list
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]

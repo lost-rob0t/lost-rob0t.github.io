@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reading inbox</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Reading inbox</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#ID-252f0dd2-3c62-4db4-9974-8fae8eebfe79">Reading inbox</a></li>
+<li><a href="#ID-11e418fb-ec95-4c5c-a788-fab6158cde03">Books</a></li>
+<li><a href="#ID-01ad52a0-f64a-47f7-b103-8a20f6b48069">Research</a>
+<ul>
+<li><a href="#ID-c0378ab1-73da-4cb8-9952-81fb1d84ad73"><span class="todo TODO">TODO</span> SCADA <code>[0/4]</code></a></li>
+<li><a href="#ID-66831b25-c2b1-41f8-8901-8aa959708a83"><span class="todo TODO">TODO</span> WIFI</a></li>
+</ul>
+</li>
+<li><a href="#ID-efba2ab5-29e8-46ea-a10f-64ac5ea0af92">Videos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="videos">videos</span></span></a>
+<ul>
+<li><a href="#ID-ec244c4e-d54e-445e-8c78-bd97e3accc4d">IDEA <code>[/]</code></a></li>
+</ul>
+</li>
+<li><a href="#ID-abe946cb-bab3-4623-8adc-9a1eced888dc"><span class="todo TODO">TODO</span> Computer Science <code>[0/3]</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span></span></a>
+<ul>
+<li><a href="#ID-72f54a71-0ad3-4609-97a7-f28b99eef657">IDEA Langs <code>[0/1]</code></a></li>
+<li><a href="#ID-f08be5e5-ae9c-4466-9f92-fc0b4765f0e5">IDEA Compsci books <code>[0/3]</code></a></li>
+<li><a href="#ID-2f38b8fa-0ab3-4d29-a471-05cc3aed9590">IDEA self study <code>[/]</code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-ID-252f0dd2-3c62-4db4-9974-8fae8eebfe79" class="outline-2">
+<h2 id="ID-252f0dd2-3c62-4db4-9974-8fae8eebfe79">Reading inbox</h2>
+<div class="outline-text-2" id="text-org9395fe4">
+<p>
+A index of videos, books and other things that got my attention.
+Not all might be read or watched.
+</p>
+
+<p>
+Key:
+</p>
+<ul class="org-ul">
+<li>TODO, YES means im going to read it</li>
+<li>IDEA means i might do it may remove</li>
+<li>KILL, NO means im not going to read it</li>
+<li class="on"><code>[X]</code> means complete</li>
+<li class="trans"><code>[-]</code> Means in progress</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-ID-11e418fb-ec95-4c5c-a788-fab6158cde03" class="outline-2">
+<h2 id="ID-11e418fb-ec95-4c5c-a788-fab6158cde03">Books</h2>
+<div class="outline-text-2" id="text-org5fab8b8">
+</div>
+</div>
+<div id="outline-container-ID-01ad52a0-f64a-47f7-b103-8a20f6b48069" class="outline-2">
+<h2 id="ID-01ad52a0-f64a-47f7-b103-8a20f6b48069">Research</h2>
+<div class="outline-text-2" id="text-orgb1447d0">
+</div>
+<div id="outline-container-ID-c0378ab1-73da-4cb8-9952-81fb1d84ad73" class="outline-3">
+<h3 id="ID-c0378ab1-73da-4cb8-9952-81fb1d84ad73"><span class="todo TODO">TODO</span> SCADA <code>[0/4]</code></h3>
+<div class="outline-text-3" id="text-org89bbc6b">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Industrial Network Security: Securing Critical Infrastructure Networks for Smart Grid, Scada, and Other Industrial Control Systems
+<ul class="org-ul">
+<li>Link: <a href="http://libgen.rs/book/index.php?md5=F6E187A77BAEEB0BF6DA38B8F24EE4D4">http://libgen.rs/book/index.php?md5=F6E187A77BAEEB0BF6DA38B8F24EE4D4</a></li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Cybersecurity for SCADA Systems
+<ul class="org-ul">
+<li>Link: <a href="http://libgen.rs/book/index.php?md5=12F2F3813DB28CAF6F445875004913B1">http://libgen.rs/book/index.php?md5=12F2F3813DB28CAF6F445875004913B1</a></li>
+</ul></li>
+
+<li class="off"><code>[&#xa0;]</code> Hacking Exposed Industrial Control Systems: ICS and SCADA Security Secrets &amp; Solutions
+<ul class="org-ul">
+<li>Link: <a href="http://libgen.rs/book/index.php?md5=D8F8291A8E4BEA6A5809C38F5D76C66B">http://libgen.rs/book/index.php?md5=D8F8291A8E4BEA6A5809C38F5D76C66B</a></li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> <a href="https://github.com/ITI/ICS-Security-Tools/blob/master/tools/simulation/README.md">https://github.com/ITI/ICS-Security-Tools/blob/master/tools/simulation/README.md</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-ID-66831b25-c2b1-41f8-8901-8aa959708a83" class="outline-3">
+<h3 id="ID-66831b25-c2b1-41f8-8901-8aa959708a83"><span class="todo TODO">TODO</span> WIFI</h3>
+<div class="outline-text-3" id="text-orgb8062be">
+<ul class="org-ul">
+<li>Wifi encryption bypass
+<a href="https://youtu.be/3XKvOaVQX-8?t=57">https://youtu.be/3XKvOaVQX-8?t=57</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-ID-efba2ab5-29e8-46ea-a10f-64ac5ea0af92" class="outline-2">
+<h2 id="ID-efba2ab5-29e8-46ea-a10f-64ac5ea0af92">Videos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="videos">videos</span></span></h2>
+<div class="outline-text-2" id="text-orga97a6d8">
+</div>
+<div id="outline-container-ID-ec244c4e-d54e-445e-8c78-bd97e3accc4d" class="outline-3">
+<h3 id="ID-ec244c4e-d54e-445e-8c78-bd97e3accc4d">IDEA <code>[/]</code></h3>
+<div class="outline-text-3" id="text-org78a575a">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> groundupdb</li>
+<li>you learn to build your own database from the ground up</li>
+<li>Link: <a href="https://www.youtube.com/watch?v=Xk5W9cHdz40&amp;list=PLWoOSZbmib_cr7zRfAkPkoa9m2uYsYDug">https://www.youtube.com/watch?v=Xk5W9cHdz40&amp;list=PLWoOSZbmib_cr7zRfAkPkoa9m2uYsYDug</a></li>
+
+<li class="off"><code>[&#xa0;]</code> <a href="https://www.youtube.com/watch?v=-IoYSMtrBSI&amp;t=16s">Comprehensive List of OSINT Tools v3</a></li>
+<li class="off"><code>[&#xa0;]</code> <a href="https://www.youtube.com/watch?v=s9B3LsSnesU">Aaron Haymore - Red Team Tooling with Nim-Lang</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-ID-abe946cb-bab3-4623-8adc-9a1eced888dc" class="outline-2">
+<h2 id="ID-abe946cb-bab3-4623-8adc-9a1eced888dc"><span class="todo TODO">TODO</span> Computer Science <code>[0/3]</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span></span></h2>
+<div class="outline-text-2" id="text-orgc767c2a">
+</div>
+<div id="outline-container-ID-72f54a71-0ad3-4609-97a7-f28b99eef657" class="outline-3">
+<h3 id="ID-72f54a71-0ad3-4609-97a7-f28b99eef657">IDEA Langs <code>[0/1]</code></h3>
+<div class="outline-text-3" id="text-orgd1f582b">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Beautiful Racket
+<ul class="org-ul">
+<li>URL:  <a href="https://beautifulracket.com/introduction.html">https://beautifulracket.com/introduction.html</a></li>
+<li>Notes: <a href="reading/2022-08-14-200711-beautiful_racket.html#ID-1bf34c96-2e1f-423d-b9b2-c84fb3b04c74">beautiful-racket</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-ID-f08be5e5-ae9c-4466-9f92-fc0b4765f0e5" class="outline-3">
+<h3 id="ID-f08be5e5-ae9c-4466-9f92-fc0b4765f0e5">IDEA Compsci books <code>[0/3]</code></h3>
+<div class="outline-text-3" id="text-orgd46ecf5">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Structure and Interpretation of Computer Programs</li>
+<li class="off"><code>[&#xa0;]</code> Practical Common lisp
+<ul class="org-ul">
+<li>Notes: <a href="20220606214142-practical_common_lisp.html#ID-88d459b3-70ba-42c4-9062-6625fc1035f7">Practical Common Lisp</a></li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Common LISP A Gentle Introduction to Symbolic Computation
+<ul class="org-ul">
+<li>Notes: <a href="2022-06-05-192559-common_lisp_a_gentile_introduction_notes.html#ID-072bf814-0086-4fdf-9922-9a6abdcefdb9">Common LISP a gentile introduction notes</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-ID-2f38b8fa-0ab3-4d29-a471-05cc3aed9590" class="outline-3">
+<h3 id="ID-2f38b8fa-0ab3-4d29-a471-05cc3aed9590">IDEA self study <code>[/]</code></h3>
+<div class="outline-text-3" id="text-org804b1f0">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Introduction to Algorithms
+<ul class="org-ul">
+<li>Link: <a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011">https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011</a></li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> Analysis of Algorithms Lectures
+<ul class="org-ul">
+<li>Link: <a href="https://www3.cs.stonybrook.edu/~skiena/373/videos/">https://www3.cs.stonybrook.edu/~skiena/373/videos/</a></li>
+<li>Notes: <a href="programming/20230305145040-introduction_to_algorithnms_steven_skiena_cse373.html#ID-882aaec2-cd54-4e34-bb55-fbbe20e632cb">Introduction to Algorithnms Steven skiena (CSE373)</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

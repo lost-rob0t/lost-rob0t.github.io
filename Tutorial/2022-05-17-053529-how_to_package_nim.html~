@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>how to package nim</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">how to package nim</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9711691">nimble2nix</a></li>
+<li><a href="#orgcb5a80a">Using nix</a></li>
+<li><a href="#orgd98ee20">using flakes</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9711691" class="outline-2">
+<h2 id="org9711691">nimble2nix</h2>
+<div class="outline-text-2" id="text-org9711691">
+<p>
+Painless Nimble deps
+<a href="https://github.com/bandithedoge/nimble2nix">https://github.com/bandithedoge/nimble2nix</a>
+<code>nix-env -iA nixpkgs.fetchgit --arg url "https://github.com/bandithedoge/nimble2nix"
+nimble2nix .</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcb5a80a" class="outline-2">
+<h2 id="orgcb5a80a">Using nix</h2>
+<div class="outline-text-2" id="text-orgcb5a80a">
+<p>
+here is an example package i made for counting puffs
+pkgs/puffer/defualt.nix
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">{ lib, stdenv, nimPackages, fetchurl }:
+
+let
+  cligen = nimPackages.buildNimPackage rec {
+    name = "cligen";
+    version = "1.5.23";
+    src = fetchurl {
+    url = "https://github.com/c-blake/cligen/archive/refs/tags/v${version}.tar.gz";
+    sha256 = "sha256-Qg3+yrvsItEEhSfDVY9t+5CHj1fSJTpYokWPQObgH0g=";
+
+  };
+
+
+  };
+puffer = nimPackages.buildNimPackage rec {
+  name = "puffer";
+  rev = "d0c7d6a9a9e48e31eb24807f8a24118bc19c031c";
+
+  nimBinOnly = true;
+
+  src = fetchurl {
+    url = "https://github.com/lost-rob0t/puffer.nim/archive/${rev}.tar.gz";
+    sha256 = "sha256-hAqlBGiOQk9QVbtDhNHpk5Z7EtyeW02hRlYMxbvb++Q=";
+  };
+  buildInputs = with nimPackages; [
+    cligen
+  ];
+};
+
+in
+  stdenv.mkDerivation rec {
+    pname = "puffer";
+    buildInputs = [ puffer ];
+    meta = with lib; {
+    description = "count puffs";
+    homepage = "https://github.com/lost-rob0t/puffer.ni,";
+    license = licenses.mit;
+    maintainers = [ "nsaspy" ];
+    };
+  }
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd98ee20" class="outline-2">
+<h2 id="orgd98ee20">using flakes</h2>
+<div class="outline-text-2" id="text-orgd98ee20">
+<ul class="org-ul">
+<li><a href="2022-05-16-045822-nim_flake_example.html#ID-62bf048c-8b3b-4356-a939-ac7132bfaae2">nim-flake-example</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

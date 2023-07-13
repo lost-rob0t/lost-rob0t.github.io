@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fix Aspell on nixos</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Fix Aspell on nixos</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org931a55a">How to fix aspell on nixos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class=""></span>&#xa0;<span class="nixos">nixos</span></span></a>
+<ul>
+<li><a href="#orgf7eb257">Steps to fix it</a>
+<ul>
+<li><a href="#orgcbf0b66">systemwide</a></li>
+<li><a href="#org7cf6374">home-manager</a></li>
+<li><a href="#org4adbb50">Fix not being able to save a personal word</a></li>
+<li><a href="#orgc186835">Emacs setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org931a55a" class="outline-2">
+<h2 id="org931a55a">How to fix aspell on nixos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class=""></span>&#xa0;<span class="nixos">nixos</span></span></h2>
+<div class="outline-text-2" id="text-org931a55a">
+<p>
+I was trying to use aspell for spell checking on nixos with emacs and i could not get it to find the path to the apsell.
+</p>
+</div>
+
+<div id="outline-container-orgf7eb257" class="outline-3">
+<h3 id="orgf7eb257">Steps to fix it</h3>
+<div class="outline-text-3" id="text-orgf7eb257">
+<p>
+These steps should fix it.
+</p>
+</div>
+<div id="outline-container-orgcbf0b66" class="outline-4">
+<h4 id="orgcbf0b66">systemwide</h4>
+<div class="outline-text-4" id="text-orgcbf0b66">
+<p>
+include in your system packages.
+</p>
+<div class="org-src-container">
+<pre class="src src-nix">environment.systemPackages = with pkgs; [
+    aspell
+    aspellDicts.en
+]
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7cf6374" class="outline-4">
+<h4 id="org7cf6374">home-manager</h4>
+<div class="outline-text-4" id="text-org7cf6374">
+<div class="org-src-container">
+<pre class="src src-nix"># ~/.config/nixpkgs/home.nix
+{ config, pkgs, ... }:
+{
+  # ..
+  home.packages = with pkgs; [
+    # ..
+    aspell
+    aspellDicts.en
+  ];
+
+  home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
+  # ..
+}
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org4adbb50" class="outline-4">
+<h4 id="org4adbb50">Fix not being able to save a personal word</h4>
+<div class="outline-text-4" id="text-org4adbb50">
+<p>
+create a pws and setq it
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">mkdir -p ~/.emacs.d/.local/etc/ispell &amp;&amp; touch ~/.emacs.d/.local/etc/ispell/.pws
+</pre>
+</div>
+<p>
+Be sure that the file is in aspells personal word dictionary format!
+basically just include this at the top of the pws file.
+</p>
+<pre class="example" id="orgb8cf7a1">
+personal_ws-1.1 en 1 utf-8
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc186835" class="outline-4">
+<h4 id="orgc186835">Emacs setup</h4>
+<div class="outline-text-4" id="text-orgc186835">
+<p>
+The following is from my emacs config
+Make sure its using aspell
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> ispell-program-name <span style="font-style: italic;">"aspell"</span>)
+</pre>
+</div>
+<p>
+Set dictionary
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> ispell-dictionary <span style="font-style: italic;">"en"</span>)
+</pre>
+</div>
+
+<p>
+Set personal dictionary
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> ispell-personal-dictionary <span style="font-style: italic;">"~/.aspell.en_us.pws"</span>)
+</pre>
+</div>
+
+<p>
+Spell fu setup
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(add-hook 'spell-fu-mode-hook
+  (<span style="font-weight: bold;">lambda</span> ()
+    (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary <span style="font-style: italic;">"en"</span>))
+    (spell-fu-dictionary-add
+      (spell-fu-get-personal-dictionary <span style="font-style: italic;">"en-personal"</span> <span style="font-style: italic;">"~/.aspell.en_us.pws"</span>))))
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

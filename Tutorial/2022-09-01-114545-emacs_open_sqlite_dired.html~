@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>emacs open sqlite dired</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">emacs open sqlite dired</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb117621">How to open sqlite files with dir</a>
+<ul>
+<li><a href="#org2bf861a">Methods</a>
+<ul>
+<li><a href="#org6b49c3a">Sqlite dired</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<ul class="org-ul">
+<li></li>
+</ul>
+
+<div id="outline-container-orgb117621" class="outline-2">
+<h2 id="orgb117621">How to open sqlite files with dir</h2>
+<div class="outline-text-2" id="text-orgb117621">
+<p>
+So i locked myself out of my gitea again, phone got wiped by mistake with a opsec tool called wasted, whiped itself while it wass in my hand!
+</p>
+</div>
+
+
+
+<div id="outline-container-org2bf861a" class="outline-3">
+<h3 id="org2bf861a">Methods</h3>
+<div class="outline-text-3" id="text-org2bf861a">
+</div>
+<div id="outline-container-org6b49c3a" class="outline-4">
+<h4 id="org6b49c3a">Sqlite dired</h4>
+<div class="outline-text-4" id="text-org6b49c3a">
+<p>
+In <a href="https://www.reddit.com/r/emacs/comments/rlwipm/comment/hpjo30x">this</a> post a reddit user was kind enough to share a snippet to do just this
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">when</span> (functionp 'sqlite-available-p)
+  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">sqlite-mode</span>)
+  (<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">sqlite-file-p</span> ()
+    (<span style="font-weight: bold;">let*</span> ((ms <span style="font-style: italic;">"SQLite format 3"</span>)
+           (msl (length ms)))
+      (<span style="font-weight: bold;">and</span> (&gt; (point-max) msl)
+           (string= (buffer-substring 1 (1+ msl))
+                    ms))))
+  (<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">sqlite-mode-open-file*</span> ()
+    (<span style="font-weight: bold;">let</span> ((f (buffer-file-name)))
+      (kill-buffer (current-buffer))
+      (sqlite-mode-open-file f)))
+  (add-to-list 'magic-mode-alist '(sqlite-file-p . sqlite-mode-open-file*)))
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

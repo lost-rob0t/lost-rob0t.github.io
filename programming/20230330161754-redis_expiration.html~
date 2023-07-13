@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>redis expiration</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">redis expiration</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org1e31bef">Expiration</a>
+<ul>
+<li><a href="#org2cbc7ee">EXPIRE</a></li>
+<li><a href="#orgbf3abf5">PEXPIRE</a></li>
+<li><a href="#org6e028d2">TTL</a></li>
+<li><a href="#orgde595e9">PTTL</a></li>
+<li><a href="#orgf51aebf">PERSIST</a></li>
+<li><a href="#org568c0fc">SETEX</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1e31bef" class="outline-2">
+<h2 id="org1e31bef">Expiration</h2>
+<div class="outline-text-2" id="text-org1e31bef">
+<p>
+In redis you can have keys expire.
+This is useful for caching and for data that is irrelevant.
+</p>
+</div>
+<div id="outline-container-org2cbc7ee" class="outline-3">
+<h3 id="org2cbc7ee">EXPIRE</h3>
+<div class="outline-text-3" id="text-org2cbc7ee">
+<p>
+Set a timeout on a key, after which the key will be automatically deleted
+</p>
+
+<p>
+Syntax: EXPIRE key seconds
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">SET mykey <span style="font-style: italic;">"Hello"</span>
+EXPIRE mykey 10
+</pre>
+</div>
+<p>
+This sets the key "mykey" with value "Hello" and a timeout of 10 seconds. After 10 seconds, the key will be automatically deleted.
+</p>
+</div>
+</div>
+<div id="outline-container-orgbf3abf5" class="outline-3">
+<h3 id="orgbf3abf5">PEXPIRE</h3>
+<div class="outline-text-3" id="text-orgbf3abf5">
+<p>
+Similar to EXPIRE, but accepts the timeout in milliseconds instead of seconds.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6e028d2" class="outline-3">
+<h3 id="org6e028d2">TTL</h3>
+<div class="outline-text-3" id="text-org6e028d2">
+<p>
+Check the remaining time to live of a key
+</p>
+
+<p>
+Syntax: TTL key
+Example:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">SET mykey <span style="font-style: italic;">"Hello"</span>
+EXPIRE mykey 10
+TTL mykey
+</pre>
+</div>
+<p>
+This sets the key "mykey" with value "Hello" and a timeout of 10 seconds. The TTL command returns the remaining time to live of the key, which is initially 10 seconds.
+</p>
+</div>
+</div>
+<div id="outline-container-orgde595e9" class="outline-3">
+<h3 id="orgde595e9">PTTL</h3>
+<div class="outline-text-3" id="text-orgde595e9">
+<p>
+Like TTL, but returns the remaining time to live in milliseconds.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf51aebf" class="outline-3">
+<h3 id="orgf51aebf">PERSIST</h3>
+<div class="outline-text-3" id="text-orgf51aebf">
+<p>
+Remove the timeout on a key, making it persist indefinitely
+</p>
+
+<p>
+Syntax: PERSIST key
+Example:
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">SET mykey <span style="font-style: italic;">"Hello"</span>
+EXPIRE mykey 10
+PERSIST mykey
+TTL mykey
+</pre>
+</div>
+<p>
+This sets the key "mykey" with value "Hello" and a timeout of 10 seconds. The PERSIST command removes the timeout on the key, making it persist indefinitely. The TTL command returns -1, indicating that the key has no timeout.
+</p>
+</div>
+</div>
+<div id="outline-container-org568c0fc" class="outline-3">
+<h3 id="org568c0fc">SETEX</h3>
+<div class="outline-text-3" id="text-org568c0fc">
+<p>
+Set a key with a timeout in one command
+</p>
+
+<p>
+Syntax: SETEX key seconds value
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">SETEX mykey 10 <span style="font-style: italic;">"Hello"</span>
+TTL mykey
+</pre>
+</div>
+<p>
+This sets the key "mykey" with value "Hello" and a timeout of 10 seconds in one command. The TTL command returns the remaining time to live of the key, which is initially 10 seconds.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

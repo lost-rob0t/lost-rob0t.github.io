@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       272b8475-d721-4782-9f7b-ba914c1a6597
+:ROAM_TAGS: SCADA  ICS
+:END:
+#+title: Process Control network
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
+#+author: 
+* TODO Process control network :ICS::SCADA:
+:PROPERTIES:
+:ID:       1279e471-ccce-492b-a77d-384777a112fb
+:PUBDATE:  <2023-06-30 Fri 01:02>
+:END:

@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       1bf34c96-2e1f-423d-b9b2-c84fb3b04c74
+:ROAM_TAGS:
+:END:
+#+TITLE: beautiful-racket
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2022-12-17 12:03:14]
++ [[id:6189e985-e87d-42df-aa38-ba6429a2bf8a][Reading inbox]]
+
+* Beautiful racket
+Learn how to implemnt programming langauges.
+
+
+**

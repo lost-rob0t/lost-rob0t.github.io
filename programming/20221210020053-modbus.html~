@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Modbus</title>
+<meta name="author" content="NSASPY" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Modbus</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9f473d3">Modbus&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ics">ics</span>&#xa0;<span class="protocol">protocol</span></span></a>
+<ul>
+<li><a href="#org77768ac">Limits</a></li>
+<li><a href="#orgabbd481">Memory area</a></li>
+<li><a href="#org1dbd61a">Modbus RTU Frame Format</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9f473d3" class="outline-2">
+<h2 id="org9f473d3">Modbus&#xa0;&#xa0;&#xa0;<span class="tag"><span class="ics">ics</span>&#xa0;<span class="protocol">protocol</span></span></h2>
+<div class="outline-text-2" id="text-org9f473d3">
+<p>
+Modbus is a data communication protocol by Modicon in the 1970s. It is designed for use with <a href="../20221210020640-programmable_logic_controllers.html#ID-27a4cf94-829a-4182-9dc8-3dd99da55fe9">programmable logic controllers</a>.
+Modbus is the most commonly used standard for connecting industrial devices.
+modbus uses Serical lines, ethernet or others as a transport. it is often used to connect a  system supervisory computer with a <a href="../20221210021703-remote_terminal_unit.html#ID-40545110-6180-4f4e-9520-b18b02c78d6e">Remote terminal unit</a>.
+</p>
+</div>
+<div id="outline-container-org77768ac" class="outline-3">
+<h3 id="org77768ac">Limits</h3>
+<div class="outline-text-3" id="text-org77768ac">
+<ul class="org-ul">
+<li>Limited supported data types</li>
+<li>No descriptions of data objects</li>
+<li>It is a Master Slave model</li>
+<li>Limited to 247 devices on one link, except for Ethernet TCP/IP</li>
+<li>No protections against malicious commands or sniffing</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgabbd481" class="outline-3">
+<h3 id="orgabbd481">Memory area</h3>
+<div class="outline-text-3" id="text-orgabbd481">
+<p>
+This table shows the layout of a typical modbus object
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">Function</th>
+<th scope="col" class="org-right">Size (bits)</th>
+<th scope="col" class="org-left">Range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Coils</td>
+<td class="org-left">Discrete Outputs (R+W)</td>
+<td class="org-right">1</td>
+<td class="org-left">00001 – 09999</td>
+</tr>
+
+<tr>
+<td class="org-left">Inputs</td>
+<td class="org-left">Discrete inputs (R)</td>
+<td class="org-right">1</td>
+<td class="org-left">10001 – 19999</td>
+</tr>
+
+<tr>
+<td class="org-left">Input Registers</td>
+<td class="org-left">Analog Inputs (R)</td>
+<td class="org-right">16</td>
+<td class="org-left">30001 – 39999</td>
+</tr>
+
+<tr>
+<td class="org-left">Holding Registers</td>
+<td class="org-left">Analog outputs (R+W)</td>
+<td class="org-right">16</td>
+<td class="org-left">40001 – 49999</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org1dbd61a" class="outline-3">
+<h3 id="org1dbd61a">Modbus RTU Frame Format</h3>
+<div class="outline-text-3" id="text-org1dbd61a">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">Length (Bits)</th>
+<th scope="col" class="org-left">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Start</td>
+<td class="org-left">3.5 x 8</td>
+<td class="org-left">s.5 char times (28 bits) of silence (mark condition)</td>
+</tr>
+
+<tr>
+<td class="org-left">Address</td>
+<td class="org-left">8</td>
+<td class="org-left">Station address</td>
+</tr>
+
+<tr>
+<td class="org-left">Function</td>
+<td class="org-left">8</td>
+<td class="org-left">Function code (IE read coils)</td>
+</tr>
+
+<tr>
+<td class="org-left">Data</td>
+<td class="org-left">n x 8</td>
+<td class="org-left">Data + length will be filled depending on message type</td>
+</tr>
+
+<tr>
+<td class="org-left">CRC</td>
+<td class="org-left">16</td>
+<td class="org-left"><a href="../20221210025435-cyclic_redundancy_check.html#ID-2dacee3a-6036-4871-b1c6-462e4785c223">Cyclic redundancy check</a></td>
+</tr>
+
+<tr>
+<td class="org-left">END</td>
+<td class="org-left">3.5 x 8</td>
+<td class="org-left">At least 3.5 char times (28 bits) of silence (mark condition) bewteen frames</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: NSASPY (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

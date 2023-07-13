@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       606957f7-f85c-442a-9a16-abd5b3e00151
+:END:
+#+TITLE: How to enable service from different nix channel
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-20 Tue 02:18]
+#+LAST_MODIFIED: [2022-12-20 Tue 02:22]
+#+FILETAGS: nix-channel nixpkgs
+* How to enable a service from a nix channel? :nixpkgs:
+To enable a service from a difrent channel you first need to disable the module
+
+[[https://github.com/NixOS/nixpkgs/issues/41212#issuecomment-392921123][Source]].
+#+begin_src nix
+{ config, pkgs, lib, ... }:
+
+let
+  unstable = import <nixos-unstable> { };
+in
+{
+  imports = [ <nixos/modules/services/web-servers/caddy.nix> ];
+  disabledModules = [ "services/web-servers/caddy.nix" ];
+}
+
+#+end_src

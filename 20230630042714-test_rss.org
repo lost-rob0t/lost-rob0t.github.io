@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       33464276-232f-46fa-959a-59cb63ccca30
+:END:
+#+TITLE: test-rss
+#+CREATED: [2023-06-30 Fri 04:27]
+#+LAST_MODIFIED: [2023-06-30 Fri 04:29]
+
+* Test rss
+this is a test

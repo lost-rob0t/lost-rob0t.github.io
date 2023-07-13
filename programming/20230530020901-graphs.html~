@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Graphs</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Graphs</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org28b689f">Graph theory</a>
+<ul>
+<li><a href="#orgd0a344d">Graph Basics</a>
+<ul>
+<li><a href="#org492d444">Directed graph</a></li>
+<li><a href="#orgb1cd0a2">Undirected graph</a></li>
+<li><a href="#org6375d0f">Neighbor nodes</a></li>
+<li><a href="#org8e9e580">Adjacency List</a></li>
+<li><a href="#org275ea40">Algorithms</a></li>
+<li><a href="#org994bf74">Cycles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org28b689f" class="outline-2">
+<h2 id="org28b689f">Graph theory</h2>
+<div class="outline-text-2" id="text-org28b689f">
+<ul class="org-ul">
+<li>Video: <a href="https://www.youtube.com/watch?v=tWVWeAqZ0WU">https://www.youtube.com/watch?v=tWVWeAqZ0WU</a></li>
+</ul>
+<p>
+In these notes i will use lisp/nim.
+</p>
+</div>
+<div id="outline-container-orgd0a344d" class="outline-3">
+<h3 id="orgd0a344d">Graph Basics</h3>
+<div class="outline-text-3" id="text-orgd0a344d">
+<p>
+A grapgh is nodes and edges
+A Node would be a "dot" on a graph and a edge is a connection between them.
+A vertex is also known as a edge.
+</p>
+
+<p>
+Graphs can be used for all kinds of things from social network analsis
+</p>
+</div>
+
+<div id="outline-container-org492d444" class="outline-4">
+<h4 id="org492d444">Directed graph</h4>
+<div class="outline-text-4" id="text-org492d444">
+<p>
+An directed graph is a grapgh that has the edges have "directions", where you can only move in the edge direction.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgb1cd0a2" class="outline-4">
+<h4 id="orgb1cd0a2">Undirected graph</h4>
+<div class="outline-text-4" id="text-orgb1cd0a2">
+<p>
+A undirected graph is where edges has no direction btween nodes
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org6375d0f" class="outline-4">
+<h4 id="org6375d0f">Neighbor nodes</h4>
+<div class="outline-text-4" id="text-org6375d0f">
+<p>
+Neighbor nodes are any node that is accessible by an edge
+</p>
+
+<p>
+A =&gt; B
+^
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<tbody>
+<tr>
+</tr>
+</tbody>
+</table>
+<p>
+C
+In this example C's neighbor is a and A neighbor is B
+but C isnt A's neighbor.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org8e9e580" class="outline-4">
+<h4 id="org8e9e580">Adjacency List</h4>
+<div class="outline-text-4" id="text-org8e9e580">
+<p>
+An adjancy list is a hashmap of notes as keys and list of nodes as the values.
+</p>
+
+<p>
+In common lisp I need to use a <code>vector</code> since they have faster access time.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org275ea40" class="outline-4">
+<h4 id="org275ea40">Algorithms</h4>
+<div class="outline-text-4" id="text-org275ea40">
+<ul class="org-ul">
+<li>Depth First search visits all Adjacent nodes until it reaches a leaf then it starts backtracking. it is used to tell you if you can get to a node. Goes Deep.
+<ul class="org-ul">
+<li>Uses a stack</li>
+<li>Complexity: O(n)</li>
+</ul></li>
+<li>Breadth first search goes to all its imedient neighbors first. BFS goes "wide"
+<ul class="org-ul">
+<li>Uses a queue</li>
+<li>Complexity: O(n<sup>2</sup>)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org994bf74" class="outline-4">
+<h4 id="org994bf74">Cycles</h4>
+<div class="outline-text-4" id="text-org994bf74">
+<p>
+A Cycle is a closed path in a graph that starts and ends at the same node.
+</p>
+</div>
+<ul class="org-ul">
+<li><a id="org3c36961"></a>Acyclic<br />
+<div class="outline-text-5" id="text-org3c36961">
+<p>
+Means there are no "cycles"
+</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

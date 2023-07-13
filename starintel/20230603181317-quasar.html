@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quasar</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">Quasar</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org644afb3">Quasar&#xa0;&#xa0;&#xa0;<span class="tag"><span class="gui">gui</span></span></a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org644afb3" class="outline-2">
+<h2 id="org644afb3">Quasar&#xa0;&#xa0;&#xa0;<span class="tag"><span class="gui">gui</span></span></h2>
+<div class="outline-text-2" id="text-org644afb3">
+<p>
+Quasar is going to be a graphical interface to starintel and more.
+</p>
+
+<p>
+Here is a summery of my ideas.
+</p>
+<ul class="org-ul">
+<li>Document schema and other systems are already in place, along with bots and other tools.</li>
+
+<li>The existing lish shell is easy to build upon and can be helpful.</li>
+<li>The goal is to create an interface that functions as a graph viewer, similar to Maltego, where nodes can be added, automation can be run, and the graph can be extended.</li>
+<li>The extensions for the viewer would be implemented in Common Lisp.</li>
+<li>One example of a transform is a "port scan" on a host, which adds children nodes with port numbers, leveraging tools like Nmap.</li>
+<li>Machines could be similar to transforms but with additional functions, such as running FFuF on HTTP.</li>
+<li>Automating everything may not be the best approach, and the focus is more on the transform idea.</li>
+<li>The Starintel project could serve as a data source for OSINT (Open-Source Intelligence) tasks.</li>
+<li>An embedded database is being developed that could replace CouchDB and improve performance, likely built on top of LMDB.</li>
+<li>The Lisp shell would be a lightweight one, similar to VSCode, and could also extend the graph.</li>
+<li>Consideration needs to be given to making the interface user-friendly.</li>
+<li>An intermediate mode UI, is preferred for speed and efficiency.</li>
+<li>Right-click actions (transforms) for each type would require predicates that return true and a mapping of types to functions.</li>
+<li>Functions and user configuration will create new actions and data types, expanding the system's capabilities.</li>
+</ul>
+
+
+<p>
+There is alot of stuff I need to work out. This is also sort of like an index for concepts and ideas related to starintel/quasar
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

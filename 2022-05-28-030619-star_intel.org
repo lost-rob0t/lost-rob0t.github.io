@@ -1,0 +1,61 @@
+:PROPERTIES:
+:ID:       78157cd5-9681-4a64-b5c7-0f2b415cd446
+:ROAM_TAGS:
+:END:
+#+TITLE: star intel
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-17 12:03:14]
+#+LAST_MODIFIED: [2023-01-04 Wed 17:28]
+#+filetags: starintel osint
+* StarIntel
+:PROPERTIES:
+:ID:       b2c6d9ca-f491-4777-a235-8cd04bb79d53
+:PUBDATE:  <2023-06-30 Fri 01:02>
+:END:
+Star intel is a framework for mapping and collecting personable identifiable information and making it searchable.
+
+* TODO Guides and Tutorials :starintel: [0/5]
+:PROPERTIES:
+:ID:       62f255d7-63e9-4528-afb1-7e0437c742c7
+:PUBDATE:  <2023-06-30 Fri 01:02>
+:END:
+** IDEA How to create your first document and upload
+:PROPERTIES:
+:ID:       b53837e3-045c-4344-aa45-83b1d9cd3aa5
+:END:
+** IDEA Parsing a simple CSV file
+:PROPERTIES:
+:ID:       bbc24929-db42-484a-ab9d-8fd1d89dc71e
+:END:
+** IDEA Setup a Starintel server
+:PROPERTIES:
+:ID:       9f9fdbb3-a85e-4636-ad50-15b95d9d992d
+:END:
+** IDEA Project: Scrape a website and store results
+:PROPERTIES:
+:ID:       a4379236-7926-4ef3-9087-5e08ce4608fd
+:END:
+** IDEA Basic SkipTrace guide
+:PROPERTIES:
+:ID:       4a65d027-6e58-47b9-a0ae-5334a39465cf
+:END:
+
+* TODO Guide on how to setup the enviroment
+:PROPERTIES:
+:ID:       725ef08c-4d55-433c-9c0d-64bca7d251f2
+:PUBDATE:  <2023-06-30 Fri 01:02>
+:END:
+
+* Links to Stuff that made this possible
+:PROPERTIES:
+:ID:       5758e175-38f8-4801-aaad-355f31553ab3
+:PUBDATE:  <2023-06-30 Fri 01:02>
+:END:
++ [[https://couchdb.apache.org/][CouchDb]]
++ [[id:d0dc2504-21ff-4843-994d-e8abf1991ea0][NixOs]]
++ [[https://nim-lang.org/][Nim Lang]]
++ [[https://www.python.org/][Python]]
++ [[https://www.gnu.org/software/emacs/][Emacs]]
++ [[https://github.com/scrapinghub/splash][Splash]]
++ [[https://github.com/hamidb80/mycouch][MyCouch]]

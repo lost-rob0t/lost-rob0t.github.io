@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 21:08 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>elisp errors</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">programming</a>
+    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">elisp errors</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgaad4c7c">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></a>
+<ul>
+<li><a href="#orgd2faa7d">Raising errors</a></li>
+<li><a href="#orga865f57">Handling errors</a>
+<ul>
+<li><a href="#orgbfd8ef2">unwind-protect</a></li>
+<li><a href="#orgae414c6">condition-case</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgaad4c7c" class="outline-2">
+<h2 id="orgaad4c7c">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></h2>
+<div class="outline-text-2" id="text-orgaad4c7c">
+<p>
+Error handling in any language is often messy, no diffrent with elisp.
+</p>
+
+<p>
+Errors in emacs lisp are called <code>signals</code>.
+</p>
+</div>
+<div id="outline-container-orgd2faa7d" class="outline-3">
+<h3 id="orgd2faa7d">Raising errors</h3>
+<div class="outline-text-3" id="text-orgd2faa7d">
+<p>
+You can "raise" or "signal" with the <code>signal</code> and <code>error</code> functions.
+</p>
+
+<p>
+From the <code>describe-function</code> command.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">signal</span> 'wrong-type-argument '(numberp <span style="font-style: italic;">"string"</span>))
+</pre>
+</div>
+
+<p>
+You pass a error symbol and associated dated.
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orga865f57" class="outline-3">
+<h3 id="orga865f57">Handling errors</h3>
+<div class="outline-text-3" id="text-orga865f57">
+<p>
+You can handle errors with <code>unwind-protect</code> and <code>condition-case</code>.
+</p>
+</div>
+
+<div id="outline-container-orgbfd8ef2" class="outline-4">
+<h4 id="orgbfd8ef2">unwind-protect</h4>
+<div class="outline-text-4" id="text-orgbfd8ef2">
+<p>
+unwind-protect is like the finally clause from other languages.
+or the <code>defer</code> statement in <a href="20220606215451-nim.html#ID-af6fae74-d03b-4930-8f39-63becb43efd9">Nim</a>.
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unwind-protect</span>
+    (<span style="font-weight: bold;">error</span> <span style="font-style: italic;">"spooky error"</span>)
+  (insert <span style="font-style: italic;">"finally"</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgae414c6" class="outline-4">
+<h4 id="orgae414c6">condition-case</h4>
+<div class="outline-text-4" id="text-orgae414c6">
+<p>
+<code>condition-case</code> is the try-catch from other languages.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unwind-protect</span>
+    (<span style="font-weight: bold;">let</span> (retval)
+      (<span style="font-weight: bold;">condition-case</span> ex
+          (<span style="font-weight: bold;">setq</span> retval (<span style="font-weight: bold;">error</span> <span style="font-style: italic;">"Hello"</span>))
+        ('error (message (format <span style="font-style: italic;">"Caught exception: [%s]"</span> ex))))
+        retval)
+  (message <span style="font-style: italic;">"Cleaning up..."</span>))
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       8a9b8114-4064-48ed-8057-5f6a7c512ea1
+:END:
+#+TITLE: Message oriented middleware
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2022-12-19 Mon 22:50]
+#+LAST_MODIFIED: [2022-12-19 Mon 22:51]
+* Message-oriented middleware :messaging::protocol::programming:
+:PROPERTIES:
+:ID:       8d44e6cf-c896-4a1d-ae21-a6831c597864
+:PUBDATE:  <2023-06-30 Fri 01:03>
+:END:

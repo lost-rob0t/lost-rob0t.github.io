@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       e41bc583-ebfb-40f4-83db-d3355aa5408b
+:END:
+#+TITLE: direnv
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2023-05-01 Mon 22:20]
+#+LAST_MODIFIED: [2023-05-01 Mon 22:20]
+*

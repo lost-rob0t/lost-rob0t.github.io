@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       7b067666-ea63-4804-a784-3e541fbf6808
+:END:
+#+TITLE: Data Structures
+#+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
+
+#+CREATED: [2023-03-05 Sun 14:46]
+#+LAST_MODIFIED: [2023-03-05 Sun 16:59]
+
+
+* Notes links
++ [[id:6969f98a-8d6d-4336-a574-f5809bf86149][introduction to datastructures]]
++ [[id:eaaac702-98eb-4986-80b2-8cef48e4c49d][Types of data structs]]
++ [[id:8534f2b6-39d4-4814-a1f6-b4ec9e379a84][Asymptotic Analysis]]
