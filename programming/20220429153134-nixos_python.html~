@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nixos-python</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,16 +29,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf093032">Setting up a python dev enviroment in nix</a>
+<li><a href="#orgc163fcb">Setting up a python dev enviroment in nix</a>
 <ul>
-<li><a href="#org9069845">Impure Dev setup with pipenv</a>
+<li><a href="#org055ea37">Impure Dev setup with pipenv</a>
 <ul>
-<li><a href="#org06af2e8">shell.nix</a></li>
+<li><a href="#org61540bf">shell.nix</a></li>
 </ul>
 </li>
-<li><a href="#org25c4149">Pure nix flakes</a>
+<li><a href="#org6da72d8">Pure nix flakes</a>
 <ul>
-<li><a href="#orge9ac277">mach-nix</a></li>
+<li><a href="#orgd0f2350">mach-nix</a></li>
 </ul>
 </li>
 </ul>
@@ -45,26 +46,26 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf093032" class="outline-2">
-<h2 id="orgf093032">Setting up a python dev enviroment in nix</h2>
-<div class="outline-text-2" id="text-orgf093032">
+<div id="outline-container-orgc163fcb" class="outline-2">
+<h2 id="orgc163fcb">Setting up a python dev enviroment in nix</h2>
+<div class="outline-text-2" id="text-orgc163fcb">
 <p>
 The python packaging on nim is very lacking and often require you to build/hack around/bend nix to your will
 </p>
 </div>
 
-<div id="outline-container-org9069845" class="outline-3">
-<h3 id="org9069845">Impure Dev setup with pipenv</h3>
-<div class="outline-text-3" id="text-org9069845">
+<div id="outline-container-org055ea37" class="outline-3">
+<h3 id="org055ea37">Impure Dev setup with pipenv</h3>
+<div class="outline-text-3" id="text-org055ea37">
 <p>
 For most of the projects i often use a shell.nix and pipenv
 i will be moving to flakes as they seem more robust for packaging lib dirtrobutions
 </p>
 </div>
 
-<div id="outline-container-org06af2e8" class="outline-4">
-<h4 id="org06af2e8">shell.nix</h4>
-<div class="outline-text-4" id="text-org06af2e8">
+<div id="outline-container-org61540bf" class="outline-4">
+<h4 id="org61540bf">shell.nix</h4>
+<div class="outline-text-4" id="text-org61540bf">
 <p>
 if you prefer to use `shell.nix`
 then copy paste this into your shell.nix
@@ -115,17 +116,17 @@ buildFHSUserEnv {
 </div>
 
 
-<div id="outline-container-org25c4149" class="outline-3">
-<h3 id="org25c4149">Pure nix flakes</h3>
-<div class="outline-text-3" id="text-org25c4149">
+<div id="outline-container-org6da72d8" class="outline-3">
+<h3 id="org6da72d8">Pure nix flakes</h3>
+<div class="outline-text-3" id="text-org6da72d8">
 <p>
 the nix community have a number of tools for managing python packages
 </p>
 </div>
 
-<div id="outline-container-orge9ac277" class="outline-4">
-<h4 id="orge9ac277">mach-nix</h4>
-<div class="outline-text-4" id="text-orge9ac277">
+<div id="outline-container-orgd0f2350" class="outline-4">
+<h4 id="orgd0f2350">mach-nix</h4>
+<div class="outline-text-4" id="text-orgd0f2350">
 <p>
 Mach-nix makes it easy to create and share reproducible python environments or packages. Existing tools for python package management often suffer from reproducibility and complexity issues, requiring a multitude of tools and additional virtualization layers to work sufficiently. Mach-nix aims to solve these problems by providing a simple way to use nix, a revolutionary build system which is known to achieve great reproducibility and portability besides [many other advantages](<a href="https://nixos.org/features.html">https://nixos.org/features.html</a>).
 </p>

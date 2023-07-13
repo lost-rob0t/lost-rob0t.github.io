@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>redis expiration</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,30 +29,30 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga7eeaf4">Expiration</a>
+<li><a href="#orgd878055">Expiration</a>
 <ul>
-<li><a href="#orge558b6e">EXPIRE</a></li>
-<li><a href="#org3797fd5">PEXPIRE</a></li>
-<li><a href="#orgc9c5430">TTL</a></li>
-<li><a href="#org9a25266">PTTL</a></li>
-<li><a href="#org4b53ae9">PERSIST</a></li>
-<li><a href="#org5986c8a">SETEX</a></li>
+<li><a href="#org77e4765">EXPIRE</a></li>
+<li><a href="#orgdb1882f">PEXPIRE</a></li>
+<li><a href="#orgbc5cb20">TTL</a></li>
+<li><a href="#orgefd25bf">PTTL</a></li>
+<li><a href="#orgdb1d612">PERSIST</a></li>
+<li><a href="#org23dd482">SETEX</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga7eeaf4" class="outline-2">
-<h2 id="orga7eeaf4">Expiration</h2>
-<div class="outline-text-2" id="text-orga7eeaf4">
+<div id="outline-container-orgd878055" class="outline-2">
+<h2 id="orgd878055">Expiration</h2>
+<div class="outline-text-2" id="text-orgd878055">
 <p>
 In redis you can have keys expire.
 This is useful for caching and for data that is irrelevant.
 </p>
 </div>
-<div id="outline-container-orge558b6e" class="outline-3">
-<h3 id="orge558b6e">EXPIRE</h3>
-<div class="outline-text-3" id="text-orge558b6e">
+<div id="outline-container-org77e4765" class="outline-3">
+<h3 id="org77e4765">EXPIRE</h3>
+<div class="outline-text-3" id="text-org77e4765">
 <p>
 Set a timeout on a key, after which the key will be automatically deleted
 </p>
@@ -69,18 +70,18 @@ This sets the key "mykey" with value "Hello" and a timeout of 10 seconds. After 
 </p>
 </div>
 </div>
-<div id="outline-container-org3797fd5" class="outline-3">
-<h3 id="org3797fd5">PEXPIRE</h3>
-<div class="outline-text-3" id="text-org3797fd5">
+<div id="outline-container-orgdb1882f" class="outline-3">
+<h3 id="orgdb1882f">PEXPIRE</h3>
+<div class="outline-text-3" id="text-orgdb1882f">
 <p>
 Similar to EXPIRE, but accepts the timeout in milliseconds instead of seconds.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc9c5430" class="outline-3">
-<h3 id="orgc9c5430">TTL</h3>
-<div class="outline-text-3" id="text-orgc9c5430">
+<div id="outline-container-orgbc5cb20" class="outline-3">
+<h3 id="orgbc5cb20">TTL</h3>
+<div class="outline-text-3" id="text-orgbc5cb20">
 <p>
 Check the remaining time to live of a key
 </p>
@@ -100,18 +101,18 @@ This sets the key "mykey" with value "Hello" and a timeout of 10 seconds. The TT
 </p>
 </div>
 </div>
-<div id="outline-container-org9a25266" class="outline-3">
-<h3 id="org9a25266">PTTL</h3>
-<div class="outline-text-3" id="text-org9a25266">
+<div id="outline-container-orgefd25bf" class="outline-3">
+<h3 id="orgefd25bf">PTTL</h3>
+<div class="outline-text-3" id="text-orgefd25bf">
 <p>
 Like TTL, but returns the remaining time to live in milliseconds.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4b53ae9" class="outline-3">
-<h3 id="org4b53ae9">PERSIST</h3>
-<div class="outline-text-3" id="text-org4b53ae9">
+<div id="outline-container-orgdb1d612" class="outline-3">
+<h3 id="orgdb1d612">PERSIST</h3>
+<div class="outline-text-3" id="text-orgdb1d612">
 <p>
 Remove the timeout on a key, making it persist indefinitely
 </p>
@@ -132,9 +133,9 @@ This sets the key "mykey" with value "Hello" and a timeout of 10 seconds. The PE
 </p>
 </div>
 </div>
-<div id="outline-container-org5986c8a" class="outline-3">
-<h3 id="org5986c8a">SETEX</h3>
-<div class="outline-text-3" id="text-org5986c8a">
+<div id="outline-container-org23dd482" class="outline-3">
+<h3 id="org23dd482">SETEX</h3>
+<div class="outline-text-3" id="text-org23dd482">
 <p>
 Set a key with a timeout in one command
 </p>

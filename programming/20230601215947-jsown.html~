@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>jsown</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,17 +29,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgeb6c116">JSOWN</a>
+<li><a href="#orgc2aa810">JSOWN</a>
 <ul>
-<li><a href="#org3925825">Creating, parsing and reading.</a></li>
+<li><a href="#orge25409f">Creating, parsing and reading.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeb6c116" class="outline-2">
-<h2 id="orgeb6c116">JSOWN</h2>
-<div class="outline-text-2" id="text-orgeb6c116">
+<div id="outline-container-orgc2aa810" class="outline-2">
+<h2 id="orgc2aa810">JSOWN</h2>
+<div class="outline-text-2" id="text-orgc2aa810">
 <p>
 This is my preferred <a href="20230601220331-json.html#ID-60758dc6-c4eb-4b34-9b56-fff31f17ef1d">json</a> library.
 From the readme:
@@ -63,9 +64,9 @@ Without any extra arguments, the parse function will return all keywords. In ord
 </div>
 </div>
 
-<div id="outline-container-org3925825" class="outline-3">
-<h3 id="org3925825">Creating, parsing and reading.</h3>
-<div class="outline-text-3" id="text-org3925825">
+<div id="outline-container-orge25409f" class="outline-3">
+<h3 id="orge25409f">Creating, parsing and reading.</h3>
+<div class="outline-text-3" id="text-orge25409f">
 <p>
 You can make a new json object with <code>new-js</code> and <code>extend-js</code>.
 This is really the killer reason I use <code>jsown</code>.

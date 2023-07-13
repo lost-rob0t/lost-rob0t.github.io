@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CSE-373-lecture 2</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,12 +29,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge86b5f1">The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></a>
+<li><a href="#org9e8403c">The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></a>
 <ul>
-<li><a href="#org91743da">Solutions</a>
+<li><a href="#org8751bbf">Solutions</a>
 <ul>
-<li><a href="#orgad97b36">Shortest Job first</a></li>
-<li><a href="#orgd2a99cc">Reason why it wont work</a></li>
+<li><a href="#org6046a3a">Shortest Job first</a></li>
+<li><a href="#org6a63ed7">Reason why it wont work</a></li>
 </ul>
 </li>
 </ul>
@@ -45,9 +46,9 @@
 Note: this is on hole until i do more data struct stuff which seems to be referenced with the lectures
 Video lecture: <a href="https://www.youtube.com/watch?v=z1mkCe3kVUA&amp;list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&amp;index=2">https://www.youtube.com/watch?v=z1mkCe3kVUA&amp;list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&amp;index=2</a>
 </p>
-<div id="outline-container-orge86b5f1" class="outline-2">
-<h2 id="orge86b5f1">The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></h2>
-<div class="outline-text-2" id="text-orge86b5f1">
+<div id="outline-container-org9e8403c" class="outline-2">
+<h2 id="org9e8403c">The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></h2>
+<div class="outline-text-2" id="text-org9e8403c">
 <p>
 A movie star wants to select the maximum number of staring roles such that no two jobs needs him at two places.
 </p>
@@ -57,13 +58,13 @@ there is a time shooting starts and shooting ends
 </p>
 </div>
 
-<div id="outline-container-org91743da" class="outline-3">
-<h3 id="org91743da">Solutions</h3>
-<div class="outline-text-3" id="text-org91743da">
+<div id="outline-container-org8751bbf" class="outline-3">
+<h3 id="org8751bbf">Solutions</h3>
+<div class="outline-text-3" id="text-org8751bbf">
 </div>
-<div id="outline-container-orgad97b36" class="outline-4">
-<h4 id="orgad97b36">Shortest Job first</h4>
-<div class="outline-text-4" id="text-orgad97b36">
+<div id="outline-container-org6046a3a" class="outline-4">
+<h4 id="org6046a3a">Shortest Job first</h4>
+<div class="outline-text-4" id="text-org6046a3a">
 <p>
 Always do the shortest job first, so you do the least amount of work.
 </p>
@@ -81,9 +82,9 @@ If you are getting payed a million $ for a shoot might as well do the shortest o
 </div>
 </div>
 
-<div id="outline-container-orgd2a99cc" class="outline-4">
-<h4 id="orgd2a99cc">Reason why it wont work</h4>
-<div class="outline-text-4" id="text-orgd2a99cc">
+<div id="outline-container-org6a63ed7" class="outline-4">
+<h4 id="org6a63ed7">Reason why it wont work</h4>
+<div class="outline-text-4" id="text-org6a63ed7">
 <p>
 Taking the shortest job could block to longer job that barley intersect and leaves you with less work.
 </p>

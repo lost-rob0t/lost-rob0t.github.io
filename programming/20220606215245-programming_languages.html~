@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Programming Languages</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,8 +29,8 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4d3a1ec">Lisps</a></li>
-<li><a href="#org9a608e9">General Programming Lanaguges</a></li>
+<li><a href="#orga00bae5">Lisps</a></li>
+<li><a href="#orgfa2805b">General Programming Lanaguges</a></li>
 </ul>
 </div>
 </div>
@@ -37,9 +38,9 @@
 This page is a list of links to smaller pages
 </p>
 
-<div id="outline-container-org4d3a1ec" class="outline-2">
-<h2 id="org4d3a1ec">Lisps</h2>
-<div class="outline-text-2" id="text-org4d3a1ec">
+<div id="outline-container-orga00bae5" class="outline-2">
+<h2 id="orga00bae5">Lisps</h2>
+<div class="outline-text-2" id="text-orga00bae5">
 <p>
 Yes i know they can be used for lots of things, but they deserve more.
 </p>
@@ -51,9 +52,9 @@ Yes i know they can be used for lots of things, but they deserve more.
 </div>
 </div>
 
-<div id="outline-container-org9a608e9" class="outline-2">
-<h2 id="org9a608e9">General Programming Lanaguges</h2>
-<div class="outline-text-2" id="text-org9a608e9">
+<div id="outline-container-orgfa2805b" class="outline-2">
+<h2 id="orgfa2805b">General Programming Lanaguges</h2>
+<div class="outline-text-2" id="text-orgfa2805b">
 <ul class="org-ul">
 <li><a href="20220606215451-nim.html#ID-af6fae74-d03b-4930-8f39-63becb43efd9">Nim</a></li>
 <li><a href="20220606215501-python.html#ID-b324ae51-d776-4b39-b4bf-445f9638b14f">Python</a></li>

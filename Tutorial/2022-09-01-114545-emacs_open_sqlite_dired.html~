@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs open sqlite dired</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,11 +29,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd02a28d">How to open sqlite files with dir</a>
+<li><a href="#org442280b">How to open sqlite files with dir</a>
 <ul>
-<li><a href="#orgbe97dad">Methods</a>
+<li><a href="#org723273c">Methods</a>
 <ul>
-<li><a href="#org70fc3a6">Sqlite dired</a></li>
+<li><a href="#org875d1ad">Sqlite dired</a></li>
 </ul>
 </li>
 </ul>
@@ -44,9 +45,9 @@
 <li></li>
 </ul>
 
-<div id="outline-container-orgd02a28d" class="outline-2">
-<h2 id="orgd02a28d">How to open sqlite files with dir</h2>
-<div class="outline-text-2" id="text-orgd02a28d">
+<div id="outline-container-org442280b" class="outline-2">
+<h2 id="org442280b">How to open sqlite files with dir</h2>
+<div class="outline-text-2" id="text-org442280b">
 <p>
 So i locked myself out of my gitea again, phone got wiped by mistake with a opsec tool called wasted, whiped itself while it wass in my hand!
 </p>
@@ -54,13 +55,13 @@ So i locked myself out of my gitea again, phone got wiped by mistake with a opse
 
 
 
-<div id="outline-container-orgbe97dad" class="outline-3">
-<h3 id="orgbe97dad">Methods</h3>
-<div class="outline-text-3" id="text-orgbe97dad">
+<div id="outline-container-org723273c" class="outline-3">
+<h3 id="org723273c">Methods</h3>
+<div class="outline-text-3" id="text-org723273c">
 </div>
-<div id="outline-container-org70fc3a6" class="outline-4">
-<h4 id="org70fc3a6">Sqlite dired</h4>
-<div class="outline-text-4" id="text-org70fc3a6">
+<div id="outline-container-org875d1ad" class="outline-4">
+<h4 id="org875d1ad">Sqlite dired</h4>
+<div class="outline-text-4" id="text-org875d1ad">
 <p>
 In <a href="https://www.reddit.com/r/emacs/comments/rlwipm/comment/hpjo30x">this</a> post a reddit user was kind enough to share a snippet to do just this
 </p>

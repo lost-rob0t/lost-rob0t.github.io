@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rest Api's in common lisp</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,10 +29,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgaa6a6f4">Rest API in common lisp</a>
+<li><a href="#orgbee9708">Rest API in common lisp</a>
 <ul>
-<li><a href="#org35cd85f">Get</a></li>
-<li><a href="#org7d2b6d9">post</a></li>
+<li><a href="#orgd792cbe">Get</a></li>
+<li><a href="#org88807f1">post</a></li>
 </ul>
 </li>
 </ul>
@@ -39,9 +40,9 @@
 </div>
 
 
-<div id="outline-container-orgaa6a6f4" class="outline-2">
-<h2 id="orgaa6a6f4">Rest API in common lisp</h2>
-<div class="outline-text-2" id="text-orgaa6a6f4">
+<div id="outline-container-orgbee9708" class="outline-2">
+<h2 id="orgbee9708">Rest API in common lisp</h2>
+<div class="outline-text-2" id="text-orgbee9708">
 <p>
 In common lisp there are many library's to complete a task, some are old but still work just fine.
 A good fast library to use is <a href="https://github.com/fukamachi/dexador">dexador</a>. It is much faster then <a href="https://github.com/edicl/drakma">drakama</a>. As for json i recommend <a href="https://github.com/madnificent/jsown">jsown</a>.
@@ -68,9 +69,9 @@ Internally it uses connection pooling and reuses connections.
 </pre>
 </div>
 </div>
-<div id="outline-container-org35cd85f" class="outline-3">
-<h3 id="org35cd85f">Get</h3>
-<div class="outline-text-3" id="text-org35cd85f">
+<div id="outline-container-orgd792cbe" class="outline-3">
+<h3 id="orgd792cbe">Get</h3>
+<div class="outline-text-3" id="text-orgd792cbe">
 <div class="org-src-container">
 <pre class="src src-lisp">(dex:get <span style="font-style: italic;">"http://lisp.org"</span>)
 </pre>
@@ -78,9 +79,9 @@ Internally it uses connection pooling and reuses connections.
 </div>
 </div>
 
-<div id="outline-container-org7d2b6d9" class="outline-3">
-<h3 id="org7d2b6d9">post</h3>
-<div class="outline-text-3" id="text-org7d2b6d9">
+<div id="outline-container-org88807f1" class="outline-3">
+<h3 id="org88807f1">post</h3>
+<div class="outline-text-3" id="text-org88807f1">
 <p>
 To send formdata in a post use a association list.
 </p>

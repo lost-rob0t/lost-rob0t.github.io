@@ -4,11 +4,14 @@
 :PROPERTIES:
 :RSS_PERMALINK: posts.html
 :PUBDATE:  2023-07-12
-:ID:       08725fe6-1afa-48db-9620-b395e0e0e726
+:ID:       58345f42-1860-45d3-899a-f98e2bc2cec8
 :END:
-[[file:rss.org][The Lost Wiki]]
-[[file:programming/index.org][The Lost Wiki]]
-[[file:Tutorial/index.org][The Lost Wiki]]
+[[file:rss.org][The Lost Wiki Rss]]
+[[file:programming/index.org][The Lost Wiki - Programming]]
+[[file:Tutorial/index.org][The Lost Wiki - Tutorials]]
+[[file:hacking/20221213185522-sql_injection.org][SQL Injection]]
+[[file:hacking/20230712220510-sqlmap.org][SQLMap]]
+[[file:hacking/20230712215520-in_band.org][in-band]]
 [[file:sitemap.org][Sitemap for project lostWiki]]
 [[file:programming/20230712200139-gitconfig.org][gitconfig]]
 [[file:20220428224740-emacs.org][emacs]]
@@ -107,7 +110,6 @@
 [[file:hacking/20230427212246-onlyforyou.org][OnlyForYou]]
 [[file:hacking/20230423223955-cloudflare.org][cloudflare]]
 [[file:hacking/20230418174334-hacking_python_eval.org][Hacking Python Eval]]
-[[file:hacking/20221213185522-sql_injection.org][SQL Injection]]
 [[file:hacking/20221213173625-wordpress_enumeration.org][WordPress Enumeration]]
 [[file:hacking/20221213171543-metatwo.org][MetaTwo]]
 [[file:hacking/20221210012904-bump_in_the_wire.org][Bump in the wire]]
@@ -130,7 +132,7 @@
 :PROPERTIES:
 :RSS_PERMALINK: 20220428224740-emacs.html
 :PUBDATE:  2023-07-12
-:ID:       34c80efd-ea10-4bcf-a509-faccd8128f51
+:ID:       a4fd5b7b-156b-4be3-aead-daeded3f30de
 :END:
 :PROPERTIES:
 :ID:       95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2
@@ -191,19 +193,19 @@ Make sure you C-c C-c the header args
 [[id:19dae36d-a4f9-49d1-9bc3-d5734ff95bde][Yasnippet multi choice]]
 ** Org
 :PROPERTIES:
-:ID:       3437577b-713b-457d-a073-78186aa44f3a
+:ID:       9177b68d-260d-42dd-b35c-9bc64ee537a0
 :END:
 [[id:2b069384-79d9-4ed3-bc6e-b766edf526cb][Publish Script]]
 ** Git
 :PROPERTIES:
-:ID:       abcedbf1-62a7-4868-b4c3-4e63a909becd
+:ID:       05f01706-61ce-4e56-9ea3-53043228de09
 :END:
 [[id:dc00a2c6-6aa9-4c90-ba6d-6982067d2169][gitconfig]]
 * [[file:/home/unseen/Documents/Notes/org/roam/20220429214821-reading_inbox.org][Reading inbox]]
 :PROPERTIES:
 :RSS_PERMALINK: 20220429214821-reading_inbox.html
 :PUBDATE:  2023-07-10
-:ID:       d2e54efd-ea33-4c51-b443-37f583daa3d6
+:ID:       9ac6269c-ffa4-4065-887c-e34080b99d46
 :END:
 :PROPERTIES:
 :ID:       6189e985-e87d-42df-aa38-ba6429a2bf8a

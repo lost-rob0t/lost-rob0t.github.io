@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nim</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,28 +29,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8c6e750">About</a>
+<li><a href="#orgc1ea86d">About</a>
 <ul>
-<li><a href="#org1224b7e">Features</a></li>
+<li><a href="#org22e6e5f">Features</a></li>
 </ul>
 </li>
-<li><a href="#org339b34b">Notes</a></li>
+<li><a href="#org95e68fa">Notes</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org8c6e750" class="outline-2">
-<h2 id="org8c6e750">About</h2>
-<div class="outline-text-2" id="text-org8c6e750">
+<div id="outline-container-orgc1ea86d" class="outline-2">
+<h2 id="orgc1ea86d">About</h2>
+<div class="outline-text-2" id="text-orgc1ea86d">
 <p>
 Nim is a staticly typed compiled systems language.
 It takes inspiration from python, ada and others.
 </p>
 </div>
 
-<div id="outline-container-org1224b7e" class="outline-3">
-<h3 id="org1224b7e">Features</h3>
-<div class="outline-text-3" id="text-org1224b7e">
+<div id="outline-container-org22e6e5f" class="outline-3">
+<h3 id="org22e6e5f">Features</h3>
+<div class="outline-text-3" id="text-org22e6e5f">
 <p>
 Taken from <a href="https://nim-lang.org/">https://nim-lang.org/</a>
 </p>
@@ -82,9 +83,9 @@ Taken from <a href="https://nim-lang.org/">https://nim-lang.org/</a>
 
 
 
-<div id="outline-container-org339b34b" class="outline-2">
-<h2 id="org339b34b">Notes</h2>
-<div class="outline-text-2" id="text-org339b34b">
+<div id="outline-container-org95e68fa" class="outline-2">
+<h2 id="org95e68fa">Notes</h2>
+<div class="outline-text-2" id="text-org95e68fa">
 <ul class="org-ul">
 <li><a href="2022-08-26-155254-metaprogramming.html#ID-982f9f57-4b5d-44b7-bc9b-89b7d977a077">Metaprogramming</a></li>
 <li><a href="20230309222949-nim_android.html#ID-8a01ff13-6724-4634-b901-074187c32a85">nim android</a></li>

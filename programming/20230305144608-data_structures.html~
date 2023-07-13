@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Data Structures</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,15 +29,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9414cb5">Notes links</a></li>
+<li><a href="#org4636f95">Notes links</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org9414cb5" class="outline-2">
-<h2 id="org9414cb5">Notes links</h2>
-<div class="outline-text-2" id="text-org9414cb5">
+<div id="outline-container-org4636f95" class="outline-2">
+<h2 id="org4636f95">Notes links</h2>
+<div class="outline-text-2" id="text-org4636f95">
 <ul class="org-ul">
 <li><a href="20230305163152-introduction_to_datastructures.html#ID-6969f98a-8d6d-4336-a574-f5809bf86149">introduction to datastructures</a></li>
 <li><a href="20230305165149-types_of_data_structs.html#ID-eaaac702-98eb-4986-80b2-8cef48e4c49d">Types of data structs</a></li>

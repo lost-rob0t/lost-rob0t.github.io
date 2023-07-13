@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Lisp</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,31 +29,31 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd3968f8">Emacs Lisp</a>
+<li><a href="#org7b553b9">Emacs Lisp</a>
 <ul>
-<li><a href="#org13664c3">Values</a></li>
-<li><a href="#orgaaea618">Eval/Form</a></li>
-<li><a href="#org6530db6">Symbols</a></li>
-<li><a href="#orga9410c7">Prefix v infix</a></li>
-<li><a href="#orge97e953">Error Handling</a></li>
+<li><a href="#orgebdc2bf">Values</a></li>
+<li><a href="#org4ab89cd">Eval/Form</a></li>
+<li><a href="#org71907a5">Symbols</a></li>
+<li><a href="#orga389876">Prefix v infix</a></li>
+<li><a href="#org3627b08">Error Handling</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd3968f8" class="outline-2">
-<h2 id="orgd3968f8">Emacs Lisp</h2>
-<div class="outline-text-2" id="text-orgd3968f8">
+<div id="outline-container-org7b553b9" class="outline-2">
+<h2 id="org7b553b9">Emacs Lisp</h2>
+<div class="outline-text-2" id="text-org7b553b9">
 <p>
 Emacs lisp a lisp dialect for confguring Emacs.
 Much of emacs is written in elisp, with some of it in C.
 </p>
 </div>
 
-<div id="outline-container-org13664c3" class="outline-3">
-<h3 id="org13664c3">Values</h3>
-<div class="outline-text-3" id="text-org13664c3">
+<div id="outline-container-orgebdc2bf" class="outline-3">
+<h3 id="orgebdc2bf">Values</h3>
+<div class="outline-text-3" id="text-orgebdc2bf">
 <p>
 Any value or object has a type. it may not always be readable
 </p>
@@ -84,9 +85,9 @@ There are also types that are specific to emacs lisp.
 </div>
 
 
-<div id="outline-container-orgaaea618" class="outline-3">
-<h3 id="orgaaea618">Eval/Form</h3>
-<div class="outline-text-3" id="text-orgaaea618">
+<div id="outline-container-org4ab89cd" class="outline-3">
+<h3 id="org4ab89cd">Eval/Form</h3>
+<div class="outline-text-3" id="text-org4ab89cd">
 <p>
 A form is any value that you can evaluate.
 Some examples
@@ -107,9 +108,9 @@ Code Examples
 </div>
 </div>
 
-<div id="outline-container-org6530db6" class="outline-3">
-<h3 id="org6530db6">Symbols</h3>
-<div class="outline-text-3" id="text-org6530db6">
+<div id="outline-container-org71907a5" class="outline-3">
+<h3 id="org71907a5">Symbols</h3>
+<div class="outline-text-3" id="text-org71907a5">
 <p>
 A symbol is a object, but does not self eval
 A symbol can contail alpha-numeric charecters but others.
@@ -118,9 +119,9 @@ When a symbol is evaluated the value is returned with the binding.
 </div>
 </div>
 
-<div id="outline-container-orga9410c7" class="outline-3">
-<h3 id="orga9410c7">Prefix v infix</h3>
-<div class="outline-text-3" id="text-orga9410c7">
+<div id="outline-container-orga389876" class="outline-3">
+<h3 id="orga389876">Prefix v infix</h3>
+<div class="outline-text-3" id="text-orga389876">
 <p>
 Lisp uses prefix notation.
 Any expesion that does a function eval, the first element is a function.
@@ -128,9 +129,9 @@ Any expesion that does a function eval, the first element is a function.
 </div>
 </div>
 
-<div id="outline-container-orge97e953" class="outline-3">
-<h3 id="orge97e953">Error Handling</h3>
-<div class="outline-text-3" id="text-orge97e953">
+<div id="outline-container-org3627b08" class="outline-3">
+<h3 id="org3627b08">Error Handling</h3>
+<div class="outline-text-3" id="text-org3627b08">
 <ul class="org-ul">
 <li><a href="20230327155154-elisp_errors.html#ID-f284c2d8-6777-4ff5-94e1-a928628810d4">elisp errors</a></li>
 </ul>

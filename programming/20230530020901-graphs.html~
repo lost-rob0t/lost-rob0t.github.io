@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Graphs</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,16 +29,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9bd4c4c">Graph theory</a>
+<li><a href="#orgee9db64">Graph theory</a>
 <ul>
-<li><a href="#org7d75983">Graph Basics</a>
+<li><a href="#org58f2680">Graph Basics</a>
 <ul>
-<li><a href="#org6f86f9f">Directed graph</a></li>
-<li><a href="#org328aebc">Undirected graph</a></li>
-<li><a href="#org874ca10">Neighbor nodes</a></li>
-<li><a href="#orgb5d63f8">Adjacency List</a></li>
-<li><a href="#org1260b9b">Algorithms</a></li>
-<li><a href="#orgefcd8f4">Cycles</a></li>
+<li><a href="#org27cce82">Directed graph</a></li>
+<li><a href="#org188f939">Undirected graph</a></li>
+<li><a href="#org3e35ef1">Neighbor nodes</a></li>
+<li><a href="#org17c9204">Adjacency List</a></li>
+<li><a href="#org55e4412">Algorithms</a></li>
+<li><a href="#orga0d9a1b">Cycles</a></li>
 </ul>
 </li>
 </ul>
@@ -46,9 +47,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9bd4c4c" class="outline-2">
-<h2 id="org9bd4c4c">Graph theory</h2>
-<div class="outline-text-2" id="text-org9bd4c4c">
+<div id="outline-container-orgee9db64" class="outline-2">
+<h2 id="orgee9db64">Graph theory</h2>
+<div class="outline-text-2" id="text-orgee9db64">
 <ul class="org-ul">
 <li>Video: <a href="https://www.youtube.com/watch?v=tWVWeAqZ0WU">https://www.youtube.com/watch?v=tWVWeAqZ0WU</a></li>
 </ul>
@@ -56,9 +57,9 @@
 In these notes i will use lisp/nim.
 </p>
 </div>
-<div id="outline-container-org7d75983" class="outline-3">
-<h3 id="org7d75983">Graph Basics</h3>
-<div class="outline-text-3" id="text-org7d75983">
+<div id="outline-container-org58f2680" class="outline-3">
+<h3 id="org58f2680">Graph Basics</h3>
+<div class="outline-text-3" id="text-org58f2680">
 <p>
 A grapgh is nodes and edges
 A Node would be a "dot" on a graph and a edge is a connection between them.
@@ -70,9 +71,9 @@ Graphs can be used for all kinds of things from social network analsis
 </p>
 </div>
 
-<div id="outline-container-org6f86f9f" class="outline-4">
-<h4 id="org6f86f9f">Directed graph</h4>
-<div class="outline-text-4" id="text-org6f86f9f">
+<div id="outline-container-org27cce82" class="outline-4">
+<h4 id="org27cce82">Directed graph</h4>
+<div class="outline-text-4" id="text-org27cce82">
 <p>
 An directed graph is a grapgh that has the edges have "directions", where you can only move in the edge direction.
 </p>
@@ -80,9 +81,9 @@ An directed graph is a grapgh that has the edges have "directions", where you ca
 </div>
 
 
-<div id="outline-container-org328aebc" class="outline-4">
-<h4 id="org328aebc">Undirected graph</h4>
-<div class="outline-text-4" id="text-org328aebc">
+<div id="outline-container-org188f939" class="outline-4">
+<h4 id="org188f939">Undirected graph</h4>
+<div class="outline-text-4" id="text-org188f939">
 <p>
 A undirected graph is where edges has no direction btween nodes
 </p>
@@ -90,9 +91,9 @@ A undirected graph is where edges has no direction btween nodes
 </div>
 
 
-<div id="outline-container-org874ca10" class="outline-4">
-<h4 id="org874ca10">Neighbor nodes</h4>
-<div class="outline-text-4" id="text-org874ca10">
+<div id="outline-container-org3e35ef1" class="outline-4">
+<h4 id="org3e35ef1">Neighbor nodes</h4>
+<div class="outline-text-4" id="text-org3e35ef1">
 <p>
 Neighbor nodes are any node that is accessible by an edge
 </p>
@@ -118,9 +119,9 @@ but C isnt A's neighbor.
 </div>
 
 
-<div id="outline-container-orgb5d63f8" class="outline-4">
-<h4 id="orgb5d63f8">Adjacency List</h4>
-<div class="outline-text-4" id="text-orgb5d63f8">
+<div id="outline-container-org17c9204" class="outline-4">
+<h4 id="org17c9204">Adjacency List</h4>
+<div class="outline-text-4" id="text-org17c9204">
 <p>
 An adjancy list is a hashmap of notes as keys and list of nodes as the values.
 </p>
@@ -133,9 +134,9 @@ In common lisp I need to use a <code>vector</code> since they have faster access
 
 
 
-<div id="outline-container-org1260b9b" class="outline-4">
-<h4 id="org1260b9b">Algorithms</h4>
-<div class="outline-text-4" id="text-org1260b9b">
+<div id="outline-container-org55e4412" class="outline-4">
+<h4 id="org55e4412">Algorithms</h4>
+<div class="outline-text-4" id="text-org55e4412">
 <ul class="org-ul">
 <li>Depth First search visits all Adjacent nodes until it reaches a leaf then it starts backtracking. it is used to tell you if you can get to a node. Goes Deep.
 <ul class="org-ul">
@@ -152,16 +153,16 @@ In common lisp I need to use a <code>vector</code> since they have faster access
 </div>
 
 
-<div id="outline-container-orgefcd8f4" class="outline-4">
-<h4 id="orgefcd8f4">Cycles</h4>
-<div class="outline-text-4" id="text-orgefcd8f4">
+<div id="outline-container-orga0d9a1b" class="outline-4">
+<h4 id="orga0d9a1b">Cycles</h4>
+<div class="outline-text-4" id="text-orga0d9a1b">
 <p>
 A Cycle is a closed path in a graph that starts and ends at the same node.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org7a6e185"></a>Acyclic<br />
-<div class="outline-text-5" id="text-org7a6e185">
+<li><a id="orgbcdafda"></a>Acyclic<br />
+<div class="outline-text-5" id="text-orgbcdafda">
 <p>
 Means there are no "cycles"
 </p>

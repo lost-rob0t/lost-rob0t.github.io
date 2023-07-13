@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:17 -->
+<!-- 2023-07-12 Wed 22:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>links</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,16 +29,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org95414b3">Tech related</a></li>
-<li><a href="#orgde530fd">Videos</a></li>
-<li><a href="#org2b9abba">FireArms</a></li>
+<li><a href="#org00316a4">Tech related</a></li>
+<li><a href="#org4b03841">Videos</a></li>
+<li><a href="#org2bb2454">FireArms</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org95414b3" class="outline-2">
-<h2 id="org95414b3">Tech related</h2>
-<div class="outline-text-2" id="text-org95414b3">
+<div id="outline-container-org00316a4" class="outline-2">
+<h2 id="org00316a4">Tech related</h2>
+<div class="outline-text-2" id="text-org00316a4">
 <ul class="org-ul">
 <li><a href="https://sizeof.cat/links/">https://sizeof.cat/links/</a>
 <ul class="org-ul">
@@ -47,18 +48,18 @@
 </div>
 </div>
 
-<div id="outline-container-orgde530fd" class="outline-2">
-<h2 id="orgde530fd">Videos</h2>
-<div class="outline-text-2" id="text-orgde530fd">
+<div id="outline-container-org4b03841" class="outline-2">
+<h2 id="org4b03841">Videos</h2>
+<div class="outline-text-2" id="text-org4b03841">
 <ul class="org-ul">
 <li><a href="https://wikivisually.com/wiki/Nilsimsa_Hash">https://wikivisually.com/wiki/Nilsimsa_Hash</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2b9abba" class="outline-2">
-<h2 id="org2b9abba">FireArms</h2>
-<div class="outline-text-2" id="text-org2b9abba">
+<div id="outline-container-org2bb2454" class="outline-2">
+<h2 id="org2bb2454">FireArms</h2>
+<div class="outline-text-2" id="text-org2bb2454">
 <ul class="org-ul">
 <li><a href="https://www.atlasarms.org/">https://www.atlasarms.org/</a></li>
 </ul>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Build OCI containers in Nixos</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,12 +29,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org80d4975"><span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></a>
+<li><a href="#org9ce2bfc"><span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></a>
 <ul>
-<li><a href="#orgb86e29b">Main workflow</a>
+<li><a href="#orgb93badb">Main workflow</a>
 <ul>
-<li><a href="#org5fcd573">Examples</a></li>
-<li><a href="#org32809fc">Star intel Example</a></li>
+<li><a href="#org054b1b1">Examples</a></li>
+<li><a href="#org7d130f6">Star intel Example</a></li>
 </ul>
 </li>
 </ul>
@@ -41,9 +42,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org80d4975" class="outline-2">
-<h2 id="org80d4975"><span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></h2>
-<div class="outline-text-2" id="text-org80d4975">
+<div id="outline-container-org9ce2bfc" class="outline-2">
+<h2 id="org9ce2bfc"><span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></h2>
+<div class="outline-text-2" id="text-org9ce2bfc">
 <p>
 finish this!
 <a href="https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-dockerTools">https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-dockerTools</a>
@@ -61,9 +62,9 @@ Most of this document is lifted from <a href="https://github.com/NixOS/nixpkgs/b
 </div>
 
 
-<div id="outline-container-orgb86e29b" class="outline-3">
-<h3 id="orgb86e29b">Main workflow</h3>
-<div class="outline-text-3" id="text-orgb86e29b">
+<div id="outline-container-orgb93badb" class="outline-3">
+<h3 id="orgb93badb">Main workflow</h3>
+<div class="outline-text-3" id="text-orgb93badb">
 <p>
 Since nix changes how everything works, this includes how you packages and use OCI containers
 I will assume docker in this entry, becuase I had issues with podman.
@@ -85,9 +86,9 @@ You can load and build that the same as such:
 </div>
 </div>
 
-<div id="outline-container-org5fcd573" class="outline-4">
-<h4 id="org5fcd573">Examples</h4>
-<div class="outline-text-4" id="text-org5fcd573">
+<div id="outline-container-org054b1b1" class="outline-4">
+<h4 id="org054b1b1">Examples</h4>
+<div class="outline-text-4" id="text-org054b1b1">
 <p>
 Here is a very basic oci image
 </p>
@@ -107,8 +108,8 @@ Here is a very basic oci image
 </div>
 
 <ul class="org-ul">
-<li><a id="orgbbc7aab"></a>Service<br />
-<div class="outline-text-5" id="text-orgbbc7aab">
+<li><a id="org7429c0e"></a>Service<br />
+<div class="outline-text-5" id="text-org7429c0e">
 <p>
 Redis service example
 </p>
@@ -198,8 +199,8 @@ buildLayeredImage {
 </div>
 </li>
 
-<li><a id="org8c2f856"></a>Pulling Images<br />
-<div class="outline-text-5" id="text-org8c2f856">
+<li><a id="orgf85e98a"></a>Pulling Images<br />
+<div class="outline-text-5" id="text-orgf85e98a">
 <p>
 Example of pulling a Docker Images
 </p>
@@ -217,8 +218,8 @@ Example of pulling a Docker Images
 </div>
 </li>
 
-<li><a id="org1fd0760"></a>Add to image<br />
-<div class="outline-text-5" id="text-org1fd0760">
+<li><a id="orge8636ac"></a>Add to image<br />
+<div class="outline-text-5" id="text-orge8636ac">
 <p>
 Add Some packages to an existing image.
 </p>
@@ -242,15 +243,15 @@ Add Some packages to an existing image.
 
 
 
-<div id="outline-container-org32809fc" class="outline-4">
-<h4 id="org32809fc">Star intel Example</h4>
-<div class="outline-text-4" id="text-org32809fc">
+<div id="outline-container-org7d130f6" class="outline-4">
+<h4 id="org7d130f6">Star intel Example</h4>
+<div class="outline-text-4" id="text-org7d130f6">
 <p>
 Heres a real example of couchdb that runs <a href="../2022-05-28-030619-star_intel.html#ID-78157cd5-9681-4a64-b5c7-0f2b415cd446">star intel</a>.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org6a1ace1"></a><span class="todo TODO">TODO</span> Add my image stuff when i get it working!<br /></li>
+<li><a id="orgdf3a7ef"></a><span class="todo TODO">TODO</span> Add my image stuff when i get it working!<br /></li>
 </ul>
 </div>
 </div>

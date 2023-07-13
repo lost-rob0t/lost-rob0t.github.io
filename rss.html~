@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:17 -->
+<!-- 2023-07-12 Wed 22:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Lost Wiki Rss</title>
@@ -16,10 +16,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -29,8 +30,8 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#ID-08725fe6-1afa-48db-9620-b395e0e0e726">Sitemap for project lostWiki</a></li>
-<li><a href="#ID-34c80efd-ea10-4bcf-a509-faccd8128f51">emacs</a>
+<li><a href="#ID-58345f42-1860-45d3-899a-f98e2bc2cec8">Sitemap for project lostWiki</a></li>
+<li><a href="#ID-a4fd5b7b-156b-4be3-aead-daeded3f30de">emacs</a>
 <ul>
 <li><a href="#ID-2c071938-0b22-4d20-9655-91a97b274ec2">Org</a>
 <ul>
@@ -40,22 +41,25 @@
 </li>
 <li><a href="#ID-3a054402-2dea-46b0-85d4-e89b6c244319">Doom Emacs</a></li>
 <li><a href="#ID-2ed3f731-747d-4707-9674-b5e5ec75a0ed">Yasnippet</a></li>
-<li><a href="#ID-3437577b-713b-457d-a073-78186aa44f3a">Org</a></li>
-<li><a href="#ID-abcedbf1-62a7-4868-b4c3-4e63a909becd">Git</a></li>
+<li><a href="#ID-9177b68d-260d-42dd-b35c-9bc64ee537a0">Org</a></li>
+<li><a href="#ID-05f01706-61ce-4e56-9ea3-53043228de09">Git</a></li>
 </ul>
 </li>
-<li><a href="#ID-d2e54efd-ea33-4c51-b443-37f583daa3d6">Reading inbox</a></li>
+<li><a href="#ID-9ac6269c-ffa4-4065-887c-e34080b99d46">Reading inbox</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-ID-08725fe6-1afa-48db-9620-b395e0e0e726" class="outline-2">
-<h2 id="ID-08725fe6-1afa-48db-9620-b395e0e0e726"><a href="posts.html">Sitemap for project lostWiki</a></h2>
-<div class="outline-text-2" id="text-org0578231">
+<div id="outline-container-ID-58345f42-1860-45d3-899a-f98e2bc2cec8" class="outline-2">
+<h2 id="ID-58345f42-1860-45d3-899a-f98e2bc2cec8"><a href="posts.html">Sitemap for project lostWiki</a></h2>
+<div class="outline-text-2" id="text-org92d64cf">
 <p>
-<a href="rss.html">The Lost Wiki</a>
-<a href="programming/index.html">The Lost Wiki</a>
-<a href="Tutorial/index.html">The Lost Wiki</a>
+<a href="rss.html">The Lost Wiki Rss</a>
+<a href="programming/index.html">The Lost Wiki - Programming</a>
+<a href="Tutorial/index.html">The Lost Wiki - Tutorials</a>
+<a href="hacking/20221213185522-sql_injection.html">SQL Injection</a>
+<a href="hacking/20230712220510-sqlmap.html">SQLMap</a>
+<a href="hacking/20230712215520-in_band.html">in-band</a>
 <a href="sitemap.html">Sitemap for project lostWiki</a>
 <a href="programming/20230712200139-gitconfig.html">gitconfig</a>
 <a href="20220428224740-emacs.html">emacs</a>
@@ -154,7 +158,6 @@
 <a href="hacking/20230427212246-onlyforyou.html">OnlyForYou</a>
 <a href="hacking/20230423223955-cloudflare.html">cloudflare</a>
 <a href="hacking/20230418174334-hacking_python_eval.html">Hacking Python Eval</a>
-<a href="hacking/20221213185522-sql_injection.html">SQL Injection</a>
 <a href="hacking/20221213173625-wordpress_enumeration.html">WordPress Enumeration</a>
 <a href="hacking/20221213171543-metatwo.html">MetaTwo</a>
 <a href="hacking/20221210012904-bump_in_the_wire.html">Bump in the wire</a>
@@ -176,9 +179,9 @@
 </p>
 </div>
 </div>
-<div id="outline-container-ID-34c80efd-ea10-4bcf-a509-faccd8128f51" class="outline-2">
-<h2 id="ID-34c80efd-ea10-4bcf-a509-faccd8128f51"><a href="20220428224740-emacs.html">emacs</a></h2>
-<div class="outline-text-2" id="text-orge3cf804">
+<div id="outline-container-ID-a4fd5b7b-156b-4be3-aead-daeded3f30de" class="outline-2">
+<h2 id="ID-a4fd5b7b-156b-4be3-aead-daeded3f30de"><a href="20220428224740-emacs.html">emacs</a></h2>
+<div class="outline-text-2" id="text-orgbe44d67">
 <p>
 :ID:       95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2
 :ROAM<sub>TAGS</sub>:
@@ -201,11 +204,11 @@ Tips and tricks
 </div>
 <div id="outline-container-ID-2c071938-0b22-4d20-9655-91a97b274ec2" class="outline-3">
 <h3 id="ID-2c071938-0b22-4d20-9655-91a97b274ec2">Org</h3>
-<div class="outline-text-3" id="text-org0a74559">
+<div class="outline-text-3" id="text-org83d65a4">
 </div>
 <div id="outline-container-ID-9120e950-9fbb-4b02-ac8a-dc2e581ae5c3" class="outline-4">
 <h4 id="ID-9120e950-9fbb-4b02-ac8a-dc2e581ae5c3">Load u2l into a org document</h4>
-<div class="outline-text-4" id="text-org778e6b4">
+<div class="outline-text-4" id="text-orgcd297b6">
 <p>
 url2org function for importing info from the web
 <a href="https://www.reddit.com/r/emacs/comments/i2ep98/comment/g06s9vg/?utm_source=share&amp;utm_medium=web2x&amp;context=3">source</a>.
@@ -224,7 +227,7 @@ url2org function for importing info from the web
 
 <div id="outline-container-ID-ae6c8445-6c50-4e85-9a5c-9ed36a410499" class="outline-4">
 <h4 id="ID-ae6c8445-6c50-4e85-9a5c-9ed36a410499">Org Babel isnt tangling the file.</h4>
-<div class="outline-text-4" id="text-org01398a7">
+<div class="outline-text-4" id="text-orgb6520cb">
 <p>
 Make sure you C-c C-c the header args
 </p>
@@ -233,7 +236,7 @@ Make sure you C-c C-c the header args
 </div>
 <div id="outline-container-ID-3a054402-2dea-46b0-85d4-e89b6c244319" class="outline-3">
 <h3 id="ID-3a054402-2dea-46b0-85d4-e89b6c244319">Doom Emacs</h3>
-<div class="outline-text-3" id="text-org11e3959">
+<div class="outline-text-3" id="text-org2f6d6f0">
 <p>
 <a href="2022-04-30-010756-doom_emacs.html#ID-6dd02406-f2d1-4ff2-8a39-2590597c44bf">Doom Emacs</a>
 </p>
@@ -241,32 +244,32 @@ Make sure you C-c C-c the header args
 </div>
 <div id="outline-container-ID-2ed3f731-747d-4707-9674-b5e5ec75a0ed" class="outline-3">
 <h3 id="ID-2ed3f731-747d-4707-9674-b5e5ec75a0ed">Yasnippet</h3>
-<div class="outline-text-3" id="text-org58d10ec">
+<div class="outline-text-3" id="text-org2195799">
 <p>
 <a href="2022-09-26-184941-yasnippet_multi_choice.html#ID-19dae36d-a4f9-49d1-9bc3-d5734ff95bde">Yasnippet multi choice</a>
 </p>
 </div>
 </div>
-<div id="outline-container-ID-3437577b-713b-457d-a073-78186aa44f3a" class="outline-3">
-<h3 id="ID-3437577b-713b-457d-a073-78186aa44f3a">Org</h3>
-<div class="outline-text-3" id="text-orgbe1a5d6">
+<div id="outline-container-ID-9177b68d-260d-42dd-b35c-9bc64ee537a0" class="outline-3">
+<h3 id="ID-9177b68d-260d-42dd-b35c-9bc64ee537a0">Org</h3>
+<div class="outline-text-3" id="text-org5f16fad">
 <p>
 <a href="20221216043133-publish_org_roam.html#ID-2b069384-79d9-4ed3-bc6e-b766edf526cb">Publish Script</a>
 </p>
 </div>
 </div>
-<div id="outline-container-ID-abcedbf1-62a7-4868-b4c3-4e63a909becd" class="outline-3">
-<h3 id="ID-abcedbf1-62a7-4868-b4c3-4e63a909becd">Git</h3>
-<div class="outline-text-3" id="text-org270737d">
+<div id="outline-container-ID-05f01706-61ce-4e56-9ea3-53043228de09" class="outline-3">
+<h3 id="ID-05f01706-61ce-4e56-9ea3-53043228de09">Git</h3>
+<div class="outline-text-3" id="text-org0b4e857">
 <p>
 <a href="programming/20230712200139-gitconfig.html#ID-dc00a2c6-6aa9-4c90-ba6d-6982067d2169">gitconfig</a>
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-ID-d2e54efd-ea33-4c51-b443-37f583daa3d6" class="outline-2">
-<h2 id="ID-d2e54efd-ea33-4c51-b443-37f583daa3d6"><a href="20220429214821-reading_inbox.html">Reading inbox</a></h2>
-<div class="outline-text-2" id="text-org25e1940">
+<div id="outline-container-ID-9ac6269c-ffa4-4065-887c-e34080b99d46" class="outline-2">
+<h2 id="ID-9ac6269c-ffa4-4065-887c-e34080b99d46"><a href="20220429214821-reading_inbox.html">Reading inbox</a></h2>
+<div class="outline-text-2" id="text-org4ccca6f">
 <p>
 :ID:       6189e985-e87d-42df-aa38-ba6429a2bf8a
 :ROAM<sub>TAGS</sub>: racket compsci videos book articles

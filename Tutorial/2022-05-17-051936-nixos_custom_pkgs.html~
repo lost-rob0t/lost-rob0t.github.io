@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nixos custom pkgs</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,20 +29,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd6e26c3">How to use custom packages</a></li>
-<li><a href="#org183958c">Tips</a>
+<li><a href="#org4d1624a">How to use custom packages</a></li>
+<li><a href="#org7eb1f49">Tips</a>
 <ul>
-<li><a href="#orgf8a1890">Installing from a local repo</a></li>
-<li><a href="#org59c117d">error: derivation name missing</a></li>
-<li><a href="#org92d49a0">error: syntax error, unexpected ID, expecting ':' or '@'</a></li>
+<li><a href="#org55176b9">Installing from a local repo</a></li>
+<li><a href="#orgb6c6460">error: derivation name missing</a></li>
+<li><a href="#org87dbee7">error: syntax error, unexpected ID, expecting ':' or '@'</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd6e26c3" class="outline-2">
-<h2 id="orgd6e26c3">How to use custom packages</h2>
-<div class="outline-text-2" id="text-orgd6e26c3">
+<div id="outline-container-org4d1624a" class="outline-2">
+<h2 id="org4d1624a">How to use custom packages</h2>
+<div class="outline-text-2" id="text-org4d1624a">
 <p>
 i have built a some packages myself and i cant find a way to use my overlay.
 Instead i maintain a nix-channel and point it my gitrepo with a archive url
@@ -64,13 +65,13 @@ in
 </div>
 </div>
 
-<div id="outline-container-org183958c" class="outline-2">
-<h2 id="org183958c">Tips</h2>
-<div class="outline-text-2" id="text-org183958c">
+<div id="outline-container-org7eb1f49" class="outline-2">
+<h2 id="org7eb1f49">Tips</h2>
+<div class="outline-text-2" id="text-org7eb1f49">
 </div>
-<div id="outline-container-orgf8a1890" class="outline-3">
-<h3 id="orgf8a1890">Installing from a local repo</h3>
-<div class="outline-text-3" id="text-orgf8a1890">
+<div id="outline-container-org55176b9" class="outline-3">
+<h3 id="org55176b9">Installing from a local repo</h3>
+<div class="outline-text-3" id="text-org55176b9">
 <p>
 This is mostly used for development of packages but can be used to install ad-hoc fixes quickly
 </p>
@@ -92,9 +93,9 @@ Build an expression
 </div>
 </div>
 </div>
-<div id="outline-container-org59c117d" class="outline-3">
-<h3 id="org59c117d">error: derivation name missing</h3>
-<div class="outline-text-3" id="text-org59c117d">
+<div id="outline-container-orgb6c6460" class="outline-3">
+<h3 id="orgb6c6460">error: derivation name missing</h3>
+<div class="outline-text-3" id="text-orgb6c6460">
 <p>
 Version was not included.
 </p>
@@ -164,9 +165,9 @@ stdenv.mkDerivation rec {
 </div>
 </div>
 
-<div id="outline-container-org92d49a0" class="outline-3">
-<h3 id="org92d49a0">error: syntax error, unexpected ID, expecting ':' or '@'</h3>
-<div class="outline-text-3" id="text-org92d49a0">
+<div id="outline-container-org87dbee7" class="outline-3">
+<h3 id="org87dbee7">error: syntax error, unexpected ID, expecting ':' or '@'</h3>
+<div class="outline-text-3" id="text-org87dbee7">
 <p>
 This was painful you simply forgot to include a <code>:</code>
 Wrong

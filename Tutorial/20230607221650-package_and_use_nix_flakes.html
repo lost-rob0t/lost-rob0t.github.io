@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Package and use Nix flakes</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,19 +29,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org48c7f48">How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></a>
+<li><a href="#org95b24c5">How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></a>
 <ul>
-<li><a href="#orgf9956c9">Writing the nix flake</a></li>
-<li><a href="#orgd640b84">Using the nix flake.</a></li>
+<li><a href="#org5658995">Writing the nix flake</a></li>
+<li><a href="#org6f64e58">Using the nix flake.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org48c7f48" class="outline-2">
-<h2 id="org48c7f48">How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></h2>
-<div class="outline-text-2" id="text-org48c7f48">
+<div id="outline-container-org95b24c5" class="outline-2">
+<h2 id="org95b24c5">How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></h2>
+<div class="outline-text-2" id="text-org95b24c5">
 <p>
 Today I had ran into a issue with war thunder where the mouse would not be stuck inside the screen, after looking around I found <a href="https://github.com/gholken/Mousetrap">MouseTrap</a>. Its a c++ tool that will keep it in the window.
 The only issue I am on <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">Nixos</a>, which requires me to include it in my configuration so i can reproduce it later on.
@@ -49,9 +50,9 @@ So I will package mouse trap and add it to my home-manager config.
 </div>
 
 
-<div id="outline-container-orgf9956c9" class="outline-3">
-<h3 id="orgf9956c9">Writing the nix flake</h3>
-<div class="outline-text-3" id="text-orgf9956c9">
+<div id="outline-container-org5658995" class="outline-3">
+<h3 id="org5658995">Writing the nix flake</h3>
+<div class="outline-text-3" id="text-org5658995">
 <p>
 I will assume you are already aware of how to package <a href="2022-05-17-051936-nixos_custom_pkgs.html#ID-3866dd8f-fc14-491a-af3a-bbd0c4c5ce98">nixos custom pkgs,</a> but TLDR they are like normal nix derivations with locks, inputs and outputs.
 </p>
@@ -230,9 +231,9 @@ The final flake.nix looks like this
 </div>
 </div>
 
-<div id="outline-container-orgd640b84" class="outline-3">
-<h3 id="orgd640b84">Using the nix flake.</h3>
-<div class="outline-text-3" id="text-orgd640b84">
+<div id="outline-container-org6f64e58" class="outline-3">
+<h3 id="org6f64e58">Using the nix flake.</h3>
+<div class="outline-text-3" id="text-org6f64e58">
 <p>
 In order to use your nix flake, you need to make sure it is added to your flake inputs
 </p>

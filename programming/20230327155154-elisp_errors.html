@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>elisp errors</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,13 +29,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgbc0321d">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></a>
+<li><a href="#org6490b96">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></a>
 <ul>
-<li><a href="#orgdd11afb">Raising errors</a></li>
-<li><a href="#org7d8e773">Handling errors</a>
+<li><a href="#orgb9535ed">Raising errors</a></li>
+<li><a href="#org1019edd">Handling errors</a>
 <ul>
-<li><a href="#orgfbe6095">unwind-protect</a></li>
-<li><a href="#orgb7bf302">condition-case</a></li>
+<li><a href="#org5d33374">unwind-protect</a></li>
+<li><a href="#org1f98fbd">condition-case</a></li>
 </ul>
 </li>
 </ul>
@@ -44,9 +45,9 @@
 </div>
 
 
-<div id="outline-container-orgbc0321d" class="outline-2">
-<h2 id="orgbc0321d">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></h2>
-<div class="outline-text-2" id="text-orgbc0321d">
+<div id="outline-container-org6490b96" class="outline-2">
+<h2 id="org6490b96">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></h2>
+<div class="outline-text-2" id="text-org6490b96">
 <p>
 Error handling in any language is often messy, no diffrent with elisp.
 </p>
@@ -55,9 +56,9 @@ Error handling in any language is often messy, no diffrent with elisp.
 Errors in emacs lisp are called <code>signals</code>.
 </p>
 </div>
-<div id="outline-container-orgdd11afb" class="outline-3">
-<h3 id="orgdd11afb">Raising errors</h3>
-<div class="outline-text-3" id="text-orgdd11afb">
+<div id="outline-container-orgb9535ed" class="outline-3">
+<h3 id="orgb9535ed">Raising errors</h3>
+<div class="outline-text-3" id="text-orgb9535ed">
 <p>
 You can "raise" or "signal" with the <code>signal</code> and <code>error</code> functions.
 </p>
@@ -77,17 +78,17 @@ You pass a error symbol and associated dated.
 </div>
 
 
-<div id="outline-container-org7d8e773" class="outline-3">
-<h3 id="org7d8e773">Handling errors</h3>
-<div class="outline-text-3" id="text-org7d8e773">
+<div id="outline-container-org1019edd" class="outline-3">
+<h3 id="org1019edd">Handling errors</h3>
+<div class="outline-text-3" id="text-org1019edd">
 <p>
 You can handle errors with <code>unwind-protect</code> and <code>condition-case</code>.
 </p>
 </div>
 
-<div id="outline-container-orgfbe6095" class="outline-4">
-<h4 id="orgfbe6095">unwind-protect</h4>
-<div class="outline-text-4" id="text-orgfbe6095">
+<div id="outline-container-org5d33374" class="outline-4">
+<h4 id="org5d33374">unwind-protect</h4>
+<div class="outline-text-4" id="text-org5d33374">
 <p>
 unwind-protect is like the finally clause from other languages.
 or the <code>defer</code> statement in <a href="20220606215451-nim.html#ID-af6fae74-d03b-4930-8f39-63becb43efd9">Nim</a>.
@@ -101,9 +102,9 @@ or the <code>defer</code> statement in <a href="20220606215451-nim.html#ID-af6fa
 </div>
 </div>
 
-<div id="outline-container-orgb7bf302" class="outline-4">
-<h4 id="orgb7bf302">condition-case</h4>
-<div class="outline-text-4" id="text-orgb7bf302">
+<div id="outline-container-org1f98fbd" class="outline-4">
+<h4 id="org1f98fbd">condition-case</h4>
+<div class="outline-text-4" id="text-org1f98fbd">
 <p>
 <code>condition-case</code> is the try-catch from other languages.
 </p>

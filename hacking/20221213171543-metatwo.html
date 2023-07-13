@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:27 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MetaTwo</title>
@@ -16,10 +16,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -29,13 +30,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org287663c">MetaTwo</a>
+<li><a href="#orgcadf9a7">MetaTwo</a>
 <ul>
-<li><a href="#orgdf458c6">Nmap Scan</a></li>
-<li><a href="#org4cfbcb3">HTTP service</a>
+<li><a href="#org02a9a63">Nmap Scan</a></li>
+<li><a href="#org9f1d56c">HTTP service</a>
 <ul>
-<li><a href="#org3762dd2">Wordpress Enumeration</a></li>
-<li><a href="#org374004e">BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></a></li>
+<li><a href="#org8f035fc">Wordpress Enumeration</a></li>
+<li><a href="#org705c89c">BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></a></li>
 </ul>
 </li>
 </ul>
@@ -46,18 +47,18 @@
 <ul class="org-ul">
 <li><a href="../index.html#ID-c72d4e02-0e32-424c-b4b3-c471adbf4598">Index</a></li>
 </ul>
-<div id="outline-container-org287663c" class="outline-2">
-<h2 id="org287663c">MetaTwo</h2>
-<div class="outline-text-2" id="text-org287663c">
+<div id="outline-container-orgcadf9a7" class="outline-2">
+<h2 id="orgcadf9a7">MetaTwo</h2>
+<div class="outline-text-2" id="text-orgcadf9a7">
 <p>
 I start out by scanning the host
 </p>
 </div>
 
-<div id="outline-container-orgdf458c6" class="outline-3">
-<h3 id="orgdf458c6">Nmap Scan</h3>
-<div class="outline-text-3" id="text-orgdf458c6">
-<pre class="example" id="org7abe910">
+<div id="outline-container-org02a9a63" class="outline-3">
+<h3 id="org02a9a63">Nmap Scan</h3>
+<div class="outline-text-3" id="text-org02a9a63">
+<pre class="example" id="org19411d7">
 # Nmap 7.92 scan initiated Wed Nov  2 23:56:39 2022 as: nmap -A -oA scans/10.10.11.186 10.10.11.186
 Nmap scan report for 10.10.11.186
 Host is up (0.034s latency).
@@ -102,27 +103,27 @@ from the nmap scan you see there is a hostname <code>metapress.htb</code>. put t
 </div>
 </div>
 
-<div id="outline-container-org4cfbcb3" class="outline-3">
-<h3 id="org4cfbcb3">HTTP service</h3>
-<div class="outline-text-3" id="text-org4cfbcb3">
+<div id="outline-container-org9f1d56c" class="outline-3">
+<h3 id="org9f1d56c">HTTP service</h3>
+<div class="outline-text-3" id="text-org9f1d56c">
 <p>
 On the http service there is a wordpress install.
 </p>
 
 
-<div id="org7e8b72a" class="figure">
+<div id="orga4e1acb" class="figure">
 <p><img src="MetaTwo/2022-12-13_18-34-32_screenshot.png" alt="2022-12-13_18-34-32_screenshot.png" />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3762dd2" class="outline-4">
-<h4 id="org3762dd2">Wordpress Enumeration</h4>
-<div class="outline-text-4" id="text-org3762dd2">
+<div id="outline-container-org8f035fc" class="outline-4">
+<h4 id="org8f035fc">Wordpress Enumeration</h4>
+<div class="outline-text-4" id="text-org8f035fc">
 </div>
 <ul class="org-ul">
-<li><a id="org0232973"></a>Username enumeration<br />
-<div class="outline-text-5" id="text-org0232973">
+<li><a id="org1d88b4f"></a>Username enumeration<br />
+<div class="outline-text-5" id="text-org1d88b4f">
 <p>
 First thing i try is searching by the author tag, i dont see any
 </p>
@@ -130,13 +131,13 @@ First thing i try is searching by the author tag, i dont see any
 <p>
 Going to
 </p>
-<pre class="example" id="orgda8ab8c">
+<pre class="example" id="orgd641ff3">
 http://metapress.htb/?author=1
 </pre>
 <p>
 Takes me to
 </p>
-<pre class="example" id="org4a23b2f">
+<pre class="example" id="org9b34610">
 http://metapress.htb/author/admin/
 </pre>
 <p>
@@ -146,7 +147,7 @@ So admin user is named <code>admin</code>.
 <p>
 I want to be sure there is no other users so i check the wp-json api
 </p>
-<pre class="example" id="orgd0eefd7">
+<pre class="example" id="org3d66987">
 http://metapress.htb/wp-json/wp/v2/users
 </pre>
 
@@ -187,13 +188,13 @@ Looks like its just admin user
 </div>
 </li>
 
-<li><a id="orgfd5e6da"></a>Wpscan<br />
-<div class="outline-text-5" id="text-orgfd5e6da">
+<li><a id="org21bda78"></a>Wpscan<br />
+<div class="outline-text-5" id="text-org21bda78">
 <p>
 So after i find out what users are on the box i start wpscan.
 </p>
 
-<pre class="example" id="org6b0e002">
+<pre class="example" id="org14958d0">
 _______________________________________________________________
          __          _______   _____
          \ \        / /  __ \ / ____|
@@ -272,8 +273,8 @@ Wp scan has found some usfule things like the fact <code>/readme.html</code> is 
 </p>
 </div>
 </li>
-<li><a id="org8b34f58"></a>Readme.html<br />
-<div class="outline-text-5" id="text-org8b34f58">
+<li><a id="orgb20b23e"></a>Readme.html<br />
+<div class="outline-text-5" id="text-orgb20b23e">
 <p>
 Checking the readme.html should be done whever you see it, it contains helpful info.
 </p>
@@ -284,8 +285,8 @@ In this case i dont see much here
 </div>
 </li>
 
-<li><a id="org9eb5be1"></a>Plugin enumeration<br />
-<div class="outline-text-5" id="text-org9eb5be1">
+<li><a id="org1019aa7"></a>Plugin enumeration<br />
+<div class="outline-text-5" id="text-org1019aa7">
 <p>
 Now wpscan did a poor job of finding plugins (maybe i should make my own?)
 </p>
@@ -297,12 +298,12 @@ The best way is to check the html source
 </div>
 
 <ul class="org-ul">
-<li><a id="orgde56cba"></a>Checking the Html Source<br />
-<div class="outline-text-6" id="text-orgde56cba">
+<li><a id="orgbd180e3"></a>Checking the Html Source<br />
+<div class="outline-text-6" id="text-orgbd180e3">
 <p>
 Checking the source I find the theme is called <code>twentytwentyone</code> version 1.1
 </p>
-<pre class="example" id="orgf929df7">
+<pre class="example" id="org151b2db">
 http://metapress.htb/wp-content/themes/twentytwentyone/assets/css/print.css?ver=1.1
 </pre>
 <p>
@@ -356,16 +357,16 @@ I cut down on all the extra stuff, what you can see out of this, is that there i
 </ul>
 </div>
 
-<div id="outline-container-org374004e" class="outline-4">
-<h4 id="org374004e">BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></h4>
-<div class="outline-text-4" id="text-org374004e">
+<div id="outline-container-org705c89c" class="outline-4">
+<h4 id="org705c89c">BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></h4>
+<div class="outline-text-4" id="text-org705c89c">
 <p>
 Searching bookingpress right away shows that it is vulnerable to a unauthenticated <a href="20221213185522-sql_injection.html#ID-81d62666-4ce8-4244-b498-739a680f9673">SQL Injection</a>.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org263c448"></a>BookingPress &lt; 1.0.11 - Unauthenticated SQL Injection<br />
-<div class="outline-text-5" id="text-org263c448">
+<li><a id="orgb8104ed"></a>BookingPress &lt; 1.0.11 - Unauthenticated SQL Injection<br />
+<div class="outline-text-5" id="text-orgb8104ed">
 <p>
 Description
 </p>
@@ -376,8 +377,8 @@ The plugin fails to properly sanitize user supplied POST data before it is used 
 </div>
 
 <ul class="org-ul">
-<li><a id="orgbd8e87e"></a>Proof of Concept<br />
-<div class="outline-text-6" id="text-orgbd8e87e">
+<li><a id="orge4afbc0"></a>Proof of Concept<br />
+<div class="outline-text-6" id="text-orge4afbc0">
 <pre class="example">
 - Create a new "category" and associate it with a new "service" via the BookingPress admin menu (/wp-admin/admin.php?page=bookingpress_services)
 - Create a new page with the "[bookingpress_form]" shortcode embedded (the "BookingPress Step-by-step Wizard Form")

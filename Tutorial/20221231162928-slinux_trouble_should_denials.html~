@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SLinux Trouble Shoot Denials</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,17 +29,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb1d095d">How to trouble shoot SELInux denials&#xa0;&#xa0;&#xa0;<span class="tag"><span class="selinux">selinux</span>&#xa0;<span class=""></span>&#xa0;<span class="linux">linux</span></span></a>
+<li><a href="#org2fed1be">How to trouble shoot SELInux denials&#xa0;&#xa0;&#xa0;<span class="tag"><span class="selinux">selinux</span>&#xa0;<span class=""></span>&#xa0;<span class="linux">linux</span></span></a>
 <ul>
-<li><a href="#org8c27c8d"><code>ausearch</code> command</a>
+<li><a href="#org05b1384"><code>ausearch</code> command</a>
 <ul>
-<li><a href="#org5b8c34e">Find recent events</a></li>
-<li><a href="#org3fe34d0">Options</a></li>
+<li><a href="#org7175612">Find recent events</a></li>
+<li><a href="#org68390dd">Options</a></li>
 </ul>
 </li>
-<li><a href="#orge8774f9"><code>audit2why</code></a>
+<li><a href="#orgfe391bb"><code>audit2why</code></a>
 <ul>
-<li><a href="#orgbaf85fa">Search for sshd issues and find out why</a></li>
+<li><a href="#org8a07c1d">Search for sshd issues and find out why</a></li>
 </ul>
 </li>
 </ul>
@@ -46,26 +47,26 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb1d095d" class="outline-2">
-<h2 id="orgb1d095d">How to trouble shoot SELInux denials&#xa0;&#xa0;&#xa0;<span class="tag"><span class="selinux">selinux</span>&#xa0;<span class=""></span>&#xa0;<span class="linux">linux</span></span></h2>
-<div class="outline-text-2" id="text-orgb1d095d">
+<div id="outline-container-org2fed1be" class="outline-2">
+<h2 id="org2fed1be">How to trouble shoot SELInux denials&#xa0;&#xa0;&#xa0;<span class="tag"><span class="selinux">selinux</span>&#xa0;<span class=""></span>&#xa0;<span class="linux">linux</span></span></h2>
+<div class="outline-text-2" id="text-org2fed1be">
 <p>
 A lot of people's problems with selinux is it will block something they are trying to do.
 So then they just disable it. That is fine for a personal machine but what if it is a server and you want it to work?
 </p>
 </div>
 
-<div id="outline-container-org8c27c8d" class="outline-3">
-<h3 id="org8c27c8d"><code>ausearch</code> command</h3>
-<div class="outline-text-3" id="text-org8c27c8d">
+<div id="outline-container-org05b1384" class="outline-3">
+<h3 id="org05b1384"><code>ausearch</code> command</h3>
+<div class="outline-text-3" id="text-org05b1384">
 <p>
 <code>ausearch</code> can query the <code>auditd</code> logs based on search criteria.
 </p>
 </div>
 
-<div id="outline-container-org5b8c34e" class="outline-4">
-<h4 id="org5b8c34e">Find recent events</h4>
-<div class="outline-text-4" id="text-org5b8c34e">
+<div id="outline-container-org7175612" class="outline-4">
+<h4 id="org7175612">Find recent events</h4>
+<div class="outline-text-4" id="text-org7175612">
 <p>
 Recent will grab the last ten minutes
 </p>
@@ -86,14 +87,14 @@ Find issues from today looking for sshd
 
 
 
-<div id="outline-container-org3fe34d0" class="outline-4">
-<h4 id="org3fe34d0">Options</h4>
-<div class="outline-text-4" id="text-org3fe34d0">
+<div id="outline-container-org68390dd" class="outline-4">
+<h4 id="org68390dd">Options</h4>
+<div class="outline-text-4" id="text-org68390dd">
 <p>
 Most used options from the man-page
 You can fine the online man-page <a href="https://man7.org/linux/man-pages/man8/ausearch.8.html">here</a>.
 </p>
-<pre class="example" id="org2316275">
+<pre class="example" id="org85ed576">
 -a, --event audit-event-id
        Search for an event based on the given event ID. Messages
        always start with something like
@@ -179,17 +180,17 @@ You can fine the online man-page <a href="https://man7.org/linux/man-pages/man8/
 </div>
 </div>
 
-<div id="outline-container-orge8774f9" class="outline-3">
-<h3 id="orge8774f9"><code>audit2why</code></h3>
-<div class="outline-text-3" id="text-orge8774f9">
+<div id="outline-container-orgfe391bb" class="outline-3">
+<h3 id="orgfe391bb"><code>audit2why</code></h3>
+<div class="outline-text-3" id="text-orgfe391bb">
 <p>
 <code>audit2why</code> will translate audit messages into a description of why it was denied.
 </p>
 </div>
 
-<div id="outline-container-orgbaf85fa" class="outline-4">
-<h4 id="orgbaf85fa">Search for sshd issues and find out why</h4>
-<div class="outline-text-4" id="text-orgbaf85fa">
+<div id="outline-container-org8a07c1d" class="outline-4">
+<h4 id="org8a07c1d">Search for sshd issues and find out why</h4>
+<div class="outline-text-4" id="text-org8a07c1d">
 <p>
 This command will search for issues starting today for sshd with grep then pipe it into <code>audit2why</code> and possibly get an explanation.
 </p>

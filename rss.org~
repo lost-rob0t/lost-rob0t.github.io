@@ -5,9 +5,12 @@
 :RSS_PERMALINK: posts.html
 :PUBDATE:  2023-07-12
 :END:
-[[file:rss.org][The Lost Wiki]]
-[[file:programming/index.org][The Lost Wiki]]
-[[file:Tutorial/index.org][The Lost Wiki]]
+[[file:rss.org][The Lost Wiki Rss]]
+[[file:programming/index.org][The Lost Wiki - Programming]]
+[[file:Tutorial/index.org][The Lost Wiki - Tutorials]]
+[[file:hacking/20221213185522-sql_injection.org][SQL Injection]]
+[[file:hacking/20230712220510-sqlmap.org][SQLMap]]
+[[file:hacking/20230712215520-in_band.org][in-band]]
 [[file:sitemap.org][Sitemap for project lostWiki]]
 [[file:programming/20230712200139-gitconfig.org][gitconfig]]
 [[file:20220428224740-emacs.org][emacs]]
@@ -106,7 +109,6 @@
 [[file:hacking/20230427212246-onlyforyou.org][OnlyForYou]]
 [[file:hacking/20230423223955-cloudflare.org][cloudflare]]
 [[file:hacking/20230418174334-hacking_python_eval.org][Hacking Python Eval]]
-[[file:hacking/20221213185522-sql_injection.org][SQL Injection]]
 [[file:hacking/20221213173625-wordpress_enumeration.org][WordPress Enumeration]]
 [[file:hacking/20221213171543-metatwo.org][MetaTwo]]
 [[file:hacking/20221210012904-bump_in_the_wire.org][Bump in the wire]]

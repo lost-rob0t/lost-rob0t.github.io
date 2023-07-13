@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 21:17 -->
+<!-- 2023-07-12 Wed 22:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>free code camp college algebra preportions</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,12 +29,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org27cfe31">Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></a></li>
-<li><a href="#orgbfa6a5c">Code</a></li>
-<li><a href="#org5d36a47">Extra problems</a>
+<li><a href="#org4969ca0">Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></a></li>
+<li><a href="#org96a8a8d">Code</a></li>
+<li><a href="#orge7b2346">Extra problems</a>
 <ul>
-<li><a href="#org26082e8">Mixed Numbers</a></li>
-<li><a href="#org4d1fbd9">Representing floating points as a fraction</a></li>
+<li><a href="#orgac98f8b">Mixed Numbers</a></li>
+<li><a href="#org6a50e1a">Representing floating points as a fraction</a></li>
 </ul>
 </li>
 </ul>
@@ -41,9 +42,9 @@
 </div>
 
 
-<div id="outline-container-org27cfe31" class="outline-2">
-<h2 id="org27cfe31">Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></h2>
-<div class="outline-text-2" id="text-org27cfe31">
+<div id="outline-container-org4969ca0" class="outline-2">
+<h2 id="org4969ca0">Proportions&#xa0;&#xa0;&#xa0;<span class="tag"><span class="notes">notes</span>&#xa0;<span class="math">math</span></span></h2>
+<div class="outline-text-2" id="text-org4969ca0">
 <p>
 Proportions are like saying 2 multiplications are equal
 5/10 = 2/4
@@ -71,9 +72,9 @@ The answer is 12 1/2 miles
 </p>
 </div>
 </div>
-<div id="outline-container-orgbfa6a5c" class="outline-2">
-<h2 id="orgbfa6a5c">Code</h2>
-<div class="outline-text-2" id="text-orgbfa6a5c">
+<div id="outline-container-org96a8a8d" class="outline-2">
+<h2 id="org96a8a8d">Code</h2>
+<div class="outline-text-2" id="text-org96a8a8d">
 <p>
 Setup a proportion
 </p>
@@ -98,13 +99,13 @@ We Put 0 for the number we do not know and we use 2 if statements.
 </div>
 
 
-<div id="outline-container-org5d36a47" class="outline-2">
-<h2 id="org5d36a47">Extra problems</h2>
-<div class="outline-text-2" id="text-org5d36a47">
+<div id="outline-container-orge7b2346" class="outline-2">
+<h2 id="orge7b2346">Extra problems</h2>
+<div class="outline-text-2" id="text-orge7b2346">
 </div>
-<div id="outline-container-org26082e8" class="outline-3">
-<h3 id="org26082e8">Mixed Numbers</h3>
-<div class="outline-text-3" id="text-org26082e8">
+<div id="outline-container-orgac98f8b" class="outline-3">
+<h3 id="orgac98f8b">Mixed Numbers</h3>
+<div class="outline-text-3" id="text-orgac98f8b">
 <p>
 Mixed numbers can easily be represented in python, since fractions is the same as a division.
 Python Knows the order of operations.
@@ -118,9 +119,9 @@ Example is 1 2/3 + 3 4/5 - 7
 </div>
 </div>
 
-<div id="outline-container-org4d1fbd9" class="outline-3">
-<h3 id="org4d1fbd9">Representing floating points as a fraction</h3>
-<div class="outline-text-3" id="text-org4d1fbd9">
+<div id="outline-container-org6a50e1a" class="outline-3">
+<h3 id="org6a50e1a">Representing floating points as a fraction</h3>
+<div class="outline-text-3" id="text-org6a50e1a">
 <p>
 What if we have this floating point and we want a fraction?
 </p>

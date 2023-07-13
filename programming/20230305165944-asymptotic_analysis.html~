@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Asymptotic Analysis</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,15 +29,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org77f4eff">Efficiency</a></li>
-<li><a href="#org872a7da">How do you measure the time?</a></li>
+<li><a href="#orge234c68">Efficiency</a></li>
+<li><a href="#org00426aa">How do you measure the time?</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org77f4eff" class="outline-2">
-<h2 id="org77f4eff">Efficiency</h2>
-<div class="outline-text-2" id="text-org77f4eff">
+<div id="outline-container-orge234c68" class="outline-2">
+<h2 id="orge234c68">Efficiency</h2>
+<div class="outline-text-2" id="text-orge234c68">
 <p>
 Efficiency is always measured in terms of time and space
 </p>
@@ -49,9 +50,9 @@ And ideal data struct is the one that takes the least time and least space.
 
 
 
-<div id="outline-container-org872a7da" class="outline-2">
-<h2 id="org872a7da">How do you measure the time?</h2>
-<div class="outline-text-2" id="text-org872a7da">
+<div id="outline-container-org00426aa" class="outline-2">
+<h2 id="org00426aa">How do you measure the time?</h2>
+<div class="outline-text-2" id="text-org00426aa">
 <p>
 you use <a href="20230305150253-big_o.html#ID-a6dfee7d-c44e-4cbf-93c2-3461b91158f5">big o</a>
 </p>

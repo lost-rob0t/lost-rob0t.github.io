@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:17 -->
+<!-- 2023-07-12 Wed 22:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>non nixos desktop intergration</title>
@@ -15,10 +15,11 @@
 <nav class="navbar">
   <div class="navbar-mode-line">
     <a href="/" class="navbar-circle">◉</a>
-    <a href="/programming" class="navbar-filename">programming</a>
-    <a href="/hacking" class="navbar-filename">hacking</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
     <a href="/Tutorial" class="navbar-filename">Tutorials</a>
     <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
   </div>
 </nav>
 </div>
@@ -28,13 +29,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd75af93">How to intergrate nix on non nix system</a>
+<li><a href="#orgff37188">How to intergrate nix on non nix system</a>
 <ul>
-<li><a href="#org3d3c1df">Method 1 Symlink</a></li>
-<li><a href="#org428c593">Method 2 Update XDG dirs</a></li>
+<li><a href="#orge26daa8">Method 1 Symlink</a></li>
+<li><a href="#orgee8389e">Method 2 Update XDG dirs</a></li>
 </ul>
 </li>
-<li><a href="#org65e93fe">links</a></li>
+<li><a href="#orgde335c0">links</a></li>
 </ul>
 </div>
 </div>
@@ -42,17 +43,17 @@
 <li><a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a></li>
 </ul>
 
-<div id="outline-container-orgd75af93" class="outline-2">
-<h2 id="orgd75af93">How to intergrate nix on non nix system</h2>
-<div class="outline-text-2" id="text-orgd75af93">
+<div id="outline-container-orgff37188" class="outline-2">
+<h2 id="orgff37188">How to intergrate nix on non nix system</h2>
+<div class="outline-text-2" id="text-orgff37188">
 <p>
 I was setting up my Hack the box machine and noticed that nix installed programs are not on the path and can not be launche from the gui.
 I have 2 Solutions
 </p>
 </div>
-<div id="outline-container-org3d3c1df" class="outline-3">
-<h3 id="org3d3c1df">Method 1 Symlink</h3>
-<div class="outline-text-3" id="text-org3d3c1df">
+<div id="outline-container-orge26daa8" class="outline-3">
+<h3 id="orge26daa8">Method 1 Symlink</h3>
+<div class="outline-text-3" id="text-orge26daa8">
 <p>
 Here you smlink <code>~/.nix/profile/share/spllications</code> to <code>~/.local/share/applications</code>
 </p>
@@ -65,15 +66,15 @@ If you use my dotfiles, you can run <code>nix-xdg-link</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-org428c593" class="outline-3">
-<h3 id="org428c593">Method 2 Update XDG dirs</h3>
+<div id="outline-container-orgee8389e" class="outline-3">
+<h3 id="orgee8389e">Method 2 Update XDG dirs</h3>
 </div>
 </div>
 
 
-<div id="outline-container-org65e93fe" class="outline-2">
-<h2 id="org65e93fe">links</h2>
-<div class="outline-text-2" id="text-org65e93fe">
+<div id="outline-container-orgde335c0" class="outline-2">
+<h2 id="orgde335c0">links</h2>
+<div class="outline-text-2" id="text-orgde335c0">
 <ul class="org-ul">
 <li><a href="https://discourse.nixos.org/t/desktop-file-integration-in-non-nixos-platforms/9050">https://discourse.nixos.org/t/desktop-file-integration-in-non-nixos-platforms/9050</a></li>
 <li><a href="https://wiki.archlinux.org/title/XDG_user_directories">https://wiki.archlinux.org/title/XDG_user_directories</a></li>
