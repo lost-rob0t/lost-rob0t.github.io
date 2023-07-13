@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:24 -->
+<!-- 2023-07-12 Wed 22:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Reading inbox</title>
@@ -57,7 +57,7 @@
 
 <div id="outline-container-ID-252f0dd2-3c62-4db4-9974-8fae8eebfe79" class="outline-2">
 <h2 id="ID-252f0dd2-3c62-4db4-9974-8fae8eebfe79">Reading inbox</h2>
-<div class="outline-text-2" id="text-org129daf5">
+<div class="outline-text-2" id="text-org4ac2d8d">
 <p>
 A index of videos, books and other things that got my attention.
 Not all might be read or watched.
@@ -78,16 +78,16 @@ Key:
 
 <div id="outline-container-ID-11e418fb-ec95-4c5c-a788-fab6158cde03" class="outline-2">
 <h2 id="ID-11e418fb-ec95-4c5c-a788-fab6158cde03">Books</h2>
-<div class="outline-text-2" id="text-org93790c8">
+<div class="outline-text-2" id="text-org867b406">
 </div>
 </div>
 <div id="outline-container-ID-01ad52a0-f64a-47f7-b103-8a20f6b48069" class="outline-2">
 <h2 id="ID-01ad52a0-f64a-47f7-b103-8a20f6b48069">Research</h2>
-<div class="outline-text-2" id="text-orgc7cc964">
+<div class="outline-text-2" id="text-orga5714f5">
 </div>
 <div id="outline-container-ID-c0378ab1-73da-4cb8-9952-81fb1d84ad73" class="outline-3">
 <h3 id="ID-c0378ab1-73da-4cb8-9952-81fb1d84ad73"><span class="todo TODO">TODO</span> SCADA <code>[0/4]</code></h3>
-<div class="outline-text-3" id="text-orgb7edff6">
+<div class="outline-text-3" id="text-orgc7184ae">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> Industrial Network Security: Securing Critical Infrastructure Networks for Smart Grid, Scada, and Other Industrial Control Systems
 <ul class="org-ul">
@@ -108,7 +108,7 @@ Key:
 </div>
 <div id="outline-container-ID-66831b25-c2b1-41f8-8901-8aa959708a83" class="outline-3">
 <h3 id="ID-66831b25-c2b1-41f8-8901-8aa959708a83"><span class="todo TODO">TODO</span> WIFI</h3>
-<div class="outline-text-3" id="text-orgd3ab356">
+<div class="outline-text-3" id="text-orgcca02a6">
 <ul class="org-ul">
 <li>Wifi encryption bypass
 <a href="https://youtu.be/3XKvOaVQX-8?t=57">https://youtu.be/3XKvOaVQX-8?t=57</a></li>
@@ -122,11 +122,11 @@ Key:
 
 <div id="outline-container-ID-efba2ab5-29e8-46ea-a10f-64ac5ea0af92" class="outline-2">
 <h2 id="ID-efba2ab5-29e8-46ea-a10f-64ac5ea0af92">Videos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="videos">videos</span></span></h2>
-<div class="outline-text-2" id="text-org71ee36e">
+<div class="outline-text-2" id="text-org5c77f54">
 </div>
 <div id="outline-container-ID-ec244c4e-d54e-445e-8c78-bd97e3accc4d" class="outline-3">
 <h3 id="ID-ec244c4e-d54e-445e-8c78-bd97e3accc4d">IDEA <code>[/]</code></h3>
-<div class="outline-text-3" id="text-org91b6153">
+<div class="outline-text-3" id="text-org8c23594">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> groundupdb</li>
 <li>you learn to build your own database from the ground up</li>
@@ -141,11 +141,11 @@ Key:
 
 <div id="outline-container-ID-abe946cb-bab3-4623-8adc-9a1eced888dc" class="outline-2">
 <h2 id="ID-abe946cb-bab3-4623-8adc-9a1eced888dc"><span class="todo TODO">TODO</span> Computer Science <code>[0/3]</code>&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span></span></h2>
-<div class="outline-text-2" id="text-org887728c">
+<div class="outline-text-2" id="text-orgef76490">
 </div>
 <div id="outline-container-ID-72f54a71-0ad3-4609-97a7-f28b99eef657" class="outline-3">
 <h3 id="ID-72f54a71-0ad3-4609-97a7-f28b99eef657">IDEA Langs <code>[0/1]</code></h3>
-<div class="outline-text-3" id="text-org4e3de1b">
+<div class="outline-text-3" id="text-org5af64e5">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> Beautiful Racket
 <ul class="org-ul">
@@ -157,7 +157,7 @@ Key:
 </div>
 <div id="outline-container-ID-f08be5e5-ae9c-4466-9f92-fc0b4765f0e5" class="outline-3">
 <h3 id="ID-f08be5e5-ae9c-4466-9f92-fc0b4765f0e5">IDEA Compsci books <code>[0/3]</code></h3>
-<div class="outline-text-3" id="text-org6b4edc6">
+<div class="outline-text-3" id="text-orgec21dad">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> Structure and Interpretation of Computer Programs</li>
 <li class="off"><code>[&#xa0;]</code> Practical Common lisp
@@ -173,7 +173,7 @@ Key:
 </div>
 <div id="outline-container-ID-2f38b8fa-0ab3-4d29-a471-05cc3aed9590" class="outline-3">
 <h3 id="ID-2f38b8fa-0ab3-4d29-a471-05cc3aed9590">IDEA self study <code>[/]</code></h3>
-<div class="outline-text-3" id="text-orga48096d">
+<div class="outline-text-3" id="text-org3444065">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> Introduction to Algorithms
 <ul class="org-ul">

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:24 -->
+<!-- 2023-07-12 Wed 22:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Why Star Intel</title>
@@ -29,60 +29,60 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgcfac809">Why Star intel?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="starintel">starintel</span></span></a>
+<li><a href="#org506e3e8">Why Star intel?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="starintel">starintel</span></span></a>
 <ul>
-<li><a href="#org65a1e95">Nots for me (REMOVE before publish!)</a>
+<li><a href="#org2939673">Nots for me (REMOVE before publish!)</a>
 <ul>
-<li><a href="#orgd7847b5">Object Type</a></li>
+<li><a href="#org26f9630">Object Type</a></li>
 </ul>
 </li>
-<li><a href="#orga908fb9">Introduction</a></li>
-<li><a href="#orge67e8cd"><span class="todo TODO">TODO</span> Objectives of this document</a></li>
-<li><a href="#org9f75203"><span class="todo TODO">TODO</span> History of Star intel</a>
+<li><a href="#orgd18d222">Introduction</a></li>
+<li><a href="#org4f1d770"><span class="todo TODO">TODO</span> Objectives of this document</a></li>
+<li><a href="#orgf107480"><span class="todo TODO">TODO</span> History of Star intel</a>
 <ul>
-<li><a href="#orgc1bff26">Brief overview of the project before it (UNGI)</a></li>
-<li><a href="#orgd9d96c4">History Of UNGI</a></li>
+<li><a href="#org465d32e">Brief overview of the project before it (UNGI)</a></li>
+<li><a href="#org4ada33b">History Of UNGI</a></li>
 </ul>
 </li>
-<li><a href="#org724e328"><span class="todo TODO">TODO</span> The Theory Behind the Project</a></li>
-<li><a href="#org6076391"><span class="todo TODO">TODO</span> Implementation Details</a></li>
-<li><a href="#org7805448"><span class="todo TODO">TODO</span> Plug and play artecture</a></li>
-<li><a href="#org1a1243c"><span class="todo TODO">TODO</span> Use cases Real world needs</a></li>
-<li><a href="#org9046cd0"><span class="todo TODO">TODO</span> Conclusion</a></li>
+<li><a href="#orgcbdf47a"><span class="todo TODO">TODO</span> The Theory Behind the Project</a></li>
+<li><a href="#org2abcb3b"><span class="todo TODO">TODO</span> Implementation Details</a></li>
+<li><a href="#orgcda5526"><span class="todo TODO">TODO</span> Plug and play artecture</a></li>
+<li><a href="#orgc67cc1b"><span class="todo TODO">TODO</span> Use cases Real world needs</a></li>
+<li><a href="#org21a7b2f"><span class="todo TODO">TODO</span> Conclusion</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcfac809" class="outline-2">
-<h2 id="orgcfac809">Why Star intel?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="starintel">starintel</span></span></h2>
-<div class="outline-text-2" id="text-orgcfac809">
+<div id="outline-container-org506e3e8" class="outline-2">
+<h2 id="org506e3e8">Why Star intel?&#xa0;&#xa0;&#xa0;<span class="tag"><span class="starintel">starintel</span></span></h2>
+<div class="outline-text-2" id="text-org506e3e8">
 </div>
-<div id="outline-container-org65a1e95" class="outline-3">
-<h3 id="org65a1e95">Nots for me (REMOVE before publish!)</h3>
-<div class="outline-text-3" id="text-org65a1e95">
+<div id="outline-container-org2939673" class="outline-3">
+<h3 id="org2939673">Nots for me (REMOVE before publish!)</h3>
+<div class="outline-text-3" id="text-org2939673">
 <p>
 outline for objects
 </p>
 </div>
 
-<div id="outline-container-orgd7847b5" class="outline-4">
-<h4 id="orgd7847b5">Object Type</h4>
-<div class="outline-text-4" id="text-orgd7847b5">
+<div id="outline-container-org26f9630" class="outline-4">
+<h4 id="org26f9630">Object Type</h4>
+<div class="outline-text-4" id="text-org26f9630">
 </div>
 <ul class="org-ul">
-<li><a id="org091f351"></a>Definition and purpose of the object type<br /></li>
-<li><a id="orgdae9039"></a>Key characteristics or features of the object type<br /></li>
-<li><a id="orgf88c43f"></a>Examples of how the object type is used in the project<br /></li>
-<li><a id="orgd17f75a"></a>Any special considerations or limitations related to the object type<br /></li>
+<li><a id="orgd0ea1bf"></a>Definition and purpose of the object type<br /></li>
+<li><a id="org5415f20"></a>Key characteristics or features of the object type<br /></li>
+<li><a id="org8203dbb"></a>Examples of how the object type is used in the project<br /></li>
+<li><a id="orgd738bb0"></a>Any special considerations or limitations related to the object type<br /></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orga908fb9" class="outline-3">
-<h3 id="orga908fb9">Introduction</h3>
-<div class="outline-text-3" id="text-orga908fb9">
+<div id="outline-container-orgd18d222" class="outline-3">
+<h3 id="orgd18d222">Introduction</h3>
+<div class="outline-text-3" id="text-orgd18d222">
 <p>
 Star Intel (short for "Star Intelligence") is a framework for collecting, storing, and acting on data in near real time. At the core of this framework is a document specification that provides a uniform interface for tools and components to flow.
 </p>
@@ -98,9 +98,9 @@ The project is still in the early stages of development, but progress has been m
 </div>
 
 
-<div id="outline-container-orge67e8cd" class="outline-3">
-<h3 id="orge67e8cd"><span class="todo TODO">TODO</span> Objectives of this document</h3>
-<div class="outline-text-3" id="text-orge67e8cd">
+<div id="outline-container-org4f1d770" class="outline-3">
+<h3 id="org4f1d770"><span class="todo TODO">TODO</span> Objectives of this document</h3>
+<div class="outline-text-3" id="text-org4f1d770">
 <p>
 This document seeks to explain, expose and help educatue you on my project.
 Im going to list each Section and a very small summery about it.
@@ -124,13 +124,13 @@ The following Sections are:
 </ul>
 </div>
 </div>
-<div id="outline-container-org9f75203" class="outline-3">
-<h3 id="org9f75203"><span class="todo TODO">TODO</span> History of Star intel</h3>
-<div class="outline-text-3" id="text-org9f75203">
+<div id="outline-container-orgf107480" class="outline-3">
+<h3 id="orgf107480"><span class="todo TODO">TODO</span> History of Star intel</h3>
+<div class="outline-text-3" id="text-orgf107480">
 </div>
-<div id="outline-container-orgc1bff26" class="outline-4">
-<h4 id="orgc1bff26">Brief overview of the project before it (UNGI)</h4>
-<div class="outline-text-4" id="text-orgc1bff26">
+<div id="outline-container-org465d32e" class="outline-4">
+<h4 id="org465d32e">Brief overview of the project before it (UNGI)</h4>
+<div class="outline-text-4" id="text-org465d32e">
 <ul class="org-ul">
 <li>Development of UNGI</li>
 <li>Description of the original project and its purpose</li>
@@ -146,9 +146,9 @@ The following Sections are:
 </div>
 </div>
 
-<div id="outline-container-orgd9d96c4" class="outline-4">
-<h4 id="orgd9d96c4">History Of UNGI</h4>
-<div class="outline-text-4" id="text-orgd9d96c4">
+<div id="outline-container-org4ada33b" class="outline-4">
+<h4 id="org4ada33b">History Of UNGI</h4>
+<div class="outline-text-4" id="text-org4ada33b">
 <p>
 Ungi Was a set of scripts, bots and at the center Elasticsearch
 UNGI was built out of a need to gain
@@ -156,9 +156,9 @@ UNGI was built out of a need to gain
 </div>
 </div>
 </div>
-<div id="outline-container-org724e328" class="outline-3">
-<h3 id="org724e328"><span class="todo TODO">TODO</span> The Theory Behind the Project</h3>
-<div class="outline-text-3" id="text-org724e328">
+<div id="outline-container-orgcbdf47a" class="outline-3">
+<h3 id="orgcbdf47a"><span class="todo TODO">TODO</span> The Theory Behind the Project</h3>
+<div class="outline-text-3" id="text-orgcbdf47a">
 <ul class="org-ul">
 <li>Why it is important to define the format of a JSON document</li>
 <li>Current methods for collecting data at scale in OSINT</li>
@@ -170,9 +170,9 @@ UNGI was built out of a need to gain
 </div>
 </div>
 
-<div id="outline-container-org6076391" class="outline-3">
-<h3 id="org6076391"><span class="todo TODO">TODO</span> Implementation Details</h3>
-<div class="outline-text-3" id="text-org6076391">
+<div id="outline-container-org2abcb3b" class="outline-3">
+<h3 id="org2abcb3b"><span class="todo TODO">TODO</span> Implementation Details</h3>
+<div class="outline-text-3" id="text-org2abcb3b">
 <ul class="org-ul">
 <li>Overview of the technical design</li>
 <li>Description of the database structure and schema</li>
@@ -181,15 +181,15 @@ UNGI was built out of a need to gain
 </ul>
 </div>
 </div>
-<div id="outline-container-org7805448" class="outline-3">
-<h3 id="org7805448"><span class="todo TODO">TODO</span> Plug and play artecture</h3>
+<div id="outline-container-orgcda5526" class="outline-3">
+<h3 id="orgcda5526"><span class="todo TODO">TODO</span> Plug and play artecture</h3>
 </div>
-<div id="outline-container-org1a1243c" class="outline-3">
-<h3 id="org1a1243c"><span class="todo TODO">TODO</span> Use cases Real world needs</h3>
+<div id="outline-container-orgc67cc1b" class="outline-3">
+<h3 id="orgc67cc1b"><span class="todo TODO">TODO</span> Use cases Real world needs</h3>
 </div>
-<div id="outline-container-org9046cd0" class="outline-3">
-<h3 id="org9046cd0"><span class="todo TODO">TODO</span> Conclusion</h3>
-<div class="outline-text-3" id="text-org9046cd0">
+<div id="outline-container-org21a7b2f" class="outline-3">
+<h3 id="org21a7b2f"><span class="todo TODO">TODO</span> Conclusion</h3>
+<div class="outline-text-3" id="text-org21a7b2f">
 <ul class="org-ul">
 <li>Summary of the main points covered in the documentation</li>
 <li>Discussion of the potential applications and benefits of the project</li>

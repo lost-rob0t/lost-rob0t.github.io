@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       a49c4f35-2e27-42e2-8eea-310b5f2ec352
+:END:
+#+TITLE: in-band
+#+CREATED: [2023-07-12 Wed 21:55]
+#+LAST_MODIFIED: [2023-07-12 Wed 22:22]
+* Inband
+
+An Inband attack Is where the information is transmitted and received in the same medium, manner.
+
+In the context of [[id:81d62666-4ce8-4244-b498-739a680f9673][SQL Injection]] this means that you are using the same webapp to get information back[fn:1].
+
+* Footnotes
+
+[fn:1] https://en.wikipedia.org/wiki/Signaling_(telecommunications)

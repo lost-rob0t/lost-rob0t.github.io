@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:27 -->
+<!-- 2023-07-12 Wed 22:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Metaprogramming</title>
@@ -29,13 +29,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgda4849a">Metaprogramming in nim</a>
+<li><a href="#orgf03ea9c">Metaprogramming in nim</a>
 <ul>
-<li><a href="#orgf2d6e36">Generics</a>
+<li><a href="#org0e3a698">Generics</a>
 <ul>
-<li><a href="#org924512c">Generic Procedures</a></li>
-<li><a href="#org39e61f7">Constraining Generics</a></li>
-<li><a href="#org25cacae">Templates</a></li>
+<li><a href="#org8d1396f">Generic Procedures</a></li>
+<li><a href="#orge457483">Constraining Generics</a></li>
+<li><a href="#orgb4e1839">Templates</a></li>
 </ul>
 </li>
 </ul>
@@ -48,16 +48,16 @@
 </ul>
 
 
-<div id="outline-container-orgda4849a" class="outline-2">
-<h2 id="orgda4849a">Metaprogramming in nim</h2>
-<div class="outline-text-2" id="text-orgda4849a">
+<div id="outline-container-orgf03ea9c" class="outline-2">
+<h2 id="orgf03ea9c">Metaprogramming in nim</h2>
+<div class="outline-text-2" id="text-orgf03ea9c">
 <p>
 Some notes From Nim in Action
 </p>
 </div>
-<div id="outline-container-orgf2d6e36" class="outline-3">
-<h3 id="orgf2d6e36">Generics</h3>
-<div class="outline-text-3" id="text-orgf2d6e36">
+<div id="outline-container-org0e3a698" class="outline-3">
+<h3 id="org0e3a698">Generics</h3>
+<div class="outline-text-3" id="text-org0e3a698">
 <p>
 Generics allow you to write programs in a style which you do not know the types until the algorithm is called.
 It helps you with code duplication.
@@ -70,9 +70,9 @@ Some languages may refer to them as <code>parametric polymorphism</code> also kn
 </div>
 
 
-<div id="outline-container-org924512c" class="outline-4">
-<h4 id="org924512c">Generic Procedures</h4>
-<div class="outline-text-4" id="text-org924512c">
+<div id="outline-container-org8d1396f" class="outline-4">
+<h4 id="org8d1396f">Generic Procedures</h4>
+<div class="outline-text-4" id="text-org8d1396f">
 <p>
 An example generic procedure from the book
 </p>
@@ -100,9 +100,9 @@ The compiler may not be able to infer generic types. You can explicitly set them
 </div>
 
 
-<div id="outline-container-org39e61f7" class="outline-4">
-<h4 id="org39e61f7">Constraining Generics</h4>
-<div class="outline-text-4" id="text-org39e61f7">
+<div id="outline-container-orge457483" class="outline-4">
+<h4 id="orge457483">Constraining Generics</h4>
+<div class="outline-text-4" id="text-orge457483">
 <p>
 Constraining generics makes it easier to convey to you and others the meaning of the generic.
 </p>
@@ -122,8 +122,8 @@ This will result in an error
 </div>
 
 <ul class="org-ul">
-<li><a id="orgd896d46"></a>type classes/concepts<br />
-<div class="outline-text-5" id="text-orgd896d46">
+<li><a id="org14cb7b0"></a>type classes/concepts<br />
+<div class="outline-text-5" id="text-org14cb7b0">
 <p>
 Concepts is also known as a user defined type classs in other languages, are a construct to create requirements that a matched type must satisfy.
 </p>
@@ -147,9 +147,9 @@ In the example the type is matched when a &lt; returns a bool.
 </div>
 
 
-<div id="outline-container-org25cacae" class="outline-4">
-<h4 id="org25cacae">Templates</h4>
-<div class="outline-text-4" id="text-org25cacae">
+<div id="outline-container-orgb4e1839" class="outline-4">
+<h4 id="orgb4e1839">Templates</h4>
+<div class="outline-text-4" id="text-orgb4e1839">
 <p>
 Nim's <code>templates</code> are procedures that produce code. The easily allows you to deal with boilerplate code.
 They allow you to inject varibles into the calling scope.
@@ -173,8 +173,8 @@ An example would be to look at <a href="../2022-05-28-030619-star_intel.html#ID-
 </div>
 
 <ul class="org-ul">
-<li><a id="orgc0a2b1c"></a>Code blocks<br />
-<div class="outline-text-5" id="text-orgc0a2b1c">
+<li><a id="org80301c8"></a>Code blocks<br />
+<div class="outline-text-5" id="text-org80301c8">
 <p>
 A code block is a set of statments. passing multiple statements into a procedure into a procecure needs anonmouse functions.
 Templates have a sepcial syntax to support more than one statement.
@@ -213,12 +213,12 @@ NOTE: when a code block is passed, the last parameter always contains it
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org8e52d51"></a>IDEA read on nim's do syntax<br /></li>
+<li><a id="org6306043"></a>IDEA read on nim's do syntax<br /></li>
 </ul>
 </li>
 
-<li><a id="orgbf3326c"></a>Untype Versus Typed<br />
-<div class="outline-text-5" id="text-orgbf3326c">
+<li><a id="orgc6acf3a"></a>Untype Versus Typed<br />
+<div class="outline-text-5" id="text-orgc6acf3a">
 <ul class="org-ul">
 <li>Untyped: Allows Indentifers that has yet to be delclared.</li>
 <li>Typed: allows a indentifier that has a type and by concrete type like <code>float, int and string</code></li>
@@ -226,8 +226,8 @@ NOTE: when a code block is passed, the last parameter always contains it
 </div>
 </li>
 
-<li><a id="org3bada8b"></a>Template hygiene<br />
-<div class="outline-text-5" id="text-org3bada8b">
+<li><a id="org481df98"></a>Template hygiene<br />
+<div class="outline-text-5" id="text-org481df98">
 <p>
 Templates can define vairbles that can be accessible after the template.
 you might not want that and this is called <code>template hygiene</code>.

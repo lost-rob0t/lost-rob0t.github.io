@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:24 -->
+<!-- 2023-07-12 Wed 22:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>fedi</title>
@@ -45,7 +45,7 @@
 
 <div id="outline-container-ID-76d0f9c3-75a8-43d6-a3b0-a204e539a1a6" class="outline-2">
 <h2 id="ID-76d0f9c3-75a8-43d6-a3b0-a204e539a1a6"><span class="todo TODO">TODO</span> Fedi a Fediverse api wraper for nim</h2>
-<div class="outline-text-2" id="text-org5d721aa">
+<div class="outline-text-2" id="text-org081b53a">
 <p>
 As of now just mastodon api is supported (contact me if you need more).
 I wrote the lib in need of a nim based wrapper so i can scrape shitlib instances on the fediverse
@@ -55,7 +55,7 @@ I wrote the lib in need of a nim based wrapper so i can scrape shitlib instances
 
 <div id="outline-container-ID-573017c6-82d1-4130-a77f-e4a08f42a47e" class="outline-3">
 <h3 id="ID-573017c6-82d1-4130-a77f-e4a08f42a47e">Usage</h3>
-<div class="outline-text-3" id="text-orgce94cfb">
+<div class="outline-text-3" id="text-org6e715be">
 <p>
 The endpoints are defined using the <code>{.multisync.}</code> pragma, which creates async and sync versions of the function.
 </p>
@@ -63,7 +63,7 @@ The endpoints are defined using the <code>{.multisync.}</code> pragma, which cre
 
 <div id="outline-container-ID-46cc5323-b2d4-401d-a3be-a417313623a8" class="outline-4">
 <h4 id="ID-46cc5323-b2d4-401d-a3be-a417313623a8">Create a new client</h4>
-<div class="outline-text-4" id="text-orgfbfd1ab">
+<div class="outline-text-4" id="text-org58b6d6b">
 <p>
 Heres how to create new client
 </p>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:27 -->
+<!-- 2023-07-12 Wed 22:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Nix Flakes Tutorial</title>
@@ -29,32 +29,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb8a2291">Part One.</a>
+<li><a href="#org82ec154">Part One.</a>
 <ul>
-<li><a href="#orga13f815">Problems with nix</a></li>
-<li><a href="#org0aea61c">What is a flake?</a></li>
-<li><a href="#org3872230">Flake example</a></li>
+<li><a href="#org425d953">Problems with nix</a></li>
+<li><a href="#org3a72e32">What is a flake?</a></li>
+<li><a href="#orgd5fea73">Flake example</a></li>
 </ul>
 </li>
-<li><a href="#orga851eea">Part Two.</a>
+<li><a href="#org1461d22">Part Two.</a>
 <ul>
-<li><a href="#org675edb5">Nix eval is slow</a></li>
-<li><a href="#org3d07d20">Caching nix-env</a></li>
-<li><a href="#org8366414">Flakes wich caching</a></li>
+<li><a href="#org39220d7">Nix eval is slow</a></li>
+<li><a href="#org9049132">Caching nix-env</a></li>
+<li><a href="#org95be75b">Flakes wich caching</a></li>
 </ul>
 </li>
-<li><a href="#orgc288b77">IDEA Part Three</a></li>
+<li><a href="#org9ae9117">IDEA Part Three</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgb8a2291" class="outline-2">
-<h2 id="orgb8a2291">Part One.</h2>
-<div class="outline-text-2" id="text-orgb8a2291">
+<div id="outline-container-org82ec154" class="outline-2">
+<h2 id="org82ec154">Part One.</h2>
+<div class="outline-text-2" id="text-org82ec154">
 </div>
-<div id="outline-container-orga13f815" class="outline-3">
-<h3 id="orga13f815">Problems with nix</h3>
-<div class="outline-text-3" id="text-orga13f815">
+<div id="outline-container-org425d953" class="outline-3">
+<h3 id="org425d953">Problems with nix</h3>
+<div class="outline-text-3" id="text-org425d953">
 <p>
 Nix files can acess any file in the filesystem, or anything in the $NIX<sub>PATH</sub>
 like ~/.config/nixpks/config.nix
@@ -70,9 +70,9 @@ Nix based project are also not easy to share with users.
 </div>
 </div>
 
-<div id="outline-container-org0aea61c" class="outline-3">
-<h3 id="org0aea61c">What is a flake?</h3>
-<div class="outline-text-3" id="text-org0aea61c">
+<div id="outline-container-org3a72e32" class="outline-3">
+<h3 id="org3a72e32">What is a flake?</h3>
+<div class="outline-text-3" id="text-org3a72e32">
 <p>
 a flake is a source tree that has a flake.nix.
 </p>
@@ -84,9 +84,9 @@ Flakes can depend on other flakes with a flake.lock to ensure reproducible eval.
 </div>
 
 
-<div id="outline-container-org3872230" class="outline-3">
-<h3 id="org3872230">Flake example</h3>
-<div class="outline-text-3" id="text-org3872230">
+<div id="outline-container-orgd5fea73" class="outline-3">
+<h3 id="orgd5fea73">Flake example</h3>
+<div class="outline-text-3" id="text-orgd5fea73">
 <p>
 Here is a simple unix package named <b>dwarffs</b>. Its repo is <a href="https://github.com/edolstra/dwarffs">Here</a>.
 It contains a flake.nix file so it is a flake.
@@ -105,7 +105,7 @@ Installing a flake like above will only grab the latest version.
 <p>
 <b><b><b>NOTE</b></b></b>: in the aricle the output for the command was so. this shows why you should pin a commit hash!!
 </p>
-<pre class="example" id="orgbac1ac6">
+<pre class="example" id="org5f5c1e0">
 dwarffs 0.1.20200406.cd7955a
 </pre>
 
@@ -137,13 +137,13 @@ Flake outputs can be shown with
 </div>
 </div>
 
-<div id="outline-container-orga851eea" class="outline-2">
-<h2 id="orga851eea">Part Two.</h2>
-<div class="outline-text-2" id="text-orga851eea">
+<div id="outline-container-org1461d22" class="outline-2">
+<h2 id="org1461d22">Part Two.</h2>
+<div class="outline-text-2" id="text-org1461d22">
 </div>
-<div id="outline-container-org675edb5" class="outline-3">
-<h3 id="org675edb5">Nix eval is slow</h3>
-<div class="outline-text-3" id="text-org675edb5">
+<div id="outline-container-org39220d7" class="outline-3">
+<h3 id="org39220d7">Nix eval is slow</h3>
+<div class="outline-text-3" id="text-org39220d7">
 <p>
 Nix is a interpeted functional language.
 In order for it to get information about the packages it needs to evaluate 1000s of nix evaluations.
@@ -164,18 +164,18 @@ This is ok for one off use but using it for scripts is slow becuase of the delay
 </div>
 </div>
 
-<div id="outline-container-org3d07d20" class="outline-3">
-<h3 id="org3d07d20">Caching nix-env</h3>
-<div class="outline-text-3" id="text-org3d07d20">
+<div id="outline-container-org9049132" class="outline-3">
+<h3 id="org9049132">Caching nix-env</h3>
+<div class="outline-text-3" id="text-org9049132">
 <p>
 there is a replacement for nix-env -qa for and its called nix-search.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org8366414" class="outline-3">
-<h3 id="org8366414">Flakes wich caching</h3>
-<div class="outline-text-3" id="text-org8366414">
+<div id="outline-container-org95be75b" class="outline-3">
+<h3 id="org95be75b">Flakes wich caching</h3>
+<div class="outline-text-3" id="text-org95be75b">
 <p>
 Flake evaluations are fully hermetic. It disslows access to files, envrioment varibles.
 </p>
@@ -208,8 +208,8 @@ sqlite db name comes from the contents of the top level flake.
 </div>
 </div>
 
-<div id="outline-container-orgc288b77" class="outline-2">
-<h2 id="orgc288b77">IDEA Part Three</h2>
+<div id="outline-container-org9ae9117" class="outline-2">
+<h2 id="org9ae9117">IDEA Part Three</h2>
 </div>
 </div>
 <div id="postamble" class="status">

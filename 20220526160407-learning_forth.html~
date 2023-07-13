@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:24 -->
+<!-- 2023-07-12 Wed 22:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Learning Forth</title>
@@ -43,7 +43,7 @@
 </p>
 <div id="outline-container-ID-f3324a1b-ba42-48ee-8d6e-28c8ca41af2f" class="outline-2">
 <h2 id="ID-f3324a1b-ba42-48ee-8d6e-28c8ca41af2f">Chapter 1</h2>
-<div class="outline-text-2" id="text-org08280e2">
+<div class="outline-text-2" id="text-org1aa99ae">
 <p>
 Good organization is:
 </p>
@@ -63,7 +63,7 @@ words are seperated by whitespace
 </div>
 <div id="outline-container-ID-89e1331c-cfde-43f6-8ec2-d4ab7c950e7e" class="outline-3">
 <h3 id="ID-89e1331c-cfde-43f6-8ec2-d4ab7c950e7e">Fourth is interactive</h3>
-<div class="outline-text-3" id="text-org2a4a690">
+<div class="outline-text-3" id="text-org4b43337">
 <p>
 you can use it just like a repl and type the name of the word adn it will execute.
 </p>
@@ -106,7 +106,7 @@ This returns a *. 42 is the char code for *
 
 <div id="outline-container-ID-a1c0a3ce-0050-4d2c-ba40-4841f10bda27" class="outline-3">
 <h3 id="ID-a1c0a3ce-0050-4d2c-ba40-4841f10bda27">The Dictionary</h3>
-<div class="outline-text-3" id="text-org8eaaeec">
+<div class="outline-text-3" id="text-org3261a77">
 <p>
 Words are stored into forth's "dictionary". it may start with some but you can add to it.
 When you define a new word forth compiles the entry and writes it into the dictionary

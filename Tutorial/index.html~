@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:26 -->
+<!-- 2023-07-12 Wed 22:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The Lost Wiki - Tutorials</title>
+<title>The Lost Wiki</title>
 <meta name="generator" content="Org Mode" />
 <link rel="stylesheet" href="/static/org.css" />
 </head>
@@ -24,7 +24,7 @@
 </nav>
 </div>
 <div id="content" class="content">
-<h1 class="title">The Lost Wiki - Tutorials</h1>
+<h1 class="title">The Lost Wiki</h1>
 <ul class="org-ul">
 <li><a href="20230712195935-multiple_git_identity.html">multiple git identity</a></li>
 <li><a href="20221229193155-fix_aspell_on_nixos.html">Fix Aspell on nixos</a></li>

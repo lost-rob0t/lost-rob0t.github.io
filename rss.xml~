@@ -14,8 +14,8 @@
   <link>/index.html</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 12 Jul 2023 22:24:25 -0400</pubDate>
-  <lastBuildDate>Wed, 12 Jul 2023 22:24:25 -0400</lastBuildDate>
+  <pubDate>Wed, 12 Jul 2023 22:34:21 -0400</pubDate>
+  <lastBuildDate>Wed, 12 Jul 2023 22:34:21 -0400</lastBuildDate>
   <generator>Emacs 28.2 Org-mode 9.5.5</generator>
   <webMaster> (lost robot)</webMaster>
   <image>
@@ -26,242 +26,109 @@
 
 
   <item>
-    <title>file:/home/unseen/Documents/Notes/org/roam/posts.org</title>
-    <link>/index.html/posts.html</link>
+    <title>file:/home/unseen/Documents/Notes/org/roam/20220428224740-emacs.org</title>
+    <link>/index.html/20220428224740-emacs.html</link>
     <author> (lost robot)</author>
-    <guid isPermaLink="false">/index.html/posts.html</guid>
+    <guid isPermaLink="false">/index.html/20220428224740-emacs.html</guid>
     <pubDate>Wed, 12 Jul 2023 00:00:00 -0400</pubDate>
 
     <description><![CDATA[<p>
-    <a href="rss.html">The Lost Wiki Rss</a>
-    <a href="programming/index.html">The Lost Wiki - Programming</a>
-    <a href="Tutorial/index.html">The Lost Wiki - Tutorials</a>
-    <a href="hacking/20221213185522-sql_injection.html">SQL Injection</a>
-    <a href="hacking/20230712220510-sqlmap.html">SQLMap</a>
-    <a href="hacking/20230712215520-in_band.html">in-band</a>
-    <a href="sitemap.html">Sitemap for project lostWiki</a>
-    <a href="programming/20230712200139-gitconfig.html">gitconfig</a>
-    <a href="20220428224740-emacs.html">emacs</a>
-    <a href="Tutorial/20230712195935-multiple_git_identity.html">multiple git identity</a>
-    <a href="hacking/index.html">The Lost Wiki</a>
-    <a href="hacking/20230527172700-cookie_bugs.html">Cookie Bugs</a>
-    <a href="hacking/20230710045754-cross_site_request_forgery.html">Cross Site request forgery</a>
-    <a href="20220429214821-reading_inbox.html">Reading inbox</a>
-    <a href="Tutorial/20221229193155-fix_aspell_on_nixos.html">Fix Aspell on nixos</a>
-    <a href="Tutorial/20221231162928-slinux_trouble_should_denials.html">SLinux Trouble Shoot Denials</a>
-    <a href="org-setup.html">org-setup</a>
-    <a href="index.html">Index</a>
-    <a href="20230630042714-test_rss.html">test-rss</a>
-    <a href="20221210020640-programmable_logic_controllers.html">programmable logic controllers</a>
-    <a href="hacking/20230630041404-list_of_plc_s.html">list of plc's</a>
-    <a href="Tutorial/20230501221332-dir_local_vars.html">dir-local-vars</a>
-    <a href=".packages/org-contrib-0.4.1/README.html">README</a>
-    <a href=".packages/compat-29.1.4.1/NEWS.html">NEWS</a>
-    <a href="20221216043133-publish_org_roam.html">Publish Org Roam</a>
-    <a href="test03.html">Test03</a>
-    <a href="20220526160407-learning_forth.html">Learning Forth</a>
-    <a href="2022-08-11-005206-linux.html">Linux</a>
-    <a href="20221215060923-links.html">Links</a>
-    <a href="20221213180008-idor.html">IDOR</a>
-    <a href="2022-09-26-184941-yasnippet_multi_choice.html">Yasnippet multi choice</a>
-    <a href="2022-05-22-161823-klaus_schwab.html">Klaus Schwab</a>
-    <a href="2022-04-28-221119-nixos.html">NixOs</a>
-    <a href="20221208234405-scada.html">SCADA</a>
-    <a href="20220606214142-practical_common_lisp.html">Practical Common Lisp</a>
-    <a href="20221220021836-nixpkgs_fork_service.html">How to enable service from different nix channel</a>
-    <a href="2022-05-22-161224-yuval_noah_harari.html">Yuval Noah Harari</a>
-    <a href="20221210025435-cyclic_redundancy_check.html">Cyclic redundancy check</a>
-    <a href="20221218025025-the_history_of_emacs.html">The History Of emacs</a>
-    <a href="20220429220123-brave_s_tor_mode.html">brave's tor mode</a>
-    <a href="2022-04-30-010756-doom_emacs.html">Doom Emacs</a>
-    <a href="nixos-nim.html">Nixos Nim</a>
-    <a href="2022-05-21-214020-introduction_to_tla.html">Introduction to TLA+</a>
-    <a href="20221219225036-message_oriented_middleware.html">Message oriented middleware</a>
-    <a href="20221209030114-shodan_api_keys.html">Shodan api keys</a>
-    <a href="20221210021703-remote_terminal_unit.html">Remote terminal unit</a>
-    <a href="20221209011747-process_control_network.html">Process Control network</a>
-    <a href="20221221124016-fedi.html">fedi</a>
-    <a href="2022-04-30-200647-remoteid_final_rule_pdf.html">RemoteId-final-rule-pdf</a>
-    <a href="2022-06-05-192559-common_lisp_a_gentile_introduction_notes.html">Common LISP a gentile introduction notes</a>
-    <a href="20220606214409-practical_cl_simple_db.html">practical cl simple db</a>
-    <a href="2022-05-28-030619-star_intel.html">star intel</a>
-    <a href="20221226164048-couchdb.html">Couchdb</a>
-    <a href="20221217163227-conky.html">Conky</a>
-    <a href="hacking/20230501213539-hack_the_box.html">Hack The Box</a>
-    <a href="programming/20230601215350-rest_api_s_in_common_lisp.html">Rest Api's in common lisp</a>
-    <a href="Tutorial/20230607221650-package_and_use_nix_flakes.html">Package and use Nix flakes</a>
-    <a href="starintel/20230603181317-quasar.html">Quasar</a>
-    <a href="programming/20230601215947-jsown.html">jsown</a>
-    <a href="programming/20230601220331-json.html">json</a>
-    <a href="programming/20220606215038-common_lisp.html">Common Lisp</a>
-    <a href="Tutorial/20230502185107-nixos_fix_common_lisp_ld_path.html">nixos fix common-lisp ld path</a>
-    <a href="programming/20230530020901-graphs.html">Graphs</a>
-    <a href="programming/20230530024832-depth_first_search.html">Depth First Search</a>
-    <a href="20230527174605-hacking_index.html">Hacking Index</a>
-    <a href="hacking/20230527173712-xss.html">XSS</a>
-    <a href="starintel/20221219011944-why_star_intel.html">Why Star Intel</a>
-    <a href="reading/20221227114105-the_tty_demystified.html">the tty demystified</a>
-    <a href="reading/2022-08-14-200711-beautiful_racket.html">beautiful-racket</a>
-    <a href="reading/2022-05-17-232032-links.html">links</a>
-    <a href="reading/2022-05-14-213358-nix_flakes_tutorial.html">Nix Flakes Tutorial</a>
-    <a href="reading-notes/20230326180325-free_code_camp_college_algebra_preportions.html">free code camp college algebra preportions</a>
-    <a href="reading-notes/20230326174749-freecode_camp_college_algebra_notes.html">Freecode camp College Algebra Notes</a>
-    <a href="programming/20230522223358-common_lisp_compile.html">common lisp compile</a>
-    <a href="programming/20230330161754-redis_expiration.html">redis expiration</a>
-    <a href="programming/20230328160940-redis.html">redis</a>
-    <a href="programming/20230328160441-redis_game.html">redis game</a>
-    <a href="programming/20230327155154-elisp_errors.html">elisp errors</a>
-    <a href="programming/20230309222949-nim_android.html">nim android</a>
-    <a href="programming/20230305165944-asymptotic_analysis.html">Asymptotic Analysis</a>
-    <a href="programming/20230305165149-types_of_data_structs.html">Types of data structs</a>
-    <a href="programming/20230305163152-introduction_to_datastructures.html">introduction to data structures</a>
-    <a href="programming/20230305160421-cse_373_lecture_2.html">CSE-373-lecture 2</a>
-    <a href="programming/20230305150253-big_o.html">big o</a>
-    <a href="programming/20230305145040-introduction_to_algorithnms_steven_skiena_cse373.html">Introduction to Algorithms Steven skiena (CSE373)</a>
-    <a href="programming/20230305144608-data_structures.html">Data Structures</a>
-    <a href="programming/20221226235802-read_stdin.html">Read stdin</a>
-    <a href="programming/20221219225308-tcp.html">TCP</a>
-    <a href="programming/20221219225206-http.html">HTTP</a>
-    <a href="programming/20221219224000-stomp.html">STOMP</a>
-    <a href="programming/20221210020053-modbus.html">Modbus</a>
-    <a href="programming/20220606221221-push_macro.html">PUSH macro</a>
-    <a href="programming/20220606215501-python.html">Python</a>
-    <a href="programming/20220606215451-nim.html">Nim</a>
-    <a href="programming/20220606215245-programming_languages.html">Programming Languages</a>
-    <a href="programming/20220606215022-emacs_lisp.html">Emacs Lisp</a>
-    <a href="programming/20220606214902-lisp.html">Lisp</a>
-    <a href="programming/20220606214755-property_list.html">Property list</a>
-    <a href="programming/20220429153134-nixos_python.html">nixos-python</a>
-    <a href="programming/2022-08-26-155254-metaprogramming.html">Metaprogramming</a>
-    <a href="hacking/20230427231040-htb_templated.html">HTB Templated</a>
-    <a href="hacking/20230427212246-onlyforyou.html">OnlyForYou</a>
-    <a href="hacking/20230423223955-cloudflare.html">cloudflare</a>
-    <a href="hacking/20230418174334-hacking_python_eval.html">Hacking Python Eval</a>
-    <a href="hacking/20221213173625-wordpress_enumeration.html">WordPress Enumeration</a>
-    <a href="hacking/20221213171543-metatwo.html">MetaTwo</a>
-    <a href="hacking/20221210012904-bump_in_the_wire.html">Bump in the wire</a>
-    <a href="Tutorial/20230524053313-git_tricks.html">git tricks</a>
-    <a href="Tutorial/20230515224412-elfeed.html">Elfeed</a>
-    <a href="Tutorial/20230515224220-emacs_evil_mode.html">Emacs Evil mode</a>
-    <a href="Tutorial/20230501222047-direnv.html">direnv</a>
-    <a href="Tutorial/20230212210450-libvirt_clipboard.html">libvirt clipboard</a>
-    <a href="Tutorial/20221223201433-build_oci_containers.html">Build OCI containers in Nixos</a>
-    <a href="Tutorial/20220811005425-libvirt_multi_head.html">libvirt-multi-head</a>
-    <a href="Tutorial/20220514203832-nixos_headless.html">nixos-headless</a>
-    <a href="Tutorial/2022-09-01-114545-emacs_open_sqlite_dired.html">emacs open sqlite dired</a>
-    <a href="Tutorial/2022-08-22-022748-non_nixos_desktop_intergration.html">non nixos desktop intergration</a>
-    <a href="Tutorial/2022-06-01-033435-cross_compile_nixos_to_sdcard_for_rpi3b.html">cross compile nixos to sdcard for rpi3b+</a>
-    <a href="Tutorial/2022-05-17-053529-how_to_package_nim.html">how to package nim</a>
-    <a href="Tutorial/2022-05-17-051936-nixos_custom_pkgs.html">nixos custom pkgs</a>
-    <a href="Tutorial/2022-05-16-045822-nim_flake_example.html">nim-flake-example</a>
-    <a href="theindex.html">Index</a>
+    :ID:       95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2
+    :ROAM<sub>TAGS</sub>:
+    </p>
+    <p>
+    Emacs Page
+    </p>
+    <p>
+    :ID:       9050272f-38e4-4b31-85b8-a21435dab0b3
+    :PUBDATE:  
+    </p>
+    <p>
+    This is a hub of emacs things related
+    Tips and tricks
+    </p>
+    <p>
+    :ID:       4abdd69d-6e5c-4fff-bdc0-e00d4aba1e25
+    :PUBDATE:  
+    </p>
+    <div id="outline-container-ID-2c071938-0b22-4d20-9655-91a97b274ec2" class="outline-3">
+    <h3 id="ID-2c071938-0b22-4d20-9655-91a97b274ec2"><span class="section-number-3">1.1.</span> Org</h3>
+    <div class="outline-text-3" id="text-1-1">
+    </div>
+    <div id="outline-container-ID-9120e950-9fbb-4b02-ac8a-dc2e581ae5c3" class="outline-4">
+    <h4 id="ID-9120e950-9fbb-4b02-ac8a-dc2e581ae5c3"><span class="section-number-4">1.1.1.</span> Load u2l into a org document</h4>
+    <div class="outline-text-4" id="text-1-1-1">
+    <p>
+    url2org function for importing info from the web
+    <a href="https://www.reddit.com/r/emacs/comments/i2ep98/comment/g06s9vg/?utm_source=share&amp;utm_medium=web2x&amp;context=3">source</a>.
+    </p>
+    <div class="org-src-container">
+    <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">url2org</span> (begin end)
+    <span style="font-style: italic;">"Download a webpage from selected url and convert to org."</span>
+    (<span style="font-weight: bold;">interactive</span> <span style="font-style: italic;">"r"</span>)
+    (shell-command-on-region begin end
+    (concat <span style="font-style: italic;">"pandoc --from=html --to=org "</span> (buffer-substring begin end))
+    nil t))
+    </pre>
+    </div>
+    </div>
+    </div>
+
+    <div id="outline-container-ID-ae6c8445-6c50-4e85-9a5c-9ed36a410499" class="outline-4">
+    <h4 id="ID-ae6c8445-6c50-4e85-9a5c-9ed36a410499"><span class="section-number-4">1.1.2.</span> Org Babel isnt tangling the file.</h4>
+    <div class="outline-text-4" id="text-1-1-2">
+    <p>
+    Make sure you C-c C-c the header args
+    </p>
+    </div>
+    </div>
+    </div>
+    <div id="outline-container-ID-3a054402-2dea-46b0-85d4-e89b6c244319" class="outline-3">
+    <h3 id="ID-3a054402-2dea-46b0-85d4-e89b6c244319"><span class="section-number-3">1.2.</span> Doom Emacs</h3>
+    <div class="outline-text-3" id="text-1-2">
+    <p>
+    <a href="2022-04-30-010756-doom_emacs.html#ID-6dd02406-f2d1-4ff2-8a39-2590597c44bf">Doom Emacs</a>
+    </p>
+    </div>
+    </div>
+    <div id="outline-container-ID-2ed3f731-747d-4707-9674-b5e5ec75a0ed" class="outline-3">
+    <h3 id="ID-2ed3f731-747d-4707-9674-b5e5ec75a0ed"><span class="section-number-3">1.3.</span> Yasnippet</h3>
+    <div class="outline-text-3" id="text-1-3">
+    <p>
+    <a href="2022-09-26-184941-yasnippet_multi_choice.html#ID-19dae36d-a4f9-49d1-9bc3-d5734ff95bde">Yasnippet multi choice</a>
+    </p>
+    </div>
+    </div>
+    <div id="outline-container-ID-5f6b34e5-b869-4111-9f91-4a24239ac711" class="outline-3">
+    <h3 id="ID-5f6b34e5-b869-4111-9f91-4a24239ac711"><span class="section-number-3">1.4.</span> Org</h3>
+    <div class="outline-text-3" id="text-1-4">
+    <p>
+    <a href="20221216043133-publish_org_roam.html#ID-2b069384-79d9-4ed3-bc6e-b766edf526cb">Publish Script</a>
+    </p>
+    </div>
+    </div>
+    <div id="outline-container-ID-09b78d81-59c7-4609-84e2-10dd6a14b811" class="outline-3">
+    <h3 id="ID-09b78d81-59c7-4609-84e2-10dd6a14b811"><span class="section-number-3">1.5.</span> Git</h3>
+    <div class="outline-text-3" id="text-1-5">
+    <p>
+    <a href="programming/20230712200139-gitconfig.html#ID-dc00a2c6-6aa9-4c90-ba6d-6982067d2169">gitconfig</a>
+    </p>
+    </div>
+    </div>
+    ]]></description>
+  </item>
+  <item>
+    <title>file:/home/unseen/Documents/Notes/org/roam/20220429214821-reading_inbox.org</title>
+    <link>/index.html/20220429214821-reading_inbox.html</link>
+    <author> (lost robot)</author>
+    <guid isPermaLink="false">/index.html/20220429214821-reading_inbox.html</guid>
+    <pubDate>Mon, 10 Jul 2023 00:00:00 -0400</pubDate>
+
+    <description><![CDATA[<p>
+    :ID:       6189e985-e87d-42df-aa38-ba6429a2bf8a
+    :ROAM<sub>TAGS</sub>: racket compsci videos book articles
     </p>
     ]]></description>
-</item>
-<item>
-  <title>file:/home/unseen/Documents/Notes/org/roam/20220428224740-emacs.org</title>
-  <link>/index.html/20220428224740-emacs.html</link>
-  <author> (lost robot)</author>
-  <guid isPermaLink="false">/index.html/20220428224740-emacs.html</guid>
-  <pubDate>Wed, 12 Jul 2023 00:00:00 -0400</pubDate>
-
-  <description><![CDATA[<p>
-  :ID:       95b6342a-ca5b-4f59-9f08-6cbd3aedf7a2
-  :ROAM<sub>TAGS</sub>:
-  </p>
-  <p>
-  Emacs Page
-  </p>
-  <p>
-  :ID:       9050272f-38e4-4b31-85b8-a21435dab0b3
-  :PUBDATE:  
-  </p>
-  <p>
-  This is a hub of emacs things related
-  Tips and tricks
-  </p>
-  <p>
-  :ID:       4abdd69d-6e5c-4fff-bdc0-e00d4aba1e25
-  :PUBDATE:  
-  </p>
-  <div id="outline-container-ID-2c071938-0b22-4d20-9655-91a97b274ec2" class="outline-3">
-  <h3 id="ID-2c071938-0b22-4d20-9655-91a97b274ec2"><span class="section-number-3">2.1.</span> Org</h3>
-  <div class="outline-text-3" id="text-2-1">
-  </div>
-  <div id="outline-container-ID-9120e950-9fbb-4b02-ac8a-dc2e581ae5c3" class="outline-4">
-  <h4 id="ID-9120e950-9fbb-4b02-ac8a-dc2e581ae5c3"><span class="section-number-4">2.1.1.</span> Load u2l into a org document</h4>
-  <div class="outline-text-4" id="text-2-1-1">
-  <p>
-  url2org function for importing info from the web
-  <a href="https://www.reddit.com/r/emacs/comments/i2ep98/comment/g06s9vg/?utm_source=share&amp;utm_medium=web2x&amp;context=3">source</a>.
-  </p>
-  <div class="org-src-container">
-  <pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">url2org</span> (begin end)
-  <span style="font-style: italic;">"Download a webpage from selected url and convert to org."</span>
-  (<span style="font-weight: bold;">interactive</span> <span style="font-style: italic;">"r"</span>)
-  (shell-command-on-region begin end
-  (concat <span style="font-style: italic;">"pandoc --from=html --to=org "</span> (buffer-substring begin end))
-  nil t))
-  </pre>
-  </div>
-  </div>
-  </div>
-
-  <div id="outline-container-ID-ae6c8445-6c50-4e85-9a5c-9ed36a410499" class="outline-4">
-  <h4 id="ID-ae6c8445-6c50-4e85-9a5c-9ed36a410499"><span class="section-number-4">2.1.2.</span> Org Babel isnt tangling the file.</h4>
-  <div class="outline-text-4" id="text-2-1-2">
-  <p>
-  Make sure you C-c C-c the header args
-  </p>
-  </div>
-  </div>
-  </div>
-  <div id="outline-container-ID-3a054402-2dea-46b0-85d4-e89b6c244319" class="outline-3">
-  <h3 id="ID-3a054402-2dea-46b0-85d4-e89b6c244319"><span class="section-number-3">2.2.</span> Doom Emacs</h3>
-  <div class="outline-text-3" id="text-2-2">
-  <p>
-  <a href="2022-04-30-010756-doom_emacs.html#ID-6dd02406-f2d1-4ff2-8a39-2590597c44bf">Doom Emacs</a>
-  </p>
-  </div>
-  </div>
-  <div id="outline-container-ID-2ed3f731-747d-4707-9674-b5e5ec75a0ed" class="outline-3">
-  <h3 id="ID-2ed3f731-747d-4707-9674-b5e5ec75a0ed"><span class="section-number-3">2.3.</span> Yasnippet</h3>
-  <div class="outline-text-3" id="text-2-3">
-  <p>
-  <a href="2022-09-26-184941-yasnippet_multi_choice.html#ID-19dae36d-a4f9-49d1-9bc3-d5734ff95bde">Yasnippet multi choice</a>
-  </p>
-  </div>
-  </div>
-  <div id="outline-container-ID-9177b68d-260d-42dd-b35c-9bc64ee537a0" class="outline-3">
-  <h3 id="ID-9177b68d-260d-42dd-b35c-9bc64ee537a0"><span class="section-number-3">2.4.</span> Org</h3>
-  <div class="outline-text-3" id="text-2-4">
-  <p>
-  <a href="20221216043133-publish_org_roam.html#ID-2b069384-79d9-4ed3-bc6e-b766edf526cb">Publish Script</a>
-  </p>
-  </div>
-  </div>
-  <div id="outline-container-ID-05f01706-61ce-4e56-9ea3-53043228de09" class="outline-3">
-  <h3 id="ID-05f01706-61ce-4e56-9ea3-53043228de09"><span class="section-number-3">2.5.</span> Git</h3>
-  <div class="outline-text-3" id="text-2-5">
-  <p>
-  <a href="programming/20230712200139-gitconfig.html#ID-dc00a2c6-6aa9-4c90-ba6d-6982067d2169">gitconfig</a>
-  </p>
-  </div>
-  </div>
-  ]]></description>
-</item>
-<item>
-  <title>file:/home/unseen/Documents/Notes/org/roam/20220429214821-reading_inbox.org</title>
-  <link>/index.html/20220429214821-reading_inbox.html</link>
-  <author> (lost robot)</author>
-  <guid isPermaLink="false">/index.html/20220429214821-reading_inbox.html</guid>
-  <pubDate>Mon, 10 Jul 2023 00:00:00 -0400</pubDate>
-
-  <description><![CDATA[<p>
-  :ID:       6189e985-e87d-42df-aa38-ba6429a2bf8a
-  :ROAM<sub>TAGS</sub>: racket compsci videos book articles
-  </p>
-  ]]></description>
-</item>
+  </item>
 </channel>
 </rss>
