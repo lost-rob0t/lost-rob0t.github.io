@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 07:43 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>multiple git identity</title>
@@ -29,13 +29,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org208623e">Multiple Git Identities</a></li>
+<li><a href="#orgfb76ad5">Multiple Git Identities</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org208623e" class="outline-2">
-<h2 id="org208623e">Multiple Git Identities</h2>
-<div class="outline-text-2" id="text-org208623e">
+<div id="outline-container-orgfb76ad5" class="outline-2">
+<h2 id="orgfb76ad5">Multiple Git Identities</h2>
+<div class="outline-text-2" id="text-orgfb76ad5">
 <p>
 Here is how to setup multiple git identities.
 Set up multiple top level directories where your projects will live, then edit your git config. I need This to separate my personal projects from my employer or work related stuff.
@@ -45,8 +45,8 @@ Set up multiple top level directories where your projects will live, then edit y
 Here is my example for My Personal Projects
 </p>
 <div class="org-src-container">
-<pre class="src src-conf">[includeIf <span style="color: #7984D1;">"gitdir:~/Documents/Projects/"</span>]
-    <span style="color: #df85ff;">path</span> = ~/Documents/Projects/.gitconfig
+<pre class="src src-conf">[includeIf <span style="font-style: italic;">"gitdir:~/Documents/Projects/"</span>]
+    <span style="font-weight: bold; font-style: italic;">path</span> = ~/Documents/Projects/.gitconfig
 </pre>
 </div>
 
@@ -54,8 +54,8 @@ Here is my example for My Personal Projects
 And Here is an example for a work related one
 </p>
 <div class="org-src-container">
-<pre class="src src-conf">[includeIf <span style="color: #7984D1;">"gitdir:~/Documents/work/Projects/"</span>]
-    <span style="color: #df85ff;">path</span> = ~/Documents/work/Projects/.gitconfig
+<pre class="src src-conf">[includeIf <span style="font-style: italic;">"gitdir:~/Documents/work/Projects/"</span>]
+    <span style="font-weight: bold; font-style: italic;">path</span> = ~/Documents/work/Projects/.gitconfig
 </pre>
 </div>
 
@@ -63,9 +63,9 @@ And Here is an example for a work related one
 And inside your .gitconfig you can set the relevent identities needed, it is a normal <a href="../programming/20230712200139-gitconfig.html#ID-dc00a2c6-6aa9-4c90-ba6d-6982067d2169">gitconfig</a>  so any setting can be applied here.
 </p>
 <div class="org-src-container">
-<pre class="src src-conf">[<span style="color: #ffd400;">user</span>]
-  <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"Real name"</span>
-  <span style="color: #df85ff;">email</span> = <span style="color: #7984D1;">"work.email@employer.com"</span>
+<pre class="src src-conf">[<span style="font-weight: bold; text-decoration: underline;">user</span>]
+  <span style="font-weight: bold; font-style: italic;">name</span> = <span style="font-style: italic;">"Real name"</span>
+  <span style="font-weight: bold; font-style: italic;">email</span> = <span style="font-style: italic;">"work.email@employer.com"</span>
 </pre>
 </div>
 </div>
@@ -74,7 +74,7 @@ And inside your .gitconfig you can set the relevent identities needed, it is a n
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 <p class="validation"></p>
 </div>
 </body>

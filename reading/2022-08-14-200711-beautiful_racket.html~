@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:35 -->
+<!-- 2023-07-13 Thu 20:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>beautiful-racket</title>
@@ -29,7 +29,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf72fd5b">Beautiful racket</a></li>
+<li><a href="#orgcfe5a6c">Beautiful racket</a></li>
 </ul>
 </div>
 </div>
@@ -37,9 +37,9 @@
 <li><a href="../20220429214821-reading_inbox.html#ID-6189e985-e87d-42df-aa38-ba6429a2bf8a">Reading inbox</a></li>
 </ul>
 
-<div id="outline-container-orgf72fd5b" class="outline-2">
-<h2 id="orgf72fd5b">Beautiful racket</h2>
-<div class="outline-text-2" id="text-orgf72fd5b">
+<div id="outline-container-orgcfe5a6c" class="outline-2">
+<h2 id="orgcfe5a6c">Beautiful racket</h2>
+<div class="outline-text-2" id="text-orgcfe5a6c">
 <p>
 Learn how to implemnt programming langauges.
 </p>

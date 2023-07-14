@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:35 -->
+<!-- 2023-07-13 Thu 20:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs</title>
@@ -40,8 +40,8 @@
 </li>
 <li><a href="#ID-3a054402-2dea-46b0-85d4-e89b6c244319">Doom Emacs</a></li>
 <li><a href="#ID-2ed3f731-747d-4707-9674-b5e5ec75a0ed">Yasnippet</a></li>
-<li><a href="#orga64f94d">Org</a></li>
-<li><a href="#orgd364300">Git</a></li>
+<li><a href="#orgf6444e4">Org</a></li>
+<li><a href="#org1c42140">Git</a></li>
 </ul>
 </li>
 </ul>
@@ -50,7 +50,7 @@
 
 <div id="outline-container-ID-9050272f-38e4-4b31-85b8-a21435dab0b3" class="outline-2">
 <h2 id="ID-9050272f-38e4-4b31-85b8-a21435dab0b3">Emacs Page</h2>
-<div class="outline-text-2" id="text-orgdd53d0c">
+<div class="outline-text-2" id="text-org36de6ad">
 <p>
 This is a hub of emacs things related
 </p>
@@ -58,15 +58,15 @@ This is a hub of emacs things related
 </div>
 <div id="outline-container-ID-4abdd69d-6e5c-4fff-bdc0-e00d4aba1e25" class="outline-2">
 <h2 id="ID-4abdd69d-6e5c-4fff-bdc0-e00d4aba1e25">Tips and tricks</h2>
-<div class="outline-text-2" id="text-org4ae8b00">
+<div class="outline-text-2" id="text-orgfb582c4">
 </div>
 <div id="outline-container-ID-2c071938-0b22-4d20-9655-91a97b274ec2" class="outline-3">
 <h3 id="ID-2c071938-0b22-4d20-9655-91a97b274ec2">Org</h3>
-<div class="outline-text-3" id="text-org9426dc3">
+<div class="outline-text-3" id="text-orgf0f9323">
 </div>
 <div id="outline-container-ID-9120e950-9fbb-4b02-ac8a-dc2e581ae5c3" class="outline-4">
 <h4 id="ID-9120e950-9fbb-4b02-ac8a-dc2e581ae5c3">Load u2l into a org document</h4>
-<div class="outline-text-4" id="text-orga1566e3">
+<div class="outline-text-4" id="text-org6be577f">
 <p>
 url2org function for importing info from the web
 <a href="https://www.reddit.com/r/emacs/comments/i2ep98/comment/g06s9vg/?utm_source=share&amp;utm_medium=web2x&amp;context=3">source</a>.
@@ -84,7 +84,7 @@ url2org function for importing info from the web
 </div>
 <div id="outline-container-ID-ae6c8445-6c50-4e85-9a5c-9ed36a410499" class="outline-4">
 <h4 id="ID-ae6c8445-6c50-4e85-9a5c-9ed36a410499">Org Babel isnt tangling the file.</h4>
-<div class="outline-text-4" id="text-org00c62b5">
+<div class="outline-text-4" id="text-orgfc44ff0">
 <p>
 Make sure you C-c C-c the header args
 </p>
@@ -93,7 +93,7 @@ Make sure you C-c C-c the header args
 </div>
 <div id="outline-container-ID-3a054402-2dea-46b0-85d4-e89b6c244319" class="outline-3">
 <h3 id="ID-3a054402-2dea-46b0-85d4-e89b6c244319">Doom Emacs</h3>
-<div class="outline-text-3" id="text-org4ff4d91">
+<div class="outline-text-3" id="text-orgc3d2ea6">
 <p>
 <a href="2022-04-30-010756-doom_emacs.html#ID-6dd02406-f2d1-4ff2-8a39-2590597c44bf">Doom Emacs</a>
 </p>
@@ -101,23 +101,23 @@ Make sure you C-c C-c the header args
 </div>
 <div id="outline-container-ID-2ed3f731-747d-4707-9674-b5e5ec75a0ed" class="outline-3">
 <h3 id="ID-2ed3f731-747d-4707-9674-b5e5ec75a0ed">Yasnippet</h3>
-<div class="outline-text-3" id="text-org005c931">
+<div class="outline-text-3" id="text-org813547c">
 <ul class="org-ul">
 <li><a href="2022-09-26-184941-yasnippet_multi_choice.html#ID-19dae36d-a4f9-49d1-9bc3-d5734ff95bde">Yasnippet multi choice</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga64f94d" class="outline-3">
-<h3 id="orga64f94d">Org</h3>
-<div class="outline-text-3" id="text-orga64f94d">
+<div id="outline-container-orgf6444e4" class="outline-3">
+<h3 id="orgf6444e4">Org</h3>
+<div class="outline-text-3" id="text-orgf6444e4">
 <ul class="org-ul">
 <li><a href="20221216043133-publish_org_roam.html#ID-2b069384-79d9-4ed3-bc6e-b766edf526cb">Publish Script</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd364300" class="outline-3">
-<h3 id="orgd364300">Git</h3>
-<div class="outline-text-3" id="text-orgd364300">
+<div id="outline-container-org1c42140" class="outline-3">
+<h3 id="org1c42140">Git</h3>
+<div class="outline-text-3" id="text-org1c42140">
 <ul class="org-ul">
 <li><a href="programming/20230712200139-gitconfig.html#ID-dc00a2c6-6aa9-4c90-ba6d-6982067d2169">gitconfig</a></li>
 </ul>

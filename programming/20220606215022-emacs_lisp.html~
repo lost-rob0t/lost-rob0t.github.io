@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Emacs Lisp</title>
@@ -29,31 +29,31 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0ae6054">Emacs Lisp</a>
+<li><a href="#org2c07c71">Emacs Lisp</a>
 <ul>
-<li><a href="#orge66db49">Values</a></li>
-<li><a href="#org6a714ef">Eval/Form</a></li>
-<li><a href="#org171c662">Symbols</a></li>
-<li><a href="#orgf51b792">Prefix v infix</a></li>
-<li><a href="#org20eeb5d">Error Handling</a></li>
+<li><a href="#org88c8d55">Values</a></li>
+<li><a href="#org2ae780e">Eval/Form</a></li>
+<li><a href="#org208af4a">Symbols</a></li>
+<li><a href="#org880a366">Prefix v infix</a></li>
+<li><a href="#orgbbe11e7">Error Handling</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org0ae6054" class="outline-2">
-<h2 id="org0ae6054">Emacs Lisp</h2>
-<div class="outline-text-2" id="text-org0ae6054">
+<div id="outline-container-org2c07c71" class="outline-2">
+<h2 id="org2c07c71">Emacs Lisp</h2>
+<div class="outline-text-2" id="text-org2c07c71">
 <p>
 Emacs lisp a lisp dialect for confguring Emacs.
 Much of emacs is written in elisp, with some of it in C.
 </p>
 </div>
 
-<div id="outline-container-orge66db49" class="outline-3">
-<h3 id="orge66db49">Values</h3>
-<div class="outline-text-3" id="text-orge66db49">
+<div id="outline-container-org88c8d55" class="outline-3">
+<h3 id="org88c8d55">Values</h3>
+<div class="outline-text-3" id="text-org88c8d55">
 <p>
 Any value or object has a type. it may not always be readable
 </p>
@@ -85,9 +85,9 @@ There are also types that are specific to emacs lisp.
 </div>
 
 
-<div id="outline-container-org6a714ef" class="outline-3">
-<h3 id="org6a714ef">Eval/Form</h3>
-<div class="outline-text-3" id="text-org6a714ef">
+<div id="outline-container-org2ae780e" class="outline-3">
+<h3 id="org2ae780e">Eval/Form</h3>
+<div class="outline-text-3" id="text-org2ae780e">
 <p>
 A form is any value that you can evaluate.
 Some examples
@@ -108,9 +108,9 @@ Code Examples
 </div>
 </div>
 
-<div id="outline-container-org171c662" class="outline-3">
-<h3 id="org171c662">Symbols</h3>
-<div class="outline-text-3" id="text-org171c662">
+<div id="outline-container-org208af4a" class="outline-3">
+<h3 id="org208af4a">Symbols</h3>
+<div class="outline-text-3" id="text-org208af4a">
 <p>
 A symbol is a object, but does not self eval
 A symbol can contail alpha-numeric charecters but others.
@@ -119,9 +119,9 @@ When a symbol is evaluated the value is returned with the binding.
 </div>
 </div>
 
-<div id="outline-container-orgf51b792" class="outline-3">
-<h3 id="orgf51b792">Prefix v infix</h3>
-<div class="outline-text-3" id="text-orgf51b792">
+<div id="outline-container-org880a366" class="outline-3">
+<h3 id="org880a366">Prefix v infix</h3>
+<div class="outline-text-3" id="text-org880a366">
 <p>
 Lisp uses prefix notation.
 Any expesion that does a function eval, the first element is a function.
@@ -129,9 +129,9 @@ Any expesion that does a function eval, the first element is a function.
 </div>
 </div>
 
-<div id="outline-container-org20eeb5d" class="outline-3">
-<h3 id="org20eeb5d">Error Handling</h3>
-<div class="outline-text-3" id="text-org20eeb5d">
+<div id="outline-container-orgbbe11e7" class="outline-3">
+<h3 id="orgbbe11e7">Error Handling</h3>
+<div class="outline-text-3" id="text-orgbbe11e7">
 <ul class="org-ul">
 <li><a href="20230327155154-elisp_errors.html#ID-f284c2d8-6777-4ff5-94e1-a928628810d4">elisp errors</a></li>
 </ul>

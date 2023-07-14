@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 07:43 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>libvirt-multi-head</title>
@@ -29,27 +29,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb56b080">Tutorial</a>
+<li><a href="#org26e773b">Tutorial</a>
 <ul>
-<li><a href="#org16e54fb">Steps</a>
+<li><a href="#orgc575531">Steps</a>
 <ul>
-<li><a href="#org6c4c8e4">Install spice-vdagent</a></li>
-<li><a href="#org5459665">Edit the guest&rsquo;s configuration</a></li>
-<li><a href="#org5bce43c">Create a new xrand output mode.</a></li>
-<li><a href="#org6eac1d1">Save the config</a></li>
+<li><a href="#org59dd77c">Install spice-vdagent</a></li>
+<li><a href="#org92e6410">Edit the guest's configuration</a></li>
+<li><a href="#org18a363a">Create a new xrand output mode.</a></li>
+<li><a href="#org4e9c079">Save the config</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org3b04e95">FootNotes</a></li>
+<li><a href="#org1e407c7">FootNotes</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-orgb56b080" class="outline-2">
-<h2 id="orgb56b080">Tutorial</h2>
-<div class="outline-text-2" id="text-orgb56b080">
+<div id="outline-container-org26e773b" class="outline-2">
+<h2 id="org26e773b">Tutorial</h2>
+<div class="outline-text-2" id="text-org26e773b">
 <p>
 I Had an issue where spice was not letting me use multi head setup.
 Having two monitors and i find that when playing in my hackthebox vm its annoying to only have one monitor to reasearch and pwn,
@@ -60,38 +60,38 @@ this is somthing i should fix.
 
 
 
-<div id="outline-container-org16e54fb" class="outline-3">
-<h3 id="org16e54fb">Steps</h3>
-<div class="outline-text-3" id="text-org16e54fb">
+<div id="outline-container-orgc575531" class="outline-3">
+<h3 id="orgc575531">Steps</h3>
+<div class="outline-text-3" id="text-orgc575531">
 </div>
-<div id="outline-container-org6c4c8e4" class="outline-4">
-<h4 id="org6c4c8e4">Install spice-vdagent</h4>
-<div class="outline-text-4" id="text-org6c4c8e4">
+<div id="outline-container-org59dd77c" class="outline-4">
+<h4 id="org59dd77c">Install spice-vdagent</h4>
+<div class="outline-text-4" id="text-org59dd77c">
 </div>
 <ul class="org-ul">
-<li><a id="org1fa8c84"></a>Nixos<br />
-<div class="outline-text-5" id="text-org1fa8c84">
+<li><a id="orga1a141e"></a>Nixos<br />
+<div class="outline-text-5" id="text-orga1a141e">
 <p>
 On nixos just include <code>spice-vdagent</code> in your <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a> enviroment packages or your home-manager config.
 </p>
 </div>
 </li>
-<li><a id="orge99c002"></a>Arch<br />
-<div class="outline-text-5" id="text-orge99c002">
+<li><a id="orgde12a1d"></a>Arch<br />
+<div class="outline-text-5" id="text-orgde12a1d">
 <p>
 <code>pacman -S spice-vdagent</code>
 </p>
 </div>
 </li>
-<li><a id="org7c9daca"></a>Fedora<br />
-<div class="outline-text-5" id="text-org7c9daca">
+<li><a id="org4082766"></a>Fedora<br />
+<div class="outline-text-5" id="text-org4082766">
 <p>
 <code>dnf install spice-vdagent</code>
 </p>
 </div>
 </li>
-<li><a id="orgd728096"></a>Ubuntu And Debian<br />
-<div class="outline-text-5" id="text-orgd728096">
+<li><a id="orgd5f1ae9"></a>Ubuntu And Debian<br />
+<div class="outline-text-5" id="text-orgd5f1ae9">
 <p>
 <code>apt install spice-vdagent</code>
 </p>
@@ -101,25 +101,24 @@ On nixos just include <code>spice-vdagent</code> in your <a href="../2022-04-28-
 </div>
 
 
-<div id="outline-container-org5459665" class="outline-4">
-<h4 id="org5459665">Edit the guest&rsquo;s configuration</h4>
-<div class="outline-text-4" id="text-org5459665">
+<div id="outline-container-org92e6410" class="outline-4">
+<h4 id="org92e6410">Edit the guest's configuration</h4>
+<div class="outline-text-4" id="text-org92e6410">
 <p>
 <code>sudo virsh edit --domain &lt;name of vm&gt;</code>
 </p>
 
 <p>
-Find the line where it mentions &ldquo;video&rdquo;
+Find the line where it mentions "video"
 <b>NOTE</b>: i use the video driver qxl, should work with virtio
 Change <code>heads='1'</code> to how ever many monitors you need
 </p>
 <div class="org-src-container">
-<pre class="src src-xml">&lt;?<span style="color: #ff2afc; font-weight: bold;">xml</span> <span style="color: #A875FF;">version="1.0" encoding="utf-8"</span>?&gt;
-&lt;<span style="color: #42c6ff;">video</span>&gt;
-  &lt;<span style="color: #42c6ff;">model</span> <span style="color: #df85ff;">type</span>=<span style="color: #7984D1;">"qxl"</span> <span style="color: #df85ff;">ram</span>=<span style="color: #7984D1;">"65536"</span> <span style="color: #df85ff;">vram</span>=<span style="color: #7984D1;">"65536"</span> <span style="color: #df85ff;">vgamem</span>=<span style="color: #7984D1;">"16384"</span> <span style="color: #df85ff;">heads</span>=<span style="color: #7984D1;">"1"</span> <span style="color: #df85ff;">primary</span>=<span style="color: #7984D1;">'yes'</span>/&gt;
-  &lt;<span style="color: #42c6ff;">alias</span> <span style="color: #df85ff;">name</span>=<span style="color: #7984D1;">"video0"</span>/&gt;
-  &lt;<span style="color: #42c6ff;">address</span> <span style="color: #df85ff;">type</span>=<span style="color: #7984D1;">"pci"</span> <span style="color: #df85ff;">domain</span>=<span style="color: #7984D1;">"0x0000"</span> <span style="color: #df85ff;">bus</span>=<span style="color: #7984D1;">"0x10"</span> <span style="color: #df85ff;">slot</span>=<span style="color: #7984D1;">"0x01"</span> <span style="color: #df85ff;">function</span>=<span style="color: #7984D1;">"0x0"</span>/&gt;
-&lt;/<span style="color: #42c6ff;">video</span>&gt;
+<pre class="src src-xml">&lt;<span style="font-weight: bold;">video</span>&gt;
+  &lt;<span style="font-weight: bold;">model</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"qxl"</span> <span style="font-weight: bold; font-style: italic;">ram</span>=<span style="font-style: italic;">"65536"</span> <span style="font-weight: bold; font-style: italic;">vram</span>=<span style="font-style: italic;">"65536"</span> <span style="font-weight: bold; font-style: italic;">vgamem</span>=<span style="font-style: italic;">"16384"</span> <span style="font-weight: bold; font-style: italic;">heads</span>=<span style="font-style: italic;">"1"</span> <span style="font-weight: bold; font-style: italic;">primary</span>=<span style="font-style: italic;">'yes'</span>/&gt;
+  &lt;<span style="font-weight: bold;">alias</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"video0"</span>/&gt;
+  &lt;<span style="font-weight: bold;">address</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"pci"</span> <span style="font-weight: bold; font-style: italic;">domain</span>=<span style="font-style: italic;">"0x0000"</span> <span style="font-weight: bold; font-style: italic;">bus</span>=<span style="font-style: italic;">"0x10"</span> <span style="font-weight: bold; font-style: italic;">slot</span>=<span style="font-style: italic;">"0x01"</span> <span style="font-weight: bold; font-style: italic;">function</span>=<span style="font-style: italic;">"0x0"</span>/&gt;
+&lt;/<span style="font-weight: bold;">video</span>&gt;
 </pre>
 </div>
 
@@ -128,21 +127,20 @@ to
 </p>
 
 <div class="org-src-container">
-<pre class="src src-xml">&lt;?<span style="color: #ff2afc; font-weight: bold;">xml</span> <span style="color: #A875FF;">version="1.0" encoding="utf-8"</span>?&gt;
-&lt;<span style="color: #42c6ff;">video</span>&gt;
-  &lt;<span style="color: #42c6ff;">model</span> <span style="color: #df85ff;">type</span>=<span style="color: #7984D1;">"qxl"</span> <span style="color: #df85ff;">ram</span>=<span style="color: #7984D1;">"65536"</span> <span style="color: #df85ff;">vram</span>=<span style="color: #7984D1;">"65536"</span> <span style="color: #df85ff;">vgamem</span>=<span style="color: #7984D1;">"16384"</span> <span style="color: #df85ff;">heads</span>=<span style="color: #7984D1;">"2"</span> <span style="color: #df85ff;">primary</span>=<span style="color: #7984D1;">'yes'</span>/&gt;
-  &lt;<span style="color: #42c6ff;">alias</span> <span style="color: #df85ff;">name</span>=<span style="color: #7984D1;">"video0"</span>/&gt;
-  &lt;<span style="color: #42c6ff;">address</span> <span style="color: #df85ff;">type</span>=<span style="color: #7984D1;">"pci"</span> <span style="color: #df85ff;">domain</span>=<span style="color: #7984D1;">"0x0000"</span> <span style="color: #df85ff;">bus</span>=<span style="color: #7984D1;">"0x10"</span> <span style="color: #df85ff;">slot</span>=<span style="color: #7984D1;">"0x01"</span> <span style="color: #df85ff;">function</span>=<span style="color: #7984D1;">"0x0"</span>/&gt;
-&lt;/<span style="color: #42c6ff;">video</span>&gt;
+<pre class="src src-xml">&lt;<span style="font-weight: bold;">video</span>&gt;
+  &lt;<span style="font-weight: bold;">model</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"qxl"</span> <span style="font-weight: bold; font-style: italic;">ram</span>=<span style="font-style: italic;">"65536"</span> <span style="font-weight: bold; font-style: italic;">vram</span>=<span style="font-style: italic;">"65536"</span> <span style="font-weight: bold; font-style: italic;">vgamem</span>=<span style="font-style: italic;">"16384"</span> <span style="font-weight: bold; font-style: italic;">heads</span>=<span style="font-style: italic;">"2"</span> <span style="font-weight: bold; font-style: italic;">primary</span>=<span style="font-style: italic;">'yes'</span>/&gt;
+  &lt;<span style="font-weight: bold;">alias</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"video0"</span>/&gt;
+  &lt;<span style="font-weight: bold;">address</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"pci"</span> <span style="font-weight: bold; font-style: italic;">domain</span>=<span style="font-style: italic;">"0x0000"</span> <span style="font-weight: bold; font-style: italic;">bus</span>=<span style="font-style: italic;">"0x10"</span> <span style="font-weight: bold; font-style: italic;">slot</span>=<span style="font-style: italic;">"0x01"</span> <span style="font-weight: bold; font-style: italic;">function</span>=<span style="font-style: italic;">"0x0"</span>/&gt;
+&lt;/<span style="font-weight: bold;">video</span>&gt;
 </pre>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-org5bce43c" class="outline-4">
-<h4 id="org5bce43c">Create a new xrand output mode.</h4>
-<div class="outline-text-4" id="text-org5bce43c">
+<div id="outline-container-org18a363a" class="outline-4">
+<h4 id="org18a363a">Create a new xrand output mode.</h4>
+<div class="outline-text-4" id="text-org18a363a">
 <p>
 Inside your guest it is going to show that the new output is disconected.
 you need to create a new output mode
@@ -151,7 +149,7 @@ you need to create a new output mode
 
 
 
-<div id="org6a475b5" class="figure">
+<div id="org6d4c90b" class="figure">
 <p><img src="Tutorial/2022-08-11_01-57-30_archlinux-xrandr.png" alt="2022-08-11_01-57-30_archlinux-xrandr.png" />
 </p>
 </div>
@@ -163,18 +161,18 @@ Get the mode line for your resolution, I choose 1920x1080.
 <p>
 <code>cvt 1920 1080</code>
 </p>
-<pre class="example" id="orgd652a11">
+<pre class="example" id="org30331ee">
 Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
 </pre>
 <p>
-Copy everything after where it says &ldquo;modeline&rdquo; and use that to create a new mode
+Copy everything after where it says "modeline" and use that to create a new mode
 </p>
 
 <p>
 Create the mode
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">xrandr --addmode <span style="color: #7984D1;">"1920x1080_60.00"</span>  <span style="color: #ffd400; font-weight: bold;">173.00</span>  <span style="color: #ffd400; font-weight: bold;">1920</span> <span style="color: #ffd400; font-weight: bold;">2048</span> <span style="color: #ffd400; font-weight: bold;">2248</span> <span style="color: #ffd400; font-weight: bold;">2576</span>  <span style="color: #ffd400; font-weight: bold;">1080</span> <span style="color: #ffd400; font-weight: bold;">1083</span> <span style="color: #ffd400; font-weight: bold;">1088</span> <span style="color: #ffd400; font-weight: bold;">1120</span> -hsync +vsync
+<pre class="src src-shell">xrandr --addmode <span style="font-style: italic;">"1920x1080_60.00"</span>  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
 </pre>
 </div>
 
@@ -189,15 +187,15 @@ xrandr --output Virtual-2 --mode 1920x1080_60.00
 </div>
 </div>
 
-<div id="outline-container-org6eac1d1" class="outline-4">
-<h4 id="org6eac1d1">Save the config</h4>
-<div class="outline-text-4" id="text-org6eac1d1">
+<div id="outline-container-org4e9c079" class="outline-4">
+<h4 id="org4e9c079">Save the config</h4>
+<div class="outline-text-4" id="text-org4e9c079">
 <p>
 If you do not want to constantly add the new screen resolution each reboot, add it to <code>/usr/share/X11/xorg.conf.d</code> or <code>/etc/X11/xorg.conf.d/</code> in FHS based distros.
 in <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a> use the option <code>services.xorg.config</code>.
 </p>
 
-<pre class="example" id="org6344cc7">
+<pre class="example" id="org1c1e785">
 section "Monitor"
     Identifier "Virtual-1 "
     Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
@@ -208,9 +206,9 @@ EndSection
 </div>
 </div>
 </div>
-<div id="outline-container-org3b04e95" class="outline-2">
-<h2 id="org3b04e95">FootNotes</h2>
-<div class="outline-text-2" id="text-org3b04e95">
+<div id="outline-container-org1e407c7" class="outline-2">
+<h2 id="org1e407c7">FootNotes</h2>
+<div class="outline-text-2" id="text-org1e407c7">
 <ul class="org-ul">
 <li><a href="https://elmarco.fedorapeople.org/manual.html#_multiple_monitor_support">https://elmarco.fedorapeople.org/manual.html#_multiple_monitor_support</a></li>
 <li><a href="https://access.redhat.com/discussions/1363063">https://access.redhat.com/discussions/1363063</a></li>
@@ -222,7 +220,7 @@ EndSection
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 <p class="validation"></p>
 </div>
 </body>

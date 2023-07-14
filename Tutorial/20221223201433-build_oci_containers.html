@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 07:43 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Build OCI containers in Nixos</title>
@@ -29,12 +29,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgdb48b6f"><span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></a>
+<li><a href="#org9be2839"><span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></a>
 <ul>
-<li><a href="#org7422e9a">Main workflow</a>
+<li><a href="#org2313842">Main workflow</a>
 <ul>
-<li><a href="#org2f38f46">Examples</a></li>
-<li><a href="#org5e40fdc">Star intel Example</a></li>
+<li><a href="#org17b42a8">Examples</a></li>
+<li><a href="#orgbe45cd0">Star intel Example</a></li>
 </ul>
 </li>
 </ul>
@@ -42,9 +42,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdb48b6f" class="outline-2">
-<h2 id="orgdb48b6f"><span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></h2>
-<div class="outline-text-2" id="text-orgdb48b6f">
+<div id="outline-container-org9be2839" class="outline-2">
+<h2 id="org9be2839"><span class="todo TODO">TODO</span> Build OCI containers in nix&#xa0;&#xa0;&#xa0;<span class="tag"><span class="docker">docker</span>&#xa0;<span class="podman">podman</span>&#xa0;<span class="oci">oci</span></span></h2>
+<div class="outline-text-2" id="text-org9be2839">
 <p>
 finish this!
 <a href="https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-dockerTools">https://nixos.org/manual/nixpkgs/stable/#sec-pkgs-dockerTools</a>
@@ -62,9 +62,9 @@ Most of this document is lifted from <a href="https://github.com/NixOS/nixpkgs/b
 </div>
 
 
-<div id="outline-container-org7422e9a" class="outline-3">
-<h3 id="org7422e9a">Main workflow</h3>
-<div class="outline-text-3" id="text-org7422e9a">
+<div id="outline-container-org2313842" class="outline-3">
+<h3 id="org2313842">Main workflow</h3>
+<div class="outline-text-3" id="text-org2313842">
 <p>
 Since nix changes how everything works, this includes how you packages and use OCI containers
 I will assume docker in this entry, becuase I had issues with podman.
@@ -81,26 +81,26 @@ I will assume docker in this entry, becuase I had issues with podman.
 You can load and build that the same as such:
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">docker load &lt; $<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">nix-build default.nix</span><span style="color: #1ea8fc;">)</span>
+<pre class="src src-shell">docker load &lt; $(<span style="font-weight: bold;">nix-build default.nix</span>)
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org2f38f46" class="outline-4">
-<h4 id="org2f38f46">Examples</h4>
-<div class="outline-text-4" id="text-org2f38f46">
+<div id="outline-container-org17b42a8" class="outline-4">
+<h4 id="org17b42a8">Examples</h4>
+<div class="outline-text-4" id="text-org17b42a8">
 <p>
 Here is a very basic oci image
 </p>
 
 <div class="org-src-container">
 <pre class="src src-nix">buildImage {
-    <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"bash"</span>;
-    <span style="color: #df85ff;">tag</span> = <span style="color: #7984D1;">"latest"</span>;
-    <span style="color: #df85ff;">copyToRoot</span> = pkgs.buildEnv {
-      <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"image-root"</span>;
-      <span style="color: #df85ff;">paths</span> = [ pkgs.bashInteractive ];
-      <span style="color: #df85ff;">pathsToLink</span> = [ <span style="color: #7984D1;">"/bin"</span> ];
+    name = "bash";
+    tag = "latest";
+    copyToRoot = pkgs.buildEnv {
+      name = "image-root";
+      paths = [ pkgs.bashInteractive ];
+      pathsToLink = [ "/bin" ];
     }
 }
 </pre>
@@ -108,35 +108,35 @@ Here is a very basic oci image
 </div>
 
 <ul class="org-ul">
-<li><a id="orgf42f028"></a>Service<br />
-<div class="outline-text-5" id="text-orgf42f028">
+<li><a id="orgd95bb1c"></a>Service<br />
+<div class="outline-text-5" id="text-orgd95bb1c">
 <p>
 Redis service example
 </p>
 <div class="org-src-container">
-<pre class="src src-nix"><span style="color: #df85ff;">redis</span> = buildImage {
-    <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"redis"</span>;
-    <span style="color: #df85ff;">tag</span> = <span style="color: #7984D1;">"latest"</span>;
+<pre class="src src-nix">redis = buildImage {
+    name = "redis";
+    tag = "latest";
 
-    <span style="color: #546A90;"># for example's sake, we can layer redis on top of bash or debian</span>
-    <span style="color: #df85ff;">fromImage</span> = bash;
-    <span style="color: #546A90;"># fromImage = debian;</span>
+    # for example's sake, we can layer redis on top of bash or debian
+    fromImage = bash;
+    # fromImage = debian;
 
-    <span style="color: #df85ff;">copyToRoot</span> = pkgs.buildEnv {
-      <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"image-root"</span>;
-      <span style="color: #df85ff;">paths</span> = [ pkgs.redis ];
-      <span style="color: #df85ff;">pathsToLink</span> = [ <span style="color: #7984D1;">"/bin"</span> ];
+    copyToRoot = pkgs.buildEnv {
+      name = "image-root";
+      paths = [ pkgs.redis ];
+      pathsToLink = [ "/bin" ];
     };
 
-    <span style="color: #df85ff;">runAsRoot</span> = <span style="color: #7984D1;">''</span>
-<span style="color: #7984D1;">      mkdir -p /data</span>
-<span style="color: #7984D1;">    ''</span>;
+    runAsRoot = ''
+      mkdir -p /data
+    '';
 
-    <span style="color: #df85ff;">config</span> = {
-      <span style="color: #df85ff;">Cmd</span> = [ <span style="color: #7984D1;">"/bin/redis-server"</span> ];
-      <span style="color: #df85ff;">WorkingDir</span> = <span style="color: #7984D1;">"/data"</span>;
-      <span style="color: #df85ff;">Volumes</span> = {
-        <span style="color: #7984D1;">"/data"</span> = {};
+    config = {
+      Cmd = [ "/bin/redis-server" ];
+      WorkingDir = "/data";
+      Volumes = {
+	"/data" = {};
       };
     };
   };
@@ -148,90 +148,90 @@ Nginx
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nix">  <span style="color: #df85ff;">nginx</span> = <span style="color: #ff2afc; font-weight: bold;">let</span>
-    <span style="color: #df85ff;">nginxPort</span> = <span style="color: #7984D1;">"80"</span>;
-    <span style="color: #df85ff;">nginxConf</span> = pkgs.writeText <span style="color: #7984D1;">"nginx.conf"</span> <span style="color: #7984D1;">''</span>
-<span style="color: #7984D1;">      user nobody nobody;</span>
-<span style="color: #7984D1;">      daemon off;</span>
-<span style="color: #7984D1;">      error_log /dev/stdout info;</span>
-<span style="color: #7984D1;">      pid /dev/null;</span>
-<span style="color: #7984D1;">      events {}</span>
-<span style="color: #7984D1;">      http {</span>
-<span style="color: #7984D1;">        access_log /dev/stdout;</span>
-<span style="color: #7984D1;">        server {</span>
-<span style="color: #7984D1;">          listen </span><span style="color: #ff2afc; font-weight: bold;">${</span>nginxPort<span style="color: #ff2afc; font-weight: bold;">}</span><span style="color: #7984D1;">;</span>
-<span style="color: #7984D1;">          index index.html;</span>
-<span style="color: #7984D1;">          location / {</span>
-<span style="color: #7984D1;">            root </span><span style="color: #ff2afc; font-weight: bold;">${</span>nginxWebRoot<span style="color: #ff2afc; font-weight: bold;">}</span><span style="color: #7984D1;">;</span>
-<span style="color: #7984D1;">          }</span>
-<span style="color: #7984D1;">        }</span>
-<span style="color: #7984D1;">      }</span>
-<span style="color: #7984D1;">    ''</span>;
-    <span style="color: #df85ff;">nginxWebRoot</span> = pkgs.writeTextDir <span style="color: #7984D1;">"index.html"</span> <span style="color: #7984D1;">''</span>
-<span style="color: #7984D1;">      &lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello from NGINX&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;</span>
-<span style="color: #7984D1;">    ''</span>;
-  <span style="color: #ff2afc; font-weight: bold;">in</span>
-  buildLayeredImage {
-    <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"nginx-container"</span>;
-    <span style="color: #df85ff;">tag</span> = <span style="color: #7984D1;">"latest"</span>;
-    <span style="color: #df85ff;">contents</span> = [
-      fakeNss
-      pkgs.nginx
-    ];
+<pre class="src src-nix">nginx = let
+  nginxPort = "80";
+  nginxConf = pkgs.writeText "nginx.conf" ''
+    user nobody nobody;
+    daemon off;
+    error_log /dev/stdout info;
+    pid /dev/null;
+    events {}
+    http {
+      access_log /dev/stdout;
+      server {
+	listen ${nginxPort};
+	index index.html;
+	location / {
+	  root ${nginxWebRoot};
+	}
+      }
+    }
+  '';
+  nginxWebRoot = pkgs.writeTextDir "index.html" ''
+    &lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello from NGINX&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
+  '';
+in
+buildLayeredImage {
+  name = "nginx-container";
+  tag = "latest";
+  contents = [
+    fakeNss
+    pkgs.nginx
+  ];
 
-    <span style="color: #df85ff;">extraCommands</span> = <span style="color: #7984D1;">''</span>
-<span style="color: #7984D1;">      mkdir -p tmp/nginx_client_body</span>
-<span style="color: #7984D1;">      # nginx still tries to read this directory even if error_log</span>
-<span style="color: #7984D1;">      # directive is specifying another file :/</span>
-<span style="color: #7984D1;">      mkdir -p var/log/nginx</span>
-<span style="color: #7984D1;">    ''</span>;
+  extraCommands = ''
+    mkdir -p tmp/nginx_client_body
+    # nginx still tries to read this directory even if error_log
+    # directive is specifying another file :/
+    mkdir -p var/log/nginx
+  '';
 
-    <span style="color: #df85ff;">config</span> = {
-      <span style="color: #df85ff;">Cmd</span> = [ <span style="color: #7984D1;">"nginx"</span> <span style="color: #7984D1;">"-c"</span> nginxConf ];
-      <span style="color: #df85ff;">ExposedPorts</span> = {
-        <span style="color: #7984D1;">"</span><span style="color: #ff2afc; font-weight: bold;">${</span>nginxPort<span style="color: #ff2afc; font-weight: bold;">}</span><span style="color: #7984D1;">/tcp"</span> = {};
-      };
+  config = {
+    Cmd = [ "nginx" "-c" nginxConf ];
+    ExposedPorts = {
+      "${nginxPort}/tcp" = {};
     };
   };
+};
 
 </pre>
 </div>
 </div>
 </li>
 
-<li><a id="orgc9cda3e"></a>Pulling Images<br />
-<div class="outline-text-5" id="text-orgc9cda3e">
+<li><a id="orgceadd74"></a>Pulling Images<br />
+<div class="outline-text-5" id="text-orgceadd74">
 <p>
 Example of pulling a Docker Images
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nix"><span style="color: #df85ff;">nixFromDockerHub</span> = pullImage {
-    <span style="color: #df85ff;">imageName</span> = <span style="color: #7984D1;">"nixos/nix"</span>;
-    <span style="color: #df85ff;">imageDigest</span> = <span style="color: #7984D1;">"sha256:85299d86263a3059cf19f419f9d286cc9f06d3c13146a8ebbb21b3437f598357"</span>;
-    <span style="color: #df85ff;">sha256</span> = <span style="color: #7984D1;">"19fw0n3wmddahzr20mhdqv6jkjn1kanh6n2mrr08ai53dr8ph5n7"</span>;
-    <span style="color: #df85ff;">finalImageTag</span> = <span style="color: #7984D1;">"2.2.1"</span>;
-    <span style="color: #df85ff;">finalImageName</span> = <span style="color: #7984D1;">"nix"</span>;
+<pre class="src src-nix">nixFromDockerHub = pullImage {
+    imageName = "nixos/nix";
+    imageDigest = "sha256:85299d86263a3059cf19f419f9d286cc9f06d3c13146a8ebbb21b3437f598357";
+    sha256 = "19fw0n3wmddahzr20mhdqv6jkjn1kanh6n2mrr08ai53dr8ph5n7";
+    finalImageTag = "2.2.1";
+    finalImageName = "nix";
 };
 </pre>
 </div>
 </div>
 </li>
 
-<li><a id="org35af17f"></a>Add to image<br />
-<div class="outline-text-5" id="text-org35af17f">
+<li><a id="org4fad2e6"></a>Add to image<br />
+<div class="outline-text-5" id="text-org4fad2e6">
 <p>
 Add Some packages to an existing image.
 </p>
 <div class="org-src-container">
-<pre class="src src-nix"><span style="color: #df85ff;">onTopOfPulledImage</span> = buildImage {
-    <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"onTopOfPulledImage"</span>;
-    <span style="color: #df85ff;">tag</span> = <span style="color: #7984D1;">"latest"</span>;
-    <span style="color: #df85ff;">fromImage</span> = nixFromDockerHub;
-    <span style="color: #df85ff;">copyToRoot</span> = pkgs.buildEnv {
-      <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"image-root"</span>;
-      <span style="color: #df85ff;">pathsToLink</span> = [ <span style="color: #7984D1;">"/bin"</span> ];
-      <span style="color: #df85ff;">paths</span> = [ pkgs.hello ];
+<pre class="src src-nix">onTopOfPulledImage = buildImage {
+    name = "onTopOfPulledImage";
+    tag = "latest";
+    fromImage = nixFromDockerHub;
+    copyToRoot = pkgs.buildEnv {
+      name = "image-root";
+      pathsToLink = [ "/bin" ];
+      paths = [ pkgs.hello ];
     };
   };
 </pre>
@@ -243,15 +243,15 @@ Add Some packages to an existing image.
 
 
 
-<div id="outline-container-org5e40fdc" class="outline-4">
-<h4 id="org5e40fdc">Star intel Example</h4>
-<div class="outline-text-4" id="text-org5e40fdc">
+<div id="outline-container-orgbe45cd0" class="outline-4">
+<h4 id="orgbe45cd0">Star intel Example</h4>
+<div class="outline-text-4" id="text-orgbe45cd0">
 <p>
 Heres a real example of couchdb that runs <a href="../2022-05-28-030619-star_intel.html#ID-78157cd5-9681-4a64-b5c7-0f2b415cd446">star intel</a>.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org2285cdf"></a><span class="todo TODO">TODO</span> Add my image stuff when i get it working!<br /></li>
+<li><a id="orgaec1689"></a><span class="todo TODO">TODO</span> Add my image stuff when i get it working!<br /></li>
 </ul>
 </div>
 </div>
@@ -260,7 +260,7 @@ Heres a real example of couchdb that runs <a href="../2022-05-28-030619-star_int
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 <p class="validation"></p>
 </div>
 </body>

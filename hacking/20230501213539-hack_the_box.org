@@ -5,11 +5,11 @@
 #+SETUPFILE: /home/unseen/Documents/Notes/org/roam/org-setup.org
 
 #+CREATED: [2023-05-01 Mon 21:35]
-#+LAST_MODIFIED: [2023-06-30 Fri 00:51]
+#+LAST_MODIFIED: [2023-07-14 Fri 07:49]
 
 + [[id:c72d4e02-0e32-424c-b4b3-c471adbf4598][Index]]
 
 * Hack The Box Index
-
++ [[id:649b2dbd-a734-4ae7-804b-130af3eda21b][HTB Inject]]
 + [[id:15039615-8359-410b-a6a5-ff05f3e39465][OnlyForYou]]
 + [[id:aee06532-d97e-4bfa-8d35-6e5f30e5f957][MetaTwo]] (incomplete)

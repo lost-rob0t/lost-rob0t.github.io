@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nim-flake-example</title>
@@ -29,7 +29,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd2b964f">How to setup a nim project with flakes</a></li>
+<li><a href="#org930163d">How to setup a nim project with flakes</a></li>
 </ul>
 </div>
 </div>
@@ -37,9 +37,9 @@
 <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a>
 </p>
 
-<div id="outline-container-orgd2b964f" class="outline-2">
-<h2 id="orgd2b964f">How to setup a nim project with flakes</h2>
-<div class="outline-text-2" id="text-orgd2b964f">
+<div id="outline-container-org930163d" class="outline-2">
+<h2 id="org930163d">How to setup a nim project with flakes</h2>
+<div class="outline-text-2" id="text-org930163d">
 <p>
 flake.nix
 </p>

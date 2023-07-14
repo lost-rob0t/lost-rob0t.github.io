@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 07:43 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Graphs</title>
@@ -29,16 +29,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0261c11">Graph theory</a>
+<li><a href="#orgcf815e6">Graph theory</a>
 <ul>
-<li><a href="#org6cbff7a">Graph Basics</a>
+<li><a href="#orgc779980">Graph Basics</a>
 <ul>
-<li><a href="#org1bc60cb">Directed graph</a></li>
-<li><a href="#org7d02ff3">Undirected graph</a></li>
-<li><a href="#orgdc11266">Neighbor nodes</a></li>
-<li><a href="#orgc5743dc">Adjacency List</a></li>
-<li><a href="#orgca3e552">Algorithms</a></li>
-<li><a href="#orga9b9879">Cycles</a></li>
+<li><a href="#org98a1ad4">Directed graph</a></li>
+<li><a href="#org677c27c">Undirected graph</a></li>
+<li><a href="#org63ff857">Neighbor nodes</a></li>
+<li><a href="#org8ab9bf8">Adjacency List</a></li>
+<li><a href="#org6b2a5f9">Algorithms</a></li>
+<li><a href="#org6dbd315">Cycles</a></li>
 </ul>
 </li>
 </ul>
@@ -47,9 +47,9 @@
 </div>
 </div>
 
-<div id="outline-container-org0261c11" class="outline-2">
-<h2 id="org0261c11">Graph theory</h2>
-<div class="outline-text-2" id="text-org0261c11">
+<div id="outline-container-orgcf815e6" class="outline-2">
+<h2 id="orgcf815e6">Graph theory</h2>
+<div class="outline-text-2" id="text-orgcf815e6">
 <ul class="org-ul">
 <li>Video: <a href="https://www.youtube.com/watch?v=tWVWeAqZ0WU">https://www.youtube.com/watch?v=tWVWeAqZ0WU</a></li>
 </ul>
@@ -57,12 +57,12 @@
 In these notes i will use lisp/nim.
 </p>
 </div>
-<div id="outline-container-org6cbff7a" class="outline-3">
-<h3 id="org6cbff7a">Graph Basics</h3>
-<div class="outline-text-3" id="text-org6cbff7a">
+<div id="outline-container-orgc779980" class="outline-3">
+<h3 id="orgc779980">Graph Basics</h3>
+<div class="outline-text-3" id="text-orgc779980">
 <p>
 A grapgh is nodes and edges
-A Node would be a &ldquo;dot&rdquo; on a graph and a edge is a connection between them.
+A Node would be a "dot" on a graph and a edge is a connection between them.
 A vertex is also known as a edge.
 </p>
 
@@ -71,19 +71,19 @@ Graphs can be used for all kinds of things from social network analsis
 </p>
 </div>
 
-<div id="outline-container-org1bc60cb" class="outline-4">
-<h4 id="org1bc60cb">Directed graph</h4>
-<div class="outline-text-4" id="text-org1bc60cb">
+<div id="outline-container-org98a1ad4" class="outline-4">
+<h4 id="org98a1ad4">Directed graph</h4>
+<div class="outline-text-4" id="text-org98a1ad4">
 <p>
-An directed graph is a grapgh that has the edges have &ldquo;directions&rdquo;, where you can only move in the edge direction.
+An directed graph is a grapgh that has the edges have "directions", where you can only move in the edge direction.
 </p>
 </div>
 </div>
 
 
-<div id="outline-container-org7d02ff3" class="outline-4">
-<h4 id="org7d02ff3">Undirected graph</h4>
-<div class="outline-text-4" id="text-org7d02ff3">
+<div id="outline-container-org677c27c" class="outline-4">
+<h4 id="org677c27c">Undirected graph</h4>
+<div class="outline-text-4" id="text-org677c27c">
 <p>
 A undirected graph is where edges has no direction btween nodes
 </p>
@@ -91,9 +91,9 @@ A undirected graph is where edges has no direction btween nodes
 </div>
 
 
-<div id="outline-container-orgdc11266" class="outline-4">
-<h4 id="orgdc11266">Neighbor nodes</h4>
-<div class="outline-text-4" id="text-orgdc11266">
+<div id="outline-container-org63ff857" class="outline-4">
+<h4 id="org63ff857">Neighbor nodes</h4>
+<div class="outline-text-4" id="text-org63ff857">
 <p>
 Neighbor nodes are any node that is accessible by an edge
 </p>
@@ -112,16 +112,16 @@ A =&gt; B
 </table>
 <p>
 C
-In this example C&rsquo;s neighbor is a and A neighbor is B
-but C isnt A&rsquo;s neighbor.
+In this example C's neighbor is a and A neighbor is B
+but C isnt A's neighbor.
 </p>
 </div>
 </div>
 
 
-<div id="outline-container-orgc5743dc" class="outline-4">
-<h4 id="orgc5743dc">Adjacency List</h4>
-<div class="outline-text-4" id="text-orgc5743dc">
+<div id="outline-container-org8ab9bf8" class="outline-4">
+<h4 id="org8ab9bf8">Adjacency List</h4>
+<div class="outline-text-4" id="text-org8ab9bf8">
 <p>
 An adjancy list is a hashmap of notes as keys and list of nodes as the values.
 </p>
@@ -134,16 +134,16 @@ In common lisp I need to use a <code>vector</code> since they have faster access
 
 
 
-<div id="outline-container-orgca3e552" class="outline-4">
-<h4 id="orgca3e552">Algorithms</h4>
-<div class="outline-text-4" id="text-orgca3e552">
+<div id="outline-container-org6b2a5f9" class="outline-4">
+<h4 id="org6b2a5f9">Algorithms</h4>
+<div class="outline-text-4" id="text-org6b2a5f9">
 <ul class="org-ul">
 <li>Depth First search visits all Adjacent nodes until it reaches a leaf then it starts backtracking. it is used to tell you if you can get to a node. Goes Deep.
 <ul class="org-ul">
 <li>Uses a stack</li>
 <li>Complexity: O(n)</li>
 </ul></li>
-<li>Breadth first search goes to all its imedient neighbors first. BFS goes &ldquo;wide&rdquo;
+<li>Breadth first search goes to all its imedient neighbors first. BFS goes "wide"
 <ul class="org-ul">
 <li>Uses a queue</li>
 <li>Complexity: O(n<sup>2</sup>)</li>
@@ -153,18 +153,18 @@ In common lisp I need to use a <code>vector</code> since they have faster access
 </div>
 
 
-<div id="outline-container-orga9b9879" class="outline-4">
-<h4 id="orga9b9879">Cycles</h4>
-<div class="outline-text-4" id="text-orga9b9879">
+<div id="outline-container-org6dbd315" class="outline-4">
+<h4 id="org6dbd315">Cycles</h4>
+<div class="outline-text-4" id="text-org6dbd315">
 <p>
 A Cycle is a closed path in a graph that starts and ends at the same node.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org836a2fb"></a>Acyclic<br />
-<div class="outline-text-5" id="text-org836a2fb">
+<li><a id="orgf288af2"></a>Acyclic<br />
+<div class="outline-text-5" id="text-orgf288af2">
 <p>
-Means there are no &ldquo;cycles&rdquo;
+Means there are no "cycles"
 </p>
 </div>
 </li>
@@ -176,7 +176,7 @@ Means there are no &ldquo;cycles&rdquo;
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 <p class="validation"></p>
 </div>
 </body>

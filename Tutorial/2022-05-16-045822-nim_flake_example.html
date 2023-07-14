@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 07:43 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nim-flake-example</title>
@@ -29,7 +29,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgea9917a">How to setup a nim project with flakes</a></li>
+<li><a href="#org256e300">How to setup a nim project with flakes</a></li>
 </ul>
 </div>
 </div>
@@ -37,35 +37,35 @@
 <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a>
 </p>
 
-<div id="outline-container-orgea9917a" class="outline-2">
-<h2 id="orgea9917a">How to setup a nim project with flakes</h2>
-<div class="outline-text-2" id="text-orgea9917a">
+<div id="outline-container-org256e300" class="outline-2">
+<h2 id="org256e300">How to setup a nim project with flakes</h2>
+<div class="outline-text-2" id="text-org256e300">
 <p>
 flake.nix
 </p>
 <div class="org-src-container">
 <pre class="src src-nix">
 {
-  <span style="color: #df85ff;">description</span> = <span style="color: #7984D1;">"A very basic flake"</span>;
+  description = "A very basic flake";
 
-  <span style="color: #df85ff;">inputs.flake-utils.url</span> = <span style="color: #7984D1;">"github:numtide/flake-utils"</span>;
+  inputs.flake-utils.url = "github:numtide/flake-utils";
 
-  <span style="color: #df85ff;">outputs</span> = { self, nixpkgs, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
-      <span style="color: #ff2afc; font-weight: bold;">let</span>
-        <span style="color: #df85ff;">pkgs</span> = nixpkgs.legacyPackages.${system}; <span style="color: #ff2afc; font-weight: bold;">in</span>
-      <span style="color: #ff2afc; font-weight: bold;">rec</span> {
-        <span style="color: #df85ff;">packages</span> = flake-utils.lib.flattenTree
-          {
-            <span style="color: #df85ff;">template-nix-nim</span> = pkgs.nimPackages.buildNimPackage {
-              <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"template_nix_nim"</span>;
-              <span style="color: #df85ff;">src</span> = <span style="color: #df85ff; font-weight: bold;">./.</span>;
-            };
-          };
-        <span style="color: #df85ff;">defaultPackage</span> = packages.template-nix-nim;
-        <span style="color: #df85ff;">apps.template-nix-nim</span> = flake-utils.lib.mkApp { <span style="color: #df85ff;">drv</span> = packages.template-nix-nim; };
-        <span style="color: #df85ff;">defaultApp</span> = apps.template-nix-nim;
-        <span style="color: #df85ff;">devShell</span> = pkgs.callPackage <span style="color: #df85ff; font-weight: bold;">./shell.nix</span> { };
+      let
+	pkgs = nixpkgs.legacyPackages.${system}; in
+      rec {
+	packages = flake-utils.lib.flattenTree
+	  {
+	    template-nix-nim = pkgs.nimPackages.buildNimPackage {
+	      name = "template_nix_nim";
+	      src = ./.;
+	    };
+	  };
+	defaultPackage = packages.template-nix-nim;
+	apps.template-nix-nim = flake-utils.lib.mkApp { drv = packages.template-nix-nim; };
+	defaultApp = apps.template-nix-nim;
+	devShell = pkgs.callPackage ./shell.nix { };
       }
     );
 }
@@ -76,8 +76,8 @@ flake.nix
 shell.nix
 </p>
 <div class="org-src-container">
-<pre class="src src-nix">{ pkgs ? <span style="color: #1ea8fc;">import</span> <span style="color: #df85ff; font-weight: bold;">&lt;nixpkgs&gt;</span> { } }: pkgs.mkShell {
-  <span style="color: #df85ff;">buildInputs</span> = <span style="color: #ff2afc; font-weight: bold;">with</span> pkgs; [ nim-unwrapped nimble-unwrapped ];
+<pre class="src src-nix">{ pkgs ? import &lt;nixpkgs&gt; { } }: pkgs.mkShell {
+  buildInputs = with pkgs; [ nim-unwrapped nimble-unwrapped ];
 }
 </pre>
 </div>
@@ -91,7 +91,7 @@ Source: <a href="https://github.com/AumyF/template-nix-nim">https://github.com/A
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 <p class="validation"></p>
 </div>
 </body>

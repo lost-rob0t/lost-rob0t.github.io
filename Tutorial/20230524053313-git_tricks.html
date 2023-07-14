@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 07:43 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>git tricks</title>
@@ -29,26 +29,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4518acc">Git tricks</a>
+<li><a href="#org0f12f8a">Git tricks</a>
 <ul>
-<li><a href="#orge62e39e">Pulling Down only a few files from a large repo</a></li>
+<li><a href="#orge4e8d35">Pulling Down only a few files from a large repo</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org4518acc" class="outline-2">
-<h2 id="org4518acc">Git tricks</h2>
-<div class="outline-text-2" id="text-org4518acc">
+<div id="outline-container-org0f12f8a" class="outline-2">
+<h2 id="org0f12f8a">Git tricks</h2>
+<div class="outline-text-2" id="text-org0f12f8a">
 <p>
 This is a list of git tricks that you may or maynot need one day
 </p>
 </div>
 
 
-<div id="outline-container-orge62e39e" class="outline-3">
-<h3 id="orge62e39e">Pulling Down only a few files from a large repo</h3>
-<div class="outline-text-3" id="text-orge62e39e">
+<div id="outline-container-orge4e8d35" class="outline-3">
+<h3 id="orge4e8d35">Pulling Down only a few files from a large repo</h3>
+<div class="outline-text-3" id="text-orge4e8d35">
 <p>
 Smetimes on github you can find very large repos holding packaging data for stuff like pypi.
 </p>
@@ -57,7 +57,7 @@ Smetimes on github you can find very large repos holding packaging data for stuf
 Clone the repo, do not checkout files
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #ffd400;">git</span> clone --depth <span style="color: #ffd400; font-weight: bold;">1</span> --no-checkout --filter=blob:none &lt;repo&gt;
+<pre class="src src-shell">git clone --depth 1 --no-checkout --filter=blob:none &lt;repo&gt;
 </pre>
 </div>
 
@@ -65,7 +65,7 @@ Clone the repo, do not checkout files
 Check the files and stuff we want.
 </p>
 <div class="org-src-container">
-<pre class="src src-shell"><span style="color: #ffd400;">git</span> checkout master -- file1 file2
+<pre class="src src-shell">git checkout master -- file1 file2
 </pre>
 </div>
 </div>
@@ -75,7 +75,7 @@ Check the files and stuff we want.
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 <p class="validation"></p>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 07:43 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>elisp errors</title>
@@ -29,13 +29,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org491e3ce">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></a>
+<li><a href="#org0e8ecb6">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></a>
 <ul>
-<li><a href="#org2c26732">Raising errors</a></li>
-<li><a href="#org9dc12a0">Handling errors</a>
+<li><a href="#org105a812">Raising errors</a></li>
+<li><a href="#org060e501">Handling errors</a>
 <ul>
-<li><a href="#org21e9485">unwind-protect</a></li>
-<li><a href="#orgb407957">condition-case</a></li>
+<li><a href="#org05014b0">unwind-protect</a></li>
+<li><a href="#orga03a56a">condition-case</a></li>
 </ul>
 </li>
 </ul>
@@ -45,9 +45,9 @@
 </div>
 
 
-<div id="outline-container-org491e3ce" class="outline-2">
-<h2 id="org491e3ce">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></h2>
-<div class="outline-text-2" id="text-org491e3ce">
+<div id="outline-container-org0e8ecb6" class="outline-2">
+<h2 id="org0e8ecb6">Errors in elisp&#xa0;&#xa0;&#xa0;<span class="tag"><span class="elisp">elisp</span>&#xa0;<span class=""></span>&#xa0;<span class="errors">errors</span></span></h2>
+<div class="outline-text-2" id="text-org0e8ecb6">
 <p>
 Error handling in any language is often messy, no diffrent with elisp.
 </p>
@@ -56,18 +56,18 @@ Error handling in any language is often messy, no diffrent with elisp.
 Errors in emacs lisp are called <code>signals</code>.
 </p>
 </div>
-<div id="outline-container-org2c26732" class="outline-3">
-<h3 id="org2c26732">Raising errors</h3>
-<div class="outline-text-3" id="text-org2c26732">
+<div id="outline-container-org105a812" class="outline-3">
+<h3 id="org105a812">Raising errors</h3>
+<div class="outline-text-3" id="text-org105a812">
 <p>
-You can &ldquo;raise&rdquo; or &ldquo;signal&rdquo; with the <code>signal</code> and <code>error</code> functions.
+You can "raise" or "signal" with the <code>signal</code> and <code>error</code> functions.
 </p>
 
 <p>
 From the <code>describe-function</code> command.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">signal</span> <span style="color: #ff2afc;">'</span><span style="color: #ffd400;">wrong-type-argument</span> <span style="color: #ff2afc;">'</span><span style="color: #ff2afc;">(</span>numberp <span style="color: #7984D1;">"string"</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">signal</span> 'wrong-type-argument '(numberp <span style="font-style: italic;">"string"</span>))
 </pre>
 </div>
 
@@ -78,45 +78,45 @@ You pass a error symbol and associated dated.
 </div>
 
 
-<div id="outline-container-org9dc12a0" class="outline-3">
-<h3 id="org9dc12a0">Handling errors</h3>
-<div class="outline-text-3" id="text-org9dc12a0">
+<div id="outline-container-org060e501" class="outline-3">
+<h3 id="org060e501">Handling errors</h3>
+<div class="outline-text-3" id="text-org060e501">
 <p>
 You can handle errors with <code>unwind-protect</code> and <code>condition-case</code>.
 </p>
 </div>
 
-<div id="outline-container-org21e9485" class="outline-4">
-<h4 id="org21e9485">unwind-protect</h4>
-<div class="outline-text-4" id="text-org21e9485">
+<div id="outline-container-org05014b0" class="outline-4">
+<h4 id="org05014b0">unwind-protect</h4>
+<div class="outline-text-4" id="text-org05014b0">
 <p>
 unwind-protect is like the finally clause from other languages.
 or the <code>defer</code> statement in <a href="20220606215451-nim.html#ID-af6fae74-d03b-4930-8f39-63becb43efd9">Nim</a>.
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">unwind-protect</span>
-    <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">error</span> <span style="color: #7984D1;">"spooky error"</span><span style="color: #ff2afc;">)</span>
-  <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">insert</span> <span style="color: #7984D1;">"finally"</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unwind-protect</span>
+    (<span style="font-weight: bold;">error</span> <span style="font-style: italic;">"spooky error"</span>)
+  (insert <span style="font-style: italic;">"finally"</span>))
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgb407957" class="outline-4">
-<h4 id="orgb407957">condition-case</h4>
-<div class="outline-text-4" id="text-orgb407957">
+<div id="outline-container-orga03a56a" class="outline-4">
+<h4 id="orga03a56a">condition-case</h4>
+<div class="outline-text-4" id="text-orga03a56a">
 <p>
 <code>condition-case</code> is the try-catch from other languages.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">unwind-protect</span>
-    <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">let</span> <span style="color: #a7da1e;">(</span>retval<span style="color: #a7da1e;">)</span>
-      <span style="color: #a7da1e;">(</span><span style="color: #ff2afc; font-weight: bold;">condition-case</span> ex
-          <span style="color: #df85ff;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> retval <span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">error</span> <span style="color: #7984D1;">"Hello"</span><span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span>
-        <span style="color: #df85ff;">(</span><span style="color: #ff2afc;">'</span><span style="color: #ffd400;">error</span> <span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">message</span> <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">format</span> <span style="color: #7984D1;">"Caught exception: [%s]"</span> ex<span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span>
-        retval<span style="color: #ff2afc;">)</span>
-  <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">message</span> <span style="color: #7984D1;">"Cleaning up..."</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">unwind-protect</span>
+    (<span style="font-weight: bold;">let</span> (retval)
+      (<span style="font-weight: bold;">condition-case</span> ex
+          (<span style="font-weight: bold;">setq</span> retval (<span style="font-weight: bold;">error</span> <span style="font-style: italic;">"Hello"</span>))
+        ('error (message (format <span style="font-style: italic;">"Caught exception: [%s]"</span> ex))))
+        retval)
+  (message <span style="font-style: italic;">"Cleaning up..."</span>))
 </pre>
 </div>
 </div>
@@ -127,7 +127,7 @@ or the <code>defer</code> statement in <a href="20220606215451-nim.html#ID-af6fa
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 <p class="validation"></p>
 </div>
 </body>

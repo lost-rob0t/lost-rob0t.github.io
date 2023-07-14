@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:35 -->
+<!-- 2023-07-13 Thu 20:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Yasnippet multi choice</title>
@@ -37,7 +37,7 @@
 
 <div id="outline-container-ID-8abb8916-289a-44a1-9a4d-1ec3ebe0d8ab" class="outline-2">
 <h2 id="ID-8abb8916-289a-44a1-9a4d-1ec3ebe0d8ab">How to do multiple choice in yasnippet</h2>
-<div class="outline-text-2" id="text-orgb17628e">
+<div class="outline-text-2" id="text-orga39b70b">
 <p>
 Example from the blog
 </p>
@@ -56,7 +56,7 @@ $0
 
 <div id="outline-container-ID-ffa04a13-3a87-4052-bcfd-3d2dfcce496c" class="outline-2">
 <h2 id="ID-ffa04a13-3a87-4052-bcfd-3d2dfcce496c">References</h2>
-<div class="outline-text-2" id="text-org73a190e">
+<div class="outline-text-2" id="text-org83f32e2">
 <p>
 <a href="https://pragmaticemacs.wordpress.com/2017/06/25/multiple-choices-in-yasnippets/">https://pragmaticemacs.wordpress.com/2017/06/25/multiple-choices-in-yasnippets/</a>
 </p>

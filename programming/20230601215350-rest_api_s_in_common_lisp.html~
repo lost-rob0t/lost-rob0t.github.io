@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rest Api's in common lisp</title>
@@ -29,10 +29,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8668ac8">Rest API in common lisp</a>
+<li><a href="#orga498a64">Rest API in common lisp</a>
 <ul>
-<li><a href="#orgc27ac21">Get</a></li>
-<li><a href="#orgedbb3f9">post</a></li>
+<li><a href="#org4fb0517">Get</a></li>
+<li><a href="#org53f69cb">post</a></li>
 </ul>
 </li>
 </ul>
@@ -40,9 +40,9 @@
 </div>
 
 
-<div id="outline-container-org8668ac8" class="outline-2">
-<h2 id="org8668ac8">Rest API in common lisp</h2>
-<div class="outline-text-2" id="text-org8668ac8">
+<div id="outline-container-orga498a64" class="outline-2">
+<h2 id="orga498a64">Rest API in common lisp</h2>
+<div class="outline-text-2" id="text-orga498a64">
 <p>
 In common lisp there are many library's to complete a task, some are old but still work just fine.
 A good fast library to use is <a href="https://github.com/fukamachi/dexador">dexador</a>. It is much faster then <a href="https://github.com/edicl/drakma">drakama</a>. As for json i recommend <a href="https://github.com/madnificent/jsown">jsown</a>.
@@ -69,9 +69,9 @@ Internally it uses connection pooling and reuses connections.
 </pre>
 </div>
 </div>
-<div id="outline-container-orgc27ac21" class="outline-3">
-<h3 id="orgc27ac21">Get</h3>
-<div class="outline-text-3" id="text-orgc27ac21">
+<div id="outline-container-org4fb0517" class="outline-3">
+<h3 id="org4fb0517">Get</h3>
+<div class="outline-text-3" id="text-org4fb0517">
 <div class="org-src-container">
 <pre class="src src-lisp">(dex:get <span style="font-style: italic;">"http://lisp.org"</span>)
 </pre>
@@ -79,9 +79,9 @@ Internally it uses connection pooling and reuses connections.
 </div>
 </div>
 
-<div id="outline-container-orgedbb3f9" class="outline-3">
-<h3 id="orgedbb3f9">post</h3>
-<div class="outline-text-3" id="text-orgedbb3f9">
+<div id="outline-container-org53f69cb" class="outline-3">
+<h3 id="org53f69cb">post</h3>
+<div class="outline-text-3" id="text-org53f69cb">
 <p>
 To send formdata in a post use a association list.
 </p>

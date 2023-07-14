@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>libvirt-multi-head</title>
@@ -29,27 +29,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org26ff07a">Tutorial</a>
+<li><a href="#orgba7b7d3">Tutorial</a>
 <ul>
-<li><a href="#orgd05db52">Steps</a>
+<li><a href="#org6b49af2">Steps</a>
 <ul>
-<li><a href="#org786f19a">Install spice-vdagent</a></li>
-<li><a href="#orgad83a73">Edit the guest's configuration</a></li>
-<li><a href="#org70cdfc3">Create a new xrand output mode.</a></li>
-<li><a href="#org87a1964">Save the config</a></li>
+<li><a href="#orgc36bccf">Install spice-vdagent</a></li>
+<li><a href="#orgab347f9">Edit the guest's configuration</a></li>
+<li><a href="#orgfe21621">Create a new xrand output mode.</a></li>
+<li><a href="#org4703e04">Save the config</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org44f7b25">FootNotes</a></li>
+<li><a href="#org083cc4e">FootNotes</a></li>
 </ul>
 </div>
 </div>
 
 
-<div id="outline-container-org26ff07a" class="outline-2">
-<h2 id="org26ff07a">Tutorial</h2>
-<div class="outline-text-2" id="text-org26ff07a">
+<div id="outline-container-orgba7b7d3" class="outline-2">
+<h2 id="orgba7b7d3">Tutorial</h2>
+<div class="outline-text-2" id="text-orgba7b7d3">
 <p>
 I Had an issue where spice was not letting me use multi head setup.
 Having two monitors and i find that when playing in my hackthebox vm its annoying to only have one monitor to reasearch and pwn,
@@ -60,38 +60,38 @@ this is somthing i should fix.
 
 
 
-<div id="outline-container-orgd05db52" class="outline-3">
-<h3 id="orgd05db52">Steps</h3>
-<div class="outline-text-3" id="text-orgd05db52">
+<div id="outline-container-org6b49af2" class="outline-3">
+<h3 id="org6b49af2">Steps</h3>
+<div class="outline-text-3" id="text-org6b49af2">
 </div>
-<div id="outline-container-org786f19a" class="outline-4">
-<h4 id="org786f19a">Install spice-vdagent</h4>
-<div class="outline-text-4" id="text-org786f19a">
+<div id="outline-container-orgc36bccf" class="outline-4">
+<h4 id="orgc36bccf">Install spice-vdagent</h4>
+<div class="outline-text-4" id="text-orgc36bccf">
 </div>
 <ul class="org-ul">
-<li><a id="orgfa26f6f"></a>Nixos<br />
-<div class="outline-text-5" id="text-orgfa26f6f">
+<li><a id="org0942241"></a>Nixos<br />
+<div class="outline-text-5" id="text-org0942241">
 <p>
 On nixos just include <code>spice-vdagent</code> in your <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a> enviroment packages or your home-manager config.
 </p>
 </div>
 </li>
-<li><a id="orgd70370e"></a>Arch<br />
-<div class="outline-text-5" id="text-orgd70370e">
+<li><a id="org57d7019"></a>Arch<br />
+<div class="outline-text-5" id="text-org57d7019">
 <p>
 <code>pacman -S spice-vdagent</code>
 </p>
 </div>
 </li>
-<li><a id="orgb86ea8d"></a>Fedora<br />
-<div class="outline-text-5" id="text-orgb86ea8d">
+<li><a id="org05fbf5f"></a>Fedora<br />
+<div class="outline-text-5" id="text-org05fbf5f">
 <p>
 <code>dnf install spice-vdagent</code>
 </p>
 </div>
 </li>
-<li><a id="org7124347"></a>Ubuntu And Debian<br />
-<div class="outline-text-5" id="text-org7124347">
+<li><a id="orgc5515e3"></a>Ubuntu And Debian<br />
+<div class="outline-text-5" id="text-orgc5515e3">
 <p>
 <code>apt install spice-vdagent</code>
 </p>
@@ -101,9 +101,9 @@ On nixos just include <code>spice-vdagent</code> in your <a href="../2022-04-28-
 </div>
 
 
-<div id="outline-container-orgad83a73" class="outline-4">
-<h4 id="orgad83a73">Edit the guest's configuration</h4>
-<div class="outline-text-4" id="text-orgad83a73">
+<div id="outline-container-orgab347f9" class="outline-4">
+<h4 id="orgab347f9">Edit the guest's configuration</h4>
+<div class="outline-text-4" id="text-orgab347f9">
 <p>
 <code>sudo virsh edit --domain &lt;name of vm&gt;</code>
 </p>
@@ -138,9 +138,9 @@ to
 </div>
 
 
-<div id="outline-container-org70cdfc3" class="outline-4">
-<h4 id="org70cdfc3">Create a new xrand output mode.</h4>
-<div class="outline-text-4" id="text-org70cdfc3">
+<div id="outline-container-orgfe21621" class="outline-4">
+<h4 id="orgfe21621">Create a new xrand output mode.</h4>
+<div class="outline-text-4" id="text-orgfe21621">
 <p>
 Inside your guest it is going to show that the new output is disconected.
 you need to create a new output mode
@@ -149,7 +149,7 @@ you need to create a new output mode
 
 
 
-<div id="orgb1bbe70" class="figure">
+<div id="orgadd3129" class="figure">
 <p><img src="Tutorial/2022-08-11_01-57-30_archlinux-xrandr.png" alt="2022-08-11_01-57-30_archlinux-xrandr.png" />
 </p>
 </div>
@@ -161,7 +161,7 @@ Get the mode line for your resolution, I choose 1920x1080.
 <p>
 <code>cvt 1920 1080</code>
 </p>
-<pre class="example" id="org32c269b">
+<pre class="example" id="org31beeb0">
 Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
 </pre>
 <p>
@@ -187,15 +187,15 @@ xrandr --output Virtual-2 --mode 1920x1080_60.00
 </div>
 </div>
 
-<div id="outline-container-org87a1964" class="outline-4">
-<h4 id="org87a1964">Save the config</h4>
-<div class="outline-text-4" id="text-org87a1964">
+<div id="outline-container-org4703e04" class="outline-4">
+<h4 id="org4703e04">Save the config</h4>
+<div class="outline-text-4" id="text-org4703e04">
 <p>
 If you do not want to constantly add the new screen resolution each reboot, add it to <code>/usr/share/X11/xorg.conf.d</code> or <code>/etc/X11/xorg.conf.d/</code> in FHS based distros.
 in <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">NixOs</a> use the option <code>services.xorg.config</code>.
 </p>
 
-<pre class="example" id="org2a46075">
+<pre class="example" id="org29b6e18">
 section "Monitor"
     Identifier "Virtual-1 "
     Modeline "1920x1080_60.00"  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync
@@ -206,9 +206,9 @@ EndSection
 </div>
 </div>
 </div>
-<div id="outline-container-org44f7b25" class="outline-2">
-<h2 id="org44f7b25">FootNotes</h2>
-<div class="outline-text-2" id="text-org44f7b25">
+<div id="outline-container-org083cc4e" class="outline-2">
+<h2 id="org083cc4e">FootNotes</h2>
+<div class="outline-text-2" id="text-org083cc4e">
 <ul class="org-ul">
 <li><a href="https://elmarco.fedorapeople.org/manual.html#_multiple_monitor_support">https://elmarco.fedorapeople.org/manual.html#_multiple_monitor_support</a></li>
 <li><a href="https://access.redhat.com/discussions/1363063">https://access.redhat.com/discussions/1363063</a></li>

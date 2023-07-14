@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SQLMap</title>
@@ -29,26 +29,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc17c3e2">SQLMap</a>
+<li><a href="#org0e9a513">SQLMap</a>
 <ul>
-<li><a href="#orgb75f877">Second Order Injection</a></li>
-<li><a href="#org9bb6a0e">Bypassing WAF</a></li>
+<li><a href="#orgb2714e9">Second Order Injection</a></li>
+<li><a href="#org2bc2de3">Bypassing WAF</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc17c3e2" class="outline-2">
-<h2 id="orgc17c3e2">SQLMap</h2>
-<div class="outline-text-2" id="text-orgc17c3e2">
+<div id="outline-container-org0e9a513" class="outline-2">
+<h2 id="org0e9a513">SQLMap</h2>
+<div class="outline-text-2" id="text-org0e9a513">
 <p>
 Sqlmap is an advanced tool for finding and exploiting <a href="20221213185522-sql_injection.html#ID-81d62666-4ce8-4244-b498-739a680f9673">SQL Injection</a>.
 </p>
 </div>
 
-<div id="outline-container-orgb75f877" class="outline-3">
-<h3 id="orgb75f877">Second Order Injection</h3>
-<div class="outline-text-3" id="text-orgb75f877">
+<div id="outline-container-orgb2714e9" class="outline-3">
+<h3 id="orgb2714e9">Second Order Injection</h3>
+<div class="outline-text-3" id="text-orgb2714e9">
 <p>
 For very simple use cases you might not need a tamper script
 </p>
@@ -111,9 +111,9 @@ By using tampers you should be able to set sqlmap up for most tasks. They are ex
 </div>
 </div>
 
-<div id="outline-container-org9bb6a0e" class="outline-3">
-<h3 id="org9bb6a0e">Bypassing WAF</h3>
-<div class="outline-text-3" id="text-org9bb6a0e">
+<div id="outline-container-org2bc2de3" class="outline-3">
+<h3 id="org2bc2de3">Bypassing WAF</h3>
+<div class="outline-text-3" id="text-org2bc2de3">
 <p>
 Checkout the different tamper scripts that can modify the requests.
 </p>

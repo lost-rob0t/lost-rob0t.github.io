@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-14 Fri 07:43 -->
+<!-- 2023-07-14 Fri 07:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>jsown</title>
@@ -29,17 +29,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org792fa88">JSOWN</a>
+<li><a href="#orgcaaf741">JSOWN</a>
 <ul>
-<li><a href="#org320cce8">Creating, parsing and reading.</a></li>
+<li><a href="#orgcdd109e">Creating, parsing and reading.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org792fa88" class="outline-2">
-<h2 id="org792fa88">JSOWN</h2>
-<div class="outline-text-2" id="text-org792fa88">
+<div id="outline-container-orgcaaf741" class="outline-2">
+<h2 id="orgcaaf741">JSOWN</h2>
+<div class="outline-text-2" id="text-orgcaaf741">
 <p>
 This is my preferred <a href="20230601220331-json.html#ID-60758dc6-c4eb-4b34-9b56-fff31f17ef1d">json</a> library.
 From the readme:
@@ -50,7 +50,7 @@ jsown is a high performance common lisp json parser.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">  <span style="color: #1ea8fc;">(</span>jsown:parse <span style="color: #7984D1;">"{\"foo\":\"bar\",\"baz\":100.25}"</span><span style="color: #1ea8fc;">)</span>
+<pre class="src src-lisp">(jsown:parse <span style="font-style: italic;">"{\"foo\":\"bar\",\"baz\":100.25}"</span>)
 </pre>
 </div>
 <p>
@@ -58,23 +58,23 @@ Without any extra arguments, the parse function will return all keywords. In ord
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">  <span style="color: #1ea8fc;">(</span>jsown:parse <span style="color: #7984D1;">"{\"foo\":\"bar\",\"frolic\":100,\"fragrance\":10.01,\"for\":\"markup\"}"</span> <span style="color: #7984D1;">"foo"</span> <span style="color: #7984D1;">"frolic"</span> <span style="color: #7984D1;">"fragrance"</span><span style="color: #1ea8fc;">)</span>
+<pre class="src src-lisp">(jsown:parse <span style="font-style: italic;">"{\"foo\":\"bar\",\"frolic\":100,\"fragrance\":10.01,\"for\":\"markup\"}"</span> <span style="font-style: italic;">"foo"</span> <span style="font-style: italic;">"frolic"</span> <span style="font-style: italic;">"fragrance"</span>)
 
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org320cce8" class="outline-3">
-<h3 id="org320cce8">Creating, parsing and reading.</h3>
-<div class="outline-text-3" id="text-org320cce8">
+<div id="outline-container-orgcdd109e" class="outline-3">
+<h3 id="orgcdd109e">Creating, parsing and reading.</h3>
+<div class="outline-text-3" id="text-orgcdd109e">
 <p>
 You can make a new json object with <code>new-js</code> and <code>extend-js</code>.
 This is really the killer reason I use <code>jsown</code>.
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp"><span style="color: #1ea8fc;">(</span>jsown:new-js
-  <span style="color: #ff2afc;">(</span><span style="color: #7984D1;">"org"</span> <span style="color: #7984D1;">"roam"</span><span style="color: #ff2afc;">)</span>
-  <span style="color: #ff2afc;">(</span><span style="color: #7984D1;">"results"</span> <span style="color: #a7da1e;">(</span>* <span style="color: #ffd400; font-weight: bold;">100</span> <span style="color: #ffd400; font-weight: bold;">2.25</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<pre class="src src-lisp">(jsown:new-js
+  (<span style="font-style: italic;">"org"</span> <span style="font-style: italic;">"roam"</span>)
+  (<span style="font-style: italic;">"results"</span> (* 100 2.25)))
 </pre>
 </div>
 
@@ -83,9 +83,9 @@ You can turn that into json like this.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp"><span style="color: #1ea8fc;">(</span>jsown:to-json <span style="color: #ff2afc;">(</span>jsown:new-js
-                     <span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"org"</span> <span style="color: #7984D1;">"roam"</span><span style="color: #a7da1e;">)</span>
-                     <span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"results"</span> <span style="color: #df85ff;">(</span>* <span style="color: #ffd400; font-weight: bold;">100</span> <span style="color: #ffd400; font-weight: bold;">2.25</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<pre class="src src-lisp">(jsown:to-json (jsown:new-js
+                     (<span style="font-style: italic;">"org"</span> <span style="font-style: italic;">"roam"</span>)
+                     (<span style="font-style: italic;">"results"</span> (* 100 2.25))))
 
 </pre>
 </div>
@@ -98,9 +98,9 @@ You can read values using the <code>val</code> function
 Here is a more complete example.
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp"><span style="color: #1ea8fc;">(</span>setq data <span style="color: #ff2afc;">(</span>jsown:to-json <span style="color: #a7da1e;">(</span>jsown:new-js <span style="color: #df85ff;">(</span><span style="color: #7984D1;">"foo"</span> <span style="color: #7984D1;">"bar"</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
-<span style="color: #1ea8fc;">(</span>setq json-data <span style="color: #ff2afc;">(</span>jsown:parse data<span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
-<span style="color: #1ea8fc;">(</span>jsown:val json-data <span style="color: #7984D1;">"foo"</span><span style="color: #1ea8fc;">)</span>
+<pre class="src src-lisp">(setq data (jsown:to-json (jsown:new-js (<span style="font-style: italic;">"foo"</span> <span style="font-style: italic;">"bar"</span>))))
+(setq json-data (jsown:parse data))
+(jsown:val json-data <span style="font-style: italic;">"foo"</span>)
 </pre>
 </div>
 
@@ -115,7 +115,7 @@ The <code>to-json</code> json is a clos method so you can override that and add 
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
 <p class="validation"></p>
 </div>
 </body>
