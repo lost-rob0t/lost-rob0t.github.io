@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Read stdin</title>
@@ -29,19 +29,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd2a12a7">How to use stdin in nim&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nim">nim</span></span></a></li>
+<li><a href="#org5d9cdf4">How to use stdin in nim&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nim">nim</span></span></a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd2a12a7" class="outline-2">
-<h2 id="orgd2a12a7">How to use stdin in nim&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nim">nim</span></span></h2>
-<div class="outline-text-2" id="text-orgd2a12a7">
+<div id="outline-container-org5d9cdf4" class="outline-2">
+<h2 id="org5d9cdf4">How to use stdin in nim&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nim">nim</span></span></h2>
+<div class="outline-text-2" id="text-org5d9cdf4">
 <p>
 you can use the <code>isatty</code> proc from the terminal module
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nim">proc isatty(f: File): bool {.raises: [], tags: [].}
+<pre class="src src-nim"><span style="color: #ff2afc; font-weight: bold;">proc</span> <span style="color: #42c6ff;">isatty</span>(f: <span style="color: #ffd400;">File</span>): <span style="color: #ffd400;">bool</span> {.<span style="color: #ff2afc; font-weight: bold;">raises</span>: [], <span style="color: #ff2afc; font-weight: bold;">tags</span>: [].}
 </pre>
 </div>
 
@@ -57,26 +57,26 @@ you can also check the file id (35 for terminal) but is unreliable
 Example from <a href="https://scripter.co/nim-check-if-stdin-stdout-are-associated-with-terminal-or-pipe/">here</a>.
 </p>
 <div class="org-src-container">
-<pre class="src src-nim"># Figuring out if input is coming from a pipe and if output is going to a pipe.
-import std/[terminal, strutils]
+<pre class="src src-nim"><span style="color: #546A90;"># </span><span style="color: #546A90;">Figuring out if input is coming from a pipe and if output is going to a pipe.</span>
+<span style="color: #ff2afc; font-weight: bold;">import</span> std/[terminal, strutils]
 
-if isatty(stdin):
-  # ./stdin_stdout foo
-  # ./stdin_stdout foo | cat
-  echo "--&gt; Input from terminal"
-else:
-  # echo bar | ./stdin_stdout
-  # echo bar | ./stdin_stdout | cat
-  echo "--&gt; Input from a PIPE/FILE: `" &amp; readAll(stdin).strip() &amp; "'"
+<span style="color: #ff2afc; font-weight: bold;">if</span> isatty(<span style="color: #df85ff;">stdin</span>):
+  <span style="color: #546A90;"># </span><span style="color: #546A90;">./stdin_stdout foo</span>
+  <span style="color: #546A90;"># </span><span style="color: #546A90;">./stdin_stdout foo | cat</span>
+  <span style="color: #1ea8fc;">echo</span> <span style="color: #7984D1;">"--&gt; Input from terminal"</span>
+<span style="color: #ff2afc; font-weight: bold;">else</span>:
+  <span style="color: #546A90;"># </span><span style="color: #546A90;">echo bar | ./stdin_stdout</span>
+  <span style="color: #546A90;"># </span><span style="color: #546A90;">echo bar | ./stdin_stdout | cat</span>
+  <span style="color: #1ea8fc;">echo</span> <span style="color: #7984D1;">"--&gt; Input from a PIPE/FILE: `"</span> &amp; <span style="color: #1ea8fc;">readAll</span>(<span style="color: #df85ff;">stdin</span>).strip() &amp; <span style="color: #7984D1;">"'"</span>
 
-if isatty(stdout):
-  # ./stdin_stdout foo
-  # echo bar | ./stdin_stdout foo
-  echo "    Output to terminal --&gt;"
-else:
-  # ./stdin_stdout | cat
-  # echo bar | ./stdin_stdout | cat
-  echo "    Output to a PIPE --&gt;"
+<span style="color: #ff2afc; font-weight: bold;">if</span> isatty(<span style="color: #df85ff;">stdout</span>):
+  <span style="color: #546A90;"># </span><span style="color: #546A90;">./stdin_stdout foo</span>
+  <span style="color: #546A90;"># </span><span style="color: #546A90;">echo bar | ./stdin_stdout foo</span>
+  <span style="color: #1ea8fc;">echo</span> <span style="color: #7984D1;">"    Output to terminal --&gt;"</span>
+<span style="color: #ff2afc; font-weight: bold;">else</span>:
+  <span style="color: #546A90;"># </span><span style="color: #546A90;">./stdin_stdout | cat</span>
+  <span style="color: #546A90;"># </span><span style="color: #546A90;">echo bar | ./stdin_stdout | cat</span>
+  <span style="color: #1ea8fc;">echo</span> <span style="color: #7984D1;">"    Output to a PIPE --&gt;"</span>
 </pre>
 </div>
 
@@ -86,28 +86,28 @@ In my code i use it in jdump
 
 <div class="org-src-container">
 <pre class="src src-nim">
-proc main(mode: string = "file", input: seq[string]) =
-  if isatty(stdin):
-    for file in input:
-      let o = open(file, fmRead)
-      for line in o.lines:
-	var t = ""
-	try:
-	  echo format(line.parseJson, 2, t)
-	except JsonParsingError:
-	  discard
-	  when defined(debug):
-	    echo line
-      o.close
-  else:
-    for line in stdin.lines:
-      var t = ""
-      try:
-	echo format(line.parseJson, 2, t)
-      except JsonParsingError:
-	discard
-	when defined(debug):
-	  echo line
+<span style="color: #ff2afc; font-weight: bold;">proc</span> <span style="color: #42c6ff;">main</span>(mode: <span style="color: #ffd400;">string</span> = <span style="color: #7984D1;">"file"</span>, input: <span style="color: #ffd400;">seq</span>[<span style="color: #ffd400;">string</span>]) =
+  <span style="color: #ff2afc; font-weight: bold;">if</span> isatty(<span style="color: #df85ff;">stdin</span>):
+    <span style="color: #ff2afc; font-weight: bold;">for</span> file <span style="color: #ff2afc; font-weight: bold;">in</span> input:
+      <span style="color: #ff2afc; font-weight: bold;">let</span> <span style="color: #df85ff;">o </span>= <span style="color: #1ea8fc;">open</span>(file, fmRead)
+      <span style="color: #ff2afc; font-weight: bold;">for</span> line <span style="color: #ff2afc; font-weight: bold;">in</span> o.<span style="color: #1ea8fc;">lines</span>:
+        <span style="color: #ff2afc; font-weight: bold;">var</span> <span style="color: #df85ff;">t </span>= <span style="color: #7984D1;">""</span>
+        <span style="color: #ff2afc; font-weight: bold;">try</span>:
+          <span style="color: #1ea8fc;">echo</span> format(line.parseJson, <span style="color: #ffd400; font-weight: bold;">2</span>, t)
+        <span style="color: #ff2afc; font-weight: bold;">except</span> <span style="color: #ffd400;">JsonParsingError</span>:
+          <span style="color: #ff2afc; font-weight: bold;">discard</span>
+          <span style="color: #ff2afc; font-weight: bold;">when</span> <span style="color: #1ea8fc; font-style: italic;">defined</span>(debug):
+            <span style="color: #1ea8fc;">echo</span> line
+      o.<span style="color: #1ea8fc;">close</span>
+  <span style="color: #ff2afc; font-weight: bold;">else</span>:
+    <span style="color: #ff2afc; font-weight: bold;">for</span> line <span style="color: #ff2afc; font-weight: bold;">in</span> <span style="color: #df85ff;">stdin</span>.<span style="color: #1ea8fc;">lines</span>:
+      <span style="color: #ff2afc; font-weight: bold;">var</span> <span style="color: #df85ff;">t </span>= <span style="color: #7984D1;">""</span>
+      <span style="color: #ff2afc; font-weight: bold;">try</span>:
+        <span style="color: #1ea8fc;">echo</span> format(line.parseJson, <span style="color: #ffd400; font-weight: bold;">2</span>, t)
+      <span style="color: #ff2afc; font-weight: bold;">except</span> <span style="color: #ffd400;">JsonParsingError</span>:
+        <span style="color: #ff2afc; font-weight: bold;">discard</span>
+        <span style="color: #ff2afc; font-weight: bold;">when</span> <span style="color: #1ea8fc; font-style: italic;">defined</span>(debug):
+          <span style="color: #1ea8fc;">echo</span> line
 </pre>
 </div>
 
@@ -120,7 +120,7 @@ Yeah the amount of nesting here lol.
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Rest Api's in common lisp</title>
@@ -24,15 +24,15 @@
 </nav>
 </div>
 <div id="content" class="content">
-<h1 class="title">Rest Api's in common lisp</h1>
+<h1 class="title">Rest Api&rsquo;s in common lisp</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge51f387">Rest API in common lisp</a>
+<li><a href="#orgf693d40">Rest API in common lisp</a>
 <ul>
-<li><a href="#org8eeb2a8">Get</a></li>
-<li><a href="#orge683fab">post</a></li>
+<li><a href="#orgd7c8472">Get</a></li>
+<li><a href="#org69ebd0e">post</a></li>
 </ul>
 </li>
 </ul>
@@ -40,11 +40,11 @@
 </div>
 
 
-<div id="outline-container-orge51f387" class="outline-2">
-<h2 id="orge51f387">Rest API in common lisp</h2>
-<div class="outline-text-2" id="text-orge51f387">
+<div id="outline-container-orgf693d40" class="outline-2">
+<h2 id="orgf693d40">Rest API in common lisp</h2>
+<div class="outline-text-2" id="text-orgf693d40">
 <p>
-In common lisp there are many library's to complete a task, some are old but still work just fine.
+In common lisp there are many library&rsquo;s to complete a task, some are old but still work just fine.
 A good fast library to use is <a href="https://github.com/fukamachi/dexador">dexador</a>. It is much faster then <a href="https://github.com/edicl/drakma">drakama</a>. As for json i recommend <a href="https://github.com/madnificent/jsown">jsown</a>.
 </p>
 
@@ -62,45 +62,45 @@ Internally it uses connection pooling and reuses connections.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(ql:quickload '(<span style="font-weight: bold;">:dexador</span> <span style="font-weight: bold;">:cl-json</span>))
-(dex:post <span style="font-style: italic;">"https://httpbin.org/post"</span>
-          <span style="font-weight: bold;">:headers</span> '((<span style="font-weight: bold;">:content-type</span> . <span style="font-style: italic;">"application/json"</span>))
-          <span style="font-weight: bold;">:content</span> &lt;json-data&gt;)
+<pre class="src src-lisp"><span style="color: #1ea8fc;">(</span>ql:quickload '<span style="color: #ff2afc;">(</span><span style="color: #1ea8fc;">:dexador</span> <span style="color: #1ea8fc;">:cl-json</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span>dex:post <span style="color: #7984D1;">"https://httpbin.org/post"</span>
+          <span style="color: #1ea8fc;">:headers</span> '<span style="color: #ff2afc;">(</span><span style="color: #a7da1e;">(</span><span style="color: #1ea8fc;">:content-type</span> . <span style="color: #7984D1;">"application/json"</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span>
+          <span style="color: #1ea8fc;">:content</span> &lt;json-data&gt;<span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 </div>
-<div id="outline-container-org8eeb2a8" class="outline-3">
-<h3 id="org8eeb2a8">Get</h3>
-<div class="outline-text-3" id="text-org8eeb2a8">
+<div id="outline-container-orgd7c8472" class="outline-3">
+<h3 id="orgd7c8472">Get</h3>
+<div class="outline-text-3" id="text-orgd7c8472">
 <div class="org-src-container">
-<pre class="src src-lisp">(dex:get <span style="font-style: italic;">"http://lisp.org"</span>)
+<pre class="src src-lisp"><span style="color: #1ea8fc;">(</span>dex:get <span style="color: #7984D1;">"http://lisp.org"</span><span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge683fab" class="outline-3">
-<h3 id="orge683fab">post</h3>
-<div class="outline-text-3" id="text-orge683fab">
+<div id="outline-container-org69ebd0e" class="outline-3">
+<h3 id="org69ebd0e">post</h3>
+<div class="outline-text-3" id="text-org69ebd0e">
 <p>
 To send formdata in a post use a association list.
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp">(dex:post <span style="font-style: italic;">"https://httpbin.org/anything/post"</span>  <span style="font-weight: bold;">:content</span> '((<span style="font-style: italic;">"hello"</span> . <span style="font-style: italic;">"world"</span>)))
+<pre class="src src-lisp"><span style="color: #1ea8fc;">(</span>dex:post <span style="color: #7984D1;">"https://httpbin.org/anything/post"</span>  <span style="color: #1ea8fc;">:content</span> '<span style="color: #ff2afc;">(</span><span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"hello"</span> . <span style="color: #7984D1;">"world"</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 <p>
-"{
-  "args": {},
-  "data": "",
-  "files": {},
-  "form": {
-    "hello": "world"
+&ldquo;{
+  &rdquo;args&ldquo;: {},
+  &rdquo;data&ldquo;: &rdquo;&ldquo;,
+  &rdquo;files&ldquo;: {},
+  &rdquo;form&ldquo;: {
+    &rdquo;hello&ldquo;: &rdquo;world&ldquo;
   },
-  "headers": {
-    "Accept": "<b>/</b>",
-    "Content-Length": "11",
-    "Content-Type": "application/x-www-form-url&#x2026;[sly-elided string of length 499]"
+  &rdquo;headers&ldquo;: {
+    &rdquo;Accept&ldquo;: &rdquo;<b>/</b>&ldquo;,
+    &rdquo;Content-Length&ldquo;: &rdquo;11&ldquo;,
+    &rdquo;Content-Type&ldquo;: &rdquo;application/x-www-form-url&#x2026;[sly-elided string of length 499]&ldquo;
 200
 #&lt;HASH-TABLE :TEST EQUAL :COUNT 7 {1003F9A5A3}&gt;
 #&lt;QURI.URI.<a href="URI-HTTPS">URI-HTTPS</a> <a href="https://httpbin.org/anything/post">https://httpbin.org/anything/post</a>&gt;
@@ -111,12 +111,12 @@ NIL
 To use json you need to set the appropriate headers.
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp">(setq *headers*  '((<span style="font-style: italic;">"accept"</span> . <span style="font-style: italic;">"application/json"</span>)
-                   (<span style="font-style: italic;">"Content-Type"</span> . <span style="font-style: italic;">"application/json"</span>)))
+<pre class="src src-lisp"><span style="color: #1ea8fc;">(</span>setq *headers*  '<span style="color: #ff2afc;">(</span><span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"accept"</span> . <span style="color: #7984D1;">"application/json"</span><span style="color: #a7da1e;">)</span>
+                   <span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"Content-Type"</span> . <span style="color: #7984D1;">"application/json"</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 <p>
-(("accept" . "application/json") ("Content-Type" . "application/json"))
+((&ldquo;accept&rdquo; . &ldquo;application/json&rdquo;) (&ldquo;Content-Type&rdquo; . &ldquo;application/json&rdquo;))
 </p>
 
 <p>
@@ -124,20 +124,20 @@ Then you can pass the headers and json like so
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp">(ql:quickload <span style="font-weight: bold;">:jsown</span>)
-(dex:post <span style="font-style: italic;">"https://httpbin.org/anything/post"</span> <span style="font-weight: bold;">:headers</span> *headers*  <span style="font-weight: bold;">:content</span> (jsown:to-json (jsown:new-js (<span style="font-style: italic;">"key"</span> <span style="font-style: italic;">"value"</span>))))
+<pre class="src src-lisp"><span style="color: #1ea8fc;">(</span>ql:quickload <span style="color: #1ea8fc;">:jsown</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span>dex:post <span style="color: #7984D1;">"https://httpbin.org/anything/post"</span> <span style="color: #1ea8fc;">:headers</span> *headers*  <span style="color: #1ea8fc;">:content</span> <span style="color: #ff2afc;">(</span>jsown:to-json <span style="color: #a7da1e;">(</span>jsown:new-js <span style="color: #df85ff;">(</span><span style="color: #7984D1;">"key"</span> <span style="color: #7984D1;">"value"</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 <p>
-"{
-  "args": {},
-  "data": "{\"key\":\"value\"}",
-  "files": {},
-  "form": {},
-  "headers": {
-    "Accept": "application/json",
-    "Content-Length": "15",
-    "Content-Type": "application/json",&#x2026;[sly-elided string of length 510]"
+&ldquo;{
+  &rdquo;args&ldquo;: {},
+  &rdquo;data&ldquo;: &rdquo;{\&ldquo;key\&rdquo;:\&ldquo;value\&rdquo;}&ldquo;,
+  &rdquo;files&ldquo;: {},
+  &rdquo;form&ldquo;: {},
+  &rdquo;headers&ldquo;: {
+    &rdquo;Accept&ldquo;: &rdquo;application/json&ldquo;,
+    &rdquo;Content-Length&ldquo;: &rdquo;15&ldquo;,
+    &rdquo;Content-Type&ldquo;: &rdquo;application/json&ldquo;,&#x2026;[sly-elided string of length 510]&rdquo;
 200
 #&lt;HASH-TABLE :TEST EQUAL :COUNT 7 {1004198BC3}&gt;
 #&lt;QURI.URI.<a href="URI-HTTPS">URI-HTTPS</a> <a href="https://httpbin.org/anything/post">https://httpbin.org/anything/post</a>&gt;
@@ -160,7 +160,7 @@ NIL
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

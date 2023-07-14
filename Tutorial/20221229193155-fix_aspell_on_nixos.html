@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fix Aspell on nixos</title>
@@ -29,14 +29,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgb34e91d">How to fix aspell on nixos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class=""></span>&#xa0;<span class="nixos">nixos</span></span></a>
+<li><a href="#org786fb08">How to fix aspell on nixos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class=""></span>&#xa0;<span class="nixos">nixos</span></span></a>
 <ul>
-<li><a href="#org55c5af0">Steps to fix it</a>
+<li><a href="#orgb8fdc42">Steps to fix it</a>
 <ul>
-<li><a href="#orgef305f7">systemwide</a></li>
-<li><a href="#orgb16a447">home-manager</a></li>
-<li><a href="#orgf2f4ef4">Fix not being able to save a personal word</a></li>
-<li><a href="#org054518b">Emacs setup</a></li>
+<li><a href="#orge81b4b5">systemwide</a></li>
+<li><a href="#org716dcc4">home-manager</a></li>
+<li><a href="#org959ef5c">Fix not being able to save a personal word</a></li>
+<li><a href="#org0dbeaea">Emacs setup</a></li>
 </ul>
 </li>
 </ul>
@@ -44,29 +44,29 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb34e91d" class="outline-2">
-<h2 id="orgb34e91d">How to fix aspell on nixos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class=""></span>&#xa0;<span class="nixos">nixos</span></span></h2>
-<div class="outline-text-2" id="text-orgb34e91d">
+<div id="outline-container-org786fb08" class="outline-2">
+<h2 id="org786fb08">How to fix aspell on nixos&#xa0;&#xa0;&#xa0;<span class="tag"><span class="emacs">emacs</span>&#xa0;<span class=""></span>&#xa0;<span class="nixos">nixos</span></span></h2>
+<div class="outline-text-2" id="text-org786fb08">
 <p>
 I was trying to use aspell for spell checking on nixos with emacs and i could not get it to find the path to the apsell.
 </p>
 </div>
 
-<div id="outline-container-org55c5af0" class="outline-3">
-<h3 id="org55c5af0">Steps to fix it</h3>
-<div class="outline-text-3" id="text-org55c5af0">
+<div id="outline-container-orgb8fdc42" class="outline-3">
+<h3 id="orgb8fdc42">Steps to fix it</h3>
+<div class="outline-text-3" id="text-orgb8fdc42">
 <p>
 These steps should fix it.
 </p>
 </div>
-<div id="outline-container-orgef305f7" class="outline-4">
-<h4 id="orgef305f7">systemwide</h4>
-<div class="outline-text-4" id="text-orgef305f7">
+<div id="outline-container-orge81b4b5" class="outline-4">
+<h4 id="orge81b4b5">systemwide</h4>
+<div class="outline-text-4" id="text-orge81b4b5">
 <p>
 include in your system packages.
 </p>
 <div class="org-src-container">
-<pre class="src src-nix">environment.systemPackages = with pkgs; [
+<pre class="src src-nix"><span style="color: #df85ff;">environment.systemPackages</span> = <span style="color: #ff2afc; font-weight: bold;">with</span> pkgs; [
     aspell
     aspellDicts.en
 ]
@@ -74,22 +74,22 @@ include in your system packages.
 </div>
 </div>
 </div>
-<div id="outline-container-orgb16a447" class="outline-4">
-<h4 id="orgb16a447">home-manager</h4>
-<div class="outline-text-4" id="text-orgb16a447">
+<div id="outline-container-org716dcc4" class="outline-4">
+<h4 id="org716dcc4">home-manager</h4>
+<div class="outline-text-4" id="text-org716dcc4">
 <div class="org-src-container">
-<pre class="src src-nix"># ~/.config/nixpkgs/home.nix
+<pre class="src src-nix"><span style="color: #546A90;"># </span><span style="color: #546A90;">~/.config/nixpkgs/home.nix</span>
 { config, pkgs, ... }:
 {
-  # ..
-  home.packages = with pkgs; [
-    # ..
+  <span style="color: #546A90;"># ..</span>
+  <span style="color: #df85ff;">home.packages</span> = <span style="color: #ff2afc; font-weight: bold;">with</span> pkgs; [
+    <span style="color: #546A90;"># ..</span>
     aspell
     aspellDicts.en
   ];
 
-  home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
-  # ..
+  home.file.<span style="color: #7984D1;">".aspell.conf"</span>.<span style="color: #df85ff;">text</span> = <span style="color: #7984D1;">"data-dir </span><span style="color: #ff2afc; font-weight: bold;">${</span>pkgs.aspell<span style="color: #ff2afc; font-weight: bold;">}</span><span style="color: #7984D1;">/lib/aspell"</span>;
+  <span style="color: #546A90;"># ..</span>
 }
 </pre>
 </div>
@@ -97,42 +97,42 @@ include in your system packages.
 </div>
 
 
-<div id="outline-container-orgf2f4ef4" class="outline-4">
-<h4 id="orgf2f4ef4">Fix not being able to save a personal word</h4>
-<div class="outline-text-4" id="text-orgf2f4ef4">
+<div id="outline-container-org959ef5c" class="outline-4">
+<h4 id="org959ef5c">Fix not being able to save a personal word</h4>
+<div class="outline-text-4" id="text-org959ef5c">
 <p>
 create a pws and setq it
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">mkdir -p ~/.emacs.d/.local/etc/ispell &amp;&amp; touch ~/.emacs.d/.local/etc/ispell/.pws
+<pre class="src src-shell"><span style="color: #ffd400;">mkdir</span> -p ~/.emacs.d/.local/etc/ispell &amp;&amp; <span style="color: #ffd400;">touch</span> ~/.emacs.d/.local/etc/ispell/.pws
 </pre>
 </div>
 <p>
 Be sure that the file is in aspells personal word dictionary format!
 basically just include this at the top of the pws file.
 </p>
-<pre class="example" id="orgbed7ee8">
+<pre class="example" id="orga9e248f">
 personal_ws-1.1 en 1 utf-8
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org054518b" class="outline-4">
-<h4 id="org054518b">Emacs setup</h4>
-<div class="outline-text-4" id="text-org054518b">
+<div id="outline-container-org0dbeaea" class="outline-4">
+<h4 id="org0dbeaea">Emacs setup</h4>
+<div class="outline-text-4" id="text-org0dbeaea">
 <p>
 The following is from my emacs config
 Make sure its using aspell
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> ispell-program-name <span style="font-style: italic;">"aspell"</span>)
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">ispell-program-name</span> <span style="color: #7984D1;">"aspell"</span><span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 <p>
 Set dictionary
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> ispell-dictionary <span style="font-style: italic;">"en"</span>)
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">ispell-dictionary</span> <span style="color: #7984D1;">"en"</span><span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 
@@ -140,7 +140,7 @@ Set dictionary
 Set personal dictionary
 </p>
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">setq</span> ispell-personal-dictionary <span style="font-style: italic;">"~/.aspell.en_us.pws"</span>)
+<pre class="src src-emacs-lisp"> <span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">setq</span> <span style="color: #df85ff;">ispell-personal-dictionary</span> <span style="color: #7984D1;">"~/.aspell.en_us.pws"</span><span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 
@@ -149,11 +149,11 @@ Spell fu setup
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(add-hook 'spell-fu-mode-hook
-  (<span style="font-weight: bold;">lambda</span> ()
-    (spell-fu-dictionary-add (spell-fu-get-ispell-dictionary <span style="font-style: italic;">"en"</span>))
-    (spell-fu-dictionary-add
-      (spell-fu-get-personal-dictionary <span style="font-style: italic;">"en-personal"</span> <span style="font-style: italic;">"~/.aspell.en_us.pws"</span>))))
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">add-hook</span> <span style="color: #ff2afc;">'</span><span style="color: #ffd400;">spell-fu-mode-hook</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">lambda</span> <span style="color: #a7da1e;">(</span><span style="color: #a7da1e;">)</span>
+    <span style="color: #a7da1e;">(</span>spell-fu-dictionary-add <span style="color: #df85ff;">(</span>spell-fu-get-ispell-dictionary <span style="color: #7984D1;">"en"</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span>
+    <span style="color: #a7da1e;">(</span>spell-fu-dictionary-add
+      <span style="color: #df85ff;">(</span>spell-fu-get-personal-dictionary <span style="color: #7984D1;">"en-personal"</span> <span style="color: #7984D1;">"~/.aspell.en_us.pws"</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 </div>
@@ -164,7 +164,7 @@ Spell fu setup
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

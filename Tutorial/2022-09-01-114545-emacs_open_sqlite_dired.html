@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs open sqlite dired</title>
@@ -29,11 +29,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgcaa4007">How to open sqlite files with dir</a>
+<li><a href="#org2d68134">How to open sqlite files with dir</a>
 <ul>
-<li><a href="#org07aab25">Methods</a>
+<li><a href="#orga96089f">Methods</a>
 <ul>
-<li><a href="#org24012bf">Sqlite dired</a></li>
+<li><a href="#org1ecf558">Sqlite dired</a></li>
 </ul>
 </li>
 </ul>
@@ -45,9 +45,9 @@
 <li></li>
 </ul>
 
-<div id="outline-container-orgcaa4007" class="outline-2">
-<h2 id="orgcaa4007">How to open sqlite files with dir</h2>
-<div class="outline-text-2" id="text-orgcaa4007">
+<div id="outline-container-org2d68134" class="outline-2">
+<h2 id="org2d68134">How to open sqlite files with dir</h2>
+<div class="outline-text-2" id="text-org2d68134">
 <p>
 So i locked myself out of my gitea again, phone got wiped by mistake with a opsec tool called wasted, whiped itself while it wass in my hand!
 </p>
@@ -55,31 +55,31 @@ So i locked myself out of my gitea again, phone got wiped by mistake with a opse
 
 
 
-<div id="outline-container-org07aab25" class="outline-3">
-<h3 id="org07aab25">Methods</h3>
-<div class="outline-text-3" id="text-org07aab25">
+<div id="outline-container-orga96089f" class="outline-3">
+<h3 id="orga96089f">Methods</h3>
+<div class="outline-text-3" id="text-orga96089f">
 </div>
-<div id="outline-container-org24012bf" class="outline-4">
-<h4 id="org24012bf">Sqlite dired</h4>
-<div class="outline-text-4" id="text-org24012bf">
+<div id="outline-container-org1ecf558" class="outline-4">
+<h4 id="org1ecf558">Sqlite dired</h4>
+<div class="outline-text-4" id="text-org1ecf558">
 <p>
 In <a href="https://www.reddit.com/r/emacs/comments/rlwipm/comment/hpjo30x">this</a> post a reddit user was kind enough to share a snippet to do just this
 </p>
 
 <div class="org-src-container">
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">when</span> (functionp 'sqlite-available-p)
-  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">sqlite-mode</span>)
-  (<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">sqlite-file-p</span> ()
-    (<span style="font-weight: bold;">let*</span> ((ms <span style="font-style: italic;">"SQLite format 3"</span>)
-           (msl (length ms)))
-      (<span style="font-weight: bold;">and</span> (&gt; (point-max) msl)
-           (string= (buffer-substring 1 (1+ msl))
-                    ms))))
-  (<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">sqlite-mode-open-file*</span> ()
-    (<span style="font-weight: bold;">let</span> ((f (buffer-file-name)))
-      (kill-buffer (current-buffer))
-      (sqlite-mode-open-file f)))
-  (add-to-list 'magic-mode-alist '(sqlite-file-p . sqlite-mode-open-file*)))
+<pre class="src src-emacs-lisp"><span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">when</span> <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">functionp</span> <span style="color: #ff2afc;">'</span><span style="color: #ffd400;">sqlite-available-p</span><span style="color: #ff2afc;">)</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">require</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff; font-weight: bold;">sqlite-mode</span><span style="color: #ff2afc;">)</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">defun</span> <span style="color: #42c6ff;">sqlite-file-p</span> <span style="color: #a7da1e;">(</span><span style="color: #a7da1e;">)</span>
+    <span style="color: #a7da1e;">(</span><span style="color: #ff2afc; font-weight: bold;">let*</span> <span style="color: #df85ff;">(</span><span style="color: #1ea8fc;">(</span>ms <span style="color: #7984D1;">"SQLite format 3"</span><span style="color: #1ea8fc;">)</span>
+           <span style="color: #1ea8fc;">(</span>msl <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">length</span> ms<span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span>
+      <span style="color: #df85ff;">(</span><span style="color: #ff2afc; font-weight: bold;">and</span> <span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">&gt;</span> <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">point-max</span><span style="color: #ff2afc;">)</span> msl<span style="color: #1ea8fc;">)</span>
+           <span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">string=</span> <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">buffer-substring</span> <span style="color: #ffd400; font-weight: bold;">1</span> <span style="color: #a7da1e;">(</span><span style="color: #df85ff; font-weight: bold;">1+</span> msl<span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span>
+                    ms<span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">defun</span> <span style="color: #42c6ff;">sqlite-mode-open-file*</span> <span style="color: #a7da1e;">(</span><span style="color: #a7da1e;">)</span>
+    <span style="color: #a7da1e;">(</span><span style="color: #ff2afc; font-weight: bold;">let</span> <span style="color: #df85ff;">(</span><span style="color: #1ea8fc;">(</span>f <span style="color: #ff2afc;">(</span><span style="color: #df85ff;">buffer-file-name</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span>
+      <span style="color: #df85ff;">(</span><span style="color: #df85ff; font-weight: bold;">kill-buffer</span> <span style="color: #1ea8fc;">(</span><span style="color: #df85ff; font-weight: bold;">current-buffer</span><span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span>
+      <span style="color: #df85ff;">(</span>sqlite-mode-open-file f<span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #df85ff; font-weight: bold;">add-to-list</span> <span style="color: #ff2afc;">'</span><span style="color: #df85ff;">magic-mode-alist</span> <span style="color: #ff2afc;">'</span><span style="color: #a7da1e;">(</span>sqlite-file-p . sqlite-mode-open-file*<span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 </div>
@@ -90,7 +90,7 @@ In <a href="https://www.reddit.com/r/emacs/comments/rlwipm/comment/hpjo30x">this
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

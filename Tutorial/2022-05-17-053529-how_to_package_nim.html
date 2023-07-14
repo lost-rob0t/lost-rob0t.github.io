@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>how to package nim</title>
@@ -29,16 +29,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org796d9a2">nimble2nix</a></li>
-<li><a href="#org10aa810">Using nix</a></li>
-<li><a href="#orgc3f8d96">using flakes</a></li>
+<li><a href="#org289a79a">nimble2nix</a></li>
+<li><a href="#orgf14bbb4">Using nix</a></li>
+<li><a href="#org05db54c">using flakes</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org796d9a2" class="outline-2">
-<h2 id="org796d9a2">nimble2nix</h2>
-<div class="outline-text-2" id="text-org796d9a2">
+<div id="outline-container-org289a79a" class="outline-2">
+<h2 id="org289a79a">nimble2nix</h2>
+<div class="outline-text-2" id="text-org289a79a">
 <p>
 Painless Nimble deps
 <a href="https://github.com/bandithedoge/nimble2nix">https://github.com/bandithedoge/nimble2nix</a>
@@ -48,9 +48,9 @@ nimble2nix .</code>
 </div>
 </div>
 
-<div id="outline-container-org10aa810" class="outline-2">
-<h2 id="org10aa810">Using nix</h2>
-<div class="outline-text-2" id="text-org10aa810">
+<div id="outline-container-orgf14bbb4" class="outline-2">
+<h2 id="orgf14bbb4">Using nix</h2>
+<div class="outline-text-2" id="text-orgf14bbb4">
 <p>
 here is an example package i made for counting puffs
 pkgs/puffer/defualt.nix
@@ -58,42 +58,42 @@ pkgs/puffer/defualt.nix
 <div class="org-src-container">
 <pre class="src src-nix">{ lib, stdenv, nimPackages, fetchurl }:
 
-let
-  cligen = nimPackages.buildNimPackage rec {
-    name = "cligen";
-    version = "1.5.23";
-    src = fetchurl {
-    url = "https://github.com/c-blake/cligen/archive/refs/tags/v${version}.tar.gz";
-    sha256 = "sha256-Qg3+yrvsItEEhSfDVY9t+5CHj1fSJTpYokWPQObgH0g=";
+<span style="color: #ff2afc; font-weight: bold;">let</span>
+  <span style="color: #df85ff;">cligen</span> = nimPackages.buildNimPackage <span style="color: #ff2afc; font-weight: bold;">rec</span> {
+    <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"cligen"</span>;
+    <span style="color: #df85ff;">version</span> = <span style="color: #7984D1;">"1.5.23"</span>;
+    <span style="color: #df85ff;">src</span> = fetchurl {
+    <span style="color: #df85ff;">url</span> = <span style="color: #7984D1;">"https://github.com/c-blake/cligen/archive/refs/tags/v</span><span style="color: #ff2afc; font-weight: bold;">${</span>version<span style="color: #ff2afc; font-weight: bold;">}</span><span style="color: #7984D1;">.tar.gz"</span>;
+    <span style="color: #df85ff;">sha256</span> = <span style="color: #7984D1;">"sha256-Qg3+yrvsItEEhSfDVY9t+5CHj1fSJTpYokWPQObgH0g="</span>;
 
   };
 
 
   };
-puffer = nimPackages.buildNimPackage rec {
-  name = "puffer";
-  rev = "d0c7d6a9a9e48e31eb24807f8a24118bc19c031c";
+<span style="color: #df85ff;">puffer</span> = nimPackages.buildNimPackage <span style="color: #ff2afc; font-weight: bold;">rec</span> {
+  <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"puffer"</span>;
+  <span style="color: #df85ff;">rev</span> = <span style="color: #7984D1;">"d0c7d6a9a9e48e31eb24807f8a24118bc19c031c"</span>;
 
-  nimBinOnly = true;
+  <span style="color: #df85ff;">nimBinOnly</span> = <span style="color: #1ea8fc;">true</span>;
 
-  src = fetchurl {
-    url = "https://github.com/lost-rob0t/puffer.nim/archive/${rev}.tar.gz";
-    sha256 = "sha256-hAqlBGiOQk9QVbtDhNHpk5Z7EtyeW02hRlYMxbvb++Q=";
+  <span style="color: #df85ff;">src</span> = fetchurl {
+    <span style="color: #df85ff;">url</span> = <span style="color: #7984D1;">"https://github.com/lost-rob0t/puffer.nim/archive/</span><span style="color: #ff2afc; font-weight: bold;">${</span>rev<span style="color: #ff2afc; font-weight: bold;">}</span><span style="color: #7984D1;">.tar.gz"</span>;
+    <span style="color: #df85ff;">sha256</span> = <span style="color: #7984D1;">"sha256-hAqlBGiOQk9QVbtDhNHpk5Z7EtyeW02hRlYMxbvb++Q="</span>;
   };
-  buildInputs = with nimPackages; [
+  <span style="color: #df85ff;">buildInputs</span> = <span style="color: #ff2afc; font-weight: bold;">with</span> nimPackages; [
     cligen
   ];
 };
 
-in
-  stdenv.mkDerivation rec {
-    pname = "puffer";
-    buildInputs = [ puffer ];
-    meta = with lib; {
-    description = "count puffs";
-    homepage = "https://github.com/lost-rob0t/puffer.ni,";
-    license = licenses.mit;
-    maintainers = [ "nsaspy" ];
+<span style="color: #ff2afc; font-weight: bold;">in</span>
+  stdenv.mkDerivation <span style="color: #ff2afc; font-weight: bold;">rec</span> {
+    <span style="color: #df85ff;">pname</span> = <span style="color: #7984D1;">"puffer"</span>;
+    <span style="color: #df85ff;">buildInputs</span> = [ puffer ];
+    <span style="color: #df85ff;">meta</span> = <span style="color: #ff2afc; font-weight: bold;">with</span> lib; {
+    <span style="color: #df85ff;">description</span> = <span style="color: #7984D1;">"count puffs"</span>;
+    <span style="color: #df85ff;">homepage</span> = <span style="color: #7984D1;">"https://github.com/lost-rob0t/puffer.ni,"</span>;
+    <span style="color: #df85ff;">license</span> = licenses.mit;
+    <span style="color: #df85ff;">maintainers</span> = [ <span style="color: #7984D1;">"nsaspy"</span> ];
     };
   }
 
@@ -102,9 +102,9 @@ in
 </div>
 </div>
 
-<div id="outline-container-orgc3f8d96" class="outline-2">
-<h2 id="orgc3f8d96">using flakes</h2>
-<div class="outline-text-2" id="text-orgc3f8d96">
+<div id="outline-container-org05db54c" class="outline-2">
+<h2 id="org05db54c">using flakes</h2>
+<div class="outline-text-2" id="text-org05db54c">
 <ul class="org-ul">
 <li><a href="2022-05-16-045822-nim_flake_example.html#ID-62bf048c-8b3b-4356-a939-ac7132bfaae2">nim-flake-example</a></li>
 </ul>
@@ -114,7 +114,7 @@ in
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

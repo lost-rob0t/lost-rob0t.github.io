@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nixos-python</title>
@@ -29,16 +29,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org21be31a">Setting up a python dev enviroment in nix</a>
+<li><a href="#org92b9dbf">Setting up a python dev enviroment in nix</a>
 <ul>
-<li><a href="#org6138751">Impure Dev setup with pipenv</a>
+<li><a href="#org69e12ea">Impure Dev setup with pipenv</a>
 <ul>
-<li><a href="#orgc63a50e">shell.nix</a></li>
+<li><a href="#orgf5fa930">shell.nix</a></li>
 </ul>
 </li>
-<li><a href="#org0106697">Pure nix flakes</a>
+<li><a href="#orgd87fa2e">Pure nix flakes</a>
 <ul>
-<li><a href="#orgfd69cdc">mach-nix</a></li>
+<li><a href="#org032a128">mach-nix</a></li>
 </ul>
 </li>
 </ul>
@@ -46,44 +46,44 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org21be31a" class="outline-2">
-<h2 id="org21be31a">Setting up a python dev enviroment in nix</h2>
-<div class="outline-text-2" id="text-org21be31a">
+<div id="outline-container-org92b9dbf" class="outline-2">
+<h2 id="org92b9dbf">Setting up a python dev enviroment in nix</h2>
+<div class="outline-text-2" id="text-org92b9dbf">
 <p>
 The python packaging on nim is very lacking and often require you to build/hack around/bend nix to your will
 </p>
 </div>
 
-<div id="outline-container-org6138751" class="outline-3">
-<h3 id="org6138751">Impure Dev setup with pipenv</h3>
-<div class="outline-text-3" id="text-org6138751">
+<div id="outline-container-org69e12ea" class="outline-3">
+<h3 id="org69e12ea">Impure Dev setup with pipenv</h3>
+<div class="outline-text-3" id="text-org69e12ea">
 <p>
 For most of the projects i often use a shell.nix and pipenv
 i will be moving to flakes as they seem more robust for packaging lib dirtrobutions
 </p>
 </div>
 
-<div id="outline-container-orgc63a50e" class="outline-4">
-<h4 id="orgc63a50e">shell.nix</h4>
-<div class="outline-text-4" id="text-orgc63a50e">
+<div id="outline-container-orgf5fa930" class="outline-4">
+<h4 id="orgf5fa930">shell.nix</h4>
+<div class="outline-text-4" id="text-orgf5fa930">
 <p>
 if you prefer to use `shell.nix`
 then copy paste this into your shell.nix
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nix">with import &lt;nixpkgs&gt; {};
-let
-  manyLinuxFile =
-    writeTextDir "_manylinux.py"
-      ''
-	print("in _manylinux.py")
-	manylinux1_compatible = True
-      '';
-in
+<pre class="src src-nix"><span style="color: #ff2afc; font-weight: bold;">with</span> <span style="color: #1ea8fc;">import</span> <span style="color: #df85ff; font-weight: bold;">&lt;nixpkgs&gt;</span> {};
+<span style="color: #ff2afc; font-weight: bold;">let</span>
+  <span style="color: #df85ff;">manyLinuxFile</span> =
+    writeTextDir <span style="color: #7984D1;">"_manylinux.py"</span>
+      <span style="color: #7984D1;">''</span>
+<span style="color: #7984D1;">        print("in _manylinux.py")</span>
+<span style="color: #7984D1;">        manylinux1_compatible = True</span>
+<span style="color: #7984D1;">      ''</span>;
+<span style="color: #ff2afc; font-weight: bold;">in</span>
 buildFHSUserEnv {
-  name = "my-python-env";
-  targetPkgs = pkgs: with pkgs; [
+  <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"my-python-env"</span>;
+  <span style="color: #df85ff;">targetPkgs</span> = pkgs: <span style="color: #ff2afc; font-weight: bold;">with</span> pkgs; [
     python3
     pipenv
     which
@@ -91,12 +91,12 @@ buildFHSUserEnv {
     binutils
     manyLinuxFile
 
-    # playwright stuff
+    <span style="color: #546A90;"># playwright stuff</span>
     playwright
     nodejs
 
 
-    # All the C libraries that a manylinux_1 wheel might depend on:
+    <span style="color: #546A90;"># All the C libraries that a manylinux_1 wheel might depend on:</span>
     ncurses
     xorg.libX11
     xorg.libXext
@@ -107,7 +107,7 @@ buildFHSUserEnv {
     stdenv.cc.cc.lib
   ];
 
-  runScript = "$SHELL";
+  <span style="color: #df85ff;">runScript</span> = <span style="color: #7984D1;">"$SHELL"</span>;
 }
 </pre>
 </div>
@@ -116,17 +116,17 @@ buildFHSUserEnv {
 </div>
 
 
-<div id="outline-container-org0106697" class="outline-3">
-<h3 id="org0106697">Pure nix flakes</h3>
-<div class="outline-text-3" id="text-org0106697">
+<div id="outline-container-orgd87fa2e" class="outline-3">
+<h3 id="orgd87fa2e">Pure nix flakes</h3>
+<div class="outline-text-3" id="text-orgd87fa2e">
 <p>
 the nix community have a number of tools for managing python packages
 </p>
 </div>
 
-<div id="outline-container-orgfd69cdc" class="outline-4">
-<h4 id="orgfd69cdc">mach-nix</h4>
-<div class="outline-text-4" id="text-orgfd69cdc">
+<div id="outline-container-org032a128" class="outline-4">
+<h4 id="org032a128">mach-nix</h4>
+<div class="outline-text-4" id="text-org032a128">
 <p>
 Mach-nix makes it easy to create and share reproducible python environments or packages. Existing tools for python package management often suffer from reproducibility and complexity issues, requiring a multitude of tools and additional virtualization layers to work sufficiently. Mach-nix aims to solve these problems by providing a simple way to use nix, a revolutionary build system which is known to achieve great reproducibility and portability besides [many other advantages](<a href="https://nixos.org/features.html">https://nixos.org/features.html</a>).
 </p>
@@ -149,9 +149,10 @@ you can use the template by
 <p>
 And to enter it
 </p>
-<pre class="example">
-nix develop
+<div class="org-src-container">
+<pre class="src src-nil">nix develop
 </pre>
+</div>
 </div>
 </div>
 </div>
@@ -160,7 +161,7 @@ nix develop
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

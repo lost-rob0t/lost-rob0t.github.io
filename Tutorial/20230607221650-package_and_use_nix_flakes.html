@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Package and use Nix flakes</title>
@@ -29,19 +29,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgd1aa789">How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></a>
+<li><a href="#org225e7cf">How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></a>
 <ul>
-<li><a href="#org2607f8d">Writing the nix flake</a></li>
-<li><a href="#org8a89c14">Using the nix flake.</a></li>
+<li><a href="#org3086798">Writing the nix flake</a></li>
+<li><a href="#orga896486">Using the nix flake.</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd1aa789" class="outline-2">
-<h2 id="orgd1aa789">How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></h2>
-<div class="outline-text-2" id="text-orgd1aa789">
+<div id="outline-container-org225e7cf" class="outline-2">
+<h2 id="org225e7cf">How to Package and use a Nix Flake&#xa0;&#xa0;&#xa0;<span class="tag"><span class="nixos">nixos</span></span></h2>
+<div class="outline-text-2" id="text-org225e7cf">
 <p>
 Today I had ran into a issue with war thunder where the mouse would not be stuck inside the screen, after looking around I found <a href="https://github.com/gholken/Mousetrap">MouseTrap</a>. Its a c++ tool that will keep it in the window.
 The only issue I am on <a href="../2022-04-28-221119-nixos.html#ID-d0dc2504-21ff-4843-994d-e8abf1991ea0">Nixos</a>, which requires me to include it in my configuration so i can reproduce it later on.
@@ -50,9 +50,9 @@ So I will package mouse trap and add it to my home-manager config.
 </div>
 
 
-<div id="outline-container-org2607f8d" class="outline-3">
-<h3 id="org2607f8d">Writing the nix flake</h3>
-<div class="outline-text-3" id="text-org2607f8d">
+<div id="outline-container-org3086798" class="outline-3">
+<h3 id="org3086798">Writing the nix flake</h3>
+<div class="outline-text-3" id="text-org3086798">
 <p>
 I will assume you are already aware of how to package <a href="2022-05-17-051936-nixos_custom_pkgs.html#ID-3866dd8f-fc14-491a-af3a-bbd0c4c5ce98">nixos custom pkgs,</a> but TLDR they are like normal nix derivations with locks, inputs and outputs.
 </p>
@@ -62,8 +62,8 @@ Download the mousetrap source code.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">git clone https://github.com/gholken/Mousetrap
-<span style="font-weight: bold;">cd</span> MouseTrap
+<pre class="src src-shell"><span style="color: #ffd400;">git</span> clone https://github.com/gholken/Mousetrap
+<span style="color: #ffd400;">cd</span> MouseTrap
 </pre>
 </div>
 
@@ -77,21 +77,21 @@ Start with the base nix flake.
 </p>
 <div class="org-src-container">
 <pre class="src src-nix">{
-  inputs = {
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
+  <span style="color: #df85ff;">inputs</span> = {
+    <span style="color: #df85ff;">nixpkgs</span> = {
+      <span style="color: #df85ff;">url</span> = <span style="color: #7984D1;">"github:nixos/nixpkgs/nixos-unstable"</span>;
     };
-    flake-utils = {
-      url = "github:numtide/flake-utils";
+    <span style="color: #df85ff;">flake-utils</span> = {
+      <span style="color: #df85ff;">url</span> = <span style="color: #7984D1;">"github:numtide/flake-utils"</span>;
     };
   };
-  outputs = { nixpkgs, flake-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
-    let
-      pkgs = import nixpkgs {
-	inherit system;
+  <span style="color: #df85ff;">outputs</span> = { nixpkgs, flake-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
+    <span style="color: #ff2afc; font-weight: bold;">let</span>
+      <span style="color: #df85ff;">pkgs</span> = <span style="color: #1ea8fc;">import</span> nixpkgs {
+        <span style="color: #ff2afc; font-weight: bold;">inherit</span> system;
       };
 
-    in rec {
+    <span style="color: #ff2afc; font-weight: bold;">in</span> rec {
 
     }
   );
@@ -105,9 +105,9 @@ Lets name the package and begin creating the derivation
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nix">mousetrap = (with pkgs; stdenv.mkDerivation {
-  pname = "mousetrap";
-  version = "1.0.0";
+<pre class="src src-nix"><span style="color: #df85ff;">mousetrap</span> = (<span style="color: #ff2afc; font-weight: bold;">with</span> pkgs; stdenv.mkDerivation {
+  <span style="color: #df85ff;">pname</span> = <span style="color: #7984D1;">"mousetrap"</span>;
+  <span style="color: #df85ff;">version</span> = <span style="color: #7984D1;">"1.0.0"</span>;
       )
 </pre>
 </div>
@@ -118,10 +118,10 @@ Now we need to add the source where nix will download the package from.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nix">src = fetchgit {
-  url = "https://github.com/gholken/Mousetrap";
-  rev = "9299933ea0cbaf39b36c6bfd3498474541884211";
-  sha256 = lib.fakeSha256;
+<pre class="src src-nix"><span style="color: #df85ff;">src</span> = fetchgit {
+  <span style="color: #df85ff;">url</span> = <span style="color: #7984D1;">"https://github.com/gholken/Mousetrap"</span>;
+  <span style="color: #df85ff;">rev</span> = <span style="color: #7984D1;">"9299933ea0cbaf39b36c6bfd3498474541884211"</span>;
+  <span style="color: #df85ff;">sha256</span> = lib.fakeSha256;
 };
 </pre>
 </div>
@@ -141,29 +141,29 @@ it also need libnotify, so I add that to buildInputs.<sup><a id="fnr.2" class="f
 </p>
 
 <div class="org-src-container">
-<pre class="src src-nix">nativeBuildInputs = [
+<pre class="src src-nix"><span style="color: #df85ff;">nativeBuildInputs</span> = [
   pkg-config
   xorg.libX11
   xorg.libXfixes
 ];
-buildInputs = [
+<span style="color: #df85ff;">buildInputs</span> = [
   libnotify
 ];
 </pre>
 </div>
 
 <p>
-Now that I have the deps defined we will now "build" it
+Now that I have the deps defined we will now &ldquo;build&rdquo; it
 nix has different phases of the derivation and its worthwhile to become aware of them.<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>
 in this case we will just be running make -j. There is a environment variable for your core count in <code>$NIX_BUILD_CORES</code>.
 Here is the build and install
 </p>
 <div class="org-src-container">
-<pre class="src src-nix">buildPhase = "make -j $NIX_BUILD_CORES";
-installPhase = ''
-	mkdir --parents "$out/bin"
-	cp ./mousetrap "$out/bin"
-'';
+<pre class="src src-nix"><span style="color: #df85ff;">buildPhase</span> = <span style="color: #7984D1;">"make -j $NIX_BUILD_CORES"</span>;
+<span style="color: #df85ff;">installPhase</span> = <span style="color: #7984D1;">''</span>
+<span style="color: #7984D1;">        mkdir --parents "$out/bin"</span>
+<span style="color: #7984D1;">        cp ./mousetrap "$out/bin"</span>
+<span style="color: #7984D1;">''</span>;
 </pre>
 </div>
 <p>
@@ -175,53 +175,53 @@ The final flake.nix looks like this
 </p>
 <div class="org-src-container">
 <pre class="src src-nix">{
-  inputs = {
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
+  <span style="color: #df85ff;">inputs</span> = {
+    <span style="color: #df85ff;">nixpkgs</span> = {
+      <span style="color: #df85ff;">url</span> = <span style="color: #7984D1;">"github:nixos/nixpkgs/nixos-unstable"</span>;
     };
-    flake-utils = {
-      url = "github:numtide/flake-utils";
+    <span style="color: #df85ff;">flake-utils</span> = {
+      <span style="color: #df85ff;">url</span> = <span style="color: #7984D1;">"github:numtide/flake-utils"</span>;
     };
   };
-  outputs = { nixpkgs, flake-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
-    let
-      pkgs = import nixpkgs {
-	inherit system;
+  <span style="color: #df85ff;">outputs</span> = { nixpkgs, flake-utils, ... }: flake-utils.lib.eachDefaultSystem (system:
+    <span style="color: #ff2afc; font-weight: bold;">let</span>
+      <span style="color: #df85ff;">pkgs</span> = <span style="color: #1ea8fc;">import</span> nixpkgs {
+        <span style="color: #ff2afc; font-weight: bold;">inherit</span> system;
       };
-      mousetrap = (with pkgs; stdenv.mkDerivation {
-	  pname = "mousetrap";
-	  version = "1.0.0";
-	  src = fetchgit {
-	    url = "https://github.com/gholken/Mousetrap";
-	    rev = "9299933ea0cbaf39b36c6bfd3498474541884211";
-	    sha256 = "sha256-NWD3q/f9RvXneeFTEt3IBCM9iQD+qY3gq91yL974uq4=";
-	  };
-	  nativeBuildInputs = [
-	    pkg-config
-	    xorg.libX11
-	    xorg.libXfixes
-	  ];
-	  buildInputs = [
-	    libnotify
-	  ];
-	  buildPhase = "make -j $NIX_BUILD_CORES";
-	  installPhase = ''
-	  mkdir --parents "$out/bin"
+      <span style="color: #df85ff;">mousetrap</span> = (<span style="color: #ff2afc; font-weight: bold;">with</span> pkgs; stdenv.mkDerivation {
+          <span style="color: #df85ff;">pname</span> = <span style="color: #7984D1;">"mousetrap"</span>;
+          <span style="color: #df85ff;">version</span> = <span style="color: #7984D1;">"1.0.0"</span>;
+          <span style="color: #df85ff;">src</span> = fetchgit {
+            <span style="color: #df85ff;">url</span> = <span style="color: #7984D1;">"https://github.com/gholken/Mousetrap"</span>;
+            <span style="color: #df85ff;">rev</span> = <span style="color: #7984D1;">"9299933ea0cbaf39b36c6bfd3498474541884211"</span>;
+            <span style="color: #df85ff;">sha256</span> = <span style="color: #7984D1;">"sha256-NWD3q/f9RvXneeFTEt3IBCM9iQD+qY3gq91yL974uq4="</span>;
+          };
+          <span style="color: #df85ff;">nativeBuildInputs</span> = [
+            pkg-config
+            xorg.libX11
+            xorg.libXfixes
+          ];
+          <span style="color: #df85ff;">buildInputs</span> = [
+            libnotify
+          ];
+          <span style="color: #df85ff;">buildPhase</span> = <span style="color: #7984D1;">"make -j $NIX_BUILD_CORES"</span>;
+          <span style="color: #df85ff;">installPhase</span> = <span style="color: #7984D1;">''</span>
+<span style="color: #7984D1;">          mkdir --parents "$out/bin"</span>
 
-	  cp ./mousetrap "$out/bin"
-	  '';
-	}
+<span style="color: #7984D1;">          cp ./mousetrap "$out/bin"</span>
+<span style="color: #7984D1;">          ''</span>;
+        }
       );
-    in rec {
-      defaultApp = flake-utils.lib.mkApp {
-	drv = defaultPackage;
+    <span style="color: #ff2afc; font-weight: bold;">in</span> rec {
+      <span style="color: #df85ff;">defaultApp</span> = flake-utils.lib.mkApp {
+        <span style="color: #df85ff;">drv</span> = defaultPackage;
       };
-      defaultPackage = mousetrap;
-      devShell = pkgs.mkShell {
-	buildInputs = [
-	  mousetrap
-	  pkgs.libnotify
-	];
+      <span style="color: #df85ff;">defaultPackage</span> = mousetrap;
+      <span style="color: #df85ff;">devShell</span> = pkgs.mkShell {
+        <span style="color: #df85ff;">buildInputs</span> = [
+          mousetrap
+          pkgs.libnotify
+        ];
       };
     }
   );
@@ -231,9 +231,9 @@ The final flake.nix looks like this
 </div>
 </div>
 
-<div id="outline-container-org8a89c14" class="outline-3">
-<h3 id="org8a89c14">Using the nix flake.</h3>
-<div class="outline-text-3" id="text-org8a89c14">
+<div id="outline-container-orga896486" class="outline-3">
+<h3 id="orga896486">Using the nix flake.</h3>
+<div class="outline-text-3" id="text-orga896486">
 <p>
 In order to use your nix flake, you need to make sure it is added to your flake inputs
 </p>
@@ -242,7 +242,7 @@ In order to use your nix flake, you need to make sure it is added to your flake 
 Here you can get the package we made from here.
 </p>
 <div class="org-src-container">
-<pre class="src src-nix">mousetrap.url = "github:lost-rob0t/Mousetrap";
+<pre class="src src-nix"><span style="color: #df85ff;">mousetrap.url</span> = <span style="color: #7984D1;">"github:lost-rob0t/Mousetrap"</span>;
 </pre>
 </div>
 <p>
@@ -285,7 +285,7 @@ I forget the difference between the types of build inputs.
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

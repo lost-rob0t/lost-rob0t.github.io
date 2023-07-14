@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>libvirt clipboard</title>
@@ -29,19 +29,19 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc2c4d8d">How to use the clipboard in libvirt&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linux">linux</span>&#xa0;<span class=""></span>&#xa0;<span class="vm">vm</span></span></a></li>
+<li><a href="#org0f1e831">How to use the clipboard in libvirt&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linux">linux</span>&#xa0;<span class=""></span>&#xa0;<span class="vm">vm</span></span></a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc2c4d8d" class="outline-2">
-<h2 id="orgc2c4d8d">How to use the clipboard in libvirt&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linux">linux</span>&#xa0;<span class=""></span>&#xa0;<span class="vm">vm</span></span></h2>
-<div class="outline-text-2" id="text-orgc2c4d8d">
+<div id="outline-container-org0f1e831" class="outline-2">
+<h2 id="org0f1e831">How to use the clipboard in libvirt&#xa0;&#xa0;&#xa0;<span class="tag"><span class="linux">linux</span>&#xa0;<span class=""></span>&#xa0;<span class="vm">vm</span></span></h2>
+<div class="outline-text-2" id="text-org0f1e831">
 <p>
 Make sure spice-vdagent is installed
 Enable the service
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">systemctl enable spice-vdagentd.service<span style="font-weight: bold;">`</span>
+<pre class="src src-shell">systemctl enable spice-vdagentd.service<span style="color: #ff2afc; font-weight: bold;">`</span>
 </pre>
 </div>
 
@@ -53,7 +53,8 @@ Add a new channel to the host
 My issue it was on the wrong channel number
 </p>
 <div class="org-src-container">
-<pre class="src src-xml">channel type="spicevmc"
+<pre class="src src-xml">&lt;?<span style="color: #ff2afc; font-weight: bold;">xml</span> <span style="color: #A875FF;">version="1.0" encoding="utf-8"</span>?&gt;
+channel type="spicevmc"
 target type="virtio"
 name="com.redhat.spice.0"
 alias name="channel0"
@@ -66,7 +67,7 @@ address type="virtio-serial" controller="0" bus="0" port="2"
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

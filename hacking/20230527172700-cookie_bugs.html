@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cookie Bugs</title>
@@ -29,15 +29,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0596ad9">Cookie Bugs</a>
+<li><a href="#org8524cfc">Cookie Bugs</a>
 <ul>
-<li><a href="#org941cce9">Prefixed cookies and cookie scope</a>
+<li><a href="#org5464859">Prefixed cookies and cookie scope</a>
 <ul>
-<li><a href="#org8566f49">Domain</a></li>
-<li><a href="#org8b0e61b">Path</a></li>
-<li><a href="#orgdd24a7f">SaneSite</a></li>
-<li><a href="#org2538384">_<sub>Secure</sub></a></li>
-<li><a href="#org457a6fe">_<sub>Host</sub></a></li>
+<li><a href="#orge303cc1">Domain</a></li>
+<li><a href="#orgc13b336">Path</a></li>
+<li><a href="#orgbf9c3d2">SaneSite</a></li>
+<li><a href="#org186ba68">_<sub>Secure</sub></a></li>
+<li><a href="#org7511503">_<sub>Host</sub></a></li>
 </ul>
 </li>
 </ul>
@@ -45,9 +45,9 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org0596ad9" class="outline-2">
-<h2 id="org0596ad9">Cookie Bugs</h2>
-<div class="outline-text-2" id="text-org0596ad9">
+<div id="outline-container-org8524cfc" class="outline-2">
+<h2 id="org8524cfc">Cookie Bugs</h2>
+<div class="outline-text-2" id="text-org8524cfc">
 <p>
 Cookies are how your web browser can tell a web server who they are, they are sent from the server to your browser.
 They handle things like sign-in and shopping carts, and much more.
@@ -65,13 +65,13 @@ Cookies can be sent to subdomains too if they have the <code>domain</code> attri
 </div>
 
 
-<div id="outline-container-org941cce9" class="outline-3">
-<h3 id="org941cce9">Prefixed cookies and cookie scope</h3>
-<div class="outline-text-3" id="text-org941cce9">
+<div id="outline-container-org5464859" class="outline-3">
+<h3 id="org5464859">Prefixed cookies and cookie scope</h3>
+<div class="outline-text-3" id="text-org5464859">
 </div>
-<div id="outline-container-org8566f49" class="outline-4">
-<h4 id="org8566f49">Domain</h4>
-<div class="outline-text-4" id="text-org8566f49">
+<div id="outline-container-orge303cc1" class="outline-4">
+<h4 id="orge303cc1">Domain</h4>
+<div class="outline-text-4" id="text-orge303cc1">
 <p>
 Domain states the scope of a cookie, by saying what hosts are allowed to access the cookie.
 subdomain cookies are allowed, so Domain is less restrictive.
@@ -80,9 +80,9 @@ Setting <code>Domain=example.com</code> will allow <code>sub.example.com</code> 
 </div>
 </div>
 
-<div id="outline-container-org8b0e61b" class="outline-4">
-<h4 id="org8b0e61b">Path</h4>
-<div class="outline-text-4" id="text-org8b0e61b">
+<div id="outline-container-orgc13b336" class="outline-4">
+<h4 id="orgc13b336">Path</h4>
+<div class="outline-text-4" id="text-orgc13b336">
 <p>
 Path stats that a url path must exists in the url, <code>%x2F</code> also counts as a directory separator.
 </p>
@@ -93,9 +93,9 @@ Setting it to <code>/Foo</code> means every sub directory of foo can share the c
 </div>
 </div>
 
-<div id="outline-container-orgdd24a7f" class="outline-4">
-<h4 id="orgdd24a7f">SaneSite</h4>
-<div class="outline-text-4" id="text-orgdd24a7f">
+<div id="outline-container-orgbf9c3d2" class="outline-4">
+<h4 id="orgbf9c3d2">SaneSite</h4>
+<div class="outline-text-4" id="text-orgbf9c3d2">
 <p>
 From Mozilla Docs:
 </p>
@@ -105,13 +105,13 @@ The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cooki
 </p>
 
 <p>
-With <code>Strict</code>, the browser only sends the cookie with requests from the cookie's origin site. <code>Lax</code> is similar, except the browser also sends the cookie when the user <i>navigates</i> to the cookie's origin site (even if the user is coming from a different site). For example, by following a link from an external site. <code>None</code> specifies that cookies are sent on both originating and cross-site requests, but <i>only in secure contexts</i> (i.e., if <code>SameSite=None</code> then the <code>Secure</code> attribute must also be set). If no <code>SameSite</code> attribute is set, the cookie is treated as <code>Lax</code>.
+With <code>Strict</code>, the browser only sends the cookie with requests from the cookie&rsquo;s origin site. <code>Lax</code> is similar, except the browser also sends the cookie when the user <i>navigates</i> to the cookie&rsquo;s origin site (even if the user is coming from a different site). For example, by following a link from an external site. <code>None</code> specifies that cookies are sent on both originating and cross-site requests, but <i>only in secure contexts</i> (i.e., if <code>SameSite=None</code> then the <code>Secure</code> attribute must also be set). If no <code>SameSite</code> attribute is set, the cookie is treated as <code>Lax</code>.
 </p>
 </div>
 </div>
-<div id="outline-container-org2538384" class="outline-4">
-<h4 id="org2538384">_<sub>Secure</sub></h4>
-<div class="outline-text-4" id="text-org2538384">
+<div id="outline-container-org186ba68" class="outline-4">
+<h4 id="org186ba68">_<sub>Secure</sub></h4>
+<div class="outline-text-4" id="text-org186ba68">
 <p>
 Cookies with <code>__Secure</code> prefix are used for https pages also needs to have the <code>secure</code> flag.
 The cookie can only be used with HTTPS pages, it is also inaccessible to javascript which helps against <a href="20230527173712-xss.html#ID-524a19f0-d6e9-4785-9f8d-262495410c08">XSS</a>.
@@ -119,9 +119,9 @@ The cookie can only be used with HTTPS pages, it is also inaccessible to javascr
 </div>
 </div>
 
-<div id="outline-container-org457a6fe" class="outline-4">
-<h4 id="org457a6fe">_<sub>Host</sub></h4>
-<div class="outline-text-4" id="text-org457a6fe">
+<div id="outline-container-org7511503" class="outline-4">
+<h4 id="org7511503">_<sub>Host</sub></h4>
+<div class="outline-text-4" id="text-org7511503">
 <p>
 Cookies with the <code>__Host</code> prefix are not able to have a domain specified and are not sent to subdomains.
 The path for the cookie must also be <code>/</code>
@@ -134,7 +134,7 @@ The path for the cookie must also be <code>/</code>
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

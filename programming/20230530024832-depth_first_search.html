@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Depth First Search</title>
@@ -29,13 +29,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org2b5c784">Depth First Search&#xa0;&#xa0;&#xa0;<span class="tag"><span class="algorithim">algorithim</span></span></a></li>
+<li><a href="#orgd559f56">Depth First Search&#xa0;&#xa0;&#xa0;<span class="tag"><span class="algorithim">algorithim</span></span></a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2b5c784" class="outline-2">
-<h2 id="org2b5c784">Depth First Search&#xa0;&#xa0;&#xa0;<span class="tag"><span class="algorithim">algorithim</span></span></h2>
-<div class="outline-text-2" id="text-org2b5c784">
+<div id="outline-container-orgd559f56" class="outline-2">
+<h2 id="orgd559f56">Depth First Search&#xa0;&#xa0;&#xa0;<span class="tag"><span class="algorithim">algorithim</span></span></h2>
+<div class="outline-text-2" id="text-orgd559f56">
 <ol class="org-ol">
 <li>Push the starting node to the stack and pop it?</li>
 <li>Push the nodes neighbors to the stack</li>
@@ -47,36 +47,36 @@
 Basic Stack in lisp
 </p>
 <div class="org-src-container">
-<pre class="src src-lisp">(setq stack (make-array 10 <span style="font-weight: bold;">:element-type</span> 'integer))
-(push 2 stack)
-(push 1 stack)
-(push 3 stack)
-(print (pop stack))
-(print (pop stack))
-(print (pop stack))
-(print (pop stack))
+<pre class="src src-lisp"><span style="color: #1ea8fc;">(</span>setq stack <span style="color: #ff2afc;">(</span>make-array <span style="color: #ffd400; font-weight: bold;">10</span> <span style="color: #1ea8fc;">:element-type</span> 'integer<span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span>push <span style="color: #ffd400; font-weight: bold;">2</span> stack<span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span>push <span style="color: #ffd400; font-weight: bold;">1</span> stack<span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span>push <span style="color: #ffd400; font-weight: bold;">3</span> stack<span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span>print <span style="color: #ff2afc;">(</span>pop stack<span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span>print <span style="color: #ff2afc;">(</span>pop stack<span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span>print <span style="color: #ff2afc;">(</span>pop stack<span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span>print <span style="color: #ff2afc;">(</span>pop stack<span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 
 
 <div class="org-src-container">
-<pre class="src src-lisp">(ql:quickload <span style="font-weight: bold;">:alexandria</span>)
-(ql:quickload <span style="font-weight: bold;">:serapeum</span>)
+<pre class="src src-lisp"><span style="color: #1ea8fc;">(</span>ql:quickload <span style="color: #1ea8fc;">:alexandria</span><span style="color: #1ea8fc;">)</span>
+<span style="color: #1ea8fc;">(</span>ql:quickload <span style="color: #1ea8fc;">:serapeum</span><span style="color: #1ea8fc;">)</span>
 
 
-(setq graph (serapeum:dict <span style="font-style: italic;">"a"</span> '(<span style="font-style: italic;">"b"</span> <span style="font-style: italic;">"c"</span>) <span style="font-style: italic;">"b"</span> '(<span style="font-style: italic;">"d"</span>) <span style="font-style: italic;">"c"</span> '(<span style="font-style: italic;">"e"</span>) <span style="font-style: italic;">"d"</span> '(<span style="font-style: italic;">"f"</span>) <span style="font-style: italic;">"e"</span> nil <span style="font-style: italic;">"f"</span> nil))
+<span style="color: #1ea8fc;">(</span>setq graph <span style="color: #ff2afc;">(</span>serapeum:dict <span style="color: #7984D1;">"a"</span> '<span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"b"</span> <span style="color: #7984D1;">"c"</span><span style="color: #a7da1e;">)</span> <span style="color: #7984D1;">"b"</span> '<span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"d"</span><span style="color: #a7da1e;">)</span> <span style="color: #7984D1;">"c"</span> '<span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"e"</span><span style="color: #a7da1e;">)</span> <span style="color: #7984D1;">"d"</span> '<span style="color: #a7da1e;">(</span><span style="color: #7984D1;">"f"</span><span style="color: #a7da1e;">)</span> <span style="color: #7984D1;">"e"</span> nil <span style="color: #7984D1;">"f"</span> nil<span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
 
-(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">depth-first</span> (graph source)
-  (<span style="font-weight: bold;">let</span> ((stack (make-array 10 <span style="font-weight: bold;">:element-type</span> 'string)))
-    (push source stack)
-    (<span style="font-weight: bold;">loop</span> while stack
-          for current = (pop stack)
-          do (<span style="font-weight: bold;">loop</span> for neighbor in (gethash current graph)
-                   do (push neighbor stack))
+<span style="color: #1ea8fc;">(</span><span style="color: #ff2afc; font-weight: bold;">defun</span> <span style="color: #42c6ff;">depth-first</span> <span style="color: #ff2afc;">(</span>graph source<span style="color: #ff2afc;">)</span>
+  <span style="color: #ff2afc;">(</span><span style="color: #ff2afc; font-weight: bold;">let</span> <span style="color: #a7da1e;">(</span><span style="color: #df85ff;">(</span>stack <span style="color: #1ea8fc;">(</span>make-array <span style="color: #ffd400; font-weight: bold;">10</span> <span style="color: #1ea8fc;">:element-type</span> 'string<span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span>
+    <span style="color: #a7da1e;">(</span>push source stack<span style="color: #a7da1e;">)</span>
+    <span style="color: #a7da1e;">(</span><span style="color: #ff2afc; font-weight: bold;">loop</span> while stack
+          for current = <span style="color: #df85ff;">(</span>pop stack<span style="color: #df85ff;">)</span>
+          do <span style="color: #df85ff;">(</span><span style="color: #ff2afc; font-weight: bold;">loop</span> for neighbor in <span style="color: #1ea8fc;">(</span>gethash current graph<span style="color: #1ea8fc;">)</span>
+                   do <span style="color: #1ea8fc;">(</span>push neighbor stack<span style="color: #1ea8fc;">)</span><span style="color: #df85ff;">)</span>
 
-          do (format t <span style="font-style: italic;">"Current: ~a~%"</span> current))))
+          do <span style="color: #df85ff;">(</span>format t <span style="color: #7984D1;">"Current: ~a~%"</span> current<span style="color: #df85ff;">)</span><span style="color: #a7da1e;">)</span><span style="color: #ff2afc;">)</span><span style="color: #1ea8fc;">)</span>
 
-(depth-first graph <span style="font-style: italic;">"d"</span>)
+<span style="color: #1ea8fc;">(</span>depth-first graph <span style="color: #7984D1;">"d"</span><span style="color: #1ea8fc;">)</span>
 </pre>
 </div>
 </div>
@@ -85,7 +85,7 @@ Basic Stack in lisp
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

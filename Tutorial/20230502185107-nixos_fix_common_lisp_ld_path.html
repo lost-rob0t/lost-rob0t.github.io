@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nixos fix common-lisp ld path</title>
@@ -29,43 +29,43 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org261aa54">Fixing Common Lisp LD<sub>LIBRARY</sub><sub>PATH</sub></a></li>
-<li><a href="#orge169cb2">FootNotes</a></li>
+<li><a href="#org3264d40">Fixing Common Lisp LD<sub>LIBRARY</sub><sub>PATH</sub></a></li>
+<li><a href="#org83e775f">FootNotes</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org261aa54" class="outline-2">
-<h2 id="org261aa54">Fixing Common Lisp LD<sub>LIBRARY</sub><sub>PATH</sub></h2>
-<div class="outline-text-2" id="text-org261aa54">
+<div id="outline-container-org3264d40" class="outline-2">
+<h2 id="org3264d40">Fixing Common Lisp LD<sub>LIBRARY</sub><sub>PATH</sub></h2>
+<div class="outline-text-2" id="text-org3264d40">
 <p>
-If CL FFI can't see your library, such as OpenSSL, try building the path in the <code>shellHook</code>.
+If CL FFI can&rsquo;t see your library, such as OpenSSL, try building the path in the <code>shellHook</code>.
 Example <code>flake.nix</code><sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup> :
 </p>
 <div class="org-src-container">
 <pre class="src src-nix">{
-  description = "Flake ";
+  <span style="color: #df85ff;">description</span> = <span style="color: #7984D1;">"Flake "</span>;
 
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
+  <span style="color: #df85ff;">inputs</span> = {
+    <span style="color: #df85ff;">nixpkgs.url</span> = <span style="color: #7984D1;">"github:nixos/nixpkgs"</span>;
   };
 
-  outputs = { self, nixpkgs }:
-  let
-    pkgs = nixpkgs.legacyPackages.x86_64-linux;
-  in {
-    devShell.x86_64-linux =
+  <span style="color: #df85ff;">outputs</span> = { self, nixpkgs }:
+  <span style="color: #ff2afc; font-weight: bold;">let</span>
+    <span style="color: #df85ff;">pkgs</span> = nixpkgs.legacyPackages.x86_64-linux;
+  <span style="color: #ff2afc; font-weight: bold;">in</span> {
+    <span style="color: #df85ff;">devShell.x86_64-linux</span> =
       pkgs.mkShell {
-	buildInputs = with pkgs; [
-	  pkg-config
-	  roswell
-	  sbcl
-	  openssl # NOTE Not sure if you need to include this
-	  # normally stuff goes in here
-	];
-	shellHook = ''
-	      export LD_LIBRARY_PATH=${pkgs.lib.makeLibraryPath([pkgs.openssl])}
-	    '';
+        <span style="color: #df85ff;">buildInputs</span> = <span style="color: #ff2afc; font-weight: bold;">with</span> pkgs; [
+          pkg-config
+          roswell
+          sbcl
+          openssl <span style="color: #546A90;"># </span><span style="color: #a7da1e; font-weight: bold;">NOTE</span><span style="color: #546A90;"> Not sure if you need to include this</span>
+          <span style="color: #546A90;"># normally stuff goes in here</span>
+        ];
+        <span style="color: #df85ff;">shellHook</span> = <span style="color: #7984D1;">''</span>
+<span style="color: #7984D1;">              export LD_LIBRARY_PATH=</span><span style="color: #ff2afc; font-weight: bold;">${</span>pkgs.lib.makeLibraryPath([pkgs.openssl])<span style="color: #ff2afc; font-weight: bold;">}</span>
+<span style="color: #7984D1;">            ''</span>;
       };
   };
 }
@@ -77,9 +77,9 @@ More info: <a href="https://archive.is/XvKqX">https://archive.is/XvKqX</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orge169cb2" class="outline-2">
-<h2 id="orge169cb2">FootNotes</h2>
-<div class="outline-text-2" id="text-orge169cb2">
+<div id="outline-container-org83e775f" class="outline-2">
+<h2 id="org83e775f">FootNotes</h2>
+<div class="outline-text-2" id="text-org83e775f">
 </div>
 </div>
 <div id="footnotes">
@@ -96,7 +96,7 @@ More info: <a href="https://archive.is/XvKqX">https://archive.is/XvKqX</a>
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-13 Thu 20:32 -->
+<!-- 2023-07-14 Fri 07:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>nixos custom pkgs</title>
@@ -29,28 +29,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org20c1606">How to use custom packages</a></li>
-<li><a href="#org2c2b8c3">Tips</a>
+<li><a href="#org60b812b">How to use custom packages</a></li>
+<li><a href="#org294df7e">Tips</a>
 <ul>
-<li><a href="#org6f43a9b">Installing from a local repo</a></li>
-<li><a href="#orgfc2abc8">error: derivation name missing</a></li>
-<li><a href="#org977f4ef">error: syntax error, unexpected ID, expecting ':' or '@'</a></li>
+<li><a href="#org6093c97">Installing from a local repo</a></li>
+<li><a href="#orgcfce375">error: derivation name missing</a></li>
+<li><a href="#org504e4a3">error: syntax error, unexpected ID, expecting &rsquo;:&rsquo; or &rsquo;@&rsquo;</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org20c1606" class="outline-2">
-<h2 id="org20c1606">How to use custom packages</h2>
-<div class="outline-text-2" id="text-org20c1606">
+<div id="outline-container-org60b812b" class="outline-2">
+<h2 id="org60b812b">How to use custom packages</h2>
+<div class="outline-text-2" id="text-org60b812b">
 <p>
 i have built a some packages myself and i cant find a way to use my overlay.
 Instead i maintain a nix-channel and point it my gitrepo with a archive url
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">sudo nix-channel --add https://github.com/lost-rob0t/nixos-overlays/archive/d183b152436003690cf0e4e6ea15018e6ac38230.tar.gz personal
-sudo nix-channel --update
+<pre class="src src-shell"><span style="color: #ffd400;">sudo</span> nix-channel --add https://github.com/lost-rob0t/nixos-overlays/archive/d183b152436003690cf0e4e6ea15018e6ac38230.tar.gz personal
+<span style="color: #ffd400;">sudo</span> nix-channel --update
 </pre>
 </div>
 <p>
@@ -58,29 +58,29 @@ After you add the channel at the top of your configuration.nix
 add the following
 </p>
 <div class="org-src-container">
-<pre class="src src-nix">let otherPkgs = import &lt;other-channel&gt; {}
-in
+<pre class="src src-nix"><span style="color: #ff2afc; font-weight: bold;">let</span> <span style="color: #df85ff;">otherPkgs</span> = <span style="color: #1ea8fc;">import</span> <span style="color: #df85ff; font-weight: bold;">&lt;other-channel&gt;</span> {}
+<span style="color: #ff2afc; font-weight: bold;">in</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2c2b8c3" class="outline-2">
-<h2 id="org2c2b8c3">Tips</h2>
-<div class="outline-text-2" id="text-org2c2b8c3">
+<div id="outline-container-org294df7e" class="outline-2">
+<h2 id="org294df7e">Tips</h2>
+<div class="outline-text-2" id="text-org294df7e">
 </div>
-<div id="outline-container-org6f43a9b" class="outline-3">
-<h3 id="org6f43a9b">Installing from a local repo</h3>
-<div class="outline-text-3" id="text-org6f43a9b">
+<div id="outline-container-org6093c97" class="outline-3">
+<h3 id="org6093c97">Installing from a local repo</h3>
+<div class="outline-text-3" id="text-org6093c97">
 <p>
 This is mostly used for development of packages but can be used to install ad-hoc fixes quickly
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">mkdir -p ~/git/ &amp;&amp; <span style="font-weight: bold;">cd</span> ~/git/
-git clone --depth=1 https://github.com/nixos/nixpkgs
-<span style="font-weight: bold;">export</span> <span style="font-weight: bold; font-style: italic;">NIXPKGS</span>=~/git/nixpkgs
-ls $<span style="font-weight: bold; font-style: italic;">NIXPKGS</span>
+<pre class="src src-shell"><span style="color: #ffd400;">mkdir</span> -p ~/git/ &amp;&amp; <span style="color: #ffd400;">cd</span> ~/git/
+<span style="color: #ffd400;">git</span> clone --depth=<span style="color: #ffd400; font-weight: bold;">1</span> https://github.com/nixos/nixpkgs
+<span style="color: #1ea8fc;">export</span> <span style="color: #df85ff;">NIXPKGS</span>=~/git/nixpkgs
+<span style="color: #ffd400;">ls</span> $<span style="color: #df85ff;">NIXPKGS</span>
 </pre>
 </div>
 
@@ -88,14 +88,14 @@ ls $<span style="font-weight: bold; font-style: italic;">NIXPKGS</span>
 Build an expression
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">nix-build $<span style="font-weight: bold; font-style: italic;">NIXPKG</span> -A firefox
+<pre class="src src-shell">nix-build $<span style="color: #df85ff;">NIXPKG</span> -A firefox
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgfc2abc8" class="outline-3">
-<h3 id="orgfc2abc8">error: derivation name missing</h3>
-<div class="outline-text-3" id="text-orgfc2abc8">
+<div id="outline-container-orgcfce375" class="outline-3">
+<h3 id="orgcfce375">error: derivation name missing</h3>
+<div class="outline-text-3" id="text-orgcfce375">
 <p>
 Version was not included.
 </p>
@@ -106,25 +106,25 @@ This will fail
 <div class="org-src-container">
 <pre class="src src-nix">{ lib, stdenv, nimPackages, fetchurl }:
 
-stdenv.mkDerivation rec {
-  nimsuggest = nimPackages.buildNimPackage rec {
-    name = "nimsuggest";
-    rev = "f780247b651f28d6e3f1ae8d0067316a8086027e";
+stdenv.mkDerivation <span style="color: #ff2afc; font-weight: bold;">rec</span> {
+  <span style="color: #df85ff;">nimsuggest</span> = nimPackages.buildNimPackage <span style="color: #ff2afc; font-weight: bold;">rec</span> {
+    <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"nimsuggest"</span>;
+    <span style="color: #df85ff;">rev</span> = <span style="color: #7984D1;">"f780247b651f28d6e3f1ae8d0067316a8086027e"</span>;
 
-    nimBinOnly = true;
+    <span style="color: #df85ff;">nimBinOnly</span> = <span style="color: #1ea8fc;">true</span>;
 
-    src = fetchurl {
-      url = "https://github.com/nim-lang/${name}/archive/${rev}.tar.gz";
-      sha256 = "sha256-hAqlBGiOQk9QVbtDhNHpk5Z7EtyeW02hRlYMxbvb++Q=";
+    <span style="color: #df85ff;">src</span> = fetchurl {
+      <span style="color: #df85ff;">url</span> = <span style="color: #7984D1;">"https://github.com/nim-lang/</span><span style="color: #ff2afc; font-weight: bold;">${</span>name<span style="color: #ff2afc; font-weight: bold;">}</span><span style="color: #7984D1;">/archive/</span><span style="color: #ff2afc; font-weight: bold;">${</span>rev<span style="color: #ff2afc; font-weight: bold;">}</span><span style="color: #7984D1;">.tar.gz"</span>;
+      <span style="color: #df85ff;">sha256</span> = <span style="color: #7984D1;">"sha256-hAqlBGiOQk9QVbtDhNHpk5Z7EtyeW02hRlYMxbvb++Q="</span>;
     };
   };
-  pname = "nimsuggest";
-  buildInputs = [ nimsuggest ];
-  meta = with lib; {
-    description = "Tool for providing auto completion data for Nim source code.";
-    homepage = "https://github.com/nim-lang/nimsuggest/";
-    license = licenses.mit;
-    maintainers = [ "nsaspy" ];
+  <span style="color: #df85ff;">pname</span> = <span style="color: #7984D1;">"nimsuggest"</span>;
+  <span style="color: #df85ff;">buildInputs</span> = [ nimsuggest ];
+  <span style="color: #df85ff;">meta</span> = <span style="color: #ff2afc; font-weight: bold;">with</span> lib; {
+    <span style="color: #df85ff;">description</span> = <span style="color: #7984D1;">"Tool for providing auto completion data for Nim source code."</span>;
+    <span style="color: #df85ff;">homepage</span> = <span style="color: #7984D1;">"https://github.com/nim-lang/nimsuggest/"</span>;
+    <span style="color: #df85ff;">license</span> = licenses.mit;
+    <span style="color: #df85ff;">maintainers</span> = [ <span style="color: #7984D1;">"nsaspy"</span> ];
     };
   }
 
@@ -137,27 +137,27 @@ Always have the version!
 <div class="org-src-container">
 <pre class="src src-nix">{ lib, stdenv, nimPackages, fetchurl }:
 
-stdenv.mkDerivation rec {
-  nimsuggest = nimPackages.buildNimPackage rec {
-    name = "nimsuggest";
-    rev = "f780247b651f28d6e3f1ae8d0067316a8086027e";
+stdenv.mkDerivation <span style="color: #ff2afc; font-weight: bold;">rec</span> {
+  <span style="color: #df85ff;">nimsuggest</span> = nimPackages.buildNimPackage <span style="color: #ff2afc; font-weight: bold;">rec</span> {
+    <span style="color: #df85ff;">name</span> = <span style="color: #7984D1;">"nimsuggest"</span>;
+    <span style="color: #df85ff;">rev</span> = <span style="color: #7984D1;">"f780247b651f28d6e3f1ae8d0067316a8086027e"</span>;
 
-    nimBinOnly = true;
+    <span style="color: #df85ff;">nimBinOnly</span> = <span style="color: #1ea8fc;">true</span>;
 
-    src = fetchurl {
-      url = "https://github.com/nim-lang/${name}/archive/${rev}.tar.gz";
-      sha256 = "sha256-OmIuOkHP9Uvrm0NLpPAlrhuP4WPEeXSxzAzDn2AuvQ0=";
+    <span style="color: #df85ff;">src</span> = fetchurl {
+      <span style="color: #df85ff;">url</span> = <span style="color: #7984D1;">"https://github.com/nim-lang/</span><span style="color: #ff2afc; font-weight: bold;">${</span>name<span style="color: #ff2afc; font-weight: bold;">}</span><span style="color: #7984D1;">/archive/</span><span style="color: #ff2afc; font-weight: bold;">${</span>rev<span style="color: #ff2afc; font-weight: bold;">}</span><span style="color: #7984D1;">.tar.gz"</span>;
+      <span style="color: #df85ff;">sha256</span> = <span style="color: #7984D1;">"sha256-OmIuOkHP9Uvrm0NLpPAlrhuP4WPEeXSxzAzDn2AuvQ0="</span>;
     };
   };
-  pname = "nimsuggest";
-  buildInputs = [ nimsuggest ];
+  <span style="color: #df85ff;">pname</span> = <span style="color: #7984D1;">"nimsuggest"</span>;
+  <span style="color: #df85ff;">buildInputs</span> = [ nimsuggest ];
 
-  version = "0.1.0";
-  meta = with lib; {
-    description = "Tool for providing auto completion data for Nim source code.";
-    homepage = "https://github.com/nim-lang/nimsuggest/";
-    license = licenses.mit;
-    maintainers = [ "nsaspy" ];
+  <span style="color: #df85ff;">version</span> = <span style="color: #7984D1;">"0.1.0"</span>;
+  <span style="color: #df85ff;">meta</span> = <span style="color: #ff2afc; font-weight: bold;">with</span> lib; {
+    <span style="color: #df85ff;">description</span> = <span style="color: #7984D1;">"Tool for providing auto completion data for Nim source code."</span>;
+    <span style="color: #df85ff;">homepage</span> = <span style="color: #7984D1;">"https://github.com/nim-lang/nimsuggest/"</span>;
+    <span style="color: #df85ff;">license</span> = licenses.mit;
+    <span style="color: #df85ff;">maintainers</span> = [ <span style="color: #7984D1;">"nsaspy"</span> ];
     };
   }
 </pre>
@@ -165,9 +165,9 @@ stdenv.mkDerivation rec {
 </div>
 </div>
 
-<div id="outline-container-org977f4ef" class="outline-3">
-<h3 id="org977f4ef">error: syntax error, unexpected ID, expecting ':' or '@'</h3>
-<div class="outline-text-3" id="text-org977f4ef">
+<div id="outline-container-org504e4a3" class="outline-3">
+<h3 id="org504e4a3">error: syntax error, unexpected ID, expecting &rsquo;:&rsquo; or &rsquo;@&rsquo;</h3>
+<div class="outline-text-3" id="text-org504e4a3">
 <p>
 This was painful you simply forgot to include a <code>:</code>
 Wrong
@@ -191,7 +191,7 @@ Correct:
 <div id="postamble" class="status">
 <p class="author">Author:  (<a href="mailto:unseen@flake">unseen@flake</a>)</p>
 <p class="date">Date: </p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.5.5)</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 28.2 (<a href="https://orgmode.org">Org</a> mode 9.6.1)</p>
 <p class="validation"></p>
 </div>
 </body>
