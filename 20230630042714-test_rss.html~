@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:34 -->
+<!-- 2023-07-12 Wed 22:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>test-rss</title>
@@ -29,14 +29,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org32e01ac">Test rss</a></li>
+<li><a href="#orgb3815cf">Test rss</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org32e01ac" class="outline-2">
-<h2 id="org32e01ac">Test rss</h2>
-<div class="outline-text-2" id="text-org32e01ac">
+<div id="outline-container-orgb3815cf" class="outline-2">
+<h2 id="orgb3815cf">Test rss</h2>
+<div class="outline-text-2" id="text-orgb3815cf">
 <p>
 this is a test
 </p>

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:35 -->
+<!-- 2023-07-13 Thu 20:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>emacs open sqlite dired</title>
@@ -29,11 +29,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4ccb97b">How to open sqlite files with dir</a>
+<li><a href="#org48619cb">How to open sqlite files with dir</a>
 <ul>
-<li><a href="#orgb94b991">Methods</a>
+<li><a href="#orgde1a414">Methods</a>
 <ul>
-<li><a href="#org401d07e">Sqlite dired</a></li>
+<li><a href="#org0f716fc">Sqlite dired</a></li>
 </ul>
 </li>
 </ul>
@@ -45,9 +45,9 @@
 <li></li>
 </ul>
 
-<div id="outline-container-org4ccb97b" class="outline-2">
-<h2 id="org4ccb97b">How to open sqlite files with dir</h2>
-<div class="outline-text-2" id="text-org4ccb97b">
+<div id="outline-container-org48619cb" class="outline-2">
+<h2 id="org48619cb">How to open sqlite files with dir</h2>
+<div class="outline-text-2" id="text-org48619cb">
 <p>
 So i locked myself out of my gitea again, phone got wiped by mistake with a opsec tool called wasted, whiped itself while it wass in my hand!
 </p>
@@ -55,13 +55,13 @@ So i locked myself out of my gitea again, phone got wiped by mistake with a opse
 
 
 
-<div id="outline-container-orgb94b991" class="outline-3">
-<h3 id="orgb94b991">Methods</h3>
-<div class="outline-text-3" id="text-orgb94b991">
+<div id="outline-container-orgde1a414" class="outline-3">
+<h3 id="orgde1a414">Methods</h3>
+<div class="outline-text-3" id="text-orgde1a414">
 </div>
-<div id="outline-container-org401d07e" class="outline-4">
-<h4 id="org401d07e">Sqlite dired</h4>
-<div class="outline-text-4" id="text-org401d07e">
+<div id="outline-container-org0f716fc" class="outline-4">
+<h4 id="org0f716fc">Sqlite dired</h4>
+<div class="outline-text-4" id="text-org0f716fc">
 <p>
 In <a href="https://www.reddit.com/r/emacs/comments/rlwipm/comment/hpjo30x">this</a> post a reddit user was kind enough to share a snippet to do just this
 </p>

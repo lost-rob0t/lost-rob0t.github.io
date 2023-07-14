@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:35 -->
+<!-- 2023-07-13 Thu 20:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CSE-373-lecture 2</title>
@@ -29,12 +29,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf7f003c">The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></a>
+<li><a href="#orgb55e8a1">The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></a>
 <ul>
-<li><a href="#orgb4a8853">Solutions</a>
+<li><a href="#org7a9c879">Solutions</a>
 <ul>
-<li><a href="#org2ce2ecd">Shortest Job first</a></li>
-<li><a href="#org30df38b">Reason why it wont work</a></li>
+<li><a href="#orgf0d7a8d">Shortest Job first</a></li>
+<li><a href="#orgacaba94">Reason why it wont work</a></li>
 </ul>
 </li>
 </ul>
@@ -46,9 +46,9 @@
 Note: this is on hole until i do more data struct stuff which seems to be referenced with the lectures
 Video lecture: <a href="https://www.youtube.com/watch?v=z1mkCe3kVUA&amp;list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&amp;index=2">https://www.youtube.com/watch?v=z1mkCe3kVUA&amp;list=PLOtl7M3yp-DX6ic0HGT0PUX_wiNmkWkXx&amp;index=2</a>
 </p>
-<div id="outline-container-orgf7f003c" class="outline-2">
-<h2 id="orgf7f003c">The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></h2>
-<div class="outline-text-2" id="text-orgf7f003c">
+<div id="outline-container-orgb55e8a1" class="outline-2">
+<h2 id="orgb55e8a1">The movie star problem&#xa0;&#xa0;&#xa0;<span class="tag"><span class="compsci">compsci</span>&#xa0;<span class=""></span>&#xa0;<span class="algo">algo</span></span></h2>
+<div class="outline-text-2" id="text-orgb55e8a1">
 <p>
 A movie star wants to select the maximum number of staring roles such that no two jobs needs him at two places.
 </p>
@@ -58,13 +58,13 @@ there is a time shooting starts and shooting ends
 </p>
 </div>
 
-<div id="outline-container-orgb4a8853" class="outline-3">
-<h3 id="orgb4a8853">Solutions</h3>
-<div class="outline-text-3" id="text-orgb4a8853">
+<div id="outline-container-org7a9c879" class="outline-3">
+<h3 id="org7a9c879">Solutions</h3>
+<div class="outline-text-3" id="text-org7a9c879">
 </div>
-<div id="outline-container-org2ce2ecd" class="outline-4">
-<h4 id="org2ce2ecd">Shortest Job first</h4>
-<div class="outline-text-4" id="text-org2ce2ecd">
+<div id="outline-container-orgf0d7a8d" class="outline-4">
+<h4 id="orgf0d7a8d">Shortest Job first</h4>
+<div class="outline-text-4" id="text-orgf0d7a8d">
 <p>
 Always do the shortest job first, so you do the least amount of work.
 </p>
@@ -82,9 +82,9 @@ If you are getting payed a million $ for a shoot might as well do the shortest o
 </div>
 </div>
 
-<div id="outline-container-org30df38b" class="outline-4">
-<h4 id="org30df38b">Reason why it wont work</h4>
-<div class="outline-text-4" id="text-org30df38b">
+<div id="outline-container-orgacaba94" class="outline-4">
+<h4 id="orgacaba94">Reason why it wont work</h4>
+<div class="outline-text-4" id="text-orgacaba94">
 <p>
 Taking the shortest job could block to longer job that barley intersect and leaves you with less work.
 </p>

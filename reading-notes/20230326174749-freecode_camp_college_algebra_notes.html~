@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:34 -->
+<!-- 2023-07-12 Wed 22:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Freecode camp College Algebra Notes</title>
@@ -29,15 +29,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org330cd31">Introduction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="math">math</span></span></a></li>
-<li><a href="#org8b09243">Proportions</a></li>
+<li><a href="#org10cd7e3">Introduction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="math">math</span></span></a></li>
+<li><a href="#orge8f8888">Proportions</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org330cd31" class="outline-2">
-<h2 id="org330cd31">Introduction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="math">math</span></span></h2>
-<div class="outline-text-2" id="text-org330cd31">
+<div id="outline-container-org10cd7e3" class="outline-2">
+<h2 id="org10cd7e3">Introduction&#xa0;&#xa0;&#xa0;<span class="tag"><span class="math">math</span></span></h2>
+<div class="outline-text-2" id="text-org10cd7e3">
 <p>
 This course is different from most courses, all the code is done in python.
 </p>
@@ -50,9 +50,9 @@ personally i will be using org mode, instead of goolag collab
 
 
 
-<div id="outline-container-org8b09243" class="outline-2">
-<h2 id="org8b09243">Proportions</h2>
-<div class="outline-text-2" id="text-org8b09243">
+<div id="outline-container-orge8f8888" class="outline-2">
+<h2 id="orge8f8888">Proportions</h2>
+<div class="outline-text-2" id="text-orge8f8888">
 <ul class="org-ul">
 <li></li>
 </ul>

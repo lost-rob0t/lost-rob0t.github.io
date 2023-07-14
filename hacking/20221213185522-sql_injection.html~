@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:35 -->
+<!-- 2023-07-13 Thu 20:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SQL Injection</title>
@@ -29,27 +29,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf0e046d">SQL Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="injection">injection</span>&#xa0;<span class="sqli">sqli</span>&#xa0;<span class=""></span>&#xa0;<span class="cybersec">cybersec</span>&#xa0;<span class=""></span>&#xa0;<span class="sql">sql</span></span></a>
+<li><a href="#orgbba81dd">SQL Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="injection">injection</span>&#xa0;<span class="sqli">sqli</span>&#xa0;<span class=""></span>&#xa0;<span class="cybersec">cybersec</span>&#xa0;<span class=""></span>&#xa0;<span class="sql">sql</span></span></a>
 <ul>
-<li><a href="#org843cff8">Error Based</a></li>
-<li><a href="#org125a9f4">Union Based</a></li>
-<li><a href="#orgcacb32a">Blind SQL Injection</a>
+<li><a href="#org11bf82e">Error Based</a></li>
+<li><a href="#orgba3b2ef">Union Based</a></li>
+<li><a href="#org6a76925">Blind SQL Injection</a>
 <ul>
-<li><a href="#org1ff8ce9">Examples</a></li>
+<li><a href="#org2e86ba8">Examples</a></li>
 </ul>
 </li>
-<li><a href="#org0614ef2">Second order Injection</a></li>
-<li><a href="#org7f16ccf">Tools</a></li>
-<li><a href="#org2a6c526">Links to check out</a></li>
+<li><a href="#orgc7dc30d">Second order Injection</a></li>
+<li><a href="#org7d62a01">Tools</a></li>
+<li><a href="#org78ca990">Links to check out</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgf0e046d" class="outline-2">
-<h2 id="orgf0e046d">SQL Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="injection">injection</span>&#xa0;<span class="sqli">sqli</span>&#xa0;<span class=""></span>&#xa0;<span class="cybersec">cybersec</span>&#xa0;<span class=""></span>&#xa0;<span class="sql">sql</span></span></h2>
-<div class="outline-text-2" id="text-orgf0e046d">
+<div id="outline-container-orgbba81dd" class="outline-2">
+<h2 id="orgbba81dd">SQL Injection&#xa0;&#xa0;&#xa0;<span class="tag"><span class="injection">injection</span>&#xa0;<span class="sqli">sqli</span>&#xa0;<span class=""></span>&#xa0;<span class="cybersec">cybersec</span>&#xa0;<span class=""></span>&#xa0;<span class="sql">sql</span></span></h2>
+<div class="outline-text-2" id="text-orgbba81dd">
 <p>
 SQL injection is a type of attack in which an attacker inserts malicious SQL code into an application's input in order to gain unauthorized access to sensitive data in the database or to manipulate data. This can allow the attacker to read sensitive data, modify or delete data, execute administrative tasks on the database, and even issue commands to the operating system. SQL injection attacks are commonly used against PHP and ASP applications, but are less common in J2EE and ASP.NET applications due to the nature of their programmatic interfaces. The severity of an SQL injection attack is high, as it can have significant consequences ranging from data disclosure and tampering to system destruction. Defense measures, such as using low privilege connections to the database and implementing input validation, can help reduce the risk of successful SQL injection attacks.
 </p>
@@ -78,9 +78,9 @@ There are a few forms of injection
 </ul></li>
 </ol>
 </div>
-<div id="outline-container-org843cff8" class="outline-3">
-<h3 id="org843cff8">Error Based</h3>
-<div class="outline-text-3" id="text-org843cff8">
+<div id="outline-container-org11bf82e" class="outline-3">
+<h3 id="org11bf82e">Error Based</h3>
+<div class="outline-text-3" id="text-org11bf82e">
 <p>
 Error Based SQL injection is a <a href="20230712215520-in_band.html#ID-a49c4f35-2e27-42e2-8eea-310b5f2ec352">in-band</a> injection technique.
 These types of injections are where you force the database to generate an error.
@@ -89,17 +89,17 @@ Using these error messages returning you can use to get the structure of the dat
 </div>
 </div>
 
-<div id="outline-container-org125a9f4" class="outline-3">
-<h3 id="org125a9f4">Union Based</h3>
-<div class="outline-text-3" id="text-org125a9f4">
+<div id="outline-container-orgba3b2ef" class="outline-3">
+<h3 id="orgba3b2ef">Union Based</h3>
+<div class="outline-text-3" id="text-orgba3b2ef">
 <p>
 Union Injection is where you use the SQL <code>union</code> operator. This combines multiple fields into a single result to be displayed.
 </p>
 </div>
 </div>
-<div id="outline-container-orgcacb32a" class="outline-3">
-<h3 id="orgcacb32a">Blind SQL Injection</h3>
-<div class="outline-text-3" id="text-orgcacb32a">
+<div id="outline-container-org6a76925" class="outline-3">
+<h3 id="org6a76925">Blind SQL Injection</h3>
+<div class="outline-text-3" id="text-org6a76925">
 <p>
 Blind Sqli is when you ask the database true or false question's and determin the Answer based on the application's response.
 This attack is used when the application shows generic errors but still is vulnerable to injection.
@@ -112,21 +112,21 @@ They are much harder and longer to do by hand
 The best analogy to it is playing 20 questions with the database
 </p>
 </div>
-<div id="outline-container-org1ff8ce9" class="outline-4">
-<h4 id="org1ff8ce9">Examples</h4>
-<div class="outline-text-4" id="text-org1ff8ce9">
+<div id="outline-container-org2e86ba8" class="outline-4">
+<h4 id="org2e86ba8">Examples</h4>
+<div class="outline-text-4" id="text-org2e86ba8">
 <p>
 There are a few ways to verify blind sql injections
 </p>
 </div>
 
 <ul class="org-ul">
-<li><a id="orgf97e306"></a>Boolean Based<br />
-<div class="outline-text-5" id="text-orgf97e306">
+<li><a id="org77fefa9"></a>Boolean Based<br />
+<div class="outline-text-5" id="text-org77fefa9">
 <p>
 Using a page with shows a article with a given id, you may preform a couple of tests.
 </p>
-<pre class="example" id="org3bd579c">
+<pre class="example" id="org27c4fa7">
 http://newspaper.com/items.php?id=2
 </pre>
 
@@ -146,7 +146,7 @@ Some examples of things that always return true
 <li>AND 1=1</li>
 <li>OR 1=1</li>
 </ul>
-<pre class="example" id="org63b6e2b">
+<pre class="example" id="org3d20eae">
 http://newspaper.com/items.php?id=2 and 1=1
 </pre>
 <p>
@@ -156,8 +156,8 @@ There isn't much stopping either then privileges setup and different sql syntax'
 </div>
 </li>
 
-<li><a id="org3939b1e"></a>Time Based<br />
-<div class="outline-text-5" id="text-org3939b1e">
+<li><a id="orgf2a6aeb"></a>Time Based<br />
+<div class="outline-text-5" id="text-orgf2a6aeb">
 <p>
 This Method relies on the database pausing for a set amount of time then returning results.
 </p>
@@ -169,19 +169,19 @@ You should see if SQlmap is able to detect the injection, but it is sensitive to
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="orgde05cc6"></a>MicroSoft SQL server<br />
-<div class="outline-text-6" id="text-orgde05cc6">
-<pre class="example" id="org7a40d47">
+<li><a id="org4b7580d"></a>MicroSoft SQL server<br />
+<div class="outline-text-6" id="text-org4b7580d">
+<pre class="example" id="org5487fa4">
 http://www.site.com/vulnerable.php?id=1' waitfor delay '00:00:10'--
 </pre>
 </div>
 </li>
-<li><a id="orga5a3230"></a>MySQL<br />
-<div class="outline-text-6" id="text-orga5a3230">
+<li><a id="orgdb70c00"></a>MySQL<br />
+<div class="outline-text-6" id="text-orgdb70c00">
 <p>
 Here us an example, this depends on the performance of the server.
 </p>
-<pre class="example" id="orge13fedb">
+<pre class="example" id="orgb79ec77">
 BENCHMARK(5000000,ENCODE('MSG','by 5 seconds'))
 
 </pre>
@@ -189,7 +189,7 @@ BENCHMARK(5000000,ENCODE('MSG','by 5 seconds'))
 <p>
 Another example
 </p>
-<pre class="example" id="org3256846">
+<pre class="example" id="orgde68be7">
 1 UNION SELECT IF(SUBSTRING(user_password,1,1) = CHAR(50),BENCHMARK(5000000,ENCODE('MSG','by 5 seconds')),null) FROM users WHERE user_id = 1;
 </pre>
 </div>
@@ -201,9 +201,9 @@ Another example
 </div>
 
 
-<div id="outline-container-org0614ef2" class="outline-3">
-<h3 id="org0614ef2">Second order Injection</h3>
-<div class="outline-text-3" id="text-org0614ef2">
+<div id="outline-container-orgc7dc30d" class="outline-3">
+<h3 id="orgc7dc30d">Second order Injection</h3>
+<div class="outline-text-3" id="text-orgc7dc30d">
 <p>
 A Second order injection is where user passed data is stored for later use by the database. The SQL Injection is then triggered by a different action on the webpage.
 </p>
@@ -211,17 +211,17 @@ A Second order injection is where user passed data is stored for later use by th
 </div>
 
 
-<div id="outline-container-org7f16ccf" class="outline-3">
-<h3 id="org7f16ccf">Tools</h3>
-<div class="outline-text-3" id="text-org7f16ccf">
+<div id="outline-container-org7d62a01" class="outline-3">
+<h3 id="org7d62a01">Tools</h3>
+<div class="outline-text-3" id="text-org7d62a01">
 <ul class="org-ul">
 <li><a href="20230712220510-sqlmap.html#ID-ef03bc97-55a3-44e6-b24a-523630f0090d">SQLMap</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2a6c526" class="outline-3">
-<h3 id="org2a6c526">Links to check out</h3>
-<div class="outline-text-3" id="text-org2a6c526">
+<div id="outline-container-org78ca990" class="outline-3">
+<h3 id="org78ca990">Links to check out</h3>
+<div class="outline-text-3" id="text-org78ca990">
 <ul class="org-ul">
 <li><a href="https://www.blackhat.com/presentations/bh-usa-04/bh-us-04-hotchkies/bh-us-04-hotchkies.pdf">https://www.blackhat.com/presentations/bh-usa-04/bh-us-04-hotchkies/bh-us-04-hotchkies.pdf</a></li>
 <li><a href="https://owasp.org/www-community/attacks/Blind_SQL_Injection">https://owasp.org/www-community/attacks/Blind_SQL_Injection</a></li>

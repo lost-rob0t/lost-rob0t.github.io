@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:35 -->
+<!-- 2023-07-13 Thu 20:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>list of plc's</title>
@@ -29,24 +29,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc724af7">List of PLC's</a>
+<li><a href="#orgdc2afe5">List of PLC's</a>
 <ul>
-<li><a href="#orgfe57244"><span class="todo TODO">TODO</span> Red Lion Controls</a></li>
+<li><a href="#org43b5e93"><span class="todo TODO">TODO</span> Red Lion Controls</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc724af7" class="outline-2">
-<h2 id="orgc724af7">List of PLC's</h2>
-<div class="outline-text-2" id="text-orgc724af7">
+<div id="outline-container-orgdc2afe5" class="outline-2">
+<h2 id="orgdc2afe5">List of PLC's</h2>
+<div class="outline-text-2" id="text-orgdc2afe5">
 <p>
 This document is to link to other documents and possibly map out commononly used tech in order to find vulns and list info.
 </p>
 </div>
-<div id="outline-container-orgfe57244" class="outline-3">
-<h3 id="orgfe57244"><span class="todo TODO">TODO</span> Red Lion Controls</h3>
-<div class="outline-text-3" id="text-orgfe57244">
+<div id="outline-container-org43b5e93" class="outline-3">
+<h3 id="org43b5e93"><span class="todo TODO">TODO</span> Red Lion Controls</h3>
+<div class="outline-text-3" id="text-org43b5e93">
 <p>
 They are vuln to LFI on login page (maybe needs testing)
 <a href="https://www.alliedelec.com/product/red-lion-controls/cr30000400000310/71096079/?gclsrc=ds&amp;gclsrc=ds">https://www.alliedelec.com/product/red-lion-controls/cr30000400000310/71096079/?gclsrc=ds&amp;gclsrc=ds</a>

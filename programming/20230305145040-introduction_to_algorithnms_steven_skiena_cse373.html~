@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:35 -->
+<!-- 2023-07-13 Thu 20:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Introduction to Algorithms Steven skiena (CSE373)</title>
@@ -29,14 +29,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org689e3da">What is an algorithm?</a>
+<li><a href="#org9d520e9">What is an algorithm?</a>
 <ul>
-<li><a href="#org292e295">Correctness</a></li>
-<li><a href="#orgb7b13b1">Proofs</a></li>
-<li><a href="#org64214bd">Expressing Algorithms</a>
+<li><a href="#org7a41b8a">Correctness</a></li>
+<li><a href="#org344fbea">Proofs</a></li>
+<li><a href="#org9ec560c">Expressing Algorithms</a>
 <ul>
-<li><a href="#org7e17544">Ways to do this</a></li>
-<li><a href="#org5f1fd38">Puesdocode</a></li>
+<li><a href="#org10e7073">Ways to do this</a></li>
+<li><a href="#orgd42da45">Puesdocode</a></li>
 </ul>
 </li>
 </ul>
@@ -46,9 +46,9 @@
 </div>
 
 
-<div id="outline-container-org689e3da" class="outline-2">
-<h2 id="org689e3da">What is an algorithm?</h2>
-<div class="outline-text-2" id="text-org689e3da">
+<div id="outline-container-org9d520e9" class="outline-2">
+<h2 id="org9d520e9">What is an algorithm?</h2>
+<div class="outline-text-2" id="text-org9d520e9">
 <p>
 And algorithm is the idea/ solution to a problem in computer science.
 </p>
@@ -59,9 +59,9 @@ We measure efficient with <a href="20230305150253-big_o.html#ID-a6dfee7d-c44e-4c
 </p>
 </div>
 
-<div id="outline-container-org292e295" class="outline-3">
-<h3 id="org292e295">Correctness</h3>
-<div class="outline-text-3" id="text-org292e295">
+<div id="outline-container-org7a41b8a" class="outline-3">
+<h3 id="org7a41b8a">Correctness</h3>
+<div class="outline-text-3" id="text-org7a41b8a">
 <p>
 We need to prove that an algorithm always returns the wanted output of all "legal" problems.
 Algorithms must be specified to allow for a "provable" algorithm to exist, you find the quickest tour and not the best one.
@@ -73,9 +73,9 @@ The solution must be well defined, what would you mean by "best".
 </div>
 </div>
 
-<div id="outline-container-orgb7b13b1" class="outline-3">
-<h3 id="orgb7b13b1">Proofs</h3>
-<div class="outline-text-3" id="text-orgb7b13b1">
+<div id="outline-container-org344fbea" class="outline-3">
+<h3 id="org344fbea">Proofs</h3>
+<div class="outline-text-3" id="text-org344fbea">
 <p>
 Proofs are to why something is correct, algorithms are ideas behind a problem.
 you need to know why its correct if you dont you are probably wrong.
@@ -84,9 +84,9 @@ you need to know why its correct if you dont you are probably wrong.
 </div>
 
 
-<div id="outline-container-org64214bd" class="outline-3">
-<h3 id="org64214bd">Expressing Algorithms</h3>
-<div class="outline-text-3" id="text-org64214bd">
+<div id="outline-container-org9ec560c" class="outline-3">
+<h3 id="org9ec560c">Expressing Algorithms</h3>
+<div class="outline-text-3" id="text-org9ec560c">
 <p>
 You need to express the sequence of steps that an algorithm takes, you use english peusdocode and real languages to do this
 The best way to explain the algorithm is to use english
@@ -100,18 +100,18 @@ Levels of descriptiveness
 </ol>
 </div>
 
-<div id="outline-container-org7e17544" class="outline-4">
-<h4 id="org7e17544">Ways to do this</h4>
-<div class="outline-text-4" id="text-org7e17544">
+<div id="outline-container-org10e7073" class="outline-4">
+<h4 id="org10e7073">Ways to do this</h4>
+<div class="outline-text-4" id="text-org10e7073">
 <p>
 Explain it in english.
 Use a programming language
 </p>
 </div>
 </div>
-<div id="outline-container-org5f1fd38" class="outline-4">
-<h4 id="org5f1fd38">Puesdocode</h4>
-<div class="outline-text-4" id="text-org5f1fd38">
+<div id="outline-container-orgd42da45" class="outline-4">
+<h4 id="orgd42da45">Puesdocode</h4>
+<div class="outline-text-4" id="text-orgd42da45">
 <p>
 it is a language between english and a programming
 </p>

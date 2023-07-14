@@ -58,7 +58,7 @@ This is where you will find Programmable logic controllers and remote terminal u
 :PROPERTIES:
 :ID:       82eb21d0-cf92-4943-aa92-7ad82080201d
 :END:
-Cotains readsing and reports. Data is formated so that a operator using a Human Machine interface can make operating decisions to adjust or overide RTU or PLC controls.
+Contains readsing and reports. Data is formated so that a operator using a Human Machine interface can make operating decisions to adjust or overide RTU or PLC controls.
 Data is Fed into a historian, which is often just a normal DBMS. The historian is used for analytics.
 
 *** Level 3
@@ -81,7 +81,7 @@ Scada has evolvedd over the years as tech improved
 :PROPERTIES:
 :ID:       d524bb59-b65f-4d3c-89f9-fe5081ee2a22
 :END:
-Early Scada was done by larg minicomputuers. Networks didnt exists at the the time. At this point they was indpendent systems with no networking. Communication protocols was proprietary. Some was developed as turn key operations and ran on the PDP-11
+Early Scada was done by larg minicomputuers. Networks didnt exists at  the time. At this point they was indpendent systems with no networking. Communication protocols was proprietary. Some was developed as turn key operations and ran on the PDP-11
 
 *** Secend Generation Distributed
 :PROPERTIES:

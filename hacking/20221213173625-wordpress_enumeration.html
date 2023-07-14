@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:35 -->
+<!-- 2023-07-13 Thu 20:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>WordPress Enumeration</title>
@@ -30,28 +30,28 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org8f652bd">WordPress Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="wordpress">wordpress</span>&#xa0;<span class=""></span>&#xa0;<span class="enumeration">enumeration</span></span></a>
+<li><a href="#org69385f7">WordPress Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="wordpress">wordpress</span>&#xa0;<span class=""></span>&#xa0;<span class="enumeration">enumeration</span></span></a>
 <ul>
-<li><a href="#org59d3648">User name Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></a>
+<li><a href="#org6aaabad">User name Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></a>
 <ul>
-<li><a href="#org34bcce2">Author Archives</a></li>
-<li><a href="#org4d89bfa">Json API</a></li>
-<li><a href="#orgdb11bf1">Login Form enumeration</a></li>
+<li><a href="#orgccff6c6">Author Archives</a></li>
+<li><a href="#orga0486f8">Json API</a></li>
+<li><a href="#org4bbcfd5">Login Form enumeration</a></li>
 </ul>
 </li>
-<li><a href="#org823fd53">Enumerating the WordPress Version&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></a>
+<li><a href="#org2ff6f99">Enumerating the WordPress Version&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></a>
 <ul>
-<li><a href="#org02301b6">Meta Tag</a></li>
-<li><a href="#org3991e0e">readme.html</a></li>
+<li><a href="#org9be56f1">Meta Tag</a></li>
+<li><a href="#org3d6544d">readme.html</a></li>
 </ul>
 </li>
-<li><a href="#org22c35f0">Plugin enumeration</a></li>
-<li><a href="#orgb3dfe9a">Theme enumeration</a></li>
-<li><a href="#orgfdda647">Directory Indexing</a></li>
-<li><a href="#org6ab332d">Tools</a>
+<li><a href="#org9594d35">Plugin enumeration</a></li>
+<li><a href="#org7c4e94f">Theme enumeration</a></li>
+<li><a href="#orgc842180">Directory Indexing</a></li>
+<li><a href="#orgb23f543">Tools</a>
 <ul>
-<li><a href="#orgfcf29ec">WPScan</a></li>
-<li><a href="#orgc339e20">Nmap</a></li>
+<li><a href="#org183ab3d">WPScan</a></li>
+<li><a href="#org62885fa">Nmap</a></li>
 </ul>
 </li>
 </ul>
@@ -59,24 +59,24 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org8f652bd" class="outline-2">
-<h2 id="org8f652bd">WordPress Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="wordpress">wordpress</span>&#xa0;<span class=""></span>&#xa0;<span class="enumeration">enumeration</span></span></h2>
-<div class="outline-text-2" id="text-org8f652bd">
+<div id="outline-container-org69385f7" class="outline-2">
+<h2 id="org69385f7">WordPress Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="wordpress">wordpress</span>&#xa0;<span class=""></span>&#xa0;<span class="enumeration">enumeration</span></span></h2>
+<div class="outline-text-2" id="text-org69385f7">
 <p>
 There are several things to enumerate on a WordPress install
 </p>
 </div>
 
-<div id="outline-container-org59d3648" class="outline-3">
-<h3 id="org59d3648">User name Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></h3>
-<div class="outline-text-3" id="text-org59d3648">
+<div id="outline-container-org6aaabad" class="outline-3">
+<h3 id="org6aaabad">User name Enumeration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></h3>
+<div class="outline-text-3" id="text-org6aaabad">
 <p>
 User name enumeration is important for later tasks such as brute forcing or search in for breached data
 </p>
 </div>
-<div id="outline-container-org34bcce2" class="outline-4">
-<h4 id="org34bcce2">Author Archives</h4>
-<div class="outline-text-4" id="text-org34bcce2">
+<div id="outline-container-orgccff6c6" class="outline-4">
+<h4 id="orgccff6c6">Author Archives</h4>
+<div class="outline-text-4" id="text-orgccff6c6">
 <p>
 Many WordPress installs let you enumerate user names thought the author archives, it is like an <a href="../20221213180008-idor.html#ID-43925686-f7a7-4022-94f4-edc352c44e04">IDOR</a>.
 </p>
@@ -84,26 +84,26 @@ Many WordPress installs let you enumerate user names thought the author archives
 <p>
 Example:
 </p>
-<pre class="example" id="orgdad1d64">
+<pre class="example" id="org1abd69e">
 http://example.com/?author=1
 </pre>
 <p>
 Will take you to
 </p>
-<pre class="example" id="org93be51d">
+<pre class="example" id="org6af7455">
 http://example.com/author/admin
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org4d89bfa" class="outline-4">
-<h4 id="org4d89bfa">Json API</h4>
-<div class="outline-text-4" id="text-org4d89bfa">
+<div id="outline-container-orga0486f8" class="outline-4">
+<h4 id="orga0486f8">Json API</h4>
+<div class="outline-text-4" id="text-orga0486f8">
 <p>
 There is a json endpoint, it was restricted in version 4.7.1.
 Real example from hackthebox
 </p>
-<pre class="example" id="org8f1899c">
+<pre class="example" id="org7357059">
 http://metapress.htb/wp-json/wp/v2/users
 </pre>
 
@@ -140,9 +140,9 @@ http://metapress.htb/wp-json/wp/v2/users
 </div>
 </div>
 </div>
-<div id="outline-container-orgdb11bf1" class="outline-4">
-<h4 id="orgdb11bf1">Login Form enumeration</h4>
-<div class="outline-text-4" id="text-orgdb11bf1">
+<div id="outline-container-org4bbcfd5" class="outline-4">
+<h4 id="org4bbcfd5">Login Form enumeration</h4>
+<div class="outline-text-4" id="text-org4bbcfd5">
 <p>
 This is a brain-dead but simple way of enumerating a user
 The http response ill differ on invalid user accounts, when a http response matches invalid password shows that a user name is valid, after that you can move onto brute forcing
@@ -150,13 +150,13 @@ The http response ill differ on invalid user accounts, when a http response matc
 </div>
 </div>
 </div>
-<div id="outline-container-org823fd53" class="outline-3">
-<h3 id="org823fd53">Enumerating the WordPress Version&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></h3>
-<div class="outline-text-3" id="text-org823fd53">
+<div id="outline-container-org2ff6f99" class="outline-3">
+<h3 id="org2ff6f99">Enumerating the WordPress Version&#xa0;&#xa0;&#xa0;<span class="tag"><span class="recon">recon</span></span></h3>
+<div class="outline-text-3" id="text-org2ff6f99">
 </div>
-<div id="outline-container-org02301b6" class="outline-4">
-<h4 id="org02301b6">Meta Tag</h4>
-<div class="outline-text-4" id="text-org02301b6">
+<div id="outline-container-org9be56f1" class="outline-4">
+<h4 id="org9be56f1">Meta Tag</h4>
+<div class="outline-text-4" id="text-org9be56f1">
 <p>
 Inspect the HTML source for a meta tag
 </p>
@@ -166,9 +166,9 @@ Inspect the HTML source for a meta tag
 </div>
 </div>
 </div>
-<div id="outline-container-org3991e0e" class="outline-4">
-<h4 id="org3991e0e">readme.html</h4>
-<div class="outline-text-4" id="text-org3991e0e">
+<div id="outline-container-org3d6544d" class="outline-4">
+<h4 id="org3d6544d">readme.html</h4>
+<div class="outline-text-4" id="text-org3d6544d">
 <p>
 if the meta tag is not present check for a file <code>/readme.html</code> at the root.
 Newer version of WordPress have disabled this
@@ -181,9 +181,9 @@ Sometimes the version is append as a param on links to JavaScript and CSS. this 
 </div>
 </div>
 
-<div id="outline-container-org22c35f0" class="outline-3">
-<h3 id="org22c35f0">Plugin enumeration</h3>
-<div class="outline-text-3" id="text-org22c35f0">
+<div id="outline-container-org9594d35" class="outline-3">
+<h3 id="org9594d35">Plugin enumeration</h3>
+<div class="outline-text-3" id="text-org9594d35">
 <p>
 It is important to find all the plugins on an installed page even if the plugin is disabled.
 </p>
@@ -195,9 +195,9 @@ Active methods use scripts to do hundreds of requests or thousands of possibly i
 </div>
 </div>
 
-<div id="outline-container-orgb3dfe9a" class="outline-3">
-<h3 id="orgb3dfe9a">Theme enumeration</h3>
-<div class="outline-text-3" id="text-orgb3dfe9a">
+<div id="outline-container-org7c4e94f" class="outline-3">
+<h3 id="org7c4e94f">Theme enumeration</h3>
+<div class="outline-text-3" id="text-org7c4e94f">
 <p>
 WordPress themes can contain vulnerabilities that might lead the site to be compromised. Themes are php code with html and css. the more complex the them the more components it will have thus more chances for an exploit.
 The theme detection is like the detection of plugins. The theme path is often visible in the html source. CSS file will also often reveal the path.
@@ -216,22 +216,22 @@ Example:
 </div>
 
 
-<div id="orga3933a2" class="figure">
+<div id="org7aef8b3" class="figure">
 <p><img src="WordPress_Enumeration/2022-12-13_18-21-21_screenshot.png" alt="2022-12-13_18-21-21_screenshot.png" />
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgfdda647" class="outline-3">
-<h3 id="orgfdda647">Directory Indexing</h3>
-<div class="outline-text-3" id="text-orgfdda647">
+<div id="outline-container-orgc842180" class="outline-3">
+<h3 id="orgc842180">Directory Indexing</h3>
+<div class="outline-text-3" id="text-orgc842180">
 <p>
 Directory indexing is when a web-sever list the contents of a directory on a web-server path. The information show can give the attacker good info on whats installed and what he can abuse.
 Checking for indexing is just you going to a folder and seeing if you get a dir listing.
 Dirs to check:
 </p>
-<pre class="example" id="org73c233e">
+<pre class="example" id="org8dc8a54">
 /wp-content/
 /wp-content/plugins/
 /wp-content/themes/
@@ -242,13 +242,13 @@ Dirs to check:
 </div>
 
 
-<div id="outline-container-org6ab332d" class="outline-3">
-<h3 id="org6ab332d">Tools</h3>
-<div class="outline-text-3" id="text-org6ab332d">
+<div id="outline-container-orgb23f543" class="outline-3">
+<h3 id="orgb23f543">Tools</h3>
+<div class="outline-text-3" id="text-orgb23f543">
 </div>
-<div id="outline-container-orgfcf29ec" class="outline-4">
-<h4 id="orgfcf29ec">WPScan</h4>
-<div class="outline-text-4" id="text-orgfcf29ec">
+<div id="outline-container-org183ab3d" class="outline-4">
+<h4 id="org183ab3d">WPScan</h4>
+<div class="outline-text-4" id="text-org183ab3d">
 <p>
 WPScan is a common WordPress security tool that ties these methods, allow you to quickly enumerate a WordPress install. it has a commercial license that restricts the use for personal testing.
 </p>
@@ -258,14 +258,14 @@ Link: <a href="https://github.com/wpscanteam/wpscan">https://github.com/wpscante
 </p>
 </div>
 </div>
-<div id="outline-container-orgc339e20" class="outline-4">
-<h4 id="orgc339e20">Nmap</h4>
-<div class="outline-text-4" id="text-orgc339e20">
+<div id="outline-container-org62885fa" class="outline-4">
+<h4 id="org62885fa">Nmap</h4>
+<div class="outline-text-4" id="text-org62885fa">
 <p>
 Nmap comes with NSE scripts that allow the scanner to do more
 scripts helpful for WordPress
 </p>
-<pre class="example" id="org66222b0">
+<pre class="example" id="org504f9ea">
 http-WordPress-brute.nse
 http-wordpress-enum.nse
 http-wordpress-users.nse

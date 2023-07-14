@@ -2,7 +2,7 @@
 
 - [[file:rss.org][The Lost Wiki Rss]]
 - [[file:programming/index.org][The Lost Wiki - Programming]]
-- [[file:Tutorial/index.org][The Lost Wiki - Tutorials]]
+- [[file:Tutorial/index.org][The Lost Wiki]]
 - [[file:index.org][Index]]
 - [[file:hacking/20230712215520-in_band.org][in-band]]
 - [[file:hacking/20221213185522-sql_injection.org][SQL Injection]]

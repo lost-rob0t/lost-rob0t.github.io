@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:34 -->
+<!-- 2023-07-12 Wed 22:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Practical Common Lisp</title>
@@ -35,7 +35,7 @@
 </div>
 <div id="outline-container-ID-e75fc3d4-f833-4867-bc72-3a3c5aa0b256" class="outline-2">
 <h2 id="ID-e75fc3d4-f833-4867-bc72-3a3c5aa0b256">Chapters</h2>
-<div class="outline-text-2" id="text-org08c615f">
+<div class="outline-text-2" id="text-org1e45cf3">
 <ul class="org-ul">
 <li><a href="20220606214409-practical_cl_simple_db.html#ID-848de0a7-bd07-42cd-94ca-4f7119335989">practical cl simple db</a></li>
 </ul>

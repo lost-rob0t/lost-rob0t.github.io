@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-07-12 Wed 22:35 -->
+<!-- 2023-07-13 Thu 20:32 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Common Lisp</title>
@@ -29,17 +29,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org35115b9">What is common lisp?</a>
+<li><a href="#org61df9bb">What is common lisp?</a>
 <ul>
-<li><a href="#orge3957f4">Tips</a></li>
+<li><a href="#org1e1a8e6">Tips</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org35115b9" class="outline-2">
-<h2 id="org35115b9">What is common lisp?</h2>
-<div class="outline-text-2" id="text-org35115b9">
+<div id="outline-container-org61df9bb" class="outline-2">
+<h2 id="org61df9bb">What is common lisp?</h2>
+<div class="outline-text-2" id="text-org61df9bb">
 <p>
 Common Lisp is the modern, multi-paradigm, high-performance, compiled, ANSI-standardized, most prominent (along with Scheme) descendant of the long-running family of <a href="20220606214902-lisp.html#ID-2bf517d2-698a-44cf-bb5a-5273da53f717">Lisp</a> <a href="20220606215245-programming_languages.html#ID-ecc6c666-530f-4173-9f21-4038677b32ac">Programming Languages</a>.
 </p>
@@ -52,9 +52,9 @@ Common Lisp is known for being extremely flexible, having excellent support for 
 
 
 
-<div id="outline-container-orge3957f4" class="outline-3">
-<h3 id="orge3957f4">Tips</h3>
-<div class="outline-text-3" id="text-orge3957f4">
+<div id="outline-container-org1e1a8e6" class="outline-3">
+<h3 id="org1e1a8e6">Tips</h3>
+<div class="outline-text-3" id="text-org1e1a8e6">
 <ul class="org-ul">
 <li><a href="20230522223358-common_lisp_compile.html#ID-a1695288-6251-42b5-a860-087ad7175652">common lisp compile</a></li>
 <li><a href="../Tutorial/20230502185107-nixos_fix_common_lisp_ld_path.html#ID-b6578448-2a3a-4183-a8cc-d390661328c5">nixos fix common-lisp ld path</a></li>
