@@ -1,3 +1,9 @@
 baseURL = 'https://lost-rob0t.github.io/'
 languageCode = 'en-us'
 title = 'Lost Robot'
+
+# Legacy imported Org/Hugo content still contains relref links to pages that
+# were not migrated into this repository. Keep those links visible as
+# warnings instead of making unrelated new posts fail the entire site build.
+refLinksErrorLevel = 'warning'
+refLinksNotFoundURL = '/'
